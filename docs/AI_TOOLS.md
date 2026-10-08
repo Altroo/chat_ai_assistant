@@ -10,6 +10,12 @@ Each `ChatAITool` declares its name, description, application, strict input sche
 
 The planner chooses one tool or the provider's separate `clarify` function. `clarify` is **not** an eighteenth backend business tool: it accepts only `reason=missing_details|ambiguous_metric|unsupported` and `language=fr|en`; the backend writes its text. Bare slash commands can return usage without invoking a model. Natural descriptions such as a client plus a product are valid search inputs; internal record IDs are not required from users.
 
+## Module shortcuts and access questions
+
+`chat_ai/shortcut_catalog.py` is the single source of permitted module commands, English/French labels and examples. The capabilities API returns the filtered catalogue for each authorized company; the frontend renders it. It mirrors the existing read, stock-superuser, staff-user, edit, delete and print policies. Selecting a shortcut does not grant any permission, and every actual tool invocation still reauthorizes.
+
+Bare module commands select existing read tools: invoices, quotes, pro formas, credit notes, delivery notes, clients, articles, payments, stock balances/movements/receipts/inventories, logistics and staff-only users. Descriptive arguments remain available to the planner; the module prefix supplies a trusted shortlist hint while the original user message, language and every supplied filter remain unchanged. Exact module-access questions return verified access and usage only, with no model call or business query. Compound requests are not treated as capability questions. These handlers are application behavior and do not change the frozen raw-model score.
+
 ## Registered tools
 
 Common search limits, where exposed: `limit` 1–10, `offset` 0–1000, ISO `date_from`/`date_to`. Unsupported fields are rejected. Company/user identity is never a tool argument.

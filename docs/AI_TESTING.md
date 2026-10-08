@@ -74,3 +74,10 @@ Exact English/French positional follow-ups now resolve through stored conversati
 After the full2,272-test backend run, the assistant suite passed765tests (39.13seconds). The final independent review then narrowed help routing to avoid overriding specific-record and compound requests;52focused reference/help tests passed after that change. Four Docker/static-asset tests passed after excluding additional runtime secret patterns. The frontend's last native-navigation/chat run passed75tests, TypeScript, ESLint and production build. Actual MCP desktop-to-mobile resizing, drawer Escape/roundtrip, single FAB and chat accessibility passed.
 
 The local v4 French status explanation initially failed with a truncated repetitive model call. That failure is retained in final-local-v4-ui-review.json. Exact retry after verified-help dispatch passed in0.826s; a fresh English workflow passed in1.337s. These trusted application handlers are excluded from raw-model accuracy figures.
+
+
+## Module catalogue regression — 2026-10-08
+
+The full assistant/backend suite passed **819 tests in 44.16 seconds** after the permission-derived module catalogue and exact capability-question handlers. Chat UI/client tests passed **112 tests in 7.73 seconds**; TypeScript and changed-file ESLint passed. Tests cover every bare module's existing tool mapping, usage examples, filter-preserving planner hints, native staff-only users, stock-only superusers without membership, denied write shortcuts, localized capabilities and the exact English logistics-access question without model inference or business queries. Raw logs remain ignored.
+
+The prepared authenticated production checklist separately passed **12/12 checks**: one dashboard FAB, current company, bare help, natural invoice lookup, safe detail/list navigation, English/French workflows, verified collected-payment equality, history, company isolation, article lookup, mobile fit and anonymous-login absence. These selected application workflows do not replace the frozen model benchmark. Additional module-shortcut deployment verification is recorded after release.
