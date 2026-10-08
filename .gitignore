@@ -1,0 +1,62 @@
+# Runtime environments and credentials are never source inputs.
+.env*
+*.env
+!/deploy/example.env
+!/deploy/.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+/credentials*.json
+/secrets*.json
+
+# Local environments, models, training outputs and compiled artifacts.
+.venv*/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+models/
+training/adapters/
+training/checkpoints/
+training/evaluations/
+# Pinned runtime source is added only from package_source.py's reviewed allowlist.
+# Existing tracked runtime source remains versioned; binaries/fixtures stay ignored.
+runtime/
+*.log
+*.dump
+*.sql.gz
+*.safetensors
+*.gguf
+*.bin
+*.pt
+*.pth
+*.onnx
+*.o
+*.so
+*.dylib
+*.a
+
+# Private browser evidence and generated reports.
+.auth/
+playwright/.auth/
+.playwright-mcp/
+playwright-report/
+test-results/
+browser-reports/
+browser-artifacts/
+test-artifacts/
+screenshots/
+storage-state*.json
+storageState*.json
+auth-state*.json
+*.har
+.coverage*
+coverage.xml
+htmlcov/
+.DS_Store
