@@ -32,3 +32,11 @@ The approved production hooks build before replacing only application services, 
 The centralized model remains shared; application source lives in the native Management Projet repositories.
 
 Final post-pull MCP verification also passed: native dark-mode/changelog controls remain present; “hello” gives only a welcome; actual model project search returns the synthetic authorized project; the AI card opens details and the named list button returns to `/dashboard/projects`, preserving one conversation panel. TypeScript and changed-source ESLint passed.
+
+## Accuracy-first decision — 2026-10-09
+
+Source publication completed to the configured remotes. Linux builds, additive migrations, knowledge synchronization and health checks passed; private before/after native business fingerprints matched. The frontend lint failure was fixed in the standalone smoke script and the subsequent deployment passed. Existing theme/version work is preserved.
+
+The user explicitly chose to keep the production assistant disabled and improve model accuracy first. New curriculum, complete coverage and a corrected isolated Colibri parser are documented in [AI_MODEL_ACCURACY.md](AI_MODEL_ACCURACY.md). New training/evaluation is incomplete until actual results are recorded; production activation is not authorized by source publication.
+
+The complete v3 training and three original regression runs are now recorded in AI_MODEL_ACCURACY.md. Management Projet remains below target at 43/60 correct tool choices and 28/50 exact arguments. A reviewed, higher-capacity shared-model continuation is being prepared; its accuracy remains unmeasured. The production assistant stays disabled.
