@@ -43,3 +43,9 @@ python training/scripts/preflight_training.py --data /path/to/versioned-data --m
 ```
 
 The exact completed v3 trainer is retained as `training/scripts/archive/train_cpu_shared_v3.py`, matching its recorded SHA256. Its matching `training_schedule.py` is retained beside it, matching the recorded helper SHA256 and the trainer’s sibling-file check. Current training uses `training/scripts/train_cpu.py`; the archive is not used by the active continuation. Safe v3 measurements and provenance are in `training/reports/shared-v3-*`; private logs, operator paths and model artifacts remain excluded.
+
+## Additional acceptance gates
+
+The frozen evaluator excludes clarification cases from exact-argument percentages. Its per-case `arguments_correct` still checks the backend-rendered reason and language, but a perfect tool/exact-argument aggregate could conceal those errors. `training/scripts/model_acceptance.py` separately recomputes expected-action matches from the frozen events, requires every clarification and proposed change to match (including unrequested change proposals during read requests), and reports denied-access, unsupported destructive requests, ambiguous metrics and missing periods separately. It rejects missing, duplicate or relabeled cases and binds the report to dataset, event and unchanged evaluator hashes. Original benchmark scores are preserved.
+
+The fresh Management Projet and Design Workflow sets contain 32 and 24 bilingual cases, representing 16 and 12 shared scenarios. This is a small evaluation sample, not broad reliability certification. Passing model gates never replaces native backend permission, tenant, confirmation and audit checks or authorizes production activation. The additional gates were specified before the v4 evaluation results. Fifteen training-integrity and acceptance tests passed; the single reviewer found no remaining blockers after the unexpected-change counterexample was fixed.
