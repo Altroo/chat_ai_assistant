@@ -58,7 +58,7 @@ def model_fingerprint(root):
             'config': artifact_group(root, [root / name for name in config_names if (root / name).is_file()])}
 
 
-p=argparse.ArgumentParser();p.add_argument('--model',type=Path,required=True);p.add_argument('--data',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--steps',type=int,default=96);p.add_argument('--threads',type=int,default=14);p.add_argument('--max-seq-length',type=int,default=4096);p.add_argument('--learning-rate',type=float,default=0.0001);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--model',type=Path,required=True);p.add_argument('--data',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--steps',type=int,default=96);p.add_argument('--threads',type=int,default=14);p.add_argument('--max-seq-length',type=int,default=4096);p.add_argument('--learning-rate',type=float,default=0.0001);p.add_argument('--balanced-applications',action='store_true');p.add_argument('--lora-layers',type=int,default=4);a=p.parse_args()
 if platform.system()!='Linux' or os.environ.get('CHAT_AI_TRAINING_SERVER')!='1':raise SystemExit('Training is restricted to the approved Linux server.')
 dataset_manifest=json.loads((a.data/'manifest.json').read_text())
 if set(dataset_manifest.get('languages',[]))!={'en','fr'}:raise SystemExit('Current training scope requires an English/French-only dataset manifest.')
@@ -81,8 +81,9 @@ tokenizer=AutoTokenizer.from_pretrained(a.model,local_files_only=True,trust_remo
 model=Qwen3_5ForConditionalGeneration.from_pretrained(a.model,local_files_only=True,dtype=torch.bfloat16,attn_implementation='eager')
 model.config.use_cache=False
 layers=model.config.text_config.num_hidden_layers
-# Last four layers only; leave most of the base frozen and omit vision inputs entirely.
-regex=r'.*language_model\.layers\.('+ '|'.join(str(i) for i in range(layers-4,layers)) +r')\.(mlp\.(up_proj|down_proj)|self_attn\.(q_proj|v_proj)|linear_attn\.(in_proj_qkv|out_proj))'
+# Bounded final text layers only; leave most of the base frozen and omit vision inputs.
+if not 1<=a.lora_layers<=layers:raise SystemExit('Invalid number of final LoRA text layers.')
+regex=r'.*language_model\.layers\.('+ '|'.join(str(i) for i in range(layers-a.lora_layers,layers)) +r')\.(mlp\.(up_proj|down_proj)|self_attn\.(q_proj|v_proj)|linear_attn\.(in_proj_qkv|out_proj))'
 config=LoraConfig(r=8,lora_alpha=16,lora_dropout=0.0,target_modules=regex,bias='none',task_type='CAUSAL_LM')
 model=get_peft_model(model,config);model.print_trainable_parameters();model.train()
 optimizer=torch.optim.AdamW([v for v in model.parameters() if v.requires_grad],lr=a.learning_rate,weight_decay=0)
@@ -101,10 +102,10 @@ provenance = {
         'seed': 17, 'device': 'cpu', 'dtype': 'bfloat16', 'attention_implementation': 'eager',
         'optimizer': {'class': 'torch.optim.AdamW', **optimizer.defaults},
         'batch_size': 1, 'gradient_accumulation_steps': 1, 'gradient_clip_norm': 1.0,
-        'shuffle': 'one seeded permutation, cycled unchanged', 'checkpoint_interval_steps': 24,
+        'shuffle': 'seeded per-application permutations, alternating applications' if a.balanced_applications else 'one seeded permutation, cycled unchanged', 'checkpoint_interval_steps': 24,
         'thinking': False, 'loss': 'assistant-only cross entropy, per-example mean',
         'lora': {'r': 8, 'alpha': 16, 'dropout': 0.0, 'bias': 'none',
-                 'task_type': 'CAUSAL_LM', 'target_regex': regex},
+                 'task_type': 'CAUSAL_LM', 'target_regex': regex, 'layers': a.lora_layers},
     },
 }
 (a.output / 'run-provenance.json').write_text(json.dumps(provenance, indent=2))
@@ -144,11 +145,28 @@ def validate():
 started=time.monotonic();metrics=[]
 base_validation=validate();print(json.dumps({'baseline_validation_loss':base_validation}),flush=True)
 order=list(range(len(encoded)));random.shuffle(order)
+if a.balanced_applications:
+    declared=set(dataset_manifest.get('applications',[]))
+    if not {'facturation'}<=declared or len(declared)<2 or not declared<={'facturation','management_projet','design_workflow'}:raise ValueError('Balanced training requires declared approved applications and retained Facturation examples.')
+    groups={}
+    for index,row in enumerate(rows):
+        app=row.get('application')
+        if app not in declared:raise ValueError('Unexpected or missing application metadata in training source.')
+        groups.setdefault(app,[]).append(index)
+    if set(groups)!=declared:raise ValueError('Every declared application must be represented.')
+    for indices in groups.values():random.shuffle(indices)
+    applications=sorted(groups)
+    order=[groups[app][turn%len(groups[app])] for turn in range(max(map(len,groups.values()))) for app in applications]
+exposure={};unique_exposure={}
 for step in range(a.steps):
     # Stop safely if other services begin to need available RAM; cgroup remains the hard ceiling.
     if psutil.virtual_memory().available<psutil.virtual_memory().total*.10:raise RuntimeError('Spare-memory floor reached; no production service was stopped.')
     start=time.monotonic();optimizer.zero_grad(set_to_none=True)
-    item=encoded[order[step%len(order)]]
+    selected_index=order[step%len(order)]
+    application=rows[selected_index].get('application','facturation')
+    exposure[application]=exposure.get(application,0)+1
+    unique_exposure.setdefault(application,set()).add(selected_index)
+    item=encoded[selected_index]
     loss=loss_for(item)
     if not torch.isfinite(loss):raise RuntimeError('Non-finite training loss')
     loss.backward();torch.nn.utils.clip_grad_norm_([v for v in model.parameters() if v.requires_grad],1.0);optimizer.step()
@@ -159,4 +177,5 @@ model.save_pretrained(a.output/'final');tokenizer.save_pretrained(a.output/'fina
 final_validation=validate()
 report={'host':platform.node(),'platform':platform.platform(),'device':'cpu','dtype':'bfloat16','threads':a.threads,'steps':a.steps,'seed':17,'lora_rank':8,'lora_alpha':16,'target_regex':regex,'trainable_parameters':sum(v.numel() for v in model.parameters() if v.requires_grad),'model_path':str(a.model),'dataset_sha256':provenance['dataset_sha256'],'validation_sha256':provenance['validation_sha256'],'baseline_validation_loss':base_validation,'final_validation_loss':final_validation,'duration_seconds':time.monotonic()-started,'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'steps_metrics':metrics,'deployment_status':'NOT DEPLOYED; held-out Colibri evaluation required'}
 report.update(provenance)
+report['application_exposure']={app:{'steps':count,'unique_examples':len(unique_exposure[app])} for app,count in exposure.items()}
 (a.output/'training-report.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='steps_metrics'},indent=2))

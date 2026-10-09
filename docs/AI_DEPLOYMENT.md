@@ -1,6 +1,6 @@
 # Facturation deployment and verification
 
-The user has explicitly authorized completion, testing, pushes to all three remotes, deployment and production verification. Release remains gated on resolving critical test failures; Phase 2 is not authorized. Existing development, translation and grammar model services have not been changed. The assistant would be the fifth installed model and fourth normal active model according to the user's inventory; isolated training/evaluation processes are not a production rollout.
+The user has explicitly authorized completion, testing, pushes to all three remotes, deployment and production verification. Release remains gated on resolving critical test failures; The later Management Projet integration and shared-model Design Workflow training are tracked separately; their production activation is not implied by this Facturation release. Existing development, translation and grammar model services have not been changed. The assistant would be the fifth installed model and fourth normal active model according to the user's inventory; isolated training/evaluation processes are not a production rollout.
 
 ## Build artifacts
 

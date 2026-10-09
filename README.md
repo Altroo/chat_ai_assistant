@@ -2,7 +2,7 @@
 
 Self-hosted AI assistant for business applications, with a reusable Python engine, local CPU inference, application tools, conversation history, knowledge retrieval, and a reproducible model fine-tuning pipeline.
 
-The current integration is Facturation. It connects natural-language requests to existing billing workflows while preserving authenticated user access, company scope, native business calculations, and audit history. The interface supports French and English.
+Facturation is the active integration. Management Projet now has a locally verified adapter and native chat interface; its shared-model comparison and separate production approval remain pending. It connects natural-language requests to existing billing workflows while preserving authenticated user access, company scope, native business calculations, and audit history. The interface supports French and English.
 
 ## What It Shows
 
@@ -45,6 +45,8 @@ The current integration is Facturation. It connects natural-language requests to
 
 - Backend API and Facturation adapter: [Altroo/facturation_backend](https://github.com/Altroo/facturation_backend)
 - Frontend and chat interface: [Altroo/facturation_frontend](https://github.com/Altroo/facturation_frontend)
+- Management Projet backend adapter: [Altroo/management_projet_backend](https://github.com/Altroo/management_projet_backend)
+- Management Projet frontend: [Altroo/management_projet_frontend](https://github.com/Altroo/management_projet_frontend)
 
 ## Local Setup
 
@@ -78,6 +80,8 @@ The current fine-tuned model improves on the base model but remains below the br
 - [Application knowledge](docs/AI_KNOWLEDGE.md)
 - [Frontend integration](docs/AI_FRONTEND.md)
 - [Implementation status](docs/AI_PROGRESS.md)
+
+- [Management Projet integration status](docs/AI_MANAGEMENT_PROJET_PROGRESS.md)
 
 ## Portfolio Note
 

@@ -1,6 +1,6 @@
 # Phase 1 progress — facturation
 
-Current step: corrected starter-question release deployed and verified; Phase 1 implementation report remains available for user review. Other applications remain untouched. Broad model-quality acceptance is incomplete; do not interpret successful basic workflows as a 95% accuracy result.
+Current step: corrected starter-question release deployed and verified; Phase 1 implementation report remains available for user review. The user subsequently authorized the Management Projet integration and shared-model Design Workflow training; their separate progress documents describe that work. Broad model-quality acceptance is incomplete; do not interpret successful basic workflows as a 95% accuracy result.
 
 ## IMPLEMENTED and verified
 - Reusable Python provider/orchestrator/registry, Django integration,17 typed tools, native permissions, company/object checks, bounded read results, safe navigation and financial calculations reused from Facturation.
@@ -37,6 +37,6 @@ Dedicated server8-request sample: sequential mean8.34s, p95(maximum of4)9.74s; c
 - Complex model requests may omit filters or ask for clarification; inspect returned record details before selecting an action. Exact-target confirmation is mandatory for supported writes.
 - Stock, logistics, account and payment adapters are read-only. Supported writes are bounded document/client actions, not all operations in every module.
 - Full physical-device keyboard and assistive-technology certification remains unperformed.
-- No Phase2 integration or approval is implied.
+- Phase 2 is explicitly authorized for Management Projet. Design Workflow shared-model training is also authorized; its application release is separate. No rollout to the other applications is authorized.
 
 Historical work log: [AI_PROGRESS_HISTORY.md](AI_PROGRESS_HISTORY.md). Detailed evidence: [AI_TESTING.md](AI_TESTING.md), [AI_FINE_TUNING.md](AI_FINE_TUNING.md), and training/reports.
