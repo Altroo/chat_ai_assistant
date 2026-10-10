@@ -91,3 +91,8 @@ Synthetic EN/FR data is prepared, not trained: 150/30/84 Réservation train/vali
 Réservation source is published disabled: backend `105cc4e24c90`, frontend `3c09a4d8a103`, six remote heads and 37 deployed backend file hashes verified. Assistant migration/knowledge sync succeeded; all 26 business-table counts are unchanged. Services and live login are healthy, anonymous assistant access returns 401, and the shared production model/current training process are unchanged.
 
 The prepared cumulative six-app dataset passed exact server tokenizer/Colibri preflight: 2,014 rows, maximum 4,977 tokens, no truncation. This was metadata-only validation and started no new training job. Current V5 remains the sole optimizer run.
+
+
+## Shared V5 status update — 2026-10-10
+
+IMPLEMENTED: training, isolated export, 328 frozen evaluations, warm performance probe and artifact/process verification completed. Model acceptance remains PARTIALLY IMPLEMENTED: all eight evaluation sets miss at least one required gate. The native tokenizer check passed 328/328 prompt-ID comparisons; separate runtime diagnostics continue. No further optimization job has started. Contracts, Gestion Magasin and Réservation source is published disabled with datasets prepared; serial model training and acceptance remain pending. Production model unchanged. See [measured scores and limitations](AI_MODEL_ACCURACY.md#shared-v5-measured-results--2026-10-10).

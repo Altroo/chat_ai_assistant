@@ -67,7 +67,31 @@ The added examples contrast record lists with financial totals, preserve literal
 
 New 32-case Management Projet and 20-case Design Workflow sets were frozen before v5 training. Their completed v4 baselines measured Management Projet 18/32 tools, 9/20 eligible exact arguments and 26/32 valid structures; Design Workflow 13/20, 9/14 and 17/20. These harder fresh cases are recorded separately from earlier scores. Prior held-out files remain unchanged; exact normalized prompt overlap is checked, while exhaustive semantic independence is not claimed. The server preflight passed all 1,486 rows for schema/parser round-trip, runtime prompt parity, loss boundary and weighted-token alignment. Largest training/validation examples remain 4,744/4,977 tokens, within the unchanged 8K context.
 
-PARTIALLY IMPLEMENTED: server-only continuation is running from the shared v4 checkpoint, one complete epoch, rank 16/alpha 32 across 24 text layers, CPU SDPA, semantic weight 4 and learning rate 0.00005. Training was launched after all baseline and artifact checks passed. It is not complete; no v5 accuracy result exists yet. The launcher requires completed v4 measurements and new baselines, pins data/scripts/base/runtime hashes, and permits export only after successful trainer termination and complete coverage. Training remains PyTorch, Hugging Face Transformers and PEFT/LoRA; Colibri serves the resulting isolated candidate. Acceptance still requires actual frozen test results.
+IMPLEMENTED: server-only V5 continuation and isolated export completed from the shared v4 checkpoint, one complete epoch, rank 16/alpha 32 across 24 text layers, CPU SDPA, semantic weight 4 and learning rate 0.00005. Training was launched after all baseline and artifact checks passed. Actual V5 evaluation results are recorded below; acceptance remains incomplete. The launcher requires completed v4 measurements and new baselines, pins data/scripts/base/runtime hashes, and permits export only after successful trainer termination and complete coverage. Training remains PyTorch, Hugging Face Transformers and PEFT/LoRA; Colibri serves the resulting isolated candidate. Acceptance still requires actual frozen test results.
 
 
 The completed v4 eight-request warm CPU probe measured 7.909 s sequential mean, 11.884 s at concurrency two, 56.18 decode tokens/s excluding prefill, 2.60 GiB peak RSS and zero errors. It used the same prompts and four-thread configuration as v3. This small warm sample is not sustained production capacity certification. Full public-safe measurements are in [the comparison](../training/reports/shared-v4-en-fr-comparison.json), [training report](../training/reports/shared-v4-en-fr-training.json) and [performance report](../training/reports/shared-v4-en-fr-performance.json); six separate acceptance reports retain the stricter critical-action results.
+
+
+## Shared V5 measured results — 2026-10-10
+
+All 1,318 optimization steps completed in 22,710.3 seconds. Every example was used once: Management Projet 616, Facturation 410 and Design Workflow 292. Peak training RSS was 6.97 GiB. Unweighted validation CE changed from 0.065782 to 0.036077; this is not tool accuracy.
+
+All 328 frozen cases completed with unchanged evaluator, data, model artifacts and candidate process identity. None of the eight sets passes all acceptance gates.
+
+| Set | Correct tools | Exact arguments | Valid structure |
+| --- | --- | --- | --- |
+| Management Projet original | 58/60 | 46/50 | 59/60 |
+| Design Workflow original | 56/60 | 43/48 | 58/60 |
+| Facturation original | 73/80 | 51/66 | 78/80 |
+| Management Projet companion | 19/20 | 11/14 | 20/20 |
+| Management Projet fresh | 28/32 | 23/26 | 32/32 |
+| Design Workflow fresh | 21/24 | 16/18 | 23/24 |
+| Management Projet newest hold-out | 25/32 | 15/20 | 30/32 |
+| Design Workflow newest hold-out | 18/20 | 11/14 | 20/20 |
+
+The unchanged four-thread Colibri CPU profile measured 7.777 s sequential mean, 11.676 s mean at concurrency two, 55.44 decode tokens/s excluding prefill, and 2.64 GiB peak RSS. This eight-request warm probe had zero transport errors and is not sustained production capacity certification.
+
+The metadata-only native C tokenizer diagnostic matched all 328 prompt token sequences against the training tokenizer. Separate free-generation, stopping and numerical-path diagnostics are in progress; they do not alter these frozen scores. No additional application training or production activation follows automatically. The existing production model remains unchanged.
+
+[Full comparisons and acceptance gates](../training/reports/shared-v5-en-fr-comparison.json), [training evidence](../training/reports/shared-v5-en-fr-training.json), [performance evidence](../training/reports/shared-v5-en-fr-performance.json).

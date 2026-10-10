@@ -4,14 +4,14 @@ Only one server training process may run at a time. All applications use the sam
 
 | Order | Scope | Status | Exit gate |
 | --- | --- | --- | --- |
-| Current | Shared V5: Facturation, Management Projet, Design Workflow | TRAINING; 1,318-step complete epoch | Export, artifact attestation, all 328 frozen cases, performance probe, acceptance report |
+| Current | Shared V5: Facturation, Management Projet, Design Workflow | Training/export and 328 frozen cases complete; acceptance failed, diagnosis in progress | Export, artifact attestation, all 328 frozen cases, performance probe, acceptance report |
 | Next | Contracts (`contrat`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, exact tokenizer preflight, tested adapter, prior training complete; retain existing curricula and regression sets |
 | Following | Gestion Magasin (`gestion_magasin`) | Adapter/UI published disabled; synthetic dataset prepared | Reviewed frozen baseline, server preflight, preceding serial stage validated |
 | Following | Réservation (`reservation`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, server preflight and preceding stage validation |
 
 Training progress and loss are not accuracy. Failed acceptance requires investigation and a separately versioned improvement round; it does not justify changing frozen test labels or activating an unaccepted model. Model selection follows measured scores, not automatic preference for the newest checkpoint. Earlier applications must not regress.
 
-The active V5 scripts, datasets and evaluator are pinned by hash. Do not edit them while the run/evaluation is active. Contracts requires extending the runner's declared application allowlist after the active run finishes (or using a separately reviewed version); the current runner intentionally accepts only the original three applications. No Contracts job has been launched.
+The completed V5 scripts, datasets and evaluator remain pinned by hash. Preserve their exact versions before changing any subsequent training implementation. Contracts requires extending the runner's declared application allowlist after the active run finishes (or using a separately reviewed version); the current runner intentionally accepts only the original three applications. No Contracts job has been launched.
 
 Management Projet remains disabled. Training/export alone does not authorize replacing the shared production inference process. Colibri upstream PRs remain deferred until the user explicitly resumes them.
 
