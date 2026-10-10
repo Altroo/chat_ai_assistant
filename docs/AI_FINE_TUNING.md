@@ -1,5 +1,7 @@
 # Model training and evaluation
 
+This page describes the deployed Facturation V4 model. Newer shared candidates, including the incomplete V5r2 refinement, are tracked in [measured model accuracy](AI_MODEL_ACCURACY.md) and the [sequential training queue](AI_TRAINING_QUEUE.md). They have not replaced production.
+
 The active Facturation assistant supports **English and French only**. It follows the current message automatically, including language changes within a conversation. There is no language selector. Runtime prompts, clarification schemas, API capabilities, the current training dataset and the independent evaluation set all use this scope.
 
 ## Selected model and serving runtime
@@ -70,3 +72,9 @@ Decode throughput excludes prompt prefill. Tool calls are buffered, so the first
 7. Promote only with explicit authorization and an accurate statement of remaining quality gaps. Rollback restores the previous immutable model directory and ID; a training job never activates its own output.
 
 Older superseded experiments are retained as historical evidence, outside this current-scope guide. Their results are not current acceptance scores. The next model-quality work requires new diverse compositional training examples and an independent evaluation; no unrun experiment is claimed successful.
+
+## Prepared serial application trainer
+
+`training/scripts/train_cpu_serial_v1.py` preserves the optimization, checkpointing and provenance behavior of the frozen three-application runner, adding explicit cumulative scopes for the next three stages. Use `--stage contrat`, then `--stage gestion_magasin`, then `--stage reservation`, each with `--complete-epochs`, `--retained-data` pointing to the accepted preceding stage dataset and an independently verified input checkpoint. The runner rejects partial/oversampled epochs, omitted prior applications, extra applications, missing split metadata and languages outside English/French before importing the training framework. The preceding dataset manifest, source hashes and exact train/validation byte prefixes are verified. Its manifest/file hashes, stage and validator hashes are recorded alongside dataset, model and helper hashes.
+
+The launcher must bind `--retained-data` to the accepted predecessor run's recorded dataset hashes and separately enforce single-job execution, previous-stage acceptance, frozen baseline evaluation and the exact server tokenizer/runtime preflight. A valid dataset scope is not proof that those gates passed. This prepared runner has not executed optimization yet. Its scope tests cover the actual V6r2/V7r2/V8r2 datasets and their unchanged retained prefixes; these local metadata tests do not load model weights.
