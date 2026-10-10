@@ -1,6 +1,6 @@
 # Gestion Magasin assistant discovery
 
-Status: discovery in progress; adapter, dataset and training NOT implemented. Exact application identifier: `gestion_magasin`. The shared Qwen3.5-0.8B model and Colibri runtime will be reused; no new model download or parallel training job is planned.
+Status: source discovery completed for the implemented adapter; see [actual implementation and remaining gates](AI_GESTION_MAGASIN_PROGRESS.md). Model training/acceptance is incomplete. Exact application identifier: `gestion_magasin`. The shared Qwen3.5-0.8B model and Colibri runtime will be reused; no new model download or parallel training job is planned.
 
 ## Verified architecture and application modules
 
@@ -16,7 +16,7 @@ Frontend routes include dashboard, article, stock, store-stock, stock-transfers,
 
 Account flags include read/print/create/edit/delete plus promotion creation and wholesale-sale permissions. Endpoint enforcement varies by operation; the adapter must respect the actual action checks and permitted fields. User administration and activity history remain administrator-only.
 
-The frontend contains additional enforced module gates. `Protected` defaults to `is_staff` (`src/components/layouts/protected/protected.tsx`), so omitted `permission` does not mean ordinary read access. The upcoming backend adapter must preserve these existing restrictions even where a native API endpoint checks only authentication/store membership.
+The frontend contains additional enforced module gates. `Protected` defaults to `is_staff` (`src/components/layouts/protected/protected.tsx`), so omitted `permission` does not mean ordinary read access. The backend adapter preserves these existing restrictions even where a native API endpoint checks only authentication/store membership.
 
 | Native screen or action | Verified frontend gate | Backend constraint to retain |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ The frontend contains additional enforced module gates. `Protected` defaults to 
 
 `src/utils/vendeurAccess.ts` defines a vendeur-only account from active memberships outside global stock: at least one membership and every such role is vendeur. `src/contexts/initEffects.tsx` redirects this account to `/dashboard/caise` from disallowed routes. Only that POS route, profile/password settings and changelog are allowed. This is an enforced native route restriction, not just a hidden menu. Assistant navigation, suggestions, knowledge and financial tools must not bypass it. Mixed-role users still require the native role check for the specific action/store. The POS accesses catalogue products for scanning; that does not authorize company-wide reports or unrelated record lists.
 
-`pointage_only` is a critical exception. `account/middleware.py` explicitly blocks non-attendance API paths for these accounts, while store helper functions intentionally grant access to active stores for attendance. It is unsafe to interpret those helper results as general financial/catalogue access. A future assistant entry point for these accounts must explicitly retain an attendance-only capability set and be tested through the real middleware. No middleware exception has been added yet.
+`pointage_only` is a critical exception. `account/middleware.py` explicitly blocks non-attendance API paths for these accounts, while store helper functions intentionally grant access to active stores for attendance. It is unsafe to interpret those helper results as general financial/catalogue access. The assistant entry point for these accounts explicitly retains an attendance-only capability set and be tested through the real middleware. Only `/api/ai/v1/` is added to the middleware allowlist; the adapter independently enforces attendance-only capabilities.
 
 Attendance has another explicit native scope rule: the special attendance store with code `mbr-south` expands attendance **list** queries and removes the store filter. Outside that scope, native employee queries filter active unlinked commercial-advisor records. Attendance **detail/mutation** uses `_attendance_base_queryset`, which retains ordinary membership scope. A visible list item therefore does not automatically grant its detail/edit action. `AttendanceRecordSerializer.validate` maps an MBR-South submission to the employee's real store; revalidate that resolved store at execution. The existing pointage-only frontend grants delete regardless of its generic delete flag. Preserve this attendance-specific behavior without extending it to other modules.
 
@@ -60,4 +60,4 @@ Sale PDF generation is an existing native capability. Transfers/inventories/purc
 6. Generate approved synthetic EN/FR data from registered capabilities, freeze held-out cases before baseline, retain prior application curricula, and train only after the preceding run/evaluation finishes.
 7. Test real JWT middleware, role/flag combinations, membership revocation, attendance-only access, global-stock access, malicious records, confirmation retries and cross-store history before release.
 
-No production data has been extracted for training. No Gestion Magasin source, deployment or database was modified during this discovery.
+No production data has been extracted for training. Subsequent local source changes and disposable-database checks are recorded in the progress document. Production deployment and model activation are separate gates.
