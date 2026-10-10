@@ -1,6 +1,6 @@
 # Chat AI Assistant — shared frontend and Facturation adapter
 
-Status at 2026-10-10: the Design Workflow-based shared MUI interface is implemented and locally verified in Facturation and Management Projet. Source publication for this revision is pending. Management Projet production activation remains disabled pending model acceptance. The existing Facturation deployment and earlier live checks are historical evidence, not verification of this new UI revision.
+Status at 2026-10-10: the Design Workflow-based shared MUI interface is implemented and locally verified in Facturation and Management Projet. This revision is published to all configured remotes; frontend builds, deployed source checks, container health and anonymous login routes passed. Authenticated visual verification used local synthetic accounts. Management Projet production activation remains disabled pending model acceptance. The existing Facturation deployment and earlier live checks are historical evidence, not verification of this new UI revision.
 
 ## Source and integration
 
