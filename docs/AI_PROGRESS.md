@@ -73,3 +73,5 @@ The user's additional login-theme request is limited to Contracts and Réservati
 ## Contracts adapter preparation — 2026-10-10
 
 PARTIALLY IMPLEMENTED: native permission/company tools, confirmed writes with actor history, EN/FR knowledge, history and canonical MUI UI are verified locally. Final checks: 576 backend tests plus 4 subtests; 60 final assistant/form frontend tests, TypeScript, ESLint and production build passed. Local dummy browser checks include scope isolation, read-only denial, actual PDF, confirmed deletion/audit, history and eight-state visual comparison. See [Contracts progress](AI_CONTRACTS_PROGRESS.md). The shared next-stage dataset passed tokenizer/Colibri preflight; Contracts model training/accuracy and activation are still incomplete. Shared V5 remains the only active training job.
+
+Contracts source is now published disabled: backend `00503a910cda`, frontend `875524520cc0`, six remote heads verified; additive migration/knowledge sync and native health checks passed with existing business row counts unchanged. Gestion Magasin and Réservation have preliminary source discovery documents; their adapters/datasets remain unimplemented.

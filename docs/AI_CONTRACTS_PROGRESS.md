@@ -1,6 +1,6 @@
 # Contracts assistant progress
 
-Application: `contrat`. Status: PARTIALLY IMPLEMENTED locally; production activation and model acceptance incomplete.
+Application: `contrat`. Status: PARTIALLY IMPLEMENTED; tested source is published with production activation disabled. Model acceptance remains incomplete.
 
 ## IMPLEMENTED and verified locally
 
@@ -25,6 +25,10 @@ No Contracts model score is available. The server tokenizer/Colibri preflight pa
 - Finish the existing shared V5 training/export/evaluation before any new training process starts.
 - Retain all three existing application curricula and frozen evaluation sets when adding Contracts to the same shared model.
 - Meet at least 95% tool selection and eligible exact arguments, 99% valid structure, and no unresolved critical authorization failures. Report failures honestly.
-- Publish reviewed local source through normal Git remotes, verify deployment and obtain activation authorization where required. Management Projet remains disabled as previously instructed.
+- Obtain activation authorization after model acceptance. Management Projet remains disabled as previously instructed.
 
 The independent Contracts/Réservation login-theme correction is published to all remotes and verified live. It does not activate this adapter.
+
+## Disabled source release
+
+Backend `00503a910cda` and frontend `875524520cc0` are published to company, personal and production; all six heads match. Central preparation `bb51d7ff6eca` is published to its three remotes. Production builds passed. The additive assistant migration and eight-document knowledge synchronization passed; existing contract, project and user row counts remained unchanged. A validated private database restore file remains on the server. Web/database/cache/frontend containers are healthy; the worker is running. Exact login and native health routes return HTTP 200; anonymous assistant access returns 401. The production feature flag is false. The shared training process identity remained unchanged. These checks establish a disabled source release, not live assistant/model acceptance.
