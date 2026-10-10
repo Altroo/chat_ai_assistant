@@ -23,7 +23,7 @@ Eight light/dark, empty/filled, shortcuts-open/closed screenshots were compared 
 
 `gestion-magasin-v1-en-fr`: 166 training, 30 validation and 90 held-out synthetic English/French cases. Registry/shortlist schemas and trusted-target checks validate labels with database queries blocked. Bilingual pairs stay within a split; normalized exact cross-split overlaps and sensitive patterns are rejected. Semantic independence is not claimed merely from exact-deduplication.
 
-The proposed `shared-v7-en-fr` mix retains all preceding curricula: 1,606 training and 228 validation rows, with 496 held-out cases across five applications. This is preparation only. No Gestion Magasin training job or accuracy result exists. Review, frozen baseline, exact server tokenizer/Colibri preflight, serial tuning and non-regression acceptance remain required. The active V5 inputs/evaluator must stay unchanged.
+The proposed `shared-v7-en-fr` mix retains all preceding curricula: 1,606 training and 228 validation rows, with 496 held-out cases across five applications. This is preparation only. No Gestion Magasin training job or accuracy result exists. Frozen baseline, serial tuning and non-regression acceptance remain required. The subsequent cumulative shared-v8 server preflight includes every shared-v7 source row and passed tokenizer/Colibri checks; see the shared training queue. The active V5 inputs/evaluator must stay unchanged.
 
 ## Remaining gates
 

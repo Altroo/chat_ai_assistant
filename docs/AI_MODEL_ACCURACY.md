@@ -56,7 +56,7 @@ All 1,060 v4 training steps completed in 18,230.7 seconds. Unweighted validation
 
 The fresh v3 baseline completed: Management Projet 17/32 tools, 10/26 eligible exact arguments, 32/32 valid structures; Design Workflow 15/24, 5/18, 23/24. All original inputs remain unchanged.
 
-A native Management Projet safeguard now rejects model-guessed edit/delete targets unless the target matches the current page, fresh saved authorized results, or a complete explicit resource ID in the current instruction. Quote business numbers are not treated as internal IDs. Current native authorization and separate confirmation still apply. This addresses wrong-target proposals, not an authorization bypass or an automatic deletion. The local backend passed 618 tests and 111 subtests, including 78 assistant tests and 111 subtests; nine pure target checks are included. The single reviewer found no remaining issues. This source change has not yet been published.
+A native Management Projet safeguard now rejects model-guessed edit/delete targets unless the target matches the current page, fresh saved authorized results, or a complete explicit resource ID in the current instruction. Quote business numbers are not treated as internal IDs. Current native authorization and separate confirmation still apply. This addresses wrong-target proposals, not an authorization bypass or an automatic deletion. The local backend passed 618 tests and 111 subtests, including 78 assistant tests and 111 subtests; nine pure target checks are included. The single reviewer found no remaining issues. This safeguard is included in published backend `d453a9c4145a`; company, personal and production heads were verified. The assistant remains disabled pending model acceptance.
 
 
 ## Shared v5 preparation

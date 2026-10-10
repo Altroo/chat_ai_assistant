@@ -32,8 +32,10 @@ Proposed `shared-v8-en-fr`: **1,756 training, 258 validation and 580 held-out ca
 
 ## Remaining gates
 
-Complete the current shared V5 training/export/frozen evaluation; resolve failures without altering held-out labels. Advance subsequent app training serially, preserving earlier application evaluation sets. Required acceptance: ≥95% tool selection/eligible exact arguments, ≥99% structured output and zero unresolved critical authorization defects. Server tokenizer/Colibri preflight and measured performance remain required for this stage. Activation and replacing the shared production model require separate authorization.
+Complete the current shared V5 training/export/frozen evaluation; resolve failures without altering held-out labels. Advance subsequent app training serially, preserving earlier application evaluation sets. Required acceptance: ≥95% tool selection/eligible exact arguments, ≥99% structured output and zero unresolved critical authorization defects. Exact server tokenizer/Colibri preflight passed the cumulative six-app dataset; measured model performance remains required. Activation and replacing the shared production model require separate authorization.
 
 ## Verified disabled source release
 
 Backend `105cc4e24c90`, frontend `3c09a4d8a103`: all six company/personal/production heads match. Production builds passed; 37 deployed backend source files match the reviewed local hashes. The assistant migration and ten knowledge documents were applied, with all 26 business-table counts unchanged against the private verified restore snapshot. Backend/frontend/database/Redis are healthy; anonymous assistant access returns 401. Live MCP verification confirms the login page, top theme control and absence of the assistant on the public page. The feature remains disabled; no authenticated production model workflow is claimed. Shared inference start time and current training process identity were unchanged.
+
+Server preflight passed all 2,014 cumulative shared-v8 rows (1,756 training, 258 validation): schema/parser round trips, exact runtime prompt parity, loss boundaries and weighted-token alignment. Maximum train/validation lengths: 4,744/4,977 within 8,192 tokens. It loaded tokenizer metadata only, with no model download, inference or new training. See [public-safe report](../training/reports/shared-v8-en-fr-preflight.json).

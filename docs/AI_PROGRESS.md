@@ -86,6 +86,8 @@ Gestion Magasin source release: backend `a7acaefa4891`, frontend `ee6ffbaf750e`,
 
 PARTIALLY IMPLEMENTED: native permissions (including independent Hilton access), seven bounded tools, actor-attributed confirmations, owner-scoped history/RAG and canonical MUI UI pass local checks. Final backend: 514 tests, including 43 assistant tests; frontend: 26 assistant tests, TypeScript, ESLint and production build pass. Native dummy-login browser checks cover search/navigation/list return, confirmed deletion/history, logout/read-only access and EN/FR responses. Eight side-by-side chat comparisons and two mobile sizes pass. See [details](AI_RESERVATION_PROGRESS.md).
 
-Synthetic EN/FR data is prepared, not trained: 150/30/84 Réservation train/validation/held-out cases. The six-app shared-v8 preparation retains earlier curricula; current V5 frozen inputs remain unchanged. Model accuracy, server preflight/benchmarks and activation remain incomplete.
+Synthetic EN/FR data is prepared, not trained: 150/30/84 Réservation train/validation/held-out cases. The six-app shared-v8 preparation retains earlier curricula; current V5 frozen inputs remain unchanged. Model accuracy, server benchmarks and activation remain incomplete.
 
 Réservation source is published disabled: backend `105cc4e24c90`, frontend `3c09a4d8a103`, six remote heads and 37 deployed backend file hashes verified. Assistant migration/knowledge sync succeeded; all 26 business-table counts are unchanged. Services and live login are healthy, anonymous assistant access returns 401, and the shared production model/current training process are unchanged.
+
+The prepared cumulative six-app dataset passed exact server tokenizer/Colibri preflight: 2,014 rows, maximum 4,977 tokens, no truncation. This was metadata-only validation and started no new training job. Current V5 remains the sole optimizer run.

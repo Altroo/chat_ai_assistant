@@ -21,4 +21,6 @@ Application discovery: [Gestion Magasin discovery](AI_GESTION_MAGASIN_DISCOVERY.
 
 Gestion Magasin preparation: 166 training, 30 validation and 90 held-out cases. The proposed `shared-v7-en-fr` mix has 1,606/228 train/validation rows and 496 held-out cases, retaining all earlier curricula. No new training process has been started. See [actual local checks and limitations](AI_GESTION_MAGASIN_PROGRESS.md).
 
-Réservation preparation: 150 training,30 validation and 84 held-out cases. The proposed `shared-v8-en-fr` mix has 1,756/258 train/validation rows and 580 held-out cases, retaining all prior rows. It is prepared only; no additional training process has started. See [verified local scope and remaining gates](AI_RESERVATION_PROGRESS.md).
+Réservation preparation: 150 training, 30 validation and 84 held-out cases. The proposed `shared-v8-en-fr` mix has 1,756/258 train/validation rows and 580 held-out cases, retaining all prior rows. It is prepared only; no additional training process has started. See [verified local scope and remaining gates](AI_RESERVATION_PROGRESS.md).
+
+The cumulative shared-v8 server tokenizer/Colibri preflight passed all 2,014 rows, covering the unchanged shared-v7 prefix as well. Maximum lengths: 4,744 training/4,977 validation tokens within 8,192. This validates metadata formatting, not model accuracy or successful training. The prepared baselines and serial acceptance gates remain required. [Report](../training/reports/shared-v8-en-fr-preflight.json).
