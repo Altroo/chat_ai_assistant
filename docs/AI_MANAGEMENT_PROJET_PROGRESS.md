@@ -39,4 +39,11 @@ Source publication completed to the configured remotes. Linux builds, additive m
 
 The user explicitly chose to keep the production assistant disabled and improve model accuracy first. New curriculum, complete coverage and a corrected isolated Colibri parser are documented in [AI_MODEL_ACCURACY.md](AI_MODEL_ACCURACY.md). New training/evaluation is incomplete until actual results are recorded; production activation is not authorized by source publication.
 
-The complete v3 training and three original regression runs are now recorded in AI_MODEL_ACCURACY.md. Management Projet remains below target at 43/60 correct tool choices and 28/50 exact arguments. A reviewed, higher-capacity shared-model continuation is being prepared; its accuracy remains unmeasured. The production assistant stays disabled.
+The complete v3 training and three original regression runs are now recorded in AI_MODEL_ACCURACY.md. Management Projet remains below target at 43/60 correct tool choices and 28/50 exact arguments. The reviewed shared v4 continuation has completed all 1,060 training steps; its original Management Projet regression achieved 50/60 tools and 41/50 eligible exact arguments, while remaining below the frozen acceptance targets. The production assistant stays disabled.
+
+## Target validation — 2026-10-10
+
+IMPLEMENTED locally: edit/delete proposals require a record supplied by the current page, fresh saved results, or an explicit complete resource ID; a model-generated ID alone cannot create a proposal. Quote business numbers require lookup. Fresh native permissions, object access, separate confirmation and actor audit remain authoritative. After pulling current source, the local backend passed 618 tests and 111 subtests (two existing Django deprecation warnings). The single reviewer found no remaining issue. Source publication and model acceptance remain pending; the production feature stays disabled.
+
+
+The reviewed shared v5 curriculum is prepared (1,318 training and 168 validation examples) and server preflight passed all rows. The next training run has not started; remaining v4 comparisons and newly frozen baseline evaluations are pending. It reuses the same shared foundation checkpoint and Colibri, with retained Facturation and Design Workflow examples. See AI_MODEL_ACCURACY.md for measured scores and the distinction between completed preparation and pending optimization.

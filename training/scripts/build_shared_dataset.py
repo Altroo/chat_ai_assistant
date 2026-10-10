@@ -6,7 +6,7 @@ from pathlib import Path
 from training_contracts import CLARIFICATION_DESCRIPTION
 ROOT=Path(__file__).resolve().parents[2]
 SOURCES={'facturation':'facturation-v4-en-fr','management_projet':'management-projet-v1-en-fr'}
-parser=argparse.ArgumentParser();parser.add_argument('--include-design-workflow',action='store_true');parser.add_argument('--management-v2',action='store_true');parser.add_argument('--expanded-curriculum',action='store_true');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--include-design-workflow',action='store_true');parser.add_argument('--management-v2',action='store_true');parser.add_argument('--expanded-curriculum',action='store_true');parser.add_argument('--intent-contrasts',action='store_true');args=parser.parse_args()
 if args.include_design_workflow:SOURCES['design_workflow']='design-workflow-v1-en-fr'
 if args.management_v2:
     if not args.include_design_workflow:raise ValueError('The v3 curriculum retains all three approved applications.')
@@ -14,7 +14,10 @@ if args.management_v2:
 if args.expanded_curriculum:
     if not args.include_design_workflow or not args.management_v2:raise ValueError('Expanded curriculum retains all three approved applications.')
     SOURCES.update(management_projet='management-projet-v3-en-fr',design_workflow='design-workflow-v2-en-fr')
-version='shared-v4-en-fr' if args.expanded_curriculum else 'shared-v3-en-fr' if args.management_v2 else 'shared-v2-en-fr' if args.include_design_workflow else 'shared-v1-en-fr'
+if args.intent_contrasts:
+    if not args.expanded_curriculum:raise ValueError('Intent contrasts retain all approved sources and preceding held-outs.')
+    SOURCES.update(management_projet='management-projet-v4-en-fr',design_workflow='design-workflow-v3-en-fr')
+version='shared-v5-en-fr' if args.intent_contrasts else 'shared-v4-en-fr' if args.expanded_curriculum else 'shared-v3-en-fr' if args.management_v2 else 'shared-v2-en-fr' if args.include_design_workflow else 'shared-v1-en-fr'
 OUT=ROOT/'training/datasets'/version
 SECRET=re.compile(r'-----BEGIN [A-Z ]*PRIVATE KEY-----|(?:Bearer\s+)[A-Za-z0-9._-]{16,}|(?:password|api[_-]?key|secret|access[_-]?token)\s*[:=]\s*\S+',re.I)
 held={}
@@ -28,6 +31,10 @@ if args.management_v2:
     held['management_projet'].extend(json.loads(line) for line in path.read_text().splitlines())
 if args.expanded_curriculum:
     for app,source in [('management_projet','management-projet-v3-en-fr'),('design_workflow','design-workflow-v2-en-fr')]:
+        path=ROOT/'training/datasets'/source/'independent.eval.jsonl'
+        held[app].extend(json.loads(line) for line in path.read_text().splitlines())
+if args.intent_contrasts:
+    for app,source in [('management_projet','management-projet-v4-en-fr'),('design_workflow','design-workflow-v3-en-fr')]:
         path=ROOT/'training/datasets'/source/'independent.eval.jsonl'
         held[app].extend(json.loads(line) for line in path.read_text().splitlines())
 held_keys={key(app,row['messages'][-1]['content']) for app,rows in held.items() for row in rows}
