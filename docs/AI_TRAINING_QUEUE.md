@@ -4,7 +4,7 @@ Only one server training process may run at a time. All applications use the sam
 
 | Order | Scope | Status | Exit gate |
 | --- | --- | --- | --- |
-| Current | Shared V5: Facturation, Management Projet, Design Workflow | Training/export and 328 frozen cases complete; acceptance failed; diagnosis complete, V5r2 refinement prepared | Diagnose failures, improve the candidate and pass frozen acceptance gates |
+| Current | Shared V5: Facturation, Management Projet, Design Workflow | Training/export and 328 frozen cases complete; V5 acceptance failed; V5r2 continuation running (1,454 steps) | Diagnose failures, improve the candidate and pass frozen acceptance gates |
 | Next | Contracts (`contrat`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, exact tokenizer preflight, tested adapter, prior training complete; retain existing curricula and regression sets |
 | Following | Gestion Magasin (`gestion_magasin`) | Adapter/UI published disabled; synthetic dataset prepared | Reviewed frozen baseline, server preflight, preceding serial stage validated |
 | Following | Réservation (`reservation`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, server preflight and preceding stage validation |
@@ -25,6 +25,8 @@ Réservation preparation: 150 training, 30 validation and 84 held-out cases. The
 
 The cumulative shared-v8 server tokenizer/Colibri preflight passed all 2,014 rows, covering the unchanged shared-v7 prefix as well. Maximum lengths: 4,744 training/4,977 validation tokens within 8,192. This validates metadata formatting, not model accuracy or successful training. The prepared baselines and serial acceptance gates remain required. [Report](../training/reports/shared-v8-en-fr-preflight.json).
 
-V5r2 preparation retains the same model and existing three applications. Its 1,454/186 train/validation rows include 136 new synthetic training examples; 34 new independent cases remain excluded. No additional optimization job has started. The original V6/V7/V8 preparations remain preserved historical inputs. Before those future stages, use `--refinement` to create V6r2/V7r2/V8r2 versions retaining the revised three-app curriculum; do not silently reuse the older mixtures.
+V5r2 preparation retains the same model and existing three applications. Its 1,454/186 train/validation rows include 136 new synthetic training examples; 34 new independent cases remain excluded. The single V5r2 optimization job is now running; later application jobs have not started. The original V6/V7/V8 preparations remain preserved historical inputs. Before those future stages, use `--refinement` to create V6r2/V7r2/V8r2 versions retaining the revised three-app curriculum; do not silently reuse the older mixtures.
 
 The V5r2 exact server preflight passed all 1,640 rows, maximum 5,135 tokens within the unchanged 8,192 context. [Report](../training/reports/shared-v5r2-en-fr-preflight.json). The isolated capacity comparison requires retaining gradient checkpointing: two steps passed with it, while disabling it hit the 18 GiB cgroup limit before any completed step. [Capacity evidence](../training/reports/shared-v5-en-fr-capacity.json). Production inference stayed healthy with unchanged start time.
+
+Revised sequential preparations are available: `shared-v6r2-en-fr` (Contracts: 1,576/216 train/validation, 440 frozen cases), `shared-v7r2-en-fr` (Gestion Magasin: 1,742/246, 530 cases), and `shared-v8r2-en-fr` (Réservation: 1,892/276, 614 cases). They retain the complete V5r2 curriculum and all independent exclusions. These datasets have not been trained or accepted; exact next-stage preflight and runner scope extension remain required.
