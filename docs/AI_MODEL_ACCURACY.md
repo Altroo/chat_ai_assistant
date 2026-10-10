@@ -95,3 +95,19 @@ The unchanged four-thread Colibri CPU profile measured 7.777 s sequential mean, 
 The metadata-only native C tokenizer diagnostic matched all 328 prompt token sequences against the training tokenizer. Separate free-generation, stopping and numerical-path diagnostics are in progress; they do not alter these frozen scores. No additional application training or production activation follows automatically. The existing production model remains unchanged.
 
 [Full comparisons and acceptance gates](../training/reports/shared-v5-en-fr-comparison.json), [training evidence](../training/reports/shared-v5-en-fr-training.json), [performance evidence](../training/reports/shared-v5-en-fr-performance.json).
+
+## Shared V5 diagnosis and refinement preparation
+
+The tokenizer is aligned: native Colibri and training token IDs match on all 328 frozen prompts. A selected ten-case diagnostic compared the original BF16 adapter, its merged FP32 export, Colibri integer inference enabled, and Colibri integer inference disabled. The original adapter, merged export and integer-disabled runtime produced identical parsed actions/errors. Both archive repetition loops already exist in the trained adapter. Disabling integer inference recovered one assignee-filter case but did not fix the main errors. These deliberately failure-heavy cases are **not an overall accuracy estimate**. [Recorded diagnostic evidence](../training/reports/shared-v5-en-fr-diagnostics.json).
+
+The separately versioned `shared-v5r2-en-fr` preparation retains all 1,318 previous training rows and adds 136 synthetic English/French examples. It covers archive/name combinations, assignment versus text filters, record versus financial-summary intent, all requested filter values, missing versus explicit years, known edits versus descriptive searches, and previous-result references. There are 1,454 training rows, 186 validation rows and 34 new independent cases, excluded from both training and validation. Earlier 328 cases remain unchanged regression evidence; their failure categories informed the curriculum. This is preparation, not a successful training or accuracy result.
+
+The 34 new independent cases were measured **before** refinement optimization, with the same V5 Colibri process and frozen evaluator. They deliberately cover harder combinations; this small set is not a production-wide success-rate estimate.
+
+| New set | Tools | Exact eligible arguments | Valid structure |
+| --- | --- | --- | --- |
+| Management Projet | 8/12 | 5/8 | 12/12 |
+| Design Workflow | 6/10 | 0/8 | 8/10 |
+| Facturation | 10/12 | 5/8 | 12/12 |
+
+A review replaced one **unmeasured validation pair** that reused a training sentence template with a distinct two-field contact-edit composition. All training rows and all independent/frozen test rows stayed byte-identical, and the untrained draft was retained privately. No test labels or test prompts changed. Raw baselines: [Management Projet](../training/reports/shared-v5r2-baseline-management-projet.json), [Design Workflow](../training/reports/shared-v5r2-baseline-design-workflow.json), [Facturation](../training/reports/shared-v5r2-baseline-facturation.json).
