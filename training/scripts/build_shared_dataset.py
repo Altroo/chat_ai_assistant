@@ -6,7 +6,7 @@ from pathlib import Path
 from training_contracts import CLARIFICATION_DESCRIPTION
 ROOT=Path(__file__).resolve().parents[2]
 SOURCES={'facturation':'facturation-v4-en-fr','management_projet':'management-projet-v1-en-fr'}
-parser=argparse.ArgumentParser();parser.add_argument('--include-design-workflow',action='store_true');parser.add_argument('--management-v2',action='store_true');parser.add_argument('--expanded-curriculum',action='store_true');parser.add_argument('--intent-contrasts',action='store_true');parser.add_argument('--include-contracts',action='store_true');parser.add_argument('--include-gestion-magasin',action='store_true');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--include-design-workflow',action='store_true');parser.add_argument('--management-v2',action='store_true');parser.add_argument('--expanded-curriculum',action='store_true');parser.add_argument('--intent-contrasts',action='store_true');parser.add_argument('--include-contracts',action='store_true');parser.add_argument('--include-gestion-magasin',action='store_true');parser.add_argument('--include-reservation',action='store_true');args=parser.parse_args()
 if args.include_design_workflow:SOURCES['design_workflow']='design-workflow-v1-en-fr'
 if args.management_v2:
     if not args.include_design_workflow:raise ValueError('The v3 curriculum retains all three approved applications.')
@@ -23,12 +23,15 @@ if args.include_contracts:
 if args.include_gestion_magasin:
     if not args.include_contracts:raise ValueError('Gestion Magasin retains the Contracts stage and all earlier application sources.')
     SOURCES['gestion_magasin']='gestion-magasin-v1-en-fr'
-version='shared-v7-en-fr' if args.include_gestion_magasin else 'shared-v6-en-fr' if args.include_contracts else 'shared-v5-en-fr' if args.intent_contrasts else 'shared-v4-en-fr' if args.expanded_curriculum else 'shared-v3-en-fr' if args.management_v2 else 'shared-v2-en-fr' if args.include_design_workflow else 'shared-v1-en-fr'
+if args.include_reservation:
+    if not args.include_gestion_magasin:raise ValueError('Reservation retains all preceding application curricula and held-outs.')
+    SOURCES['reservation']='reservation-v1-en-fr'
+version='shared-v8-en-fr' if args.include_reservation else 'shared-v7-en-fr' if args.include_gestion_magasin else 'shared-v6-en-fr' if args.include_contracts else 'shared-v5-en-fr' if args.intent_contrasts else 'shared-v4-en-fr' if args.expanded_curriculum else 'shared-v3-en-fr' if args.management_v2 else 'shared-v2-en-fr' if args.include_design_workflow else 'shared-v1-en-fr'
 OUT=ROOT/'training/datasets'/version
 SECRET=re.compile(r'-----BEGIN [A-Z ]*PRIVATE KEY-----|(?:Bearer\s+)[A-Za-z0-9._-]{16,}|(?:password|api[_-]?key|secret|access[_-]?token)\s*[:=]\s*\S+',re.I)
 held={}
 for app,source in SOURCES.items():
-    dataset={'facturation':'facturation-acceptance-en-fr','management_projet':'management-projet-v1-en-fr','design_workflow':'design-workflow-v1-en-fr','contrat':'contracts-v1-en-fr','gestion_magasin':'gestion-magasin-v1-en-fr'}[app]
+    dataset={'facturation':'facturation-acceptance-en-fr','management_projet':'management-projet-v1-en-fr','design_workflow':'design-workflow-v1-en-fr','contrat':'contracts-v1-en-fr','gestion_magasin':'gestion-magasin-v1-en-fr','reservation':'reservation-v1-en-fr'}[app]
     path=ROOT/'training/datasets'/dataset/'test.eval.jsonl'
     held[app]=[json.loads(line) for line in path.read_text().splitlines()]
 def key(app,prompt):return app+':'+re.sub(r'\W+',' ',unicodedata.normalize('NFKD',prompt).casefold()).strip()

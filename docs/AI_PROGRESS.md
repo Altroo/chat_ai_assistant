@@ -23,7 +23,7 @@ Current step: corrected starter-question release deployed and verified; Phase 1 
 - These targeted checks do not replace the held-out model evaluation, whose last recorded scores remain below target. The catalogue correction has not been rescored against that dataset.
 
 ## Measured model limits
-Frozen independent80 cases: tool selection50/80 (62.5%); exact arguments24/76 (31.58%); schema73/80 (91.25%). Base:44/80,18/76,61/80. Targets95/95/99 are UNMET. Complex filters, limits, operation choice and malformed calls remain weaknesses. The application's deterministic help/reference handlers are not credited as model accuracy.
+Frozen independent80 cases: tool selection50/80 (62.5%); exact arguments24/76 (31.58%); schema73/80 (91.25%). Base: 44/80,18/76,61/80. Targets95/95/99 are UNMET. Complex filters, limits, operation choice and malformed calls remain weaknesses. The application's deterministic help/reference handlers are not credited as model accuracy.
 
 Dedicated server8-request sample: sequential mean8.34s, p95(maximum of4)9.74s; concurrency2 mean12.29s, p95(maximum of4)17.66s. Decode56.94tokens/s excludes prefill; peak process RSS2.58GiB and about4busy CPU cores. This small sample is not a load-capacity certification.
 
@@ -74,10 +74,18 @@ The user's additional login-theme request is limited to Contracts and Réservati
 
 PARTIALLY IMPLEMENTED: native permission/company tools, confirmed writes with actor history, EN/FR knowledge, history and canonical MUI UI are verified locally. Final checks: 576 backend tests plus 4 subtests; 60 final assistant/form frontend tests, TypeScript, ESLint and production build passed. Local dummy browser checks include scope isolation, read-only denial, actual PDF, confirmed deletion/audit, history and eight-state visual comparison. See [Contracts progress](AI_CONTRACTS_PROGRESS.md). The shared next-stage dataset passed tokenizer/Colibri preflight; Contracts model training/accuracy and activation are still incomplete. Shared V5 remains the only active training job.
 
-Contracts source is now published disabled: backend `00503a910cda`, frontend `875524520cc0`, six remote heads verified; additive migration/knowledge sync and native health checks passed with existing business row counts unchanged. Gestion Magasin now has the locally tested adapter and prepared dataset documented below; Réservation remains at discovery.
+Contracts source is now published disabled: backend `00503a910cda`, frontend `875524520cc0`, six remote heads verified; additive migration/knowledge sync and native health checks passed with existing business row counts unchanged. Gestion Magasin now has the locally tested adapter and prepared dataset documented below; Réservation local implementation and dataset preparation are recorded below.
 
 ## Gestion Magasin local preparation — 2026-10-10
 
-PARTIALLY IMPLEMENTED: native store/role tools, controlled actor-attributed writes, history/RAG and canonical MUI UI are locally tested. Full backend run:448 tests; final assistant subset:56. Frontend:40 focused tests; dummy browser scope, native PDF, confirmed deletion and read-only/history checks passed. Eight reference comparisons have no visual blocker. Synthetic EN/FR data is prepared, not trained; no model accuracy is claimed. See [details and remaining gates](AI_GESTION_MAGASIN_PROGRESS.md). Current shared V5 remains the only training job; its frozen inputs are unchanged.
+PARTIALLY IMPLEMENTED: native store/role tools, controlled actor-attributed writes, history/RAG and canonical MUI UI are locally tested. Full backend run: 448 tests; final assistant subset: 56. Frontend: 40 focused tests; dummy browser scope, native PDF, confirmed deletion and read-only/history checks passed. Eight reference comparisons have no visual blocker. Synthetic EN/FR data is prepared, not trained; no model accuracy is claimed. See [details and remaining gates](AI_GESTION_MAGASIN_PROGRESS.md). Current shared V5 remains the only training job; its frozen inputs are unchanged.
 
 Gestion Magasin source release: backend `a7acaefa4891`, frontend `ee6ffbaf750e`, all six remote heads verified. Additive migration and twelve knowledge documents applied with all sixty business-table counts unchanged; services healthy. Assistant remains disabled, shared production model and current training unchanged.
+
+## Réservation local preparation — 2026-10-10
+
+PARTIALLY IMPLEMENTED: native permissions (including independent Hilton access), seven bounded tools, actor-attributed confirmations, owner-scoped history/RAG and canonical MUI UI pass local checks. Final backend: 514 tests, including 43 assistant tests; frontend: 26 assistant tests, TypeScript, ESLint and production build pass. Native dummy-login browser checks cover search/navigation/list return, confirmed deletion/history, logout/read-only access and EN/FR responses. Eight side-by-side chat comparisons and two mobile sizes pass. See [details](AI_RESERVATION_PROGRESS.md).
+
+Synthetic EN/FR data is prepared, not trained: 150/30/84 Réservation train/validation/held-out cases. The six-app shared-v8 preparation retains earlier curricula; current V5 frozen inputs remain unchanged. Model accuracy, server preflight/benchmarks and activation remain incomplete.
+
+Réservation source is published disabled: backend `105cc4e24c90`, frontend `3c09a4d8a103`, six remote heads and 37 deployed backend file hashes verified. Assistant migration/knowledge sync succeeded; all 26 business-table counts are unchanged. Services and live login are healthy, anonymous assistant access returns 401, and the shared production model/current training process are unchanged.

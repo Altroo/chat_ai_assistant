@@ -1,6 +1,6 @@
 # Réservation assistant discovery
 
-Status: preliminary native discovery; assistant adapter, dataset and model acceptance are NOT implemented. Exact application identifier: `reservation`. Use the existing shared model and Colibri runtime. No extra model or training job has been started.
+Status: native discovery completed and local adapter/dataset verified; shared-model acceptance remains incomplete. See [actual progress](AI_RESERVATION_PROGRESS.md). Exact application identifier: `reservation`. Use the existing shared model and Colibri runtime. No extra model or training job has been started.
 
 ## Actual architecture and records
 
@@ -28,13 +28,10 @@ LocalDashboardView labels a value as benefit but computes it as paid rents for t
 
 HiltonReport owns its special opening balance, payment-source totals, manual costs and adjustments. Native recalculation defines net balance using opening balance plus cash revenue minus adjustments and costs. Do not duplicate or reinterpret that calculation, and do not call a recalculation method that saves during a read-only query. The preview endpoint has different semantics: it returns opening balance plus gross revenue for its displayed net total, whereas saved-report recalculation uses cash revenue minus adjustments/costs. Preview also calls `HiltonReportSettings.load()`, which uses `get_or_create`; it is not guaranteed read-only. A future read tool should return the authorized saved report and clearly identify its period/version, rather than call preview and present it as an equivalent final report.
 
-## Remaining work
+## Implemented adapter and remaining work
 
-- Finish view/serializer/filter/route coverage and source-only permission mapping.
-- Register real bounded search/details/navigation/report tools and descriptive EN/FR shortcuts, with useful bare-command help.
-- Use the same shared robot/chat component; omit a company-tab row because there is no company-tab feature.
-- Reuse native forms and confirmed supported mutations with actor history; keep financial/status changes outside unsupported generic edits.
-- Add persistent owner-scoped conversations, permission-aware knowledge and real middleware/security tests using synthetic fixtures.
-- Generate a versioned synthetic curriculum only after tools are registered; freeze held-out scenarios before baseline and train serially after earlier gates.
+Seven registered tools and eight native resources are implemented in `reservation_backend/chat_ai`, with strict schemas, native calculations, independent Hilton guards, owner-scoped history, ten approved bilingual knowledge documents and confirmed bounded native mutations. The canonical MUI interface is integrated in the authenticated root without a company picker. Exact capability mappings and supported limitations are recorded in the progress report and backend `docs/AI_ASSISTANT.md`.
 
-The separate login dark-mode correction is already published and verified live. No other Réservation source, permissions, records or deployment settings were modified during this discovery.
+The native returned-amount endpoint identified above remains outside the adapter. No business model, existing authorization helper or financial calculation was rewritten. The sole database migration adds assistant-owned tables. No inference download or separate application model was introduced.
+
+The login dark-mode correction is already published and verified live. The new assistant source is locally tested and published disabled. Shared-model training/acceptance, performance and activation remain separate gates.
