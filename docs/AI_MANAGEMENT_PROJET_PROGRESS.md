@@ -46,4 +46,15 @@ The complete v3 training and three original regression runs are now recorded in 
 IMPLEMENTED locally: edit/delete proposals require a record supplied by the current page, fresh saved results, or an explicit complete resource ID; a model-generated ID alone cannot create a proposal. Quote business numbers require lookup. Fresh native permissions, object access, separate confirmation and actor audit remain authoritative. After pulling current source, the local backend passed 618 tests and 111 subtests (two existing Django deprecation warnings). The single reviewer found no remaining issue. Source publication and model acceptance remain pending; the production feature stays disabled.
 
 
-The reviewed shared v5 curriculum is prepared (1,318 training and 168 validation examples) and server preflight passed all rows. The next training run has not started; remaining v4 comparisons and newly frozen baseline evaluations are pending. It reuses the same shared foundation checkpoint and Colibri, with retained Facturation and Design Workflow examples. See AI_MODEL_ACCURACY.md for measured scores and the distinction between completed preparation and pending optimization.
+The reviewed shared v5 curriculum is prepared (1,318 training and 168 validation examples) and server preflight passed all rows. All v4 comparisons and newly frozen baselines completed. The reviewed v5 server training run has started; training completion, export and the 328-case candidate evaluation remain pending. It reuses the same shared foundation checkpoint and Colibri, with retained Facturation and Design Workflow examples. See AI_MODEL_ACCURACY.md for measured scores and the distinction between completed preparation and pending optimization.
+
+
+## Authorized follow-up — 2026-10-10
+
+PARTIALLY IMPLEMENTED: align the existing Facturation and Management Projet assistant UI with Design Workflow's panel, conversation toolbar and accessible slash-command controls, using the canonical MUI primitives, local SVG icons and scoped Design Workflow palette. Server v5 training continues independently; no production activation is implied.
+
+PLANNED: review, test and publish the eleven existing Facturation form return-navigation fixes. Audit labelled list-return controls across Management Projet, Design Workflow, contracts (native repository name), gestion_magasin and reservation; replace history-dependent navigation with the named route and preserve company/project scope. Existing correct routes require verification, not replacement. Pull concurrent remote work before each push; preserve unrelated changes. Cross-app checks and publication remain pending.
+
+Colibri upstream PR work remains deferred until the user explicitly resumes it.
+
+Shared UI local acceptance: 55 assistant frontend tests and the production build pass. Synthetic-account MCP checks cover exact enabled-button colors in both themes, empty/populated chats with/without shortcuts, mobile input/focus, history/confirmation priority and list navigation. Bare `/` now uses the authorized help catalogue. Canonical files are byte-identical to Facturation; the singleton-company row is omitted. Publication remains pending; no model activation is implied.

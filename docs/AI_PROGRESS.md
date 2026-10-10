@@ -37,6 +37,16 @@ Dedicated server8-request sample: sequential mean8.34s, p95(maximum of4)9.74s; c
 - Complex model requests may omit filters or ask for clarification; inspect returned record details before selecting an action. Exact-target confirmation is mandatory for supported writes.
 - Stock, logistics, account and payment adapters are read-only. Supported writes are bounded document/client actions, not all operations in every module.
 - Full physical-device keyboard and assistive-technology certification remains unperformed.
-- Phase 2 is explicitly authorized for Management Projet. Design Workflow shared-model training is also authorized; its application release is separate. No rollout to the other applications is authorized.
+- Phase 2 is explicitly authorized for Management Projet. Design Workflow shared-model training is also authorized; its application release is separate. The user subsequently authorized the remaining named applications; their integrations remain planned and must reuse the shared model.
 
 Historical work log: [AI_PROGRESS_HISTORY.md](AI_PROGRESS_HISTORY.md). Detailed evidence: [AI_TESTING.md](AI_TESTING.md), [AI_FINE_TUNING.md](AI_FINE_TUNING.md), and training/reports.
+
+## Shared UI revision — 2026-10-10
+
+IMPLEMENTED locally: canonical Design Workflow-based MUI interface, identical Facturation and Management Projet copies, local SVG robot/icons, scoped palette, optional company row, bold author labels, meaningful immediate suggestions, accessible shortcuts, draft-safe command switching, bare-slash help and mobile input sizing. Existing business handlers and permissions remain authoritative. Management Projet production activation is still disabled.
+
+Verified with local synthetic logins: 24 actual screenshots covering reference/Facturation/Management Projet × light/dark × empty/populated × shortcuts closed/open, eight side-by-side comparisons, mobile 390×844 and 390×420, six-line input, Escape/focus wrapping, draft preservation, company switching, AI detail-to-list navigation, native confirmation priority and cancellation. No API responses were replaced for these browser checks. Physical-device keyboard and assistive-technology certification remain unperformed.
+
+Automated validation: Facturation 125 assistant frontend tests; Management Projet 55; Facturation 12 focused backend tests; Management Projet 3 focused backend tests (including English/French subcases); 190 existing Facturation form tests. TypeScript, assistant ESLint and both production frontend builds passed. Design Workflow’s requested bold labels passed its 26 assistant tests and production build. One reviewer completed the review with no remaining blocker after fixes.
+
+PARTIALLY IMPLEMENTED: publication of this revision and remote deployment verification. The eleven existing Facturation form return changes are reviewed/tested; their source release remains pending. Remaining-application navigation audits and shared UI integrations are planned. Shared V5 server training continues; no V5 accuracy score is available yet. Colibri upstream PRs remain explicitly deferred.
