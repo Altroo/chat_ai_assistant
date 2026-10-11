@@ -2,6 +2,12 @@
 
 Application: `gestion_magasin`. Status: PARTIALLY IMPLEMENTED. Local adapter/UI checks pass; model accuracy, server fine-tuning and production activation remain incomplete.
 
+## Current training preparation — 2026-10-11
+
+The current prepared dataset is `gestion-magasin-dialogue-v2-en-fr`: **198 / 43 / 90 training / validation / held-out examples**. Its cumulative shared stage is `shared-v7r4-en-fr`: **2,064 / 362 / 606** in the same order. Original logical prompts, expected actions and split membership are preserved. Updated inputs match the reviewed native planner, current-message language, calendar context and explicitly synthetic ordered references. Added neutral greeting/thanks histories are variants, not independent scenarios.
+
+The complete cumulative six-app preparation passed metadata-only tokenizer/Colibri checks without loading local weights. Exact predecessor prefixes, source dependencies and manifests are pinned. This is preparation, not a measured Gestion Magasin model score. The sole active optimization is shared V5r4; subsequent stages remain **Contracts → Gestion Magasin → Réservation**, one at a time after predecessor acceptance. See the [current training queue](AI_TRAINING_QUEUE.md) for the shared evidence and launch gates. Earlier dataset counts below describe the preserved initial preparation.
+
 ## Implemented and verified locally
 
 - One shared Colibri provider abstraction; no model download or local training. Native JWT, read/print/write flags, store memberships and role checks remain authoritative. Vendeur-only accounts retain POS guidance/navigation; mixed-role users retain POS access for their selected vendeur store. Pointage-only accounts receive attendance capabilities only, including their native delete exception. MBR-South list expansion does not grant detail/write access.
@@ -27,7 +33,7 @@ The proposed `shared-v7-en-fr` mix retains all preceding curricula: 1,606 traini
 
 ## Remaining gates
 
-Finish the current shared V5 training/export/evaluation; resolve acceptance failures honestly, then advance the serial queue. Meet >=95% tool selection and eligible exact arguments, >=99% structure, and zero unresolved critical authorization failures before activation. Tested source is published disabled: backend `a7acaefa4891`, frontend `ee6ffbaf750e`, all six remote heads verified. The additive migration and twelve knowledge records were applied; all sixty existing business-table counts stayed unchanged. Backend/frontend/database/Redis are healthy, anonymous AI access returns 401, and the shared inference start time and training process remained unchanged. Obtain activation authorization separately. Réservation is the next serial model-training stage; its local adapter and dataset preparation are documented separately.
+Finish the current shared V5r4 training/export/evaluation; resolve acceptance failures honestly, then advance the serial queue. Meet >=95% tool selection and eligible exact arguments, >=99% structure, and zero unresolved critical authorization failures before activation. Tested source is published disabled: backend `a7acaefa4891`, frontend `ee6ffbaf750e`, all six remote heads verified. The additive migration and twelve knowledge records were applied; all sixty existing business-table counts stayed unchanged. Backend/frontend/database/Redis are healthy, anonymous AI access returns 401, and the shared inference start time and training process remained unchanged. Obtain activation authorization separately. Réservation is the next serial model-training stage; its local adapter and dataset preparation are documented separately.
 
 
 ## Reviewed conversation-reference update — 2026-10-11

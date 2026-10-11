@@ -2,6 +2,12 @@
 
 Application: `reservation`. Status: PARTIALLY IMPLEMENTED. Local adapter/UI tests pass. Shared-model accuracy, server fine-tuning and production activation remain incomplete.
 
+## Current training preparation — 2026-10-11
+
+The current prepared dataset is `reservation-dialogue-v2-en-fr`: **180 / 40 / 84 training / validation / held-out examples**. Its cumulative shared stage is `shared-v8r4-en-fr`: **2,244 / 402 / 690** in the same order. Original logical prompts, expected actions and split membership are preserved. Updated inputs match the reviewed native planner, current-message language, calendar context and explicitly synthetic ordered references. Added neutral greeting/thanks histories are variants, not independent scenarios.
+
+The complete cumulative six-app preparation passed metadata-only tokenizer/Colibri checks without loading local weights. Exact predecessor prefixes, source dependencies and manifests are pinned. This is preparation, not a measured Réservation model score. The sole active optimization is shared V5r4; subsequent stages remain **Contracts → Gestion Magasin → Réservation**, one at a time after predecessor acceptance. See the [current training queue](AI_TRAINING_QUEUE.md) for the shared evidence and launch gates. Earlier dataset counts below describe the preserved initial preparation.
+
 ## Implemented and verified
 
 The existing shared Colibri provider is reused. No new model was downloaded and no local training ran. Native JWT, active-user checks, read/create/edit/delete flags, independent Hilton access and staff-only user screens remain authoritative. Réservation has no company membership/tab feature; there is no company selector or browser-supplied scope. Conversations belong to the authenticated user and one internal application partition.
@@ -32,7 +38,7 @@ Proposed `shared-v8-en-fr`: **1,756 training, 258 validation and 580 held-out ca
 
 ## Remaining gates
 
-Complete the current shared V5 training/export/frozen evaluation; resolve failures without altering held-out labels. Advance subsequent app training serially, preserving earlier application evaluation sets. Required acceptance: ≥95% tool selection/eligible exact arguments, ≥99% structured output and zero unresolved critical authorization defects. Exact server tokenizer/Colibri preflight passed the cumulative six-app dataset; measured model performance remains required. Activation and replacing the shared production model require separate authorization.
+Complete the current shared V5r4 training/export/frozen evaluation; resolve failures without altering held-out labels. Advance subsequent app training serially, preserving earlier application evaluation sets. Required acceptance: ≥95% tool selection/eligible exact arguments, ≥99% structured output and zero unresolved critical authorization defects. Exact server tokenizer/Colibri preflight passed the cumulative six-app dataset; measured model performance remains required. Activation and replacing the shared production model require separate authorization.
 
 ## Verified disabled source release
 
@@ -43,4 +49,4 @@ Server preflight passed all 2,014 cumulative shared-v8 rows (1,756 training, 258
 
 ## Reviewed conversation-reference update — 2026-10-11
 
-IMPLEMENTED locally: complete saved selections are freshly authorized before model planning, preserving displayed order and inline-selection retry/page binding. Shared core 0.2.1 separates current-request language from history and validates explicit ordinal mutation targets. Native confirmation and actor history remain unchanged. Assistant suite: 70 tests and 6 subtests; one tenant-move case inapplicable passed. One reviewer found no remaining code issues. Backend `9f977d592709` is published to company/personal; its production restart awaits approval. Shared-model acceptance and feature activation remain incomplete.
+IMPLEMENTED locally: complete saved selections are freshly authorized before model planning, preserving displayed order and inline-selection retry/page binding. Shared core 0.2.1 separates current-request language from history and validates explicit ordinal mutation targets. Native confirmation and actor history remain unchanged. Assistant suite: 70 tests and 6 subtests passed; one tenant-move test was skipped because Réservation has no native tenant partition. One reviewer found no remaining code issues. Backend `9f977d592709` is published to company/personal; its production restart awaits approval. Shared-model acceptance and feature activation remain incomplete.
