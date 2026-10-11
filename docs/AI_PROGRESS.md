@@ -14,6 +14,8 @@ All 2,646 V8r4 training/validation examples and 690 held-out cases passed server
 
 IMPLEMENTED and verified locally: the completed-candidate comparison helper binds frozen datasets, per-set coverage, driver/provider evidence and captured Colibri process/artifact identity. It requires every set to pass, reports application/language breakdowns, and cannot activate a model. Shared/training verification passed 52 tests and 95 subtests; one reviewer found no remaining issues. A V5r4 score still awaits completed training and evaluation.
 
+IMPLEMENTED and verified on the server: all 2,646 cumulative V8r4 training/validation rows passed the frozen tokenizer, Colibri parser, template-prefix, loss-boundary and semantic-weight checks without truncation. Maximum lengths are 7,648 training and 7,496 validation tokens within 8,192. V6r4 and V7r4 remain exact validated prefixes. Peak memory was 592,674,816 bytes; the metadata job used a 0.25-core CPU quota and a 2 GiB memory limit, reserving the remaining active-training allowance plus 10% system RAM. Production inference and the active training process were unchanged. This is a formatting check, not model accuracy. Each future stage still requires predecessor acceptance, a frozen baseline and capacity checks. [Server evidence](../training/reports/shared-v8r4-en-fr-server-preflight.json).
+
 No future-stage optimization has started. Each stage still requires acceptance of its exact predecessor, a frozen baseline, server preflight and capacity checks. Model accuracy is not inferred from metadata or backend tests. Colibri PR work remains deferred until the user resumes it.
 
 

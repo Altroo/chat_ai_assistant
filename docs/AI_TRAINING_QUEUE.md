@@ -12,6 +12,8 @@ PARTIALLY IMPLEMENTED: the next cumulative preparations retain exact predecessor
 
 All 2,646 V8r4 training/validation examples and 690 held-out cases passed server-matching tokenizer, Colibri-template/parser, loss-boundary and semantic-weight alignment checks locally without loading weights. Maximum training length is 7,648 tokens; evaluation reserves 512 output tokens within 8,192. Exact source/dependency hashes and full predecessor manifests are pinned. Shared and training-integrity suites pass 48 tests plus 74 subtests. [Metadata evidence](../training/reports/shared-v8r4-en-fr-metadata-preflight.json).
 
+IMPLEMENTED and verified on the server: all 2,646 cumulative V8r4 training/validation rows passed the frozen tokenizer, Colibri parser, template-prefix, loss-boundary and semantic-weight checks without truncation. Maximum lengths are 7,648 training and 7,496 validation tokens within 8,192. V6r4 and V7r4 remain exact validated prefixes. Peak memory was 592,674,816 bytes; the metadata job used a 0.25-core CPU quota and a 2 GiB memory limit, reserving the remaining active-training allowance plus 10% system RAM. Production inference and the active training process were unchanged. This is a formatting check, not model accuracy. Each future stage still requires predecessor acceptance, a frozen baseline and capacity checks. [Server evidence](../training/reports/shared-v8r4-en-fr-server-preflight.json).
+
 No future-stage optimization has started. Each stage still requires acceptance of its exact predecessor, a frozen baseline, server preflight and capacity checks. Model accuracy is not inferred from metadata or backend tests. Colibri PR work remains deferred until the user resumes it.
 
 
