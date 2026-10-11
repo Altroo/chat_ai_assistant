@@ -2,7 +2,9 @@
 
 ## Current shared-model and rollout status — 2026-10-11
 
-PARTIALLY IMPLEMENTED: V5r4 is the only active server optimization run. Initial validation has completed and the first optimizer update is recorded. The run retains the existing 0.8B foundation, 1,713 training examples, 275 validation examples, 14 CPU threads and a 15 GiB memory limit. Completion and a new accuracy score are not claimed. Successful training/export will trigger a fresh 438-case evaluation; production activation remains a separate gate.
+IMPLEMENTED: V5r4 server training completed all 1,713 updates with complete application coverage and finite losses; isolated Colibri export succeeded. Training plus validation took 43,667.51 seconds (12 h 7 min 48 s); peak process RSS was 7.27 GiB. Weighted validation loss increased from 0.108923 to 0.113955; unweighted loss increased from 0.050710 to 0.054139. This does not establish an improvement. [Training evidence](../training/reports/shared-v5r4-en-fr-training.json).
+
+PARTIALLY IMPLEMENTED: all 438 frozen cases are being evaluated freshly on the exported candidate. Completed subsets already include failures, so acceptance remains unmet. The original frozen inputs, evaluator and previous scores remain preserved. Production inference and disabled-feature settings remain unchanged; no next application training has started.
 
 IMPLEMENTED locally and reviewed: Contracts, Gestion Magasin and Réservation now validate the complete saved selection before planning, provide identifiers in display order, and preserve selected-card retry/page binding. Missing or expired results clear the whole selection instead of shifting ordinals. Réservation also rejects an incomplete list if a record disappears during planning. Native permissions, separate exact-target confirmation and actor history remain authoritative. Native assistant suites passed: Contracts 84 plus 10 subtests, Gestion Magasin 84 plus 6 subtests, Réservation 70 plus 6 subtests; one Réservation tenant-move case is inapplicable because the native app has no such tenant partition.
 
@@ -21,7 +23,7 @@ Only one server training process may run at a time. All applications use the sam
 
 | Order | Scope | Status | Exit gate |
 | --- | --- | --- | --- |
-| Current | Shared V5: Facturation, Management Projet, Design Workflow | V5r4 continuation running after complete 438-case baseline, server preflight and capacity checks; all post-training acceptance gates pending | Diagnose failures, improve the candidate and pass frozen acceptance gates |
+| Current | Shared V5: Facturation, Management Projet, Design Workflow | V5r4 training and export complete; 438-case frozen evaluation running with observed failures | Diagnose failures, improve the candidate and pass frozen acceptance gates |
 | Next | Contracts (`contrat`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, exact tokenizer preflight, tested adapter, prior training complete; retain existing curricula and regression sets |
 | Following | Gestion Magasin (`gestion_magasin`) | Adapter/UI published disabled; synthetic dataset prepared | Reviewed frozen baseline, server preflight, preceding serial stage validated |
 | Following | Réservation (`reservation`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, server preflight and preceding stage validation |
@@ -123,3 +125,12 @@ PARTIALLY IMPLEMENTED: the reviewed single server continuation has started from 
 The launcher binds the exact baseline, capacity, data, scripts, base and runtime artifacts; guarded export waits for successful complete coverage. A monitor will evaluate all 438 frozen scenarios afresh after successful isolated export. Completion, accuracy and activation are not claimed. Contracts, Gestion Magasin and Réservation remain sequential future stages.
 
 IMPLEMENTED locally: the identical shared core 0.2.1 wheel is packaged for all six backends with source-content hashes verified. Tests against that actual wheel passed: Facturation 860; Management Projet 87 plus 136 subtests; Design Workflow 90; Contracts 59 plus 10 subtests; Gestion Magasin 59 plus 6 subtests; Réservation 46 plus 6 subtests. Native source publication remains pending; this source-only central push did not deploy application code or activate a model.
+
+
+## Argument-rule diagnostic prepared — 2026-10-11
+
+PARTIALLY IMPLEMENTED: a separate four-arm comparison preserves the same twelve synthetic cases and their targets, tools and permissions. Four are observed name/date failures; eight new controls cover names across languages, missing years, leap and non-leap centuries, and native status conversion. The arms use the original instructions, a literal-name rule, a complete-month/year rule, or both. This changes no application code or active frozen evaluation and performs no training.
+
+Preparation checks passed: four integrity tests plus eight subtests; all 48 input/target combinations passed the server-matching tokenizer, Colibri parser, template and loss-boundary checks. Maximum prompt length is 2,527 tokens with 512 reserved output tokens. One reviewer found no issues. [Metadata evidence](../training/reports/planner-rules-v1-en-fr-preflight.json).
+
+No diagnostic inference has run. It must follow the original candidate evaluation and performance measurement. Known failures are regression cases, and these controls are not independent certification. Any useful rule still requires broader regression evaluation before application changes or activation.
