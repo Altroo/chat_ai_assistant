@@ -32,3 +32,8 @@ The independent Contracts/Réservation login-theme correction is published to al
 ## Disabled source release
 
 Backend `00503a910cda` and frontend `875524520cc0` are published to company, personal and production; all six heads match. Central preparation `bb51d7ff6eca` is published to its three remotes. Production builds passed. The additive assistant migration and eight-document knowledge synchronization passed; existing contract, project and user row counts remained unchanged. A validated private database restore file remains on the server. Web/database/cache/frontend containers are healthy; the worker is running. Exact login and native health routes return HTTP 200; anonymous assistant access returns 401. The production feature flag is false. The shared training process identity remained unchanged. These checks establish a disabled source release, not live assistant/model acceptance.
+
+
+## Reviewed conversation-reference update — 2026-10-11
+
+IMPLEMENTED locally: complete saved selections are freshly authorized before model planning, preserving displayed order and inline-selection retry/page binding. Shared core 0.2.1 separates current-request language from history and validates explicit ordinal mutation targets. Native confirmation and actor history remain unchanged. Assistant suite: 84 tests and 10 subtests passed. One reviewer found no remaining code issues. Backend `d2347ff8f402` is published to company/personal; its production restart awaits approval. Shared-model acceptance and feature activation remain incomplete.

@@ -1,10 +1,25 @@
 # Shared model training queue
 
+## Current shared-model and rollout status — 2026-10-11
+
+PARTIALLY IMPLEMENTED: V5r4 is the only active server optimization run. Initial validation has completed and the first optimizer update is recorded. The run retains the existing 0.8B foundation, 1,713 training examples, 275 validation examples, 14 CPU threads and a 15 GiB memory limit. Completion and a new accuracy score are not claimed. Successful training/export will trigger a fresh 438-case evaluation; production activation remains a separate gate.
+
+IMPLEMENTED locally and reviewed: Contracts, Gestion Magasin and Réservation now validate the complete saved selection before planning, provide identifiers in display order, and preserve selected-card retry/page binding. Missing or expired results clear the whole selection instead of shifting ordinals. Réservation also rejects an incomplete list if a record disappears during planning. Native permissions, separate exact-target confirmation and actor history remain authoritative. Native assistant suites passed: Contracts 84 plus 10 subtests, Gestion Magasin 84 plus 6 subtests, Réservation 70 plus 6 subtests; one Réservation tenant-move case is inapplicable because the native app has no such tenant partition.
+
+Source publication: the reviewed backend commits are published to company and personal repositories: Contracts `d2347ff8f402`, Gestion Magasin `f83393f6352e`, Réservation `9f977d592709`, Management Projet `215837e0f9b9`. Production publication of this backend batch is pending explicit approval after automatic approval review rejected its multi-application service restarts. No production push from this batch has occurred. Existing production model and disabled-feature settings remain unchanged.
+
+PARTIALLY IMPLEMENTED: the next cumulative preparations retain exact predecessor training/validation bytes and add one application at a time. Contracts V6r4: 1,866 training / 319 validation / 516 held-out cases. Gestion Magasin V7r4: 2,064 / 362 / 606. Réservation V8r4: 2,244 / 402 / 690. Original questions, expected actions and split membership are preserved; updated envelopes use reviewed native schemas, current-message language, calendar context and explicitly synthetic ordered references. Neutral-history variants are not independent scenarios.
+
+All 2,646 V8r4 training/validation examples and 690 held-out cases passed server-matching tokenizer, Colibri-template/parser, loss-boundary and semantic-weight alignment checks locally without loading weights. Maximum training length is 7,648 tokens; evaluation reserves 512 output tokens within 8,192. Exact source/dependency hashes and full predecessor manifests are pinned. Shared and training-integrity suites pass 48 tests plus 74 subtests. [Metadata evidence](../training/reports/shared-v8r4-en-fr-metadata-preflight.json).
+
+No future-stage optimization has started. Each stage still requires acceptance of its exact predecessor, a frozen baseline, server preflight and capacity checks. Model accuracy is not inferred from metadata or backend tests. Colibri PR work remains deferred until the user resumes it.
+
+
 Only one server training process may run at a time. All applications use the same Qwen3.5-0.8B family through Colibri CPU inference. No per-application model download is authorized. Training data is approved synthetic EN/FR metadata, never private records or conversations.
 
 | Order | Scope | Status | Exit gate |
 | --- | --- | --- | --- |
-| Current | Shared V5: Facturation, Management Projet, Design Workflow | V5r2 optimization complete; 438-case baseline fails; conversation framing corrected locally and 78 changed inputs under fresh evaluation; V5r4 data prepared | Diagnose failures, improve the candidate and pass frozen acceptance gates |
+| Current | Shared V5: Facturation, Management Projet, Design Workflow | V5r4 continuation running after complete 438-case baseline, server preflight and capacity checks; all post-training acceptance gates pending | Diagnose failures, improve the candidate and pass frozen acceptance gates |
 | Next | Contracts (`contrat`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, exact tokenizer preflight, tested adapter, prior training complete; retain existing curricula and regression sets |
 | Following | Gestion Magasin (`gestion_magasin`) | Adapter/UI published disabled; synthetic dataset prepared | Reviewed frozen baseline, server preflight, preceding serial stage validated |
 | Following | Réservation (`reservation`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, server preflight and preceding stage validation |
@@ -93,3 +108,16 @@ PARTIALLY IMPLEMENTED: `shared-dialogue-v1-en-fr` preserves all 438 logical eval
 `shared-v5r4-en-fr` retains all 1,576/222 V5r3 training/validation examples in their original splits, reformats existing histories, and adds 137/53 bounded neutral greeting/thanks variants. Totals: 1,713 training and 275 validation rows. Variants are not independent examples; no held-out targets enter SFT. The generator, production framing helper and source manifests are hashed. All 1,988 training/validation rows and all 438 evaluation cases passed tokenizer/template/parser/loss-boundary checks, with 7,648 maximum training tokens and 7,235 maximum evaluation prompt tokens plus 512 reserved output. [Preflight](../training/reports/shared-v5r4-en-fr-metadata-preflight.json). No local model weights were loaded.
 
 No V5r4 sustained optimization has started. Server preflight, capacity validation, packaged native wheel synchronization and publication remain pending. Production model and feature flags are unchanged. Contracts, Gestion Magasin and Réservation training remain sequential behind acceptance; Colibri PR work stays deferred.
+
+
+## Shared V5r4 training started — 2026-10-11
+
+IMPLEMENTED: the complete baseline comparison is measured. Across 438 unchanged logical scenarios, conversation framing changes tool selection from 372/438 (84.93%) to 386/438 (88.13%), eligible exact arguments from 264/334 (79.04%) to 277/334 (82.93%), and valid structure from 430/438 (98.17%) to 425/438 (97.03%). All acceptance gates still fail. The 78 changed histories were measured freshly; 360 identical inputs reuse prior measurements with the same pinned candidate/provider. No combined latency claim is made. [Full comparison](../training/reports/shared-dialogue-v1-en-fr-baseline.json).
+
+IMPLEMENTED: exact server preflight passed 1,713 training and 275 validation rows. Two unsaved capacity updates on the longest 7,648-token example passed across all 24 layers; peak RSS 6.33 GiB, update times 182.43 and 172.04 seconds using ten threads while the four-thread diagnostic ran. The initial 18 GiB job allowance was rejected by the resource gate before any job started; the revised 15 GiB limit preserved the 10% reserve plus additional headroom. [Preflight](../training/reports/shared-v5r4-en-fr-server-preflight.json), [capacity](../training/reports/shared-v5r4-en-fr-capacity.json).
+
+PARTIALLY IMPLEMENTED: the reviewed single server continuation has started from the existing V5r2 merged checkpoint. One complete epoch covers 1,713 examples (557 Facturation, 760 Management Projet, 396 Design Workflow), rank 16/alpha 32 across 24 text layers, BF16 CPU SDPA, semantic loss weight 4 and learning rate 0.00005. Limits: 14 of 16 CPU threads, 15 GiB memory, no job swap. The shared source release `f619d6714bbd` is verified on all three remotes. Existing production inference remains healthy and unchanged.
+
+The launcher binds the exact baseline, capacity, data, scripts, base and runtime artifacts; guarded export waits for successful complete coverage. A monitor will evaluate all 438 frozen scenarios afresh after successful isolated export. Completion, accuracy and activation are not claimed. Contracts, Gestion Magasin and Réservation remain sequential future stages.
+
+IMPLEMENTED locally: the identical shared core 0.2.1 wheel is packaged for all six backends with source-content hashes verified. Tests against that actual wheel passed: Facturation 860; Management Projet 87 plus 136 subtests; Design Workflow 90; Contracts 59 plus 10 subtests; Gestion Magasin 59 plus 6 subtests; Réservation 46 plus 6 subtests. Native source publication remains pending; this source-only central push did not deploy application code or activate a model.

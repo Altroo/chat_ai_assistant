@@ -28,3 +28,8 @@ The proposed `shared-v7-en-fr` mix retains all preceding curricula: 1,606 traini
 ## Remaining gates
 
 Finish the current shared V5 training/export/evaluation; resolve acceptance failures honestly, then advance the serial queue. Meet >=95% tool selection and eligible exact arguments, >=99% structure, and zero unresolved critical authorization failures before activation. Tested source is published disabled: backend `a7acaefa4891`, frontend `ee6ffbaf750e`, all six remote heads verified. The additive migration and twelve knowledge records were applied; all sixty existing business-table counts stayed unchanged. Backend/frontend/database/Redis are healthy, anonymous AI access returns 401, and the shared inference start time and training process remained unchanged. Obtain activation authorization separately. Réservation is the next serial model-training stage; its local adapter and dataset preparation are documented separately.
+
+
+## Reviewed conversation-reference update — 2026-10-11
+
+IMPLEMENTED locally: complete saved selections are freshly authorized before model planning, preserving displayed order and inline-selection retry/page binding. Shared core 0.2.1 separates current-request language from history and validates explicit ordinal mutation targets. Native confirmation and actor history remain unchanged. Assistant suite: 84 tests and 6 subtests passed. One reviewer found no remaining code issues. Backend `f83393f6352e` is published to company/personal; its production restart awaits approval. Shared-model acceptance and feature activation remain incomplete.
