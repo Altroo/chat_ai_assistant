@@ -1,6 +1,7 @@
 import json
 from .contracts import ChatAIError
 from .calendar_context import with_calendar_context
+from .planning_messages import planning_messages
 from .presentation import LabelledTextStream
 from .routing import shortlist
 from .clarifications import missing_knowledge_message, message_language
@@ -36,9 +37,7 @@ class ChatAIOrchestrator:
         tools = self.tool_selector(context.get('shortcut_search_hint') or text, self.registry.permitted(self.executor.capabilities()), context)
         # Small, bounded tool catalog; never send application model or API schemas.
         context = with_calendar_context(context)
-        messages = [{"role": "system", "content": self.system_prompt + '\nTrusted context: ' + json.dumps(context, ensure_ascii=False)}]
-        messages.extend(history[-6:])
-        messages.append({"role": "user", "content": text})
+        messages = planning_messages(self.system_prompt, context, text, history)
         action, usage = (forced_action, {}) if forced_action else self.model.choose(messages, tools, cancel)
         if cancel and cancel.is_set():
             raise ChatAIError('CANCELLED')
