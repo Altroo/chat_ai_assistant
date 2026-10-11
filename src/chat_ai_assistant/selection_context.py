@@ -26,15 +26,8 @@ for _index in range(1, 11):
 _QUOTED = re.compile(r'\"[^\"\n]*\"|«[^»\n]*»|“[^”\n]*”|(?<!\w)\x27[^\x27\n]+\x27(?!\w)')
 
 
-def ordinal_target_matches(instruction, resource, identifier, state, now, aliases):
-    """Return None without an explicit ordinal, else require the exact fresh ID.
-
-    Aliases are trusted application code, mapping resource names to regex noun
-    alternatives. Recognizes definite-article references and command targets;
-    quoted text and replacement clauses are excluded from target matching.
-    """
-    if not isinstance(instruction, str):
-        return None
+def _target_parts(instruction, aliases, bare_resources=()):
+    """Find bounded target references outside quoted/replacement values."""
     text = _QUOTED.sub(" ", instruction)
     text = "".join(char for char in unicodedata.normalize("NFKD", text.casefold())
                    if not unicodedata.combining(char))
@@ -50,22 +43,58 @@ def ordinal_target_matches(instruction, resource, identifier, state, now, aliase
         references.append((ORDINALS[match.group(1)], None, match.start(), match.end()))
     anchors.extend(end for _, _, _, end in references)
     for target, nouns in aliases.items():
-        pattern = r"\b(?:" + nouns + r")(?:s)?\s+(?:id|identifiant)\s*[:#]?\s*([1-9][0-9]*)(?=$|\s|[.!?;,:](?:\s|$))"
+        marker = r"(?:id|identifiant)\s*[:#]?\s*"
+        if target in bare_resources:
+            marker = r"(?:" + marker + r"|(?:numero|number|no\.|n[°o])\s*[:#]?\s*|#\s*)?"
+        pattern = r"\b(?:" + nouns + r")(?:s)?\s+" + marker + r"([1-9][0-9]*)(?=$|\s|[.!?;,:](?:\s|$))"
         for match in re.finditer(pattern, text):
-            explicit.append((target, int(match.group(1)), match.start()))
+            explicit.append((target, int(match.group(1)), match.start(), match.end()))
             anchors.append(match.end())
         for match in re.finditer(r"\b(?:this|current|ce|cet|cette)\s+(?:" + nouns + r")\b", text):
             anchors.append(match.end())
+    # Full resource phrases win over contained nouns: "facture client ID 311"
+    # names an invoice, not a second client target. Equal ambiguous spans remain.
+    explicit = [value for value in explicit if not any(
+        other[2] <= value[2] and value[3] <= other[3] and other[2:] != value[2:]
+        for other in explicit)]
     # Exclude replacement text only AFTER an identified target. Introductory
     # 'I want to ...', 'en fait ...', 'Please do this: ...' remain intact.
     cutoff = len(text)
-    fields = r"name|nom|title|titre|description|notes?|status|statut"
-    markers = r"\b(?:to|en|par)\s+|\s+=\s+|:\s+(?=(?:" + fields + r")\b)|(?<=notes):\s+|(?<=description):\s+"
+    fields = r"name|nom|title|titre|description|notes?|status|statut|priority|priorite|city|ville|address|adresse|contact|telephone|phone|e-?mail|specialite|specialty|amount|montant|date|comments?|commentaires?"
+    markers = r"\b(?:to|en|par)\s+|\s+=\s+|:\s+(?=(?:" + fields + r")\b)|\b(?:" + fields + r")\s*[:=]\s*"
     for match in re.finditer(markers, text):
         if any(end <= match.start() for end in anchors):
             cutoff = match.start()
             break
-    found = [(index, target) for index, target, start, _ in references if start < cutoff]
+    return ([(index, target) for index, target, start, _ in references if start < cutoff],
+            [(target, value) for target, value, start, _ in explicit if start < cutoff])
+
+
+def explicit_target_matches(instruction, resource, identifier, aliases, bare_resources=()):
+    """None without an explicit ID; otherwise require one matching resource/ID.
+
+    This is request binding, never authorization. Bare identifiers are recognized
+    only for application-declared resources without separate business numbers.
+    Conflicting targets reject; native permission and confirmation checks remain.
+    """
+    if not isinstance(instruction, str):
+        return None
+    _, explicit = _target_parts(instruction, aliases, bare_resources)
+    if not explicit:
+        return None
+    return type(identifier) is int and identifier > 0 and set(explicit) == {(resource, identifier)}
+
+
+def ordinal_target_matches(instruction, resource, identifier, state, now, aliases):
+    """Return None without an explicit ordinal, else require the exact fresh ID.
+
+    Aliases are trusted application code, mapping resource names to regex noun
+    alternatives. Recognizes definite-article references and command targets;
+    quoted text and replacement clauses are excluded from target matching.
+    """
+    if not isinstance(instruction, str):
+        return None
+    found, explicit = _target_parts(instruction, aliases)
     if not found:
         return None
     indexes = {index for index, _ in found}
@@ -87,7 +116,7 @@ def ordinal_target_matches(instruction, resource, identifier, state, now, aliase
     except (KeyError, TypeError, ValueError, AttributeError):
         return False
     # Business numbers deliberately are not interpreted as primary keys here.
-    for target, value, start in explicit:
-        if start < cutoff and (target != resource or value != identifier):
+    for target, value in explicit:
+        if target != resource or value != identifier:
             return False
     return ids[index - 1] == identifier

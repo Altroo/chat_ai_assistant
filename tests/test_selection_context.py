@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 import unittest
-from chat_ai_assistant.selection_context import ordinal_target_matches
+from chat_ai_assistant.selection_context import ordinal_target_matches, explicit_target_matches
 
 
 class OrdinalTargetTests(unittest.TestCase):
@@ -82,3 +82,70 @@ class OrdinalTargetTests(unittest.TestCase):
                 self.assertTrue(self.check(text))
                 self.assertFalse(self.check(text,identifier=311))
         self.assertFalse(self.check("Update the third project, project ID : 311."))
+
+
+class ExplicitTargetTests(unittest.TestCase):
+    aliases = {"project": r"project|projet", "client": r"client|customer", "quote": r"devis|quote"}
+
+    def check(self, text, resource="project", identifier=311, bare=()):
+        return explicit_target_matches(text, resource, identifier, self.aliases, bare)
+
+    def test_explicit_pair_rejects_different_resource_or_id(self):
+        for text in ["Delete project ID 311.", "Supprime le projet identifiant : 311."]:
+            with self.subTest(text=text):
+                self.assertTrue(self.check(text))
+                self.assertFalse(self.check(text, identifier=72))
+                self.assertFalse(self.check(text, resource="client"))
+
+    def test_multiple_incompatible_targets_fail_closed(self):
+        for text in ["Delete project ID 311 and client ID 72.",
+                     "Delete project ID 311 and project ID 72."]:
+            with self.subTest(text=text):
+                self.assertFalse(self.check(text))
+        self.assertTrue(self.check("Delete project ID 311, project identifiant 311."))
+
+    def test_quoted_and_replacement_ids_cannot_become_target(self):
+        for text in ['Update project ID 311 notes to "client ID 72 is the reference".',
+                     'Update project ID 311 notes to client ID 72.',
+                     'Modifie le projet ID 311 : notes client ID 72.',
+                     'Rename project ID 311 to client ID 72.',
+                     "Rename project ID 311 to 'client ID 72'."]:
+            with self.subTest(text=text):
+                self.assertTrue(self.check(text))
+                self.assertFalse(self.check(text, resource="client", identifier=72))
+        self.assertIsNone(self.check('Update the current project notes to client ID 72.'))
+        self.assertIsNone(self.check('Update this project notes to "client ID 72".'))
+
+    def test_bare_id_policy_preserves_business_number_distinction(self):
+        for text in ["Delete project 311.", "Supprime le projet numéro 311.", "Delete project #311."]:
+            with self.subTest(text=text):
+                self.assertIsNone(self.check(text))
+                self.assertTrue(self.check(text, bare=("project",)))
+        for text in ["Delete quote 311.", "Delete quote number 311.", "Delete quote 0311/38."]:
+            with self.subTest(text=text):
+                self.assertIsNone(self.check(text, resource="quote", bare=("project",)))
+
+    def test_partial_numeric_tokens_do_not_bind(self):
+        for text in ["Delete project ID 0311.", "Delete project ID 311/38.",
+                     "Delete project ID 311.72.", "Delete project ID 311-38."]:
+            with self.subTest(text=text):
+                self.assertIsNone(self.check(text))
+        self.assertFalse(self.check("Delete project ID 1.", identifier=True))
+        self.assertIsNone(self.check(None))
+
+    def test_field_colon_and_assignment_values_are_not_targets(self):
+        for field in ["name", "title", "nom", "titre", "ville", "contact", "email"]:
+            for separator in [": ", " = ", "="]:
+                text=f"Update this project {field}{separator}client ID 72."
+                with self.subTest(field=field, separator=separator):
+                    self.assertIsNone(self.check(text, resource="client", identifier=72))
+        self.assertTrue(self.check("Update project ID 311 name: client ID 72."))
+        self.assertTrue(self.check("Modifie le projet ID 311 : nom client ID 72."))
+
+    def test_full_resource_phrase_precedes_nested_alias(self):
+        aliases={"invoice":r"facture(?: client)?|invoice", "client":r"client|customer"}
+        text="Supprime la facture client ID 311."
+        self.assertTrue(explicit_target_matches(text,"invoice",311,aliases))
+        self.assertFalse(explicit_target_matches(text,"client",311,aliases))
+        self.assertFalse(explicit_target_matches(text+" Et client ID 72.","invoice",311,aliases))
+        self.assertFalse(explicit_target_matches("Delete shared ID 311.","one",311,{"one":"shared","two":"shared"}))
