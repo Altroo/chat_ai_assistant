@@ -20,6 +20,7 @@ def main():
     parser.add_argument('--data', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--threads', type=int, default=10)
+    parser.add_argument('--dtype', choices=('bfloat16', 'float32'), default='bfloat16')
     parser.add_argument('--layers', type=int, default=24)
     parser.add_argument('--rank', type=int, default=16)
     parser.add_argument('--alpha', type=float, default=32)
@@ -76,7 +77,7 @@ def main():
     ids, prefix, weights = max(encoded,key=lambda item:len(item[0]))
     if len(ids)>8192:raise ValueError('Context exceeded')
     model = Qwen3_5ForConditionalGeneration.from_pretrained(args.model, local_files_only=True,
-        dtype=torch.bfloat16, attn_implementation='sdpa')
+        dtype=getattr(torch, args.dtype), attn_implementation='sdpa')
     model, regex = configure_text_lora(model, layers=args.layers, rank=args.rank, alpha=args.alpha, checkpointing=args.gradient_checkpointing)
     model.train()
     trainable = {name:value for name,value in model.named_parameters() if value.requires_grad}
@@ -121,9 +122,9 @@ def main():
         steps.append(metric); print(json.dumps(metric),flush=True)
         del output, loss, per_token, unweighted_loss, before, state_values
     report={'scope':'Capacity only; not model accuracy or production acceptance','model_path':str(args.model),
-        'dataset_sha256':hashlib.sha256(payload).hexdigest(),'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'dataset_sha256':hashlib.sha256(payload).hexdigest(),'torch_version':torch.__version__,'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         'lora_setup_sha256':hashlib.sha256(Path(__file__).with_name('text_lora.py').read_bytes()).hexdigest(),
-        'threads':args.threads,'sequence_tokens':ids.shape[1],'lora_rank':args.rank,'lora_alpha':args.alpha,
+        'threads':args.threads,'dtype':args.dtype,'sequence_tokens':ids.shape[1],'lora_rank':args.rank,'lora_alpha':args.alpha,
         'lora_layers':args.layers,'target_regex':regex,'gradient_checkpointing':'nonreentrant' if args.gradient_checkpointing else False,'attention':'sdpa',
         'learning_rate':args.learning_rate,'semantic_loss_weight':args.semantic_loss_weight,
         'semantic_loss_sha256':hashlib.sha256(Path(__file__).with_name('semantic_loss.py').read_bytes()).hexdigest(),
