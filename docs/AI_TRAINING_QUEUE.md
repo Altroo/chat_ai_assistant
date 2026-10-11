@@ -25,7 +25,7 @@ Only one server training process may run at a time. All applications use the sam
 
 | Order | Scope | Status | Exit gate |
 | --- | --- | --- | --- |
-| Current | Shared V5: Facturation, Management Projet, Design Workflow | V5r4 acceptance failed; V5r5 corrected curriculum and checkpoint selection prepared | Server preflight, trainer smoke, single shared training run, then frozen acceptance |
+| Current | Shared V5: Facturation, Management Projet, Design Workflow | V5r5 shared continuation running after server preflight and trainer smoke | Select checkpoint by validation, then pass all frozen acceptance gates |
 | Next | Contracts (`contrat`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, exact tokenizer preflight, tested adapter, prior training complete; retain existing curricula and regression sets |
 | Following | Gestion Magasin (`gestion_magasin`) | Adapter/UI published disabled; synthetic dataset prepared | Reviewed frozen baseline, server preflight, preceding serial stage validated |
 | Following | Réservation (`reservation`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, server preflight and preceding stage validation |
@@ -160,3 +160,5 @@ IMPLEMENTED: four schema-rejected V5r4 calls were replayed without business exec
 The original 438-case acceptance remains failed and unchanged. The greeting diagnostic completed 96 requests; it supports correcting a training-data association, not altering production history handling. V5r5 contains 1,803 training and 275 validation examples with label-independent neutral histories and verified calendar variants. Metadata validation and 78 tests plus 164 subtests pass; the single reviewer found no remaining source issues. Periodic validation will select a candidate checkpoint; held-out acceptance remains separate. Server preparation and optimization are pending. No next-application training or model activation is authorized by preparation alone.
 
 Previously prepared Contracts V6r4, Gestion Magasin V7r4 and Réservation V8r4 datasets remain unchanged records. They must be regenerated as new versions against the accepted corrected predecessor before sequential training.
+
+V5r5 is now running; the corrected future stages are prepared as V6r5/V7r5/V8r5 with 1,956/2,154/2,334 training rows respectively. Validation counts are 319/362/402 and held-out counts remain 516/606/690. New-app held-out envelopes are byte-identical to their prior versions; previous R5 curriculum bytes are retained exactly. Metadata checks passed, but model accuracy, accepted predecessor and server resource/preflight gates remain required before each sequential run. No future optimization has started.

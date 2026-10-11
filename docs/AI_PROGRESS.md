@@ -236,3 +236,15 @@ PARTIALLY IMPLEMENTED: optional periodic validation selects the checkpoint with 
 IMPLEMENTED: the six native target-binding fixes were fetched/pulled and published normally to company and personal source remotes, with exact heads verified. Production backend deployment remains pending approval. The generated Facturation source snapshot corresponds to central commit c012a92; later training preparation is not included in that snapshot yet.
 
 V5r5 preparation verification: 78 shared/training tests plus 164 subtests pass. All 1,803 training and 275 validation rows pass schema validation, exact Colibri parser round-trip, template parity, loss masking and semantic weighting alignment. All 438 retained evaluation cases pass the same checks. Maximum training length is 7,662 tokens; maximum evaluation prompt is 7,235 plus 512 reserved output, within 8,192. Tokenizer metadata matches the existing server candidate; no local weights or optimization were used. [Metadata report](../training/reports/shared-v5r5-en-fr-metadata-preflight.json).
+
+## Shared V5r5 training running — 2026-10-11
+
+PARTIALLY IMPLEMENTED: the reviewed isolated continuation started from the existing V5r2 base using source commit `3b976f8dd7d0`. One complete epoch covers 1,803 examples; 275 validation examples are checked initially, every 300 steps and at completion. The lowest application-macro validation loss selects the candidate, with the baseline retained if none improves. Learning rate 0.00002; 24 text layers; rank 16/alpha 32; semantic weight 4; 14 CPU threads; 12 GiB limit; no swap. Existing production inference remains healthy and unchanged.
+
+IMPLEMENTED: server preflight passed 1,803/275 rows; the longest 7,662-token two-step capacity check passed at 6.43 GiB peak RSS. The real two-step trainer smoke test selected the intermediate checkpoint at step 1 after evaluating steps 0/1/2. It proves mechanics, not accuracy. [Capacity](../training/reports/shared-v5r5-en-fr-capacity.json), [smoke](../training/reports/shared-v5r5-en-fr-trainer-smoke.json).
+
+PARTIALLY IMPLEMENTED: guarded selected-checkpoint export and all 438 unchanged acceptance cases are monitored automatically after successful training. A step-zero selection stops export. No production model activation or next-app training follows automatically from training completion.
+
+IMPLEMENTED locally: corrected future datasets preserve exact predecessor byte prefixes and all existing new-app held-out envelopes. Contracts: 1,956/319/516 training/validation/test cases; Gestion Magasin: 2,154/362/606; Réservation: 2,334/402/690. All 2,736 training/validation rows plus 690 held-out rows pass local tokenizer/Colibri metadata preflight. No local weights were loaded. Server preflight and all future training remain pending.
+
+Verification of the later-stage preparation: 85 shared/training tests and 168 subtests pass. The sole reviewer found no remaining issues. The complete curated-source dry-run passed secret/private-path exclusions; generated model weights and private evaluation logs remain excluded. No future optimizer has run.
