@@ -111,3 +111,32 @@ The 34 new independent cases were measured **before** refinement optimization, w
 | Facturation | 10/12 | 5/8 | 12/12 |
 
 A review replaced one **unmeasured validation pair** that reused a training sentence template with a distinct two-field contact-edit composition. All training rows and all independent/frozen test rows stayed byte-identical, and the untrained draft was retained privately. No test labels or test prompts changed. Raw baselines: [Management Projet](../training/reports/shared-v5r2-baseline-management-projet.json), [Design Workflow](../training/reports/shared-v5r2-baseline-design-workflow.json), [Facturation](../training/reports/shared-v5r2-baseline-facturation.json).
+
+
+## Shared V5r2 measured results — 2026-10-11
+
+IMPLEMENTED: server-only LoRA continuation completed all 1,454 steps in 24,467.4 seconds (about 6 h 48 min), followed by isolated Colibri export. Each training example was used once: Management Projet 664, Facturation 458, Design Workflow 332. Peak training RSS was 6.37 GiB. Ordinary validation CE improved from 0.042611 to 0.039598, while semantically weighted CE worsened from 0.066865 to 0.077601. Loss is not tool accuracy.
+
+All 362 frozen cases completed on the same pinned candidate process and artifacts, with the unchanged evaluator and labels. Aggregate tool selection is 344/362 (95.03%), eligible exact arguments 254/280 (90.71%), and valid structure 358/362 (98.90%). The matched V5 baseline was 322/362 (88.95%), 226/280 (80.71%), and 352/362 (97.24%). These aggregate gains do not satisfy all acceptance gates: only the Design Workflow newest 20-case set passes every gate. Production remains unchanged; later application training is not started.
+
+| Set | Correct tools | Exact arguments | Valid structure |
+| --- | --- | --- | --- |
+| management projet candidate | 57/60 | 47/50 | 60/60 |
+| design workflow candidate | 60/60 | 45/48 | 60/60 |
+| facturation candidate | 79/80 | 54/66 | 79/80 |
+| management projet companion | 20/20 | 14/14 | 20/20 |
+| management projet fresh | 30/32 | 24/26 | 32/32 |
+| design workflow fresh | 24/24 | 16/18 | 24/24 |
+| management projet new holdout | 27/32 | 20/20 | 30/32 |
+| design workflow new holdout | 20/20 | 14/14 | 20/20 |
+| management projet refinement | 9/12 | 8/8 | 11/12 |
+| design workflow refinement | 8/10 | 6/8 | 10/10 |
+| facturation refinement | 10/12 | 6/8 | 12/12 |
+
+Remaining failures include dropped search filters, incorrect relative dates, confusion between person/project text, known edits classified as searches, and wrong clarification reasons/languages. These planner tests execute no financial reads or writes. Critical model-case failures must not be misreported as successful business operations or backend authorization bypasses. Native authorization and exact-target confirmation remain separately tested.
+
+The unchanged four-thread Colibri CPU profile measured 7.805 s sequential mean (p95/max of four: 7.980 s), 11.699 s at concurrency two (p95/max of four: 15.929 s), 54.73 decode tokens/s excluding prefill, 2.60 GiB peak RSS, about four busy CPU cores, and zero errors. This is an eight-request warm sample, not sustained production capacity certification.
+
+The original 328 regressions informed curriculum work; the additional 34 cases were frozen and baseline-measured before V5r2 optimization. Paired translations are not independent statistical samples. A separate description-only diagnostic is prepared, preserving every original prompt/context/expected action/schema constraint; it is not yet measured and cannot replace these scores.
+
+[Full comparison and acceptance gates](../training/reports/shared-v5r2-en-fr-comparison.json), [training evidence](../training/reports/shared-v5r2-en-fr-training.json), [performance evidence](../training/reports/shared-v5r2-en-fr-performance.json).

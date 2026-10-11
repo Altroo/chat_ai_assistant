@@ -1,6 +1,6 @@
 # Model training and evaluation
 
-This page describes the deployed Facturation V4 model. Newer shared candidates, including the incomplete V5r2 refinement, are tracked in [measured model accuracy](AI_MODEL_ACCURACY.md) and the [sequential training queue](AI_TRAINING_QUEUE.md). They have not replaced production.
+This page describes the deployed Facturation V4 model. Newer shared candidates, including the evaluated but unaccepted V5r2 refinement, are tracked in [measured model accuracy](AI_MODEL_ACCURACY.md) and the [sequential training queue](AI_TRAINING_QUEUE.md). They have not replaced production.
 
 The active Facturation assistant supports **English and French only**. It follows the current message automatically, including language changes within a conversation. There is no language selector. Runtime prompts, clarification schemas, API capabilities, the current training dataset and the independent evaluation set all use this scope.
 
