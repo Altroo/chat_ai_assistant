@@ -12,6 +12,8 @@ PARTIALLY IMPLEMENTED: the next cumulative preparations retain exact predecessor
 
 All 2,646 V8r4 training/validation examples and 690 held-out cases passed server-matching tokenizer, Colibri-template/parser, loss-boundary and semantic-weight alignment checks locally without loading weights. Maximum training length is 7,648 tokens; evaluation reserves 512 output tokens within 8,192. Exact source/dependency hashes and full predecessor manifests are pinned. Shared and training-integrity suites pass 48 tests plus 74 subtests. [Metadata evidence](../training/reports/shared-v8r4-en-fr-metadata-preflight.json).
 
+IMPLEMENTED and verified locally: the completed-candidate comparison helper binds frozen datasets, per-set coverage, driver/provider evidence and captured Colibri process/artifact identity. It requires every set to pass, reports application/language breakdowns, and cannot activate a model. Shared/training verification passed 52 tests and 95 subtests; one reviewer found no remaining issues. A V5r4 score still awaits completed training and evaluation.
+
 No future-stage optimization has started. Each stage still requires acceptance of its exact predecessor, a frozen baseline, server preflight and capacity checks. Model accuracy is not inferred from metadata or backend tests. Colibri PR work remains deferred until the user resumes it.
 
 
