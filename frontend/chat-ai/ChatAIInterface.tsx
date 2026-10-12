@@ -3,6 +3,7 @@ import { ButtonBase } from "@mui/material";
 
 import {
   useEffect,
+  useId,
   useEffectEvent,
   useRef,
   useState,
@@ -11,37 +12,47 @@ import {
 } from "react";
 import { Bot, ArrowRight, Clock3, MessageSquarePlus, X } from "./ChatAIIcons";
 import styles from "./chat-ai.module.css";
+import { useDraggableLauncher } from "./useDraggableLauncher";
 export type ChatAILanguage = "en" | "fr";
 
 export const ChatAIFloatingButton = ({
   open,
   toggle,
-  offset = false,
 }: {
   open: boolean;
   toggle: () => void;
   offset?: boolean;
-}) => (
-  <ButtonBase
-    disableRipple
-    type="button"
-    className={styles.floating}
-    aria-label="Ask AI Assistant"
-    title={open ? undefined : "Ask AI Assistant"}
-    aria-expanded={open}
-    aria-controls="chat-ai-panel"
-    hidden={open}
-    onClick={toggle}
-    style={{
-      position: "fixed",
-      width: 56,
-      height: 56,
-      ...(offset ? { bottom: 96 } : {}),
-    }}
-  >
-    <Bot size={26} aria-hidden="true" />
-  </ButtonBase>
-);
+}) => {
+  const launcher = useDraggableLauncher(toggle);
+  const helpId = useId();
+  return (
+    <>
+      <ButtonBase
+        {...launcher}
+        disableRipple
+        type="button"
+        className={styles.floating}
+        aria-label="Ask AI Assistant"
+        title={open ? undefined : "Ask AI Assistant · Drag to move"}
+        aria-describedby={helpId}
+        aria-expanded={open}
+        aria-controls="chat-ai-panel"
+        hidden={open}
+        style={{
+          position: "fixed",
+          width: 56,
+          height: 56,
+          ...launcher.style,
+        }}
+      >
+        <Bot size={26} aria-hidden="true" />
+      </ButtonBase>
+      <span id={helpId} className={styles.srOnly}>
+        Drag to move. Arrow keys move the button; Home resets its position.
+      </span>
+    </>
+  );
+};
 
 export const ChatAIPanel = ({
   children,
@@ -293,7 +304,13 @@ export const ChatAIMessageBox = ({
   >
     <div className={styles.messageAuthor}>
       {role === "assistant" && <Bot size={17} aria-hidden="true" />}
-      <strong>{role === "user" ? (language === "en" ? "You" : "Vous") : "AI Assistant"}</strong>
+      <strong>
+        {role === "user"
+          ? language === "en"
+            ? "You"
+            : "Vous"
+          : "AI Assistant"}
+      </strong>
     </div>
     {text && (
       <p dir="auto" className={styles.messageText}>

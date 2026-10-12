@@ -1,8 +1,10 @@
 # Chat AI Assistant progress
 
-## Queued UI follow-up — 2026-10-12
+## Draggable assistant launcher — 2026-10-12
 
-PLANNED — start only after the current shared-model training and evaluation task finishes: prevent the AI Assistant floating button from covering pagination and other essential controls in facturation, management_projet, design_workflow, contrat, gestion_magasin and reservation. Assess a draggable button or a better consistent placement; preserve the shared design, keyboard/touch access and desktop/mobile viewport bounds. Verify against the reported pagination obstruction and all six native layouts. No UI implementation has started for this request.
+IMPLEMENTED and deployed: the six frontends use the same dependency-free launcher hook. The default bottom offset is 96px; mouse, touch and pen dragging, a 6px drag threshold, keyboard arrows and Home reset keep the button movable without changing the robot or native theme. Position is clamped to the viewport and device safe areas, including classic scrollbar gutters. Route changes and chat close/reopen preserve position while the authenticated layout remains mounted; reload resets it.
+
+Verification: 358 assistant tests, six TypeScript checks, scoped lint and all six optimized production builds passed. One reviewer found a scrollbar coordinate issue, which was fixed and regression-tested; the final review has no remaining findings. Native dummy-login browser checks passed in all six apps; Facturation also passed authenticated live launcher checks. All six frontend releases passed normal Git pushes and remote-head verification; their live containers contain the compiled launcher and their HTTPS routes return 200. Production settings, 44 supporting containers, database volumes and the running training process were unchanged. Gestion Magasin’s tested footer still overlaps the default position; dragging clears it and restores next-page access. Training continues independently; production assistant feature flags and the shared model remain unchanged.
 
 ## Current shared-model and rollout status — 2026-10-12
 
