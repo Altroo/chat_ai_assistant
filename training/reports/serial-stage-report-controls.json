@@ -1,0 +1,40 @@
+{
+  "status": "PREPARATION ONLY",
+  "purpose": "Recompute cumulative baseline and candidate scores before accepting a later shared-model stage.",
+  "stages": [
+    "contrat",
+    "gestion_magasin",
+    "reservation"
+  ],
+  "prepared_held_out_counts": {
+    "contrat": 516,
+    "gestion_magasin": 606,
+    "reservation": 690
+  },
+  "offline_report_tests_passed": 11,
+  "full_training_integrity_tests_passed": 90,
+  "review": "One reviewer; two provenance findings fixed and covered by mutation tests; final review found no issues.",
+  "checks": [
+    "Require English and French evaluation coverage for every retained application.",
+    "Require every frozen set, unique case and assigned worker; reject changed model/provider/driver configuration.",
+    "Recompute canonical artifact group hashes from attested file maps.",
+    "Verify completion-pinned labels, event hashes and summary hashes before scoring.",
+    "Require existing model targets for every frozen set and application.",
+    "Reject declines in retained-app tool, structure, action and eligible exact-argument counts, even when aggregate targets pass."
+  ],
+  "source_sha256": {
+    "training/scripts/report_serial_candidate_v1.py": "6b222b951cabf44c8a0119ff2628b1365bcef1947111c559f22e4eeb36e55f50",
+    "training/tests/test_serial_report.py": "088b6111d7e5f422c184e2c1b25b180312ab8bd41ffd4cb3527e91f35df233c9"
+  },
+  "model_inference_started": false,
+  "training_started": false,
+  "accuracy_established": false,
+  "production_activation": false,
+  "limitations": [
+    "Temporary synthetic test fixtures verify report checks, not model performance.",
+    "Future launch controllers must independently bind the accepted predecessor, artifacts and completed result hashes.",
+    "Performance, native security, knowledge factuality and live application testing remain separate.",
+    "The current R6 training, provider and frozen evaluators were not changed."
+  ],
+  "test_environment_note": "The initial system-Python suite lacked jsonschema. All 90 tests passed with the existing project virtual environment."
+}
