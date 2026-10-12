@@ -139,3 +139,13 @@ The initial 96px bottom offset clears the tested pagination in five apps. Gestio
 The deployed Facturation launcher was additionally checked through the existing authenticated production account: exact mouse movement, drag-click suppression, keyboard movement and Home reset passed. No model requests or business writes were made. The live screenshot contains only the launcher crop; private browser evidence remains excluded from Git. These UI tests do not establish model accuracy or change application activation gates.
 
 Release verification: all 18 frontend remote heads matched their reviewed commits; all six deployed source trees matched the changed-file hashes. All six containers were healthy and contained the compiled launcher. Native frontend login routes and backend health routes returned HTTPS 200. Production environment/configuration hashes, database-volume mounts, 44 supporting container identities and the training process were unchanged. Existing assistant activation settings were preserved.
+
+## Named list return regression checks — 2026-10-12
+
+Local related tests: facturation 851, management_projet 195, design_workflow 78, contracts 160, gestion_magasin 84, reservation 299. All six TypeScript checks, scoped lint runs and production builds pass.
+
+Tests cover explicit destination parameters, page/page_size/ordering, namespaced grids, same-origin absolute routes, company/store isolation, invalid or blocked storage, fresh navigation and direct-link fallbacks. New hook regressions cover Next canonical query arriving before browser history and the internal-history-marker synchronization bypass. Real MCP browser checks used isolated synthetic local data; no production business write was performed.
+
+All six named user-list returns retain pagination after reload. The five MUI apps preserve existing sorting and non-default page sizes; Facturation articles and Gestion Magasin catalog preserve active company/store scope at page 3 and 25 rows. Native next/previous and page-size controls were also exercised in Gestion Magasin. No claim is made that in-memory filters survive a detail visit.
+
+Production verification: all 36 frontend/backend remote references match, all six live frontend bundles contain the helper and their containers are healthy. All six frontend HTTPS routes and backend health endpoints return 200. Facturation passed an authenticated native named-list return with page 2, five rows and last-name sorting, then reload. No business records were changed. The other apps have local authenticated browser evidence plus live bundle/health checks, not a claimed authenticated production business-flow test. [Sanitized release report](../training/reports/list-return-release-20261012.json).

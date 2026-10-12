@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-12",
+  "status": "IMPLEMENTED_AND_DEPLOYED",
+  "scope": [
+    "facturation",
+    "management_projet",
+    "design_workflow",
+    "contracts",
+    "gestion_magasin",
+    "reservation"
+  ],
+  "frontend_commits": {
+    "facturation": "666b3f9cbc3d503bc534c8f94a0b8c06edebb43b",
+    "management_projet": "19e1c926a85434ddd4e50ba576b5f67a0adfdcd9",
+    "design_workflow": "b99a9f376db673b298e021cd19fd2a7861cf7714",
+    "contracts": "13399ba2fa667a3e9f80be22145b510986b76c78",
+    "gestion_magasin": "3c000949e32736a05f7cf44127feecfe69f2662d",
+    "reservation": "0e94a39e433da16e8c54ca3b1f193925f013cfd8"
+  },
+  "backend_commits": {
+    "facturation": "fdffbf28403e27609dd5d85b0923448fa848b8a7",
+    "management_projet": "8a93baf1718308f5aa694ced22c9e2e8efe66a50",
+    "design_workflow": "c6bc398fd5d668223e429bd3900371df0f24fc88",
+    "contracts": "0ef964c6f2c5d5718598d283df430b1cb59067c0",
+    "gestion_magasin": "d7f556f1b48ea5293286126ebb0e06016dc7e11e",
+    "reservation": "ddc31dc6ab4df70010fb2463d26f825db10a6d82"
+  },
+  "remotes_verified": [
+    "company",
+    "personal",
+    "production"
+  ],
+  "frontend_remote_references_verified": 18,
+  "backend_remote_references_verified": 18,
+  "tests_passed": {
+    "facturation": 851,
+    "management_projet": 195,
+    "design_workflow": 78,
+    "contracts": 160,
+    "gestion_magasin": 84,
+    "reservation": 299
+  },
+  "total_related_tests_passed": 1667,
+  "type_checks_passed": 6,
+  "scoped_lint_passed": 6,
+  "production_builds_passed": 6,
+  "single_reviewer": "no remaining issues",
+  "local_browser": {
+    "apps_passed": [
+      "facturation",
+      "management_projet",
+      "design_workflow",
+      "contracts",
+      "gestion_magasin",
+      "reservation"
+    ],
+    "named_list_returns": true,
+    "reload_persistence": true,
+    "nondefault_page_sizes": true,
+    "existing_sorting_preserved": true,
+    "facturation_company_scope": true,
+    "gestion_magasin_store_scope": true,
+    "fresh_navigation_and_direct_link_fallback": true
+  },
+  "production_browser": {
+    "facturation": {
+      "authenticated_named_return": true,
+      "page": 2,
+      "page_size": 5,
+      "ordering": "last_name",
+      "reload_persistence": true,
+      "business_writes": false
+    },
+    "other_apps": "Native authenticated round trips verified locally; live bundles and HTTPS verified in production. Existing production sessions were not available for all apps."
+  },
+  "production_health": {
+    "frontend_healthy": [
+      "facturation",
+      "management_projet",
+      "design_workflow",
+      "contracts",
+      "gestion_magasin",
+      "reservation"
+    ],
+    "frontend_https_200": [
+      "facturation",
+      "management_projet",
+      "design_workflow",
+      "contracts",
+      "gestion_magasin",
+      "reservation"
+    ],
+    "backend_https_200": [
+      "facturation",
+      "management_projet",
+      "design_workflow",
+      "contracts",
+      "gestion_magasin",
+      "reservation"
+    ]
+  },
+  "preservation": {
+    "frontend_configuration_unchanged": true,
+    "supporting_containers_unchanged": 44,
+    "database_volumes_unchanged": true,
+    "training_process_unchanged": true
+  },
+  "limitations": [
+    "In-memory search/filter text is not restored; only validated pagination and existing ordering are stored.",
+    "Design Workflow project board remains unpaginated; no new sorting functionality was added."
+  ],
+  "model_acceptance": "Current training continues; this release does not claim improved model accuracy or activate a candidate."
+}
