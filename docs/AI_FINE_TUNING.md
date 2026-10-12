@@ -1,6 +1,6 @@
 # Model training and evaluation
 
-This page describes the deployed Facturation V4 model. Newer shared candidates, including the completed but unaccepted V5r4 candidate and running V5r5 continuation, are tracked in [measured model accuracy](AI_MODEL_ACCURACY.md) and the [sequential training queue](AI_TRAINING_QUEUE.md). They have not replaced production.
+This page describes the deployed Facturation V4 model. Newer shared candidates, including completed V5r4 and V5r5 candidates that failed acceptance, are tracked in [measured model accuracy](AI_MODEL_ACCURACY.md) and the [sequential training queue](AI_TRAINING_QUEUE.md). They have not replaced production.
 
 The active Facturation assistant supports **English and French only**. It follows the current message automatically, including language changes within a conversation. There is no language selector. Runtime prompts, clarification schemas, API capabilities, the current training dataset and the independent evaluation set all use this scope.
 
@@ -82,7 +82,7 @@ The launcher must bind `--retained-data` to the accepted predecessor run's recor
 
 ## Dialogue curriculum and candidate comparison
 
-V5r4 finished training and evaluation but failed acceptance: 89.04% tool selection and 85.03% eligible exact arguments across 438 frozen cases. Its results remain unchanged. V5r5 is now the only running optimization job. It repairs a measured association between short greetings and clarification labels, and adds training-only calendar diversity.
+V5r4 finished training and evaluation but failed acceptance: 89.04% tool selection and 85.03% eligible exact arguments across 438 frozen cases. Its results remain unchanged. V5r5 training and evaluation are complete; acceptance remains failed. Its curriculum addresses a measured association between short greetings and clarification labels, and adds training-only calendar diversity.
 
 The prepared later-stage runner is `train_cpu_serial_v3.py`, with cumulative V6r5/V7r5/V8r5 datasets. It retains the full-epoch and application-scope checks above and binds each exact predecessor manifest and byte prefix. No later stage has started. Their tokenizer/template/schema preflight does not establish model accuracy.
 
@@ -111,6 +111,6 @@ The optional `--validation-interval 300` evaluates the unchanged validation spli
 
 Export must reject a step-zero selection and otherwise consume the recorded `selected-STEP` adapter. The isolated R5 export guard replays every validation decision, checks complete application exposure and pinned inputs, and records selected adapter hashes before merging. Selection by validation loss does not replace the 438-case acceptance test. No candidate is automatically activated.
 
-V5r5 settings: existing V5r2 merged base, one complete 1,803-example epoch, 275 validation examples, 24 text layers, LoRA rank 16/alpha 32, BF16 CPU SDPA with gradient checkpointing, semantic weight 4 and learning rate 0.00002. The smaller rate and periodic checkpoint selection address the previous final-checkpoint validation regression; an accuracy improvement remains unmeasured. Fourteen of sixteen CPU threads, a 12 GiB limit and no job swap preserve the measured reserve.
+V5r5 settings: existing V5r2 merged base, one complete 1,803-example epoch, 275 validation examples, 24 text layers, LoRA rank 16/alpha 32, BF16 CPU SDPA with gradient checkpointing, semantic weight 4 and learning rate 0.00002. The smaller rate and periodic checkpoint selection address the previous final-checkpoint validation regression; measured acceptance remains incomplete despite the selected validation improvement. Fourteen of sixteen CPU threads, a 12 GiB limit and no job swap preserve the measured reserve.
 
-Server preflight passed all training/validation rows. Two unsaved longest-example updates at 7,662 tokens reached 6.43 GiB peak RSS. The actual two-step trainer smoke test evaluated steps 0/1/2 and selected step 1; this verifies mechanics only. Full R5 training and the frozen evaluation remain incomplete. Contracts, Gestion Magasin and Réservation require accepted predecessors and fresh server checks before their one-at-a-time jobs.
+Server preflight passed all training/validation rows. Two unsaved longest-example updates at 7,662 tokens reached 6.43 GiB peak RSS. The actual two-step trainer smoke test evaluated steps 0/1/2 and selected step 1; this verifies mechanics only. Full R5 training and frozen evaluation completed; acceptance failed. See [measured results](AI_MODEL_ACCURACY.md#v5r5-measured-results--2026-10-12). Contracts, Gestion Magasin and Réservation require accepted predecessors and fresh server checks before their one-at-a-time jobs.

@@ -1,0 +1,99 @@
+{
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "threads": 14,
+  "steps": 1803,
+  "seed": 17,
+  "lora_rank": 16,
+  "lora_alpha": 32.0,
+  "trainable_parameters": 7127040,
+  "dataset_sha256": "422377f64551b665677a3ab50c495f88de6fb5284b35ee0b03de625aa4c3c89c",
+  "validation_sha256": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86",
+  "baseline_validation_loss": 0.1294904616033653,
+  "final_validation_loss": 0.07878389705538708,
+  "baseline_validation_unweighted_loss": 0.06011788551491753,
+  "final_validation_unweighted_loss": 0.03858698005017438,
+  "baseline_validation_by_application": {
+    "micro": 0.1294904616033653,
+    "by_application": {
+      "facturation": 0.11457903003096896,
+      "management_projet": 0.1888278058193184,
+      "design_workflow": 0.08816089207655864
+    },
+    "macro": 0.13052257597561534,
+    "unweighted": {
+      "micro": 0.06011788551491753,
+      "by_application": {
+        "facturation": 0.06009430760274054,
+        "management_projet": 0.07716984348863686,
+        "design_workflow": 0.039384809583189906
+      },
+      "macro": 0.05888298689152244
+    }
+  },
+  "final_validation_by_application": {
+    "micro": 0.07878389705538708,
+    "by_application": {
+      "facturation": 0.07815691889142104,
+      "management_projet": 0.10548555477484675,
+      "design_workflow": 0.047544190706787504
+    },
+    "macro": 0.0770622214576851,
+    "unweighted": {
+      "micro": 0.03858698005017438,
+      "by_application": {
+        "facturation": 0.047683473234387645,
+        "management_projet": 0.03980287202888086,
+        "design_workflow": 0.018201461802682672
+      },
+      "macro": 0.03522926902198373
+    }
+  },
+  "duration_seconds": 53029.271648971364,
+  "peak_rss_kib": 8072352,
+  "application_exposure": {
+    "management_projet": {
+      "steps": 790,
+      "unique_examples": 790
+    },
+    "facturation": {
+      "steps": 587,
+      "unique_examples": 587
+    },
+    "design_workflow": {
+      "steps": 426,
+      "unique_examples": 426
+    }
+  },
+  "version": "shared-v5r5-en-fr",
+  "training_status": "COMPLETED",
+  "acceptance_status": "FAILED",
+  "deployment_status": "NOT DEPLOYED",
+  "selected_step": 600,
+  "selected_validation": {
+    "micro": 0.07142786759723756,
+    "by_application": {
+      "facturation": 0.06996214944398928,
+      "management_projet": 0.0879186787382633,
+      "design_workflow": 0.05437563705633153
+    },
+    "macro": 0.07075215507952803,
+    "unweighted": {
+      "micro": 0.03388531501035521,
+      "by_application": {
+        "facturation": 0.039260725209892815,
+        "management_projet": 0.03366971487379581,
+        "design_workflow": 0.02297730335587289
+      },
+      "macro": 0.03196924781318717
+    }
+  },
+  "selection_metric": "validation application-macro semantic loss",
+  "raw_training_report_sha256": "bad59b08e600aee47a8d426de7728d135bb6ddb2554fcd33ab393d9087db2d4e",
+  "recorded_step_count": 1803,
+  "all_training_losses_finite": true,
+  "limitations": [
+    "Validation loss selects a checkpoint; it is not accuracy.",
+    "The frozen accuracy suite remains authoritative; unsuccessful candidates do not replace production."
+  ]
+}

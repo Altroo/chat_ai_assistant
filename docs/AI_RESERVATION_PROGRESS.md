@@ -2,11 +2,15 @@
 
 Application: `reservation`. Status: PARTIALLY IMPLEMENTED. Local adapter/UI tests pass. Shared-model accuracy, server fine-tuning and production activation remain incomplete.
 
-## Current training preparation — 2026-10-11
+## Verified backend update — 2026-10-12
 
-The current prepared dataset is `reservation-dialogue-v2-en-fr`: **180 / 40 / 84 training / validation / held-out examples**. Its cumulative shared stage is `shared-v8r4-en-fr`: **2,244 / 402 / 690** in the same order. Original logical prompts, expected actions and split membership are preserved. Updated inputs match the reviewed native planner, current-message language, calendar context and explicitly synthetic ordered references. Added neutral greeting/thanks histories are variants, not independent scenarios.
+Backend ddc31dc6ab4d is published to company, personal and production. The installed shared core is 0.2.2; changed source files, Django checks, migrations and HTTP/container health passed. Database volumes and 28 business-table counts are unchanged. Native permissions, exact-target confirmation and actor history remain authoritative. The assistant is disabled; model acceptance/activation is incomplete. [Release evidence](../training/reports/approved-backend-release-20261012.json), [current model evaluation](AI_MODEL_ACCURACY.md#v5r5-measured-results--2026-10-12).
 
-The complete cumulative six-app preparation passed metadata-only tokenizer/Colibri checks without loading local weights. Exact predecessor prefixes, source dependencies and manifests are pinned. This is preparation, not a measured Réservation model score. The sole active optimization is shared V5r4; subsequent stages remain **Contracts → Gestion Magasin → Réservation**, one at a time after predecessor acceptance. See the [current training queue](AI_TRAINING_QUEUE.md) for the shared evidence and launch gates. Earlier dataset counts below describe the preserved initial preparation.
+## Current training preparation — 2026-10-12
+
+The current prepared dataset is `reservation-dialogue-v3-en-fr`: **180 / 40 / 84 training / validation / held-out examples**. Its cumulative shared stage is `shared-v8r5-en-fr`: **2,334 / 402 / 690** in the same order. Original logical prompts, expected actions and split membership are preserved. Updated inputs match the reviewed native planner, current-message language, calendar context and explicitly synthetic ordered references. Added neutral greeting/thanks histories are variants, not independent scenarios.
+
+The complete cumulative six-app preparation passed metadata-only tokenizer/Colibri checks without loading local weights. Exact predecessor prefixes, source dependencies and manifests are pinned. This is preparation, not a measured Réservation model score. Shared V5r5 training and evaluation completed without meeting acceptance; subsequent stages remain **Contracts → Gestion Magasin → Réservation**, one at a time after predecessor acceptance. See the [current training queue](AI_TRAINING_QUEUE.md) for the shared evidence and launch gates. Earlier dataset counts below describe the preserved initial preparation.
 
 ## Implemented and verified
 
@@ -38,7 +42,7 @@ Proposed `shared-v8-en-fr`: **1,756 training, 258 validation and 580 held-out ca
 
 ## Remaining gates
 
-Complete the current shared V5r4 training/export/frozen evaluation; resolve failures without altering held-out labels. Advance subsequent app training serially, preserving earlier application evaluation sets. Required acceptance: ≥95% tool selection/eligible exact arguments, ≥99% structured output and zero unresolved critical authorization defects. Exact server tokenizer/Colibri preflight passed the cumulative six-app dataset; measured model performance remains required. Activation and replacing the shared production model require separate authorization.
+Resolve the measured shared V5r5 acceptance failures without altering held-out labels. Advance subsequent app training serially, preserving earlier application evaluation sets. Required acceptance: ≥95% tool selection/eligible exact arguments, ≥99% structured output and zero unresolved critical authorization defects. Exact server tokenizer/Colibri preflight passed the cumulative six-app dataset; measured model performance remains required. Activation and replacing the shared production model require separate authorization.
 
 ## Verified disabled source release
 

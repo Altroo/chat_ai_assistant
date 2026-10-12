@@ -1,0 +1,140 @@
+{
+  "model": "chat-ai-shared-qwen08-v5r5-en-fr-20261011",
+  "profile_attributed": true,
+  "logical_cpus": 16,
+  "threads_env": "4",
+  "sequential": {
+    "count": 4,
+    "mean_latency_s": 7.631154068745673,
+    "p95_latency_s": 7.815572343766689,
+    "errors": 0
+  },
+  "concurrency_two": {
+    "count": 4,
+    "mean_latency_s": 11.461975684389472,
+    "p95_latency_s": 15.604713940992951,
+    "errors": 0
+  },
+  "cases": [
+    {
+      "id": "combined-expense-fr",
+      "language": "fr",
+      "latency_s": 7.455041045323014,
+      "first_visible_event_s": 7.4549341052770615,
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 53,
+        "total_tokens": 1869
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "combined-expense-en",
+      "language": "en",
+      "latency_s": 7.495604932308197,
+      "first_visible_event_s": 7.495500976219773,
+      "usage": {
+        "prompt_tokens": 1815,
+        "completion_tokens": 53,
+        "total_tokens": 1868
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "dates-revenue-fr",
+      "language": "fr",
+      "latency_s": 7.75839795358479,
+      "first_visible_event_s": 7.758268931880593,
+      "usage": {
+        "prompt_tokens": 1832,
+        "completion_tokens": 68,
+        "total_tokens": 1900
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "dates-revenue-en",
+      "language": "en",
+      "latency_s": 7.815572343766689,
+      "first_visible_event_s": 7.815418716520071,
+      "usage": {
+        "prompt_tokens": 1830,
+        "completion_tokens": 68,
+        "total_tokens": 1898
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "combined-expense-fr",
+      "language": "fr",
+      "latency_s": 7.4684961047023535,
+      "first_visible_event_s": 7.468397552147508,
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 53,
+        "total_tokens": 1869
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "combined-expense-en",
+      "language": "en",
+      "latency_s": 14.95364180393517,
+      "first_visible_event_s": 14.95351286418736,
+      "usage": {
+        "prompt_tokens": 1815,
+        "completion_tokens": 53,
+        "total_tokens": 1868
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "dates-revenue-fr",
+      "language": "fr",
+      "latency_s": 7.821050887927413,
+      "first_visible_event_s": 7.820957496762276,
+      "usage": {
+        "prompt_tokens": 1832,
+        "completion_tokens": 68,
+        "total_tokens": 1900
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "dates-revenue-en",
+      "language": "en",
+      "latency_s": 15.604713940992951,
+      "first_visible_event_s": 15.604590950533748,
+      "usage": {
+        "prompt_tokens": 1830,
+        "completion_tokens": 68,
+        "total_tokens": 1898
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    }
+  ],
+  "wall_s": 61.084526404738426,
+  "process_cpu_seconds": 244.17000000000007,
+  "average_busy_cpu_cores": 3.997247983591789,
+  "host_cpu_capacity_percent": 24.982799897448682,
+  "rss_initial_bytes": 2840424448,
+  "rss_peak_bytes": 2840608768,
+  "weighted_decode_tokens_per_second": 56.11179138285191,
+  "limitations": [
+    "Four synthetic validation prompts repeated sequentially then with concurrency two: small performance probe, not capacity certification. Concurrent pass runs second; model and prefix caches may be warm.",
+    "Runtime profile wall_s starts after prefill (qwen36.c q36_prepare); decode rate excludes prompt processing.",
+    "First visible event for native tool calls is buffered, not first generated token.",
+    "Tests inference directly; application serializes model requests with a database lease.",
+    "Existing production services were not stopped. No application business operations executed."
+  ],
+  "source_sha256": "a2ee6d9e653fa6ee500780f6e3de0c430136e7017b957d1230d28c7832d43143",
+  "scope": "Eight warm requests after temporary parallel workers stopped. Four sequential and four at concurrency two; not load certification. Decode throughput excludes prefill."
+}

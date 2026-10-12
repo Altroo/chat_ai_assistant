@@ -2,9 +2,23 @@
 
 Management Projet remains disabled in production by explicit user instruction. This work uses the existing shared Qwen3.5-0.8B checkpoint and Colibri CPU runtime; no new foundation model or application-specific model is downloaded. Production weights, permissions and financial calculations remain unchanged.
 
-## Current status — 2026-10-11
+## V5r5 measured results — 2026-10-12
 
-V5r4 completed but missed acceptance: 390/438 correct tools (89.04%), 284/334 eligible exact arguments (85.03%) and 434/438 valid outputs (99.09%). V5r5 is running on the same server/base after correcting a measured neutral-greeting training bias and adding calendar diversity. Selection uses periodic validation; all 438 unchanged acceptance cases must then be measured freshly. Production remains unchanged. [Current queue](AI_TRAINING_QUEUE.md), [completed results](../training/reports/shared-v5r4-en-fr-evaluation.json).
+Server-only training and export completed: 1,803 optimizer steps and 275 validation examples in English/French. The selected adapter is step 600, with application-macro validation loss 0.070752 (baseline 0.130523). Final step 1,803 had 0.077062 and was not exported. Training took 14.73 hours, using 14 CPU threads and 7.70 GiB peak RSS.
+
+All 438 frozen accuracy cases completed. **Acceptance FAILED: 406/438 correct tools (92.69%), 299/334 eligible exact arguments (89.52%) and 430/438 valid structures (98.17%).** The 95% tool/argument and 99% structure targets, clarification checks, critical cases and per-set gates are unchanged. The model remains unpromoted. Backend authorization tests are separate from planner scores.
+
+| Application | Correct tools | Eligible exact arguments | Valid structure |
+| --- | ---: | ---: | ---: |
+| design_workflow | 127/130 (97.69%) | 94/100 (94.0%) | 130/130 (100.0%) |
+| facturation | 99/108 (91.67%) | 70/86 (81.4%) | 105/108 (97.22%) |
+| management_projet | 180/200 (90.0%) | 135/148 (91.22%) | 195/200 (97.5%) |
+
+At the user's request, the remaining accuracy groups used three temporary four-thread Colibri workers sharing identical model artifacts, for 12 CPU threads total. Previously completed results were preserved; every worker's identity/artifacts and output hashes were verified. Parallel-suite latency is not a matched speedup result. No new model was downloaded. Sidecars were stopped before the final four-thread performance probe.
+
+The separate eight-request warm sample measured 7.631s sequential mean, 11.462s at concurrency two, 56.11 decode tokens/s excluding prefill, and 2.65 GiB peak process RSS. Four requests per group do not establish production load capacity.
+
+Evidence: [accuracy](../training/reports/shared-v5r5-en-fr-evaluation.json), [training and selection](../training/reports/shared-v5r5-en-fr-training.json), [isolated performance](../training/reports/shared-v5r5-en-fr-performance.json). Further model improvement remains required before Contracts → Gestion Magasin → Réservation training; no later job has started.
 
 The dated work below preserves earlier diagnoses and measurements; it is not the current rollout status.
 

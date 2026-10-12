@@ -2,11 +2,15 @@
 
 Application: `contrat`. Status: PARTIALLY IMPLEMENTED; tested source is published with production activation disabled. Model acceptance remains incomplete.
 
-## Current training preparation — 2026-10-11
+## Verified backend update — 2026-10-12
 
-The current prepared dataset is `contracts-dialogue-v2-en-fr`: **153 / 44 / 78 training / validation / held-out examples**. Its cumulative shared stage is `shared-v6r4-en-fr`: **1,866 / 319 / 516** in the same order. Original logical prompts, expected actions and split membership are preserved. Updated inputs match the reviewed native planner, current-message language, calendar context and explicitly synthetic ordered references. Added neutral greeting/thanks histories are variants, not independent scenarios.
+Backend 0ef964c6f2c5 is published to company, personal and production. The installed shared core is 0.2.2; changed source files, Django checks, migrations and HTTP/container health passed. Database volumes and 8 business-table counts are unchanged. Native permissions, exact-target confirmation and actor history remain authoritative. The assistant is disabled; model acceptance/activation is incomplete. [Release evidence](../training/reports/approved-backend-release-20261012.json), [current model evaluation](AI_MODEL_ACCURACY.md#v5r5-measured-results--2026-10-12).
 
-The complete cumulative six-app preparation passed metadata-only tokenizer/Colibri checks without loading local weights. Exact predecessor prefixes, source dependencies and manifests are pinned. This is preparation, not a measured Contracts model score. The sole active optimization is shared V5r4; subsequent stages remain **Contracts → Gestion Magasin → Réservation**, one at a time after predecessor acceptance. See the [current training queue](AI_TRAINING_QUEUE.md) for the shared evidence and launch gates. Earlier dataset counts below describe the preserved initial preparation.
+## Current training preparation — 2026-10-12
+
+The current prepared dataset is `contracts-dialogue-v3-en-fr`: **153 / 44 / 78 training / validation / held-out examples**. Its cumulative shared stage is `shared-v6r5-en-fr`: **1,956 / 319 / 516** in the same order. Original logical prompts, expected actions and split membership are preserved. Updated inputs match the reviewed native planner, current-message language, calendar context and explicitly synthetic ordered references. Added neutral greeting/thanks histories are variants, not independent scenarios.
+
+The complete cumulative six-app preparation passed metadata-only tokenizer/Colibri checks without loading local weights. Exact predecessor prefixes, source dependencies and manifests are pinned. This is preparation, not a measured Contracts model score. Shared V5r5 training and evaluation completed without meeting acceptance; subsequent stages remain **Contracts → Gestion Magasin → Réservation**, one at a time after predecessor acceptance. See the [current training queue](AI_TRAINING_QUEUE.md) for the shared evidence and launch gates. Earlier dataset counts below describe the preserved initial preparation.
 
 ## IMPLEMENTED and verified locally
 
@@ -28,7 +32,7 @@ No Contracts model score is available. The server tokenizer/Colibri preflight pa
 
 - Natural-language model-driven flows remain unevaluated; local browser checks exercised real native handlers and confirmed selections, not substitute model responses.
 - Freeze source/dataset provenance before baseline measurement.
-- Finish the current shared V5r4 training/export/evaluation before any new training process starts.
+- Resolve shared V5r5 acceptance failures before any later-application training starts.
 - Retain all three existing application curricula and frozen evaluation sets when adding Contracts to the same shared model.
 - Meet at least 95% tool selection and eligible exact arguments, 99% valid structure, and no unresolved critical authorization failures. Report failures honestly.
 - Obtain activation authorization after model acceptance. Management Projet remains disabled as previously instructed.

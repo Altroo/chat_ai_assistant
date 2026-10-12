@@ -1,8 +1,15 @@
 # Phase 2: Management Projet progress
 
-Scope: Management Projet integration only. Separately authorized Design Workflow shared-model training inspected its adapter read-only and did not deploy its source. Contrat, reservation and gestion_magasin remain untouched. Production source/hook release is approved; feature/model activation and real-account acceptance remain unperformed.
+Scope: Management Projet integration. Other approved applications have separate progress reports. Production source release is verified; feature/model activation and real-account acceptance remain unperformed.
 
-- IMPLEMENTED: native architecture, JWT, permissions, trusted singleton-company context and entity discovery; optional shared-engine hooks and checksummed 0.2.0 wheel.
+## Verified backend update — 2026-10-12
+
+Backend 8a93baf17183 is published to company, personal and production. The installed shared core is 0.2.2; changed source files, Django checks, migrations and HTTP/container health passed. Database volumes and 27 business-table counts are unchanged. Native permissions, exact-target confirmation and actor history remain authoritative. The assistant is disabled; model acceptance/activation is incomplete. [Release evidence](../training/reports/approved-backend-release-20261012.json), [current model evaluation](AI_MODEL_ACCURACY.md#v5r5-measured-results--2026-10-12).
+
+## Retained implementation and earlier validation
+
+
+- IMPLEMENTED: native architecture, JWT, permissions, trusted singleton-company context and entity discovery; optional shared-engine hooks and checksummed 0.2.2 wheel.
 - IMPLEMENTED: owned conversations, typed read/search/navigation/PDF tools, authoritative financial calculations, permission-aware approved English/French knowledge and incremental synchronization, exact-target confirmed updates/deletes, native history and durable actor audit.
 - IMPLEMENTED: authenticated root-layout chat, one fixed bottom-right button, native Facturation-matched palette, current-message language, useful immediate suggestions, slash help, structured cards, history, cancellation/retry, route/minimize persistence and native overlay priority.
 - IMPLEMENTED: fifteen named native form/detail return controls navigate to their actual lists. Category editing returns to the existing expenses list. Generic not-found Retour remains generic history navigation. MCP Playwright verified details opened from the dashboard return to the users list.

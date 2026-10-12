@@ -1,0 +1,89 @@
+{
+  "applications": [
+    {
+      "app": "contracts",
+      "head": "0ef964c6f2c5d5718598d283df430b1cb59067c0",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "source_files_verified": 10,
+      "installed_core_files_verified": 10,
+      "business_tables_verified": 8,
+      "business_counts_unchanged": true,
+      "database_volumes_preserved": true,
+      "assistant_enabled": false,
+      "core_version": "0.2.2",
+      "production_model_healthy_unchanged": true,
+      "evaluation_process_unchanged": true,
+      "django_check": true,
+      "migrations_current": true,
+      "http_health_200": true
+    },
+    {
+      "app": "gestion_magasin",
+      "head": "d7f556f1b48ea5293286126ebb0e06016dc7e11e",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "source_files_verified": 10,
+      "installed_core_files_verified": 10,
+      "business_tables_verified": 62,
+      "business_counts_unchanged": true,
+      "database_volumes_preserved": true,
+      "assistant_enabled": false,
+      "core_version": "0.2.2",
+      "production_model_healthy_unchanged": true,
+      "evaluation_process_unchanged": true,
+      "django_check": true,
+      "migrations_current": true,
+      "http_health_200": true
+    },
+    {
+      "app": "reservation",
+      "head": "ddc31dc6ab4df70010fb2463d26f825db10a6d82",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "source_files_verified": 11,
+      "installed_core_files_verified": 10,
+      "business_tables_verified": 28,
+      "business_counts_unchanged": true,
+      "database_volumes_preserved": true,
+      "assistant_enabled": false,
+      "core_version": "0.2.2",
+      "production_model_healthy_unchanged": true,
+      "evaluation_process_unchanged": true,
+      "django_check": true,
+      "migrations_current": true,
+      "http_health_200": true
+    },
+    {
+      "app": "management_projet",
+      "head": "8a93baf1718308f5aa694ced22c9e2e8efe66a50",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "source_files_verified": 12,
+      "installed_core_files_verified": 10,
+      "business_tables_verified": 27,
+      "business_counts_unchanged": true,
+      "database_volumes_preserved": true,
+      "assistant_enabled": false,
+      "core_version": "0.2.2",
+      "production_model_healthy_unchanged": true,
+      "evaluation_process_unchanged": true,
+      "django_check": true,
+      "migrations_current": true,
+      "http_health_200": true
+    }
+  ],
+  "scope": "Existing-hook backend source release; model weights and assistant-disabled settings preserved."
+}
