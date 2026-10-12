@@ -1,0 +1,39 @@
+{
+  "status": "PARTIALLY IMPLEMENTED",
+  "purpose": "Evaluate only the completed functional checkpoint selection on the existing 438 frozen acceptance cases.",
+  "cases": 438,
+  "sets": 15,
+  "offline_control_tests_passed": 8,
+  "review": "One reviewer; no issues found.",
+  "verified_offline": [
+    "All eight predetermined validation candidates must complete before selection is recomputed from measured events.",
+    "Edited selection records or validation predictions are rejected.",
+    "Baseline-only selection and incomplete comparison cannot advance to another acceptance run.",
+    "Original provider, dataset, evaluator and driver checks remain in use.",
+    "Changing the selected candidate blocks server control before contact."
+  ],
+  "planned_runtime": {
+    "parallel_workers": 3,
+    "threads_per_worker": 4,
+    "context": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0
+  },
+  "control_sha256": {
+    "acceptance_run.py": "00777938218ad750bfe7761d5312be8bcaa9065c17f7f044db3105752f1765e7",
+    "remote_eval.py": "bc0b888fd1b4727efe7fbec9e2c75dd70c26c0cd093f0d2dd941dd7c82448640",
+    "test_acceptance.py": "0958bb353d127678880bafb0b0e60a57b00215d9b07bba42f8e05a9bd5704995"
+  },
+  "server_control_execution": false,
+  "model_inference_started": false,
+  "accuracy_established": false,
+  "production_activation": false,
+  "next_training_started": false,
+  "limitations": [
+    "Server launch and end-to-end runner execution await complete training and functional comparison.",
+    "Offline fixture results verify handoff checks, not model accuracy.",
+    "The original active training and scheduled evaluation controls remain unchanged.",
+    "Performance and native security verification remain separate from model acceptance."
+  ]
+}

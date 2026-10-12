@@ -300,7 +300,7 @@ IMPLEMENTED and independently reviewed: read-only analysis of the unchanged V5r5
 
 KNOWN EVALUATION LIMITATION: one French supplier-summary question omits the supplier noun included in its English counterpart; trusted context does not resolve the entity type. The original prompt, label and failed score remain unchanged. No favorable rescoring is claimed.
 
-PLANNED product correction after the active pinned evaluation: make shared clarification prose application-aware. The current unsupported message refers to invoicing even when used in other applications. Preserve the current provider/benchmark versions and verify the later presentation change independently.
+PARTIALLY IMPLEMENTED: an isolated local branch removes invoicing-only record/metric assumptions from all six shared English/French clarification messages. The single reviewer found no issues; 30 existing core tests and 12 offline provider parsing checks pass. Integration, package updates and release remain pending until the active pinned evaluations finish. Main-branch provider hashes and production remain unchanged. This is a wording correction, not a model-accuracy improvement.
 
 
 ## R6 checkpoint-600 result and fallback preparation — 2026-10-12
@@ -310,3 +310,10 @@ PARTIALLY IMPLEMENTED: validation macro loss decreased from 0.0962517421 at step
 IMPLEMENTED and verified as preparation only: a separately frozen fallback compares actual validation tool predictions for the baseline, each scheduled checkpoint (300 through 1,800) and final step 1,969. It reconstructs the exact prior 275-row envelope, including its 222 scenario groups, and retains the existing scoring and tie-breaking rules. This can run only after successful complete training and the original candidate remaining unaccepted. All 79 training tests pass, including 12 checkpoint-comparison tests; the single reviewer found no issues. [Frozen policy](../training/reports/shared-v5r6-checkpoint-selection-policy.json).
 
 PARTIALLY IMPLEMENTED: the private server export/evaluation runner is prepared and all ten offline safety tests pass. It binds published baseline provenance, exact validation batches, completed training, candidate artifacts and identical inference settings; it rejects overlapping optimization and insufficient resource reserves. One reviewer found two provenance gaps, both fixed and covered by mutation tests, then found no remaining issues. No server controller execution or fallback inference has started. The active training/evaluation controller and original loss-based selection remain unchanged. Any selected changed model still requires the existing 438-case acceptance suite; validation alone cannot accept it. [Controller checks](../training/reports/shared-v5r6-fallback-control-checks.json).
+
+
+## Selected-checkpoint acceptance preparation — 2026-10-12
+
+PARTIALLY IMPLEMENTED: the separate functional fallback now has a prepared acceptance handoff for its selected changed checkpoint. It reuses the existing 438-case, 15-set evaluator and baseline comparison, with the same model/provider settings and scoring. All eight predetermined validation candidates must finish; the selection is recomputed from their complete frozen predictions before admission. The baseline cannot advance as a new candidate. No activation or subsequent training is performed by this runner.
+
+Eight offline handoff tests pass, including altered selection/events, incomplete comparison, baseline selection and changed-candidate rejection. The single reviewer found no issues. No server control or inference has run; actual acceptance, performance and native security remain incomplete. The active R6 controller is unchanged. [Preparation evidence](../training/reports/shared-v5r6-selected-acceptance-controls.json).
