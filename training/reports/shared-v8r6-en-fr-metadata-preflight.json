@@ -1,0 +1,44 @@
+{
+  "manifest_sha256": "8c42bf1c902c1efb214f242780b27e48c4e95f08ddb2d4d84cc343fafb664ee5",
+  "tokenizer_and_runtime_match_server": true,
+  "scope": "Metadata only; no weights, local inference or optimization. Previously checked unchanged held-out envelopes are reused by exact hash.",
+  "train.jsonl": {
+    "count": 2500,
+    "round_trip_passed": 2500,
+    "runtime_prefix_parity_passed": 2500,
+    "loss_boundary_passed": 2500,
+    "semantic_alignment_passed": 2500,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7662,
+    "sha256": "e1003f24c39a3b364fa69755024425760f9a60f0bc7c34f4db2963f55980ad8a"
+  },
+  "valid.jsonl": {
+    "count": 402,
+    "round_trip_passed": 402,
+    "runtime_prefix_parity_passed": 402,
+    "loss_boundary_passed": 402,
+    "semantic_alignment_passed": 402,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7496,
+    "sha256": "cdbaeacf2bbee6e538ba169498e9c41f3dec4f1d547b106a763c2f686e4e45ea"
+  },
+  "held_out": {
+    "count": 690,
+    "round_trip_passed": 690,
+    "runtime_prefix_parity_passed": 690,
+    "loss_boundary_passed": 690,
+    "semantic_alignment_passed": 690,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7271,
+    "sha256": "5d2363626a0d6b7832f6702439a3445128bdc2039b6cff0cdeb1f18c48e45c56",
+    "maximum_prompt_tokens": 7235,
+    "reserved_output_tokens": 512,
+    "maximum_request_bytes": 28196
+  },
+  "held_out_evidence": {
+    "fresh": false,
+    "source": "training/reports/shared-v8r5-en-fr-metadata-preflight.json",
+    "source_sha256": "bb55937cdcc6c450ccc51df85d669f60dc8a10b4627885fc5e585540885928c5",
+    "identical_held_out_manifest": true
+  }
+}
