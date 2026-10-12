@@ -8,7 +8,7 @@ Verification: 358 assistant tests, six TypeScript checks, scoped lint and all si
 
 ## Current shared-model and rollout status — 2026-10-12
 
-PARTIALLY IMPLEMENTED — current run: V5r6 server training has started from the verified V5r5 step-600 checkpoint. One complete epoch covers 1,969 English/French training rows; all 275 validation rows and 438 held-out cases remain unchanged. The run uses 14 CPU threads, a 16 GiB limit with at least 10% host memory reserved, gradient checkpointing, 24 LoRA layers and a learning rate of 0.00001. Validation/checkpoint selection runs every 300 steps, with the unchanged baseline eligible. There is no V5r6 accuracy score or production activation yet. [Verified run start](../training/reports/shared-v5r6-en-fr-training-start.json).
+PARTIALLY IMPLEMENTED — current run: V5r6 server training has started from the verified V5r5 step-600 checkpoint. One complete epoch covers 1,969 English/French training rows; all 275 validation rows and 438 held-out cases remain unchanged. The run uses 14 CPU threads, a 16 GiB limit with at least 10% host memory reserved, gradient checkpointing, 24 LoRA layers and a learning rate of 0.00001. Validation/checkpoint selection runs every 300 steps, with the unchanged baseline eligible. There is no V5r6 accuracy score or production activation yet. [Verified run start](../training/reports/shared-v5r6-en-fr-training-start.json). The latest completed validation is step 900: macro loss 0.0817649788, improved from 0.0851006019 at step 600 but above the 0.0709163280 baseline. The baseline remains selected; these are loss measurements, not accuracy scores. [Latest checkpoint evidence](../training/reports/shared-v5r6-validation-through-900.json).
 
 IMPLEMENTED and verified: the exact training base matches 473 previously verified FP32 tensors, all three attested tokenizer files and the full shard index. Server metadata checks passed 1,969 training and 275 validation rows. Two resumed capacity updates passed across all 24 layers; the earlier user-interrupted attempt is preserved and does not count as a completed capacity test.
 
@@ -32,19 +32,23 @@ No later application training has started. Contracts → Gestion Magasin → Ré
 
 Current step: shared V5r6 training and model-quality evaluation. All six application integrations and the named-list navigation releases are authorized; later application training remains sequential behind shared-model acceptance. The Facturation Phase 1 report and subsequent application reports remain available as historical implementation evidence. Successful basic workflows do not establish 95% broad model accuracy.
 
-## IMPLEMENTED and verified
+## Historical Facturation rollout — 2026-10-08 and 2026-10-09
+
+The following results describe the earlier Facturation rollout and its model version. They remain evidence for that release; the current shared-model status and six-application releases are recorded above.
+
+### IMPLEMENTED and verified
 - Reusable Python provider/orchestrator/registry, Django integration,17 typed tools, native permissions, company/object checks, bounded read results, safe navigation and financial calculations reused from Facturation.
 - Supported document/client edits and deletion require exact-target confirmation and fresh native permissions. Native history and durable AI audit identify the requesting user. Stock reversal for delivery deletion uses the shared native service.
 - Authenticated root FAB, native theme/components, responsive chat, company-tab scope, history, cancellation, retries, slash help, human form labels and explicit detail-to-list navigation.
 -12 reviewed bilingual knowledge documents, incremental synchronization, permission filtering before ranking, exact-version history protection. General help delivers verified procedures; specific business questions use the local model. Exact positional follow-ups use authorized saved references.
 - Server-only v4 LoRA training completed410steps; validation loss0.117782→0.068355. No private business records used. Colibri CPU export and artifact hashes verified.
-- Current production: all three repositories released through local commits/Git; all nine remote heads verified. Backend and frontend native HTTP routes return 200; private model remains healthy with the same model identity and start time.
+- Production at this checkpoint: all three Facturation/shared-core repositories released through local commits/Git; all nine remote heads verified. Backend and frontend native HTTP routes return 200; private model remains healthy with the same model identity and start time.
 - Latest module-shortcut changes: 819 assistant/backend tests and 112 chat frontend tests passed; TypeScript, ESLint and the assistant-enabled production build passed.
 - Full backend2,272tests+30subtests passed; final assistant765tests passed, then52 focused help/reference regressions after review. Four Docker/static-asset tests passed. Frontend75 final native/chat tests, TypeScript, ESLint and production build passed.
 - Real local v4 checks passed invoice/client/product search, quote/article search, EN/FR collected-payment summaries, unpaid/ordinal follow-ups, navigation/list return and reviewed EN/FR workflow answers. Original model failures remain recorded separately.
 - Public-repository audit found no actual credentials or private business artifacts in release commits. Runtime environments, keys, browser state, raw reports, weights and checkpoints are ignored. Application code is edited locally and released via Git pushes.
 
-## Suggestion-button update — 2026-10-09
+### Suggestion-button update — 2026-10-09
 - IMPLEMENTED: complete permission-filtered English/French starter questions, immediate sending on click, active-company isolation and explicit click-to-send instructions. Slash-menu entries remain editable drafts.
 - Validation: 831 assistant backend/security tests and 115 chat frontend tests passed; TypeScript, ESLint, production frontend build and source/wheel checks passed. The single reviewer found no unresolved code issues.
 - Initial production UI release: each of the five questions sent exactly once in the active company. Unpaid invoices, recent quotes, stock and invoice workflow completed safely; desktop/mobile fit, native English metadata and slash drafting passed.
@@ -52,22 +56,22 @@ Current step: shared V5r6 training and model-quality evaluation. All six applica
 - Final corrected release: 10/10 actual production button-click checks passed (five French, five English), with one exact request per click and correct company scope. Both final stock questions independently selected the native minimum-status filter in private provider probes. Source heads and installed wheel were verified, services healthy, model unchanged. Observed production stock lists were empty; no live threshold values were inferred. Evidence: [sanitized starter checks](../training/reports/production-starter-suggestions-checks.json).
 - These targeted checks do not replace the held-out model evaluation, whose last recorded scores remain below target. The catalogue correction has not been rescored against that dataset.
 
-## Measured model limits
+### Measured model limits
 Frozen independent80 cases: tool selection50/80 (62.5%); exact arguments24/76 (31.58%); schema73/80 (91.25%). Base: 44/80,18/76,61/80. Targets95/95/99 are UNMET. Complex filters, limits, operation choice and malformed calls remain weaknesses. The application's deterministic help/reference handlers are not credited as model accuracy.
 
 Dedicated server8-request sample: sequential mean8.34s, p95(maximum of4)9.74s; concurrency2 mean12.29s, p95(maximum of4)17.66s. Decode56.94tokens/s excludes prefill; peak process RSS2.58GiB and about4busy CPU cores. This small sample is not a load-capacity certification.
 
-## Production verification
+### Production verification
 - Prepared production checklist: 12/12 passed, including dashboard FAB, invoice/article search, financial equality, company/history isolation, bilingual workflows, navigation, mobile fit and public-login absence. The new module release passed nine additional production checks: permitted catalogue, English/French capability answers, stock/logistics/article reads, described article search and desktop/mobile menu fit.
 
-## PARTIALLY IMPLEMENTED
+### PARTIALLY IMPLEMENTED
 - Overall model acceptance remains below target, despite passing the tested basic application workflows.
 
-## Remaining limitations
+### Remaining limitations
 - Complex model requests may omit filters or ask for clarification; inspect returned record details before selecting an action. Exact-target confirmation is mandatory for supported writes.
 - Stock, logistics, account and payment adapters are read-only. Supported writes are bounded document/client actions, not all operations in every module.
 - Full physical-device keyboard and assistive-technology certification remains unperformed.
-- Phase 2 is explicitly authorized for Management Projet. Design Workflow shared-model training is also authorized; its application release is separate. The user subsequently authorized the remaining named applications; their integrations remain planned and must reuse the shared model.
+- At this historical checkpoint, Management Projet integration and Design Workflow shared-model training were authorized, with the remaining application integrations still planned. The current six-application implementation and release status is recorded above; every application reuses the shared model.
 
 Historical work log: [AI_PROGRESS_HISTORY.md](AI_PROGRESS_HISTORY.md). Detailed evidence: [AI_TESTING.md](AI_TESTING.md), [AI_FINE_TUNING.md](AI_FINE_TUNING.md), and training/reports.
 
@@ -303,9 +307,9 @@ KNOWN EVALUATION LIMITATION: one French supplier-summary question omits the supp
 PARTIALLY IMPLEMENTED: an isolated local branch removes invoicing-only record/metric assumptions from all six shared English/French clarification messages. The single reviewer found no issues; 30 existing core tests and 12 offline provider parsing checks pass. Integration, package updates and release remain pending until the active pinned evaluations finish. Main-branch provider hashes and production remain unchanged. This is a wording correction, not a model-accuracy improvement.
 
 
-## R6 checkpoint-600 result and fallback preparation — 2026-10-12
+## R6 checkpoint-900 result and fallback preparation — 2026-10-12
 
-PARTIALLY IMPLEMENTED: validation macro loss decreased from 0.0962517421 at step 300 to 0.0851006019 at step 600. The baseline remains better at 0.0709163280, so it is still selected. Training resumed after validation and remains incomplete. These losses are not tool-accuracy percentages; no R6 acceptance score or production activation is claimed. [Measured checkpoint report](../training/reports/shared-v5r6-validation-through-600.json).
+PARTIALLY IMPLEMENTED: validation macro loss decreased from 0.0962517421 at step 300 to 0.0851006019 at step 600 and 0.0817649788 at step 900. The baseline remains better at 0.0709163280, so it is still selected. At step 900, Management Projet and Design Workflow losses are below their baseline values; Facturation is worse than both its baseline and step 600. Training resumed after validation and remains incomplete. These losses are not tool-accuracy percentages; no R6 acceptance score or production activation is claimed. [Latest measured checkpoint report](../training/reports/shared-v5r6-validation-through-900.json), [preserved step-600 report](../training/reports/shared-v5r6-validation-through-600.json).
 
 IMPLEMENTED and verified as preparation only: a separately frozen fallback compares actual validation tool predictions for the baseline, each scheduled checkpoint (300 through 1,800) and final step 1,969. It reconstructs the exact prior 275-row envelope, including its 222 scenario groups, and retains the existing scoring and tie-breaking rules. This can run only after successful complete training and the original candidate remaining unaccepted. All 79 training tests pass, including 12 checkpoint-comparison tests; the single reviewer found no issues. [Frozen policy](../training/reports/shared-v5r6-checkpoint-selection-policy.json).
 
