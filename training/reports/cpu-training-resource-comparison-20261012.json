@@ -1,0 +1,45 @@
+{
+  "scope": "Two unsaved capacity updates on the longest R5 training row; no model acceptance claim.",
+  "cpu_threads": 14,
+  "logical_cpu_threads": 16,
+  "reserve_fraction": 0.1,
+  "sequence_tokens": 7662,
+  "checkpointed": {
+    "passed": true,
+    "step_seconds": [
+      188.31122147105634,
+      173.60789651237428
+    ],
+    "mean_step_seconds": 180.9595589917153,
+    "peak_rss_gib": 6.342273712158203,
+    "all_24_layers_updated": true,
+    "memory_limit_gib": 20
+  },
+  "without_checkpointing": [
+    {
+      "memory_limit_gib": 20,
+      "result": "oom-kill",
+      "completed_updates": 0
+    },
+    {
+      "memory_limit_gib": 26,
+      "result": "oom-kill",
+      "completed_updates": 0
+    }
+  ],
+  "initial_attempt": "22 GiB job admission rejected before optimizer start when reserve/headroom changed.",
+  "cleanup": "All probe processes stopped. Initial duplicate-stop bookkeeping error independently recovered; final cleanup passed.",
+  "production_healthy_unchanged": true,
+  "idle_evaluation_services_stopped": 3,
+  "model_files_and_results_preserved": true,
+  "available_ram_after_gib": 34.77456283569336,
+  "decision": "Retain gradient checkpointing and 14 CPU threads. No usable speedup from increased activation memory established.",
+  "evidence_sha256": {
+    "cpu-checkpointing-speed-20261012-r2/checkpointed.json": "65064690a489383aa41c9f740bdad25a68abea6e11c49a9d5cca6fbd56986a88",
+    "cpu-checkpointing-speed-20261012-r2/retained-unit.json": "43dd37ebf9767332b8d835388025b249abfce5fb8fec964f9d238b0604550ebf",
+    "cpu-checkpointing-speed-20261012-r2/recovery-and-release.json": "4f0386f51228e62ea38401fc9e77806a7e8e3720f711af3ef3e539bdc3546f68",
+    "cpu-checkpointing-speed-20261012-r3/retained-unit.json": "a0bfe8c661aed219d445a2d66e78617136d61849d70df15482e505c5dc0890a3",
+    "cpu-checkpointing-speed-20261012-r3/cleanup.json": "89398e3bb47f058d51a5af482799543d6a116bbb0477b2dddf0bf6a98294d94d"
+  },
+  "dataset_sha256": "422377f64551b665677a3ab50c495f88de6fb5284b35ee0b03de625aa4c3c89c"
+}

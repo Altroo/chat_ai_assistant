@@ -108,3 +108,15 @@ Release verification matched all 18 requested remote heads, confirmed deployed U
 ## Saved-checkpoint comparison verification — 2026-10-12
 
 All 825 validation calls completed and their model/process/artifact, dataset and scoring hashes passed pre/post checks. Step 600 won the fixed validation-only selection rule. All 63 training tests, including eight checkpoint-selection tests, passed. The single reviewer found no remaining publisher issues after clarification-dependency and complete-output checks were added. Temporary workers stopped; production remained unchanged. The existing 438-case acceptance evaluation for the identical selected candidate remains failed and was not repeated. [Measured results](../training/reports/shared-v5r5-functional-validation.json).
+
+## V5r6 preparation checks and CPU resource probe — 2026-10-12
+
+IMPLEMENTED and verified: saved-checkpoint evaluation used three four-thread workers (12 threads total). All 825 comparisons completed. Finished R2/R4/R5 evaluation services were then stopped to release RAM; all weights/results and production inference were preserved. Training remains configured for 14 of 16 logical threads, retaining the 10% memory reserve.
+
+Two unsaved, 7,662-token checkpointed optimizer updates passed in 188.31 and 173.61 seconds, with 6.34 GiB peak RSS and genuine updates in all 24 intended layers. Disabling gradient checkpointing failed before any successful update at both 20 GiB and 26 GiB limits. The initial 22 GiB attempt failed admission before launching; a duplicate-stop cleanup bookkeeping error was independently recovered. All probe processes are stopped and production remained healthy. Retain gradient checkpointing; no measured speed improvement from extra activation memory is claimed. [Resource evidence](../training/reports/cpu-training-resource-comparison-20261012.json).
+
+PARTIALLY IMPLEMENTED: V5r6 retains the exact 1,803 prior training rows and all 275 validation rows, adding 166 synthetic English/French examples for date bounds, combined unpaid/customer/product filters, current-page reads and literal field values. Total: 1,969 training rows. All 438 frozen evaluation cases remain unchanged. Two native-routing/target wording issues were corrected before training and reviewed by the single reviewer.
+
+All 69 training-integrity tests pass. Native audit passes all 166 new tool/schema selections and eight Facturation explicit targets; independent review also checked eight Management Projet explicit targets. Metadata preflight passes all 2,244 training/validation rows and 438 evaluation cases, with no local weights or training. [Metadata checks](../training/reports/shared-v5r6-en-fr-metadata-preflight.json), [native audit](../training/reports/shared-v5r6-native-curriculum-audit.json). These are data/preparation checks, not model accuracy. No V5r6 full optimization has started; selected-base binding, server preflight and launch-time capacity remain pending.
+
+Management Projet and the next three application assistants remain disabled. No production model replacement; future application training stays sequential after acceptance.

@@ -1,0 +1,14 @@
+{
+  "scope": "New synthetic rows only; native shortlist/schema/target checks, not authorization or model accuracy",
+  "added_rows_checked": 166,
+  "explicit_target_checks": 8,
+  "dataset_sha256": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+  "native_source_sha256": {
+    "management_planner": "9f9551756b3c2bf8ab51f29bcbde91cc0293f0e0d0d9e3ba9f94554e662456fe",
+    "design_planner": "a7aadd71a5d3ed53ce490ed0729295f8db439ad6562f0c2a4f1aadfc1bced70c",
+    "facturation_actions": "ac561ad81a77bf4af3c33a23f4723709c931b297144d1865a6f372054ceffead",
+    "shared_routing": "1640f46741e967711c7af246d0766b89992c4dc63d48c7a697ef775890d4a811",
+    "shared_target_guard": "0fe2f1ca934c6915cc21cef11ac37e73bab89a598f801e6d1a057889d2efee15"
+  },
+  "passed": true
+}

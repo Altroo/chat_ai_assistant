@@ -1,0 +1,976 @@
+{
+  "version": "shared-v5r6-en-fr",
+  "applications": [
+    "facturation",
+    "management_projet",
+    "design_workflow"
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "generator_sha256": "09670280de5d42b1df726d5eb968dfa25cd0a5ce21da2f5c7800dc71e08e7afd",
+  "parent_manifest_sha256": "e7f5d67caf9f5bb99418ed71dd3ce18ef38a7bfbd4a879605595bd1b31efbdf6",
+  "helpers": {
+    "build_dialogue_v1.py": "2dcb6179735d96acd338e002e7006e4d85056e41281a119c5046a9283b987a5a",
+    "build_shared_v5r3.py": "98660f431de448ebfeb1daf31679cf2be931c82c30163da731f4ee7eee19dfe7",
+    "prepare_shared_v5r5.py": "b7702319000f9d4f0b6f44bab28a2d1063093e0b44a0b2e5bf522f29891f87f6"
+  },
+  "planning_messages_sha256": "d7024d3c9af58d501f680f2c79ae1e5108a6ec19faa92a2ba49b6c67893d1395",
+  "source_files": {
+    "train.jsonl": "422377f64551b665677a3ab50c495f88de6fb5284b35ee0b03de625aa4c3c89c",
+    "valid.jsonl": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86"
+  },
+  "held_out": {
+    "training/datasets/shared-adapter-v2-en-fr/design-workflow-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+      "count": 60,
+      "baseline_label": "design-workflow-candidate-shared-adapter-v2-final",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/design-workflow-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "be4a6391ca373b8101fe60daabee8c92990e5bae6b6a3ab161a4ddbd70345e57",
+      "count": 24,
+      "baseline_label": "design-workflow-fresh-shared-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/design-workflow-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "5ea89a4858b2b83292d9db8659f41fe61fa246886e4822e43c94302dcc4b0ab1",
+      "count": 20,
+      "baseline_label": "design-workflow-new-holdout-shared-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/design-workflow-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+      "count": 10,
+      "baseline_label": "design-workflow-refinement-candidate-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/facturation-acceptance-en-fr--test.eval.jsonl": {
+      "sha256": "a98d2d5c114b709b68ea856e8251c1007071d8585f69c0f41bae5f98e924d75b",
+      "count": 80,
+      "baseline_label": "facturation-candidate-shared-adapter-v2-final",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/facturation-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "daf215fa0ee8f00793bc1b92eaf4857240b419fbdd4ace45674e6f2f77cc81f4",
+      "count": 12,
+      "baseline_label": "facturation-refinement-candidate-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/management-projet-v1-en-fr--test.eval.jsonl": {
+      "sha256": "4bba62427783498ef0b28c06f2bfe838709551ec84e4e1a1b7528a0d07ea1bc7",
+      "count": 60,
+      "baseline_label": "management-projet-candidate-shared-adapter-v2-final",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/management-projet-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "b2fbbf5925ecb88a467a90643d315d60b89bc19ff62efaf9c29d069cff79ea2a",
+      "count": 20,
+      "baseline_label": "management-projet-companion-shared-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/management-projet-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "f4e08e2c13d9375309f33da69e7a04eae92917a41d7251ab12689020aa31e4c2",
+      "count": 32,
+      "baseline_label": "management-projet-fresh-shared-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/management-projet-v4-en-fr--independent.eval.jsonl": {
+      "sha256": "d095170c0978b6a4ccc19b584036463ee17868ed6a0396e72849faee74b6c273",
+      "count": 32,
+      "baseline_label": "management-projet-new-holdout-shared-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/management-projet-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "count": 12,
+      "baseline_label": "management-projet-refinement-candidate-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/shared-adapter-v2-en-fr/management-projet-followup-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "6d2d7f3896299af4f93383f080da4b0666dab964a8af29d8462eb48bcb3053fe",
+      "count": 28,
+      "baseline_label": "management-projet-followup-candidate-adapter-v2",
+      "kind": "retained regression"
+    },
+    "training/datasets/facturation-refinement-v2-en-fr/independent.eval.jsonl": {
+      "sha256": "19bb4d8ba6b8055bef6692440ddcbe944f49dd7bc42f9751a2f62a069b3931a8",
+      "count": 16,
+      "baseline_label": "facturation-refinement-v2-baseline-v5r2",
+      "kind": "new frozen evaluation"
+    },
+    "training/datasets/management-projet-refinement-v2-en-fr/independent.eval.jsonl": {
+      "sha256": "f82d52637162db6aa3a857b8176de87049c9adb23fbe0665bc29d03700bc1446",
+      "count": 16,
+      "baseline_label": "management-projet-refinement-v2-baseline-v5r2",
+      "kind": "new frozen evaluation"
+    },
+    "training/datasets/design-workflow-refinement-v2-en-fr/independent.eval.jsonl": {
+      "sha256": "9231e09df49101a1fcae4f76368f78dd28dd81cfeaa6d2d29a7f2cffe4b9dc2f",
+      "count": 16,
+      "baseline_label": "design-workflow-refinement-v2-baseline-v5r2",
+      "kind": "new frozen evaluation"
+    }
+  },
+  "held_out_count": 438,
+  "evaluation_manifest_sha256": "5bfa383c276e28cf3a78a20788d1b51fd7769563243aa26f33fcab7fed9b13e3",
+  "counts": {
+    "retained_train": 1803,
+    "added_train": 166,
+    "train": 1969,
+    "valid": 275
+  },
+  "added_categories": {
+    "date_lower": 38,
+    "date_upper": 38,
+    "date_day": 38,
+    "combined_unpaid_filters": 16,
+    "current_page": 20,
+    "literal_multifield": 8,
+    "literal_text": 8
+  },
+  "added_applications": {
+    "facturation": 102,
+    "management_projet": 60,
+    "design_workflow": 4
+  },
+  "history_assignment": [
+    {
+      "source_index": 0,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "b3795e3dbd52328a0940707e9b1c21696e4f793f98831e9c83d0a867dbff1e80"
+    },
+    {
+      "source_index": 1,
+      "arm": "Hello",
+      "input_sha256": "c951166b853bdb818a60b85e0f406d9b81557274a32553f6b7997165d30495a0"
+    },
+    {
+      "source_index": 2,
+      "arm": "Bonjour",
+      "input_sha256": "8f74abd8e8d97cda011fe0cba9ef1d3af4562629518cf0a54d17e6821bf68b04"
+    },
+    {
+      "source_index": 3,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "235f3e26609622bdc8e3e33e0ce93a3efd9e76060ffe60d4da3626bd724a9908"
+    },
+    {
+      "source_index": 4,
+      "arm": "Hello",
+      "input_sha256": "84479017cd135b06305939f14cbdc754b55ec647aebe22fc57bd92b4a87e3997"
+    },
+    {
+      "source_index": 5,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "8a610ab25491be895a8ebbf47a45d5f077edbd71ae11bfefca13488fbeb72cd7"
+    },
+    {
+      "source_index": 6,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "9db25a2538f46e6088f0d9fc721dc35156aae1d5812eee09e5a6d656622451f6"
+    },
+    {
+      "source_index": 7,
+      "arm": "Hello",
+      "input_sha256": "0704afbddd2abc8270c6a2044a383588617da608b98e039fc02ae1310f29be1f"
+    },
+    {
+      "source_index": 8,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "a1f149d2875dd0bb37575c83d874f716c8196b30a38dae7e0b8e32ab59f2c8a9"
+    },
+    {
+      "source_index": 9,
+      "arm": "Hello",
+      "input_sha256": "601b051b293f4b0238e258e22505a576734bf1ad3e7d870f0eb0bef943dc8444"
+    },
+    {
+      "source_index": 10,
+      "arm": "no_history",
+      "input_sha256": "96e606c2cb967f9b3fe2e43e9c2d39bb8bb9bd3155eb4ab23668565ecc2dae8f"
+    },
+    {
+      "source_index": 11,
+      "arm": "no_history",
+      "input_sha256": "f0b47b3d43dbd593ae0ab2b39b92af53d0705a90fe8070997dbb03e6974ce8e9"
+    },
+    {
+      "source_index": 12,
+      "arm": "Hello",
+      "input_sha256": "71e228ebc7d54cb84c008823def3ed7f5519da7c6dfca5fd8a89d6f1e683eaa6"
+    },
+    {
+      "source_index": 13,
+      "arm": "no_history",
+      "input_sha256": "0fd064a1dfa9d439ba255bb55f0604ad07e3da8638e135fe7a2380fb66a85111"
+    },
+    {
+      "source_index": 14,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "e1fcae498813e86115ad4a817baf0798d284d7232ab80d88a55dc91dbb5d3289"
+    },
+    {
+      "source_index": 15,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "b32cf9b5fbb46b1bb66cf652c99f0d37494fabdbe01e7ba6aa5118fbc458889c"
+    },
+    {
+      "source_index": 16,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "615284d4519ee45d53c0bf88253d55c547bf8d33f439a2d396735b2716948d38"
+    },
+    {
+      "source_index": 17,
+      "arm": "Bonjour",
+      "input_sha256": "35d57a27942da1e236b107b01e040df950e1db2bbf7bf008e895962a2c881fc8"
+    },
+    {
+      "source_index": 18,
+      "arm": "Bonjour",
+      "input_sha256": "3edaeef498e86b31aab2458e6b15f708c5f8272c676154af5b9122e48e779d41"
+    },
+    {
+      "source_index": 19,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "d3218de7d41fa671634d51183609725cbe8b815138762ef8ceb87b2d552c6e7c"
+    },
+    {
+      "source_index": 20,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "61ac81674453202d1664ad1dae1f7ed13baace47eb3946025536a2cfe9c088de"
+    },
+    {
+      "source_index": 21,
+      "arm": "Hello",
+      "input_sha256": "7e97226fee63ba7e983cf3107b6d4b49ebfebd28ab89176a1cb1267da3fb0f90"
+    },
+    {
+      "source_index": 22,
+      "arm": "Bonjour",
+      "input_sha256": "2e76d8d0c2252ba0d9de45a98b296707a3af2249bf1556225522e144aedbc3a6"
+    },
+    {
+      "source_index": 23,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "9141fc491be405a98ba31007d6089054e907b8ed8559619c65f89a2815239109"
+    },
+    {
+      "source_index": 24,
+      "arm": "no_history",
+      "input_sha256": "e5b16cbb4a10aecdd0b33058b0f0fc049f89f14e31fee194204445a8bf4d44bf"
+    },
+    {
+      "source_index": 25,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "725b9baa597ca3a7c347d84fb06466996370488382ca63d7a4106872e3929d8e"
+    },
+    {
+      "source_index": 26,
+      "arm": "Bonjour",
+      "input_sha256": "70e467b4474dea0707660bb31bc27a78d6beb5529d87251eeb942a119b1a8b40"
+    },
+    {
+      "source_index": 27,
+      "arm": "Hello",
+      "input_sha256": "bcb1a95d80973ee4db71022e42bc9c068cfcc74c1d44a4f143b06fc0034a80e1"
+    },
+    {
+      "source_index": 28,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "0e80194771a6287f3012e507f59028c08494aa573ae2c5ec74bd802f80fbbe58"
+    },
+    {
+      "source_index": 29,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "0f99445d862c5061ba145fd104434ebbafe9b7a647f8d44075487b887a3d4bea"
+    },
+    {
+      "source_index": 30,
+      "arm": "no_history",
+      "input_sha256": "cde46fe0065fd95ef6ae82811a7679ed90be870e04fb1da2f2bcebd3bcbdf567"
+    },
+    {
+      "source_index": 31,
+      "arm": "no_history",
+      "input_sha256": "dbdc2e30a22429fdc3d3cbb382118cc35e9895df1c976d984d4f0244315862bc"
+    },
+    {
+      "source_index": 32,
+      "arm": "no_history",
+      "input_sha256": "16a6c44e80c5c187a9a8f8110790b12da0ee58474ef930474a0c23f89fc6f509"
+    },
+    {
+      "source_index": 33,
+      "arm": "no_history",
+      "input_sha256": "8d4fb31c05d76aa29db82e69645618abc0f9df0d215f5fe0a059bf501a82b5e4"
+    },
+    {
+      "source_index": 34,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "1d42e20b997db02181f6e6497cc1a3ebdaf648a4fc8402ca0ca60750edb80e2f"
+    },
+    {
+      "source_index": 35,
+      "arm": "Bonjour",
+      "input_sha256": "14e84138456e93d5a235e3355d355a9e64a87cf29487d338b25ea7d94984bec5"
+    },
+    {
+      "source_index": 36,
+      "arm": "Bonjour",
+      "input_sha256": "2a8b88c2f7262a459dd4a2da2d3dbf89b4f4e7d9679d431040102c0ad2e33025"
+    },
+    {
+      "source_index": 37,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "51a44dfe26d28673d5022290b797553dd70229be92de95fa77aadc716ade2963"
+    },
+    {
+      "source_index": 38,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "c853a97ef891fb3980b22ed5a0cda17edb470f0ffdb620392839db99e10bfc45"
+    },
+    {
+      "source_index": 39,
+      "arm": "Bonjour",
+      "input_sha256": "d4afbbac3888dc40e4046f1163aac954e2ac69a3558d10b6cf159aa0e235e29c"
+    },
+    {
+      "source_index": 40,
+      "arm": "Bonjour",
+      "input_sha256": "e155c4439dcc167e7af5a364a1cce8bca7696c23cb264c12d2c01471f625870a"
+    },
+    {
+      "source_index": 41,
+      "arm": "Hello",
+      "input_sha256": "58ab5f6a7ee92a8cfc805c58a4324b5adfa6b1f985a46f36033a17ca3a8357b1"
+    },
+    {
+      "source_index": 42,
+      "arm": "Hello",
+      "input_sha256": "f71450c9d105702f09a023c24ff74b176fbef0d7573b27afcc76944208316d8c"
+    },
+    {
+      "source_index": 43,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "13e8fbb64c1fc4ca47c1ac5ee727e8308e7de65cfe60c8a312258508fa5cdc0a"
+    },
+    {
+      "source_index": 44,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "56a14470ae07c71a477821e9536b6695d70b4aa79406bac0a2d965b471892585"
+    },
+    {
+      "source_index": 45,
+      "arm": "Hello",
+      "input_sha256": "c59d08892af7ed066e555ab1a5596a9a08b22339d22b6b06824cf66f9a45e9fd"
+    },
+    {
+      "source_index": 46,
+      "arm": "Hello",
+      "input_sha256": "16863124a837145ce114cddec191d6e8338fc15b9a116b304f5a7971bda0e531"
+    },
+    {
+      "source_index": 47,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "cb551e3aa5c834eb0c2d2aca56967af1e6e46554159a3dea1779472da45a2add"
+    },
+    {
+      "source_index": 48,
+      "arm": "Bonjour",
+      "input_sha256": "2377ad1680e5decc1e2e21d27cfb12a98967983e5b9c35a4194ad6c409e3c781"
+    },
+    {
+      "source_index": 49,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "7715fca14bd6356c4b22fee7b70f27ecdc69f4c73a18bb7192fa28756da24c95"
+    },
+    {
+      "source_index": 50,
+      "arm": "Bonjour",
+      "input_sha256": "0e1ab8a8f91d5e71821e6639338686284f119154849886c0876734c0ebe8c4d8"
+    },
+    {
+      "source_index": 51,
+      "arm": "Hello",
+      "input_sha256": "7bedb3d128d8d47d2890cbaef107494d11c6c2f75dad495fa2996f233e3e9dd8"
+    },
+    {
+      "source_index": 52,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "8295bfcc2a569d19ef83dcf522b7d69585b4bea67ed331106aa6d6c22c509521"
+    },
+    {
+      "source_index": 53,
+      "arm": "Bonjour",
+      "input_sha256": "bcf9a5e3568976c51805941812fbc971cbd12ef5e7adb95002960cec041696df"
+    },
+    {
+      "source_index": 54,
+      "arm": "no_history",
+      "input_sha256": "75d57d4cf1df00910fb547b629b5f8e42e41c4cf5570c08e0f80236fcf5666c1"
+    },
+    {
+      "source_index": 55,
+      "arm": "Hello",
+      "input_sha256": "2aebae3e93c806af1c31487566362616e59167d062e2d07686e9752eb220c17b"
+    },
+    {
+      "source_index": 56,
+      "arm": "Bonjour",
+      "input_sha256": "d5a21a20637e7908617d6e9be0a8b22dc3dd7fd3b33b4de361407ecbf0bf8f3e"
+    },
+    {
+      "source_index": 57,
+      "arm": "Hello",
+      "input_sha256": "523e9d18a344794ac52aca6edac621772d985c842024bcf0012b701c0d36418a"
+    },
+    {
+      "source_index": 58,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "7e1fe9e00acceddbaaf37195ca58a8f45311bedf14d5cd48e7a0e07edee1b5e7"
+    },
+    {
+      "source_index": 59,
+      "arm": "Bonjour",
+      "input_sha256": "dbd2066a428b438b120bb9bcfe8d1fd844f1da91cac335b7371cecb053c06aa8"
+    },
+    {
+      "source_index": 60,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "816bc67e461da0007bbd8c64cf2fc54ba5349491e1669b8b3834da1015029d3c"
+    },
+    {
+      "source_index": 61,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "a34ace17dd9ace1f7f794b51475dcd29604086ecb1c173ffd95a71c14b42c455"
+    },
+    {
+      "source_index": 62,
+      "arm": "Bonjour",
+      "input_sha256": "a8e6e79e9560ff4bba3c07d7e09ecb69205ba30576085621b84b9b7694ce7497"
+    },
+    {
+      "source_index": 63,
+      "arm": "no_history",
+      "input_sha256": "ffab9740cbfb5618db264465299eafe3666d6e97b106253685ed7498726663fb"
+    },
+    {
+      "source_index": 64,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "31f83f804e621c8d7920dfadf14bb86d800b2fad7cc0e2ca2d0ff8d45e4e88dc"
+    },
+    {
+      "source_index": 65,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "f8f6e25e9c7dc9dec08644b53f6abd13c06d37281cec8f6e1121e2f3f5d1fa42"
+    },
+    {
+      "source_index": 66,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "757ea5382cef2ec87b60c464d0ade72962c486e06424d76eb69d6eb559067b5c"
+    },
+    {
+      "source_index": 67,
+      "arm": "Hello",
+      "input_sha256": "11d88a735b93a58e2e07e6c74b0ed89e1226e4f7390abc3518dc5532709f0022"
+    },
+    {
+      "source_index": 68,
+      "arm": "no_history",
+      "input_sha256": "380c5b6a078ec1302fc23e7fb5ee354ccb7d1dfb9c73544df4d028fd37d0398e"
+    },
+    {
+      "source_index": 69,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "cae2a636a9a24b8c69a0206c659876caa0eb40bb867e0feedd49d680edc02ed8"
+    },
+    {
+      "source_index": 70,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "e8508b0f5f7f1cd5e3110a24396f66059decfa6c75382d76801d6159e8f93212"
+    },
+    {
+      "source_index": 71,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "8e49f620fa3b4ecc8b412d8b5405a197655bfe3bda6ef60d06d13114e3144b45"
+    },
+    {
+      "source_index": 72,
+      "arm": "Bonjour",
+      "input_sha256": "fa78e90e4efc9baf4f0aff597f76a03a3a2936e157bfe1994e2c22373f186845"
+    },
+    {
+      "source_index": 73,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "eb984b66f70694801a9437b2e0062c29f0dbc1090eb7a33046aee2c5180d9273"
+    },
+    {
+      "source_index": 74,
+      "arm": "Bonjour",
+      "input_sha256": "9a015c11127f25abed218e9511066515e8b40598d7ac6a774777814c754e508b"
+    },
+    {
+      "source_index": 75,
+      "arm": "no_history",
+      "input_sha256": "ee36eec45c64f66f8bcaac955e00496cc7dd7862c51b7e1a45d8e027474a7579"
+    },
+    {
+      "source_index": 76,
+      "arm": "Hello",
+      "input_sha256": "767218129fdba24d39279e1622a223d7f26002d46aaef2c1cabbdffbb75a8fad"
+    },
+    {
+      "source_index": 77,
+      "arm": "Bonjour",
+      "input_sha256": "847e876351f36514f08e05a5739ef17efa564d2268df358c1bca2b23ec4a2bea"
+    },
+    {
+      "source_index": 78,
+      "arm": "no_history",
+      "input_sha256": "143e73346f5bd92f776a0cf64475eca86c06e095c454e73608f1c5b7c22f592e"
+    },
+    {
+      "source_index": 79,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "87fe7f5ccba282568cf23090aece2220260420fd3ee7c00ebac4df371eae5cec"
+    },
+    {
+      "source_index": 80,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "d9d4d46a8378633d14fb1288e0d41697f30aac2dc011abfd48b5911fc17de502"
+    },
+    {
+      "source_index": 81,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "b4ef4a39bc419a92c84b7baed5daf0c0fe2a141fd741c48ee99efa4abf3bb11a"
+    },
+    {
+      "source_index": 82,
+      "arm": "no_history",
+      "input_sha256": "e44c01210674bf459c9ddfd6412502038aebce06fc5a1b1a2da6595765d28d7c"
+    },
+    {
+      "source_index": 83,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "77c1c46267c5d6941e004a8a02deeb5618efbbc1b60cca6b71b1c0c70e85a523"
+    },
+    {
+      "source_index": 84,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "5791a433ce93f643fd9d77761024774d4883a26910e5cfec821fde14916379a4"
+    },
+    {
+      "source_index": 85,
+      "arm": "Bonjour",
+      "input_sha256": "7281b9d68dd508daf07714881ed277b005f91fb3cc316e566117efab51c65abf"
+    },
+    {
+      "source_index": 86,
+      "arm": "no_history",
+      "input_sha256": "e5392f7170894a56cef9a93e41cecd71dfc0f6112a3f5b40aec542262b25d246"
+    },
+    {
+      "source_index": 87,
+      "arm": "Hello",
+      "input_sha256": "143147e3436fc0aea25c89dac20e593f8c8099e3047609ae9df5981a078cd674"
+    },
+    {
+      "source_index": 88,
+      "arm": "Bonjour",
+      "input_sha256": "fa14ebbd1fd8c2f7165759b927758ec4a1f02c3586ed8a8e70515d1965a14bce"
+    },
+    {
+      "source_index": 89,
+      "arm": "Hello",
+      "input_sha256": "d07d825a7022ad0e3d6fac877c5869866027ed329fd17208dba8a988d0f8b303"
+    },
+    {
+      "source_index": 90,
+      "arm": "Hello",
+      "input_sha256": "d2bbb4e75d6b786773aefffbd8a67304a0168c555591e192e854f27a620bee47"
+    },
+    {
+      "source_index": 91,
+      "arm": "no_history",
+      "input_sha256": "54410b7c6e6e821f03d501757e1cd9b0cb575b0eec97ad38376f5a696e932ddf"
+    },
+    {
+      "source_index": 92,
+      "arm": "no_history",
+      "input_sha256": "163ece5da0b798d9bc4c53aea0ecae394f62ad5e182d42130679af1b66959234"
+    },
+    {
+      "source_index": 93,
+      "arm": "Bonjour",
+      "input_sha256": "00d8c3731492cc798f1ff65ffc349dc618f2caed5a09c0f5ca9784f329d17640"
+    },
+    {
+      "source_index": 94,
+      "arm": "no_history",
+      "input_sha256": "bd73f5cb0d0f17e357e30869fdbbcbc36e14e1087e30635ac0390e3df5e13380"
+    },
+    {
+      "source_index": 95,
+      "arm": "Bonjour",
+      "input_sha256": "f0bacefdb65438c8d49ec1710334539a87933b6adb63a9417580d2959dafeb04"
+    },
+    {
+      "source_index": 96,
+      "arm": "Bonjour",
+      "input_sha256": "581b59fee1ac5b0b9bc17b266c1d236529b742532aaab65bfd186dbb15afc08f"
+    },
+    {
+      "source_index": 97,
+      "arm": "Hello",
+      "input_sha256": "76db458149216e69535db8c0a86530c91d86e92309ce4ee5ef2016302c7b58c2"
+    },
+    {
+      "source_index": 98,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "77366e037a23d1669ea8db676ffa1c9b541b3e550f0214b107508ad81a217820"
+    },
+    {
+      "source_index": 99,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "060adde4b0f527c2b34b135b49eec7ef02bb90327efb7d06a6f02240316dcfbc"
+    },
+    {
+      "source_index": 100,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "c8ab7c2739e52ecf9c48c3d64762c4ef2bd00dac7e88dca965ce77f5fa14aae4"
+    },
+    {
+      "source_index": 101,
+      "arm": "Bonjour",
+      "input_sha256": "03a7624519f1a0cc8f1c2b8b0d9f2b6d65b928cc5c880e97c5913288e7a67569"
+    },
+    {
+      "source_index": 102,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "02eb3ba64ae94bc85048b0abbbf84612a8329310cd90c7ec3c64d3947e9a4e42"
+    },
+    {
+      "source_index": 103,
+      "arm": "Bonjour",
+      "input_sha256": "d0c120fb8283f232b4b20874d94fdfba51807f3e1f5c22dc84b8fa9612addbca"
+    },
+    {
+      "source_index": 104,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "83b78a8d9a4736476320bbba6b0342da13fde2f311bb5aebab32afce46d470fa"
+    },
+    {
+      "source_index": 105,
+      "arm": "Hello",
+      "input_sha256": "63af0a9e1a1c08521d5298efd416e22ecafc625e7debd7af0cb45055c6f7a9f7"
+    },
+    {
+      "source_index": 106,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "335bd2df8cf0b9b232efcc04f544e695b4218d1bc56d48c6af3e07b063db703d"
+    },
+    {
+      "source_index": 107,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "51a0c93aae2ee31125b25953b4a46ac93f1c057b448c5e3c5d15dd2e09a0806a"
+    },
+    {
+      "source_index": 108,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "ebfbd0633ac101ad1b01e5d36586cf790e0819081e804029dbb8289593136682"
+    },
+    {
+      "source_index": 109,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "9706ff2f1a98d3c362217c62ad09f95421c6480c583e548336333632e6401b61"
+    },
+    {
+      "source_index": 110,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "578e799b77065d33d07ec7d7c9da651acf395d0ae392e57f648d915a78527885"
+    },
+    {
+      "source_index": 111,
+      "arm": "no_history",
+      "input_sha256": "1f60e6d41ab2a0acd4549bf7620c670c983260ecbc3e0fb9e711a29ef47a17d4"
+    },
+    {
+      "source_index": 112,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "186666a99ae9a5fe1261fcb2c79526fcea819124749e2a45d1c8adbc8dcc5d15"
+    },
+    {
+      "source_index": 113,
+      "arm": "Bonjour",
+      "input_sha256": "5f55804369481126649bdbd8bd13b1cba6717bb22dda19ee1333a0edfb17caa1"
+    },
+    {
+      "source_index": 114,
+      "arm": "Hello",
+      "input_sha256": "cb1ced34a3fbe2ec89450f03619cc266e976304803c075bfea295380a7fb2610"
+    },
+    {
+      "source_index": 115,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "6ccc3ab5ea812f21081c89f08aacfbe5e241590c14c869825d41505582b03512"
+    },
+    {
+      "source_index": 116,
+      "arm": "Bonjour",
+      "input_sha256": "22626f385ff9fa098bd7eefdb87434521e1cd688d33c56291c5316ebea1617f3"
+    },
+    {
+      "source_index": 117,
+      "arm": "no_history",
+      "input_sha256": "e29366a48a682a9db0aa81a5b8ecc5c7d1f01f1fcdc3cdd168a167c1f93a9266"
+    },
+    {
+      "source_index": 118,
+      "arm": "Hello",
+      "input_sha256": "c417e112c82ea8f0eaaa99014a29a6ac4ab1a1fd7a36e763c5fb97befbf86a68"
+    },
+    {
+      "source_index": 119,
+      "arm": "no_history",
+      "input_sha256": "a6491af62ca81155b5ed954fbd77912211728bb350c30a207972a43976e7ffe6"
+    },
+    {
+      "source_index": 120,
+      "arm": "Bonjour",
+      "input_sha256": "ef40ebe828a3b8a51c41812f1c9c2fadcf764ea3dd4b57431e81b8d285f6fea5"
+    },
+    {
+      "source_index": 121,
+      "arm": "Hello",
+      "input_sha256": "2d7081d326b31768ae26ba71dcbc8172cea3072cf73e8ba9cbf6edda5e221ac5"
+    },
+    {
+      "source_index": 122,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "ded0de543a810916ae1d38f73722f8b36eeb5aff0246c5534ec097d33d66f8f2"
+    },
+    {
+      "source_index": 123,
+      "arm": "no_history",
+      "input_sha256": "328c3976bdbc35e173bd5e05bf8ef31bcb9d5947ae28ee8f37ba95e4629a5bad"
+    },
+    {
+      "source_index": 124,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "eca96da83ddac1b326b2cf1a3367a328a3439d1e43b16ca1ff5bbcf56107f69b"
+    },
+    {
+      "source_index": 125,
+      "arm": "Bonjour",
+      "input_sha256": "911922e495c748644858cbaa01f1ecd05d347d9fa464d138f9626210e7623d9e"
+    },
+    {
+      "source_index": 126,
+      "arm": "Bonjour",
+      "input_sha256": "1da42ce484af90c937eec4b7f547d752ec5f525eb57bc8423555c523d9a7ed68"
+    },
+    {
+      "source_index": 127,
+      "arm": "Bonjour",
+      "input_sha256": "75afae89621f60c2bc837b64f2bc8e9519dc0554bd59b38f5a4ca350ac59d723"
+    },
+    {
+      "source_index": 128,
+      "arm": "Bonjour",
+      "input_sha256": "202d0e41063499af5f9abdcb6bb32bb45fd18c04f51eabdc49ecd5b015297dfd"
+    },
+    {
+      "source_index": 129,
+      "arm": "Hello",
+      "input_sha256": "3a33155623f0d7fa40976c36c31fefe3b68c525be6a9fdaec6f9fb32722972f2"
+    },
+    {
+      "source_index": 130,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "6973f4d2986a8f3f9812cc0e3457dea24b598a4fdb1c14d4deb891954750c741"
+    },
+    {
+      "source_index": 131,
+      "arm": "no_history",
+      "input_sha256": "c5c3f45c33b7ce8eba03ea73fbd586436e83ac4e2600cebef3e43840ab87ee27"
+    },
+    {
+      "source_index": 132,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "60a1d6ae53b23d119f26d85986a175ce4ac1267c1a631e6c13a14cc66a3d17ca"
+    },
+    {
+      "source_index": 133,
+      "arm": "Hello",
+      "input_sha256": "3ef4308b8986ca695e34266cfd937fe896e8bd4908d7333bccda950262a22e27"
+    },
+    {
+      "source_index": 134,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "f64e3778a612b9a158a99912face486108bcf0c22e0800b7dccb2dfef4e676af"
+    },
+    {
+      "source_index": 135,
+      "arm": "no_history",
+      "input_sha256": "1b3fee9860f4750de91008e6b8d84b478f9e6d212b811be0024b2ddfc0d3d417"
+    },
+    {
+      "source_index": 136,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "b7e0149f180a2a3d5a0b390261f0ae0ac7adfac1bedd45f72c504a732337df7f"
+    },
+    {
+      "source_index": 137,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "3089c8ffc6997e0769991c0bcca901a41b39f23a44ad9ede35236a189f2f3bc5"
+    },
+    {
+      "source_index": 138,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "56d7db6a9f4660d5cf1027c643bad5793504a95f252f06386641a94e28bde663"
+    },
+    {
+      "source_index": 139,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "9dafea8ff224bcd57de0945cca74e34535fc41954ccff33bd463edc6309b5e17"
+    },
+    {
+      "source_index": 140,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "2a50de66b8db1d78adcb9031974e6a8b250d41c66715f1bb56e9d8a6568a7e39"
+    },
+    {
+      "source_index": 141,
+      "arm": "no_history",
+      "input_sha256": "bc544cd8326cb2a5fcb441c9f4a6fed8606ef693b5a8d477fc78722267007241"
+    },
+    {
+      "source_index": 142,
+      "arm": "no_history",
+      "input_sha256": "c34dfcb54fe62e0a60dbf285ab647332c720be97835a7f0fbbe6568234222208"
+    },
+    {
+      "source_index": 143,
+      "arm": "no_history",
+      "input_sha256": "5585cdb2da88e65f22d600aef4f1b4420340c6836728dea393ccb0eae6117596"
+    },
+    {
+      "source_index": 144,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "5d010c88c7afc015848b40e45739300b258b106fdbe14e7c12cb30b79f0f83fd"
+    },
+    {
+      "source_index": 145,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "ff6989e6a80244df888783f1a3b522a01435c5f3cc3fcdfdeef8d538e66b09e4"
+    },
+    {
+      "source_index": 146,
+      "arm": "Bonjour",
+      "input_sha256": "0e7dd1b1b8b11811a362159780fbc54eaf0d016a1593402e2ab2ff73f6306a24"
+    },
+    {
+      "source_index": 147,
+      "arm": "no_history",
+      "input_sha256": "1cd8f17cfe22a3beb5e8f1fefce0ed7a6dff9a789ef06f41e02ab39a6c09aad4"
+    },
+    {
+      "source_index": 148,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "d96dc126bfba84b1d4ef0de25d33474f193c3918359f08b649522d61c92524b0"
+    },
+    {
+      "source_index": 149,
+      "arm": "Bonjour",
+      "input_sha256": "8d161fb940093eb2501e6aec73f810203505713702ce688ae36ad5e833a0789e"
+    },
+    {
+      "source_index": 150,
+      "arm": "Hello",
+      "input_sha256": "05865cdb20d39c394fe673af5fc0dcf9d4ace5f479a2526a02b8212368ab1180"
+    },
+    {
+      "source_index": 151,
+      "arm": "Bonjour",
+      "input_sha256": "43e7615c7a55ba98f494678e9f7f7c59e2034ee1e1b206662ee4e71339cb4baa"
+    },
+    {
+      "source_index": 152,
+      "arm": "no_history",
+      "input_sha256": "593019bb8c00e6293ef1ccd723c76efa4d2336434f818c50dc57f48af24d9c4d"
+    },
+    {
+      "source_index": 153,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "262044bd28dfc6aa90a3f8908df10bb62025005ba6274be5e1e6471260d533c6"
+    },
+    {
+      "source_index": 154,
+      "arm": "Hello",
+      "input_sha256": "4bf37306575bcb749b3d352fb2fe27de7f065b003e79c1ed19d3e1b157e3e49a"
+    },
+    {
+      "source_index": 155,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "4382d4e85e234d65cbca2d621c64eb8ddb6cc2a22bad2913e17e6d5a22501e52"
+    },
+    {
+      "source_index": 156,
+      "arm": "Bonjour",
+      "input_sha256": "6ef973331aa34ee6144d3509f70f98b6ec9ff5abdab6e32fa7bf625fdadabf43"
+    },
+    {
+      "source_index": 157,
+      "arm": "Bonjour",
+      "input_sha256": "b1ac542743b52357926b6951218547665d8ffffb44fec8c4b3f7ef26a5e7fad1"
+    },
+    {
+      "source_index": 158,
+      "arm": "Bonjour",
+      "input_sha256": "f30605a91c2cb4115bfcad5c13c6315f167e930bfa6225554665454a138b2430"
+    },
+    {
+      "source_index": 159,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "cae3dbef5e3340bb93ba742cf34aaf52bb055c1e43539f5d1b3b84499bc1453d"
+    },
+    {
+      "source_index": 160,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "072e40be61dd5954bbc2ee482357a5c8350769bbcaf818ba2daf6474c764ca40"
+    },
+    {
+      "source_index": 161,
+      "arm": "no_history",
+      "input_sha256": "1169e64b11a97d39c667e6baa45bd59ee91fbf7562b9cfd20f454fbe9ba877dd"
+    },
+    {
+      "source_index": 162,
+      "arm": "Bonjour, merci pour votre aide.",
+      "input_sha256": "12ef530a6443effd0d9ef0aaa1de6cd19f101a664b4ca9567e7378352330c935"
+    },
+    {
+      "source_index": 163,
+      "arm": "Bonjour",
+      "input_sha256": "3b1eda88acb77ad48baae0c17a46f5aa7f2915a14a228e2b3ab6316f74a4e12c"
+    },
+    {
+      "source_index": 164,
+      "arm": "Bonjour",
+      "input_sha256": "80ea0f950bb7671d2f52ecdd9d8869e44c07e2796d2820f04880fed50abe93a4"
+    },
+    {
+      "source_index": 165,
+      "arm": "Hello, thanks for your help.",
+      "input_sha256": "f98e28560a8e252a06d75788887989b848161e872703236b5235ddf36bf90fb0"
+    }
+  ],
+  "split_policy": "Retain exact parent train bytes and unchanged validation. New synthetic training-only contrasts reuse approved native metadata. No frozen validation/test request or expected answer is copied into training; normalized overlap is rejected. Resource/language/date variants are correlated. Existing regressions are repeatedly inspected, not blind certification.",
+  "training_policy": "PREPARED ONLY. Server preflight, capacity, baseline and reviewed training configuration required. One shared model; no automatic training, download or activation.",
+  "files": {
+    "train.jsonl": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+    "valid.jsonl": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86"
+  }
+}
