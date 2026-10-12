@@ -10,14 +10,14 @@ CLARIFICATION_SCHEMA = {
 }
 MESSAGES = {
     "fr": {
-        "missing_details": "Précisez le document, le client, le produit ou la période recherchée (avec l’année).",
-        "ambiguous_metric": "Parlez-vous du montant facturé, des encaissements ou du solde restant ? Pour quelle période ? Le bénéfice n’est pas un calcul disponible ici.",
-        "unsupported": "Cette demande n’est pas disponible dans l’assistant pour vos accès actuels. Je peux vous aider à rechercher des documents autorisés ou à comprendre les procédures de facturation.",
+        "missing_details": "Précisez l’élément recherché ou la période concernée (avec l’année).",
+        "ambiguous_metric": "Quel montant ou indicateur souhaitez-vous consulter, et pour quelle période (avec l’année) ?",
+        "unsupported": "Cette demande n’est pas disponible dans l’assistant avec vos accès actuels. Je peux vous aider à retrouver des éléments autorisés ou à comprendre les procédures de cette application.",
     },
     "en": {
-        "missing_details": "Please specify the document, customer, product, or reporting period (including the year).",
-        "ambiguous_metric": "Do you mean the invoiced amount, collected payments, or outstanding balance? For which period? Profit is not an available calculation here.",
-        "unsupported": "This request is not available in the assistant with your current access. I can help find authorized records or explain documented invoicing workflows.",
+        "missing_details": "Please specify the record you mean or the relevant period (including the year).",
+        "ambiguous_metric": "Which amount or measure would you like to see, and for what period (including the year)?",
+        "unsupported": "This request is not available in the assistant with your current access. I can help find records you can access or explain this application’s documented workflows.",
     },
 
 }
