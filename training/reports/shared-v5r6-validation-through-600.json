@@ -1,0 +1,77 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: training continues; no completed R6 acceptance result.",
+  "observed_utc": "2026-10-12T18:03:13Z",
+  "completed_training_steps": 617,
+  "total_steps": 1969,
+  "baseline_validation": {
+    "micro": 0.07164948057997621,
+    "by_application": {
+      "facturation": 0.07041722368156361,
+      "management_projet": 0.08777741116524013,
+      "design_workflow": 0.05455434904619949
+    },
+    "macro": 0.0709163279643344,
+    "unweighted": {
+      "micro": 0.033991526185988157,
+      "by_application": {
+        "facturation": 0.03949724279930234,
+        "management_projet": 0.0335968953900775,
+        "design_workflow": 0.023030915131460716
+      },
+      "macro": 0.03204168444028019
+    }
+  },
+  "validation_checkpoints": [
+    {
+      "step": 300,
+      "loss": {
+        "micro": 0.10352836137588466,
+        "by_application": {
+          "facturation": 0.1242122192827144,
+          "management_projet": 0.10138012582885891,
+          "design_workflow": 0.06316288123619174
+        },
+        "macro": 0.09625174211592169,
+        "unweighted": {
+          "micro": 0.050996955989468754,
+          "by_application": {
+            "facturation": 0.06792201493956104,
+            "management_projet": 0.04051252099858315,
+            "design_workflow": 0.028602473003950024
+          },
+          "macro": 0.045679002980698075
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    },
+    {
+      "step": 600,
+      "loss": {
+        "micro": 0.09302670365737868,
+        "by_application": {
+          "facturation": 0.11570498690858394,
+          "management_projet": 0.08995598923896371,
+          "design_workflow": 0.049640829473410975
+        },
+        "macro": 0.08510060187365287,
+        "unweighted": {
+          "micro": 0.045347640378882635,
+          "by_application": {
+            "facturation": 0.06300770128957726,
+            "management_projet": 0.0347687619389373,
+            "design_workflow": 0.02154083439752874
+          },
+          "macro": 0.03977243254201444
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    }
+  ],
+  "selected_step_at_observation": 0,
+  "monitor_snapshot_sha256": "842097c1ccc07ab3d4591f86d1394ac47de05ee5a9919d8a888a3b7fa4a27f63",
+  "model_accuracy_measured": false,
+  "production_activation": false,
+  "meaning": "Lower validation loss is better; it is not a tool-accuracy percentage. Baseline remains selected at step 600."
+}

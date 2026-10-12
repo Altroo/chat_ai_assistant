@@ -299,3 +299,12 @@ IMPLEMENTED and independently reviewed: read-only analysis of the unchanged V5r5
 KNOWN EVALUATION LIMITATION: one French supplier-summary question omits the supplier noun included in its English counterpart; trusted context does not resolve the entity type. The original prompt, label and failed score remain unchanged. No favorable rescoring is claimed.
 
 PLANNED product correction after the active pinned evaluation: make shared clarification prose application-aware. The current unsupported message refers to invoicing even when used in other applications. Preserve the current provider/benchmark versions and verify the later presentation change independently.
+
+
+## R6 checkpoint-600 result and fallback preparation — 2026-10-12
+
+PARTIALLY IMPLEMENTED: validation macro loss decreased from 0.0962517421 at step 300 to 0.0851006019 at step 600. The baseline remains better at 0.0709163280, so it is still selected. Training resumed after validation and remains incomplete. These losses are not tool-accuracy percentages; no R6 acceptance score or production activation is claimed. [Measured checkpoint report](../training/reports/shared-v5r6-validation-through-600.json).
+
+IMPLEMENTED and verified as preparation only: a separately frozen fallback compares actual validation tool predictions for the baseline, each scheduled checkpoint (300 through 1,800) and final step 1,969. It reconstructs the exact prior 275-row envelope, including its 222 scenario groups, and retains the existing scoring and tie-breaking rules. This can run only after successful complete training and the original candidate remaining unaccepted. All 79 training tests pass, including 12 checkpoint-comparison tests; the single reviewer found no issues. [Frozen policy](../training/reports/shared-v5r6-checkpoint-selection-policy.json).
+
+PLANNED: the server export/evaluation driver for this fallback must bind completed training, verified artifacts, inference settings and current resources before any inference. The preparation adds no launch or activation path. The active training/evaluation controller and original loss-based selection remain unchanged. Any selected changed model still requires the existing 438-case acceptance suite; validation alone cannot accept it.
