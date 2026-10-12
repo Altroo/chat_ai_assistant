@@ -1,0 +1,54 @@
+{
+  "status": "PARTIALLY IMPLEMENTED",
+  "purpose": "Post-training functional checkpoint comparison; validation only.",
+  "candidate_steps": [
+    0,
+    300,
+    600,
+    900,
+    1200,
+    1500,
+    1800,
+    1969
+  ],
+  "validation_rows": 275,
+  "underlying_scenarios": 222,
+  "per_worker_rows": [
+    92,
+    92,
+    91
+  ],
+  "offline_control_tests_passed": 10,
+  "review": "One reviewer; two provenance findings fixed and rereviewed without remaining issues.",
+  "verified_offline": [
+    "Incomplete, active, failed or accepted original runs cannot start the fallback.",
+    "Published baseline completion, model, runtime, provider, dataset and driver hashes are bound.",
+    "Validation batch hashes derive only from frozen rows and are checked before and after inference.",
+    "A changed question after preparation or simulated inference is rejected before scoring.",
+    "Another optimizer or evaluation service and insufficient resource reserve block admission.",
+    "All candidates use the same loopback Colibri settings and unchanged scoring."
+  ],
+  "planned_runtime": {
+    "parallel_workers": 3,
+    "threads_per_worker": 4,
+    "context": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0
+  },
+  "control_sha256": {
+    "compare_run.py": "19e15d42fb1601de93f68ce652911d1ea8fcbff4e092af2c1d028cabb9ece4be",
+    "remote_control.py": "2aa4dcd9799d38afda4bed5ca0fa03550072afa7e64c5caa274e3c4c2b964b45",
+    "test_controls.py": "502c016be2cf5a0933f42125ae20edaf0dce17ef6d5008d3e80a486358136d47"
+  },
+  "server_control_execution": false,
+  "model_inference_started": false,
+  "accuracy_established": false,
+  "production_activation": false,
+  "limitations": [
+    "Runtime controls are prepared and tested offline, not exercised on a completed training run yet.",
+    "All eight candidates require complete measurements before selection.",
+    "A selected changed candidate still requires the unchanged 438-case acceptance suite.",
+    "The original active training and scheduled evaluation controls are unchanged."
+  ]
+}
