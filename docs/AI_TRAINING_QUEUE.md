@@ -2,6 +2,11 @@
 
 ## Current shared-model and rollout status — 2026-10-12
 
+PARTIALLY IMPLEMENTED — current run: V5r6 server training has started from the verified V5r5 step-600 checkpoint. One complete epoch covers 1,969 English/French training rows; all 275 validation rows and 438 held-out cases remain unchanged. The run uses 14 CPU threads, a 16 GiB limit with at least 10% host memory reserved, gradient checkpointing, 24 LoRA layers and a learning rate of 0.00001. Validation/checkpoint selection runs every 300 steps, with the unchanged baseline eligible. There is no V5r6 accuracy score or production activation yet. [Verified run start](../training/reports/shared-v5r6-en-fr-training-start.json).
+
+IMPLEMENTED and verified: the exact training base matches 473 previously verified FP32 tensors, all three attested tokenizer files and the full shard index. Server metadata checks passed 1,969 training and 275 validation rows. Two resumed capacity updates passed across all 24 layers; the earlier user-interrupted attempt is preserved and does not count as a completed capacity test.
+
+
 PARTIALLY IMPLEMENTED: V5r5 training/export and all 438 frozen evaluations completed. Acceptance FAILED: 406/438 correct tools (92.69%), 299/334 eligible exact arguments (89.52%) and 430/438 valid structures (98.17%). Step 600 was selected by validation; production remains unchanged. See [measured results](AI_MODEL_ACCURACY.md#v5r5-measured-results--2026-10-12).
 
 IMPLEMENTED and verified: all 825 validation requests completed across saved R5 checkpoints 600, 1200 and 1800. The fixed rule selects step 600: 227/275 action matches and 85.39% application-macro action accuracy, versus 220/275 (82.93% macro) and 219/275 (82.86% macro). These are validation scores, not acceptance. The 275 rows cover 222 underlying scenarios; grouped scores are reported separately. Step 600 is the identical candidate already evaluated on all 438 frozen regressions, so its failed acceptance remains authoritative without repeating unchanged tests. All worker artifacts/processes matched before and after; temporary workers stopped and production remained unchanged. [Measured comparison](../training/reports/shared-v5r5-functional-validation.json), [frozen policy](../training/reports/shared-v5r5-checkpoint-selection-policy.json).

@@ -1,0 +1,86 @@
+{
+  "status": "TRAINING STARTED; accuracy not evaluated; production unchanged",
+  "started_utc": "2026-10-12T12:59:27Z",
+  "source_commit": "5efb12ac10626dad4c8425888effe0947d8cad32",
+  "model_family": "Qwen3.5-0.8B",
+  "base_candidate": "V5r5 selected step 600",
+  "base_artifact_digests": {
+    "weights": "94407331900b64c1b886db9a481eb0b4504b600d59f728eb27eb2c2466427fd2",
+    "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+    "config": "964c24512738e48b696945636fcce738bf8b8fd496dad5fb5cb87df4a5614353"
+  },
+  "lineage_checks": {
+    "exact_tensor_comparison": 473,
+    "tokenizer_files": 3,
+    "indexed_tensors": 473
+  },
+  "dataset": "shared-v5r6-en-fr",
+  "dataset_files": {
+    "train.jsonl": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+    "valid.jsonl": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86"
+  },
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training": {
+    "steps": 1969,
+    "complete_epochs": 1,
+    "threads": 14,
+    "memory_limit_gib": 16,
+    "memory_reserve_fraction": 0.1,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "gradient_checkpointing": "nonreentrant",
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "semantic_loss_weight": 4,
+    "learning_rate": 1e-05,
+    "validation_interval": 300,
+    "checkpoint_interval": 300,
+    "checkpoint_selection": "Validation application-macro semantic loss; unchanged baseline remains eligible"
+  },
+  "preflight": {
+    "train.jsonl": {
+      "count": 1969,
+      "round_trip_passed": 1969,
+      "runtime_prefix_parity_passed": 1969,
+      "loss_boundary_passed": 1969,
+      "semantic_alignment_passed": 1969,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7662,
+      "sha256": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc"
+    },
+    "valid.jsonl": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7496,
+      "sha256": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86"
+    },
+    "scope": "Tokenizer/template/parser checks only; not model accuracy or training success"
+  },
+  "capacity": {
+    "passed": true,
+    "attempt": "Resumed after user-requested pause; original incomplete attempt preserved",
+    "sequence_tokens": 7662,
+    "step_seconds": [
+      174.3054060358554,
+      162.20716029033065
+    ],
+    "peak_rss_gib": 6.159675598144531,
+    "all_24_layers_updated": true
+  },
+  "held_out_cases": 438,
+  "held_out_changed": false,
+  "production_activation": false,
+  "limitations": [
+    "Training progress/loss is not model accuracy.",
+    "No new acceptance score until frozen candidate evaluation finishes.",
+    "Later app training remains sequential after predecessor acceptance."
+  ]
+}
