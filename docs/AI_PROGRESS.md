@@ -290,3 +290,12 @@ PLANNED: execute this unsaved optimizer probe on the server after the preceding 
 
 
 IMPLEMENTED and verified: the exact server metadata check also passed all 2,902 cumulative training/validation rows, with maximum lengths of 7,662/7,496 tokens inside the 8,192-token context. It used 0.25 CPU core, a 2 GiB limit and 682,393,600 bytes peak memory. The completed temporary check was stopped; the active training PID and healthy production model remained unchanged. [Server metadata evidence](../training/reports/shared-v8r6-en-fr-server-preflight.json). This loaded no model weights and performed no optimization.
+
+
+## Clarification failure audit — 2026-10-12
+
+IMPLEMENTED and independently reviewed: read-only analysis of the unchanged V5r5 synthetic evaluations identified 27 failed clarifications: six invalid structures, 18 valid but incorrect tool choices and three incorrect clarification reasons. Eight incorrect edit/archive targets were replayed through existing target guards and all rejected. This is a target-guard replay, not a new end-to-end authorization test, and all eight remain failures in model accuracy. Dataset/event hashes match the original 15 evaluation sets. [Audit evidence](../training/reports/shared-v5r5-clarification-audit.json).
+
+KNOWN EVALUATION LIMITATION: one French supplier-summary question omits the supplier noun included in its English counterpart; trusted context does not resolve the entity type. The original prompt, label and failed score remain unchanged. No favorable rescoring is claimed.
+
+PLANNED product correction after the active pinned evaluation: make shared clarification prose application-aware. The current unsupported message refers to invoicing even when used in other applications. Preserve the current provider/benchmark versions and verify the later presentation change independently.

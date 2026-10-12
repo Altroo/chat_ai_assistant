@@ -1,0 +1,108 @@
+{
+  "scope": "Read-only analysis of unchanged synthetic R5 failures; no model inference, business queries or writes.",
+  "source_evaluation_sha256": "c4648c4b4fe60b00491daed45c5d9b7cb7cdc8d4b4befa42e9ce36ad44f21fe6",
+  "completion_sha256": "78b7a17bf82c4a543be96940c698c951c1a21e93107acc4d4b1376e37de34b81",
+  "failed_clarifications": 27,
+  "by_application_reason": [
+    {
+      "application": "design_workflow",
+      "reason": "missing_details",
+      "count": 2
+    },
+    {
+      "application": "facturation",
+      "reason": "missing_details",
+      "count": 5
+    },
+    {
+      "application": "facturation",
+      "reason": "unsupported",
+      "count": 3
+    },
+    {
+      "application": "management_projet",
+      "reason": "ambiguous_metric",
+      "count": 3
+    },
+    {
+      "application": "management_projet",
+      "reason": "missing_details",
+      "count": 9
+    },
+    {
+      "application": "management_projet",
+      "reason": "unsupported",
+      "count": 5
+    }
+  ],
+  "invalid_structure": 6,
+  "incorrect_valid_tool": 18,
+  "incorrect_clarification_reason_or_language": 3,
+  "unsafe_proposal_target_replays": [
+    {
+      "id": "out-of-range-fr",
+      "application": "management_projet",
+      "guard": "native trusted_target",
+      "allowed": false
+    },
+    {
+      "id": "out-of-range-en",
+      "application": "management_projet",
+      "guard": "native trusted_target",
+      "allowed": false
+    },
+    {
+      "id": "expired-selection-fr",
+      "application": "management_projet",
+      "guard": "native trusted_target",
+      "allowed": false
+    },
+    {
+      "id": "expired-selection-en",
+      "application": "management_projet",
+      "guard": "native trusted_target",
+      "allowed": false
+    },
+    {
+      "id": "management-projet-refinement-v2-en-fr-sixth-absent-fr",
+      "application": "management_projet",
+      "guard": "native trusted_target",
+      "allowed": false
+    },
+    {
+      "id": "management-projet-refinement-v2-en-fr-sixth-absent-en",
+      "application": "management_projet",
+      "guard": "native trusted_target",
+      "allowed": false
+    },
+    {
+      "id": "design-workflow-refinement-v2-en-fr-archive-outside-fr",
+      "application": "design_workflow",
+      "guard": "ordinal_target_matches with native aliases",
+      "allowed": false
+    },
+    {
+      "id": "design-workflow-refinement-v2-en-fr-archive-outside-en",
+      "application": "design_workflow",
+      "guard": "ordinal_target_matches with native aliases",
+      "allowed": false
+    }
+  ],
+  "guard_source_hashes": {
+    "shared_selection_context": "0fe2f1ca934c6915cc21cef11ac37e73bab89a598f801e6d1a057889d2efee15",
+    "management_projet_targets": "26c9967026c30a971b661e9bb7d5c56fb71fea15f6b2450ae92c8e6b85fec0d4",
+    "design_workflow_actions": "722290aa2481157dc70a137d5e97263b1fa5addad50686771ae6c37d6eb61b46"
+  },
+  "evaluation_limitations": [
+    {
+      "id": "management-projet-refinement-v2-en-fr-supplier-metric-fr",
+      "issue": "French prompt omits the supplier noun present in English. Trusted context does not establish the named entity type. Expected unsupported is under-specified; original label and failed score remain unchanged. Clarification is appropriate before assuming project versus supplier."
+    }
+  ],
+  "product_followup": "Shared unsupported clarification prose mentions invoicing even in other apps. Review app-aware user-facing clarification copy after current pinned evaluation; do not alter active provider or benchmark hashes.",
+  "limitations": [
+    "Target replay exercises the real shared predicate and native Management Projet target function with synthetic saved state; it is not a new end-to-end authorization test. Existing native permission/confirmation tests remain authoritative.",
+    "These 27 cases remain failures in model accuracy; backend rejection is not counted as model success.",
+    "No frozen evaluation labels, prompts, scores or active training artifacts were modified."
+  ]
+}
