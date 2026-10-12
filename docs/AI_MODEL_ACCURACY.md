@@ -20,6 +20,22 @@ The separate eight-request warm sample measured 7.631s sequential mean, 11.462s 
 
 Evidence: [accuracy](../training/reports/shared-v5r5-en-fr-evaluation.json), [training and selection](../training/reports/shared-v5r5-en-fr-training.json), [isolated performance](../training/reports/shared-v5r5-en-fr-performance.json). Further model improvement remains required before Contracts → Gestion Magasin → Réservation training; no later job has started.
 
+## Saved-checkpoint functional comparison — 2026-10-12
+
+All 825 requests completed using three four-thread Colibri workers. The unchanged 275-row validation split was evaluated for each saved adapter. Selection rules and input hashes were frozen before inference.
+
+| Saved step | Fully matched actions | Application-macro action accuracy | Scenario-grouped application-macro accuracy |
+| --- | ---: | ---: | ---: |
+| **600** | **227/275** | **85.39%** | **85.41%** |
+| 1200 | 220/275 | 82.93% | 83.25% |
+| 1800 | 219/275 | 82.86% | 83.44% |
+
+Step 600 remains selected. The later saved checkpoints did not improve validation action accuracy. Its 48 unmatched rows comprise 35 Facturation, ten Management Projet and three Design Workflow rows; these counts include correlated history variants. Validation is not an independent acceptance score. The same step-600 model, tokenizer, runtime and inference settings already completed the 438-case failed acceptance evaluation above; repeating that unchanged suite is unnecessary.
+
+All three pre/post process identities and artifact digests matched. The two temporary workers stopped successfully, production inference remained healthy and unchanged, and no business tool executed. No infrastructure timeout, service-unavailable or context-limit error occurred in the 825 requests. Some outputs were invalid model actions; runtime health must not be read as perfect accuracy. The 275 rows represent 222 underlying scenarios, and the source has no per-language labels. No per-language or matched speedup claim is made.
+
+The reviewed publisher requires all candidate steps, all 19 chunks per candidate, events and summary hashes, the frozen scoring dependencies, matching model/dataset/configuration evidence and successful worker cleanup. It recomputes selection before publishing the sanitized report. [Results](../training/reports/shared-v5r5-functional-validation.json), [policy](../training/reports/shared-v5r5-checkpoint-selection-policy.json).
+
 The dated work below preserves earlier diagnoses and measurements; it is not the current rollout status.
 
 ## Diagnosis and verified corrections

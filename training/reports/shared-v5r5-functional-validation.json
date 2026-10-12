@@ -1,0 +1,132 @@
+{
+  "selected_step": 600,
+  "candidates": [
+    {
+      "step": 600,
+      "count": 275,
+      "action_matches": 227,
+      "application_macro_action_percent": 85.39206590193432,
+      "application_macro_valid_percent": 98.71794871794872,
+      "scenario_grouped_application_macro_action_percent": 85.40695415695416,
+      "by_application": {
+        "facturation": {
+          "count": 133,
+          "action_matches": 98,
+          "valid_structures": 133
+        },
+        "management_projet": {
+          "count": 78,
+          "action_matches": 68,
+          "valid_structures": 75
+        },
+        "design_workflow": {
+          "count": 64,
+          "action_matches": 61,
+          "valid_structures": 64
+        }
+      }
+    },
+    {
+      "step": 1200,
+      "count": 275,
+      "action_matches": 220,
+      "application_macro_action_percent": 82.93078449328449,
+      "application_macro_valid_percent": 98.8946725788831,
+      "scenario_grouped_application_macro_action_percent": 83.250777000777,
+      "by_application": {
+        "facturation": {
+          "count": 133,
+          "action_matches": 95,
+          "valid_structures": 132
+        },
+        "management_projet": {
+          "count": 78,
+          "action_matches": 64,
+          "valid_structures": 76
+        },
+        "design_workflow": {
+          "count": 64,
+          "action_matches": 61,
+          "valid_structures": 64
+        }
+      }
+    },
+    {
+      "step": 1800,
+      "count": 275,
+      "action_matches": 219,
+      "application_macro_action_percent": 82.85688178780283,
+      "application_macro_valid_percent": 96.25666730929889,
+      "scenario_grouped_application_macro_action_percent": 83.43531468531468,
+      "by_application": {
+        "facturation": {
+          "count": 133,
+          "action_matches": 93,
+          "valid_structures": 130
+        },
+        "management_projet": {
+          "count": 78,
+          "action_matches": 65,
+          "valid_structures": 71
+        },
+        "design_workflow": {
+          "count": 64,
+          "action_matches": 61,
+          "valid_structures": 64
+        }
+      }
+    }
+  ],
+  "status": "VALIDATION SELECTION ONLY; ACCEPTANCE NOT ESTABLISHED",
+  "version": "shared-v5r5-functional-validation-v1",
+  "policy_sha256": "d6c71c54e630d144de26e6177fa4b499ff48252206c0809d25504a543e7b81d3",
+  "validation_rows_per_candidate": 275,
+  "underlying_scenarios": 222,
+  "total_requests": 825,
+  "source_validation_sha256": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86",
+  "evaluation_sha256": "685cc6d4dfebc6d60e368cb140f068efe9f7872e51f4bfde344983d2e47fa91e",
+  "model_artifacts": {
+    "600": {
+      "model_id": "chat-ai-shared-qwen08-v5r5-en-fr-20261011",
+      "artifact_digests": {
+        "weights": "976fb1fec9231227bf3207d112479f888eefbd7f8595b4be9680be49bf1fe843",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      }
+    },
+    "1200": {
+      "model_id": "chat-ai-shared-qwen08-v5r5-step1200-en-fr",
+      "artifact_digests": {
+        "weights": "da492c9bdb98cb4f1c8e74afeb9bfd96462bea36ce7c1c5cd6fb98974116a966",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      }
+    },
+    "1800": {
+      "model_id": "chat-ai-shared-qwen08-v5r5-step1800-en-fr",
+      "artifact_digests": {
+        "weights": "c6b4a20342b4478cb2024f9d3268bd5b8a9ca2ab3fe2a64f06428d86414087f3",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      }
+    }
+  },
+  "execution": {
+    "workers": 3,
+    "threads_per_worker": 4,
+    "cpu_threads": 12,
+    "worker_artifacts_and_processes_verified_before_and_after": true,
+    "temporary_workers_stopped": true,
+    "production_model_unchanged": true
+  },
+  "limitations": [
+    "275 validation rows include 53 neutral-history variants of 222 scenarios.",
+    "Application averaging does not remove correlated variants; scenario-grouped scores are reported separately.",
+    "Source rows lack per-language labels; no inferred per-language accuracy is claimed.",
+    "Selection is validation only, not acceptance. The 438 frozen regressions are repeatedly inspected and are not fresh blind certification.",
+    "No business tools execute. No model activation follows selection."
+  ]
+}
