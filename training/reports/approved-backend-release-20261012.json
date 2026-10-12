@@ -19,7 +19,8 @@
       "evaluation_process_unchanged": true,
       "django_check": true,
       "migrations_current": true,
-      "http_health_200": true
+      "http_health_200": true,
+      "external_https_health_200": true
     },
     {
       "app": "gestion_magasin",
@@ -40,7 +41,8 @@
       "evaluation_process_unchanged": true,
       "django_check": true,
       "migrations_current": true,
-      "http_health_200": true
+      "http_health_200": true,
+      "external_https_health_200": true
     },
     {
       "app": "reservation",
@@ -61,7 +63,8 @@
       "evaluation_process_unchanged": true,
       "django_check": true,
       "migrations_current": true,
-      "http_health_200": true
+      "http_health_200": true,
+      "external_https_health_200": true
     },
     {
       "app": "management_projet",
@@ -82,8 +85,10 @@
       "evaluation_process_unchanged": true,
       "django_check": true,
       "migrations_current": true,
-      "http_health_200": true
+      "http_health_200": true,
+      "external_https_health_200": true
     }
   ],
-  "scope": "Existing-hook backend source release; model weights and assistant-disabled settings preserved."
+  "scope": "Existing-hook backend source release; model weights and assistant-disabled settings preserved.",
+  "gateway_followup": "Contracts required a graceful reload of its unchanged Nginx configuration after the backend address changed. All four public HTTPS health routes then returned 200 with TLS verification enabled."
 }
