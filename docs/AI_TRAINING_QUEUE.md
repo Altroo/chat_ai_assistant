@@ -183,3 +183,13 @@ Management Projet and the next three application assistants remain disabled. No 
 IMPLEMENTED and checked: the active run has a sequential monitor that waits for successful full training coverage, collects checkpoint selection and exports only a selected non-baseline candidate. It then runs all 438 unchanged acceptance cases on isolated Colibri workers, compares the results, measures performance and stops those temporary workers. It does not activate the candidate or start later application training. If validation retains the baseline, no duplicate export/evaluation is claimed.
 
 Five offline handoff tests plus six existing evaluation-control tests pass. They cover failed/incomplete/replaced training, baseline selection, evaluation order, resource guards and the trainer exiting during a progress sample. A single reviewer found no remaining issues. Training is still running; no completed evaluation or improved score is claimed for this run. The monitor runs in the development session and requires that host to stay available.
+
+
+## Serial-stage capacity preparation — 2026-10-12
+
+IMPLEMENTED and verified without loading weights: `training/scripts/probe_cpu_serial_v1.py` extends the existing two-step CPU capacity procedure to an explicitly selected Contracts, Gestion Magasin or Réservation stage. Before model import it checks both dataset hashes, exact cumulative application scope and byte-for-byte retention of the declared predecessor. It retains the Linux/server-only guard, CPU/memory protections, longest-example probe and per-layer gradient/update checks. The frozen three-application probe remains unchanged. Three startup tests passed, covering all stages, a stale predecessor, a skipped stage and the server-only restriction; the single reviewer found no issues.
+
+PLANNED: execute this unsaved optimizer probe on the server after the preceding stage is accepted and before starting the next full training. The launcher must still bind the accepted predecessor model and perform current resource admission; preparing the probe does not establish capacity, accuracy or authorize another concurrent job.
+
+
+IMPLEMENTED and verified: the exact server metadata check also passed all 2,902 cumulative training/validation rows, with maximum lengths of 7,662/7,496 tokens inside the 8,192-token context. It used 0.25 CPU core, a 2 GiB limit and 682,393,600 bytes peak memory. The completed temporary check was stopped; the active training PID and healthy production model remained unchanged. [Server metadata evidence](../training/reports/shared-v8r6-en-fr-server-preflight.json). This loaded no model weights and performed no optimization.

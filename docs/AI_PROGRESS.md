@@ -280,3 +280,13 @@ Limitations: only pagination and existing ordering are remembered, not in-memory
 IMPLEMENTED and verified: Contracts V6r6, Gestion Magasin V7r6 and Réservation V8r6 preserve every current V5r6 training/validation byte and the existing new-app splits. Training counts are 2,122, 2,320 and 2,500 respectively; held-out counts stay 516, 606 and 690. Seven focused integrity tests, the full 72-test training suite and 2,902 tokenizer/template/parser/semantic-boundary checks passed. The single reviewer found no remaining issues. Existing identical held-out metadata checks are reused by hash. The preparation adds one versioned generator, integrity tests, three synthetic dataset versions and one metadata report. No model weights or local training were used.
 
 PARTIALLY IMPLEMENTED: the V5r6 server training run remains active. These future stages require acceptance of their exact predecessor, a frozen baseline and launch-time server/resource checks. None has started; no accuracy or production-readiness claim follows from metadata validation.
+
+
+## Serial-stage capacity preparation — 2026-10-12
+
+IMPLEMENTED and verified without loading weights: `training/scripts/probe_cpu_serial_v1.py` extends the existing two-step CPU capacity procedure to an explicitly selected Contracts, Gestion Magasin or Réservation stage. Before model import it checks both dataset hashes, exact cumulative application scope and byte-for-byte retention of the declared predecessor. It retains the Linux/server-only guard, CPU/memory protections, longest-example probe and per-layer gradient/update checks. The frozen three-application probe remains unchanged. Three startup tests passed, covering all stages, a stale predecessor, a skipped stage and the server-only restriction; the single reviewer found no issues.
+
+PLANNED: execute this unsaved optimizer probe on the server after the preceding stage is accepted and before starting the next full training. The launcher must still bind the accepted predecessor model and perform current resource admission; preparing the probe does not establish capacity, accuracy or authorize another concurrent job.
+
+
+IMPLEMENTED and verified: the exact server metadata check also passed all 2,902 cumulative training/validation rows, with maximum lengths of 7,662/7,496 tokens inside the 8,192-token context. It used 0.25 CPU core, a 2 GiB limit and 682,393,600 bytes peak memory. The completed temporary check was stopped; the active training PID and healthy production model remained unchanged. [Server metadata evidence](../training/reports/shared-v8r6-en-fr-server-preflight.json). This loaded no model weights and performed no optimization.
