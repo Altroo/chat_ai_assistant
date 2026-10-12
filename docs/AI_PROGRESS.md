@@ -1,5 +1,9 @@
 # Chat AI Assistant progress
 
+## Queued UI follow-up — 2026-10-12
+
+PLANNED — start only after the current shared-model training and evaluation task finishes: prevent the AI Assistant floating button from covering pagination and other essential controls in facturation, management_projet, design_workflow, contrat, gestion_magasin and reservation. Assess a draggable button or a better consistent placement; preserve the shared design, keyboard/touch access and desktop/mobile viewport bounds. Verify against the reported pagination obstruction and all six native layouts. No UI implementation has started for this request.
+
 ## Current shared-model and rollout status — 2026-10-12
 
 PARTIALLY IMPLEMENTED — current run: V5r6 server training has started from the verified V5r5 step-600 checkpoint. One complete epoch covers 1,969 English/French training rows; all 275 validation rows and 438 held-out cases remain unchanged. The run uses 14 CPU threads, a 16 GiB limit with at least 10% host memory reserved, gradient checkpointing, 24 LoRA layers and a learning rate of 0.00001. Validation/checkpoint selection runs every 300 steps, with the unchanged baseline eligible. There is no V5r6 accuracy score or production activation yet. [Verified run start](../training/reports/shared-v5r6-en-fr-training-start.json).
