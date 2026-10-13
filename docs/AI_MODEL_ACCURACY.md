@@ -67,6 +67,8 @@ The loader with dense int8 disabled initially left its OpenMP pool at one thread
 
 Evidence: [selected accuracy](../training/reports/shared-v5r6-selected-en-fr-evaluation.json), [selected performance](../training/reports/shared-v5r6-selected-en-fr-performance.json).
 
+IMPLEMENTED — framework reference complete: all twelve fixed development scenarios ran successfully with the same 474 FP16-rounded exported tensors and pinned configuration. The training framework and Colibri with dense int8 disabled return identical actions/errors on all twelve: eight correct and four incorrect. Normal Colibri dense-int8 mode previously matched nine of these twelve. All three modes produced twelve valid structures. This small diagnostic finds no overall framework advantage and does not establish acceptance or complete numerical equivalence. Production remains unchanged; no training or business operation ran. [Paired framework evidence](../training/reports/shared-v5r6-framework-reference.json).
+
 ## Shared core 0.2.3 deployment — 2026-10-13
 
 Application-neutral English/French clarification wording is deployed and verified in all six apps. Package files, health, migrations and all three remote heads match; business-table counts, volumes, settings and the production model remain unchanged. This wording update makes no model-accuracy claim and does not change the frozen evaluation renderer. [Deployment evidence](../training/reports/core-0.2.3-release.json).

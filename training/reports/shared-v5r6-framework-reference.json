@@ -1,0 +1,119 @@
+{
+  "version": "shared-v5r6-framework-reference-v1",
+  "status": "DIAGNOSTIC COMPLETED; NOT ACCEPTANCE",
+  "cases": 12,
+  "cases_per_application": 4,
+  "selection_rule": "Four groups per application with the smallest SHA256 of framework-v1 plus scenario-group identifier, from the prior fixed sixty-case sample. Chosen independently of outcomes.",
+  "dataset_sha256": "956f95ef14c852f19c398c83d1d163d6679495fee1aec3ae25524893908604bc",
+  "selected_step": 1969,
+  "matched_exported_fp16_tensors": 474,
+  "framework": {
+    "torch": "2.14.1+cpu",
+    "transformers": "5.19.0",
+    "peft": "0.21.2"
+  },
+  "settings": {
+    "threads": 14,
+    "memory_gib": 16,
+    "max_new_tokens": 512,
+    "context": 8192,
+    "thinking": false,
+    "do_sample": false,
+    "dtype": "float32",
+    "parameter_values": "match Colibri FP16 exported tensors exactly after FP16 rounding and expansion to FP32",
+    "attention": "sdpa"
+  },
+  "scores": {
+    "colibri_dense_int8": {
+      "count": 12,
+      "action_matches": 9,
+      "application_macro_action_percent": 75.0,
+      "application_macro_valid_percent": 100.0,
+      "scenario_grouped_application_macro_action_percent": 75.0,
+      "by_application": {
+        "facturation": {
+          "count": 4,
+          "action_matches": 2,
+          "valid_structures": 4
+        },
+        "management_projet": {
+          "count": 4,
+          "action_matches": 4,
+          "valid_structures": 4
+        },
+        "design_workflow": {
+          "count": 4,
+          "action_matches": 3,
+          "valid_structures": 4
+        }
+      }
+    },
+    "colibri_dense_int8_disabled": {
+      "count": 12,
+      "action_matches": 8,
+      "application_macro_action_percent": 66.66666666666667,
+      "application_macro_valid_percent": 100.0,
+      "scenario_grouped_application_macro_action_percent": 66.66666666666667,
+      "by_application": {
+        "facturation": {
+          "count": 4,
+          "action_matches": 1,
+          "valid_structures": 4
+        },
+        "management_projet": {
+          "count": 4,
+          "action_matches": 4,
+          "valid_structures": 4
+        },
+        "design_workflow": {
+          "count": 4,
+          "action_matches": 3,
+          "valid_structures": 4
+        }
+      }
+    },
+    "framework_same_fp16_values": {
+      "count": 12,
+      "action_matches": 8,
+      "application_macro_action_percent": 66.66666666666667,
+      "application_macro_valid_percent": 100.0,
+      "scenario_grouped_application_macro_action_percent": 66.66666666666667,
+      "by_application": {
+        "facturation": {
+          "count": 4,
+          "action_matches": 1,
+          "valid_structures": 4
+        },
+        "management_projet": {
+          "count": 4,
+          "action_matches": 4,
+          "valid_structures": 4
+        },
+        "design_workflow": {
+          "count": 4,
+          "action_matches": 3,
+          "valid_structures": 4
+        }
+      }
+    }
+  },
+  "paired_against_colibri_int8_disabled": {
+    "both_correct": 8,
+    "colibri_only_correct": 0,
+    "framework_only_correct": 0,
+    "both_incorrect": 4
+  },
+  "changed_outputs_vs_colibri_int8_disabled": 0,
+  "elapsed_seconds": 205.6311366353184,
+  "framework_peak_rss_kib": 7547628,
+  "production_unchanged": true,
+  "training_started": false,
+  "business_tools_executed": false,
+  "limitations": [
+    "Twelve development validation scenarios are not a held-out acceptance result or proof of numerical kernel equivalence.",
+    "Framework runs greedy FP32 computation on the same FP16-rounded exported parameter values; analytic buffers remain native FP32.",
+    "Different runtimes and CPU thread counts mean elapsed time is not a controlled speed comparison.",
+    "The first command was rejected for shell argument length. A later attempt failed before inference because the frozen evaluator was absent; both are preserved and count as zero evaluated cases.",
+    "The completed attempt bundles the hash-matched evaluator and preserves the original policy and twelve inputs."
+  ]
+}
