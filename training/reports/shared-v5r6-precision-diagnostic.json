@@ -1,0 +1,97 @@
+{
+  "version": "shared-v5r6-precision-diagnostic-v1",
+  "selected_step": 1969,
+  "cases": 60,
+  "unique_validation_scenarios": 60,
+  "per_application": 20,
+  "selection": "First 20 scenario groups per application sorted by SHA256 of precision-v1 plus group identifier; smallest row identifier per group. Frozen before inference, independent of expected labels or observed outcomes.",
+  "settings": {
+    "workers": 3,
+    "threads": 4,
+    "context": 8192,
+    "max_tokens": 512,
+    "temperature": 0,
+    "thinking": false,
+    "dense_int8": false
+  },
+  "baseline_dense_int8": {
+    "count": 60,
+    "action_matches": 47,
+    "application_macro_action_percent": 78.33333333333333,
+    "application_macro_valid_percent": 96.66666666666667,
+    "scenario_grouped_application_macro_action_percent": 78.33333333333333,
+    "by_application": {
+      "facturation": {
+        "count": 20,
+        "action_matches": 12,
+        "valid_structures": 18
+      },
+      "management_projet": {
+        "count": 20,
+        "action_matches": 18,
+        "valid_structures": 20
+      },
+      "design_workflow": {
+        "count": 20,
+        "action_matches": 17,
+        "valid_structures": 20
+      }
+    }
+  },
+  "candidate_full_precision": {
+    "count": 60,
+    "action_matches": 47,
+    "application_macro_action_percent": 78.33333333333333,
+    "application_macro_valid_percent": 96.66666666666667,
+    "scenario_grouped_application_macro_action_percent": 78.33333333333333,
+    "by_application": {
+      "facturation": {
+        "count": 20,
+        "action_matches": 11,
+        "valid_structures": 18
+      },
+      "management_projet": {
+        "count": 20,
+        "action_matches": 19,
+        "valid_structures": 20
+      },
+      "design_workflow": {
+        "count": 20,
+        "action_matches": 17,
+        "valid_structures": 20
+      }
+    }
+  },
+  "paired_action_outcomes": {
+    "both_correct": 45,
+    "int8_only_correct": 2,
+    "full_precision_only_correct": 2,
+    "both_incorrect": 11
+  },
+  "changed_outputs": 8,
+  "unscored_warmup_requests": 3,
+  "stopped_workers": 3,
+  "production_unchanged": true,
+  "training_started": false,
+  "acceptance_established": false,
+  "source_sha256": {
+    "policy.json": "91387ef6e95f605bc43f8a751035f227ad357041293db470de7eaa3ba208c0fe",
+    "results.json": "ea099ab33a4737cc330eeefeb0aada3c8968470ebd078eb4c5cb096f9ed4725c",
+    "before.json": "a0ca8501d9982379f53f7de3dba91273b85d79bfb471fa7006f70ce28f119265",
+    "after.json": "a0ca8501d9982379f53f7de3dba91273b85d79bfb471fa7006f70ce28f119265",
+    "stop.json": "94da719345af3a5704e52a105648eec30dc55cf799f4205c04b73a5685b8acde",
+    "recovery-origin.json": "cade71015c52d9a0c1e11482e7150a6bfcf256a1e6fc457a383e17cdf9aeb40e",
+    "warm-results.json": "345179d0aca847c765ca7890fb5f39a1e3e3567d735f69ff6ddf8938a57be0c5",
+    "reviewed-controls.json": "417f9d62b94bffedf12e6d79537016f33cbcf76cc4205e77924816891c9f1a1e",
+    "reviewed-recovery-controls.json": "c5a36d67ecbf99caccccc42bdd5c6330171252beea5c9f05f97e2c228bb4f74b"
+  },
+  "publisher_sha256": "5ad36f2d73813ad72b2e44d2ead9a6f686c2598aaca0f5de7bf4ad2c5744e2d8",
+  "limitations": [
+    "60 validation scenarios are a small diagnostic, not the 438-case acceptance suite or blind certification.",
+    "The int8 baseline reuses the exact same inputs from completed step-1969 validation; full-precision predictions were measured separately.",
+    "Only dense-int8 inference setting changes; same model, tokenizer, runtime, provider, prompts and output limits.",
+    "Three one-token unscored warmups initialize lazy OpenMP pools; original four-thread checks remain enforced.",
+    "No business tools execute; planner errors are not measured authorization bypasses. No model promotion follows this diagnostic.",
+    "No controlled full-precision performance probe was run; no paired throughput or latency improvement is claimed."
+  ]
+}
