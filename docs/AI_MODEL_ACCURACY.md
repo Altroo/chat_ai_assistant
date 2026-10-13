@@ -241,3 +241,10 @@ IMPLEMENTED locally: the identical shared core 0.2.1 wheel is packaged for all s
 ## Date-label errata discovered during R6 review — 2026-10-13
 
 Two original Management Projet cases, `search-schedule-fr/en`, use “avant/before 2026-11-01” but expect the inclusive end date `2026-11-01`. The actual backend applies `due_date__lte`; strict-before semantics require `2026-10-31`. The independent reviewer confirmed the mismatch. The original results and running checkpoint comparison remain unchanged; this is a benchmark limitation, not an accuracy improvement. A corrected future evaluation must be separately versioned and measured. [Errata evidence](../training/reports/shared-v5r6-date-label-errata.json).
+
+
+## Versioned benchmark errata preparation — 2026-10-13
+
+IMPLEMENTED and verified as preparation only: `shared-dialogue-v2-en-fr` retains all 438 scenarios and 15 sets. It corrects only the three previously documented defects: the two payment-schedule requests saying “before 2026-11-01” now expect the inclusive upper bound 2026-10-31, and the French supplier-expense question explicitly identifies the supplier, matching its English counterpart. The other 435 rows remain byte-identical. V1 inputs, historical scores, active checkpoint comparison, training data and acceptance thresholds are unchanged.
+
+Eight generator tests pass. Fresh metadata checks pass all 438 V2 cases against the existing tokenizer, chat template and Colibri parser. The largest prompt is 7,235 tokens, with 512 output tokens reserved within 8,192. The single reviewer found no issues. No V2 model inference, training or acceptance has occurred. V2 requires separately bound baseline/candidate results, reported alongside V1; preparation cannot qualify a model or activate an application. [Dataset manifest](../training/datasets/shared-dialogue-v2-en-fr/manifest.json), [metadata checks](../training/reports/shared-dialogue-v2-en-fr-metadata-preflight.json).

@@ -1,0 +1,25 @@
+{
+  "manifest_sha256": "6e8df0592ddcde75fd2d4c1277aaf789545cd7f1ca9224fc756787abe22e73f3",
+  "generator_sha256": "69555380dfdf1e24f355e27aae79f7294e9eef54fcff4f78a5c64cd115780235",
+  "metadata_checker_sha256": "c21aa75dfc7344ab2354332784021d390a19ef7ac0801b9596fca9f68edc74e2",
+  "tokenizer_artifact_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+  "runtime_artifact_sha256": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35",
+  "checks": {
+    "count": 438,
+    "round_trip_passed": 438,
+    "runtime_prefix_parity_passed": 438,
+    "loss_boundary_passed": 438,
+    "semantic_alignment_passed": 438,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7271,
+    "sha256": "3e9833a4567063e547ad012c9b80ebaf03fb5788c94a251f00a43c6142c486a4"
+  },
+  "maximum_prompt_tokens": 7235,
+  "reserved_output_tokens": 512,
+  "maximum_message_tool_bytes": 27945,
+  "tests_passed": 8,
+  "single_reviewer": "No issues in generator or correction scope.",
+  "scope": "Fresh tokenizer, template, Colibri parser and schema checks for all 438 V2 cases. Expected outputs rendered only for round-trip checks; no model weights, inference, training, business data or production changes.",
+  "model_accuracy_measured": false,
+  "historical_scores_changed": false
+}
