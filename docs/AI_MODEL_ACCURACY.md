@@ -20,9 +20,32 @@ The unchanged eight-request warm probe measured 7.756s sequential mean (7.919s o
 
 The exact report publisher checks published recovery-control hashes, frozen inputs, reconstructed scores, stopped-worker evidence and the original performance payload/input/script hashes. Three offline mutation tests pass and the single reviewer found no remaining issues after two evidence checks were strengthened.
 
-The eight-checkpoint comparison has started with the unchanged baseline on the frozen 275-row validation split. It does not repeat training. Selection is based on functional validation, not held-out acceptance scores, and any different selected candidate still needs frozen acceptance. Contracts, Gestion Magasin and Réservation training remain pending.
+The eight-checkpoint comparison below is complete and selects step 1969. Its separate unchanged 438-case acceptance evaluation is running; the scores above belong to the original step-1800 candidate. Contracts, Gestion Magasin and Réservation training remain pending.
 
 Evidence: [accuracy](../training/reports/shared-v5r6-en-fr-evaluation.json), [training and selection](../training/reports/shared-v5r6-en-fr-training.json), [isolated performance](../training/reports/shared-v5r6-en-fr-performance.json).
+
+## V5r6 completed checkpoint comparison — 2026-10-13
+
+All 2,200 Colibri requests completed: the unchanged 275-row validation split for eight predetermined checkpoints. It contains 222 underlying scenarios, including 53 correlated history variants. The frozen rule selects **step 1969**, primarily by application-macro action accuracy; the grouped score is a separate diagnostic and does not change that rule.
+
+| Step | Fully matched actions | Application-macro accuracy | Scenario-grouped macro accuracy |
+| --- | ---: | ---: | ---: |
+| Baseline (0) | 227/275 | 85.39% | 85.41% |
+| 300 | 228/275 | 85.29% | 85.77% |
+| 600 | 229/275 | 85.54% | 85.52% |
+| 900 | 229/275 | 86.34% | 86.94% |
+| 1200 | 225/275 | 85.87% | 85.84% |
+| 1500 | 218/275 | 82.50% | 82.45% |
+| 1800 | 223/275 | 84.11% | 84.01% |
+| **1969** | **231/275** | **86.65%** | **86.74%** |
+
+At step 1969, action matches are Facturation 100/133, Management Projet 71/78 and Design Workflow 60/64. Valid structures are respectively 131/133, 75/78 and 64/64. These are validation results, not the held-out tool/exact-argument scores or authorization tests.
+
+All candidate artifacts/process identities matched before and after; all temporary comparison workers stopped and production remained unchanged. The publisher recomputed all 24 result shards, fixed selection and worker-stop evidence. Three publisher tests passed, including changed-control and invalid-control-list subcases; one reviewer found no issues.
+
+PARTIALLY IMPLEMENTED: the selected step-1969 candidate is running the unchanged 438-case, 15-set acceptance suite, followed by the unchanged eight-request performance probe. It uses three four-thread workers, 8,192 context tokens, 512 output tokens, temperature zero and thinking disabled. No model promotion or later-app training follows validation alone. The previously inspected frozen suite remains a regression benchmark, not a fresh blind certification.
+
+Evidence: [complete comparison](../training/reports/shared-v5r6-functional-validation.json), [frozen policy](../training/reports/shared-v5r6-checkpoint-selection-policy.json).
 
 ## V5r5 measured results — 2026-10-12
 

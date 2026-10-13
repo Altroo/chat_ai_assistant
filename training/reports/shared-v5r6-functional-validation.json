@@ -1,0 +1,496 @@
+{
+  "version": "shared-v5r6-functional-validation-v2",
+  "selection": {
+    "selected_step": 1969,
+    "candidates": [
+      {
+        "step": 0,
+        "count": 275,
+        "action_matches": 227,
+        "application_macro_action_percent": 85.39206590193432,
+        "application_macro_valid_percent": 98.71794871794872,
+        "scenario_grouped_application_macro_action_percent": 85.40695415695416,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 98,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 68,
+            "valid_structures": 75
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 61,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 300,
+        "count": 275,
+        "action_matches": 228,
+        "application_macro_action_percent": 85.28924474648159,
+        "application_macro_valid_percent": 98.71794871794872,
+        "scenario_grouped_application_macro_action_percent": 85.77117327117327,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 101,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 66,
+            "valid_structures": 75
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 61,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 600,
+        "count": 275,
+        "action_matches": 229,
+        "application_macro_action_percent": 85.53987131289763,
+        "application_macro_valid_percent": 98.71794871794872,
+        "scenario_grouped_application_macro_action_percent": 85.51864801864802,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 102,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 66,
+            "valid_structures": 75
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 61,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 900,
+        "count": 275,
+        "action_matches": 229,
+        "application_macro_action_percent": 86.34024966261808,
+        "application_macro_valid_percent": 98.03997172418225,
+        "scenario_grouped_application_macro_action_percent": 86.94153069153069,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 98,
+            "valid_structures": 132
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 69,
+            "valid_structures": 74
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 62,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 1200,
+        "count": 275,
+        "action_matches": 225,
+        "application_macro_action_percent": 85.86791497975709,
+        "application_macro_valid_percent": 99.24812030075188,
+        "scenario_grouped_application_macro_action_percent": 85.84401709401709,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 91,
+            "valid_structures": 130
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 72,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 62,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 1500,
+        "count": 275,
+        "action_matches": 218,
+        "application_macro_action_percent": 82.50253036437248,
+        "application_macro_valid_percent": 98.46732215153268,
+        "scenario_grouped_application_macro_action_percent": 82.4543512043512,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 91,
+            "valid_structures": 132
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 69,
+            "valid_structures": 75
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 58,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 1800,
+        "count": 275,
+        "action_matches": 223,
+        "application_macro_action_percent": 84.10911091832145,
+        "application_macro_valid_percent": 98.71794871794872,
+        "scenario_grouped_application_macro_action_percent": 84.013209013209,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 94,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 71,
+            "valid_structures": 75
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 58,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 1969,
+        "count": 275,
+        "action_matches": 231,
+        "application_macro_action_percent": 86.65453698348435,
+        "application_macro_valid_percent": 98.21669558511664,
+        "scenario_grouped_application_macro_action_percent": 86.73756798756799,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 100,
+            "valid_structures": 131
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 71,
+            "valid_structures": 75
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 60,
+            "valid_structures": 64
+          }
+        }
+      }
+    ],
+    "status": "VALIDATION SELECTION ONLY; ACCEPTANCE NOT ESTABLISHED"
+  },
+  "cases_per_candidate": 275,
+  "total_inference_cases": 2200,
+  "underlying_validation_scenarios": 222,
+  "validation_only": true,
+  "acceptance_established": false,
+  "production_activation": false,
+  "next_training_started": false,
+  "inference": {
+    "threads_per_worker": 4,
+    "workers": 3,
+    "context": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0,
+    "dense_int8": true
+  },
+  "policy_sha256": "20cf938eb68e0fac40b15e5a445db1ddccba729a8c794a4b64512943008e033b",
+  "selection_sha256": "e25e74279818e862a2b1fab3f4ea6a9f7a201aaf5e7efedbfe87172221e15ad1",
+  "binding_sha256": "cdd14902f3b7dc07e6744a89ace93ee529a9396b8fcd09d81286a4732095ed9a",
+  "training_report_sha256": "95165122d2111329b3451d6a74109310725b1a116b3c562e2021156982cc27b8",
+  "reporter_sha256": "6b400bb00145a1e79ad5defa2181ca05e4fff207379edab3a046da1d2822d8f5",
+  "candidates": [
+    {
+      "step": 0,
+      "results_sha256": "f7e77d2b1370b6a28bbcae516226187a6e8fc1c9b095eb508818cd7ad4daad04",
+      "workers_before_after_sha256": "9f2f61b3d17b5f9983f8e18086463be227356187c6d043484ee191e87e8ba72b",
+      "stop_sha256": "94db06288f1a7fa9b7f92158330413b5bba7d3d731373501e514567ee51f13c7",
+      "artifact_digests": {
+        "weights": "976fb1fec9231227bf3207d112479f888eefbd7f8595b4be9680be49bf1fe843",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      },
+      "shards": [
+        {
+          "label": "shared-v5r6-functional-v2-step-0-worker-0",
+          "input_sha256": "9f9e545abb2267610ad1cb07b341d3f3abbeaf9c2de817a7c2195d588dbc56c0",
+          "summary_sha256": "0612e6bdb195496e889fe28849891b60b0b35f6da4794b5af6ad71b92d7eaff7",
+          "events_sha256": "da4c85a5e1955d4f7fe74fe9df57a535c26892f7a8cc1dff0e1aeaed84c83de2"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-0-worker-1",
+          "input_sha256": "fb39a71ae5be605bdcab3472558f32cb5cb18937007a5ac9266d2073719e5985",
+          "summary_sha256": "c27e6e8076fe2396f78528673db2a445cad20d61dfab867b062bf62cc37bbcd3",
+          "events_sha256": "53f334ea1fea9f88801567b407f4ae1a2ea355b774919fda2cfde6d048c70c94"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-0-worker-2",
+          "input_sha256": "a28e2ae57d8f83fd28e1b45ca8282e2eb01e1762d7607989e330786aae011caa",
+          "summary_sha256": "3f0330e6fefe184a7a09ae2e1a896cf4002dec63ada0575798ba3443b9fd0af9",
+          "events_sha256": "dbe6f0397289196343f16b0044523f52d9142d5f7dab1fe438678fe3eb4c6e46"
+        }
+      ]
+    },
+    {
+      "step": 300,
+      "results_sha256": "2037230f130e702c7ed347ea548f614291edf8e72a1682a87ef65a68294502a0",
+      "workers_before_after_sha256": "9984466e7187c4d0021a4b44a88b76f0ec12ea5a3d0fe921c7a86b36d3bd26e6",
+      "stop_sha256": "3a83b2fe42137df89db53f77fef825756c9d12fe06a33f999d9b2a56b18e296b",
+      "artifact_digests": {
+        "weights": "3f390a9721526705e2cbd2ee0f8e911f1f4ace9494232eb9e282603ffc301f21",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      },
+      "shards": [
+        {
+          "label": "shared-v5r6-functional-v2-step-300-worker-0",
+          "input_sha256": "9f9e545abb2267610ad1cb07b341d3f3abbeaf9c2de817a7c2195d588dbc56c0",
+          "summary_sha256": "89d9f4cc09e75c8ea9e76bb4d6adc798fd7e316d25061d4a5c932b5c649b8c0e",
+          "events_sha256": "57a8c8d033963f36851fac238b95071b7d4ca15ba124f0120eea969b222a8811"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-300-worker-1",
+          "input_sha256": "fb39a71ae5be605bdcab3472558f32cb5cb18937007a5ac9266d2073719e5985",
+          "summary_sha256": "8bb654510a87f6a9ca0a55cee18ff784a0eac3a5319475c5541cf9e34501584a",
+          "events_sha256": "c613f999822264296c23c33afd3c144d3134d009dd143c33fd83612efdb7b7dc"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-300-worker-2",
+          "input_sha256": "a28e2ae57d8f83fd28e1b45ca8282e2eb01e1762d7607989e330786aae011caa",
+          "summary_sha256": "08082b7e574ddff4a648ff0ffaf39d16fa72561460996cf2bec5032368b6a055",
+          "events_sha256": "9a9f60c5c41772e2022304e02844948caca65b2bea35b8c074267c4ee6e88ea0"
+        }
+      ]
+    },
+    {
+      "step": 600,
+      "results_sha256": "cdc2eaeb389698dbade78bc24566656741f7e2f49991e49406861cd7376aee5f",
+      "workers_before_after_sha256": "066604f2aaf65d3f0501ce1ff1fda4d272226bcc3a0ed22a53cc8e3070565f50",
+      "stop_sha256": "db79b7ca1afd204c1d83ee30b6031ec27058860308f6ec0eeea293b56b71ba37",
+      "artifact_digests": {
+        "weights": "e219aa592bc52640598d91a349d764683f219fe03b848b241711b67a000c0aa7",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      },
+      "shards": [
+        {
+          "label": "shared-v5r6-functional-v2-step-600-worker-0",
+          "input_sha256": "9f9e545abb2267610ad1cb07b341d3f3abbeaf9c2de817a7c2195d588dbc56c0",
+          "summary_sha256": "ae8940ee777778705b62bde4531816d4d0d66db0c7df467a46ec7af79822ea38",
+          "events_sha256": "a9f22baeb56effa46f6c4f3b49966d176aa72fe1940676f1b233d534c31aefec"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-600-worker-1",
+          "input_sha256": "fb39a71ae5be605bdcab3472558f32cb5cb18937007a5ac9266d2073719e5985",
+          "summary_sha256": "0695fd14adff0e7b32481b94370a1e3c5ef43362245ab82a18a33c37e504646b",
+          "events_sha256": "0a924dcecbacce5ca6322032e706ed5786925da624bfc3281a47525937776303"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-600-worker-2",
+          "input_sha256": "a28e2ae57d8f83fd28e1b45ca8282e2eb01e1762d7607989e330786aae011caa",
+          "summary_sha256": "9e6627ad821e9632cb41be969f96ebb53dd20a0416505b962ce18e9b683184b0",
+          "events_sha256": "9aa79c164227c9d52bc304948faae2d86720a8ceffc2b1e0cdc2bcbcc2be9a33"
+        }
+      ]
+    },
+    {
+      "step": 900,
+      "results_sha256": "384bcac59857c9668d0643db95352b7f2b4d1d94190c4f47f4ea95d78d2f6884",
+      "workers_before_after_sha256": "aab6b4d4f571e9021d183674ff13ad7f0bf61fdbb14693380a6017236a07c2f6",
+      "stop_sha256": "269d0426b329a810794a70c5eed6dfc1a6042bd3fdd36ef495446c968c79e879",
+      "artifact_digests": {
+        "weights": "374f89a7b9b4dc99f2ef9510c318152c02f48b1836c5e9259c5c9c3408d42a37",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      },
+      "shards": [
+        {
+          "label": "shared-v5r6-functional-v2-step-900-worker-0",
+          "input_sha256": "9f9e545abb2267610ad1cb07b341d3f3abbeaf9c2de817a7c2195d588dbc56c0",
+          "summary_sha256": "d0b28bfa215868f0c1842d6362593339b4c32d80f289b83bc843ad33adc54a9e",
+          "events_sha256": "29fd8024676a1a6a0057ce3c18c36aba01482bceeeaa0be5105232b68a5978a2"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-900-worker-1",
+          "input_sha256": "fb39a71ae5be605bdcab3472558f32cb5cb18937007a5ac9266d2073719e5985",
+          "summary_sha256": "dbdcd6ce4a037bee46bf00224ccced455f1fe270f101930f89b98edcab2cf1e5",
+          "events_sha256": "66faa647e80bfe259e0acf26772a8a9376b4eae59add5726b4ccfff0f753544c"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-900-worker-2",
+          "input_sha256": "a28e2ae57d8f83fd28e1b45ca8282e2eb01e1762d7607989e330786aae011caa",
+          "summary_sha256": "23a1f6d0f6310561e0d4c6833fdf086a430c1c29ff4b43cd315f0ed58a6601cb",
+          "events_sha256": "940b480b35d0c037ace86403a5aa962d1e2f7c8162f40b82203b0ab19f7d23f9"
+        }
+      ]
+    },
+    {
+      "step": 1200,
+      "results_sha256": "9865b5a83051dcdabdcc9e83785289faeb7803c1f0515c5c78b7bc3838446164",
+      "workers_before_after_sha256": "bab61ed86a50857a65f6a40e26be874437ed3aef285584f8f619efde1deaf700",
+      "stop_sha256": "aa9d55a991f7931fe52a57047a53d25f297b44f366ea6b152b1b33e677b875ee",
+      "artifact_digests": {
+        "weights": "be76ea7e15a598e0dcb4d222ee3543adad2d6a3ba238b641af892ff0aaf75586",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      },
+      "shards": [
+        {
+          "label": "shared-v5r6-functional-v2-step-1200-worker-0",
+          "input_sha256": "9f9e545abb2267610ad1cb07b341d3f3abbeaf9c2de817a7c2195d588dbc56c0",
+          "summary_sha256": "574e07ed675d7d050a59a42e32f6a73e98b4e53bdf4ec906e477a95763d29940",
+          "events_sha256": "9f4351d06d3cc53918c377184a667c2e4972bde3c320841af85dc80fe5a3f483"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-1200-worker-1",
+          "input_sha256": "fb39a71ae5be605bdcab3472558f32cb5cb18937007a5ac9266d2073719e5985",
+          "summary_sha256": "e99095ddcebb59bbe7ae1af2425fd491a1935fe69036b93bdcbcf24ff15ab993",
+          "events_sha256": "7ea21ca5a2d343eda9455fed692369871a3156092e2eb2973d02674f1de41d09"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-1200-worker-2",
+          "input_sha256": "a28e2ae57d8f83fd28e1b45ca8282e2eb01e1762d7607989e330786aae011caa",
+          "summary_sha256": "a5e4ea8d85a3544864e48a6c45e6278c48c502574f28f5e6ac7f885105d8e5c4",
+          "events_sha256": "403bf23456eea709e596b82219ce6cd0ac70f794e82ca28e154ae62f7af86a56"
+        }
+      ]
+    },
+    {
+      "step": 1500,
+      "results_sha256": "b5c47763a4f2bbd4fa69f33fa81e8e4a5425bc477aaff4144d38e2217d496f96",
+      "workers_before_after_sha256": "79caa239648097815d0a362b5b1145f88809948b75bc05180189f166d42840bc",
+      "stop_sha256": "02af0ab1060e14c6df9692540dce85555c952ced63eabe5a86fcf204b03c1c22",
+      "artifact_digests": {
+        "weights": "68779687fa6fef30106eef95d0cca30f9020ab084379ab9da5288be3c12e11b8",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      },
+      "shards": [
+        {
+          "label": "shared-v5r6-functional-v2-step-1500-worker-0",
+          "input_sha256": "9f9e545abb2267610ad1cb07b341d3f3abbeaf9c2de817a7c2195d588dbc56c0",
+          "summary_sha256": "29cb7da0a9953ed89fdc2787a43f4b0739eced1075b5f88731c61b505af9a1e8",
+          "events_sha256": "7c0d192bd6d8c8f382dd9361ffa5043db187c78bb760ca03b64f7573d11736f5"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-1500-worker-1",
+          "input_sha256": "fb39a71ae5be605bdcab3472558f32cb5cb18937007a5ac9266d2073719e5985",
+          "summary_sha256": "fc94897be5227ae4db79ad85f8c1dbd4ff4046db951ceb3eb22ed0ad69aa1c1b",
+          "events_sha256": "186817b0ba44d443d0b17180af2dfc62ef2bdafdde66f53d11fd81fcb84fd793"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-1500-worker-2",
+          "input_sha256": "a28e2ae57d8f83fd28e1b45ca8282e2eb01e1762d7607989e330786aae011caa",
+          "summary_sha256": "a22fa6d27270c9fb5df645a2e39eaa6d89e5d8ca5b050846ffc74729f148364d",
+          "events_sha256": "6f6944dfe06201443f41b0c2fad5ddddd409e6627f1620b5f690895ae05452aa"
+        }
+      ]
+    },
+    {
+      "step": 1800,
+      "results_sha256": "0922ed570ee3ca037aefe9fa72caab2c7f5250cb0154d0daaa322a44066c6c73",
+      "workers_before_after_sha256": "2d2e8484dea63eee7dd58b83fa5a56b9b77ebcdd5f4bb34543c1f3faee93d84c",
+      "stop_sha256": "0af9403e1a33ef5be35b480fcdfd3e8ef276cd928536f784d635cac44745a4d8",
+      "artifact_digests": {
+        "weights": "b8fa6edbfe637a844c584ceaf1e0047570f50b53e63e74416415b9dab170705b",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      },
+      "shards": [
+        {
+          "label": "shared-v5r6-functional-v2-step-1800-worker-0",
+          "input_sha256": "9f9e545abb2267610ad1cb07b341d3f3abbeaf9c2de817a7c2195d588dbc56c0",
+          "summary_sha256": "ac777a83a786c101e1d79032db438d51029c629db09aa01d4afafd5e9d3e11bf",
+          "events_sha256": "7cbb67c08f4118da0b71efaf4f4f1060d8bda32a4a3a3cf5f604d1a64dde8f20"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-1800-worker-1",
+          "input_sha256": "fb39a71ae5be605bdcab3472558f32cb5cb18937007a5ac9266d2073719e5985",
+          "summary_sha256": "bb608ca1a8628ea07d33183753fc5c5b8ed3780f45df2a4604db93c4d5a7d143",
+          "events_sha256": "0f281499be06e1ff01efbb203aa5394317f81b202df985ed57f1407c1dfe1512"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-1800-worker-2",
+          "input_sha256": "a28e2ae57d8f83fd28e1b45ca8282e2eb01e1762d7607989e330786aae011caa",
+          "summary_sha256": "d10f44ea4fda66b90587a5c62eaebc9823bd05e09fae715adad5e22e4b56b178",
+          "events_sha256": "57416c16e913233fe644dc71cea2be6365b3ef9cda9b274e6eba206d0162d65f"
+        }
+      ]
+    },
+    {
+      "step": 1969,
+      "results_sha256": "85c04e4246bef2bfc85dc13fa3eff2c4dcce958075740119c5c8406048b39052",
+      "workers_before_after_sha256": "35192de0f71cc607aff35679eaf1bfd3e24ee817767d47d8cd906fcbb2ef4524",
+      "stop_sha256": "3c3e82ec9ee676ecc6c94fd252ce3452a3257cf3501dd33517309c75f51ce6e1",
+      "artifact_digests": {
+        "weights": "132ac04042190caf239d72aa2e85e6e1030128c8b7b59d6b2dee77a0c02955d4",
+        "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+        "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+        "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+      },
+      "shards": [
+        {
+          "label": "shared-v5r6-functional-v2-step-1969-worker-0",
+          "input_sha256": "9f9e545abb2267610ad1cb07b341d3f3abbeaf9c2de817a7c2195d588dbc56c0",
+          "summary_sha256": "0674c6a547196048fb164321643388bae132c1111ad9d8ba54418dd6feeab977",
+          "events_sha256": "4a47c9cc9f26d440c253e5088ebb4bc3bfefa8f5d76e51a38a95545909ae7203"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-1969-worker-1",
+          "input_sha256": "fb39a71ae5be605bdcab3472558f32cb5cb18937007a5ac9266d2073719e5985",
+          "summary_sha256": "211e44bca8b6a50ba28696ffad430f3d541da29d8626a0c064e8d39189c2c27b",
+          "events_sha256": "f4c6786067181e5a8e6bf50865b7b0e8c2426039a22e146651f10c0396e9ef31"
+        },
+        {
+          "label": "shared-v5r6-functional-v2-step-1969-worker-2",
+          "input_sha256": "a28e2ae57d8f83fd28e1b45ca8282e2eb01e1762d7607989e330786aae011caa",
+          "summary_sha256": "75adaf9ade5a489ce69a37f2535d9505f6826c77d35412815dd0d396ba4ac3a6",
+          "events_sha256": "3587f9b3a0ef25a610dc2268038cf15bf0b4eef12c08082cb0dd2eafbd314d67"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "275 validation rows include 53 neutral-history variants of 222 scenarios.",
+    "Application averaging does not remove correlated variants; scenario-grouped scores are reported separately.",
+    "Source rows lack per-language labels; no inferred per-language accuracy is claimed.",
+    "Selection is validation only, not acceptance. The 438 frozen regressions are repeatedly inspected and are not fresh blind certification.",
+    "No business tools execute. No model activation follows selection.",
+    "Every candidate must complete before ranking. This report does not replace the frozen 438-case acceptance evaluation."
+  ]
+}
