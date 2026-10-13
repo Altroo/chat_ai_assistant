@@ -1,0 +1,37 @@
+{
+  "scope": "Errata discovered during R6 failure review; the running comparison and historical scores are unchanged.",
+  "dataset": "shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl",
+  "dataset_sha256": "4bba62427783498ef0b28c06f2bfe838709551ec84e4e1a1b7528a0d07ea1bc7",
+  "issues": [
+    {
+      "id": "search-schedule-fr",
+      "language": "fr",
+      "issue": "The request says before/avant 2026-11-01, but the expected inclusive date_to includes that day.",
+      "recorded_date_to": "2026-11-01",
+      "strict_before_date_to": "2026-10-31",
+      "frozen_case_changed": false
+    },
+    {
+      "id": "search-schedule-en",
+      "language": "en",
+      "issue": "The request says before/avant 2026-11-01, but the expected inclusive date_to includes that day.",
+      "recorded_date_to": "2026-11-01",
+      "strict_before_date_to": "2026-10-31",
+      "frozen_case_changed": false
+    }
+  ],
+  "native_evidence": {
+    "application": "management_projet",
+    "operation": "search_records(payment_schedule)",
+    "implementation": "The native queryset uses due_date__lte for date_to.",
+    "tools_source_sha256": "4a34fe503ade55e048434ea1aae1a15a025a2578667d54e4ca35111da5d4f688"
+  },
+  "other_checked_semantics": {
+    "design_workflow_message_mine": "mine=true is unsupported for message searches and is rejected. Message scope already comes from authorized threads; the original expected omission is correct.",
+    "r6_training_validation": "Reviewed search date-boundary training/validation examples explicitly use inclusive language consistently. No source examples were rewritten."
+  },
+  "scores_recalculated": false,
+  "model_acceptance_changed": false,
+  "production_changed": false,
+  "followup": "Preserve original results. Apply corrected semantics only in an explicitly versioned future evaluation and report it separately; do not overwrite or re-score the frozen run as if inputs were unchanged."
+}

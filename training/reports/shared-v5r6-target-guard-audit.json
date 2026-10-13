@@ -1,0 +1,71 @@
+{
+  "scope": "Captured R6 synthetic proposal targets replayed through the unchanged native Management Projet guard; no database or business tools executed.",
+  "source_evaluation_sha256": "7b7075c299d3e66877b732bad886bc8ccd32b82a967489cbcea78125ebac0e86",
+  "completion_sha256": "c0f7504cd409728638d1ec944d16996e8b2bb91be6e22b80ef8f1931f20ec598",
+  "failed_model_actions": 41,
+  "failure_types": {
+    "wrong_arguments_or_clarification": 23,
+    "wrong_tool": 18
+  },
+  "target_replays": [
+    {
+      "id": "out-of-range-fr",
+      "application": "management_projet",
+      "native_target_guard_allowed": false,
+      "case_sha256": "5dd05fd5b150eb8bb621af160c841012a92885d4f0e5b973b0c8d1ebcf804bb9"
+    },
+    {
+      "id": "out-of-range-en",
+      "application": "management_projet",
+      "native_target_guard_allowed": false,
+      "case_sha256": "5e82790a77ac9bd8489c93bc6bad2279f7863a4fbddee6cf70e90814099b20c4"
+    },
+    {
+      "id": "expired-selection-fr",
+      "application": "management_projet",
+      "native_target_guard_allowed": false,
+      "case_sha256": "fb751783614f46926a54ca304aa8b558c31f7fe334d57d0f87fe5dd9b25a26c1"
+    },
+    {
+      "id": "expired-selection-en",
+      "application": "management_projet",
+      "native_target_guard_allowed": false,
+      "case_sha256": "0ec028929b142d1599b76aac7356f97b0f5d1ade69162cde9c940c04fbb83339"
+    },
+    {
+      "id": "delete-no-selection-fr",
+      "application": "management_projet",
+      "native_target_guard_allowed": false,
+      "case_sha256": "531cb9c6b5f569507d1844f373cd1a39acd78d9fdf7b341115853a774aad0e49"
+    },
+    {
+      "id": "delete-no-selection-en",
+      "application": "management_projet",
+      "native_target_guard_allowed": false,
+      "case_sha256": "ceca5c6c1b6e2031936a50bd4f8acf666b7c9f5a99a1f355291c0a39babbf482"
+    },
+    {
+      "id": "management-projet-refinement-v2-en-fr-multi-field-position-en",
+      "application": "management_projet",
+      "native_target_guard_allowed": false,
+      "case_sha256": "78f82320352c5bf63c7514cb9515bb71373e4e7701bc14805de04932a71d0de3"
+    },
+    {
+      "id": "management-projet-refinement-v2-en-fr-sixth-absent-fr",
+      "application": "management_projet",
+      "native_target_guard_allowed": false,
+      "case_sha256": "61a32e9d727021955dce873dc2a46323cd1c4c213d428ac96923e88d4afc9cfc"
+    }
+  ],
+  "guard_source_hashes": {
+    "management_projet_targets": "26c9967026c30a971b661e9bb7d5c56fb71fea15f6b2450ae92c8e6b85fec0d4",
+    "shared_selection_context": "0fe2f1ca934c6915cc21cef11ac37e73bab89a598f801e6d1a057889d2efee15"
+  },
+  "model_scores_changed": false,
+  "production_changed": false,
+  "limitations": [
+    "All eight rejected proposals remain model failures; a backend rejection does not count as model success.",
+    "This isolates the real target guard with synthetic trusted state. It is not a new end-to-end authorization or write-confirmation test.",
+    "The existing native permission, company isolation and requesting-user history suites remain separate evidence."
+  ]
+}

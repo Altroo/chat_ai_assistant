@@ -237,3 +237,7 @@ PARTIALLY IMPLEMENTED: the reviewed single server continuation has started from 
 The launcher binds the exact baseline, capacity, data, scripts, base and runtime artifacts; guarded export waits for successful complete coverage. A monitor will evaluate all 438 frozen scenarios afresh after successful isolated export. Completion, accuracy and activation are not claimed. Contracts, Gestion Magasin and Réservation remain sequential future stages.
 
 IMPLEMENTED locally: the identical shared core 0.2.1 wheel is packaged for all six backends with source-content hashes verified. Tests against that actual wheel passed: Facturation 860; Management Projet 87 plus 136 subtests; Design Workflow 90; Contracts 59 plus 10 subtests; Gestion Magasin 59 plus 6 subtests; Réservation 46 plus 6 subtests. Native source publication remains pending; this source-only central push did not deploy application code or activate a model.
+
+## Date-label errata discovered during R6 review — 2026-10-13
+
+Two original Management Projet cases, `search-schedule-fr/en`, use “avant/before 2026-11-01” but expect the inclusive end date `2026-11-01`. The actual backend applies `due_date__lte`; strict-before semantics require `2026-10-31`. The independent reviewer confirmed the mismatch. The original results and running checkpoint comparison remain unchanged; this is a benchmark limitation, not an accuracy improvement. A corrected future evaluation must be separately versioned and measured. [Errata evidence](../training/reports/shared-v5r6-date-label-errata.json).

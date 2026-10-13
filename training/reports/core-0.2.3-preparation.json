@@ -1,0 +1,89 @@
+{
+  "version": "0.2.3",
+  "status": "VERIFIED IN ISOLATED LOCAL CHECKOUTS; RELEASE PENDING",
+  "changes": "Application-neutral English/French clarification wording; unchanged tool schemas, authorization and business operations.",
+  "wheel_sha256": "bf4e00c22ba987981efe4dbace0711fd8e2538768d49093932c180ff49e4b6ff",
+  "prepared_commits": {
+    "central": "6eb88f591767bd339a7977d78ae739a66f02e9c4",
+    "facturation": "d63b64f3a390ce379a8dbfe8e71c7a7683a3abd6",
+    "management_projet": "670e4325855e9db18c5cb3e18eb9b45009ed134b",
+    "design_workflow": "0e9c9b76607635993c7cee6e79dacb3132604269",
+    "contracts": "daa2ad49e246951e8ea70e9bd5c6a17cf16a283b",
+    "gestion_magasin": "2433eacace8c0dfc5cc2ecaa002f823fc909848c",
+    "reservation": "095ba194a3dee734dcea0d6e1403e94f2311ad9f"
+  },
+  "core_tests": {
+    "source_passed": 30,
+    "wheel_passed": 30,
+    "same_test_cases": true
+  },
+  "native_tests": {
+    "facturation": {
+      "tests_passed": 863,
+      "subtests_passed": 0,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "duration_seconds": 52.796,
+      "private_junit_sha256": "b3acc38465032b5c134f346dc953232cf89ccb9e31df2500dcd4517c29afcaf9"
+    },
+    "management_projet": {
+      "tests_passed": 90,
+      "subtests_passed": 140,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "duration_seconds": 16.552,
+      "private_junit_sha256": "5d5a03388e649e5f3916f3ba3a984e9efb871d79f772c85d41a667000ddb44b0"
+    },
+    "design_workflow": {
+      "tests_passed": 93,
+      "subtests_passed": 0,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "duration_seconds": 22.595,
+      "private_junit_sha256": "99ad2d70a79d99a3fe98ec978c2bb2ecf2fbd773b602ca008d307e2209d45601"
+    },
+    "contracts": {
+      "tests_passed": 87,
+      "subtests_passed": 14,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "duration_seconds": 4.776,
+      "private_junit_sha256": "a1eb0bd29579593a12560fc8837d578e737d3d0c976905c8c71a9ebc2d7d850e"
+    },
+    "gestion_magasin": {
+      "tests_passed": 87,
+      "subtests_passed": 10,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "duration_seconds": 8.763,
+      "private_junit_sha256": "e3479fc5ddc1b24310fd5b93af022eaa54f8f093a01f56cba0d9e8fdaddbed71"
+    },
+    "reservation": {
+      "tests_passed": 73,
+      "subtests_passed": 10,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "duration_seconds": 6.168,
+      "private_junit_sha256": "1273633c8a4e957326d5f03b0abb7dacd3ba50f362bf38403778d139ce8839bd"
+    }
+  },
+  "total_native_tests_passed": 1293,
+  "total_native_subtests_passed": 174,
+  "total_skipped": 1,
+  "review": "No issues",
+  "production_changed": false,
+  "model_accuracy_claimed": false,
+  "limitations": [
+    "The first private test-settings wrapper failed before collecting tests due to Celery initialization ordering. Evidence is preserved; all reported passes use the corrected native-package settings wrapper.",
+    "Native tests use a disposable local PostgreSQL database and synthetic fixtures. The database service was stopped after testing.",
+    "The same 30 core tests passed from source and from the built wheel; these are not 60 distinct cases.",
+    "Private settings, database files and raw test reports are excluded from commits.",
+    "Main benchmark source stays pinned until the active comparison and any selected-candidate acceptance finish."
+  ]
+}
