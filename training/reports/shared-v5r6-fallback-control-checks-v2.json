@@ -1,0 +1,59 @@
+{
+  "status": "PARTIALLY IMPLEMENTED",
+  "purpose": "Post-training functional checkpoint comparison; validation only.",
+  "candidate_steps": [
+    0,
+    300,
+    600,
+    900,
+    1200,
+    1500,
+    1800,
+    1969
+  ],
+  "validation_rows": 275,
+  "underlying_scenarios": 222,
+  "per_worker_rows": [
+    92,
+    92,
+    91
+  ],
+  "offline_control_tests_passed": 15,
+  "review": "One reviewer; no issues in the versioned recovery admission and exact interpreter checks.",
+  "verified_offline": [
+    "Incomplete, active, failed or accepted original runs cannot start the fallback.",
+    "Published baseline completion, model, runtime, provider, dataset and driver hashes are bound.",
+    "Validation batch hashes derive only from frozen rows and are checked before and after inference.",
+    "A changed question after preparation or simulated inference is rejected before scoring.",
+    "Another optimizer or evaluation service and insufficient resource reserve block admission.",
+    "All candidates use the same loopback Colibri settings and unchanged scoring.",
+    "Completed reviewed recovery is eligible only after unchanged frozen results are recomputed, acceptance failed and all three isolated workers stopped.",
+    "Exact absolute interpreter, executable realpath, model path, port and inference arguments are required.",
+    "The original failed handoff and the first fallback preparation remain preserved."
+  ],
+  "planned_runtime": {
+    "parallel_workers": 3,
+    "threads_per_worker": 4,
+    "context": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0
+  },
+  "control_sha256": {
+    "compare_run.py": "0c35cc71f455724e56f675ed881decfcacb082ee73415a38a04e22bf4b9b1eb3",
+    "remote_control.py": "876e8accba78ffb26c905022e24dd46284c3dd3ac1c94f4bbd3dd0a9cfc6ca16",
+    "test_controls.py": "f75ea83126780e3f3804d00b1ffb86642237c80da7bae8bf162587e2d7e105b2"
+  },
+  "server_control_execution": false,
+  "model_inference_started": false,
+  "accuracy_established": false,
+  "production_activation": false,
+  "limitations": [
+    "Runtime controls are prepared and tested offline, not exercised on a completed training run yet.",
+    "All eight candidates require complete measurements before selection.",
+    "A selected changed candidate still requires the unchanged 438-case acceptance suite.",
+    "Current recovery evaluation and original failure evidence remain unchanged. This fallback has not launched."
+  ],
+  "version": 2,
+  "recovery_control_pins_sha256": "2d5ee23cd5671750576b8026c96bffbe2ad5a42e13fbd33bf895c93b6c689577"
+}

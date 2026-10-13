@@ -1,0 +1,55 @@
+{
+  "status": "PARTIALLY IMPLEMENTED",
+  "purpose": "Evaluate only the completed functional checkpoint selection on the existing 438 frozen acceptance cases.",
+  "cases": 438,
+  "sets": 15,
+  "offline_control_tests_passed": 11,
+  "review": "One reviewer; no issues in the versioned fallback references, worker names, result labels and pinned report hashes.",
+  "verified_offline": [
+    "All eight predetermined validation candidates must complete before selection is recomputed from measured events.",
+    "Edited selection records or validation predictions are rejected.",
+    "Baseline-only selection and incomplete comparison cannot advance to another acceptance run.",
+    "Original provider, dataset, evaluator and driver checks remain in use.",
+    "Changing the selected candidate blocks server control before contact.",
+    "The unchanged eight-request performance probe uses the same selected isolated workers after complete acceptance evaluation.",
+    "Failed requests, incomplete responses, incorrect candidate identity and unattributed performance measurements cannot pass.",
+    "Versioned fallback recovery admission, process identities, output directories and evidence labels are consistent. Original preparations remain preserved."
+  ],
+  "planned_runtime": {
+    "parallel_workers": 3,
+    "threads_per_worker": 4,
+    "context": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0
+  },
+  "control_sha256": {
+    "acceptance_run.py": "60ca0041426e8a6d97b7ad481093a0d2583f5c0a46b661f8ce1daef975c5b6c3",
+    "remote_eval.py": "bc9f2a3cb1ec2467daee9b798d49785dc1148a6bc77f5b1d50ef517b0bc94e0c",
+    "performance_run.py": "976c9e138b313ec6ec0d1da8fa16ad29c82cfcb69884da583c78140349fc1aa7",
+    "test_acceptance.py": "6df5577c446df181f394330ab972e8fec0d2bce4de5c56a01b79120afa60ae38"
+  },
+  "server_control_execution": false,
+  "model_inference_started": false,
+  "accuracy_established": false,
+  "production_activation": false,
+  "next_training_started": false,
+  "limitations": [
+    "Server launch and end-to-end runner execution await complete training and functional comparison.",
+    "Offline fixture results verify handoff checks, not model accuracy.",
+    "The original active training and scheduled evaluation controls remain unchanged.",
+    "Actual performance measurement and native security verification remain incomplete; neither follows from offline control tests."
+  ],
+  "performance": {
+    "status": "PREPARED ONLY",
+    "requests": 8,
+    "synthetic_prompts": 4,
+    "sequential_requests": 4,
+    "concurrency_two_requests": 4,
+    "input_binding_sha256": "55510b5d8ad80a9b815051d88fbbe80a1d6a9e7e7d5a364263b87f6188bf8489",
+    "benchmark_sha256": "76e5474745ae66c50d03879ab87a9700632262234cbc689fa8cea03d085f3c60",
+    "measured": false,
+    "scope": "One four-thread candidate worker; two identical workers remain loaded and idle. Small warm probe, not capacity certification. Decode throughput excludes prefill."
+  },
+  "version": 2
+}
