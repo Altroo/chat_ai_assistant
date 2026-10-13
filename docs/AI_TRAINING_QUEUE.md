@@ -1,8 +1,10 @@
 # Shared model training queue
 
-## Current shared-model and rollout status — 2026-10-12
+## Current shared-model and rollout status — updated 2026-10-13
 
-PARTIALLY IMPLEMENTED — current run: V5r6 server training has started from the verified V5r5 step-600 checkpoint. One complete epoch covers 1,969 English/French training rows; all 275 validation rows and 438 held-out cases remain unchanged. The run uses 14 CPU threads, a 16 GiB limit with at least 10% host memory reserved, gradient checkpointing, 24 LoRA layers and a learning rate of 0.00001. Validation/checkpoint selection runs every 300 steps, with the unchanged baseline eligible. There is no V5r6 accuracy score or production activation yet. [Verified run start](../training/reports/shared-v5r6-en-fr-training-start.json).
+IMPLEMENTED — training complete: V5r6 finished all 1,969 server optimization steps in 56,587.8 seconds (15 hours 43 minutes), covering 850 Management Projet, 689 Facturation and 430 Design Workflow examples. All recorded losses are finite. Step 1800 remains selected: validation macro loss 0.0702729237, compared with baseline 0.0709163280 and final-step loss 0.0731497569. Management Projet improves against its baseline loss; Facturation and Design Workflow remain above theirs. These are losses, not accuracy scores. [Completed training evidence](../training/reports/shared-v5r6-en-fr-training.json).
+
+PARTIALLY IMPLEMENTED — acceptance: the selected checkpoint was exported and its unchanged 438-case, 15-set English/French evaluation is running. A pre-evaluation process check expected a bare interpreter name but the service reports its absolute path. A separately reviewed recovery fixes that exact identity check, preserves the original failure evidence and reuses the existing isolated workers without retraining. Eleven offline checks pass. No final R6 accuracy or performance result, production activation or subsequent app training is claimed.
 
 IMPLEMENTED and verified: the exact training base matches 473 previously verified FP32 tensors, all three attested tokenizer files and the full shard index. Server metadata checks passed 1,969 training and 275 validation rows. Two resumed capacity updates passed across all 24 layers; the earlier user-interrupted attempt is preserved and does not count as a completed capacity test.
 
@@ -28,7 +30,7 @@ Only one server training process may run at a time. All applications use the sam
 
 | Order | Scope | Status | Exit gate |
 | --- | --- | --- | --- |
-| Current | Shared V5: Facturation, Management Projet, Design Workflow | V5r6 improvement run active; V5r5 acceptance FAILED | Improve model quality and pass all frozen acceptance gates |
+| Current | Shared V5: Facturation, Management Projet, Design Workflow | V5r6 training complete; frozen evaluation running; V5r5 acceptance FAILED | Improve model quality and pass all frozen acceptance gates |
 | Next | Contracts (`contrat`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, exact tokenizer preflight, tested adapter, prior training complete; retain existing curricula and regression sets |
 | Following | Gestion Magasin (`gestion_magasin`) | Adapter/UI published disabled; synthetic dataset prepared | Reviewed frozen baseline, server preflight, preceding serial stage validated |
 | Following | Réservation (`reservation`) | Adapter/UI published disabled; synthetic dataset prepared | Frozen baseline, server preflight and preceding stage validation |

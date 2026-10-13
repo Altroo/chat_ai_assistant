@@ -1,0 +1,284 @@
+{
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "threads": 14,
+  "steps": 1969,
+  "seed": 17,
+  "lora_rank": 16,
+  "lora_alpha": 32.0,
+  "trainable_parameters": 7127040,
+  "dataset_sha256": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+  "validation_sha256": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86",
+  "baseline_validation_loss": 0.07164948057997621,
+  "final_validation_loss": 0.0806995645567961,
+  "baseline_validation_unweighted_loss": 0.033991526185988157,
+  "final_validation_unweighted_loss": 0.04010097034740077,
+  "baseline_validation_by_application": {
+    "micro": 0.07164948057997621,
+    "by_application": {
+      "facturation": 0.07041722368156361,
+      "management_projet": 0.08777741116524013,
+      "design_workflow": 0.05455434904619949
+    },
+    "macro": 0.0709163279643344,
+    "unweighted": {
+      "micro": 0.033991526185988157,
+      "by_application": {
+        "facturation": 0.03949724279930234,
+        "management_projet": 0.0335968953900775,
+        "design_workflow": 0.023030915131460716
+      },
+      "macro": 0.03204168444028019
+    }
+  },
+  "final_validation_by_application": {
+    "micro": 0.0806995645567961,
+    "by_application": {
+      "facturation": 0.10508741867586555,
+      "management_projet": 0.06404250345127739,
+      "design_workflow": 0.050319348437955824
+    },
+    "macro": 0.07314975685503293,
+    "unweighted": {
+      "micro": 0.04010097034740077,
+      "by_application": {
+        "facturation": 0.05905151894622625,
+        "management_projet": 0.024059533858293528,
+        "design_workflow": 0.02026986226156602
+      },
+      "macro": 0.0344603050220286
+    }
+  },
+  "duration_seconds": 56587.79773031548,
+  "peak_rss_kib": 8020564,
+  "application_exposure": {
+    "management_projet": {
+      "steps": 850,
+      "unique_examples": 850
+    },
+    "facturation": {
+      "steps": 689,
+      "unique_examples": 689
+    },
+    "design_workflow": {
+      "steps": 430,
+      "unique_examples": 430
+    }
+  },
+  "version": "shared-v5r6-en-fr",
+  "training_status": "COMPLETED",
+  "acceptance_status": "PENDING",
+  "deployment_status": "NOT DEPLOYED",
+  "selected_step": 1800,
+  "selected_validation": {
+    "micro": 0.0744459235412788,
+    "by_application": {
+      "facturation": 0.08733557960054293,
+      "management_projet": 0.06814804501777288,
+      "design_workflow": 0.05533514649364335
+    },
+    "macro": 0.0702729237039864,
+    "unweighted": {
+      "micro": 0.03697609584173609,
+      "by_application": {
+        "facturation": 0.0502214739258751,
+        "management_projet": 0.02555787967806585,
+        "design_workflow": 0.023366495460107828
+      },
+      "macro": 0.033048616354682925
+    }
+  },
+  "selection_metric": "validation application-macro semantic loss",
+  "raw_training_report_sha256": "95165122d2111329b3451d6a74109310725b1a116b3c562e2021156982cc27b8",
+  "recorded_step_count": 1969,
+  "all_training_losses_finite": true,
+  "validation_history": [
+    {
+      "step": 0,
+      "loss": {
+        "micro": 0.07164948057997621,
+        "by_application": {
+          "facturation": 0.07041722368156361,
+          "management_projet": 0.08777741116524013,
+          "design_workflow": 0.05455434904619949
+        },
+        "macro": 0.0709163279643344,
+        "unweighted": {
+          "micro": 0.033991526185988157,
+          "by_application": {
+            "facturation": 0.03949724279930234,
+            "management_projet": 0.0335968953900775,
+            "design_workflow": 0.023030915131460716
+          },
+          "macro": 0.03204168444028019
+        }
+      }
+    },
+    {
+      "step": 300,
+      "loss": {
+        "micro": 0.10352836137588466,
+        "by_application": {
+          "facturation": 0.1242122192827144,
+          "management_projet": 0.10138012582885891,
+          "design_workflow": 0.06316288123619174
+        },
+        "macro": 0.09625174211592169,
+        "unweighted": {
+          "micro": 0.050996955989468754,
+          "by_application": {
+            "facturation": 0.06792201493956104,
+            "management_projet": 0.04051252099858315,
+            "design_workflow": 0.028602473003950024
+          },
+          "macro": 0.045679002980698075
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    },
+    {
+      "step": 600,
+      "loss": {
+        "micro": 0.09302670365737868,
+        "by_application": {
+          "facturation": 0.11570498690858394,
+          "management_projet": 0.08995598923896371,
+          "design_workflow": 0.049640829473410975
+        },
+        "macro": 0.08510060187365287,
+        "unweighted": {
+          "micro": 0.045347640378882635,
+          "by_application": {
+            "facturation": 0.06300770128957726,
+            "management_projet": 0.0347687619389373,
+            "design_workflow": 0.02154083439752874
+          },
+          "macro": 0.03977243254201444
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    },
+    {
+      "step": 900,
+      "loss": {
+        "micro": 0.09157819606810087,
+        "by_application": {
+          "facturation": 0.12261764685562705,
+          "management_projet": 0.07317931055146613,
+          "design_workflow": 0.0494979791236716
+        },
+        "macro": 0.08176497884358826,
+        "unweighted": {
+          "micro": 0.045328819904480455,
+          "by_application": {
+            "facturation": 0.06671070502292273,
+            "management_projet": 0.027997483932419225,
+            "design_workflow": 0.022017155608667238
+          },
+          "macro": 0.03890844818800306
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    },
+    {
+      "step": 1200,
+      "loss": {
+        "micro": 0.08232593498379175,
+        "by_application": {
+          "facturation": 0.10509531359021869,
+          "management_projet": 0.07118726334720239,
+          "design_workflow": 0.048583576124404004
+        },
+        "macro": 0.0749553843539417,
+        "unweighted": {
+          "micro": 0.04057744725590303,
+          "by_application": {
+            "facturation": 0.05843160537375311,
+            "management_projet": 0.02678837000737589,
+            "design_workflow": 0.020279712813888295
+          },
+          "macro": 0.03516656273167243
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    },
+    {
+      "step": 1500,
+      "loss": {
+        "micro": 0.09310892084483385,
+        "by_application": {
+          "facturation": 0.11739189346894305,
+          "management_projet": 0.07837483638229223,
+          "design_workflow": 0.0606030337990795
+        },
+        "macro": 0.08545658788343825,
+        "unweighted": {
+          "micro": 0.04513191291691989,
+          "by_application": {
+            "facturation": 0.06381499018487075,
+            "management_projet": 0.02934114146394397,
+            "design_workflow": 0.025551145677773945
+          },
+          "macro": 0.03956909244219622
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    },
+    {
+      "step": 1800,
+      "loss": {
+        "micro": 0.0744459235412788,
+        "by_application": {
+          "facturation": 0.08733557960054293,
+          "management_projet": 0.06814804501777288,
+          "design_workflow": 0.05533514649364335
+        },
+        "macro": 0.0702729237039864,
+        "unweighted": {
+          "micro": 0.03697609584173609,
+          "by_application": {
+            "facturation": 0.0502214739258751,
+            "management_projet": 0.02555787967806585,
+            "design_workflow": 0.023366495460107828
+          },
+          "macro": 0.033048616354682925
+        }
+      },
+      "improved": true,
+      "selected_step": 1800
+    },
+    {
+      "step": 1969,
+      "loss": {
+        "micro": 0.0806995645567961,
+        "by_application": {
+          "facturation": 0.10508741867586555,
+          "management_projet": 0.06404250345127739,
+          "design_workflow": 0.050319348437955824
+        },
+        "macro": 0.07314975685503293,
+        "unweighted": {
+          "micro": 0.04010097034740077,
+          "by_application": {
+            "facturation": 0.05905151894622625,
+            "management_projet": 0.024059533858293528,
+            "design_workflow": 0.02026986226156602
+          },
+          "macro": 0.0344603050220286
+        }
+      },
+      "improved": false,
+      "selected_step": 1800
+    }
+  ],
+  "limitations": [
+    "Validation loss selects a checkpoint; it is not accuracy.",
+    "The frozen accuracy suite remains authoritative; unsuccessful candidates do not replace production.",
+    "Training is complete. The 438-case frozen evaluation is running and has no final score yet."
+  ]
+}
