@@ -2,6 +2,28 @@
 
 Management Projet remains disabled in production by explicit user instruction. This work uses the existing shared Qwen3.5-0.8B checkpoint and Colibri CPU runtime; no new foundation model or application-specific model is downloaded. Production weights, permissions and financial calculations remain unchanged.
 
+## V5r6 measured results — 2026-10-13
+
+Server training completed all 1,969 steps in 15 hours 43 minutes, using 14 CPU threads and 7.65 GiB peak RSS. Step 1800 was selected by application-macro validation loss; the final-step loss did not improve it. Export succeeded. An exact interpreter-path check stopped the first evaluation handoff before any requests; separately reviewed recovery preserved that evidence and completed the unchanged suite without retraining.
+
+**Acceptance FAILED: 420/438 correct tools (95.89%), 305/334 eligible exact arguments (91.32%) and 438/438 valid structures (100%).** R5 scored 92.69%, 89.52% and 98.17% respectively. Fully matched actions improved from 376/438 to 397/438, but only 3/15 sets pass all gates. Critical model cases match 135/150 and clarification reason/language matches 78/90. No business tools execute in this evaluator; these are planner failures, not measured authorization bypasses.
+
+| Application | Correct tools | Eligible exact arguments | Valid structure |
+| --- | ---: | ---: | ---: |
+| design_workflow | 129/130 (99.23%) | 90/100 (90.0%) | 130/130 (100.0%) |
+| facturation | 105/108 (97.22%) | 73/86 (84.88%) | 108/108 (100.0%) |
+| management_projet | 186/200 (93.0%) | 142/148 (95.95%) | 200/200 (100.0%) |
+
+Management Projet's argument score improved, while its tool score remains below target. Design Workflow's exact-argument result regressed from 94/100 in R5 to 90/100 in R6. Better aggregate scores do not establish acceptance or allow a production replacement.
+
+The unchanged eight-request warm probe measured 7.756s sequential mean (7.919s observed P95), 11.639s concurrency-two mean (15.845s observed P95), 55.71 decode tokens/s excluding prefill and 2.73 GiB peak process RSS. Four requests per group are a small measurement, not production capacity certification. Two other identical workers remained loaded and idle during the probe. All eight requests completed without errors; all three workers then stopped. Production remained unchanged.
+
+The exact report publisher checks published recovery-control hashes, frozen inputs, reconstructed scores, stopped-worker evidence and the original performance payload/input/script hashes. Three offline mutation tests pass and the single reviewer found no remaining issues after two evidence checks were strengthened.
+
+The eight-checkpoint comparison has started with the unchanged baseline on the frozen 275-row validation split. It does not repeat training. Selection is based on functional validation, not held-out acceptance scores, and any different selected candidate still needs frozen acceptance. Contracts, Gestion Magasin and Réservation training remain pending.
+
+Evidence: [accuracy](../training/reports/shared-v5r6-en-fr-evaluation.json), [training and selection](../training/reports/shared-v5r6-en-fr-training.json), [isolated performance](../training/reports/shared-v5r6-en-fr-performance.json).
+
 ## V5r5 measured results — 2026-10-12
 
 Server-only training and export completed: 1,803 optimizer steps and 275 validation examples in English/French. The selected adapter is step 600, with application-macro validation loss 0.070752 (baseline 0.130523). Final step 1,803 had 0.077062 and was not exported. Training took 14.73 hours, using 14 CPU threads and 7.70 GiB peak RSS.

@@ -1,0 +1,140 @@
+{
+  "process_cpu_seconds": 248.07999999999993,
+  "limitations": [
+    "Four synthetic validation prompts repeated sequentially then with concurrency two: small performance probe, not capacity certification. Concurrent pass runs second; model and prefix caches may be warm.",
+    "Runtime profile wall_s starts after prefill (qwen36.c q36_prepare); decode rate excludes prompt processing.",
+    "First visible event for native tool calls is buffered, not first generated token.",
+    "Tests inference directly; application serializes model requests with a database lease.",
+    "Existing production services were not stopped. No application business operations executed."
+  ],
+  "model": "chat-ai-shared-qwen08-v5r6-en-fr-20261012",
+  "wall_s": 62.05801150016487,
+  "rss_initial_bytes": 2925780992,
+  "rss_peak_bytes": 2925961216,
+  "profile_attributed": true,
+  "sequential": {
+    "count": 4,
+    "mean_latency_s": 7.756389014888555,
+    "p95_latency_s": 7.918988162651658,
+    "errors": 0
+  },
+  "concurrency_two": {
+    "count": 4,
+    "mean_latency_s": 11.639022047631443,
+    "p95_latency_s": 15.84542901813984,
+    "errors": 0
+  },
+  "weighted_decode_tokens_per_second": 55.71468647193309,
+  "logical_cpus": 16,
+  "host_cpu_capacity_percent": 24.984687109993533,
+  "threads_env": "4",
+  "average_busy_cpu_cores": 3.9975499375989654,
+  "cases": [
+    {
+      "id": "combined-expense-fr",
+      "language": "fr",
+      "latency_s": 7.604193696752191,
+      "first_visible_event_s": 7.60409165546298,
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 53,
+        "total_tokens": 1869
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "combined-expense-en",
+      "language": "en",
+      "latency_s": 7.61078929156065,
+      "first_visible_event_s": 7.610666744410992,
+      "usage": {
+        "prompt_tokens": 1815,
+        "completion_tokens": 53,
+        "total_tokens": 1868
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "dates-revenue-fr",
+      "language": "fr",
+      "latency_s": 7.918988162651658,
+      "first_visible_event_s": 7.91889776289463,
+      "usage": {
+        "prompt_tokens": 1832,
+        "completion_tokens": 68,
+        "total_tokens": 1900
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "dates-revenue-en",
+      "language": "en",
+      "latency_s": 7.891584908589721,
+      "first_visible_event_s": 7.891480304300785,
+      "usage": {
+        "prompt_tokens": 1830,
+        "completion_tokens": 68,
+        "total_tokens": 1898
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "combined-expense-fr",
+      "language": "fr",
+      "latency_s": 7.602212565019727,
+      "first_visible_event_s": 7.602140050381422,
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 53,
+        "total_tokens": 1869
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "combined-expense-en",
+      "language": "en",
+      "latency_s": 15.18555878661573,
+      "first_visible_event_s": 15.185460574924946,
+      "usage": {
+        "prompt_tokens": 1815,
+        "completion_tokens": 53,
+        "total_tokens": 1868
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "dates-revenue-fr",
+      "language": "fr",
+      "latency_s": 7.922887820750475,
+      "first_visible_event_s": 7.922758750617504,
+      "usage": {
+        "prompt_tokens": 1832,
+        "completion_tokens": 68,
+        "total_tokens": 1900
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    },
+    {
+      "id": "dates-revenue-en",
+      "language": "en",
+      "latency_s": 15.84542901813984,
+      "first_visible_event_s": 15.845282822847366,
+      "usage": {
+        "prompt_tokens": 1830,
+        "completion_tokens": 68,
+        "total_tokens": 1898
+      },
+      "finish_reason": "tool_calls",
+      "error": null
+    }
+  ],
+  "source_sha256": "859bdf2ebfad3e635cc1597a2f417750036374afc4ca2d2bd894d93985e00ce8",
+  "scope": "Eight synthetic requests on one four-thread candidate; two other candidate workers remain loaded and idle. No production activation."
+}

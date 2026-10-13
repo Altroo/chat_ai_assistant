@@ -67,7 +67,7 @@
   },
   "version": "shared-v5r6-en-fr",
   "training_status": "COMPLETED",
-  "acceptance_status": "PENDING",
+  "acceptance_status": "FAILED",
   "deployment_status": "NOT DEPLOYED",
   "selected_step": 1800,
   "selected_validation": {
@@ -279,6 +279,6 @@
   "limitations": [
     "Validation loss selects a checkpoint; it is not accuracy.",
     "The frozen accuracy suite remains authoritative; unsuccessful candidates do not replace production.",
-    "Training is complete. The 438-case frozen evaluation is running and has no final score yet."
+    "Training, export and all 438 frozen cases completed. Acceptance reflects the unchanged model targets; native security and application tests are separate."
   ]
 }
