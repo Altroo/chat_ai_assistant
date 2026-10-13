@@ -1,0 +1,13 @@
+{
+  "exported_tensor_dtypes": {
+    "F16": 474
+  },
+  "exported_tensors": 474,
+  "weight_file_map_sha256": "132ac04042190caf239d72aa2e85e6e1030128c8b7b59d6b2dee77a0c02955d4",
+  "matches_completed_diagnostic_weights": true,
+  "experts": 0,
+  "scope": "Terminology clarification for the completed dense-int8 toggle diagnostic; no scores or weights changed.",
+  "original_report_sha256": "f2df71275986fdc6187d70efa4928bac3e10efdfd3de8601a534ab5b84db488a",
+  "interpretation": "The report field candidate_full_precision means dense int8 disabled: FP32 computation from the same FP16 exported weights. It does not measure original unrounded FP32 training weights. This is a dense model, so the converter expert-bit argument does not apply.",
+  "production_changed": false
+}

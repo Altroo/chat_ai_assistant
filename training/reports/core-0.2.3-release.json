@@ -1,0 +1,132 @@
+{
+  "version": "0.2.3",
+  "status": "RELEASED AND VERIFIED",
+  "date": "2026-10-13",
+  "changes": "Application-neutral English/French clarification wording; unchanged tool schemas, authorization and business operations.",
+  "wheel_sha256": "bf4e00c22ba987981efe4dbace0711fd8e2538768d49093932c180ff49e4b6ff",
+  "central_package_commit": "feee21f0076fd3cbc63fb8d12e02ebcb1c49c9e6",
+  "central_source_files_verified": 10,
+  "applications": {
+    "facturation": {
+      "commit": "d63b64f3a390ce379a8dbfe8e71c7a7683a3abd6",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "package_version": "0.2.3",
+      "package_files_verified": 10,
+      "healthy": true,
+      "business_counts_preserved": true,
+      "database_volumes_preserved": true,
+      "environment_unchanged": true,
+      "feature_flag_unchanged": true,
+      "hook_unchanged": true,
+      "unrelated_containers_unchanged": true,
+      "checks_and_migrations_passed": true
+    },
+    "management_projet": {
+      "commit": "670e4325855e9db18c5cb3e18eb9b45009ed134b",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "package_version": "0.2.3",
+      "package_files_verified": 10,
+      "healthy": true,
+      "business_counts_preserved": true,
+      "database_volumes_preserved": true,
+      "environment_unchanged": true,
+      "feature_flag_unchanged": true,
+      "hook_unchanged": true,
+      "unrelated_containers_unchanged": true,
+      "checks_and_migrations_passed": true
+    },
+    "design_workflow": {
+      "commit": "0e9c9b76607635993c7cee6e79dacb3132604269",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "package_version": "0.2.3",
+      "package_files_verified": 10,
+      "healthy": true,
+      "business_counts_preserved": true,
+      "database_volumes_preserved": true,
+      "environment_unchanged": true,
+      "feature_flag_unchanged": true,
+      "hook_unchanged": true,
+      "unrelated_containers_unchanged": true,
+      "checks_and_migrations_passed": true
+    },
+    "contracts": {
+      "commit": "daa2ad49e246951e8ea70e9bd5c6a17cf16a283b",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "package_version": "0.2.3",
+      "package_files_verified": 10,
+      "healthy": true,
+      "business_counts_preserved": true,
+      "database_volumes_preserved": true,
+      "environment_unchanged": true,
+      "feature_flag_unchanged": true,
+      "hook_unchanged": true,
+      "unrelated_containers_unchanged": true,
+      "checks_and_migrations_passed": true
+    },
+    "gestion_magasin": {
+      "commit": "2433eacace8c0dfc5cc2ecaa002f823fc909848c",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "package_version": "0.2.3",
+      "package_files_verified": 10,
+      "healthy": true,
+      "business_counts_preserved": true,
+      "database_volumes_preserved": true,
+      "environment_unchanged": true,
+      "feature_flag_unchanged": true,
+      "hook_unchanged": true,
+      "unrelated_containers_unchanged": true,
+      "checks_and_migrations_passed": true
+    },
+    "reservation": {
+      "commit": "095ba194a3dee734dcea0d6e1403e94f2311ad9f",
+      "remotes_verified": [
+        "company",
+        "personal",
+        "production"
+      ],
+      "package_version": "0.2.3",
+      "package_files_verified": 10,
+      "healthy": true,
+      "business_counts_preserved": true,
+      "database_volumes_preserved": true,
+      "environment_unchanged": true,
+      "feature_flag_unchanged": true,
+      "hook_unchanged": true,
+      "unrelated_containers_unchanged": true,
+      "checks_and_migrations_passed": true
+    }
+  },
+  "test_evidence": "core-0.2.3-preparation.json",
+  "core_distinct_test_cases": 30,
+  "native_tests_passed": 1293,
+  "native_subtests_passed": 174,
+  "skipped": 1,
+  "production_model_unchanged": true,
+  "assistant_feature_flags_unchanged": true,
+  "model_accuracy_gain_claimed": false,
+  "limitations": [
+    "Business-table counts and volume identities are preservation checks, not a fresh application workflow or full database-content comparison.",
+    "Earlier package tests are linked evidence, not rerun test counts.",
+    "Previously disabled assistants remain disabled pending model acceptance."
+  ]
+}
