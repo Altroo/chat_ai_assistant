@@ -1,0 +1,718 @@
+{
+  "version": "selection-contrasts-v1-en-fr",
+  "status": "PREPARED ONLY; not trained or measured",
+  "applications": [
+    "management_projet"
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "count": 96,
+  "source_scenarios": 36,
+  "categories": {
+    "rebound": 36,
+    "missing_selection": 36,
+    "out_of_range": 24
+  },
+  "parent_manifest_sha256": "71d2f2e11ce5f7abf55a32b486c76169d67e8231547084d42ce1c08583ca60b4",
+  "source_training_sha256": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+  "exclusion_manifest_sha256": "6e8df0592ddcde75fd2d4c1277aaf789545cd7f1ca9224fc756787abe22e73f3",
+  "native_target_source_sha256": "26c9967026c30a971b661e9bb7d5c56fb71fea15f6b2450ae92c8e6b85fec0d4",
+  "generator_sha256": "7b51818b7863d6e1a7acc9fef62092dd4dbcea2d73aaa39b76f948127b00c7af",
+  "helper_sha256": {
+    "src/chat_ai_assistant/selection_context.py": "0fe2f1ca934c6915cc21cef11ac37e73bab89a598f801e6d1a057889d2efee15",
+    "src/chat_ai_assistant/clarifications.py": "e5cb817facdb8e440538cc0ed9b252ff127f6d8e470bb630574e5530e7a31a7d",
+    "training/scripts/prepare_shared_v5r6.py": "09670280de5d42b1df726d5eb968dfa25cd0a5ce21da2f5c7800dc71e08e7afd",
+    "training/scripts/build_shared_v5r3.py": "98660f431de448ebfeb1daf31679cf2be931c82c30163da731f4ee7eee19dfe7",
+    "training/scripts/build_dialogue_v1.py": "2dcb6179735d96acd338e002e7006e4d85056e41281a119c5046a9283b987a5a"
+  },
+  "provenance": [
+    {
+      "source_index": 1154,
+      "source_sha256": "bb617cfd54d7ca3593b29649f58a9e693912de10604fd9f6a0719296c1994634",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "client"
+    },
+    {
+      "source_index": 1154,
+      "source_sha256": "bb617cfd54d7ca3593b29649f58a9e693912de10604fd9f6a0719296c1994634",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "client"
+    },
+    {
+      "source_index": 1154,
+      "source_sha256": "bb617cfd54d7ca3593b29649f58a9e693912de10604fd9f6a0719296c1994634",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "client"
+    },
+    {
+      "source_index": 1155,
+      "source_sha256": "bd0abaeb8479ee9d1ab13b9c0b0cca002ef3353eb5af750a0fce7b92e264b1ab",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "client"
+    },
+    {
+      "source_index": 1155,
+      "source_sha256": "bd0abaeb8479ee9d1ab13b9c0b0cca002ef3353eb5af750a0fce7b92e264b1ab",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "client"
+    },
+    {
+      "source_index": 1155,
+      "source_sha256": "bd0abaeb8479ee9d1ab13b9c0b0cca002ef3353eb5af750a0fce7b92e264b1ab",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "client"
+    },
+    {
+      "source_index": 1156,
+      "source_sha256": "efd922e52a152cc3845caaf7d6d8f94329ae226823600a1247acbedf598c5541",
+      "kind": "rebound",
+      "position": 4,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1156,
+      "source_sha256": "efd922e52a152cc3845caaf7d6d8f94329ae226823600a1247acbedf598c5541",
+      "kind": "missing_selection",
+      "position": 4,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1156,
+      "source_sha256": "efd922e52a152cc3845caaf7d6d8f94329ae226823600a1247acbedf598c5541",
+      "kind": "out_of_range",
+      "position": 4,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1157,
+      "source_sha256": "9475b6363f0763e6f6161d12c10f3b9406755b9bef87036d0aa0b541fbfede6e",
+      "kind": "rebound",
+      "position": 4,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1157,
+      "source_sha256": "9475b6363f0763e6f6161d12c10f3b9406755b9bef87036d0aa0b541fbfede6e",
+      "kind": "missing_selection",
+      "position": 4,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1157,
+      "source_sha256": "9475b6363f0763e6f6161d12c10f3b9406755b9bef87036d0aa0b541fbfede6e",
+      "kind": "out_of_range",
+      "position": 4,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1158,
+      "source_sha256": "0cbebe5d7a0dd93ab5a45a1ed83b0d933eeeda01cac35ab3f5207c0530ce42e0",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "project"
+    },
+    {
+      "source_index": 1158,
+      "source_sha256": "0cbebe5d7a0dd93ab5a45a1ed83b0d933eeeda01cac35ab3f5207c0530ce42e0",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "project"
+    },
+    {
+      "source_index": 1159,
+      "source_sha256": "b4c7314bb03f91a0ffe333d86ff3e45a3fa45bba834d9f1e69335505795383c0",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "project"
+    },
+    {
+      "source_index": 1159,
+      "source_sha256": "b4c7314bb03f91a0ffe333d86ff3e45a3fa45bba834d9f1e69335505795383c0",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "project"
+    },
+    {
+      "source_index": 1160,
+      "source_sha256": "db14df27b1f316c54d9d39e59fd61c00c2b6352bbf6801e5b43836d9a5aa596a",
+      "kind": "rebound",
+      "position": 3,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1160,
+      "source_sha256": "db14df27b1f316c54d9d39e59fd61c00c2b6352bbf6801e5b43836d9a5aa596a",
+      "kind": "missing_selection",
+      "position": 3,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1160,
+      "source_sha256": "db14df27b1f316c54d9d39e59fd61c00c2b6352bbf6801e5b43836d9a5aa596a",
+      "kind": "out_of_range",
+      "position": 3,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1161,
+      "source_sha256": "7f908ee63f5653de0fad04f5c7e9aa84f1a227b54cad8d251479aa9277b681d8",
+      "kind": "rebound",
+      "position": 3,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1161,
+      "source_sha256": "7f908ee63f5653de0fad04f5c7e9aa84f1a227b54cad8d251479aa9277b681d8",
+      "kind": "missing_selection",
+      "position": 3,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1161,
+      "source_sha256": "7f908ee63f5653de0fad04f5c7e9aa84f1a227b54cad8d251479aa9277b681d8",
+      "kind": "out_of_range",
+      "position": 3,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1162,
+      "source_sha256": "be16df7e39fe49dc6587d723784890fe64de99c7982a56fa72ad8a159afbc613",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1162,
+      "source_sha256": "be16df7e39fe49dc6587d723784890fe64de99c7982a56fa72ad8a159afbc613",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1162,
+      "source_sha256": "be16df7e39fe49dc6587d723784890fe64de99c7982a56fa72ad8a159afbc613",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1163,
+      "source_sha256": "a1c4b206a0139aba0062266e7782f84b883afae948bcfec7807fb22b6dc1f9b0",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1163,
+      "source_sha256": "a1c4b206a0139aba0062266e7782f84b883afae948bcfec7807fb22b6dc1f9b0",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1163,
+      "source_sha256": "a1c4b206a0139aba0062266e7782f84b883afae948bcfec7807fb22b6dc1f9b0",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1164,
+      "source_sha256": "d50c70d3b5d38af0516e1da46063b63e96e13693fe9e4199459397762ec94437",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1164,
+      "source_sha256": "d50c70d3b5d38af0516e1da46063b63e96e13693fe9e4199459397762ec94437",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1165,
+      "source_sha256": "b067b17aaca4d748d8c71007c31f441b87a3c2f41a7d1c7dd843558080fca40a",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1165,
+      "source_sha256": "b067b17aaca4d748d8c71007c31f441b87a3c2f41a7d1c7dd843558080fca40a",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1166,
+      "source_sha256": "a6def07544304b79c11842ecf67c626ff9326b1c47fe371b1a53a9c7b2820f72",
+      "kind": "rebound",
+      "position": 4,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1166,
+      "source_sha256": "a6def07544304b79c11842ecf67c626ff9326b1c47fe371b1a53a9c7b2820f72",
+      "kind": "missing_selection",
+      "position": 4,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1166,
+      "source_sha256": "a6def07544304b79c11842ecf67c626ff9326b1c47fe371b1a53a9c7b2820f72",
+      "kind": "out_of_range",
+      "position": 4,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1167,
+      "source_sha256": "900fbafb112c4dd41e87173c6d434803d3c5e783306f3adacb3a2ab448dd7056",
+      "kind": "rebound",
+      "position": 4,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1167,
+      "source_sha256": "900fbafb112c4dd41e87173c6d434803d3c5e783306f3adacb3a2ab448dd7056",
+      "kind": "missing_selection",
+      "position": 4,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1167,
+      "source_sha256": "900fbafb112c4dd41e87173c6d434803d3c5e783306f3adacb3a2ab448dd7056",
+      "kind": "out_of_range",
+      "position": 4,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1168,
+      "source_sha256": "655ba1ac4c3b065795526ff0d2b53ced23e68eef629769b6a9bb3493a7f2a0ae",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1168,
+      "source_sha256": "655ba1ac4c3b065795526ff0d2b53ced23e68eef629769b6a9bb3493a7f2a0ae",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1168,
+      "source_sha256": "655ba1ac4c3b065795526ff0d2b53ced23e68eef629769b6a9bb3493a7f2a0ae",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1169,
+      "source_sha256": "0c7668cfa9d408995f2b128fd198a7ad04585cc5b359e562562e230ed686ed02",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1169,
+      "source_sha256": "0c7668cfa9d408995f2b128fd198a7ad04585cc5b359e562562e230ed686ed02",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1169,
+      "source_sha256": "0c7668cfa9d408995f2b128fd198a7ad04585cc5b359e562562e230ed686ed02",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1170,
+      "source_sha256": "692324d42a6e11ca6b5a57b9c0b9272c62373fda5ab68675840bac13dbc63ab2",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "client"
+    },
+    {
+      "source_index": 1170,
+      "source_sha256": "692324d42a6e11ca6b5a57b9c0b9272c62373fda5ab68675840bac13dbc63ab2",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "client"
+    },
+    {
+      "source_index": 1171,
+      "source_sha256": "42f8921b05033c7b95ee6466578767e7869a6081b43c681767e608e0ba2bd4ed",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "client"
+    },
+    {
+      "source_index": 1171,
+      "source_sha256": "42f8921b05033c7b95ee6466578767e7869a6081b43c681767e608e0ba2bd4ed",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "client"
+    },
+    {
+      "source_index": 1172,
+      "source_sha256": "c52b2c255acf2be32801aa094b64571ac7480c34f8888d294a7532f04929f6f6",
+      "kind": "rebound",
+      "position": 5,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1172,
+      "source_sha256": "c52b2c255acf2be32801aa094b64571ac7480c34f8888d294a7532f04929f6f6",
+      "kind": "missing_selection",
+      "position": 5,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1172,
+      "source_sha256": "c52b2c255acf2be32801aa094b64571ac7480c34f8888d294a7532f04929f6f6",
+      "kind": "out_of_range",
+      "position": 5,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1173,
+      "source_sha256": "4cc690a27d3170f9eb2d7d8895ffda6768999063311924152de572958bff49a2",
+      "kind": "rebound",
+      "position": 5,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1173,
+      "source_sha256": "4cc690a27d3170f9eb2d7d8895ffda6768999063311924152de572958bff49a2",
+      "kind": "missing_selection",
+      "position": 5,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1173,
+      "source_sha256": "4cc690a27d3170f9eb2d7d8895ffda6768999063311924152de572958bff49a2",
+      "kind": "out_of_range",
+      "position": 5,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1174,
+      "source_sha256": "76d35e09c6515dd5a8e2a8ff139649dc3bb38e003a8596395e59b65f007c879f",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "project"
+    },
+    {
+      "source_index": 1174,
+      "source_sha256": "76d35e09c6515dd5a8e2a8ff139649dc3bb38e003a8596395e59b65f007c879f",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "project"
+    },
+    {
+      "source_index": 1174,
+      "source_sha256": "76d35e09c6515dd5a8e2a8ff139649dc3bb38e003a8596395e59b65f007c879f",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "project"
+    },
+    {
+      "source_index": 1175,
+      "source_sha256": "bcbc626d89bcc8e8c7496a08802577e66c3ed8e910263e71c507b89079a9601a",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "project"
+    },
+    {
+      "source_index": 1175,
+      "source_sha256": "bcbc626d89bcc8e8c7496a08802577e66c3ed8e910263e71c507b89079a9601a",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "project"
+    },
+    {
+      "source_index": 1175,
+      "source_sha256": "bcbc626d89bcc8e8c7496a08802577e66c3ed8e910263e71c507b89079a9601a",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "project"
+    },
+    {
+      "source_index": 1176,
+      "source_sha256": "90f587764fd8f18fcb97be888fe04da2a450a170b2441a9e1f9828356ecbe2a8",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1176,
+      "source_sha256": "90f587764fd8f18fcb97be888fe04da2a450a170b2441a9e1f9828356ecbe2a8",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1177,
+      "source_sha256": "7b1e7834501629815bfddcae1558a17e5f01da409a457017f35c4fd055c6b676",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1177,
+      "source_sha256": "7b1e7834501629815bfddcae1558a17e5f01da409a457017f35c4fd055c6b676",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "quote"
+    },
+    {
+      "source_index": 1178,
+      "source_sha256": "f100bae505e0ad659a9573e0a2908a14d4589a38ee1b8585c771cdab4c134d31",
+      "kind": "rebound",
+      "position": 4,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1178,
+      "source_sha256": "f100bae505e0ad659a9573e0a2908a14d4589a38ee1b8585c771cdab4c134d31",
+      "kind": "missing_selection",
+      "position": 4,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1178,
+      "source_sha256": "f100bae505e0ad659a9573e0a2908a14d4589a38ee1b8585c771cdab4c134d31",
+      "kind": "out_of_range",
+      "position": 4,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1179,
+      "source_sha256": "36b03f73ffdbcfb023f7fd2dd7c6bd9a9437113ab93fdc22f2a3100ed55640a2",
+      "kind": "rebound",
+      "position": 4,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1179,
+      "source_sha256": "36b03f73ffdbcfb023f7fd2dd7c6bd9a9437113ab93fdc22f2a3100ed55640a2",
+      "kind": "missing_selection",
+      "position": 4,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1179,
+      "source_sha256": "36b03f73ffdbcfb023f7fd2dd7c6bd9a9437113ab93fdc22f2a3100ed55640a2",
+      "kind": "out_of_range",
+      "position": 4,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1180,
+      "source_sha256": "f0059b39d72aa0bc48221de2f45e69dc44a5bf11280bccf9a56abbe42abb3358",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1180,
+      "source_sha256": "f0059b39d72aa0bc48221de2f45e69dc44a5bf11280bccf9a56abbe42abb3358",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1180,
+      "source_sha256": "f0059b39d72aa0bc48221de2f45e69dc44a5bf11280bccf9a56abbe42abb3358",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1181,
+      "source_sha256": "622a78b6b895bb658b29b05864350fab61ca3d43733c85d8d47726219934b2d8",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1181,
+      "source_sha256": "622a78b6b895bb658b29b05864350fab61ca3d43733c85d8d47726219934b2d8",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1181,
+      "source_sha256": "622a78b6b895bb658b29b05864350fab61ca3d43733c85d8d47726219934b2d8",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "revenue"
+    },
+    {
+      "source_index": 1182,
+      "source_sha256": "b45a0809542d636f948f91725f26b4560a402b49941bf1bb71e3feb4edd75679",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1182,
+      "source_sha256": "b45a0809542d636f948f91725f26b4560a402b49941bf1bb71e3feb4edd75679",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1183,
+      "source_sha256": "29342d87a610e9114621b724032f452cd9e86df2d812f36ddbb4108bb3742584",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1183,
+      "source_sha256": "29342d87a610e9114621b724032f452cd9e86df2d812f36ddbb4108bb3742584",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "payment_schedule"
+    },
+    {
+      "source_index": 1184,
+      "source_sha256": "9eaaa6a37160ef89379f50500bdd4bbf190d23ee5c1b30b6a6a93c13ee5bd5e5",
+      "kind": "rebound",
+      "position": 3,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1184,
+      "source_sha256": "9eaaa6a37160ef89379f50500bdd4bbf190d23ee5c1b30b6a6a93c13ee5bd5e5",
+      "kind": "missing_selection",
+      "position": 3,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1184,
+      "source_sha256": "9eaaa6a37160ef89379f50500bdd4bbf190d23ee5c1b30b6a6a93c13ee5bd5e5",
+      "kind": "out_of_range",
+      "position": 3,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1185,
+      "source_sha256": "9a89b855da4d7a2fddecb880b67a9f049b0cd9dbdd56285122ef13ceed0e1125",
+      "kind": "rebound",
+      "position": 3,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1185,
+      "source_sha256": "9a89b855da4d7a2fddecb880b67a9f049b0cd9dbdd56285122ef13ceed0e1125",
+      "kind": "missing_selection",
+      "position": 3,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1185,
+      "source_sha256": "9a89b855da4d7a2fddecb880b67a9f049b0cd9dbdd56285122ef13ceed0e1125",
+      "kind": "out_of_range",
+      "position": 3,
+      "resource": "budget_entry"
+    },
+    {
+      "source_index": 1186,
+      "source_sha256": "f542ce0a0e5aff3bfed49608704a79c0788002e8f19761108ac0df01ffb51bf3",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1186,
+      "source_sha256": "f542ce0a0e5aff3bfed49608704a79c0788002e8f19761108ac0df01ffb51bf3",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1186,
+      "source_sha256": "f542ce0a0e5aff3bfed49608704a79c0788002e8f19761108ac0df01ffb51bf3",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1187,
+      "source_sha256": "3a5bc215fc2610aa2b41140646acb20f15aae05be6f1bcc1ba3f64d86f0f185d",
+      "kind": "rebound",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1187,
+      "source_sha256": "3a5bc215fc2610aa2b41140646acb20f15aae05be6f1bcc1ba3f64d86f0f185d",
+      "kind": "missing_selection",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1187,
+      "source_sha256": "3a5bc215fc2610aa2b41140646acb20f15aae05be6f1bcc1ba3f64d86f0f185d",
+      "kind": "out_of_range",
+      "position": 2,
+      "resource": "expense"
+    },
+    {
+      "source_index": 1188,
+      "source_sha256": "a8c5886812000263544ae93875d7f0b839acd1afeae4dc2b3bc07d82268d0b9b",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1188,
+      "source_sha256": "a8c5886812000263544ae93875d7f0b839acd1afeae4dc2b3bc07d82268d0b9b",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1189,
+      "source_sha256": "7557a8177a64fe1b76c4f3d43c4e429a49c5e1e7915b94d05a9911c88a32d9db",
+      "kind": "rebound",
+      "position": 1,
+      "resource": "supplier"
+    },
+    {
+      "source_index": 1189,
+      "source_sha256": "7557a8177a64fe1b76c4f3d43c4e429a49c5e1e7915b94d05a9911c88a32d9db",
+      "kind": "missing_selection",
+      "position": 1,
+      "resource": "supplier"
+    }
+  ],
+  "policy": "Training-only contrasts. Source requests and field values are retained exactly from approved synthetic training, with rebound IDs, missing selection, or too-short selection. Native ordinal guard verifies labels. Correlated variants are not independent scenarios. Current training, validation and benchmark inputs remain unchanged. No optimizer, model download, production activation or acceptance follows preparation.",
+  "files": {
+    "train.jsonl": "30d39a61d0114d18d8872f6148a0f27a3d714de47f6cf8d3ca70d6c1f1f3a552"
+  },
+  "native_aliases": {
+    "project": "projet|project",
+    "client": "client|customer",
+    "supplier": "fournisseur|supplier",
+    "quote": "devis|quote|estimate",
+    "expense": "depense|expense",
+    "revenue": "revenu|recette|encaissement|revenue|receipt",
+    "payment_schedule": "echeance|payment schedule",
+    "budget_entry": "ligne de budget(?: reel)?|(?:actual[- ]budget|budget) entry"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "sources": [
+    {
+      "source": "training/datasets/shared-v5r6-en-fr/train.jsonl",
+      "sha256": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+      "kind": "sft",
+      "cases": 130,
+      "passed": 130
+    },
+    {
+      "source": "training/datasets/shared-v5r6-en-fr/valid.jsonl",
+      "sha256": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86",
+      "kind": "sft",
+      "cases": 12,
+      "passed": 12
+    },
+    {
+      "source": "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl",
+      "sha256": "a59f750fffeb6d9868b11d7be6493e3985ab7ed295981139afc11cbf8cd5f6fe",
+      "kind": "evaluation",
+      "cases": 4,
+      "passed": 4
+    },
+    {
+      "source": "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl",
+      "sha256": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+      "kind": "evaluation",
+      "cases": 2,
+      "passed": 2
+    },
+    {
+      "source": "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl",
+      "sha256": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+      "kind": "evaluation",
+      "cases": 2,
+      "passed": 2
+    },
+    {
+      "source": "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl",
+      "sha256": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+      "kind": "evaluation",
+      "cases": 2,
+      "passed": 2
+    },
+    {
+      "source": "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl",
+      "sha256": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "kind": "evaluation",
+      "cases": 2,
+      "passed": 2
+    },
+    {
+      "source": "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl",
+      "sha256": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+      "kind": "evaluation",
+      "cases": 20,
+      "passed": 20
+    },
+    {
+      "source": "training/datasets/shared-dialogue-v2-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl",
+      "sha256": "6ad3954b01fb07299952c9ee566e6d56ae36b34201aff75da4ee3c1d705b0f49",
+      "kind": "evaluation",
+      "cases": 8,
+      "passed": 8
+    }
+  ],
+  "failures": [],
+  "native_target_source_sha256": "26c9967026c30a971b661e9bb7d5c56fb71fea15f6b2450ae92c8e6b85fec0d4",
+  "guard_sha256": "0fe2f1ca934c6915cc21cef11ac37e73bab89a598f801e6d1a057889d2efee15",
+  "checker_sha256": "f1a5b6b3cf4420019640f597abfbf7a6c1e47297c77c50ecd7cb1c8692ff13e1",
+  "scope": "Expected-label request binding only. Synthetic state matches documented planner context; existing records and permissions are assumed, not queried. No model inference, business operation, database access or changes to frozen inputs."
+}

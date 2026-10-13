@@ -1,0 +1,73 @@
+{
+  "checks": 4932,
+  "counts": {
+    "train.jsonl": 3938,
+    "valid.jsonl": 550,
+    "heldout": 438,
+    "probe": 6
+  },
+  "matches": {
+    "train.jsonl": 3938,
+    "valid.jsonl": 550,
+    "heldout": 438,
+    "probe": 5
+  },
+  "mismatches": [
+    {
+      "id": "probe:1",
+      "first_difference": 6,
+      "reference_tokens": 9,
+      "c_tokens": 10,
+      "reference_slice": [
+        2029,
+        1365,
+        401,
+        184536,
+        64,
+        13
+      ],
+      "c_slice": [
+        2029,
+        1365,
+        401,
+        1900,
+        52033,
+        64,
+        13
+      ]
+    }
+  ],
+  "elapsed_s": 22.21158812500653,
+  "source_hashes": {
+    "c/qwen36.c": "b9e01e98966f048de17b91461870af36615530a5a18c393d78d7bfe3dbd05ba1",
+    "c/json.h": "81cdecc81e867f4584c8e2d7ad0d564da8dacf219d591762ddbf3b3a6c85ded9",
+    "c/tok_unicode.h": "ed75c154fbd8984d504288d22d11e144c28160dbc67e4435eb9e3241c2816838",
+    "c/qwen38_nfc.h": "c34b1fabf0a7df0e2d6a21c414abe09158f668aa7aa2c11e2bdfcf28f390b4f4"
+  },
+  "server_source_matches": true,
+  "server_binary_sha256": "18297b1bcee2ecb75437a51dada9fc9df7734cc1ded7eced76db43c317b43ed0",
+  "tokenizer_artifact_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+  "datasets": {
+    "training/datasets/shared-v5r6-en-fr/train.jsonl": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+    "training/datasets/shared-v5r6-en-fr/valid.jsonl": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": "a59f750fffeb6d9868b11d7be6493e3985ab7ed295981139afc11cbf8cd5f6fe",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+    "training/datasets/shared-dialogue-v2-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+    "training/datasets/shared-dialogue-v2-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": "6ad3954b01fb07299952c9ee566e6d56ae36b34201aff75da4ee3c1d705b0f49",
+    "training/datasets/shared-dialogue-v2-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da"
+  },
+  "harness_sha256": "9b71a6f4aefc3d5aaa00113dd8736688637d4cbf3ac09cf2019392466b84e910",
+  "checker_sha256": "b7729a10148907d16828516610ef8814dcf396fc3aa6805fe761db596a34102b",
+  "scope": "Local metadata-only encoder diagnostic with server-identical tokenizer and C source. No weights or inference. Unmodified default g_tok_exact=0. Unicode probes are separate from application datasets.",
+  "single_reviewer": "No issues in methodology, counts, provenance or confidentiality."
+}

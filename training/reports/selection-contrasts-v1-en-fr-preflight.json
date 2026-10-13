@@ -1,0 +1,27 @@
+{
+  "manifest_sha256": "114933e8f298d6a97abfbf8de114ad62e4c24f56326fa566226a5983b0e994a0",
+  "metadata_checker_sha256": "340a8b8274c480c0bf7d2007bc80dc5a772bf3e8eadfffdf269f4cc9947f473d",
+  "checks": {
+    "count": 96,
+    "round_trip_passed": 96,
+    "runtime_prefix_parity_passed": 96,
+    "loss_boundary_passed": 96,
+    "semantic_alignment_passed": 96,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 3331,
+    "sha256": "30d39a61d0114d18d8872f6148a0f27a3d714de47f6cf8d3ca70d6c1f1f3a552"
+  },
+  "maximum_prompt_tokens": 3250,
+  "reserved_output_tokens": 512,
+  "native_target_guard_checks_passed": 244,
+  "c_encoder_token_id_matches": 192,
+  "tokenizer_artifact_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+  "runtime_artifact_sha256": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35",
+  "tokenizer_parity_evidence_sha256": "b252f2a5edbc802d57f8328b1095125f1b79802fd7ccef27843239e23234edc2",
+  "unit_tests_passed": 6,
+  "training_executed": false,
+  "inference_executed": false,
+  "accuracy_measured": false,
+  "scope": "Preparation only. Native request-binding guard, tokenizer/template/parser/labels and C token IDs checked using synthetic scenarios. No weights, database operations or permission grants. Current training, validation, acceptance and production are unchanged.",
+  "single_reviewer": "No issues in generator, synthetic data, split separation or tests."
+}
