@@ -1,0 +1,35 @@
+{
+  "scope": "Resume the completed-baseline comparison after checkpoint300 failed its temporary-port preflight. No scoring, model, inference or dataset change.",
+  "script_sha256": "e79a342bb571a17abfc67a48a38ca7d2315e75919f4e2e156acecf0ae1e5cd00",
+  "test_sha256": "c5e1f81eed25d2afdbebc300b09831eb35c3cda37de6e64b4b4b8f0c241d28d9",
+  "original_control_report_sha256": "f7e43d9b27fa133e88835d92160784d9bbd5e36853c4e856efb5c6f7c495c487",
+  "original_control_sha256": {
+    "compare_run.py": "0c35cc71f455724e56f675ed881decfcacb082ee73415a38a04e22bf4b9b1eb3",
+    "remote_control.py": "876e8accba78ffb26c905022e24dd46284c3dd3ac1c94f4bbd3dd0a9cfc6ca16"
+  },
+  "failure_state_sha256": "5aae17db877c3604922fb97da3ddad4a9dffc64172e31eef613c6a6adbe12645",
+  "failure_log_sha256": "108e8c4e1f9e3ff48394b11c7ce9bff9f077f5c4a1de72d938b74a43971a48b7",
+  "completed_baseline_sha256": "f7e77d2b1370b6a28bbcae516226187a6e8fc1c9b095eb508818cd7ad4daad04",
+  "offline_tests_passed": true,
+  "offline_test_count": 9,
+  "verified_baseline_cases": 275,
+  "remaining_checkpoints": [
+    300,
+    600,
+    900,
+    1200,
+    1500,
+    1800,
+    1969
+  ],
+  "port_wait_timeout_seconds": 180,
+  "production_activation": false,
+  "next_training_started": false,
+  "limitations": [
+    "Preparation checks do not constitute new model accuracy measurements.",
+    "Baseline results are reused only after complete recomputation and artifact/provider/result checks.",
+    "No temporary worker or listener is killed to make a port free. An unrelated error or persistent busy port stops the continuation.",
+    "The original failed controller and remote controls remain unchanged."
+  ],
+  "review_correction": "Bind the preserved failure state, error log, completed baseline and original control report to their reviewed digests before continuation; four mutation subcases pass."
+}
