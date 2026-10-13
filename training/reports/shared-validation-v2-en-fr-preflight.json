@@ -1,0 +1,67 @@
+{
+  "manifest_sha256": "3a0b7d2ec0b42be841af4b367d5a159022097f6faf0146e50f8610b5a35f3792",
+  "metadata_checker_sha256": "103cf68d5068eee18fcd970c27973bc64d229fb0bb129b460d391116e23ff346",
+  "checks": {
+    "count": 275,
+    "round_trip_passed": 275,
+    "runtime_prefix_parity_passed": 275,
+    "loss_boundary_passed": 275,
+    "semantic_alignment_passed": 275,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7496,
+    "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+  },
+  "maximum_prompt_tokens": 7468,
+  "reserved_output_tokens": 512,
+  "c_encoder_token_id_matches": 550,
+  "tokenizer_artifact_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+  "runtime_artifact_sha256": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35",
+  "native_sources_reviewed_sha256": {
+    "facturation": {
+      "chat_ai/catalog.py": "f44a946bf2c148d8ecc341316930adccaccd75ff42c7801e137117408ef65f42",
+      "chat_ai/documents.py": "ed49142ac4b7bf90f5dd49f95df1635070d2877defee360f0be56e7b744bfe95",
+      "chat_ai/tools.py": "dfa85b49ab81eb174def845b0fea38ae7622c0fc9eb3799cd02e2cd43a6442db"
+    },
+    "management_projet": {
+      "chat_ai/tools.py": "4a34fe503ade55e048434ea1aae1a15a025a2578667d54e4ca35111da5d4f688",
+      "project/views.py": "88a76b7bcc41013112d8a96a8687009b72995aa693ba090735faec1233548436",
+      "devis/services.py": "fbe225efabacd7273f935316c1d29741172964a058d4dfd5af866608c4a4b817"
+    },
+    "design_workflow": {
+      "chat_ai/tools.py": "3cbc13622cf9831ea8dcbd978b2e267b9409d90a85bb012a67ef980a0b93399e"
+    }
+  },
+  "unit_tests_passed": 6,
+  "training_executed": false,
+  "inference_executed": false,
+  "accuracy_measured": false,
+  "scope": "Future validation preparation only. All 275 targets/schema/template/parser boundaries and 550 C token sequences checked; no model weights or business operations. The current eight-checkpoint comparison and its selection are unchanged.",
+  "review_findings": [
+    {
+      "kind": "confirmed_scope_mismatch",
+      "original_indices": [
+        22,
+        23,
+        248
+      ],
+      "details": "Article product_name searches reference OR designation. English products additionally implies the Produit type absent from the original target. V2 explicitly asks for article records of either type and the native broad search scope, matching French and preserving target arguments."
+    },
+    {
+      "kind": "confirmed_scope_mismatch",
+      "original_indices": [
+        138,
+        139
+      ],
+      "details": "Budget query searches stage OR description OR notes, not stage only. V2 names that native scope."
+    },
+    {
+      "kind": "ambiguity_or_uncertainty",
+      "details": "Remaining changes explicitly name entity types, monetary amount, assignment or substring matching. They do not prove the original target was wrong; they change prompt difficulty and require separate future measurements."
+    }
+  ],
+  "limitations": [
+    "Not blind certification; reviewed scenarios were previously inspected.",
+    "No historical result is rescored. No improved accuracy, model acceptance or deployment readiness is claimed.",
+    "Native-source review is not a database authorization test."
+  ]
+}

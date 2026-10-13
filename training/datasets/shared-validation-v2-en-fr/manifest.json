@@ -1,0 +1,412 @@
+{
+  "version": "shared-validation-v2-en-fr",
+  "applications": [
+    "facturation",
+    "management_projet",
+    "design_workflow"
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "parent_manifest_sha256": "71d2f2e11ce5f7abf55a32b486c76169d67e8231547084d42ce1c08583ca60b4",
+  "parent_validation_sha256": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86",
+  "unchanged_training_sha256": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+  "generator_sha256": "98dd5ad2cbbbfba8a7afd4d41fe992105a11f39101e1166298148db4775e2cf3",
+  "count": 275,
+  "changed_count": 47,
+  "unchanged_count": 228,
+  "changed_distinct_requests": 39,
+  "changes": [
+    {
+      "index": 2,
+      "source_scenario_index": 2,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Two invoice matches maximum: containing SYN-BOBINE and dated no later than 19 August 2028.",
+      "new_request": "Two invoice matches maximum: containing article SYN-BOBINE and dated no later than 19 August 2028."
+    },
+    {
+      "index": 3,
+      "source_scenario_index": 3,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Deux factures au plus : contenant SYN-BOBINE et datées au plus tard du 19 août 2028.",
+      "new_request": "Deux factures au plus : contenant l’article SYN-BOBINE et datées au plus tard du 19 août 2028."
+    },
+    {
+      "index": 12,
+      "source_scenario_index": 12,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Can you locate a pro forma invoice with SYN-CHARNIERE, dated no later than 2 December 2028?",
+      "new_request": "Can you locate a pro forma invoice containing article SYN-CHARNIERE, dated no later than 2 December 2028?"
+    },
+    {
+      "index": 13,
+      "source_scenario_index": 13,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Peux-tu retrouver un document facture pro forma avec SYN-CHARNIERE, daté au plus tard du 2 décembre 2028 ?",
+      "new_request": "Peux-tu retrouver un document facture pro forma contenant l’article SYN-CHARNIERE, daté au plus tard du 2 décembre 2028 ?"
+    },
+    {
+      "index": 16,
+      "source_scenario_index": 16,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Can you locate a credit note with SYN-CHARNIERE, dated no later than 2 December 2028?",
+      "new_request": "Can you locate a credit note containing article SYN-CHARNIERE, dated no later than 2 December 2028?"
+    },
+    {
+      "index": 17,
+      "source_scenario_index": 17,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Peux-tu retrouver un document facture d’avoir avec SYN-CHARNIERE, daté au plus tard du 2 décembre 2028 ?",
+      "new_request": "Peux-tu retrouver un document facture d’avoir contenant l’article SYN-CHARNIERE, daté au plus tard du 2 décembre 2028 ?"
+    },
+    {
+      "index": 20,
+      "source_scenario_index": 20,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Can you locate a delivery note with SYN-CHARNIERE, dated no later than 2 December 2028?",
+      "new_request": "Can you locate a delivery note containing article SYN-CHARNIERE, dated no later than 2 December 2028?"
+    },
+    {
+      "index": 21,
+      "source_scenario_index": 21,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Peux-tu retrouver un document bon de livraison avec SYN-CHARNIERE, daté au plus tard du 2 décembre 2028 ?",
+      "new_request": "Peux-tu retrouver un document bon de livraison contenant l’article SYN-CHARNIERE, daté au plus tard du 2 décembre 2028 ?"
+    },
+    {
+      "index": 22,
+      "source_scenario_index": 22,
+      "kind": "native_article_search_scope",
+      "certainty": "defect",
+      "old_request": "Two products maximum, designation containing SYN-LAQUE, with archived records excluded.",
+      "new_request": "Two article records maximum, reference or designation containing SYN-LAQUE, with archived records excluded."
+    },
+    {
+      "index": 23,
+      "source_scenario_index": 23,
+      "kind": "native_article_search_scope",
+      "certainty": "defect",
+      "old_request": "Deux articles maximum, désignation contenant SYN-LAQUE, en excluant les éléments archivés.",
+      "new_request": "Deux articles maximum, référence ou désignation contenant SYN-LAQUE, en excluant les éléments archivés."
+    },
+    {
+      "index": 108,
+      "source_scenario_index": 108,
+      "kind": "amount_not_count",
+      "certainty": "ambiguous",
+      "old_request": "Combien de dépenses l’année dernière ?",
+      "new_request": "Quel montant total de dépenses l’année dernière ?"
+    },
+    {
+      "index": 116,
+      "source_scenario_index": 116,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Montant total des frais de service de l’année passée pour SYN-Jonc.",
+      "new_request": "Montant total des frais de service de l’année passée pour le projet SYN-Jonc."
+    },
+    {
+      "index": 117,
+      "source_scenario_index": 117,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Total service-fee amount for last year for SYN-Jonc.",
+      "new_request": "Total service-fee amount for last year for project SYN-Jonc."
+    },
+    {
+      "index": 136,
+      "source_scenario_index": 136,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Dépenses pour Pavillon Essai et le fournisseur Démo Ebène, entre 2033-11-06 et 2033-11-22.",
+      "new_request": "Dépenses pour le projet Pavillon Essai et le fournisseur Démo Ebène, entre 2033-11-06 et 2033-11-22."
+    },
+    {
+      "index": 137,
+      "source_scenario_index": 137,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Expenses for Pavillon Essai and supplier Démo Ebène, between 2033-11-06 and 2033-11-22.",
+      "new_request": "Expenses for project Pavillon Essai and supplier Démo Ebène, between 2033-11-06 and 2033-11-22."
+    },
+    {
+      "index": 138,
+      "source_scenario_index": 138,
+      "kind": "native_budget_search_scope",
+      "certainty": "defect",
+      "old_request": "Dans Pavillon Essai : budget réel, étape Façade.",
+      "new_request": "Dans le projet Pavillon Essai, recherche les lignes de budget réel contenant « Façade » dans l’étape, la description ou les notes."
+    },
+    {
+      "index": 139,
+      "source_scenario_index": 139,
+      "kind": "native_budget_search_scope",
+      "certainty": "defect",
+      "old_request": "In Pavillon Essai: actual budget, stage Façade.",
+      "new_request": "In project Pavillon Essai, find actual-budget entries containing “Façade” in their stage, description or notes."
+    },
+    {
+      "index": 140,
+      "source_scenario_index": 140,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Tous les encaissements de Pavillon Essai.",
+      "new_request": "Tous les encaissements du projet Pavillon Essai."
+    },
+    {
+      "index": 141,
+      "source_scenario_index": 141,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "All receipt records for Pavillon Essai.",
+      "new_request": "All receipt records for project Pavillon Essai."
+    },
+    {
+      "index": 142,
+      "source_scenario_index": 142,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Échéances jusqu’au 2033-12-06 inclus pour Pavillon Essai.",
+      "new_request": "Échéances jusqu’au 2033-12-06 inclus pour le projet Pavillon Essai."
+    },
+    {
+      "index": 143,
+      "source_scenario_index": 143,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Schedules through 2033-12-06 inclusive for Pavillon Essai.",
+      "new_request": "Schedules through 2033-12-06 inclusive for project Pavillon Essai."
+    },
+    {
+      "index": 152,
+      "source_scenario_index": 152,
+      "kind": "explicit_project",
+      "certainty": "uncertain",
+      "old_request": "Pour Lucarne Essai, budget réel avec « Maçonnerie ».",
+      "new_request": "Pour le projet Lucarne Essai, budget réel avec « Maçonnerie »."
+    },
+    {
+      "index": 153,
+      "source_scenario_index": 153,
+      "kind": "explicit_project",
+      "certainty": "uncertain",
+      "old_request": "For Lucarne Essai, actual-budget entries with “Maçonnerie”.",
+      "new_request": "For project Lucarne Essai, actual-budget entries with “Maçonnerie”."
+    },
+    {
+      "index": 164,
+      "source_scenario_index": 164,
+      "kind": "explicit_supplier",
+      "certainty": "ambiguous",
+      "old_request": "Montant cumulé des devis de Fictif Étain.",
+      "new_request": "Montant cumulé des devis du fournisseur Fictif Étain."
+    },
+    {
+      "index": 165,
+      "source_scenario_index": 165,
+      "kind": "explicit_supplier",
+      "certainty": "ambiguous",
+      "old_request": "Combined quote amount from Fictif Étain.",
+      "new_request": "Combined quote amount from supplier Fictif Étain."
+    },
+    {
+      "index": 174,
+      "source_scenario_index": 174,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Répartition des tâches par statut pour Topaze.",
+      "new_request": "Répartition des tâches par statut pour le projet Topaze."
+    },
+    {
+      "index": 175,
+      "source_scenario_index": 175,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Task counts per status for Topaze.",
+      "new_request": "Task counts per status for project Topaze."
+    },
+    {
+      "index": 186,
+      "source_scenario_index": 186,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Mes tâches bloquées de SYN-Frene.",
+      "new_request": "Mes tâches bloquées du projet SYN-Frene."
+    },
+    {
+      "index": 187,
+      "source_scenario_index": 187,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "My blocked tasks in SYN-Frene.",
+      "new_request": "My blocked tasks in project SYN-Frene."
+    },
+    {
+      "index": 194,
+      "source_scenario_index": 194,
+      "kind": "explicit_assignment_and_project",
+      "certainty": "uncertain",
+      "old_request": "Cartes de Démo Ines dans Atelier Essai, statut bloqué.",
+      "new_request": "Cartes assignées à Démo Ines dans le projet Atelier Essai, statut bloqué."
+    },
+    {
+      "index": 195,
+      "source_scenario_index": 195,
+      "kind": "explicit_project",
+      "certainty": "uncertain",
+      "old_request": "Cards assigned to Démo Ines in Atelier Essai, blocked status.",
+      "new_request": "Cards assigned to Démo Ines in project Atelier Essai, blocked status."
+    },
+    {
+      "index": 202,
+      "source_scenario_index": 202,
+      "kind": "explicit_project",
+      "certainty": "uncertain",
+      "old_request": "Renomme la tâche Analyse lumière sur Atelier Essai.",
+      "new_request": "Renomme la tâche Analyse lumière dans le projet Atelier Essai."
+    },
+    {
+      "index": 203,
+      "source_scenario_index": 203,
+      "kind": "explicit_project",
+      "certainty": "uncertain",
+      "old_request": "Rename task Analyse lumière on Atelier Essai.",
+      "new_request": "Rename task Analyse lumière in project Atelier Essai."
+    },
+    {
+      "index": 204,
+      "source_scenario_index": 204,
+      "kind": "substring_project_name",
+      "certainty": "uncertain",
+      "old_request": "Recherche les projets archivés dont le nom est Lucarne Essai.",
+      "new_request": "Recherche les projets archivés dont le nom contient Lucarne Essai."
+    },
+    {
+      "index": 205,
+      "source_scenario_index": 205,
+      "kind": "substring_project_name",
+      "certainty": "uncertain",
+      "old_request": "Search archived projects whose name is Lucarne Essai.",
+      "new_request": "Search archived projects whose name contains Lucarne Essai."
+    },
+    {
+      "index": 208,
+      "source_scenario_index": 208,
+      "kind": "explicit_assignment_and_project",
+      "certainty": "uncertain",
+      "old_request": "Dans Lucarne Essai, les cartes en cours de Démo Aya.",
+      "new_request": "Dans le projet Lucarne Essai, les cartes en cours assignées à Démo Aya."
+    },
+    {
+      "index": 209,
+      "source_scenario_index": 209,
+      "kind": "explicit_project",
+      "certainty": "uncertain",
+      "old_request": "In Lucarne Essai, in-progress cards assigned to Démo Aya.",
+      "new_request": "In project Lucarne Essai, in-progress cards assigned to Démo Aya."
+    },
+    {
+      "index": 214,
+      "source_scenario_index": 214,
+      "kind": "explicit_project",
+      "certainty": "uncertain",
+      "old_request": "Tâches En revue dans Maquette Témoin.",
+      "new_request": "Tâches En revue dans le projet Maquette Témoin."
+    },
+    {
+      "index": 215,
+      "source_scenario_index": 215,
+      "kind": "explicit_project",
+      "certainty": "uncertain",
+      "old_request": "Tasks In Review in Maquette Témoin.",
+      "new_request": "Tasks In Review in project Maquette Témoin."
+    },
+    {
+      "index": 229,
+      "source_scenario_index": 205,
+      "kind": "substring_project_name",
+      "certainty": "uncertain",
+      "old_request": "Search archived projects whose name is Lucarne Essai.",
+      "new_request": "Search archived projects whose name contains Lucarne Essai."
+    },
+    {
+      "index": 230,
+      "source_scenario_index": 204,
+      "kind": "substring_project_name",
+      "certainty": "uncertain",
+      "old_request": "Recherche les projets archivés dont le nom est Lucarne Essai.",
+      "new_request": "Recherche les projets archivés dont le nom contient Lucarne Essai."
+    },
+    {
+      "index": 232,
+      "source_scenario_index": 175,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Task counts per status for Topaze.",
+      "new_request": "Task counts per status for project Topaze."
+    },
+    {
+      "index": 248,
+      "source_scenario_index": 22,
+      "kind": "native_article_search_scope",
+      "certainty": "defect",
+      "old_request": "Two products maximum, designation containing SYN-LAQUE, with archived records excluded.",
+      "new_request": "Two article records maximum, reference or designation containing SYN-LAQUE, with archived records excluded."
+    },
+    {
+      "index": 252,
+      "source_scenario_index": 21,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Peux-tu retrouver un document bon de livraison avec SYN-CHARNIERE, daté au plus tard du 2 décembre 2028 ?",
+      "new_request": "Peux-tu retrouver un document bon de livraison contenant l’article SYN-CHARNIERE, daté au plus tard du 2 décembre 2028 ?"
+    },
+    {
+      "index": 253,
+      "source_scenario_index": 2,
+      "kind": "explicit_article",
+      "certainty": "ambiguous",
+      "old_request": "Two invoice matches maximum: containing SYN-BOBINE and dated no later than 19 August 2028.",
+      "new_request": "Two invoice matches maximum: containing article SYN-BOBINE and dated no later than 19 August 2028."
+    },
+    {
+      "index": 266,
+      "source_scenario_index": 108,
+      "kind": "amount_not_count",
+      "certainty": "ambiguous",
+      "old_request": "Combien de dépenses l’année dernière ?",
+      "new_request": "Quel montant total de dépenses l’année dernière ?"
+    },
+    {
+      "index": 273,
+      "source_scenario_index": 143,
+      "kind": "explicit_project",
+      "certainty": "ambiguous",
+      "old_request": "Schedules through 2033-12-06 inclusive for Pavillon Essai.",
+      "new_request": "Schedules through 2033-12-06 inclusive for project Pavillon Essai."
+    }
+  ],
+  "targets_changed": 0,
+  "contexts_changed": 0,
+  "tools_changed": 0,
+  "status": "PREPARED; not measured or used for checkpoint selection",
+  "policy": "Separate future validation version. All active and historical V1 inputs, predictions, scores and selection rules remain unchanged. No training or held-out acceptance data is changed. V2 needs its own frozen comparison and fresh inference for changed prompts; it must not be substituted into the current eight-checkpoint comparison. Identical-history variants remain correlated. Targets stay unchanged: article requests explicitly use the broad native reference-or-designation scope and both languages now ask for articles rather than a product-only subset. Native budget search scope and named entity relationships are made explicit.",
+  "limitations": [
+    "Source scenarios have been repeatedly inspected; this is not an unseen accuracy certification.",
+    "Most edits clarify ambiguous or uncertain wording rather than establish that the original expected action was wrong.",
+    "The clearer wording changes task difficulty. V1 and V2 scores must be reported separately.",
+    "Unchanged targets are not proof of native authorization or deployment readiness."
+  ],
+  "files": {
+    "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+  }
+}
