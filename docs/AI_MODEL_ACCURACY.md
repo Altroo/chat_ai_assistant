@@ -20,7 +20,7 @@ The unchanged eight-request warm probe measured 7.756s sequential mean (7.919s o
 
 The exact report publisher checks published recovery-control hashes, frozen inputs, reconstructed scores, stopped-worker evidence and the original performance payload/input/script hashes. Three offline mutation tests pass and the single reviewer found no remaining issues after two evidence checks were strengthened.
 
-The eight-checkpoint comparison below is complete and selects step 1969. Its separate unchanged 438-case acceptance evaluation is running; the scores above belong to the original step-1800 candidate. Contracts, Gestion Magasin and Réservation training remain pending.
+The eight-checkpoint comparison below is complete and selects step 1969. Its separate unchanged 438-case acceptance evaluation also failed, as recorded below; the scores above belong to the original step-1800 candidate. Contracts, Gestion Magasin and Réservation training remain pending.
 
 Evidence: [accuracy](../training/reports/shared-v5r6-en-fr-evaluation.json), [training and selection](../training/reports/shared-v5r6-en-fr-training.json), [isolated performance](../training/reports/shared-v5r6-en-fr-performance.json).
 
@@ -43,9 +43,27 @@ At step 1969, action matches are Facturation 100/133, Management Projet 71/78 an
 
 All candidate artifacts/process identities matched before and after; all temporary comparison workers stopped and production remained unchanged. The publisher recomputed all 24 result shards, fixed selection and worker-stop evidence. Three publisher tests passed, including changed-control and invalid-control-list subcases; one reviewer found no issues.
 
-PARTIALLY IMPLEMENTED: the selected step-1969 candidate is running the unchanged 438-case, 15-set acceptance suite, followed by the unchanged eight-request performance probe. It uses three four-thread workers, 8,192 context tokens, 512 output tokens, temperature zero and thinking disabled. No model promotion or later-app training follows validation alone. The previously inspected frozen suite remains a regression benchmark, not a fresh blind certification.
+The selected candidate completed its separate unchanged acceptance and performance suite below. The previously inspected frozen suite remains a regression benchmark, not a fresh blind certification.
 
 Evidence: [complete comparison](../training/reports/shared-v5r6-functional-validation.json), [frozen policy](../training/reports/shared-v5r6-checkpoint-selection-policy.json).
+
+## V5r6 selected-checkpoint acceptance — 2026-10-13
+
+**Acceptance FAILED:** step 1969 completed all 438 cases and eight performance requests. Tool selection is 415/438 (94.75%), eligible exact arguments 308/334 (92.22%), structured validity 435/438 (99.32%) and fully matched actions 396/438 (90.41%). Only 3/15 frozen sets pass all gates. Critical actions match 130/150; clarification reason/language matches 74/90. Compared with step 1800, three more eligible argument cases pass, but five fewer tool choices and five fewer critical actions match. No promotion follows this result.
+
+| Application | Correct tools | Eligible exact arguments | Valid structure |
+| --- | ---: | ---: | ---: |
+| design_workflow | 127/130 (97.69%) | 92/100 (92.0%) | 129/130 (99.23%) |
+| facturation | 105/108 (97.22%) | 73/86 (84.88%) | 108/108 (100.0%) |
+| management_projet | 183/200 (91.5%) | 143/148 (96.62%) | 198/200 (99.0%) |
+
+The unchanged four-thread probe measured 7.870s sequential mean (8.028s observed P95), 11.838s concurrency-two mean (16.069s observed P95), 55.57 decode tokens/s excluding prefill and 2.74 GiB peak RSS. All eight requests completed without errors. Four requests per group are a small warm sample, not capacity certification; native tool-call buffering prevents treating first-visible-event latency as raw time to first token. Two other workers remained loaded and idle during this probe.
+
+Artifact and process identities matched before/after; all three acceptance workers stopped. The publisher reconstructed frozen scores and checked transitive control hashes, performance provenance and stop evidence. Five preparatory publisher tests passed; one reviewer found no remaining issues after provenance checks were strengthened. Original step-1800 results are preserved. Production weights and application feature flags remain unchanged.
+
+Next diagnostic, not acceptance: compare dense int8 and full-precision inference on 60 outcome-independently selected validation scenarios, 20 per application, using the same step-1969 weights. No new training or model download is required. Precision results remain incomplete until every case and worker check finishes.
+
+Evidence: [selected accuracy](../training/reports/shared-v5r6-selected-en-fr-evaluation.json), [selected performance](../training/reports/shared-v5r6-selected-en-fr-performance.json).
 
 ## V5r5 measured results — 2026-10-12
 
