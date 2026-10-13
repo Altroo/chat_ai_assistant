@@ -1,0 +1,36 @@
+{
+  "manifest_sha256": "d947026043133fbedc6afb7b21bd9a2a8feb32e8150ad3cf48fc0670f90987ec",
+  "tokenizer_and_runtime_match_server": true,
+  "scope": "Metadata only; no weights, local inference or optimization.",
+  "inference_measured": false,
+  "training_started": false,
+  "train.jsonl": {
+    "count": 2065,
+    "round_trip_passed": 2065,
+    "runtime_prefix_parity_passed": 2065,
+    "loss_boundary_passed": 2065,
+    "semantic_alignment_passed": 2065,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7662,
+    "sha256": "c4d9304e86261f402f0249fc6f18087bac15dc2dcc9ca689c4d4b76d4feb3388"
+  },
+  "valid.jsonl": {
+    "count": 275,
+    "round_trip_passed": 275,
+    "runtime_prefix_parity_passed": 275,
+    "loss_boundary_passed": 275,
+    "semantic_alignment_passed": 275,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7496,
+    "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+  },
+  "generator_sha256": "08e8aff31569308f8cd0be7978d917b013d5ac1088d0a8579fa0bd6c74c7ac82",
+  "integrity_tests_passed": 6,
+  "review": "No issues",
+  "production_changed": false,
+  "limitations": [
+    "Metadata checks validate formatting and schema compatibility, not accuracy or training success.",
+    "Training/validation examples contain correlated history, language and context variants.",
+    "V2 validation has clarified questions and requires separately measured baseline/candidate results. Original V1 scores remain unchanged."
+  ]
+}

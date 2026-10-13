@@ -67,6 +67,12 @@ The full-precision loader initially left its OpenMP pool at one thread. The init
 
 Evidence: [selected accuracy](../training/reports/shared-v5r6-selected-en-fr-evaluation.json), [selected performance](../training/reports/shared-v5r6-selected-en-fr-performance.json).
 
+## R7 reviewed dataset preparation — 2026-10-13
+
+PARTIALLY IMPLEMENTED — next training preparation: `shared-v5r7-en-fr` contains 2,065 training and 275 validation examples for the same three applications. It replaces twelve reviewed inconsistent instructions at their original indices, retains the other 1,957 parent rows byte-for-byte and appends 96 reviewed saved-selection context contrasts. The separately versioned V2 validation clarifies 47 rows without changing their targets. Original V1 training, validation and evaluation files remain unchanged; both 438-case evaluation versions are bound by hash.
+
+Six integrity tests pass. All 2,340 training/validation rows pass schema, tokenizer, Colibri-template/parser and loss-boundary checks; maximum lengths are 7,662 training and 7,496 validation tokens within 8,192. The sole reviewer found no remaining issues. No weights were loaded locally, no R7 optimization has run and no accuracy gain is claimed. Separate server baseline, capacity and training-configuration checks remain required. [Prepared dataset](../training/datasets/shared-v5r7-en-fr/manifest.json), [metadata evidence](../training/reports/shared-v5r7-en-fr-metadata-preflight.json).
+
 ## V5r5 measured results — 2026-10-12
 
 Server-only training and export completed: 1,803 optimizer steps and 275 validation examples in English/French. The selected adapter is step 600, with application-macro validation loss 0.070752 (baseline 0.130523). Final step 1,803 had 0.077062 and was not exported. Training took 14.73 hours, using 14 CPU threads and 7.70 GiB peak RSS.
