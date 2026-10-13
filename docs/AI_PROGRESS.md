@@ -374,3 +374,13 @@ The article cases now explicitly request article records using the native refere
 Six integrity tests pass, including unchanged targets/history and exclusion of the changed requests from training and both held-out versions. All 275 schema/template/parser/loss-boundary checks and 550 C-versus-training token sequences pass; the largest prompt is 7,468 tokens plus 512 reserved output tokens, within 8,192.
 
 PARTIALLY IMPLEMENTED: no V2 inference or checkpoint selection has run. Clearer questions change difficulty, so future V2 scores must be reported separately. The active eight-checkpoint comparison, historical results, training data and held-out acceptance inputs remain unchanged. This preparation does not improve or certify model accuracy. [Prepared validation](../training/datasets/shared-validation-v2-en-fr/manifest.json), [metadata evidence](../training/reports/shared-validation-v2-en-fr-preflight.json).
+
+## Training search-scope corrections — 2026-10-13
+
+IMPLEMENTED and verified as preparation only: `training-scope-errata-v1-en-fr` supplies twelve replacement rows for the existing 1,969-row training split. Review of all 28 Facturation article-search and 46 Management Projet budget-entry-search examples found four designation-only questions labelled with the broader reference-or-designation search, and eight stage-only questions labelled with the broader stage/description/notes search.
+
+The replacements explicitly request those supported multi-field searches. Targets, other filters, history, tools and trusted context are unchanged. A future dataset must replace the exact indexed source rows, preserving 1,957 other rows; appending conflicting alternatives is not allowed. The original dataset and completed training remain unchanged.
+
+Four integrity tests, twelve schema/template/parser/loss-boundary checks and 24 C token-ID comparisons pass. The largest replacement prompt is 2,460 tokens. Changed requests do not overlap either validation version or either held-out version.
+
+PARTIALLY IMPLEMENTED: these replacements are not yet assembled into a cumulative training dataset or used for optimization. No accuracy improvement is claimed. [Replacement manifest](../training/datasets/training-scope-errata-v1-en-fr/manifest.json), [metadata checks](../training/reports/training-scope-errata-v1-en-fr-preflight.json).

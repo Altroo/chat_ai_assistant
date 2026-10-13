@@ -1,0 +1,62 @@
+{
+  "manifest_sha256": "3112f4dcd745fad241019f40cd08991b07faa15de3fb788b233b6d02d488994e",
+  "metadata_checker_sha256": "da866b0a2bb89a6325ebf79381f2f03ad852cf99c5cc92efcc9e94f8d01e3ce2",
+  "checks": {
+    "count": 12,
+    "round_trip_passed": 12,
+    "runtime_prefix_parity_passed": 12,
+    "loss_boundary_passed": 12,
+    "semantic_alignment_passed": 12,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 2517,
+    "sha256": "a8b21dfb018855dfe3e1f263bf21cda54415ac7b7cef5354a38e2c06fc2d22eb"
+  },
+  "maximum_prompt_tokens": 2460,
+  "reserved_output_tokens": 512,
+  "c_encoder_token_id_matches": 24,
+  "tokenizer_artifact_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+  "runtime_artifact_sha256": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35",
+  "native_sources_reviewed_sha256": {
+    "facturation": {
+      "chat_ai/catalog.py": "f44a946bf2c148d8ecc341316930adccaccd75ff42c7801e137117408ef65f42",
+      "chat_ai/documents.py": "ed49142ac4b7bf90f5dd49f95df1635070d2877defee360f0be56e7b744bfe95",
+      "chat_ai/tools.py": "dfa85b49ab81eb174def845b0fea38ae7622c0fc9eb3799cd02e2cd43a6442db"
+    },
+    "management_projet": {
+      "chat_ai/tools.py": "4a34fe503ade55e048434ea1aae1a15a025a2578667d54e4ca35111da5d4f688",
+      "project/views.py": "88a76b7bcc41013112d8a96a8687009b72995aa693ba090735faec1233548436",
+      "devis/services.py": "fbe225efabacd7273f935316c1d29741172964a058d4dfd5af866608c4a4b817"
+    },
+    "design_workflow": {
+      "chat_ai/tools.py": "3cbc13622cf9831ea8dcbd978b2e267b9409d90a85bb012a67ef980a0b93399e"
+    }
+  },
+  "unit_tests_passed": 4,
+  "training_executed": false,
+  "inference_executed": false,
+  "accuracy_measured": false,
+  "scope": "Future training preparation only. Twelve corrected source rows passed metadata checks and 24 C token sequences matched. No model weights, optimization or business operations. Original data and active comparison remain unchanged.",
+  "reviewed_training_rows": {
+    "article_search": 28,
+    "budget_entry_search": 46
+  },
+  "replacement_source_indexes": [
+    72,
+    73,
+    80,
+    81,
+    654,
+    655,
+    854,
+    855,
+    952,
+    953,
+    1108,
+    1109
+  ],
+  "limitations": [
+    "These are replacements, not additional training samples.",
+    "No training, model acceptance or deployment readiness is claimed.",
+    "Native-source review is not a database authorization test."
+  ]
+}

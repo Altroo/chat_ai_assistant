@@ -1,0 +1,104 @@
+{
+  "version": "training-scope-errata-v1-en-fr",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "applications": [
+    "facturation",
+    "management_projet"
+  ],
+  "parent_manifest_sha256": "71d2f2e11ce5f7abf55a32b486c76169d67e8231547084d42ce1c08583ca60b4",
+  "parent_training_sha256": "deb32ff692b236b63e2ef4f9324e58aba93c5a23c2c14a8de8c078314b9b6bdc",
+  "unchanged_validation_sha256": "b38107a9f77b7d47f8f0e881972a753e880ae8ee091217c471a17a2560b3bf86",
+  "generator_sha256": "00330d7f5208e0c1fd8fd77cbfb98a35cf35a1b2fc43b60fe737b1d66d0f5c3b",
+  "replacement_count": 12,
+  "source_rows": 1969,
+  "unchanged_rows": 1957,
+  "targets_changed": 0,
+  "context_changed": 0,
+  "tools_changed": 0,
+  "provenance": [
+    {
+      "source_index": 72,
+      "old_request": "Look for articles whose designation includes SYN-VERNIS.",
+      "new_request": "Look for articles whose reference or designation includes SYN-VERNIS.",
+      "scope": "reference_or_designation"
+    },
+    {
+      "source_index": 73,
+      "old_request": "Cherche les articles dont la désignation contient SYN-VERNIS.",
+      "new_request": "Cherche les articles dont la référence ou la désignation contient SYN-VERNIS.",
+      "scope": "reference_or_designation"
+    },
+    {
+      "source_index": 80,
+      "old_request": "Search archived articles whose designation contains SYN-VERNIS.",
+      "new_request": "Search archived articles whose reference or designation contains SYN-VERNIS.",
+      "scope": "reference_or_designation"
+    },
+    {
+      "source_index": 81,
+      "old_request": "Cherche les articles archivés dont la désignation contient SYN-VERNIS.",
+      "new_request": "Cherche les articles archivés dont la référence ou la désignation contient SYN-VERNIS.",
+      "scope": "reference_or_designation"
+    },
+    {
+      "source_index": 654,
+      "old_request": "Dans les lignes du budget réel du projet SYN-Lotus, recherche l’étape Menuiserie.",
+      "new_request": "Dans les lignes du budget réel du projet SYN-Lotus, recherche Menuiserie dans l’étape, la description ou les notes.",
+      "scope": "stage_description_or_notes"
+    },
+    {
+      "source_index": 655,
+      "old_request": "In actual budget entries for project SYN-Lotus, search stage Menuiserie.",
+      "new_request": "In actual budget entries for project SYN-Lotus, search Menuiserie in the stage, description or notes.",
+      "scope": "stage_description_or_notes"
+    },
+    {
+      "source_index": 854,
+      "old_request": "Dans le budget réel de SYN-Aster, retrouve l’étape Électricité.",
+      "new_request": "Dans le budget réel du projet SYN-Aster, recherche Électricité dans l’étape, la description ou les notes.",
+      "scope": "stage_description_or_notes"
+    },
+    {
+      "source_index": 855,
+      "old_request": "In the actual budget of SYN-Aster, find the Électricité stage.",
+      "new_request": "In the actual budget of project SYN-Aster, search Électricité in the stage, description or notes.",
+      "scope": "stage_description_or_notes"
+    },
+    {
+      "source_index": 952,
+      "old_request": "Budget réel de Rive 42, étape Fondation.",
+      "new_request": "Budget réel du projet Rive 42 : recherche Fondation dans l’étape, la description ou les notes.",
+      "scope": "stage_description_or_notes"
+    },
+    {
+      "source_index": 953,
+      "old_request": "Actual budget of Rive 42, stage Fondation.",
+      "new_request": "Actual budget of project Rive 42: search Fondation in the stage, description or notes.",
+      "scope": "stage_description_or_notes"
+    },
+    {
+      "source_index": 1108,
+      "old_request": "Budget réel : Belvédère Test ; étape Électricité.",
+      "new_request": "Budget réel du projet Belvédère Test : recherche Électricité dans l’étape, la description ou les notes.",
+      "scope": "stage_description_or_notes"
+    },
+    {
+      "source_index": 1109,
+      "old_request": "Actual budget: Belvédère Test; stage Électricité.",
+      "new_request": "Actual budget of project Belvédère Test: search Électricité in the stage, description or notes.",
+      "scope": "stage_description_or_notes"
+    }
+  ],
+  "status": "PREPARED replacements; not assembled into a cumulative dataset or trained",
+  "policy": "Use each replacement at its exact source index in a separately versioned future dataset. Do not append it as another training example or mutate the original source. Requests are broadened explicitly to the supported native multi-field search; targets, other filters, history and trusted context remain unchanged. This corrects instructional inconsistency, not the backend. Original training, validation, held-out inputs and historical scores remain unchanged.",
+  "limitations": [
+    "Review covered the 28 article-search and 46 budget-entry-search training rows, not every training example.",
+    "Preparation alone establishes no model accuracy improvement or production readiness."
+  ],
+  "files": {
+    "train.replacements.jsonl": "a8b21dfb018855dfe3e1f263bf21cda54415ac7b7cef5354a38e2c06fc2d22eb"
+  }
+}
