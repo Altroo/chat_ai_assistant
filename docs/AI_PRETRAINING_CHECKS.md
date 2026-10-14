@@ -1,14 +1,18 @@
 # Pre-training correctness checks
 
+IMPLEMENTED and verified as preparation: the corrected Contracts curriculum contains 2,492 training and 319 validation examples. Exactly six retained targets change; the other 2,486 training rows, validation and evaluation inputs remain unchanged. All 260 training-integrity tests pass, including 24 focused mutation/startup tests. A subprocess test stages scripts, current data, predecessor data and reviewed control artifacts in separate temporary folders, blocks model-library imports and verifies that the trainer, capacity probe and rehearsal accept the complete corrected curriculum. Missing or changed artifacts fail before model import. The single reviewer found no remaining issues.
+
+Metadata checks pass all 2,811 training/validation examples and 564 evaluation cases. The full static audit finds no contradictory labels for identical inputs or exact train/validation overlap and selects 59 training-only rehearsal rows, with eight training and eight development captures. These checks do not establish semantic independence, numerical learning, export parity or model accuracy. [Metadata evidence](../training/reports/shared-v6r10-en-fr-metadata-preflight.json), [static audit and artifact inventory](../training/reports/shared-v6r10-en-fr-pretraining-audit.json).
+
 IMPLEMENTED and verified as preparation: a review of all 180 Reservation training rows found four requests with misleading date wording. They now explicitly refer to reservation arrival dates or rental years and current returned/paid status. All action labels, histories, validation and held-out bytes remain unchanged. All 216 training integrity tests pass; final metadata checks pass 3,272 training/validation rows and 738 evaluation cases. The corrected final-stage preparation is shared-v8r10-en-fr, retaining the complete shared-v7r9-en-fr prefix. Native date filters and financial calculation sources are pinned. [Correction evidence](../training/reports/reservation-temporal-corrections-20261014.json).
 
-PARTIALLY IMPLEMENTED: the server-only exact replay collector is implemented and synthetic transport tests pass. It preserves issued payloads, bounded raw response bytes, parsed events and failures; rejects truncated or malformed streams; and never authorizes training. Real numerical rehearsal, export and live-worker replay remain pending until the active R8 controller completes. [Collector evidence](../training/reports/cpu-rehearsal-collector-preparation-20261014.json). The queued stages remain Contracts V6r9, Gestion Magasin V7r9, then Reservation V8r10. No later-stage optimizer has started.
+PARTIALLY IMPLEMENTED: the server-only exact replay collector is implemented and synthetic transport tests pass. It preserves issued payloads, bounded raw response bytes, parsed events and failures; rejects truncated or malformed streams; and never authorizes training. Real numerical rehearsal, export and live-worker replay remain pending until the active R8 controller completes. [Collector evidence](../training/reports/cpu-rehearsal-collector-preparation-20261014.json). Those earlier preparations remain preserved; corrected successors and accepted model bindings are required. No later-stage optimizer has started.
 
 IMPLEMENTED and verified as preparation: the single semantic review found one confirmed financial-definition mismatch in Gestion Magasin and four ambiguous Contracts requests. The corrected native wording states that the metric sums paid amounts on confirmed sales created today and currently marked paid, across payment modes; it does not filter payment dates. Four Contracts requests now explicitly identify the customer. Versioned source datasets retain all targets, contexts, histories and split order, including the affected French history duplicate.
 
 All 193 training tests and 58 PostgreSQL assistant tests plus 6 subtests pass. The native six-sale fixture covers creation date, current payment status, store isolation and payment modes. Metadata checks pass all 3,272 cumulative training/validation rows and 738 evaluation cases without weights or inference. One historical-input hash check found by review was fixed and mutation-tested. [Correction evidence](../training/reports/native-semantic-corrections-20261014.json), [metadata evidence](../training/reports/shared-v8r9-en-fr-metadata-preflight.json).
 
-PARTIALLY IMPLEMENTED: queued preparations now use Contracts V6r9, Gestion Magasin V7r9 and Reservation V8r10. These names identify future dataset revisions, not a new running training job. The active R8 run and all original inputs/results remain unchanged. Do not start the superseded V6r8/V7r8/V8r8 or Reservation V8r9 preparations. Fresh accepted-predecessor bindings, native-source verification, numerical rehearsal and real Colibri export comparison remain required before the next full run. All 90 GM evaluation envelopes have refreshed native metadata, including two revised questions, so they require fresh baseline/candidate predictions. Historical scores must not be relabelled as measurements on the corrected inputs.
+Earlier preparation: Contracts V6r9, Gestion Magasin V7r9 and Reservation V8r10 preserved the then-current retained curriculum. These names identify future dataset revisions, not a new running training job. The active R8 run and all original inputs/results remain unchanged. Do not start the superseded V6r8/V7r8/V8r8 or Reservation V8r9 preparations. Fresh accepted-predecessor bindings, native-source verification, numerical rehearsal and real Colibri export comparison remain required before the next full run. All 90 GM evaluation envelopes have refreshed native metadata, including two revised questions, so they require fresh baseline/candidate predictions. Historical scores must not be relabelled as measurements on the corrected inputs.
 
 Earlier preparation: exact rehearsal replay helpers were prepared and reviewed. All 187 training integrity tests pass, including 15 new comparison tests. The helpers bind the exact sent payload, preserve structured clarification arguments and failed responses, validate token usage and compare actions without normalizing defaults. At that preparation stage, numerical rehearsal, real export, network collection and live worker attestation were pending. The collector implementation is now prepared; execution remains pending. Current R8 training and its frozen controller are unchanged. [Comparison preparation](../training/reports/cpu-rehearsal-comparison-preparation-20261014.json).
 
@@ -22,7 +26,7 @@ The completed [source review](../training/reports/target-label-review-20261014.j
 
 The semantic review found six incorrect retained Management Projet name-search labels. Their corrections are versioned in management-name-errata-v2-en-fr and assembled into shared-v5r9-en-fr. That three-app preparation changes exactly those six targets; every other training row and every validation/evaluation input remain unchanged. Its 236 integrity tests, static audit and exact metadata checks pass. It is untrained and has no model binding. The current R8 and queued V6r9/V7r9/V8r10 files remain immutable historical preparations and fail the known-label check.
 
-Do not require a new epoch solely to make dataset names align. If R8 passes, a separately reviewed retention validator may bind the actual accepted R8 run plus the exact six old/new rows for Contracts. It must reject all other retained-byte changes and cover the serial trainer, capacity probe and rehearsal consistently. The current serial validator remains unchanged and does not allow this exception. If R8 fails, evaluate whether a corrected three-app refinement is justified; the prepared V5r9 file does not authorize it.
+Do not require a new epoch solely to make dataset names align. The reviewed serial_scope_v3.py implements only the pinned six-target R8-to-Contracts correction; serial_scope_v2.py remains unchanged. The new train_cpu_serial_v4.py, probe_cpu_serial_v2.py and rehearse_cpu_v2.py apply the same check before model import. All other retained-byte changes reject, and later stages require exact corrected predecessors without the exception. This validates dataset lineage only. The launcher must still bind the actual accepted R8 model and completed run, frozen baseline and current resources. If R8 fails, evaluate whether a corrected three-app refinement is justified; neither preparation authorizes training.
 
 ~~~sh
 python -B training/scripts/prepare_management_name_errata_v2.py --check-data "$REHEARSAL_DATA"
@@ -44,30 +48,33 @@ This validates full dataset hashes, declared application scope, trusted-context 
 
 ## Server rehearsal
 
-The rehearse_cpu.py runner validates the full cumulative curriculum and predecessor before selecting optimization rows. It extracts only five named functions from the hash-pinned trainer, without running that file's top-level CLI. Its encoding and loss functions match the shared and serial trainers. The trainer's adjacent semantic-loss and LoRA helpers must match the rehearsal helpers before use, plan creation and completion.
+The rehearse_cpu_v2.py runner validates the full cumulative curriculum and predecessor before selecting optimization rows. It extracts only five named functions from the hash-pinned trainer, without running that file's top-level CLI. Its encoding and loss functions match the shared and serial trainers. The trainer's adjacent semantic-loss, LoRA, retention and correction helpers must match the rehearsal helpers before use, plan creation and completion.
 
-The current metadata preparations select the rows below. Their cumulative datasets need corrected successors before execution; these counts are preparation evidence, not launch approval:
+The metadata preparations select the rows below. Only the corrected shared and Contracts preparations pass the known-label check. Later stages need corrected successors, and every stage needs accepted model bindings before execution. These counts are preparation evidence, not launch approval:
 
 | Curriculum | Optimization rows | Trained-row captures | Development-validation captures |
 | --- | ---: | ---: | ---: |
-| Shared R8 | 48 | 6 | 6 |
-| Contracts V6r9 | 59 | 8 | 8 |
+| Shared V5r9 | 48 | 6 | 6 |
+| Contracts V6r10 | 59 | 8 | 8 |
 | Gestion Magasin V7r9 | 72 | 10 | 10 |
 | Reservation V8r10 | 84 | 12 | 12 |
 
 Captures are selected before inference, without outcome-based selection. Every trained-row capture belongs to the selected optimization rows. Only training rows receive updates. No acceptance case is used for optimization or checkpoint selection.
 
-The following illustrates the Contracts rehearsal inside the approved server execution environment. The model, runtime, output and reviewed source checksum are operator bindings. The dataset must be refreshed if the accepted predecessor curriculum changes.
+The following illustrates the conditional Contracts V6r10 rehearsal inside the approved server execution environment. The model, runtime, output and reviewed source checksum are operator bindings. REHEARSAL_RETAINED_DATA must contain the actual accepted R8 run's original dataset. If that predecessor is not accepted, do not use this example.
+
+REHEARSAL_CORRECTION_ROOT is explicit, independent of the script directory. Stage exactly the 36 relative files and hashes listed under correction_artifacts in the [audit](../training/reports/shared-v6r10-en-fr-pretraining-audit.json): corrected V5r9 manifest/train/valid, the V2 errata manifest/replacements, and frozen evaluation files. Evaluation files are integrity-checked only and never passed to the optimizer. There is no repository-path fallback. Include the trainer's validation_selection.py dependency as well as all rehearsal, retention and correction helpers when staging isolated scripts. The isolated startup test verifies this layout without weights. Omit --correction-root for future strict-retention stages with no correction declaration.
 
 ~~~sh
 CHAT_AI_TRAINING_SERVER=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
-python -B training/scripts/rehearse_cpu.py \
+python -B training/scripts/rehearse_cpu_v2.py \
   --stage contrat \
   --data "$REHEARSAL_DATA" \
   --retained-data "$REHEARSAL_RETAINED_DATA" \
+  --correction-root "$REHEARSAL_CORRECTION_ROOT" \
   --model "$REHEARSAL_BASE_MODEL" \
   --runtime "$REHEARSAL_RUNTIME" \
-  --trainer training/scripts/train_cpu_serial_v3.py \
+  --trainer training/scripts/train_cpu_serial_v4.py \
   --trainer-sha256 "$REHEARSAL_TRAINER_SHA256" \
   --output "$REHEARSAL_OUTPUT" \
   --threads 14 --max-seq-length 8192 \

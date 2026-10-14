@@ -1,0 +1,314 @@
+{
+  "version": "shared-v6r10-en-fr",
+  "applications": [
+    "facturation",
+    "management_projet",
+    "design_workflow",
+    "contrat"
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "retained_dataset": {
+    "version": "shared-v5r8-en-fr",
+    "manifest_sha256": "56f803ca7110ae78bc53c4a208a7dc7456819c024dc588109da46d7fb1520738",
+    "files": {
+      "train.jsonl": "d4b38a4354703fe8ea4a82d2c52a0fdb665927150cd19fe9d7fa411ec32cea26",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    }
+  },
+  "added_dataset": {
+    "version": "contracts-dialogue-v4-en-fr",
+    "manifest_sha256": "13338b767321335a16e86b6926b513821054d13c3cea1c4dcde74ae078e19f0b",
+    "files": {
+      "train.jsonl": "3619c37dfd61779296cded2e62b2433c28bb6ed98623c55fe4bbdc6fd13c90f5",
+      "valid.jsonl": "9462d8fdf5d742a31708781ab9dedfdb7b960dd14d77bc35654bfdb888b3efbb",
+      "train.eval.jsonl": "680a40b15928704b419f78d34a383c797227cff7698f3430ab6d2504967a4052",
+      "valid.eval.jsonl": "2b37137e6e8b20b36e48b4cac6de00286d62f966331ef506e9f288c192d86e37",
+      "test.eval.jsonl": "56862df3ed3ca7780582956590608bfa636d88a2ba10e63aebd03fc6a87b2616"
+    }
+  },
+  "counts": {
+    "train.jsonl": {
+      "facturation": 863,
+      "management_projet": 1008,
+      "design_workflow": 468,
+      "contrat": 153
+    },
+    "valid.jsonl": {
+      "facturation": 133,
+      "management_projet": 78,
+      "design_workflow": 64,
+      "contrat": 44
+    }
+  },
+  "files": {
+    "train.jsonl": "5f3f25efb76d01ba2e76e542c3808bafe0b6bf2430b73051f4a5d2287d7b3e37",
+    "valid.jsonl": "9f3d88ccf72f651f869bbb8f19495ed1570b1b2fe49aa67351f79ef7142e584d"
+  },
+  "held_out": {
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+      "count": 24
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+      "count": 10
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": {
+      "sha256": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+      "count": 80
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a59f750fffeb6d9868b11d7be6493e3985ab7ed295981139afc11cbf8cd5f6fe",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": {
+      "sha256": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+      "count": 28
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "6ad3954b01fb07299952c9ee566e6d56ae36b34201aff75da4ee3c1d705b0f49",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da",
+      "count": 16
+    },
+    "training/datasets/shared-v5r8-fresh-en-fr/controls.eval.jsonl": {
+      "sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+      "count": 48
+    },
+    "training/datasets/contracts-dialogue-v4-en-fr/test.eval.jsonl": {
+      "sha256": "56862df3ed3ca7780582956590608bfa636d88a2ba10e63aebd03fc6a87b2616",
+      "count": 78
+    }
+  },
+  "historical_regression_held_out": {
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+      "count": 24
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+      "count": 10
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": {
+      "sha256": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+      "count": 80
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": {
+      "sha256": "4bba62427783498ef0b28c06f2bfe838709551ec84e4e1a1b7528a0d07ea1bc7",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": {
+      "sha256": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+      "count": 28
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "35ea0592763e6c5fec0d3a72f51887d19d68de1fe94dfaf10685b4ee6e424cba",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da",
+      "count": 16
+    },
+    "training/datasets/gestion-magasin-dialogue-v3-en-fr/test.eval.jsonl": {
+      "sha256": "e01b4c5d5c6e93ffcb406d3f92000ecd21ad48e1a435b3ff6be3263233d7d42c",
+      "count": 90
+    }
+  },
+  "fresh_controls": {
+    "manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a",
+    "files": {
+      "training/datasets/shared-v5r8-fresh-en-fr/controls.eval.jsonl": {
+        "sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+        "count": 48
+      }
+    },
+    "scoring": "Report separately from original regressions; never use for optimization or checkpoint selection."
+  },
+  "held_out_count": 564,
+  "generator_sha256": "01615c9313b7a9c8236ce5d322b468bde6824306ca136b7c4f558b84199ae969",
+  "scope_validator_sha256": "83986f89fbf075a72faad32ed6f45d9332736d47d1bd5d0c7b40124e654e2312",
+  "split_policy": "Bind the actual R8 predecessor dataset and replace exactly six reviewed targets in its retained training prefix. Preserve all other retained rows, validation, evaluation and original Contracts-only additions. No general retention exception is permitted.",
+  "training_status": "PREPARATION ONLY, CONDITIONAL ON R8 ACCEPTANCE. An untrained corrected prefix is not an accepted predecessor. Require actual accepted R8 model/run binding, fresh baseline, server numerical/export rehearsal and resource gates before training.",
+  "scope_dependencies": {
+    "serial_scope_v2.py": "459dab06b7b5dbb6c4d101c3f1d1eba1728593f5f346d444a6f70ea2091c6344",
+    "prepare_management_name_errata.py": "1545d5c4dd5c5c252ea13191d6d9d15f523f9ff5eebc46c69c42b03396d8afa3",
+    "prepare_management_name_errata_v2.py": "110d912942964b870766afa0c3ed57338effd7da8b40114f25f9440ffa913412",
+    "serial_scope_v3.py": "83986f89fbf075a72faad32ed6f45d9332736d47d1bd5d0c7b40124e654e2312"
+  },
+  "source_preparation": {
+    "version": "shared-v6r9-en-fr",
+    "manifest_sha256": "2502245524902f6e5c193c783030d239d5cadaddf5b20dd535bf417d0272d2c1"
+  },
+  "retained_corrections": {
+    "version": "management-name-errata-v2-en-fr",
+    "manifest_sha256": "1ebded1f21cca3921b6e03339df65441255c5d2a883e4241d06028643ad4d0ec",
+    "prefix_version": "shared-v5r9-en-fr",
+    "prefix_manifest_sha256": "74fb992ed98e326ff518cdd4302f36205230c41c3b41b34515ef0c823b2763e5"
+  },
+  "model_binding": {
+    "status": "UNBOUND; active R8 results pending",
+    "accepted_predecessor_required": "The actual R8 run with its original recorded dataset and model artifacts, not the untrained V5r9 preparation."
+  },
+  "native_correction_evidence": {
+    "corrected_prefix_manifest_sha256": "74fb992ed98e326ff518cdd4302f36205230c41c3b41b34515ef0c823b2763e5",
+    "native_metadata": {
+      "facturation": {
+        "chat_ai/catalog.py": "f44a946bf2c148d8ecc341316930adccaccd75ff42c7801e137117408ef65f42",
+        "chat_ai/test_reference_followups.py": "8e6b345482e4a43dc0f886d40c10afaf37de1e6f318e65c3e057ea4ac03bb59f",
+        "chat_ai/labels.py": "9278362e793ab0c38c5e115a4f66a698667285481dd312104484499e30df41a8",
+        "chat_ai/services.py": "7a02272e6849c1452afb02f5d54cae59214fb37c2c70a2518abdca4fed175b7e",
+        "chat_ai/test_catalog.py": "b20d245c427e0546b3bf41141b7bef0df6047e30bb0962c23df22fadae9fff2b",
+        "chat_ai/tasks.py": "5f71c66a76e3136e10d47d8b1737a572d8f4b65289b186481b9f0c17d31f61b7",
+        "chat_ai/test_module_integration.py": "6e4deffb802bc14c93aba76abd42dff8a23add7d4c1215f16b5d4e3ce790351b",
+        "chat_ai/models.py": "8e78721fe95d9eca548f4f76a97352c88fd82d0bfdf734529f84d940c636ff41",
+        "chat_ai/confirmation_history.py": "64406e233f74e3be1d33c4715c407f500b187bf1dab79f5ae8d27de3571f0d27",
+        "chat_ai/test_greetings.py": "fda75472e111e21e50bc880cbdfb220c5576d66c670c6e254027d31e3b48d92d",
+        "chat_ai/shortcuts.py": "5c0c47bfccec21c8e7d7d56ad108d676834a34f52331e42ab99e633c5e7387d8",
+        "chat_ai/test_operations.py": "5855a27cad421c4223f906e4e9423d9ae7696e074aded78f619601326c2f16f3",
+        "chat_ai/documents.py": "ed49142ac4b7bf90f5dd49f95df1635070d2877defee360f0be56e7b744bfe95",
+        "chat_ai/tools.py": "2ae44104618a4a0fe3586399ad28a3cb1b06a477ecd9812c80f7b1cbf5969c0a",
+        "chat_ai/security.py": "377cb4bf4bb4e3974844959e9a2db89c5fcff73d08d41913a9b5f2eb62c36279",
+        "chat_ai/test_localized_knowledge.py": "8cbf43f29857aba3e692876a898bdec224f1c3fa16e12975a30f5b7614a5f250",
+        "chat_ai/actions.py": "59ffe668c040bec092afd8715509924f225cdc525f90020b26484385fea68984",
+        "chat_ai/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "chat_ai/test_response_language.py": "e352dec9a04ba2009b28aab38d25a84b2abd94cbf6e101feb4c06e21d1960c93",
+        "chat_ai/apps.py": "c21914a2336c89f8b789114209060fac3728f26fbb5cbf01cbdfcc88363a7a49",
+        "chat_ai/test_knowledge_retrieval.py": "2c9f862bf0a6d36969b336e6c43d1ef08ccc33ddd9d3534f2fb81c1bedbd127d",
+        "chat_ai/test_review_regressions.py": "3de01fc0bdf0d7d517e53dec3a9d5e42d13d8e13f1c4397bb9f484167f2eed7f",
+        "chat_ai/test_routing.py": "0849c4889b52088f28fae238157f5de43f7fe5b2b0aa3bb87b1d0b29cd021603",
+        "chat_ai/operations.py": "8107fc9dadc8c0d6051068f9ab6fe606214a96963656eb51e08b6c0041cff862",
+        "chat_ai/test_ordinal_targets.py": "e6fc1cd04b9fcad359f27087141b99b61d28ae4f65e78453f52d05e3e6bcacb6",
+        "chat_ai/test_document_actions.py": "6e296660063c42c40f7e1b47e96bac8633cd3e9d3ad09d137f430898d225e573",
+        "chat_ai/shortcut_catalog.py": "d835ee936f3372eb58a35d828de2fe9a15187ce7d6676ff7b2f99a6a94ac6a79",
+        "chat_ai/test_confirmation_history.py": "1ea28c6c5cb7ba315f4afa2cbf73923996e8c1341d53629cbae8c9b9d9003a59",
+        "chat_ai/admin.py": "b3bea11d59b5df839d6c2b37cb919cc4341eb06cc7d5ffa287e3a7b2d906c5a6",
+        "chat_ai/test_shortcut_modules.py": "7ff5689e4d24b8db23d14e44e961ee8b2f5e4db60deb45920d0551317d124683",
+        "chat_ai/test_throttles.py": "f0c68dc42f6a06399e833f8cbb57b19d02c8d3b7da4e62cb4a55a437fce2500e",
+        "chat_ai/navigation.py": "3aeb3a2d946fb01cfb816b8fd6137edb2e079abd0e0fa3c0f2dd76910aa5fb42",
+        "chat_ai/tests.py": "54d94683e544d1e25837be7df3162fc0eb372970380f096a75582a95a15fcebd",
+        "chat_ai/urls.py": "8d50f03fe165fa7992973e10646903ac36a3f05cef38ff8f5156e1f4ebf9ac7a",
+        "chat_ai/knowledge.py": "52f48c588ac58beed72fef21b8e6473e03e272f45ea44a2ffb6d0d3080bd733e",
+        "chat_ai/test_documents.py": "6d5f816ad283ab112ec43cf5d81187d807d665d524bee7e2028bcb8a57ba89c0",
+        "chat_ai/views.py": "553bbbc35305f4c4c714306df78b7452de21a1fb3443e92094cc36d0119319bf",
+        "chat_ai/test_client_search.py": "214879029bc9c16fff32bdfec394a678044005279cbef66e07df030c3a3bd736"
+      },
+      "management_projet": {
+        "chat_ai/test_targets.py": "811f25f899b996375ef0259719e02c483df86df4a1e7ef3b08452317f2e56e36",
+        "chat_ai/planner.py": "9f9551756b3c2bf8ab51f29bcbde91cc0293f0e0d0d9e3ba9f94554e662456fe",
+        "chat_ai/labels.py": "8ce707912638039d4d9745a4a4fe2e4bd00a74e11924bcd69e073668e9fab277",
+        "chat_ai/services.py": "075aaecccc567bd502f8270940fddbb503b6b661f86345cb7a255d7793df664f",
+        "chat_ai/targets.py": "26c9967026c30a971b661e9bb7d5c56fb71fea15f6b2450ae92c8e6b85fec0d4",
+        "chat_ai/models.py": "0ccada91b65fa966a3c3b168eb470a6dac2d00ceb8308e5485d257cd327f826b",
+        "chat_ai/provider.py": "0fd8b621c26adb2d6af179d23720b34ee68c2785c6a4f2cf2e2f92770c167e50",
+        "chat_ai/shortcuts.py": "3f4968fcfaa3b9627c68e0d1884b6bfb8b289e3e924da3714f4eb40de2f3b4e8",
+        "chat_ai/tools.py": "4a34fe503ade55e048434ea1aae1a15a025a2578667d54e4ca35111da5d4f688",
+        "chat_ai/security.py": "6fffdfe91b88695ecf2f5bc701de2e87af46f222dc26436b5f6a37d16126dd4e",
+        "chat_ai/test_streaming.py": "d1daa9dcc623cdf4c91ce0b47471e469d2abecc78d8c1f9a88cfc16644fe7b20",
+        "chat_ai/actions.py": "e63c45a5644315843cb2076ad0e7ec8b47f0e34d3c54ff1c0438f83097ccd105",
+        "chat_ai/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "chat_ai/apps.py": "c21914a2336c89f8b789114209060fac3728f26fbb5cbf01cbdfcc88363a7a49",
+        "chat_ai/test_ordinal_targets.py": "af87094507a31feebab996c43b418b65464dba12c2f16e72d2a2f8ca8dde80ec",
+        "chat_ai/admin.py": "4a83367b70fa181222e7194b89bf0abfe28614e78dd18f9305ac64324ef219b7",
+        "chat_ai/resources.py": "3e8b0c1d816dc230ec7761fe482a90c2c5cd680ae1a786f5c70620706e73fb84",
+        "chat_ai/navigation.py": "cb49fb9a6777b58208477483d028fb88c2dbdfb39369dc82cb8d8703be852627",
+        "chat_ai/tests.py": "3cb6e85f530cef285f54dd6395d6b3865da12dac95deacbaa1c142e8b4093016",
+        "chat_ai/urls.py": "8d50f03fe165fa7992973e10646903ac36a3f05cef38ff8f5156e1f4ebf9ac7a",
+        "chat_ai/knowledge.py": "108d66a6727f56fda3bb802798074a8d05eed3536cb365d71e092341ee1f692b",
+        "chat_ai/views.py": "d54e129966f9f1832ed122eef6af8b4f6800c9d9e9dc1558020c0d0437e9ae66",
+        "chat_ai/test_planner_language.py": "5951a46c0343fe139d7d6cebecdaa7472a59e87ea52ddc33e6f0f43beed6790f",
+        "project/filters.py": "53f7ffe6a4aa09bed4d67dd975facb3a30110d6ac583524d73209c8eec58c7e1"
+      },
+      "design_workflow": {
+        "chat_ai/planner.py": "a7aadd71a5d3ed53ce490ed0729295f8db439ad6562f0c2a4f1aadfc1bced70c",
+        "chat_ai/labels.py": "f6cb52ee76c2e6e3327de2f110d8569693f683c9fa07fe28892583231979580f",
+        "chat_ai/services.py": "e7310cb4dc63805e6e998e39edbdc7084e955f8b0126c974ae3a10a6c5eb2d24",
+        "chat_ai/tasks.py": "7bafaadd7e42fd2ae0492220a1b0ed5b12f60a604d4aa4756a5ca9b35ce86b8f",
+        "chat_ai/models.py": "0c10dfec621bd2fbc5b6d47dd1f513c529675daa611412f764379aadcf9fe02e",
+        "chat_ai/shortcuts.py": "fccd5500b2913aaa461feb13b150fee4424946536d869e9b505a27cdcf7f3d89",
+        "chat_ai/tools.py": "3cbc13622cf9831ea8dcbd978b2e267b9409d90a85bb012a67ef980a0b93399e",
+        "chat_ai/security.py": "2acf362364117a7b8211921389fd321281f28e4a8abc923d33e8b5d22307192d",
+        "chat_ai/actions.py": "a00a2d3138a14810f4343822398e87093c1510c8d8722381556a69408a242c56",
+        "chat_ai/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "chat_ai/model.py": "2cabb17c8b6992008e1a3bfe63aca8fbc370aecf7c27248114ac6ded12f44a9d",
+        "chat_ai/test_ordinal_targets.py": "9c001bdfa703ff7edb3492125ca6937845fb60186df4353f50dfacaa3b1e1114",
+        "chat_ai/admin.py": "a3259d7f9536f03e881a96dd99612b0e3f1fe67f079d54037105af8edc7295d2",
+        "chat_ai/resources.py": "2950b6ae8245acb53c2cf47417223fa013478f030c1fdedb33c73273207a1963",
+        "chat_ai/navigation.py": "3b2a17ffc49a4762403b7e7a2cb2936febd7abd61919ed97b5b6548b76ff699c",
+        "chat_ai/tests.py": "3de612b0a4385c7db5ccdb58951e1d3bab3a9997be051fc790dc4fee1e7410f9",
+        "chat_ai/urls.py": "4224bf3ebaf1782a80e1be0277307464d72d1ac0bc1345afa5d1b676e9078613",
+        "chat_ai/knowledge.py": "09fa08d126e1fd34f70040e01f873d0b2698fc05de80fa03cfffa26b8f4c79ed",
+        "chat_ai/views.py": "f3ec75298963eefbe153b13ffea7c5db96ccf7323ae779575af1db4e37a40e19",
+        "design_workflow/models.py": "5fb35562f91f68b037dd3041c70c08b07b242c498f4e4097f538b456fed07865"
+      }
+    }
+  }
+}

@@ -1,0 +1,699 @@
+{
+  "status": "STATIC CHECKS PASSED; NUMERICAL REHEARSAL PENDING",
+  "manifest_sha256": "57683e286e0a585f9eef6c6f9ed13a86b27d458cf8a990d30e97a43c776c3f75",
+  "input_sha256": {
+    "train": "5f3f25efb76d01ba2e76e542c3808bafe0b6bf2430b73051f4a5d2287d7b3e37",
+    "valid": "9f3d88ccf72f651f869bbb8f19495ed1570b1b2fe49aa67351f79ef7142e584d"
+  },
+  "rows_checked": {
+    "train": 2492,
+    "valid": 319
+  },
+  "exact_input_label_conflicts": 0,
+  "exact_input_cross_split_overlap": 0,
+  "complete_epoch_schedule": [
+    {
+      "first_step": 1,
+      "last_step": 300,
+      "by_application": {
+        "management_projet": 122,
+        "facturation": 104,
+        "design_workflow": 56,
+        "contrat": 18
+      }
+    },
+    {
+      "first_step": 301,
+      "last_step": 600,
+      "by_application": {
+        "design_workflow": 57,
+        "contrat": 19,
+        "facturation": 104,
+        "management_projet": 120
+      }
+    },
+    {
+      "first_step": 601,
+      "last_step": 900,
+      "by_application": {
+        "management_projet": 122,
+        "facturation": 104,
+        "design_workflow": 56,
+        "contrat": 18
+      }
+    },
+    {
+      "first_step": 901,
+      "last_step": 1200,
+      "by_application": {
+        "management_projet": 121,
+        "facturation": 104,
+        "design_workflow": 56,
+        "contrat": 19
+      }
+    },
+    {
+      "first_step": 1201,
+      "last_step": 1500,
+      "by_application": {
+        "management_projet": 122,
+        "design_workflow": 57,
+        "facturation": 103,
+        "contrat": 18
+      }
+    },
+    {
+      "first_step": 1501,
+      "last_step": 1800,
+      "by_application": {
+        "facturation": 104,
+        "management_projet": 121,
+        "design_workflow": 56,
+        "contrat": 19
+      }
+    },
+    {
+      "first_step": 1801,
+      "last_step": 2100,
+      "by_application": {
+        "facturation": 104,
+        "management_projet": 122,
+        "design_workflow": 56,
+        "contrat": 18
+      }
+    },
+    {
+      "first_step": 2101,
+      "last_step": 2400,
+      "by_application": {
+        "design_workflow": 57,
+        "facturation": 104,
+        "management_projet": 121,
+        "contrat": 18
+      }
+    },
+    {
+      "first_step": 2401,
+      "last_step": 2492,
+      "by_application": {
+        "facturation": 32,
+        "management_projet": 37,
+        "contrat": 6,
+        "design_workflow": 17
+      }
+    }
+  ],
+  "rehearsal": {
+    "row_indices": [
+      2229,
+      1882,
+      1382,
+      2456,
+      65,
+      409,
+      1132,
+      2322,
+      2346,
+      1626,
+      2239,
+      1814,
+      1599,
+      2428,
+      330,
+      564,
+      251,
+      2337,
+      2415,
+      128,
+      1704,
+      374,
+      1285,
+      2485,
+      196,
+      1025,
+      269,
+      1289,
+      2410,
+      2238,
+      909,
+      1506,
+      2117,
+      566,
+      101,
+      2421,
+      1295,
+      391,
+      704,
+      1636,
+      2400,
+      1513,
+      1717,
+      1993,
+      1629,
+      2464,
+      1271,
+      454,
+      548,
+      450,
+      2404,
+      1413,
+      1014,
+      488,
+      89,
+      2469,
+      1322,
+      2292,
+      207
+    ],
+    "count": 59,
+    "by_application": {
+      "facturation": 23,
+      "management_projet": 13,
+      "design_workflow": 12,
+      "contrat": 11
+    },
+    "covered_features": [
+      [
+        "contrat",
+        "operation",
+        "\"delete\""
+      ],
+      [
+        "contrat",
+        "operation",
+        "\"list\""
+      ],
+      [
+        "contrat",
+        "operation",
+        "\"open\""
+      ],
+      [
+        "contrat",
+        "operation",
+        "\"update\""
+      ],
+      [
+        "contrat",
+        "reason",
+        "\"missing_details\""
+      ],
+      [
+        "contrat",
+        "reason",
+        "\"unsupported\""
+      ],
+      [
+        "contrat",
+        "tool",
+        "clarify"
+      ],
+      [
+        "contrat",
+        "tool",
+        "contract_document"
+      ],
+      [
+        "contrat",
+        "tool",
+        "get_record"
+      ],
+      [
+        "contrat",
+        "tool",
+        "knowledge"
+      ],
+      [
+        "contrat",
+        "tool",
+        "navigate"
+      ],
+      [
+        "contrat",
+        "tool",
+        "prepare_change"
+      ],
+      [
+        "contrat",
+        "tool",
+        "previous_results"
+      ],
+      [
+        "contrat",
+        "tool",
+        "search_records"
+      ],
+      [
+        "design_workflow",
+        "explicit_language",
+        "en"
+      ],
+      [
+        "design_workflow",
+        "explicit_language",
+        "fr"
+      ],
+      [
+        "design_workflow",
+        "operation",
+        "\"archive\""
+      ],
+      [
+        "design_workflow",
+        "operation",
+        "\"list\""
+      ],
+      [
+        "design_workflow",
+        "operation",
+        "\"open\""
+      ],
+      [
+        "design_workflow",
+        "operation",
+        "\"update\""
+      ],
+      [
+        "design_workflow",
+        "reason",
+        "\"missing_details\""
+      ],
+      [
+        "design_workflow",
+        "reason",
+        "\"unsupported\""
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "clarify"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "get_record"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "knowledge"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "navigate"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "prepare_change"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "previous_results"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "search_records"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "time_report"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "workload_summary"
+      ],
+      [
+        "facturation",
+        "explicit_language",
+        "en"
+      ],
+      [
+        "facturation",
+        "explicit_language",
+        "fr"
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"delete\""
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"open\""
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"show\""
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"unpaid\""
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"update\""
+      ],
+      [
+        "facturation",
+        "reason",
+        "\"ambiguous_metric\""
+      ],
+      [
+        "facturation",
+        "reason",
+        "\"missing_details\""
+      ],
+      [
+        "facturation",
+        "reason",
+        "\"unsupported\""
+      ],
+      [
+        "facturation",
+        "tool",
+        "clarify"
+      ],
+      [
+        "facturation",
+        "tool",
+        "financial_summary"
+      ],
+      [
+        "facturation",
+        "tool",
+        "get_invoice"
+      ],
+      [
+        "facturation",
+        "tool",
+        "get_record"
+      ],
+      [
+        "facturation",
+        "tool",
+        "invoice_pdf"
+      ],
+      [
+        "facturation",
+        "tool",
+        "knowledge"
+      ],
+      [
+        "facturation",
+        "tool",
+        "list_payments"
+      ],
+      [
+        "facturation",
+        "tool",
+        "navigate"
+      ],
+      [
+        "facturation",
+        "tool",
+        "prepare_change"
+      ],
+      [
+        "facturation",
+        "tool",
+        "previous_results"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_articles"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_clients"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_documents"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_invoices"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_operations"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_payments"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_quotes"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_users"
+      ],
+      [
+        "management_projet",
+        "explicit_language",
+        "en"
+      ],
+      [
+        "management_projet",
+        "explicit_language",
+        "fr"
+      ],
+      [
+        "management_projet",
+        "operation",
+        "\"delete\""
+      ],
+      [
+        "management_projet",
+        "operation",
+        "\"list\""
+      ],
+      [
+        "management_projet",
+        "operation",
+        "\"open\""
+      ],
+      [
+        "management_projet",
+        "operation",
+        "\"update\""
+      ],
+      [
+        "management_projet",
+        "reason",
+        "\"ambiguous_metric\""
+      ],
+      [
+        "management_projet",
+        "reason",
+        "\"missing_details\""
+      ],
+      [
+        "management_projet",
+        "reason",
+        "\"unsupported\""
+      ],
+      [
+        "management_projet",
+        "tool",
+        "clarify"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "financial_summary"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "get_record"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "knowledge"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "navigate"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "prepare_change"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "previous_results"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "project_report"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "search_records"
+      ]
+    ],
+    "selected_rows_sha256": "0e865b680b84cb52fbf1d467e1c09726349ffd8d54385a662b973cde454e7178",
+    "status": "PREPARATION ONLY; server numerical and export rehearsal not executed",
+    "limitations": [
+      "Covers tool, operation and clarification-reason groups, not every argument combination.",
+      "Language coverage is checked only where rows have explicit language metadata.",
+      "Selection uses training rows only and preserves genuine history.",
+      "This is a mechanics rehearsal proposal, not a validation set or accuracy forecast."
+    ]
+  },
+  "model_weights_loaded": false,
+  "training_executed": false,
+  "accuracy_estimated": false,
+  "limitations": [
+    "Exact input checks preserve all history and tool order; near-duplicate semantic independence is not established.",
+    "Schemas do not prove business-label correctness; native semantic checks and review remain required.",
+    "Tokenizer/loss-mask parity, numeric updates and export checks are separate required checks."
+  ],
+  "known_label_check": {
+    "reviewed_requests": 6,
+    "known_name_targets_passed": true,
+    "accuracy_measured": false,
+    "training_authorized": false
+  },
+  "retained_dataset": {
+    "manifest_sha256": "56f803ca7110ae78bc53c4a208a7dc7456819c024dc588109da46d7fb1520738",
+    "files": {
+      "train.jsonl": "d4b38a4354703fe8ea4a82d2c52a0fdb665927150cd19fe9d7fa411ec32cea26",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "corrections": {
+      "version": "management-name-errata-v2-en-fr",
+      "manifest_sha256": "1ebded1f21cca3921b6e03339df65441255c5d2a883e4241d06028643ad4d0ec",
+      "prefix_version": "shared-v5r9-en-fr",
+      "prefix_manifest_sha256": "74fb992ed98e326ff518cdd4302f36205230c41c3b41b34515ef0c823b2763e5",
+      "original_training_sha256": "d4b38a4354703fe8ea4a82d2c52a0fdb665927150cd19fe9d7fa411ec32cea26",
+      "corrected_training_prefix_sha256": "270ac1ad28cec59e78380150799e99d0d0162161ab367b8526dc0a2ef7ad8d37",
+      "replaced_targets": 6,
+      "unchanged_training_rows": 2333,
+      "validation_unchanged": true
+    },
+    "retention_mode": "six pinned target replacements; remaining retained bytes exact",
+    "scope_sources": {
+      "serial_scope_v2.py": "459dab06b7b5dbb6c4d101c3f1d1eba1728593f5f346d444a6f70ea2091c6344",
+      "prepare_management_name_errata.py": "1545d5c4dd5c5c252ea13191d6d9d15f523f9ff5eebc46c69c42b03396d8afa3",
+      "prepare_management_name_errata_v2.py": "110d912942964b870766afa0c3ed57338effd7da8b40114f25f9440ffa913412",
+      "serial_scope_v3.py": "83986f89fbf075a72faad32ed6f45d9332736d47d1bd5d0c7b40124e654e2312"
+    },
+    "model_acceptance_verified": false,
+    "training_authorized": false
+  },
+  "captures": {
+    "train": [
+      2415,
+      2464,
+      2322,
+      1295,
+      128,
+      1636,
+      909,
+      1882
+    ],
+    "valid": [
+      303,
+      292,
+      211,
+      233,
+      5,
+      20,
+      142,
+      158
+    ]
+  },
+  "scripts": {
+    "audit_training_inputs.py": "4a15488a8dd60dd38b710acb10d47c1c08c5828b2e7501045ef889f3ab5afcba",
+    "training_schedule.py": "0df6692fa360c6ee0f194275941908e89c62496bdc0627fd6d0731e829b7bb83",
+    "serial_scope_v3.py": "83986f89fbf075a72faad32ed6f45d9332736d47d1bd5d0c7b40124e654e2312",
+    "serial_scope_v2.py": "459dab06b7b5dbb6c4d101c3f1d1eba1728593f5f346d444a6f70ea2091c6344",
+    "prepare_management_name_errata.py": "1545d5c4dd5c5c252ea13191d6d9d15f523f9ff5eebc46c69c42b03396d8afa3",
+    "prepare_management_name_errata_v2.py": "110d912942964b870766afa0c3ed57338effd7da8b40114f25f9440ffa913412",
+    "semantic_loss.py": "03b2918106c5e7f9dca0b323cb476b4d8fa241f229543fdb6e49d2312319af12",
+    "text_lora.py": "806b1ccfd267f4ce23b498b13b2303223c5b4320cd7603f07343fdcc84d52b47",
+    "preflight_training.py": "c2db6d4b20e12b30948f6bbda3016fe05f290dad9e9804c0ab195a189e330c5b",
+    "attest_colibri.py": "0f17fcb624839a3b38658733490d159b8d76aaba0b800cfc296f690cc6908f09",
+    "rehearse_cpu_v2.py": "75df93babae009b3b6006e45df84220504535301aef605d44a71c2a64b807373"
+  },
+  "model_acceptance_verified": false,
+  "training_authorized": false,
+  "correction_artifacts": {
+    "training/datasets/management-name-errata-v2-en-fr/manifest.json": "1ebded1f21cca3921b6e03339df65441255c5d2a883e4241d06028643ad4d0ec",
+    "training/datasets/management-name-errata-v2-en-fr/train.replacements.jsonl": "c1c8da2de630a6ba304737ddfb386fb04713952437c55cf4f14ac14505631860",
+    "training/datasets/shared-dialogue-v1-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da",
+    "training/datasets/shared-dialogue-v1-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+    "training/datasets/shared-dialogue-v1-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": "35ea0592763e6c5fec0d3a72f51887d19d68de1fe94dfaf10685b4ee6e424cba",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": "4bba62427783498ef0b28c06f2bfe838709551ec84e4e1a1b7528a0d07ea1bc7",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+    "training/datasets/shared-dialogue-v2-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da",
+    "training/datasets/shared-dialogue-v2-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+    "training/datasets/shared-dialogue-v2-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": "6ad3954b01fb07299952c9ee566e6d56ae36b34201aff75da4ee3c1d705b0f49",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": "a59f750fffeb6d9868b11d7be6493e3985ab7ed295981139afc11cbf8cd5f6fe",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+    "training/datasets/shared-v5r8-fresh-en-fr/controls.eval.jsonl": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+    "training/datasets/shared-v5r9-en-fr/manifest.json": "74fb992ed98e326ff518cdd4302f36205230c41c3b41b34515ef0c823b2763e5",
+    "training/datasets/shared-v5r9-en-fr/train.jsonl": "270ac1ad28cec59e78380150799e99d0d0162161ab367b8526dc0a2ef7ad8d37",
+    "training/datasets/shared-v5r9-en-fr/valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+  },
+  "artifact_root_requirement": "Explicit --correction-root containing the listed canonical relative files; never inferred from scripts location.",
+  "isolated_startup_test": "Passed in a temporary scripts/data/accepted-data/controls layout with model-library imports deliberately blocked.",
+  "scope": "Configuration and synthetic integrity checks only. No numerical optimization, model inference or acceptance.",
+  "verification": {
+    "training_integrity_tests_passed": 260,
+    "focused_tests_passed": 24,
+    "reviewer_findings_remaining": 0,
+    "test_source_sha256": {
+      "test_serial_scope_v3.py": "e7a445eb464f4f66440dcf7e13f0acad6b207037af134c9c42ff43dc9d2bb44e",
+      "test_serial_runtime_v4.py": "11bde2a60086d79107ed4e81a9fb30217657fe065e842871d5326095d3fd345f"
+    }
+  }
+}
