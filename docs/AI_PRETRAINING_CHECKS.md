@@ -86,7 +86,11 @@ These explicit settings match the current reviewed training configuration. The n
 
 The runner checks finite losses, gradients, parameters and optimizer state. All intended layers must participate and must receive nonzero gradients and actual adapter updates over the selected examples. It also verifies that frozen base parameters remain unchanged.
 
-Before/after captures preserve independently rendered prompts through hashes, raw generated token IDs, replies, parsed actions, schema validity, termination state and errors. Complete tool calls are accepted without requiring a final EOS token, matching the serving path. Training and validation results remain separate.
+Before/after captures preserve independently rendered prompts through hashes, raw generated token IDs, unfiltered replies, filtered serving replies, matched text stops, parsed actions, schema validity, termination state and errors. After native terminal EOS removal, the runner applies the pinned Qwen chat StopFilter before the native thinking splitter, tool parser and schema validation. The role boundaries im_end and im_start stop parsing even when leading; a tool call after a boundary is not credited. Complete calls before the boundary remain valid without requiring final EOS. Training and validation results remain separate.
+
+Captures and plans carry the qwen36-stop-filter-v1 contract. Replay loading rejects older unfiltered evidence. Raw HF generation can continue beyond a textual stop, so its token count is diagnostic and must not be presented as served-token parity. The no-thinking splitter preserves the pinned runtime behavior rather than assuming unexpected opening think markers create a new reasoning block.
+
+All four corrected preparations were rechecked with this runner: dataset hashes and selected rehearsal rows are unchanged. Earlier metadata/static reports remain historical evidence. The [stop-handling report](../training/reports/rehearsal-stop-preflight-20261014.json) supersedes their rehearsal-source identity and records the current parser and test hashes. No numerical rehearsal or live export comparison is claimed.
 
 The disposable adapter is fingerprinted, and its saved tensors must equal the live adapter used for the final captures. Completion binds the plan, captures and metrics by hash. These records belong in ignored private evaluation output, not a public source commit.
 

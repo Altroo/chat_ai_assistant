@@ -34,6 +34,10 @@ def load_captures(rehearsal, data):
     if fingerprint(adapter, [path for path in adapter.rglob('*') if path.is_file()]) != proof:
         raise ValueError('Disposable adapter changed')
     plan = json.loads(payloads['plan.json'])
+    if (plan.get('capture_contract') != 'qwen36-stop-filter-v1' or
+            plan.get('chat_stop_policy') != {
+                'sequences': ['<|im_end|>', '<|im_start|>'], 'ignore_leading': False}):
+        raise ValueError('Rehearsal lacks the pinned serving stop contract')
     if digest((data / 'manifest.json').read_bytes()) != plan['audit']['manifest_sha256']:
         raise ValueError('Dataset manifest changed')
     rows = {}
@@ -56,6 +60,12 @@ def load_captures(rehearsal, data):
         if captured != events or [(item['split'], item['row_index']) for item in captured] != selected:
             raise ValueError('Capture coverage differs from the frozen plan')
         for item in captured:
+            if (item.get('capture_contract') != plan['capture_contract'] or
+                    not isinstance(item.get('reply'), str) or
+                    not isinstance(item.get('served_reply'), str) or
+                    'matched_stop' not in item or
+                    item['matched_stop'] not in (None, *plan['chat_stop_policy']['sequences'])):
+                raise ValueError('Capture lacks filtered serving evidence')
             split, index = item['split'], item['row_index']
             if type(index) is not int or index < 0 or index >= len(rows[split]):
                 raise ValueError('Invalid capture row index')

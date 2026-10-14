@@ -169,7 +169,8 @@ def frozen_parameter_digest(model, torch):
     return value.hexdigest()
 
 
-def capture(model, tokenizer, rows, indices, parser, renderer, splitter, torch, generation_class, context, emit, admit):
+def capture(model, tokenizer, rows, indices, parser, renderer, splitter, stop_filter_class,
+            stop_sequences, torch, generation_class, context, emit, admit):
     mode, rng = model.training, torch.random.get_rng_state()
     model.eval()
     eos = [tokenizer.convert_tokens_to_ids(token) for token in ('<|im_end|>', '<|endoftext|>')]
@@ -207,9 +208,16 @@ def capture(model, tokenizer, rows, indices, parser, renderer, splitter, torch, 
                 terminal = bool(len(tokens) and int(tokens[-1]) in eos)
                 reply = tokenizer.decode(tokens[:-1] if terminal else tokens,
                     skip_special_tokens=False, clean_up_tokenization_spaces=False)
+                # Match the pinned Qwen chat serving path before interpreting tools.
+                # Keep the unfiltered decode and all generated IDs for diagnosis.
+                chunks = []
+                stop_filter = stop_filter_class(stop_sequences, chunks.append, ignore_leading=False)
+                stop_filter.feed(reply)
+                stop_filter.finish()
+                served_reply = ''.join(chunks)
                 action, parse_error, schema_valid = None, None, False
                 try:
-                    _, answer = splitter(reply, enable_thinking=False, add_generation_prompt=True)
+                    _, answer = splitter(served_reply, enable_thinking=False, add_generation_prompt=True)
                     _, calls = parser(answer, row['tools'])
                     if len(calls) == 1:
                         function = calls[0]['function']
@@ -219,7 +227,7 @@ def capture(model, tokenizer, rows, indices, parser, renderer, splitter, torch, 
                             raise ValueError('Generated tool was not offered')
                         validate(action['arguments'], offered[action['name']])
                         schema_valid = True
-                    elif not calls and not terminal and len(tokens) >= budget:
+                    elif not calls and not terminal and not stop_filter.stopped() and len(tokens) >= budget:
                         parse_error = 'INCOMPLETE_RESPONSE'
                 except (KeyError, TypeError, ValueError, ValidationError) as error:
                     parse_error = type(error).__name__
@@ -227,7 +235,9 @@ def capture(model, tokenizer, rows, indices, parser, renderer, splitter, torch, 
                     'input_sha256': digest(model_input_key(row).encode()),
                     'prompt_sha256': digest(prompt.encode()), 'prompt_tokens': count,
                     'generated_tokens': len(tokens), 'generated_token_ids': tokens.tolist(),
-                    'terminal_eos': terminal, 'reply': reply, 'parse_error': parse_error, 'schema_valid': schema_valid,
+                    'terminal_eos': terminal, 'reply': reply, 'served_reply': served_reply,
+                    'matched_stop': stop_filter.matched, 'capture_contract': 'qwen36-stop-filter-v1',
+                    'parse_error': parse_error, 'schema_valid': schema_valid,
                     'action': action, 'matches_training_or_development_target': schema_valid and encoded(action) == encoded(target(row)),
                     'seconds': time.monotonic() - started}
                 records.append(record)
@@ -253,7 +263,13 @@ def run(args):
     memory()
     import sys
     sys.path.insert(0, str(args.runtime / 'c'))
-    from openai_server import parse_qwen_tool_calls, render_chat_qwen, split_thinking_reply
+    import openai_server as serving
+    # Imported modules default to GLM; the isolated worker serves this Qwen model.
+    serving.ARCH, serving.CHAT_FLAVOR = 'qwen36', None
+    from openai_server import parse_qwen_tool_calls, render_chat_qwen, split_thinking_reply, StopFilter
+    stop_sequences, ignore_leading = serving.stop_policy({}, chat=True)
+    if tuple(stop_sequences) != ('<|im_end|>', '<|im_start|>') or ignore_leading:
+        raise ValueError('Pinned Qwen chat stop policy changed')
     from preflight_training import verify_split
     from attest_colibri import fingerprint
     runtime = fingerprint(args.runtime, [args.runtime / 'c/qwen36', args.runtime / 'c/coli',
@@ -299,6 +315,8 @@ def run(args):
         'semantic_loss_weight', 'lora_layers', 'lora_rank', 'lora_alpha')}
     save('plan.json', {'scope': 'Disposable mechanics rehearsal; not model acceptance',
         'audit': checked, 'captures': captures, 'stage': args.stage, 'retained_dataset': lineage,
+        'capture_contract': 'qwen36-stop-filter-v1',
+        'chat_stop_policy': {'sequences': list(stop_sequences), 'ignore_leading': False},
         'trainer_sha256': args.trainer_sha256, 'rehearsal_sha256': SOURCE_SHA256[Path(__file__).name],
         'base_artifacts': base, 'runtime_artifacts': runtime, 'preflight': preflight, 'settings': settings,
         'fixed_settings': {'seed': 17, 'dtype': 'bfloat16', 'attention': 'sdpa',
@@ -316,7 +334,7 @@ def run(args):
                 stream.write(json.dumps(record) + '\n')
                 stream.flush()
             result = capture(model, tokenizer, rows, captures, parse_qwen_tool_calls,
-                render_chat_qwen, split_thinking_reply, torch, GenerationConfig,
+                render_chat_qwen, split_thinking_reply, StopFilter, stop_sequences, torch, GenerationConfig,
                 args.max_seq_length, emit, admit)
         save(label + '.json', result)
     save_capture('before')

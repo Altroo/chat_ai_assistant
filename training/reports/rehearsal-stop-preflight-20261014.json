@@ -1,0 +1,106 @@
+{
+  "status": "STATIC PREPARATIONS REVALIDATED; NUMERICAL EXECUTION PENDING",
+  "scope": "Serving-stop parity for disposable rehearsal captures only",
+  "capture_contract": "qwen36-stop-filter-v1",
+  "parsing_order": [
+    "native terminal EOS removal",
+    "pinned Qwen chat StopFilter",
+    "native thinking splitter",
+    "native Qwen tool parser",
+    "offered-tool schema validation"
+  ],
+  "retained_evidence": [
+    "raw generated token IDs",
+    "unfiltered decoded reply",
+    "filtered serving reply",
+    "matched stop",
+    "terminal EOS",
+    "parsed action",
+    "schema validity",
+    "parse error"
+  ],
+  "source_sha256": {
+    "training/scripts/rehearse_cpu_v2.py": "e3017cbcfea95aa2895cd975b760bb4a601a799768bbec2df174a5ccf9b9775e",
+    "training/scripts/rehearsal_comparison.py": "a6e1cc0675b0aeadd3acfd4ce7be0f9dd199f200495506c755fd32b31c33375e",
+    "training/tests/test_rehearsal_stops.py": "2fd715d3d648f6d7a1cb586399a6319f6a04a79ff85450feed094333e7fe081c",
+    "training/tests/test_rehearsal_comparison.py": "b89fca9e1199c67b647ed75b4c07e1027f9c0b9b0f471e12f936763b5b8ec526",
+    "runtime/colibri/c/openai_server.py": "b72c440a9dbf59b475aed255d5707dfcd547c7c47a4840fde92e7c1f5b8c2c18"
+  },
+  "preparations": {
+    "shared": {
+      "dataset": "shared-v5r9-en-fr",
+      "manifest_sha256": "74fb992ed98e326ff518cdd4302f36205230c41c3b41b34515ef0c823b2763e5",
+      "dataset_hashes_unchanged": true,
+      "rehearsal_selection_unchanged": true,
+      "train_rows": 2339,
+      "valid_rows": 275,
+      "rehearsal_rows": 48,
+      "capture_counts": {
+        "train": 6,
+        "valid": 6
+      },
+      "previous_report_sha256": "1c43eec74be7ae3e0ea292b3a9fcb1229ca0e3ae94bf9ac3982eeb24edbfe797"
+    },
+    "contrat": {
+      "dataset": "shared-v6r10-en-fr",
+      "manifest_sha256": "57683e286e0a585f9eef6c6f9ed13a86b27d458cf8a990d30e97a43c776c3f75",
+      "dataset_hashes_unchanged": true,
+      "rehearsal_selection_unchanged": true,
+      "train_rows": 2492,
+      "valid_rows": 319,
+      "rehearsal_rows": 59,
+      "capture_counts": {
+        "train": 8,
+        "valid": 8
+      },
+      "previous_report_sha256": "5593971a0c5f5422657af19b8305a05002554be582ca561ef49edae2d1647372"
+    },
+    "gestion_magasin": {
+      "dataset": "shared-v7r10-en-fr",
+      "manifest_sha256": "598f53bd51608000105df40ee1b666c585c960916d8ba28cc47dcc3e11e91a94",
+      "dataset_hashes_unchanged": true,
+      "rehearsal_selection_unchanged": true,
+      "train_rows": 2690,
+      "valid_rows": 362,
+      "rehearsal_rows": 72,
+      "capture_counts": {
+        "train": 10,
+        "valid": 10
+      },
+      "previous_report_sha256": "c8780024acff24c4898abe696974a01dd44946cb020e104f6a3b706c6063ce0f"
+    },
+    "reservation": {
+      "dataset": "shared-v8r11-en-fr",
+      "manifest_sha256": "a7c42869e348c275aeb34d43bc3d96233637c27c9d44a5a4cae1d36d6987f3ff",
+      "dataset_hashes_unchanged": true,
+      "rehearsal_selection_unchanged": true,
+      "train_rows": 2870,
+      "valid_rows": 402,
+      "rehearsal_rows": 84,
+      "capture_counts": {
+        "train": 12,
+        "valid": 12
+      },
+      "previous_report_sha256": "c8780024acff24c4898abe696974a01dd44946cb020e104f6a3b706c6063ce0f"
+    }
+  },
+  "targeted_tests_passed": 26,
+  "single_reviewer_findings_remaining": 0,
+  "supersedes_rehearsal_source_identity_in": "training/reports/shared-v6r10-en-fr-pretraining-audit.json",
+  "prior_metadata_and_dataset_reports_preserved": true,
+  "runtime_modified": false,
+  "numerical_training_functions_changed": false,
+  "model_weights_loaded": false,
+  "training_executed": false,
+  "live_export_replay_executed": false,
+  "accuracy_measured": false,
+  "model_accepted": false,
+  "full_training_authorized": false,
+  "limitations": [
+    "Synthetic replay proves this stop-handling case, not model accuracy.",
+    "HF may generate beyond a text stop; its full token count is diagnostic, not served-token parity.",
+    "Full numerical rehearsal, export, worker attestation and replay remain pending after R8 acceptance."
+  ],
+  "training_integrity_tests_passed": 280,
+  "training_integrity_test_seconds": 87.515
+}

@@ -31,7 +31,9 @@ def reference(split='train'):
     return {'split': split, 'row_index': 0, 'application': value['application'],
         'input_sha256': comparison.digest(comparison.model_input_key(value).encode()),
         'prompt_sha256': comparison.digest(b'prompt'), 'prompt_tokens': 7704,
-        'action': comparison.target(value), 'schema_valid': True, 'parse_error': None}
+        'action': comparison.target(value), 'schema_valid': True, 'parse_error': None,
+        'capture_contract': 'qwen36-stop-filter-v1', 'reply': 'synthetic',
+        'served_reply': 'synthetic', 'matched_stop': None}
 
 
 def evidence():
@@ -244,7 +246,9 @@ class ComparisonTests(unittest.TestCase):
             for split in ('train', 'valid'):
                 (data / (split + '.jsonl')).write_bytes(payload)
             (data / 'manifest.json').write_text('{}')
-            plan = {'audit': {'manifest_sha256': comparison.digest(b'{}'),
+            plan = {'capture_contract': 'qwen36-stop-filter-v1',
+                'chat_stop_policy': {'sequences': ['<|im_end|>', '<|im_start|>'], 'ignore_leading': False},
+                'audit': {'manifest_sha256': comparison.digest(b'{}'),
                 'input_sha256': {split: comparison.digest(payload) for split in ('train', 'valid')},
                 'rehearsal': {'row_indices': [0]}}, 'captures': {'train': [0], 'valid': [0]}}
             captured = [reference('train'), reference('valid')]
@@ -263,6 +267,25 @@ class ComparisonTests(unittest.TestCase):
             (rehearsal / 'complete.json').write_text(json.dumps(complete))
             result = comparison.load_captures(rehearsal, data)
             self.assertEqual(result['captures']['after'], captured)
+            # Even a self-consistent older capture must not silently bypass the fix.
+            for altered in ('plan', 'record'):
+                with self.subTest(altered=altered):
+                    if altered == 'plan':
+                        plan.pop('capture_contract')
+                    else:
+                        captured[0].pop('served_reply')
+                    (rehearsal / 'plan.json').write_text(json.dumps(plan))
+                    for phase in ('before', 'after'):
+                        (rehearsal / (phase + '.json')).write_text(json.dumps(captured))
+                        (rehearsal / (phase + '.events.jsonl')).write_text(
+                            ''.join(json.dumps(item) + '\n' for item in captured))
+                    complete['evidence_sha256'] = {name: comparison.digest((rehearsal / name).read_bytes())
+                        for name in comparison.EVIDENCE_FILES}
+                    (rehearsal / 'complete.json').write_text(json.dumps(complete))
+                    with self.assertRaisesRegex(ValueError, 'stop contract|filtered serving evidence'):
+                        comparison.load_captures(rehearsal, data)
+                    plan['capture_contract'] = 'qwen36-stop-filter-v1'
+                    captured[0]['served_reply'] = 'synthetic'
             (adapter / 'extra.json').write_text('{}')
             with self.assertRaisesRegex(ValueError, 'adapter changed'):
                 comparison.load_captures(rehearsal, data)
