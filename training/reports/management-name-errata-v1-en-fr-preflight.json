@@ -1,0 +1,34 @@
+{
+  "status": "PREPARED replacement targets; cumulative refresh and server rehearsal pending",
+  "replacement_manifest_sha256": "3caec977105c98adc000d85abd40200add6c98ada2cf30e8dc8c25cd63d231d8",
+  "generator_sha256": "1545d5c4dd5c5c252ea13191d6d9d15f523f9ff5eebc46c69c42b03396d8afa3",
+  "checks": {
+    "count": 4,
+    "round_trip_passed": 4,
+    "runtime_prefix_parity_passed": 4,
+    "loss_boundary_passed": 4,
+    "semantic_alignment_passed": 4,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 2202,
+    "sha256": "cf4fe52461f11a41cb1041e20ecd689303deb298799136795fb651d9b7d2cf4d"
+  },
+  "corrected_in_memory_curriculum": {
+    "reviewed_requests": 4,
+    "known_name_targets_passed": true,
+    "accuracy_measured": false,
+    "training_authorized": false
+  },
+  "queued_versions_requiring_correction": [
+    "shared-v5r8-en-fr",
+    "shared-v6r9-en-fr",
+    "shared-v7r9-en-fr",
+    "shared-v8r10-en-fr"
+  ],
+  "tokenizer_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+  "runtime_sha256": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35",
+  "tests_passed": 6,
+  "training_executed": false,
+  "model_accuracy_measured": false,
+  "active_r8_changed": false,
+  "held_out_changed": false
+}

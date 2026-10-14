@@ -1,0 +1,84 @@
+{
+  "version": "management-name-errata-v2-en-fr",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "applications": [
+    "management_projet"
+  ],
+  "parent_manifest_sha256": "56f803ca7110ae78bc53c4a208a7dc7456819c024dc588109da46d7fb1520738",
+  "parent_training_sha256": "d4b38a4354703fe8ea4a82d2c52a0fdb665927150cd19fe9d7fa411ec32cea26",
+  "unchanged_validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+  "generator_sha256": "110d912942964b870766afa0c3ed57338effd7da8b40114f25f9440ffa913412",
+  "native_sources": {
+    "chat_ai/tools.py": "4a34fe503ade55e048434ea1aae1a15a025a2578667d54e4ca35111da5d4f688",
+    "chat_ai/resources.py": "3e8b0c1d816dc230ec7761fe482a90c2c5cd680ae1a786f5c70620706e73fb84",
+    "project/filters.py": "53f7ffe6a4aa09bed4d67dd975facb3a30110d6ac583524d73209c8eec58c7e1"
+  },
+  "source_rows": 2339,
+  "replacement_count": 6,
+  "unchanged_rows": 2333,
+  "targets_changed": 6,
+  "requests_changed": 0,
+  "tools_changed": 0,
+  "context_changed": 0,
+  "provenance": [
+    {
+      "source_index": 620,
+      "source_row_sha256": "595142b4809497ae1f85054b2d37c9d98922f5ae30003a650de071bc234f914a",
+      "resource": "client",
+      "old_filter": "query",
+      "new_filter": "client_name"
+    },
+    {
+      "source_index": 621,
+      "source_row_sha256": "71050933043e6ad6c196d7c493ec7d7bb860dbe9998829f79fcf84a88e840e09",
+      "resource": "client",
+      "old_filter": "query",
+      "new_filter": "client_name"
+    },
+    {
+      "source_index": 622,
+      "source_row_sha256": "bc835ff78f79ed53a5e7265d59bd8e113cc53caf3c91fa87ebbaa323c44264db",
+      "resource": "supplier",
+      "old_filter": "query",
+      "new_filter": "supplier_name"
+    },
+    {
+      "source_index": 623,
+      "source_row_sha256": "9c78b9522b3e0c02e54038d1e2f4264fb4aa8d11e36750cedc6132889180acbf",
+      "resource": "supplier",
+      "old_filter": "query",
+      "new_filter": "supplier_name"
+    },
+    {
+      "source_index": 968,
+      "source_row_sha256": "ed434c21ce0c6b2d1866ec4f65e2dd27f32bdfa8a1ff37db240f8165bae520e1",
+      "resource": "project",
+      "old_filter": "query",
+      "new_filter": "project_name"
+    },
+    {
+      "source_index": 969,
+      "source_row_sha256": "b952860eaf683abb608aeea60b7dc2c1eb85bda2fe316dbe3dcfdfccec90285a",
+      "resource": "project",
+      "old_filter": "query",
+      "new_filter": "project_name"
+    }
+  ],
+  "files": {
+    "train.replacements.jsonl": "c1c8da2de630a6ba304737ddfb386fb04713952437c55cf4f14ac14505631860"
+  },
+  "status": "PREPARED replacements; not assembled into a cumulative dataset or trained",
+  "policy": "Replace six indexed training targets in a new cumulative curriculum. Explicit customer/supplier/project name requests use client_name, supplier_name or project_name. Preserve all requests, history, tools, contexts, other rows, validation and held-out inputs. V1 remains historical evidence; V2 includes all its four corrections plus two project-name corrections. Active R8 is unchanged.",
+  "limitations": [
+    "Six confirmed name-only scope mismatches; generic initial lookups before rename remain unchanged.",
+    "Known-label checks are bounded, not a general semantic classifier.",
+    "No numerical training, export or model accuracy improvement is claimed."
+  ],
+  "prior_correction_manifest_sha256": "3caec977105c98adc000d85abd40200add6c98ada2cf30e8dc8c25cd63d231d8",
+  "helper_sha256": {
+    "prepare_management_name_errata.py": "1545d5c4dd5c5c252ea13191d6d9d15f523f9ff5eebc46c69c42b03396d8afa3"
+  }
+}

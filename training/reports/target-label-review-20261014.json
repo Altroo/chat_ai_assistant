@@ -1,0 +1,92 @@
+{
+  "status": "SOURCE REVIEW COMPLETE; model acceptance and numerical rehearsal remain pending",
+  "training_sha256": "d4b38a4354703fe8ea4a82d2c52a0fdb665927150cd19fe9d7fa411ec32cea26",
+  "source_review": {
+    "training_rows": 2339,
+    "coverage_by_group": {
+      "initial_target_search_history": 743,
+      "financial": 324,
+      "date_status": 520,
+      "other_nonsearch": 496,
+      "remaining_search": 256
+    },
+    "independent_reviewers": 1,
+    "method": "One reviewer traced the initial, financial, date/status and remaining non-search groups. Root independently verified source/rows, reviewed the final256 searches, and cross-checked new findings with that same reviewer.",
+    "limitations": [
+      "Coverage is bounded target/schema/context and native semantic review, not proof that every phrase or edit-field value is perfect.",
+      "The312 pure preparation-guard replays do not execute database operations;12 invoice-number cases were source checks.",
+      "Knowledge selection review does not establish live corpus completeness.",
+      "Native tests use controlled synthetic fixtures; no model success rate is inferred.",
+      "Current R8 remains frozen and includes the six identified target errors; future training must use corrected versioned inputs."
+    ]
+  },
+  "confirmed_training_label_errors": {
+    "count": 6,
+    "lines_one_based": [
+      621,
+      622,
+      623,
+      624,
+      969,
+      970
+    ],
+    "replacement_artifact": "management-name-errata-v2-en-fr",
+    "cumulative_curriculum_assembled": false,
+    "requests_history_tools_context_unchanged": true,
+    "validation_and_held_out_unchanged": true
+  },
+  "native_fixes": [
+    {
+      "issue": "Recognize the complete proforma invoice target alias",
+      "targeted_tests_passed": 12,
+      "application": "facturation",
+      "commit": "2fe350c4ee133a695225be61b5888c42991694a3",
+      "source_sha256": {
+        "chat_ai/actions.py": "59ffe668c040bec092afd8715509924f225cdc525f90020b26484385fea68984",
+        "chat_ai/test_ordinal_targets.py": "e6fc1cd04b9fcad359f27087141b99b61d28ae4f65e78453f52d05e3e6bcacb6"
+      }
+    },
+    {
+      "issue": "Validate card and carte target aliases before preparing changes",
+      "targeted_tests_passed": 9,
+      "assistant_suite_passed": 97,
+      "test_limitation": "Existing threaded test leaves a test-database teardown connection warning; assertions pass.",
+      "application": "design_workflow",
+      "commit": "39ab808e3d25c724fffd67c0d580d70be23e0d98",
+      "source_sha256": {
+        "chat_ai/actions.py": "a00a2d3138a14810f4343822398e87093c1510c8d8722381556a69408a242c56",
+        "chat_ai/test_ordinal_targets.py": "9c001bdfa703ff7edb3492125ca6937845fb60186df4353f50dfacaa3b1e1114"
+      }
+    },
+    {
+      "issue": "Match full customer names across first and last name fields",
+      "targeted_tests_passed": 7,
+      "assistant_suite_passed": 875,
+      "application": "facturation",
+      "commit": "ebe7ce4122aa95458269c54ab767864324455a7a",
+      "source_sha256": {
+        "chat_ai/tools.py": "2ae44104618a4a0fe3586399ad28a3cb1b06a477ecd9812c80f7b1cbf5969c0a",
+        "chat_ai/test_client_search.py": "214879029bc9c16fff32bdfec394a678044005279cbef66e07df030c3a3bd736"
+      }
+    }
+  ],
+  "training_integrity_tests_passed": 227,
+  "replacement_integrity_tests_passed": 11,
+  "replacement_metadata_checks_passed": 6,
+  "production_verification": {
+    "all_three_remotes_match": true,
+    "deployed_source_verified": true,
+    "healthy": true,
+    "migrations_checked": true,
+    "business_counts_preserved": true,
+    "database_volumes_preserved": true,
+    "feature_flags_unchanged": true,
+    "hooks_unchanged": true,
+    "training_unchanged": true,
+    "production_model_unchanged": true
+  },
+  "numerical_rehearsal_executed": false,
+  "model_accuracy_measured": false,
+  "active_r8_changed": false,
+  "next_run_requirement": "Replace the six indexed training rows in a new cumulative version, pass known-label and full static checks, bind the selected predecessor, and complete server numerical plus Colibri export replay before full training."
+}

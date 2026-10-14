@@ -18,6 +18,16 @@ The purpose is to detect mistakes before another full training run. This does no
 
 ## Before launching
 
+The completed [source review](../training/reports/target-label-review-20261014.json) traced all 2,339 current training targets in bounded groups and led to three tested native fixes. This coverage does not prove model behavior; use it alongside the numerical and export checks below.
+
+The semantic review found six incorrect retained Management Projet name-search labels. Their corrections are versioned in management-name-errata-v2-en-fr. Before any new full run, replace the exact six parent rows in a new cumulative version, preserving all other required rows and frozen evaluation inputs. The current R8 and queued V6r9/V7r9/V8r10 files remain immutable historical preparations and fail this new known-label check.
+
+~~~sh
+python -B training/scripts/prepare_management_name_errata_v2.py --check-data "$REHEARSAL_DATA"
+~~~
+
+This mandatory operator check rejects the known broad-search labels, incorrect replacement fields and append-only corrections. It covers six reviewed requests, not arbitrary semantic errors. Run the complete static audit, native semantic review and numerical/export rehearsal as separate checks. Passing this command alone never authorizes training. No later-stage automatic launcher is enabled.
+
 The operator must verify that the preceding controller has completed training, checkpoint comparison and acceptance evaluation. Idle services between controller phases are insufficient. Bind the selected base model, exact dataset, retained curriculum, trainer source and full-run configuration before starting. A later application also requires its predecessor to pass the existing acceptance gates.
 
 Only one training, rehearsal, export or evaluation workload runs at a time. The runner rejects active competing training processes and relevant running, starting or stopping services. Production inference is allowed to remain running. The existing server launcher must retain the resource budget and at least 10% available system memory; no additional model is downloaded.
@@ -34,7 +44,7 @@ This validates full dataset hashes, declared application scope, trusted-context 
 
 The rehearse_cpu.py runner validates the full cumulative curriculum and predecessor before selecting optimization rows. It extracts only five named functions from the hash-pinned trainer, without running that file's top-level CLI. Its encoding and loss functions match the shared and serial trainers. The trainer's adjacent semantic-loss and LoRA helpers must match the rehearsal helpers before use, plan creation and completion.
 
-The current metadata preparations select:
+The current metadata preparations select the rows below. Their cumulative datasets need corrected successors before execution; these counts are preparation evidence, not launch approval:
 
 | Curriculum | Optimization rows | Trained-row captures | Development-validation captures |
 | --- | ---: | ---: | ---: |
@@ -51,8 +61,8 @@ The following illustrates the Contracts rehearsal inside the approved server exe
 CHAT_AI_TRAINING_SERVER=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
 python -B training/scripts/rehearse_cpu.py \
   --stage contrat \
-  --data training/datasets/shared-v6r9-en-fr \
-  --retained-data training/datasets/shared-v5r8-en-fr \
+  --data "$REHEARSAL_DATA" \
+  --retained-data "$REHEARSAL_RETAINED_DATA" \
   --model "$REHEARSAL_BASE_MODEL" \
   --runtime "$REHEARSAL_RUNTIME" \
   --trainer training/scripts/train_cpu_serial_v3.py \
