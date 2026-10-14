@@ -1,8 +1,8 @@
 # Pre-training correctness checks
 
-IMPLEMENTED and verified as preparation: the corrected Contracts curriculum contains 2,492 training and 319 validation examples. Exactly six retained targets change; the other 2,486 training rows, validation and evaluation inputs remain unchanged. All 260 training-integrity tests pass, including 24 focused mutation/startup tests. A subprocess test stages scripts, current data, predecessor data and reviewed control artifacts in separate temporary folders, blocks model-library imports and verifies that the trainer, capacity probe and rehearsal accept the complete corrected curriculum. Missing or changed artifacts fail before model import. The single reviewer found no remaining issues.
+IMPLEMENTED and verified as preparation: corrected cumulative datasets cover Contracts V6r10 (2,492 training / 319 validation), Gestion Magasin V7r10 (2,690 / 362) and Reservation V8r11 (2,870 / 402). Exactly six retained target labels change from each prior preparation; all other rows, application additions, validation and evaluation inputs remain unchanged. All 269 training-integrity tests pass, including 24 Contracts mutation/startup checks and nine final-stage tests. The latter reject skipped predecessors and altered retained rows before model import. A separate subprocess test verifies the isolated scripts/data/control layout. The single reviewer found no remaining issues.
 
-Metadata checks pass all 2,811 training/validation examples and 564 evaluation cases. The full static audit finds no contradictory labels for identical inputs or exact train/validation overlap and selects 59 training-only rehearsal rows, with eight training and eight development captures. These checks do not establish semantic independence, numerical learning, export parity or model accuracy. [Metadata evidence](../training/reports/shared-v6r10-en-fr-metadata-preflight.json), [static audit and artifact inventory](../training/reports/shared-v6r10-en-fr-pretraining-audit.json).
+Final metadata checks pass all 3,272 training/validation examples and 738 evaluation cases, including the exact retained Contracts and Gestion Magasin prefixes. Full static audits select 59, 72 and 84 training-only rehearsal rows respectively. These checks do not establish semantic independence, numerical learning, export parity or model accuracy. No later-stage model has been trained or accepted. [Contracts metadata](../training/reports/shared-v6r10-en-fr-metadata-preflight.json), [Contracts audit and artifact inventory](../training/reports/shared-v6r10-en-fr-pretraining-audit.json), [final cumulative metadata](../training/reports/shared-v8r11-en-fr-metadata-preflight.json), [later-stage audits](../training/reports/later-name-corrections-preflight-20261014.json).
 
 IMPLEMENTED and verified as preparation: a review of all 180 Reservation training rows found four requests with misleading date wording. They now explicitly refer to reservation arrival dates or rental years and current returned/paid status. All action labels, histories, validation and held-out bytes remain unchanged. All 216 training integrity tests pass; final metadata checks pass 3,272 training/validation rows and 738 evaluation cases. The corrected final-stage preparation is shared-v8r10-en-fr, retaining the complete shared-v7r9-en-fr prefix. Native date filters and financial calculation sources are pinned. [Correction evidence](../training/reports/reservation-temporal-corrections-20261014.json).
 
@@ -50,14 +50,14 @@ This validates full dataset hashes, declared application scope, trusted-context 
 
 The rehearse_cpu_v2.py runner validates the full cumulative curriculum and predecessor before selecting optimization rows. It extracts only five named functions from the hash-pinned trainer, without running that file's top-level CLI. Its encoding and loss functions match the shared and serial trainers. The trainer's adjacent semantic-loss, LoRA, retention and correction helpers must match the rehearsal helpers before use, plan creation and completion.
 
-The metadata preparations select the rows below. Only the corrected shared and Contracts preparations pass the known-label check. Later stages need corrected successors, and every stage needs accepted model bindings before execution. These counts are preparation evidence, not launch approval:
+The metadata preparations select the rows below. All corrected curricula listed below pass the known-label check. Every stage still needs its actual accepted predecessor model and completed run bindings before execution. These counts are preparation evidence, not launch approval:
 
 | Curriculum | Optimization rows | Trained-row captures | Development-validation captures |
 | --- | ---: | ---: | ---: |
 | Shared V5r9 | 48 | 6 | 6 |
 | Contracts V6r10 | 59 | 8 | 8 |
-| Gestion Magasin V7r9 | 72 | 10 | 10 |
-| Reservation V8r10 | 84 | 12 | 12 |
+| Gestion Magasin V7r10 | 72 | 10 | 10 |
+| Reservation V8r11 | 84 | 12 | 12 |
 
 Captures are selected before inference, without outcome-based selection. Every trained-row capture belongs to the selected optimization rows. Only training rows receive updates. No acceptance case is used for optimization or checkpoint selection.
 
