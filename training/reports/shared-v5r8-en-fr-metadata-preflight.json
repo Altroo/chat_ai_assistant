@@ -1,0 +1,45 @@
+{
+  "version": "shared-v5r8-preparation",
+  "manifest_sha256": "56f803ca7110ae78bc53c4a208a7dc7456819c024dc588109da46d7fb1520738",
+  "generator_sha256": "15a2dbfe9694aa7ea39ba96d11c52183baac04028452c69a60145669e994699a",
+  "tokenizer_and_runtime_match_server": true,
+  "scope": "Tokenizer/template/parser checks only; not model accuracy or training success",
+  "train.jsonl": {
+    "count": 2339,
+    "round_trip_passed": 2339,
+    "runtime_prefix_parity_passed": 2339,
+    "loss_boundary_passed": 2339,
+    "semantic_alignment_passed": 2339,
+    "semantic_loss_weight": 4.0,
+    "maximum_tokens": 7745,
+    "sha256": "d4b38a4354703fe8ea4a82d2c52a0fdb665927150cd19fe9d7fa411ec32cea26"
+  },
+  "valid.jsonl": {
+    "count": 275,
+    "round_trip_passed": 275,
+    "runtime_prefix_parity_passed": 275,
+    "loss_boundary_passed": 275,
+    "semantic_alignment_passed": 275,
+    "semantic_loss_weight": 4.0,
+    "maximum_tokens": 7496,
+    "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+  },
+  "fresh_controls": {
+    "count": 48,
+    "round_trip_passed": 48,
+    "runtime_prefix_parity_passed": 48,
+    "loss_boundary_passed": 48,
+    "semantic_alignment_passed": 48,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 4104,
+    "sha256": "3a0831bc3876842a7554ab7e644afce7648a6887b0d6aeee16c4169736490ff7",
+    "maximum_prompt_tokens": 4014,
+    "reserved_output_tokens": 512,
+    "frozen_file_sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8"
+  },
+  "native_checks": 274,
+  "integrity_tests_passed": 13,
+  "review": "No issues",
+  "training_started": false,
+  "production_changed": false
+}

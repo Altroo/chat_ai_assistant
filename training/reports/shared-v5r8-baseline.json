@@ -1,0 +1,1637 @@
+{
+  "version": "shared-v5r8-baseline",
+  "base_step": 1200,
+  "base_version": "shared-v5r7",
+  "dataset_manifest_sha256": "56f803ca7110ae78bc53c4a208a7dc7456819c024dc588109da46d7fb1520738",
+  "fresh_manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a",
+  "fresh_requests": 48,
+  "fresh_assessment": {
+    "metrics": {
+      "count": 48,
+      "counts": {
+        "tool_correct": 47,
+        "structured_valid": 48,
+        "action_matches": 30
+      },
+      "percent": {
+        "tool_correct": 97.92,
+        "structured_valid": 100.0,
+        "action_matches": 62.5
+      },
+      "exact_arguments": {
+        "passed": 18,
+        "count": 36,
+        "percent": 50.0
+      }
+    },
+    "targets": {
+      "tool_selection": true,
+      "exact_arguments": false,
+      "structured_output": true,
+      "clarification_reason_and_language": true,
+      "critical_model_cases": false
+    },
+    "model_targets_passed": false,
+    "clarifications": {
+      "count": 12,
+      "counts": {
+        "tool_correct": 12,
+        "structured_valid": 12,
+        "action_matches": 12
+      },
+      "percent": {
+        "tool_correct": 100.0,
+        "structured_valid": 100.0,
+        "action_matches": 100.0
+      },
+      "exact_arguments": {
+        "passed": 0,
+        "count": 0,
+        "percent": null
+      }
+    },
+    "critical_model_cases": {
+      "count": 18,
+      "counts": {
+        "tool_correct": 17,
+        "structured_valid": 18,
+        "action_matches": 13
+      },
+      "percent": {
+        "tool_correct": 94.44,
+        "structured_valid": 100.0,
+        "action_matches": 72.22
+      },
+      "exact_arguments": {
+        "passed": 1,
+        "count": 6,
+        "percent": 16.67
+      }
+    },
+    "by_language": {
+      "en": {
+        "count": 24,
+        "counts": {
+          "tool_correct": 24,
+          "structured_valid": 24,
+          "action_matches": 16
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 66.67
+        },
+        "exact_arguments": {
+          "passed": 10,
+          "count": 18,
+          "percent": 55.56
+        }
+      },
+      "fr": {
+        "count": 24,
+        "counts": {
+          "tool_correct": 23,
+          "structured_valid": 24,
+          "action_matches": 14
+        },
+        "percent": {
+          "tool_correct": 95.83,
+          "structured_valid": 100.0,
+          "action_matches": 58.33
+        },
+        "exact_arguments": {
+          "passed": 8,
+          "count": 18,
+          "percent": 44.44
+        }
+      }
+    },
+    "by_reporting_group": {
+      "archived-project": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 2,
+          "count": 2,
+          "percent": 100.0
+        }
+      },
+      "archived-service": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 0
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 0.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 2,
+          "percent": 0.0
+        }
+      },
+      "cancelled-payments": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 0
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 0.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 2,
+          "percent": 0.0
+        }
+      },
+      "current-project-pdf": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 2,
+          "count": 2,
+          "percent": 100.0
+        }
+      },
+      "done-assignee": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 1
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 50.0
+        },
+        "exact_arguments": {
+          "passed": 1,
+          "count": 2,
+          "percent": 50.0
+        }
+      },
+      "expense-range": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 2,
+          "count": 2,
+          "percent": 100.0
+        }
+      },
+      "expenses-navigation": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 2,
+          "count": 2,
+          "percent": 100.0
+        }
+      },
+      "invoice-window": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 1
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 50.0
+        },
+        "exact_arguments": {
+          "passed": 1,
+          "count": 2,
+          "percent": 50.0
+        }
+      },
+      "leap-month-time": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 2,
+          "count": 2,
+          "percent": 100.0
+        }
+      },
+      "literal-invoice-edit": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 0
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 0.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 2,
+          "percent": 0.0
+        }
+      },
+      "logistics-location": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 1
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 50.0
+        },
+        "exact_arguments": {
+          "passed": 1,
+          "count": 2,
+          "percent": 50.0
+        }
+      },
+      "missing-fourth-customer": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "missing-year": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "permanent-delete": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "project-expenses": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 2,
+          "count": 2,
+          "percent": 100.0
+        }
+      },
+      "project-priority-date": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 0
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 0.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 2,
+          "percent": 0.0
+        }
+      },
+      "quote-after-boundary": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 0
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 0.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 2,
+          "percent": 0.0
+        }
+      },
+      "read-only-change": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "read-only-priority": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "supplier-quote-cutoff": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 0
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 0.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 2,
+          "percent": 0.0
+        }
+      },
+      "supplier-revenue-total": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "task-two-fields": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 1,
+          "structured_valid": 2,
+          "action_matches": 1
+        },
+        "percent": {
+          "tool_correct": 50.0,
+          "structured_valid": 100.0,
+          "action_matches": 50.0
+        },
+        "exact_arguments": {
+          "passed": 1,
+          "count": 2,
+          "percent": 50.0
+        }
+      },
+      "third-result": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 2,
+          "count": 2,
+          "percent": 100.0
+        }
+      },
+      "unpaid-customer": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 0
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 0.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 2,
+          "percent": 0.0
+        }
+      }
+    },
+    "distinct_bilingual_scenario_ids": 24,
+    "failures": [
+      {
+        "id": "r8-fresh-facturation-cancelled-payments-fr",
+        "group": "cancelled-payments",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-cancelled-payments-en",
+        "group": "cancelled-payments",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-archived-service-fr",
+        "group": "archived-service",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-archived-service-en",
+        "group": "archived-service",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-invoice-window-fr",
+        "group": "invoice-window",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-quote-after-boundary-fr",
+        "group": "quote-after-boundary",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-quote-after-boundary-en",
+        "group": "quote-after-boundary",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-logistics-location-fr",
+        "group": "logistics-location",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-unpaid-customer-fr",
+        "group": "unpaid-customer",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-unpaid-customer-en",
+        "group": "unpaid-customer",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-literal-invoice-edit-fr",
+        "group": "literal-invoice-edit",
+        "critical": true,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-facturation-literal-invoice-edit-en",
+        "group": "literal-invoice-edit",
+        "critical": true,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-management_projet-supplier-quote-cutoff-fr",
+        "group": "supplier-quote-cutoff",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-management_projet-supplier-quote-cutoff-en",
+        "group": "supplier-quote-cutoff",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-design_workflow-done-assignee-en",
+        "group": "done-assignee",
+        "critical": false,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-design_workflow-task-two-fields-fr",
+        "group": "task-two-fields",
+        "critical": true,
+        "tool_correct": false,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-design_workflow-project-priority-date-fr",
+        "group": "project-priority-date",
+        "critical": true,
+        "tool_correct": true,
+        "structured_valid": true
+      },
+      {
+        "id": "r8-fresh-design_workflow-project-priority-date-en",
+        "group": "project-priority-date",
+        "critical": true,
+        "tool_correct": true,
+        "structured_valid": true
+      }
+    ],
+    "native_backend_security_verified": null,
+    "limitations": [
+      "Separate analysis of frozen events; original benchmark files and scores are unchanged.",
+      "All clarification reason/language and proposed-change arguments must match their labels.",
+      "Knowledge queries are checked only for nonempty text; retrieval factuality is not measured here.",
+      "Bilingual pairs share scenarios; scenario count is not independent statistical certification.",
+      "Original failures informed training categories; originals remain regression tests, not unseen certification.",
+      "No business tools execute here. Native permission, tenant, confirmation and audit tests remain required.",
+      "Passing model targets does not authorize production activation."
+    ]
+  },
+  "fresh_by_application": {
+    "facturation": {
+      "metrics": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 4
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 25.0
+        },
+        "exact_arguments": {
+          "passed": 2,
+          "count": 14,
+          "percent": 14.29
+        }
+      },
+      "targets": {
+        "tool_selection": true,
+        "exact_arguments": false,
+        "structured_output": true,
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false
+      },
+      "model_targets_passed": false,
+      "clarifications": {
+        "count": 2,
+        "counts": {
+          "tool_correct": 2,
+          "structured_valid": 2,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "critical_model_cases": {
+        "count": 4,
+        "counts": {
+          "tool_correct": 4,
+          "structured_valid": 4,
+          "action_matches": 2
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 50.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 2,
+          "percent": 0.0
+        }
+      },
+      "by_language": {
+        "en": {
+          "count": 8,
+          "counts": {
+            "tool_correct": 8,
+            "structured_valid": 8,
+            "action_matches": 3
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 37.5
+          },
+          "exact_arguments": {
+            "passed": 2,
+            "count": 7,
+            "percent": 28.57
+          }
+        },
+        "fr": {
+          "count": 8,
+          "counts": {
+            "tool_correct": 8,
+            "structured_valid": 8,
+            "action_matches": 1
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 12.5
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 7,
+            "percent": 0.0
+          }
+        }
+      },
+      "by_reporting_group": {
+        "archived-service": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 0
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 0.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 2,
+            "percent": 0.0
+          }
+        },
+        "cancelled-payments": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 0
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 0.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 2,
+            "percent": 0.0
+          }
+        },
+        "invoice-window": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 1
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 50.0
+          },
+          "exact_arguments": {
+            "passed": 1,
+            "count": 2,
+            "percent": 50.0
+          }
+        },
+        "literal-invoice-edit": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 0
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 0.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 2,
+            "percent": 0.0
+          }
+        },
+        "logistics-location": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 1
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 50.0
+          },
+          "exact_arguments": {
+            "passed": 1,
+            "count": 2,
+            "percent": 50.0
+          }
+        },
+        "missing-year": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 0,
+            "percent": null
+          }
+        },
+        "quote-after-boundary": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 0
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 0.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 2,
+            "percent": 0.0
+          }
+        },
+        "unpaid-customer": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 0
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 0.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 2,
+            "percent": 0.0
+          }
+        }
+      },
+      "distinct_bilingual_scenario_ids": 8,
+      "failures": [
+        {
+          "id": "r8-fresh-facturation-cancelled-payments-fr",
+          "group": "cancelled-payments",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-cancelled-payments-en",
+          "group": "cancelled-payments",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-archived-service-fr",
+          "group": "archived-service",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-archived-service-en",
+          "group": "archived-service",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-invoice-window-fr",
+          "group": "invoice-window",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-quote-after-boundary-fr",
+          "group": "quote-after-boundary",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-quote-after-boundary-en",
+          "group": "quote-after-boundary",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-logistics-location-fr",
+          "group": "logistics-location",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-unpaid-customer-fr",
+          "group": "unpaid-customer",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-unpaid-customer-en",
+          "group": "unpaid-customer",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-literal-invoice-edit-fr",
+          "group": "literal-invoice-edit",
+          "critical": true,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-facturation-literal-invoice-edit-en",
+          "group": "literal-invoice-edit",
+          "critical": true,
+          "tool_correct": true,
+          "structured_valid": true
+        }
+      ],
+      "native_backend_security_verified": null,
+      "limitations": [
+        "Separate analysis of frozen events; original benchmark files and scores are unchanged.",
+        "All clarification reason/language and proposed-change arguments must match their labels.",
+        "Knowledge queries are checked only for nonempty text; retrieval factuality is not measured here.",
+        "Bilingual pairs share scenarios; scenario count is not independent statistical certification.",
+        "Original failures informed training categories; originals remain regression tests, not unseen certification.",
+        "No business tools execute here. Native permission, tenant, confirmation and audit tests remain required.",
+        "Passing model targets does not authorize production activation."
+      ]
+    },
+    "management_projet": {
+      "metrics": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 14
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 87.5
+        },
+        "exact_arguments": {
+          "passed": 8,
+          "count": 10,
+          "percent": 80.0
+        }
+      },
+      "targets": {
+        "tool_selection": true,
+        "exact_arguments": false,
+        "structured_output": true,
+        "clarification_reason_and_language": true,
+        "critical_model_cases": true
+      },
+      "model_targets_passed": false,
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "tool_correct": 6,
+          "structured_valid": 6,
+          "action_matches": 6
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "critical_model_cases": {
+        "count": 6,
+        "counts": {
+          "tool_correct": 6,
+          "structured_valid": 6,
+          "action_matches": 6
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "by_language": {
+        "en": {
+          "count": 8,
+          "counts": {
+            "tool_correct": 8,
+            "structured_valid": 8,
+            "action_matches": 7
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 87.5
+          },
+          "exact_arguments": {
+            "passed": 4,
+            "count": 5,
+            "percent": 80.0
+          }
+        },
+        "fr": {
+          "count": 8,
+          "counts": {
+            "tool_correct": 8,
+            "structured_valid": 8,
+            "action_matches": 7
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 87.5
+          },
+          "exact_arguments": {
+            "passed": 4,
+            "count": 5,
+            "percent": 80.0
+          }
+        }
+      },
+      "by_reporting_group": {
+        "current-project-pdf": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 2,
+            "count": 2,
+            "percent": 100.0
+          }
+        },
+        "expense-range": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 2,
+            "count": 2,
+            "percent": 100.0
+          }
+        },
+        "expenses-navigation": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 2,
+            "count": 2,
+            "percent": 100.0
+          }
+        },
+        "missing-fourth-customer": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 0,
+            "percent": null
+          }
+        },
+        "project-expenses": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 2,
+            "count": 2,
+            "percent": 100.0
+          }
+        },
+        "read-only-change": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 0,
+            "percent": null
+          }
+        },
+        "supplier-quote-cutoff": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 0
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 0.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 2,
+            "percent": 0.0
+          }
+        },
+        "supplier-revenue-total": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 0,
+            "percent": null
+          }
+        }
+      },
+      "distinct_bilingual_scenario_ids": 8,
+      "failures": [
+        {
+          "id": "r8-fresh-management_projet-supplier-quote-cutoff-fr",
+          "group": "supplier-quote-cutoff",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-management_projet-supplier-quote-cutoff-en",
+          "group": "supplier-quote-cutoff",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        }
+      ],
+      "native_backend_security_verified": null,
+      "limitations": [
+        "Separate analysis of frozen events; original benchmark files and scores are unchanged.",
+        "All clarification reason/language and proposed-change arguments must match their labels.",
+        "Knowledge queries are checked only for nonempty text; retrieval factuality is not measured here.",
+        "Bilingual pairs share scenarios; scenario count is not independent statistical certification.",
+        "Original failures informed training categories; originals remain regression tests, not unseen certification.",
+        "No business tools execute here. Native permission, tenant, confirmation and audit tests remain required.",
+        "Passing model targets does not authorize production activation."
+      ]
+    },
+    "design_workflow": {
+      "metrics": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 15,
+          "structured_valid": 16,
+          "action_matches": 12
+        },
+        "percent": {
+          "tool_correct": 93.75,
+          "structured_valid": 100.0,
+          "action_matches": 75.0
+        },
+        "exact_arguments": {
+          "passed": 8,
+          "count": 12,
+          "percent": 66.67
+        }
+      },
+      "targets": {
+        "tool_selection": false,
+        "exact_arguments": false,
+        "structured_output": true,
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false
+      },
+      "model_targets_passed": false,
+      "clarifications": {
+        "count": 4,
+        "counts": {
+          "tool_correct": 4,
+          "structured_valid": 4,
+          "action_matches": 4
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "critical_model_cases": {
+        "count": 8,
+        "counts": {
+          "tool_correct": 7,
+          "structured_valid": 8,
+          "action_matches": 5
+        },
+        "percent": {
+          "tool_correct": 87.5,
+          "structured_valid": 100.0,
+          "action_matches": 62.5
+        },
+        "exact_arguments": {
+          "passed": 1,
+          "count": 4,
+          "percent": 25.0
+        }
+      },
+      "by_language": {
+        "en": {
+          "count": 8,
+          "counts": {
+            "tool_correct": 8,
+            "structured_valid": 8,
+            "action_matches": 6
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 75.0
+          },
+          "exact_arguments": {
+            "passed": 4,
+            "count": 6,
+            "percent": 66.67
+          }
+        },
+        "fr": {
+          "count": 8,
+          "counts": {
+            "tool_correct": 7,
+            "structured_valid": 8,
+            "action_matches": 6
+          },
+          "percent": {
+            "tool_correct": 87.5,
+            "structured_valid": 100.0,
+            "action_matches": 75.0
+          },
+          "exact_arguments": {
+            "passed": 4,
+            "count": 6,
+            "percent": 66.67
+          }
+        }
+      },
+      "by_reporting_group": {
+        "archived-project": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 2,
+            "count": 2,
+            "percent": 100.0
+          }
+        },
+        "done-assignee": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 1
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 50.0
+          },
+          "exact_arguments": {
+            "passed": 1,
+            "count": 2,
+            "percent": 50.0
+          }
+        },
+        "leap-month-time": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 2,
+            "count": 2,
+            "percent": 100.0
+          }
+        },
+        "permanent-delete": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 0,
+            "percent": null
+          }
+        },
+        "project-priority-date": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 0
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 0.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 2,
+            "percent": 0.0
+          }
+        },
+        "read-only-priority": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 0,
+            "count": 0,
+            "percent": null
+          }
+        },
+        "task-two-fields": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 1,
+            "structured_valid": 2,
+            "action_matches": 1
+          },
+          "percent": {
+            "tool_correct": 50.0,
+            "structured_valid": 100.0,
+            "action_matches": 50.0
+          },
+          "exact_arguments": {
+            "passed": 1,
+            "count": 2,
+            "percent": 50.0
+          }
+        },
+        "third-result": {
+          "count": 2,
+          "counts": {
+            "tool_correct": 2,
+            "structured_valid": 2,
+            "action_matches": 2
+          },
+          "percent": {
+            "tool_correct": 100.0,
+            "structured_valid": 100.0,
+            "action_matches": 100.0
+          },
+          "exact_arguments": {
+            "passed": 2,
+            "count": 2,
+            "percent": 100.0
+          }
+        }
+      },
+      "distinct_bilingual_scenario_ids": 8,
+      "failures": [
+        {
+          "id": "r8-fresh-design_workflow-done-assignee-en",
+          "group": "done-assignee",
+          "critical": false,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-design_workflow-task-two-fields-fr",
+          "group": "task-two-fields",
+          "critical": true,
+          "tool_correct": false,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-design_workflow-project-priority-date-fr",
+          "group": "project-priority-date",
+          "critical": true,
+          "tool_correct": true,
+          "structured_valid": true
+        },
+        {
+          "id": "r8-fresh-design_workflow-project-priority-date-en",
+          "group": "project-priority-date",
+          "critical": true,
+          "tool_correct": true,
+          "structured_valid": true
+        }
+      ],
+      "native_backend_security_verified": null,
+      "limitations": [
+        "Separate analysis of frozen events; original benchmark files and scores are unchanged.",
+        "All clarification reason/language and proposed-change arguments must match their labels.",
+        "Knowledge queries are checked only for nonempty text; retrieval factuality is not measured here.",
+        "Bilingual pairs share scenarios; scenario count is not independent statistical certification.",
+        "Original failures informed training categories; originals remain regression tests, not unseen certification.",
+        "No business tools execute here. Native permission, tenant, confirmation and audit tests remain required.",
+        "Passing model targets does not authorize production activation."
+      ]
+    }
+  },
+  "reused_validation_count": 275,
+  "reused_regression_count": 438,
+  "model_artifact_digests": {
+    "weights": "98cd4022a401a6de771181bf3aa9d5d7a012b02a5d08447ecd76c837f229b534",
+    "tokenizer": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+    "config": "d23728a0322a445a79e1cc94553698fe2d84063f108ece16f165d7aab596b062",
+    "runtime": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35"
+  },
+  "provider_sha256": {
+    "src/chat_ai_assistant/provider.py": "f5a65cf7ed046dcce5b21697ac69866fa8f6ba8a6601eeff70d2819d8414e86e",
+    "src/chat_ai_assistant/contracts.py": "ab31f8ff3f2f20b776ca412436e0730dc8fa00e892801772e863400bab4b6fa3",
+    "src/chat_ai_assistant/clarifications.py": "e5cb817facdb8e440538cc0ed9b252ff127f6d8e470bb630574e5530e7a31a7d",
+    "src/chat_ai_assistant/__init__.py": "89de2438dbe666b8ce112a701c89faf82ef9afec7c7a61c9ec1bbfc9da5192e1"
+  },
+  "evaluator_sha256": "dca2abf86b2162ccd99b868108dd957f5ef600fe196a5bf9f21b15cafa4fbe7b",
+  "settings": {
+    "context": 8192,
+    "max_tokens": 512,
+    "thinking": false,
+    "temperature": 0,
+    "threads_per_worker": 4,
+    "workers": 3,
+    "runtime": "Colibri CPU",
+    "dense_int8": true
+  },
+  "evidence_sha256": {
+    "results.json": "03eee1af8f4b1aff4c450333d4030053744367f8ed3b5c2506e02c1c54a13fa4",
+    "before.json": "1289e959c1f7a2bd4cb0dbf59ece4cfb8d117cac09801c2a96013c9733fe913b",
+    "after.json": "1289e959c1f7a2bd4cb0dbf59ece4cfb8d117cac09801c2a96013c9733fe913b",
+    "stop.json": "25656a2049a4e643ba8a0b8e1dfb6682fb562bad70b00672e79afd22fed0eea7",
+    "inspect_base.json": "0217c4fba4d6504ded9e477d48fd1028246ed7ed70b26a84f32b3602724a492f"
+  },
+  "training_started": false,
+  "production_activation": false,
+  "production_unchanged": true,
+  "stopped_workers": 3,
+  "limitations": [
+    "Fresh bilingual controls are 24 implementation-team scenarios, not blind external certification.",
+    "Original 438 regressions remain separate from these 48 controls. No acceptance score was rewritten.",
+    "Reused measurements have identical model/runtime/provider/settings and inputs; no combined latency claim.",
+    "No business tools executed; native security tests are separate. All acceptance gates still apply.",
+    "These measurements precede R8 optimization; no R8 accuracy improvement is claimed."
+  ]
+}

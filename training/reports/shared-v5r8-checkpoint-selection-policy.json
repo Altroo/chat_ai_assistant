@@ -1,0 +1,46 @@
+{
+  "version": "shared-v5r8-functional-validation-v1",
+  "dataset_manifest_sha256": "56f803ca7110ae78bc53c4a208a7dc7456819c024dc588109da46d7fb1520738",
+  "training_sha256": "d4b38a4354703fe8ea4a82d2c52a0fdb665927150cd19fe9d7fa411ec32cea26",
+  "source_validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+  "evaluation_sha256": "b007326c32de9ede8424218ad4196a663324b1ad516df87a69df957f1b846a8b",
+  "selection_script_sha256": "d5952e6aa77a0bc23319f046fe83f870bc527d58359b17aa51a6b0ef774bedd1",
+  "evaluator_sha256": "dca2abf86b2162ccd99b868108dd957f5ef600fe196a5bf9f21b15cafa4fbe7b",
+  "acceptance_sha256": "c9efde5b48a32d2900ed581477e65e677865a875b08400fe67fe70a521fcaebc",
+  "candidate_steps": [
+    0,
+    300,
+    600,
+    900,
+    1200,
+    1500,
+    1800,
+    2100,
+    2339
+  ],
+  "rows": 275,
+  "underlying_scenarios": 222,
+  "selection": [
+    "highest application-macro action-match fraction",
+    "highest application-macro valid-structure fraction",
+    "lowest recorded validation macro loss",
+    "lowest checkpoint step"
+  ],
+  "scoring": "Unchanged evaluate_snapshot.py action matching, including clarification reason/language, knowledge nonempty query and existing optional-default normalization. Invalid outputs fail.",
+  "prerequisites": [
+    "Successful complete R8 training, unchanged provenance and all candidate artifacts verified.",
+    "Run only if the original candidate remains unaccepted; no concurrent optimization.",
+    "Each candidate including the baseline requires the same full validation inputs and inference settings.",
+    "Reuse prior measurements only for identical artifacts, inputs, provider, settings and complete results.",
+    "Only the selected changed candidate advances to all 438 V2 regressions and all 48 fresh controls, reported separately.",
+    "No automatic activation or subsequent-application training follows validation selection."
+  ],
+  "limitations": [
+    "275 validation rows include 53 neutral-history variants of 222 scenarios.",
+    "Application averaging does not remove correlated variants; scenario-grouped scores are reported separately.",
+    "Source rows lack per-language labels; no inferred per-language accuracy is claimed.",
+    "Selection is validation only, not acceptance. The 438 frozen V2 regressions are repeatedly inspected and are not fresh blind certification.",
+    "No business tools execute. No model activation follows selection."
+  ],
+  "baseline_report_sha256": "5b1762c26b043f0223df4499594d248b5fa33127280f1ff411b64763729480e2"
+}
