@@ -1,0 +1,83 @@
+{
+  "version": "shared-v5r8-launch",
+  "status": "TRAINING_STARTED; ACCEPTANCE_NOT_ESTABLISHED",
+  "started_utc": "2026-10-14T10:17:21Z",
+  "source_commit": "52c69db4f03f902b5a71c69efdb8155309b1c316",
+  "model": "Qwen3.5-0.8B",
+  "base": "shared-v5r7 selected step 1200",
+  "training_rows": 2339,
+  "validation_rows": 275,
+  "dataset_manifest_sha256": "56f803ca7110ae78bc53c4a208a7dc7456819c024dc588109da46d7fb1520738",
+  "baseline_report_sha256": "5b1762c26b043f0223df4499594d248b5fa33127280f1ff411b64763729480e2",
+  "configuration": {
+    "cpu_threads": 14,
+    "memory_limit_gib": 16,
+    "epochs": 1,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "learning_rate": 1e-05,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "gradient_checkpointing": "nonreentrant",
+    "semantic_loss_weight": 4,
+    "context_tokens": 8192,
+    "validation_interval_steps": 300,
+    "checkpoint_interval_steps": 300
+  },
+  "server_metadata_preflight_passed": true,
+  "capacity": {
+    "passed": true,
+    "sequence_tokens": 7745,
+    "peak_rss_gib": 5.859,
+    "updates": [
+      {
+        "step": 1,
+        "seconds": 179.84448271244764,
+        "updated_layers": 24,
+        "finite_loss": true
+      },
+      {
+        "step": 2,
+        "seconds": 176.38760977983475,
+        "updated_layers": 24,
+        "finite_loss": true
+      }
+    ]
+  },
+  "checks": {
+    "dataset_and_training_integrity_tests": 28,
+    "automatic_handoff_tests": 15,
+    "single_reviewer": "No issues"
+  },
+  "automatic_handoff": {
+    "initial_phase": "waiting_for_training",
+    "checkpoint_validation_rows": 275,
+    "saved_candidates": [
+      300,
+      600,
+      900,
+      1200,
+      1500,
+      1800,
+      2100,
+      2339
+    ],
+    "selected_candidate_regression_cases": 438,
+    "selected_candidate_fresh_cases": 48,
+    "fresh_controls_used_for_checkpoint_selection": false
+  },
+  "evidence_sha256": {
+    "preflight.json-server.json": "056dae681c52f05e5256cf918b898716aaa9a258c0856bdf8a4aa220f999ec89",
+    "capacity.json-server.json": "78e8f9913ce711844ea02d7f4fb3f43a31240e801cad0c2283ea49aa21e2e83a",
+    "training-start.json-server.json": "50a85f0bcbf55bd512f610450c88a818f607896e994e492adb7c3294124a8e7a",
+    "training-running-proof.json": "995074d8a88842fc940ef118bd97c1892d973856ae0752022925e1ed54710853",
+    "reviewed-controls.json": "5f9f193ebd0cb1ba930bb0089ccab8fa3733c9356d1d20f48914de435980d373",
+    "pipeline-reviewed-controls.json": "d9f7af84b25338c0b23c629b10ebcfb8361ae9d8941f65f96f2edb218132d858"
+  },
+  "training_complete": false,
+  "post_training_accuracy_measured": false,
+  "production_healthy_unchanged": true,
+  "production_activation": false,
+  "next_application_training_started": false
+}

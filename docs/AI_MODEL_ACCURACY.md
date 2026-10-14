@@ -1,5 +1,28 @@
 # Shared model accuracy work
 
+## R8 preparation and fresh baseline: 2026-10-14
+
+Server training started at 10:17 UTC with 14 CPU threads after metadata and capacity checks passed. The automatic checkpoint/evaluation controller is running. Training and post-training acceptance remain incomplete. [Launch evidence](../training/reports/shared-v5r8-launch.json).
+
+R8 means revision eight of the shared training experiment, not a new foundation model. It continues from the R7 step-1200 Qwen3.5-0.8B candidate. The curriculum retains every R7 training/validation row and adds 274 native-verified English/French examples, for 2,339 training rows and 275 validation rows.
+
+Before R8 optimization, the unchanged candidate completed 48 newly authored controls using the same frozen Colibri runtime, provider and inference settings. These are 24 bilingual scenarios, eight per application. They expose a generalization gap beyond the repeatedly inspected 438-case regression suite:
+
+| Application | Correct tools | Eligible exact arguments | Valid structure | Fully matched actions |
+| --- | ---: | ---: | ---: | ---: |
+| facturation | 16/16 (100%) | 2/14 (14.29%) | 16/16 (100%) | 4/16 (25%) |
+| management_projet | 16/16 (100%) | 8/10 (80%) | 16/16 (100%) | 14/16 (87.5%) |
+| design_workflow | 15/16 (93.75%) | 8/12 (66.67%) | 16/16 (100%) | 12/16 (75%) |
+| Combined | 47/48 (97.92%) | 18/36 (50%) | 48/48 (100%) | 30/48 (62.5%) |
+
+These small, correlated samples are implementation-team controls, not blind external certification or population accuracy estimates. They remain excluded from optimization and checkpoint selection. The curriculum was frozen before these baseline results; it was not adjusted to match their failures. The original regression scores below remain unchanged.
+
+All temporary baseline workers stopped. Model/runtime identities matched before and after, and production remained unchanged. No business tools executed. R8 accuracy has not been measured after optimization. Only the fixed 275-row validation set selects a checkpoint; the selected changed candidate must then pass both the original regressions and these fresh controls, reported separately.
+
+[Fresh baseline and evidence hashes](../training/reports/shared-v5r8-baseline.json), [curriculum](../training/datasets/shared-v5r8-en-fr/manifest.json), [selection policy](../training/reports/shared-v5r8-checkpoint-selection-policy.json).
+
+## Prior completed round
+
 PARTIALLY IMPLEMENTED: R7 training and evaluation completed on 2026-10-14, but model acceptance FAILED. All 2,065 server training steps and seven saved-checkpoint comparisons completed; the predeclared functional rule selected step 1200. On 438 V2 regression cases: 427/438 correct tools (97.49%), 313/334 eligible exact arguments (93.71%), 435/438 valid structures (99.32%) and 413/438 fully matched actions (94.29%). Only 4/15 sets pass every gate; six critical model cases fail. All three evaluation workers stopped, artifact identities matched before/after, and production stayed unchanged. Management Projet remains disabled. Contracts, Gestion Magasin and Reservation training remain queued behind shared-model acceptance. [Measured R7 report](../training/reports/shared-v5r7-en-fr-evaluation.json).
 
 IMPLEMENTED locally and verified — revised sequential preparations retain every R7 training/validation byte, including its reviewed instruction repairs and 96 added context contrasts. Contracts V6r7 contains 2,218/319/516 training/validation/evaluation cases; Gestion Magasin V7r7 contains 2,416/362/606; Réservation V8r7 contains 2,596/402/690. Ten integrity tests pass. Fresh metadata checks pass all 2,998 cumulative training/validation rows and all 690 V2 evaluation cases. Original V1 and revised V2 evaluation prompts are excluded from optimization; original files remain preserved. The single reviewer found no issues. No local weights, inference or optimization were used. Each later launch still requires its exact accepted predecessor, baseline and server resource gates. [Metadata evidence](../training/reports/shared-v8r7-en-fr-metadata-preflight.json).
