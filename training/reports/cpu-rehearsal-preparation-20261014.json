@@ -1,0 +1,92 @@
+{
+  "status": "PARTIALLY IMPLEMENTED; NUMERICAL REHEARSAL AND EXPORT COMPARISON PENDING",
+  "tests": {
+    "training_integrity_passed": 172,
+    "rehearsal_contract_passed": 13,
+    "suite_seconds": 18.85,
+    "fixtures": "Synthetic contracts and fake generation objects; no weights, inference or local training"
+  },
+  "single_reviewer": "No issues after fixes",
+  "files": {
+    "training/scripts/rehearse_cpu.py": "e426b6b9760b01ca8dacbaab9d53df8befd1f0c61b87f91766449534dad8dcb3",
+    "training/tests/test_cpu_rehearsal.py": "465716f6b223508339970537ef60e34dfad415edfc387de286ebb9bf1b727ac7",
+    "docs/AI_PRETRAINING_CHECKS.md": "0dcb3d8be270b86d4fb931fa55cac66abc4c8014fba7f51ada46a312b4cbb4bc"
+  },
+  "dataset_preparation": {
+    "shared-v5r8-en-fr": {
+      "checked_rows": {
+        "train": 2339,
+        "valid": 275
+      },
+      "training_steps": 48,
+      "capture_counts": {
+        "train": 6,
+        "valid": 6
+      },
+      "captures_only_selected_training": true,
+      "lineage_checked": false
+    },
+    "shared-v6r8-en-fr": {
+      "checked_rows": {
+        "train": 2492,
+        "valid": 319
+      },
+      "training_steps": 59,
+      "capture_counts": {
+        "train": 8,
+        "valid": 8
+      },
+      "captures_only_selected_training": true,
+      "lineage_checked": true
+    },
+    "shared-v7r8-en-fr": {
+      "checked_rows": {
+        "train": 2690,
+        "valid": 362
+      },
+      "training_steps": 72,
+      "capture_counts": {
+        "train": 10,
+        "valid": 10
+      },
+      "captures_only_selected_training": true,
+      "lineage_checked": true
+    },
+    "shared-v8r8-en-fr": {
+      "checked_rows": {
+        "train": 2870,
+        "valid": 402
+      },
+      "training_steps": 84,
+      "capture_counts": {
+        "train": 12,
+        "valid": 12
+      },
+      "captures_only_selected_training": true,
+      "lineage_checked": true
+    }
+  },
+  "numerical_rehearsal_executed": false,
+  "export_comparison_executed": false,
+  "active_training_modified": false,
+  "acceptance_cases_used_for_optimization": false,
+  "next_launch_requires": [
+    "Predecessor controller fully complete, including evaluation",
+    "Exact selected base, full dataset and retained-curriculum binding",
+    "Matching reviewed full-training configuration and frozen trainer/helper source",
+    "Server resource admission and no competing training/export/evaluation job"
+  ],
+  "review_fixes": [
+    "Guard against overlapping evaluation/export services",
+    "Bind saved adapter tensors and evidence to the model used for captures",
+    "Match serving behavior for complete tool calls without EOS",
+    "Bind helper hashes before use and reject trainer/helper drift",
+    "Validate generated schemas and compare target types exactly"
+  ],
+  "limitations": [
+    "No accuracy forecast or model acceptance is established.",
+    "Numerical execution and real export/Colibri comparison still require server execution.",
+    "The existing full-controller completion gate must be checked by the launcher; service-idle checks alone do not prove controller completion.",
+    "Representative feature coverage does not cover every argument combination."
+  ]
+}
