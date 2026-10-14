@@ -1,0 +1,34 @@
+{
+  "status": "PARTIALLY IMPLEMENTED; SERVER REPLAY COLLECTOR PREPARED",
+  "tests": {
+    "training_integrity_passed": 216,
+    "suite_seconds": 35.269,
+    "collector_tests_passed": 18,
+    "reservation_correction_tests_passed": 5,
+    "scope": "Synthetic fixtures and metadata only; no local weights, inference or training"
+  },
+  "files": {
+    "training/scripts/collect_rehearsal.py": "4af3b27e598882d74385871d1b52d64fc4c885165e4154e1f2cbdb8838506328",
+    "training/tests/test_collect_rehearsal.py": "f29a32ff8ec5992dffece339824b220ba7ba8dffa885392305f5be91c45298d1"
+  },
+  "checks": [
+    "Exact sent payload and original capture identity",
+    "Server-only loopback transport without redirects, proxies or retries",
+    "Raw bounded response bytes and parsed events retained, including failed HTTP bodies",
+    "Malformed and post-DONE data remain failures regardless of chunk boundaries",
+    "Truncated Content-Length body rejected; valid framed completion accepted",
+    "IncompleteRead partial bytes and timeout evidence preserved",
+    "Sequential batch stops on transport failure; requests persisted before I/O"
+  ],
+  "numerical_rehearsal_executed": false,
+  "export_comparison_executed": false,
+  "live_worker_attestation_executed": false,
+  "model_accepted": false,
+  "active_training_modified": false,
+  "limitations": [
+    "Real export, worker admission and before/after runtime attestation remain controller responsibilities.",
+    "Synthetic transport tests cannot predict model accuracy.",
+    "Streamed structured actions do not establish raw token parity.",
+    "Actual server rehearsal waits for the full active R8 controller to finish."
+  ]
+}

@@ -1,12 +1,16 @@
 # Pre-training correctness checks
 
+IMPLEMENTED and verified as preparation: a review of all 180 Reservation training rows found four requests with misleading date wording. They now explicitly refer to reservation arrival dates or rental years and current returned/paid status. All action labels, histories, validation and held-out bytes remain unchanged. All 216 training integrity tests pass; final metadata checks pass 3,272 training/validation rows and 738 evaluation cases. The corrected final-stage preparation is shared-v8r10-en-fr, retaining the complete shared-v7r9-en-fr prefix. Native date filters and financial calculation sources are pinned. [Correction evidence](../training/reports/reservation-temporal-corrections-20261014.json).
+
+PARTIALLY IMPLEMENTED: the server-only exact replay collector is implemented and synthetic transport tests pass. It preserves issued payloads, bounded raw response bytes, parsed events and failures; rejects truncated or malformed streams; and never authorizes training. Real numerical rehearsal, export and live-worker replay remain pending until the active R8 controller completes. [Collector evidence](../training/reports/cpu-rehearsal-collector-preparation-20261014.json). The queued stages remain Contracts V6r9, Gestion Magasin V7r9, then Reservation V8r10. No later-stage optimizer has started.
+
 IMPLEMENTED and verified as preparation: the single semantic review found one confirmed financial-definition mismatch in Gestion Magasin and four ambiguous Contracts requests. The corrected native wording states that the metric sums paid amounts on confirmed sales created today and currently marked paid, across payment modes; it does not filter payment dates. Four Contracts requests now explicitly identify the customer. Versioned source datasets retain all targets, contexts, histories and split order, including the affected French history duplicate.
 
 All 193 training tests and 58 PostgreSQL assistant tests plus 6 subtests pass. The native six-sale fixture covers creation date, current payment status, store isolation and payment modes. Metadata checks pass all 3,272 cumulative training/validation rows and 738 evaluation cases without weights or inference. One historical-input hash check found by review was fixed and mutation-tested. [Correction evidence](../training/reports/native-semantic-corrections-20261014.json), [metadata evidence](../training/reports/shared-v8r9-en-fr-metadata-preflight.json).
 
-PARTIALLY IMPLEMENTED: queued preparations now use Contracts V6r9, Gestion Magasin V7r9 and Reservation V8r9. These names identify future dataset revisions, not a new running training job. The active R8 run and all original inputs/results remain unchanged. Do not start the superseded V6r8/V7r8/V8r8 preparations. Fresh accepted-predecessor bindings, native-source verification, numerical rehearsal and real Colibri export comparison remain required before the next full run. All 90 GM evaluation envelopes have refreshed native metadata, including two revised questions, so they require fresh baseline/candidate predictions. Historical scores must not be relabelled as measurements on the corrected inputs.
+PARTIALLY IMPLEMENTED: queued preparations now use Contracts V6r9, Gestion Magasin V7r9 and Reservation V8r10. These names identify future dataset revisions, not a new running training job. The active R8 run and all original inputs/results remain unchanged. Do not start the superseded V6r8/V7r8/V8r8 or Reservation V8r9 preparations. Fresh accepted-predecessor bindings, native-source verification, numerical rehearsal and real Colibri export comparison remain required before the next full run. All 90 GM evaluation envelopes have refreshed native metadata, including two revised questions, so they require fresh baseline/candidate predictions. Historical scores must not be relabelled as measurements on the corrected inputs.
 
-PARTIALLY IMPLEMENTED: exact rehearsal replay helpers are prepared and reviewed. All 187 training integrity tests pass, including 15 new comparison tests. The helpers bind the exact sent payload, preserve structured clarification arguments and failed responses, validate token usage and compare actions without normalizing defaults. The numerical rehearsal, real export, network collection and live worker attestation remain pending. Current R8 training and its frozen controller are unchanged. [Comparison preparation](../training/reports/cpu-rehearsal-comparison-preparation-20261014.json).
+Earlier preparation: exact rehearsal replay helpers were prepared and reviewed. All 187 training integrity tests pass, including 15 new comparison tests. The helpers bind the exact sent payload, preserve structured clarification arguments and failed responses, validate token usage and compare actions without normalizing defaults. At that preparation stage, numerical rehearsal, real export, network collection and live worker attestation were pending. The collector implementation is now prepared; execution remains pending. Current R8 training and its frozen controller are unchanged. [Comparison preparation](../training/reports/cpu-rehearsal-comparison-preparation-20261014.json).
 
 PARTIALLY IMPLEMENTED: the static audit and server rehearsal runner are prepared. All 172 training integrity tests pass, including 13 rehearsal contract tests with synthetic fixtures. Metadata preparation passes the current R8 curriculum and all three queued stages. The numerical rehearsal has not run; adapter export and Colibri comparison have not run. [Preparation evidence](../training/reports/cpu-rehearsal-preparation-20261014.json).
 
@@ -35,9 +39,9 @@ The current metadata preparations select:
 | Curriculum | Optimization rows | Trained-row captures | Development-validation captures |
 | --- | ---: | ---: | ---: |
 | Shared R8 | 48 | 6 | 6 |
-| Contracts V6r8 | 59 | 8 | 8 |
-| Gestion Magasin V7r8 | 72 | 10 | 10 |
-| Reservation V8r8 | 84 | 12 | 12 |
+| Contracts V6r9 | 59 | 8 | 8 |
+| Gestion Magasin V7r9 | 72 | 10 | 10 |
+| Reservation V8r10 | 84 | 12 | 12 |
 
 Captures are selected before inference, without outcome-based selection. Every trained-row capture belongs to the selected optimization rows. Only training rows receive updates. No acceptance case is used for optimization or checkpoint selection.
 
@@ -47,7 +51,7 @@ The following illustrates the Contracts rehearsal inside the approved server exe
 CHAT_AI_TRAINING_SERVER=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
 python -B training/scripts/rehearse_cpu.py \
   --stage contrat \
-  --data training/datasets/shared-v6r8-en-fr \
+  --data training/datasets/shared-v6r9-en-fr \
   --retained-data training/datasets/shared-v5r8-en-fr \
   --model "$REHEARSAL_BASE_MODEL" \
   --runtime "$REHEARSAL_RUNTIME" \
@@ -98,3 +102,17 @@ The bound server controller must:
 The report separates training captures from development captures. It records exact valid-action agreement and correct-to-incorrect changes. Two failed calls never count as agreement. Type distinctions and explicit default arguments are preserved for diagnosis, so semantic equivalence must be investigated before treating a difference as an export defect. Streamed tool-call objects do not establish generated-token parity.
 
 All helper reports leave model acceptance and full-training authorization false. The numerical rehearsal and real export/controller execution are still pending until the current R8 controller has fully completed.
+
+## Server replay collection
+
+After numerical execution, real export and isolated worker attestation, the bound server controller can call:
+
+~~~python
+from collect_rehearsal import collect_replay
+
+report = collect_replay(requests, worker_chat_endpoint, private_replay_output, timeout=90)
+~~~
+
+The endpoint must be an explicit loopback HTTP address with port and a supported chat-completions path. The collector requires the Linux training environment. It makes one sequential request at a time without redirects, proxies or retries. Requests are persisted before I/O; each response retains the exact request hash, bounded raw body bytes, parsed events, HTTP status, usage/termination evidence and safe transport failure codes. It drains the framed response after DONE so acceptance does not depend on network chunk boundaries, and rejects premature Content-Length EOF. A failed transport stops the batch with an incomplete report.
+
+Keep output in ignored private evaluation storage. Collecting every response does not mean every action passed. The comparison remains diagnostic and keeps both model acceptance and full-training authorization false. The caller must still verify the export/runtime/worker before and after, investigate critical discrepancies, stop the worker and discard rehearsal state. This collector has only run against synthetic transport fixtures; no live replay is claimed.

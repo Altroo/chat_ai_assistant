@@ -1,0 +1,49 @@
+{
+  "status": "PREPARED AND METADATA VERIFIED; NOT TRAINED",
+  "tests": {
+    "training_integrity_passed": 216,
+    "suite_seconds": 35.269,
+    "collector_tests_passed": 18,
+    "reservation_correction_tests_passed": 5,
+    "scope": "Synthetic fixtures and metadata only; no local weights, inference or training"
+  },
+  "source_dataset": "reservation-dialogue-v4-en-fr",
+  "cumulative_dataset": "shared-v8r10-en-fr",
+  "retained_dataset": "shared-v7r9-en-fr",
+  "files": {
+    "training/scripts/prepare_reservation_temporal_errata.py": "48e25dc85a8cef65684096dac8603905c0a2297fe100450361ece4f226843c0c",
+    "training/tests/test_reservation_temporal_errata.py": "1b76a7a344bcf39df80cdc6ce1db6c0aad3367b5215d336e6fd511c33a926a71",
+    "training/datasets/reservation-dialogue-v4-en-fr/manifest.json": "2e1c0d173e4e424dbab98ff5cbea1f38edb6cf14c00af123d75d3f4dc260b3a6",
+    "training/datasets/shared-v8r10-en-fr/manifest.json": "5a21824d9535309786b292f3965d3f7219860ea05446d5837609c6c3ff7bd7b2",
+    "training/reports/shared-v8r10-en-fr-metadata-preflight.json": "b6329ad738ddcab1526841e462bdc3e1f2c16571b6c3d72ef4ef8f90964ff78e"
+  },
+  "reviewed_training_rows": 180,
+  "distinct_requests_reviewed": 150,
+  "changed_source_indices_zero_based": [
+    60,
+    61,
+    68,
+    69
+  ],
+  "corrections": [
+    "Reservation dates mean arrival/check-in dates; returned is current status, not a refund-date filter.",
+    "Rent year means rental year; paid is current status, not payment-date year."
+  ],
+  "targets_changed": false,
+  "histories_changed": false,
+  "validation_bytes_changed": false,
+  "held_out_bytes_changed": false,
+  "held_out_count": 738,
+  "training_rows": 2870,
+  "validation_rows": 402,
+  "training_started": false,
+  "model_accuracy_measured": false,
+  "provenance": "V3 augmentation, neutral-history assignment hashes, synthetic fixtures and shared-source metadata remain explicitly historical. No history assignment was recomputed.",
+  "launch_gates": [
+    "Accepted predecessor and exact base binding",
+    "Current native-source verification",
+    "Server numerical rehearsal",
+    "Real export and isolated Colibri replay",
+    "Unchanged per-application acceptance gates"
+  ]
+}
