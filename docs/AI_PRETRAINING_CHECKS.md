@@ -143,3 +143,28 @@ Keep output in ignored private evaluation storage. Collecting every response doe
 ## Pinned Qwen tokenizer warning
 
 The generic Mistral-regex warning was traced to the local loader treating a config without transformers_version as Mistral-related. The actual model_type is qwen3_5_text. Its saved regex matches the installed Qwen3.5 implementation; default loading preserves the saved pre-tokenizer. Eight synthetic English/French samples have identical token IDs through the raw tokenizer, default loader and explicit no-patch loader. Keep the pinned Qwen tokenizer unchanged; do not apply the unrelated Mistral patch. This diagnosis does not measure model accuracy. [Metadata evidence](../training/reports/qwen-tokenizer-warning-check-20261014.json).
+
+## Completed-rehearsal export supervisor
+
+The server-only replay_rehearsal.py supervisor connects the existing FP32 adapter merger, Colibri converter, artifact checks and exact replay collector. Its current predecessor contract is deliberately limited to Contracts after accepted R8. It does not launch numerical training, select a model, activate production or grant full-training authorization. [Preparation evidence](../training/reports/rehearsal-supervisor-preparation-20261014.json).
+
+Prepare its private binding only after the R8 controller has finished and passed both frozen regression sets and per-application fresh controls, and after the separate numerical rehearsal has exited successfully. The binding contains:
+
+- Canonical absolute paths for rehearsal, data, selected FP32 base, runtime, trainer, exporter, converter, server Python and a fresh output directory, plus an isolated port and model identifier.
+- SHA256 identities for the supervisor, its declared HELPER_NAMES, trainer, exporter and converter. Standard-library checks run before any local helper import.
+- Independent hashes of complete.json and the reviewed dataset manifest. The numerical service name, exact completed properties, InvocationID and argv must identify that same runner, input and output.
+- Predecessor proof paths and hashes for pipeline-state.json, selection.json, acceptance.json, fresh.json, validation-0-collect.json, and the selected validation/acceptance/fresh before, after and stop records. Include the selected FP32 artifact fingerprint and the original accepted retained dataset.
+
+Operator paths and raw evidence stay in ignored private evaluation storage. A self-consistent replacement of numerical evidence cannot bypass its external completion hash. An unrelated successful service cannot stand in for the numerical run. The original accepted R8 curriculum remains the retained identity even when the six reviewed target corrections apply.
+
+Run the supervisor inside a dedicated chat-ai rehearsal/export/eval service with CPUQuota 1400%, MemoryMax 16G, MemorySwapMax 0 and KillMode control-group. The output parent must exist with at least 12 GiB free storage; reserve 16 GiB for export while keeping 10% of host memory free. Only one training, export or evaluation workload may run at a time. The supervisor uses ten export threads and the pinned four-thread Colibri serving profile for a comparable replay.
+
+~~~sh
+CHAT_AI_TRAINING_SERVER=1 python -B training/scripts/replay_rehearsal.py \
+  --binding "$REPLAY_BINDING" \
+  --binding-sha256 "$REPLAY_BINDING_SHA256"
+~~~
+
+Fresh child environments exclude inherited termination, model, proxy and loader overrides. Export and conversion finish before the worker starts. Requests use the original frozen capture payloads. Before/after checks cover base, runtime, tokenizer, exported artifacts, worker executable, command, environment, process creation identity, loopback listener and advertised model. The supervisor stops only its owned session even if readiness, collection or verification fails. Two small Linux checks verified cleanup after an exited parent and a simulated readiness failure, without loading a model or altering a service.
+
+A complete transport replay can still contain incorrect actions. Its completion status therefore requires action review and keeps model acceptance and full-training authorization false. Training continues from the approved original base, never from the disposable rehearsal adapter. Real numerical execution, export and model replay are still pending; this preparation does not supply an accuracy score.

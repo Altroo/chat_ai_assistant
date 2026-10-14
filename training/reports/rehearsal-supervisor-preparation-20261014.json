@@ -1,0 +1,48 @@
+{
+  "status": "SUPERVISOR PREPARED; ACCEPTED PREDECESSOR AND NUMERICAL REHEARSAL BINDINGS PENDING",
+  "scope": "Contracts rehearsal export/replay after actual R8 acceptance; not a generic training launcher",
+  "source_sha256": {
+    "training/scripts/replay_rehearsal.py": "120f6a6e6c8a02f0bfd97ed88c70e2e1a3d5eb6405219639aecc5b0c0be59070",
+    "training/tests/test_replay_supervisor.py": "0f2d08b710297eca87bd1e243ef2a9dd73afa198d7df727b3d88b60bff791f1b"
+  },
+  "synthetic_supervisor_tests_passed": 22,
+  "linux_process_cleanup": {
+    "passed": 2,
+    "checks": [
+      "exited_parent_child_cleanup",
+      "readiness_error_cleanup"
+    ],
+    "training_unchanged": true,
+    "model_loaded": false,
+    "services_modified": false
+  },
+  "single_reviewer_findings_remaining": 0,
+  "verified_controls": [
+    "standard-library source verification before helper imports",
+    "external pins for numerical completion and dataset manifest",
+    "exact successful systemd invocation, command and rehearsal output binding",
+    "accepted R8 selection, per-set regression and per-application fresh results",
+    "unchanged before/after artifacts and stopped predecessor workers",
+    "selected FP32 export path and actual accepted training curriculum",
+    "numerical step order, settings, finite metrics and layer-update coverage",
+    "sequential FP32 merge, Colibri conversion and one isolated loopback worker",
+    "controlled child environments, worker identity and artifact rechecks",
+    "owned-session cleanup after worker failure or exited parent",
+    "incomplete collection cannot produce a completion report",
+    "action failures remain diagnostic; no acceptance or training authorization"
+  ],
+  "numerical_rehearsal_executed": false,
+  "adapter_export_executed": false,
+  "model_replay_executed": false,
+  "model_accepted": false,
+  "full_training_authorized": false,
+  "production_activation": false,
+  "limitations": [
+    "The accepted-predecessor binding cannot be created until R8 evaluation finishes and passes.",
+    "Resource admission and process cleanup are tested; no real model export or replay is claimed.",
+    "The supervisor currently handles the first serial stage only. Later stages require their own actual accepted predecessor evidence.",
+    "The rehearsal launcher and full-training launcher remain separate operator-controlled steps."
+  ],
+  "training_integrity_tests_passed": 302,
+  "training_integrity_test_seconds": 87.023
+}
