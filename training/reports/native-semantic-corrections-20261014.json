@@ -1,0 +1,67 @@
+{
+  "status": "PREPARED AND VERIFIED; future baseline, rehearsal and training pending",
+  "training_inputs_changed_for_active_r8": false,
+  "production_model_changed": false,
+  "review": {
+    "contracts_training_rows": 153,
+    "contracts_distinct_requests": 122,
+    "contracts_clarification_rows": 34,
+    "contracts_change_proposals": 13,
+    "confirmed_gm_semantic_mismatch": true,
+    "contracts_ambiguity_not_proven_wrong_targets": true,
+    "reviewer_count": 1,
+    "final_result": "No issues after historical-evidence binding fix"
+  },
+  "corrections": {
+    "contracts_requests": 4,
+    "gestion_magasin_sft_requests": 3,
+    "gestion_magasin_held_out_request_texts": 2,
+    "gestion_magasin_held_out_envelopes_requiring_fresh_predictions": 90,
+    "targets_changed": 0,
+    "native_financial_formula_changed": false
+  },
+  "checks": {
+    "training_tests_passed": 193,
+    "postgresql_assistant_tests_passed": 58,
+    "postgresql_subtests_passed": 6,
+    "financial_fixture_sales": 6,
+    "prior_sqlite_run": {
+      "passed": 56,
+      "failed": 2,
+      "limitations": [
+        "Unsupported PostgreSQL JSON containment",
+        "SQLite writer locking in concurrent confirmation"
+      ],
+      "resolved_by_postgresql_run": true
+    }
+  },
+  "files": {
+    "training/scripts/prepare_native_semantic_errata.py": "a80fe88f7b9dad698f2d0d3808b10ff8a3d431dbe92692fbc7013de2e4eb6b9e",
+    "training/scripts/prepare_serial_dialogue_v7.py": "15fbd17a081a62371992148f2502b42a1e088da5b962e18c3fe9a45973d2c948",
+    "training/tests/test_native_semantic_errata.py": "dce4d632023e4abecf80bb3daacaa198e246911dfec8ebda60ba18ed6cfaef27"
+  },
+  "native_source_hashes": {
+    "chat_ai/tools.py": "5a4e7b27a39bcae2e356ae8b1a5e3001f4cd91303c7bd067933b3807fc8c9c7b",
+    "chat_ai/planner.py": "90ab10979bb5e8e2bf3c9ca90578f0ab4c24d3e4bde0c638ede73c8349daa5b3",
+    "chat_ai/knowledge/store-finance.json": "11df64b0c03faa974543aa4a310f6b331d2164bad2ccd9d5305a75da4062bc90",
+    "chat_ai/tests/test_security.py": "ef920a260d1a5cc4c2d02427d619f2147e8d55d8ae4ac0866740d67717b3b30f",
+    "reporting/views.py": "203d74cc8adb810bf1fa0d46c12e476ac3f8910e5f0cbded6c8109486e27ebc8"
+  },
+  "queued_versions": [
+    "shared-v6r9-en-fr",
+    "shared-v7r9-en-fr",
+    "shared-v8r9-en-fr"
+  ],
+  "required_before_next_full_run": [
+    "Accepted exact predecessor",
+    "Corrected native metadata matches deployed candidate source",
+    "Fresh baseline and candidate predictions for all changed evaluation envelopes",
+    "Server numerical rehearsal and export comparison",
+    "Unchanged per-application acceptance gates"
+  ],
+  "limitations": [
+    "Preparation and application tests are not model accuracy measurements.",
+    "Revised held-out prompts and metadata change the test inputs. Historical inputs/results are preserved; do not reuse predictions using only request-text identity.",
+    "No future stage or production activation started."
+  ]
+}

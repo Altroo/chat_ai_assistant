@@ -1,0 +1,78 @@
+{
+  "version": "contracts-dialogue-v4-en-fr",
+  "application": "contrat",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "source_dataset": "contracts-dialogue-v3-en-fr",
+  "source_manifest_sha256": "fdf52c310384eff6710c7cfc580f027783276b6d85ea559571136cff53b75397",
+  "source_files": {
+    "train.eval.jsonl": "a2578d4dee849618906230bd21dc4bf16d32f4040a66b56b9ccdaabd911ca408",
+    "train.jsonl": "5a67138f2e9e10bfcab811f8b9581e6fc4b492cdedc8ac877977e3f7b9776a10",
+    "valid.eval.jsonl": "2b37137e6e8b20b36e48b4cac6de00286d62f966331ef506e9f288c192d86e37",
+    "valid.jsonl": "9462d8fdf5d742a31708781ab9dedfdb7b960dd14d77bc35654bfdb888b3efbb",
+    "test.eval.jsonl": "56862df3ed3ca7780582956590608bfa636d88a2ba10e63aebd03fc6a87b2616"
+  },
+  "counts": {
+    "train": {
+      "retained": 122,
+      "augmented": 31,
+      "total": 153
+    },
+    "valid": {
+      "retained": 30,
+      "augmented": 14,
+      "total": 44
+    },
+    "test": {
+      "retained": 78
+    }
+  },
+  "row_counts": {
+    "train.jsonl": 153,
+    "valid.jsonl": 44,
+    "train.eval.jsonl": 122,
+    "valid.eval.jsonl": 30,
+    "test.eval.jsonl": 78
+  },
+  "changed_request_indices": {
+    "train.jsonl": [
+      10,
+      11,
+      84,
+      85
+    ],
+    "valid.jsonl": [],
+    "train.eval.jsonl": [
+      10,
+      11,
+      84,
+      85
+    ],
+    "valid.eval.jsonl": [],
+    "test.eval.jsonl": []
+  },
+  "targets_changed": 0,
+  "splits_changed": 0,
+  "native_sources": {
+    "chat_ai/tools.py": "cfdce93dd4cf15a1c99160697f24075f04d47ad86841cee1eeab95a3d3563526",
+    "chat_ai/planner.py": "28fb0ff131b963c8d441ff3763dc02b598d7f0e47c9b27b118a9a116e83e4fcf",
+    "chat_ai/targets.py": "d7a21a4f6a9077aa083c6f5e63179c9ab2a024bd681c0d886c9653ae856ca5fb",
+    "chat_ai/services.py": "8dffdf3ecec19c161aeaba13e69001bf7540364ae2cd1f38c8de0dc74e6108ef",
+    "chat_ai/security.py": "7a95d6e53f82283babe7a7af2e10aa6c73f9f03a4ce7561b0def5a6ae35ea522",
+    "chat_ai/resources.py": "e649d57d16ab1070bba3777185ade4855797431d0a1daf3f0fbace446b9fcce6",
+    "chat_ai/navigation.py": "0b1eae5cc9103065b305a9ad936dafa1d5bd2b7d05a44fab41c0f5bb48e65d1f",
+    "core/constants.py": "6a0c25960c8c24b97b93d2fc76967e631a0c2b68f9b9897be83495a82804b8bc"
+  },
+  "generator_sha256": "a80fe88f7b9dad698f2d0d3808b10ff8a3d431dbe92692fbc7013de2e4eb6b9e",
+  "files": {
+    "train.jsonl": "3619c37dfd61779296cded2e62b2433c28bb6ed98623c55fe4bbdc6fd13c90f5",
+    "valid.jsonl": "9462d8fdf5d742a31708781ab9dedfdb7b960dd14d77bc35654bfdb888b3efbb",
+    "train.eval.jsonl": "680a40b15928704b419f78d34a383c797227cff7698f3430ab6d2504967a4052",
+    "valid.eval.jsonl": "2b37137e6e8b20b36e48b4cac6de00286d62f966331ef506e9f288c192d86e37",
+    "test.eval.jsonl": "56862df3ed3ca7780582956590608bfa636d88a2ba10e63aebd03fc6a87b2616"
+  },
+  "status": "PREPARED; native metadata and request corrections, not trained or evaluated",
+  "policy": "Preserve original sources and historical scores. Rebind native metadata, retain history, targets and split order. Revised evaluation questions change interpretation and need a separately measured baseline/candidate comparison; do not rescore old predictions. Do not train from the superseded queued data."
+}

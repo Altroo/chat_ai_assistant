@@ -1,0 +1,79 @@
+{
+  "version": "gestion-magasin-dialogue-v4-en-fr",
+  "application": "gestion_magasin",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "source_dataset": "gestion-magasin-dialogue-v3-en-fr",
+  "source_manifest_sha256": "2ce7270c427ae6c3ae337fb15856d5ded08aea35277c95d0fe2096554d5241cd",
+  "source_files": {
+    "train.eval.jsonl": "39ab4bf6709129758c89254083b72d96298fbb4f7d7b66753426b0112f56b186",
+    "train.jsonl": "f8d48e23d13b3c2b5c75c356ea8011b79e7f753f9924528f283ecd98e8898992",
+    "valid.eval.jsonl": "f148d0d215096d82b7f6b2722b611c331a5c3b2110705276e5ef78f9eb9af80e",
+    "valid.jsonl": "1889508c6b8ae62c78dc83b2ab2144f7616911459dbd732dacc4a53b0695cf11",
+    "test.eval.jsonl": "e01b4c5d5c6e93ffcb406d3f92000ecd21ad48e1a435b3ff6be3263233d7d42c"
+  },
+  "counts": {
+    "train": {
+      "retained": 166,
+      "augmented": 32,
+      "total": 198
+    },
+    "valid": {
+      "retained": 30,
+      "augmented": 13,
+      "total": 43
+    },
+    "test": {
+      "retained": 90
+    }
+  },
+  "row_counts": {
+    "train.jsonl": 198,
+    "valid.jsonl": 43,
+    "train.eval.jsonl": 166,
+    "valid.eval.jsonl": 30,
+    "test.eval.jsonl": 90
+  },
+  "changed_request_indices": {
+    "train.jsonl": [
+      116,
+      117,
+      173
+    ],
+    "valid.jsonl": [],
+    "train.eval.jsonl": [
+      116,
+      117
+    ],
+    "valid.eval.jsonl": [],
+    "test.eval.jsonl": [
+      44,
+      45
+    ]
+  },
+  "targets_changed": 0,
+  "splits_changed": 0,
+  "native_sources": {
+    "chat_ai/tools.py": "5a4e7b27a39bcae2e356ae8b1a5e3001f4cd91303c7bd067933b3807fc8c9c7b",
+    "chat_ai/planner.py": "90ab10979bb5e8e2bf3c9ca90578f0ab4c24d3e4bde0c638ede73c8349daa5b3",
+    "chat_ai/targets.py": "8c25bab411918b66ac7cfcc438554662721bee298f5961e0b4f66c17c2c97a5c",
+    "chat_ai/services.py": "293f5e930cc7119b70d2997d62ade4ad678e71d626e253b9358555d36759642d",
+    "chat_ai/security.py": "0f888d5e3db5576de26865e7d3ad3244ab099e05f422df250c61e3b093547661",
+    "chat_ai/resources.py": "1258174b03a5eb89fed794048d2635f0881abf32e8235c68b42322e5e1c5bf2c",
+    "chat_ai/navigation.py": "6ea7b8b94f8d7ae4bfc15442f8892598b6d95fb2f1e20de23c0f770ae48a32bd",
+    "chat_ai/knowledge/store-finance.json": "11df64b0c03faa974543aa4a310f6b331d2164bad2ccd9d5305a75da4062bc90",
+    "reporting/views.py": "203d74cc8adb810bf1fa0d46c12e476ac3f8910e5f0cbded6c8109486e27ebc8"
+  },
+  "generator_sha256": "a80fe88f7b9dad698f2d0d3808b10ff8a3d431dbe92692fbc7013de2e4eb6b9e",
+  "files": {
+    "train.jsonl": "4cbd95969b39d7525e11c321a2194fa88bc909c809d4267936be1cd28c0b1a14",
+    "valid.jsonl": "da9eed2184f1a6ebd9b84bc0f406d2d0e65615c8562fe357d6d16472436d236c",
+    "train.eval.jsonl": "46a5a9c2a50ba23992042767d813194030b4338a5877fa91ebaab2eabdc3f103",
+    "valid.eval.jsonl": "9a8bf99998808831dc611e49f5aa51dbef6008af35569f5b38464b0827929f6e",
+    "test.eval.jsonl": "db4a807f871a932138e9a3427eba372d750e836d1b458ac1892dd45ef306732c"
+  },
+  "status": "PREPARED; native metadata and request corrections, not trained or evaluated",
+  "policy": "Preserve original sources and historical scores. Rebind native metadata, retain history, targets and split order. Revised evaluation questions change interpretation and need a separately measured baseline/candidate comparison; do not rescore old predictions. Do not train from the superseded queued data."
+}
