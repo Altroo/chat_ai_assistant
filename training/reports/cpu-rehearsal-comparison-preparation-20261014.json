@@ -1,0 +1,41 @@
+{
+  "status": "PARTIALLY IMPLEMENTED; EXACT REPLAY HELPERS PREPARED",
+  "tests": {
+    "training_integrity_passed": 187,
+    "comparison_tests_passed": 15,
+    "suite_seconds": 19.02,
+    "fixtures": "Synthetic inputs and streamed events; no local model weights, inference or training"
+  },
+  "single_reviewer": "No issues after narrow fixes",
+  "files": {
+    "training/scripts/rehearsal_comparison.py": "32924c9a50c4a651d4ac4dc3f2138689e0b67fb3e45ad373afa8690de04689d0",
+    "training/tests/test_rehearsal_comparison.py": "90e4c107a5672eabe880d0523b6bf049d84c4cd39113195b9f0325044e894a44",
+    "docs/AI_PRETRAINING_CHECKS.md": "cd9d52a600a21e00f4a4e2f4dba237e00a8a8127e821606e19723c2919eaf6f5"
+  },
+  "checks": [
+    "Completed numerical evidence, full saved-adapter inventory and dataset hashes",
+    "Original messages and tool inventory with prompt and token-count parity",
+    "Binding between frozen request, actual sent payload and recorded response",
+    "Exact structured arguments without normalization or rendered clarification text",
+    "Malformed and failed responses retained; no agreement credited to two failures",
+    "Token usage, output budget, fragment types and consistent tool-call IDs",
+    "Native clean-EOF behavior after a terminal finish reason"
+  ],
+  "review_fixes": [
+    "Reject modified replay payloads instead of trusting copied identity alone",
+    "Reject mismatched or invalid token usage",
+    "Reject invalid fragment types and inconsistent tool-call identities"
+  ],
+  "numerical_rehearsal_executed": false,
+  "export_comparison_executed": false,
+  "network_collector_implemented": false,
+  "live_worker_attestation_executed": false,
+  "active_training_modified": false,
+  "model_accepted": false,
+  "limitations": [
+    "The server controller must still bind and attest the actual export and isolated worker before and after replay.",
+    "The helpers do not launch services, execute requests or authorize further training.",
+    "Streamed API events do not prove raw generated-token parity.",
+    "Training and development captures are not acceptance cases."
+  ]
+}

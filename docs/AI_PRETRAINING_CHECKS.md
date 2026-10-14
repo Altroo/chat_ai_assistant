@@ -1,5 +1,7 @@
 # Pre-training correctness checks
 
+PARTIALLY IMPLEMENTED: exact rehearsal replay helpers are prepared and reviewed. All 187 training integrity tests pass, including 15 new comparison tests. The helpers bind the exact sent payload, preserve structured clarification arguments and failed responses, validate token usage and compare actions without normalizing defaults. The numerical rehearsal, real export, network collection and live worker attestation remain pending. Current R8 training and its frozen controller are unchanged. [Comparison preparation](../training/reports/cpu-rehearsal-comparison-preparation-20261014.json).
+
 PARTIALLY IMPLEMENTED: the static audit and server rehearsal runner are prepared. All 172 training integrity tests pass, including 13 rehearsal contract tests with synthetic fixtures. Metadata preparation passes the current R8 curriculum and all three queued stages. The numerical rehearsal has not run; adapter export and Colibri comparison have not run. [Preparation evidence](../training/reports/cpu-rehearsal-preparation-20261014.json).
 
 The purpose is to detect mistakes before another full training run. This does not predict 95% accuracy or replace per-application acceptance testing.
@@ -71,3 +73,22 @@ Numerical completion is explicitly reported as EXPORT COMPARISON PENDING. It doe
 6. Evaluate the resulting candidate against unchanged per-application acceptance gates. Production activation remains separate.
 
 The active R8 trainer, controller, frozen inputs and production model are unchanged by this preparation.
+
+## Exact replay helpers
+
+The `rehearsal_comparison.py` module supplies evidence loading, exact request construction, streamed-event parsing and paired diagnostics. Its 15 synthetic tests pass; no actual model replay has run. It does not start services, export weights, make network requests, attest a live worker or authorize full training.
+
+Do not use the standard evaluator summary for this comparison. It normalizes optional default arguments and converts clarification arguments into display text. Calling the provider's `choose()` with a complete rehearsal tool inventory also appends a second clarification definition. The replay payload must use the original messages and tools directly.
+
+The bound server controller must:
+
+1. Call `load_captures(rehearsal, data)` to check the completed rehearsal, all capture evidence, complete adapter inventory and exact dataset hashes.
+2. Verify the pinned base, tokenizer and runtime identities. Call `replay_requests(evidence, renderer, tokenizer, model_id)` with those same template/tokenizer implementations. This verifies each prompt hash and token count and derives its output budget as the lesser of 512 and the available 8192-token context.
+3. Preserve the issued requests before inference. Send each payload directly to the isolated worker's streaming chat endpoint, without rebuilding schemas or calling `choose()`. The existing exporter and worker verification patterns can be reused; their historical full-run entry points cannot.
+4. Preserve every raw streamed JSON object, transport failure class, terminal finish reason, usage and whether the DONE marker arrived. For each response, record the split, row index, input hash and prompt hash in `identity`, plus `request_sha256` computed from the exact payload actually sent. Use the module's canonical JSON encoding for that digest. Keep this evidence in ignored private evaluation output.
+5. Call `compare_pairs(requests, responses)`. Changed or missing requests fail admission. Malformed responses, invalid tool calls, mismatched prompt usage and exceeded output budgets remain failures. A clean EOF after a valid terminal finish reason matches the native provider's behavior; an absent DONE marker alone is not a model failure.
+6. Recheck the exported model, runtime, worker executable, command, environment and process identity after replay, then stop the isolated worker. These checks belong to the server controller and remain required regardless of the helper result.
+
+The report separates training captures from development captures. It records exact valid-action agreement and correct-to-incorrect changes. Two failed calls never count as agreement. Type distinctions and explicit default arguments are preserved for diagnosis, so semantic equivalence must be investigated before treating a difference as an export defect. Streamed tool-call objects do not establish generated-token parity.
+
+All helper reports leave model acceptance and full-training authorization false. The numerical rehearsal and real export/controller execution are still pending until the current R8 controller has fully completed.
