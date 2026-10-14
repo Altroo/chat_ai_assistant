@@ -1,0 +1,43 @@
+{
+  "manifest_sha256": "74fb992ed98e326ff518cdd4302f36205230c41c3b41b34515ef0c823b2763e5",
+  "generator_sha256": "1c5190a38b13e2b524b0c7a8616c82a8c4ba7bc63306b72d551437ee1f63f648",
+  "metadata_checker_sha256": "fa235e2a37e2e959696361ba2d6349133b68b979c31e4067f076823f25fc1d85",
+  "tokenizer_artifact_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+  "runtime_artifact_sha256": "ad9da4a77237056269ddf600cce337990bf7c51ce343f74c6f8f26e03db13a35",
+  "checks": {
+    "count": 486,
+    "round_trip_passed": 486,
+    "runtime_prefix_parity_passed": 486,
+    "loss_boundary_passed": 486,
+    "semantic_alignment_passed": 486,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7271,
+    "sha256": "ea191daf6f9d53f0675743e7476967fbf4d36afede4697259c746bba064758bd"
+  },
+  "maximum_prompt_tokens": 7235,
+  "reserved_output_tokens": 512,
+  "maximum_message_tool_bytes": 27945,
+  "scope": "Fresh tokenizer, template, Colibri parser and schema checks for all 486 three-app evaluation cases. Expected outputs rendered only for round-trip checks; no model weights, inference, training, business data or production changes.",
+  "model_accuracy_measured": false,
+  "historical_scores_changed": false,
+  "train.jsonl": {
+    "count": 2339,
+    "round_trip_passed": 2339,
+    "runtime_prefix_parity_passed": 2339,
+    "loss_boundary_passed": 2339,
+    "semantic_alignment_passed": 2339,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7745,
+    "sha256": "270ac1ad28cec59e78380150799e99d0d0162161ab367b8526dc0a2ef7ad8d37"
+  },
+  "valid.jsonl": {
+    "count": 275,
+    "round_trip_passed": 275,
+    "runtime_prefix_parity_passed": 275,
+    "loss_boundary_passed": 275,
+    "semantic_alignment_passed": 275,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 7496,
+    "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+  }
+}

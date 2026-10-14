@@ -1,0 +1,26 @@
+{
+  "scope": "Metadata-only diagnosis of the Mistral-regex warning in the pinned local Qwen tokenizer; no weights or inference.",
+  "transformers_version": "5.19.0",
+  "tokenizers_version": "0.23.2",
+  "config_model_type": "qwen3_5_text",
+  "config_transformers_version": null,
+  "tokenizer_json_sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+  "transformers_tokenizer_backend_sha256": "32e4ff002092023720bdbe9101e01005a4a149a0729c82e05d7dbf497cbaa388",
+  "qwen_tokenizer_implementation_sha256": "3d2f98abc1c6eec61e4548171286b88f5e8173ac6d63954b8fd225b7e24cf25a",
+  "saved_regex_matches_installed_qwen_implementation": true,
+  "loaded_pre_tokenizer_equals_saved_pre_tokenizer": true,
+  "raw_vs_default_vs_explicit_no_patch_samples_passed": 8,
+  "sample_languages": [
+    "en",
+    "fr"
+  ],
+  "diagnosis": "The generic local-tokenizer check treats config.json as Mistral-related when transformers_version is absent. The stored model_type is qwen3_5_text. Its original regex equals the installed Qwen3.5 regex and the default loader leaves it unchanged.",
+  "action": "Keep the pinned Qwen tokenizer unchanged; do not apply the unrelated Mistral regex patch.",
+  "limitations": [
+    "Eight tokenization samples do not prove general model accuracy.",
+    "This verifies the pinned local metadata used for parity checks; server artifacts retain their existing separate attestation."
+  ],
+  "model_weights_loaded": false,
+  "training_executed": false,
+  "production_changed": false
+}
