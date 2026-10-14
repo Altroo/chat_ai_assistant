@@ -1,10 +1,29 @@
 # Shared model accuracy work
 
-PARTIALLY IMPLEMENTED — R7 server training started: the reviewed full 2,065-step epoch is running from the original FP32 weights of R6 step 1969. Server metadata checks passed all 2,065 training and 275 validation rows; both capacity updates passed across all 24 layers, with 6.21 GiB peak process RSS. Configuration: 14 CPU threads, 16 GiB limit, BF16 SDPA, rank-16 LoRA on 24 layers, learning rate 0.00001 and semantic weight 4. The predeclared functional selection compares baseline and checkpoints 300, 600, 900, 1200, 1500, 1800 and 2065 before separate regression evaluation. The reviewed automatic handoff is running and waiting for successful training completion; thirteen guard/regression checks pass. It will compare all saved candidates and run the selected candidate against 438 V2 cases, with no activation or later-app training. No R7 accuracy improvement is claimed. Production remains unchanged. [Launch evidence](../training/reports/shared-v5r7-launch.json), [selection policy](../training/reports/shared-v5r7-checkpoint-selection-policy.json).
+PARTIALLY IMPLEMENTED: R7 training and evaluation completed on 2026-10-14, but model acceptance FAILED. All 2,065 server training steps and seven saved-checkpoint comparisons completed; the predeclared functional rule selected step 1200. On 438 V2 regression cases: 427/438 correct tools (97.49%), 313/334 eligible exact arguments (93.71%), 435/438 valid structures (99.32%) and 413/438 fully matched actions (94.29%). Only 4/15 sets pass every gate; six critical model cases fail. All three evaluation workers stopped, artifact identities matched before/after, and production stayed unchanged. Management Projet remains disabled. Contracts, Gestion Magasin and Reservation training remain queued behind shared-model acceptance. [Measured R7 report](../training/reports/shared-v5r7-en-fr-evaluation.json).
 
 IMPLEMENTED locally and verified — revised sequential preparations retain every R7 training/validation byte, including its reviewed instruction repairs and 96 added context contrasts. Contracts V6r7 contains 2,218/319/516 training/validation/evaluation cases; Gestion Magasin V7r7 contains 2,416/362/606; Réservation V8r7 contains 2,596/402/690. Ten integrity tests pass. Fresh metadata checks pass all 2,998 cumulative training/validation rows and all 690 V2 evaluation cases. Original V1 and revised V2 evaluation prompts are excluded from optimization; original files remain preserved. The single reviewer found no issues. No local weights, inference or optimization were used. Each later launch still requires its exact accepted predecessor, baseline and server resource gates. [Metadata evidence](../training/reports/shared-v8r7-en-fr-metadata-preflight.json).
 
 Management Projet remains disabled in production by explicit user instruction. This work uses the existing shared Qwen3.5-0.8B checkpoint and Colibri CPU runtime; no new foundation model or application-specific model is downloaded. Production weights, permissions and financial calculations remain unchanged.
+
+
+## R7 completed results: 2026-10-14
+
+Training completed all 2,065 steps on the server. The seven saved checkpoints each completed the same 275-case validation evaluation; the prior baseline predictions were reused with matching bindings. Step 1200 was selected by the predeclared application-macro action rule, with 242/275 validation actions correct. The loss-only checkpoint was step 600; loss and action accuracy are different measurements.
+
+The selected checkpoint then completed 438 English/French V2 regression cases. Relative to the matching R7 baseline, correct tools improved from 415 to 427, exact arguments from 306/334 to 313/334, and fully matched actions from 394 to 413. Valid structures remained 435/438. The baseline reused 435 identical results and freshly measured three corrected cases; all 438 candidate results are fresh, so no combined baseline latency claim is made.
+
+| Application | Correct tools | Exact arguments | Valid structure | Fully matched actions | Critical model failures |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| facturation | 105/108 (97.22%) | 74/86 (86.05%) | 108/108 (100%) | 96/108 (88.89%) | 0 |
+| management_projet | 193/200 (96.50%) | 142/148 (95.95%) | 197/200 (98.50%) | 190/200 (95.00%) | 5 |
+| design_workflow | 129/130 (99.23%) | 97/100 (97.00%) | 130/130 (100%) | 127/130 (97.69%) | 1 |
+
+**Acceptance FAILED.** Only four of fifteen frozen sets pass every gate. Management Projet's remaining critical cases include unsupported supplier-specific financial requests and choosing the wrong saved client for an edit. Design Workflow's remaining critical case returns a translated priority label instead of the required tool value. Facturation still misses combined filters, strict-before dates, operational statuses and financial intent. These are model-planning failures; this evaluator executes no business operations and does not establish an authorization bypass.
+
+Before/after model, provider and runtime proofs match; all three temporary workers stopped and their ports closed. The original production assistant remained healthy with unchanged start time. No later-app training or model activation occurred. No separate R7 performance benchmark was run. Original benchmark results and labels remain preserved.
+
+[Recomputed results, per-set gates and evidence hashes](../training/reports/shared-v5r7-en-fr-evaluation.json).
 
 ## V5r6 measured results — 2026-10-13
 

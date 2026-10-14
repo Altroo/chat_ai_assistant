@@ -1,5 +1,7 @@
 # Model training and evaluation
 
+PARTIALLY IMPLEMENTED: R7 training and evaluation completed on 2026-10-14, but model acceptance FAILED. All 2,065 server training steps and seven saved-checkpoint comparisons completed; the predeclared functional rule selected step 1200. On 438 V2 regression cases: 427/438 correct tools (97.49%), 313/334 eligible exact arguments (93.71%), 435/438 valid structures (99.32%) and 413/438 fully matched actions (94.29%). Only 4/15 sets pass every gate; six critical model cases fail. All three evaluation workers stopped, artifact identities matched before/after, and production stayed unchanged. Management Projet remains disabled. Contracts, Gestion Magasin and Reservation training remain queued behind shared-model acceptance. [Measured R7 report](../training/reports/shared-v5r7-en-fr-evaluation.json).
+
 This page describes the deployed Facturation V4 model. Newer shared candidates, including completed V5r4, V5r5 and V5r6 candidates that failed acceptance, are tracked in [measured model accuracy](AI_MODEL_ACCURACY.md) and the [sequential training queue](AI_TRAINING_QUEUE.md). They have not replaced production.
 
 The active Facturation assistant supports **English and French only**. It follows the current message automatically, including language changes within a conversation. There is no language selector. Runtime prompts, clarification schemas, API capabilities, the current training dataset and the independent evaluation set all use this scope.
