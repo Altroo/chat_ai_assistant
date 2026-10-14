@@ -1,0 +1,82 @@
+{
+  "status": "IMPLEMENTED and verified as reporting preparation only",
+  "date_utc": "2026-10-14T10:57:41.394888+00:00",
+  "test_command": "python -B -m unittest discover -s training/tests -p 'test_serial_report*.py' -v",
+  "tests_passed": 20,
+  "model_training_executed": false,
+  "model_inference_executed": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "files": {
+    "training/scripts/report_serial_candidate_v2.py": "904fa83a6ca2cce0db77959acd25c1a5929252303604253e86aef151b89a0036",
+    "training/tests/test_serial_report_v2.py": "887cb3a105364796f6941130a7ab77983131c38b5e9ce7b800516e688c725e9d"
+  },
+  "captured_baseline_replay": {
+    "all_assessments_exactly_reproduced": true,
+    "case_count": 48,
+    "metrics": {
+      "count": 48,
+      "counts": {
+        "tool_correct": 47,
+        "structured_valid": 48,
+        "action_matches": 30
+      },
+      "percent": {
+        "tool_correct": 97.92,
+        "structured_valid": 100.0,
+        "action_matches": 62.5
+      },
+      "exact_arguments": {
+        "passed": 18,
+        "count": 36,
+        "percent": 50.0
+      }
+    },
+    "clarifications": {
+      "count": 12,
+      "counts": {
+        "tool_correct": 12,
+        "structured_valid": 12,
+        "action_matches": 12
+      },
+      "percent": {
+        "tool_correct": 100.0,
+        "structured_valid": 100.0,
+        "action_matches": 100.0
+      },
+      "exact_arguments": {
+        "passed": 0,
+        "count": 0,
+        "percent": null
+      }
+    },
+    "input_sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+    "captured_result_sha256": "03eee1af8f4b1aff4c450333d4030053744367f8ed3b5c2506e02c1c54a13fa4",
+    "provider_clarifications_sha256": "e5cb817facdb8e440538cc0ed9b252ff127f6d8e470bb630574e5530e7a31a7d",
+    "events_sha256": [
+      "8feb56b471d47300107c3157889c52da3d20f1a414d69402b79d976826ee1fd3",
+      "2d9c1716d75097b3fb8bf2d240eaaed5462038da6ddcc5b2cfa3591bad6de96b",
+      "4151272f80e41a7162e81ec822027fedc48a390719ae7d408ecf428d906de278"
+    ]
+  },
+  "prepared_stages": {
+    "contrat": {
+      "regression": 516,
+      "fresh_controls": 48
+    },
+    "gestion_magasin": {
+      "regression": 606,
+      "fresh_controls": 48
+    },
+    "reservation": {
+      "regression": 690,
+      "fresh_controls": 48
+    }
+  },
+  "limitations": [
+    "Report tests use synthetic fixtures; they are not model accuracy measurements.",
+    "Captured baseline replay verifies existing results; it is not fresh inference or improved model accuracy.",
+    "Fresh controls cover the three base applications. Later apps keep their existing separate held-out cases.",
+    "Each stage still requires accepted predecessor bindings, actual baseline/candidate evaluation, server admission and security verification."
+  ]
+}
