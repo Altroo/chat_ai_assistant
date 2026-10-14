@@ -1,0 +1,2582 @@
+{
+  "status": "STATIC AUDIT COMPLETE; NUMERICAL REHEARSAL PENDING",
+  "scope": "Pre-training mistake detection, not a 95 percent accuracy forecast",
+  "checks": {
+    "existing_integrity_tests_passed": 148,
+    "new_audit_tests_passed": 11,
+    "native_queued_source_files_unchanged": 22,
+    "current_trainer_review": "No confirmed masking, loss-shift, optimizer, checkpoint-selection or isolation defect found",
+    "total_integrity_tests_passed": 159,
+    "complete_suite_seconds": 18.786,
+    "application_metadata_matches_model_trusted_context": true,
+    "unsupported_explicit_languages_rejected": true,
+    "reviewer_findings_fixed": [
+      "Input identity now uses only messages and tools, with application metadata independently checked against trusted context.",
+      "Present language metadata outside English/French now fails; absent language metadata remains supported."
+    ],
+    "single_reviewer_final_result": "No issues after both checker findings were fixed"
+  },
+  "files": {
+    "training/scripts/audit_training_inputs.py": "4a15488a8dd60dd38b710acb10d47c1c08c5828b2e7501045ef889f3ab5afcba",
+    "training/tests/test_training_input_audit.py": "ac933749aeb429db804023ea65a6020b33f7730a594efdab78d84090a3f8282a"
+  },
+  "datasets": {
+    "shared-v5r8-en-fr": {
+      "status": "STATIC CHECKS PASSED; NUMERICAL REHEARSAL PENDING",
+      "manifest_sha256": "56f803ca7110ae78bc53c4a208a7dc7456819c024dc588109da46d7fb1520738",
+      "input_sha256": {
+        "train": "d4b38a4354703fe8ea4a82d2c52a0fdb665927150cd19fe9d7fa411ec32cea26",
+        "valid": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+      },
+      "rows_checked": {
+        "train": 2339,
+        "valid": 275
+      },
+      "exact_input_label_conflicts": 0,
+      "exact_input_cross_split_overlap": 0,
+      "complete_epoch_schedule": [
+        {
+          "first_step": 1,
+          "last_step": 300,
+          "by_application": {
+            "management_projet": 129,
+            "facturation": 111,
+            "design_workflow": 60
+          }
+        },
+        {
+          "first_step": 301,
+          "last_step": 600,
+          "by_application": {
+            "management_projet": 130,
+            "facturation": 110,
+            "design_workflow": 60
+          }
+        },
+        {
+          "first_step": 601,
+          "last_step": 900,
+          "by_application": {
+            "facturation": 111,
+            "management_projet": 129,
+            "design_workflow": 60
+          }
+        },
+        {
+          "first_step": 901,
+          "last_step": 1200,
+          "by_application": {
+            "facturation": 111,
+            "management_projet": 129,
+            "design_workflow": 60
+          }
+        },
+        {
+          "first_step": 1201,
+          "last_step": 1500,
+          "by_application": {
+            "management_projet": 129,
+            "design_workflow": 60,
+            "facturation": 111
+          }
+        },
+        {
+          "first_step": 1501,
+          "last_step": 1800,
+          "by_application": {
+            "management_projet": 130,
+            "design_workflow": 60,
+            "facturation": 110
+          }
+        },
+        {
+          "first_step": 1801,
+          "last_step": 2100,
+          "by_application": {
+            "facturation": 111,
+            "design_workflow": 60,
+            "management_projet": 129
+          }
+        },
+        {
+          "first_step": 2101,
+          "last_step": 2339,
+          "by_application": {
+            "management_projet": 103,
+            "design_workflow": 48,
+            "facturation": 88
+          }
+        }
+      ],
+      "rehearsal": {
+        "row_indices": [
+          488,
+          1025,
+          1271,
+          89,
+          2238,
+          548,
+          1322,
+          251,
+          704,
+          269,
+          2322,
+          1626,
+          2292,
+          450,
+          1599,
+          101,
+          564,
+          65,
+          1506,
+          391,
+          1882,
+          196,
+          1285,
+          1636,
+          566,
+          2337,
+          409,
+          1014,
+          2229,
+          1289,
+          454,
+          1704,
+          207,
+          1295,
+          1629,
+          1993,
+          1717,
+          1513,
+          2117,
+          1132,
+          1814,
+          1413,
+          909,
+          374,
+          330,
+          1382,
+          2239,
+          128
+        ],
+        "count": 48,
+        "by_application": {
+          "facturation": 23,
+          "management_projet": 13,
+          "design_workflow": 12
+        },
+        "covered_features": [
+          [
+            "design_workflow",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "design_workflow",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"archive\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "design_workflow",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "design_workflow",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "clarify"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "get_record"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "navigate"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "search_records"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "time_report"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "workload_summary"
+          ],
+          [
+            "facturation",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "facturation",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"show\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"unpaid\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "facturation",
+            "tool",
+            "clarify"
+          ],
+          [
+            "facturation",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "facturation",
+            "tool",
+            "get_invoice"
+          ],
+          [
+            "facturation",
+            "tool",
+            "get_record"
+          ],
+          [
+            "facturation",
+            "tool",
+            "invoice_pdf"
+          ],
+          [
+            "facturation",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "facturation",
+            "tool",
+            "list_payments"
+          ],
+          [
+            "facturation",
+            "tool",
+            "navigate"
+          ],
+          [
+            "facturation",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "facturation",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_articles"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_clients"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_documents"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_invoices"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_operations"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_payments"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_quotes"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_users"
+          ],
+          [
+            "management_projet",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "management_projet",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "management_projet",
+            "tool",
+            "clarify"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "get_record"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "navigate"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "project_report"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "search_records"
+          ]
+        ],
+        "selected_rows_sha256": "577ed5c3e626fdb0368c7f7304d67c04327139e111cdfedf7b59981f687c9f3e",
+        "status": "PREPARATION ONLY; server numerical and export rehearsal not executed",
+        "limitations": [
+          "Covers tool, operation and clarification-reason groups, not every argument combination.",
+          "Language coverage is checked only where rows have explicit language metadata.",
+          "Selection uses training rows only and preserves genuine history.",
+          "This is a mechanics rehearsal proposal, not a validation set or accuracy forecast."
+        ]
+      },
+      "model_weights_loaded": false,
+      "training_executed": false,
+      "accuracy_estimated": false,
+      "limitations": [
+        "Exact input checks preserve all history and tool order; near-duplicate semantic independence is not established.",
+        "Schemas do not prove business-label correctness; native semantic checks and review remain required.",
+        "Tokenizer/loss-mask parity, numeric updates and export checks are separate required checks."
+      ]
+    },
+    "shared-v6r8-en-fr": {
+      "status": "STATIC CHECKS PASSED; NUMERICAL REHEARSAL PENDING",
+      "manifest_sha256": "5c3a56a3cd39f0ccf484a20005c2abb387c40685a6819dc1a2d5ae0c5b2cf964",
+      "input_sha256": {
+        "train": "d3cee32d340b006691cdb91d314fe3adf497362fc815eaff34c9994dfc239d34",
+        "valid": "9f3d88ccf72f651f869bbb8f19495ed1570b1b2fe49aa67351f79ef7142e584d"
+      },
+      "rows_checked": {
+        "train": 2492,
+        "valid": 319
+      },
+      "exact_input_label_conflicts": 0,
+      "exact_input_cross_split_overlap": 0,
+      "complete_epoch_schedule": [
+        {
+          "first_step": 1,
+          "last_step": 300,
+          "by_application": {
+            "management_projet": 122,
+            "facturation": 104,
+            "design_workflow": 56,
+            "contrat": 18
+          }
+        },
+        {
+          "first_step": 301,
+          "last_step": 600,
+          "by_application": {
+            "design_workflow": 57,
+            "contrat": 19,
+            "facturation": 104,
+            "management_projet": 120
+          }
+        },
+        {
+          "first_step": 601,
+          "last_step": 900,
+          "by_application": {
+            "management_projet": 122,
+            "facturation": 104,
+            "design_workflow": 56,
+            "contrat": 18
+          }
+        },
+        {
+          "first_step": 901,
+          "last_step": 1200,
+          "by_application": {
+            "management_projet": 121,
+            "facturation": 104,
+            "design_workflow": 56,
+            "contrat": 19
+          }
+        },
+        {
+          "first_step": 1201,
+          "last_step": 1500,
+          "by_application": {
+            "management_projet": 122,
+            "design_workflow": 57,
+            "facturation": 103,
+            "contrat": 18
+          }
+        },
+        {
+          "first_step": 1501,
+          "last_step": 1800,
+          "by_application": {
+            "facturation": 104,
+            "management_projet": 121,
+            "design_workflow": 56,
+            "contrat": 19
+          }
+        },
+        {
+          "first_step": 1801,
+          "last_step": 2100,
+          "by_application": {
+            "facturation": 104,
+            "management_projet": 122,
+            "design_workflow": 56,
+            "contrat": 18
+          }
+        },
+        {
+          "first_step": 2101,
+          "last_step": 2400,
+          "by_application": {
+            "design_workflow": 57,
+            "facturation": 104,
+            "management_projet": 121,
+            "contrat": 18
+          }
+        },
+        {
+          "first_step": 2401,
+          "last_step": 2492,
+          "by_application": {
+            "facturation": 32,
+            "management_projet": 37,
+            "contrat": 6,
+            "design_workflow": 17
+          }
+        }
+      ],
+      "rehearsal": {
+        "row_indices": [
+          2229,
+          1882,
+          1382,
+          2456,
+          65,
+          409,
+          1132,
+          2322,
+          2346,
+          1626,
+          2239,
+          1814,
+          1599,
+          2428,
+          330,
+          564,
+          251,
+          2337,
+          2415,
+          128,
+          1704,
+          374,
+          1285,
+          2485,
+          196,
+          1025,
+          269,
+          1289,
+          2410,
+          2238,
+          909,
+          1506,
+          2117,
+          566,
+          101,
+          2421,
+          1295,
+          391,
+          704,
+          1636,
+          2400,
+          1513,
+          1717,
+          1993,
+          1629,
+          2464,
+          1271,
+          454,
+          548,
+          450,
+          2404,
+          1413,
+          1014,
+          488,
+          89,
+          2469,
+          1322,
+          2292,
+          207
+        ],
+        "count": 59,
+        "by_application": {
+          "facturation": 23,
+          "management_projet": 13,
+          "design_workflow": 12,
+          "contrat": 11
+        },
+        "covered_features": [
+          [
+            "contrat",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "contrat",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "contrat",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "contrat",
+            "tool",
+            "clarify"
+          ],
+          [
+            "contrat",
+            "tool",
+            "contract_document"
+          ],
+          [
+            "contrat",
+            "tool",
+            "get_record"
+          ],
+          [
+            "contrat",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "contrat",
+            "tool",
+            "navigate"
+          ],
+          [
+            "contrat",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "contrat",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "contrat",
+            "tool",
+            "search_records"
+          ],
+          [
+            "design_workflow",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "design_workflow",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"archive\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "design_workflow",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "design_workflow",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "clarify"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "get_record"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "navigate"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "search_records"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "time_report"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "workload_summary"
+          ],
+          [
+            "facturation",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "facturation",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"show\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"unpaid\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "facturation",
+            "tool",
+            "clarify"
+          ],
+          [
+            "facturation",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "facturation",
+            "tool",
+            "get_invoice"
+          ],
+          [
+            "facturation",
+            "tool",
+            "get_record"
+          ],
+          [
+            "facturation",
+            "tool",
+            "invoice_pdf"
+          ],
+          [
+            "facturation",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "facturation",
+            "tool",
+            "list_payments"
+          ],
+          [
+            "facturation",
+            "tool",
+            "navigate"
+          ],
+          [
+            "facturation",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "facturation",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_articles"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_clients"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_documents"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_invoices"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_operations"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_payments"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_quotes"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_users"
+          ],
+          [
+            "management_projet",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "management_projet",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "management_projet",
+            "tool",
+            "clarify"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "get_record"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "navigate"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "project_report"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "search_records"
+          ]
+        ],
+        "selected_rows_sha256": "0e865b680b84cb52fbf1d467e1c09726349ffd8d54385a662b973cde454e7178",
+        "status": "PREPARATION ONLY; server numerical and export rehearsal not executed",
+        "limitations": [
+          "Covers tool, operation and clarification-reason groups, not every argument combination.",
+          "Language coverage is checked only where rows have explicit language metadata.",
+          "Selection uses training rows only and preserves genuine history.",
+          "This is a mechanics rehearsal proposal, not a validation set or accuracy forecast."
+        ]
+      },
+      "model_weights_loaded": false,
+      "training_executed": false,
+      "accuracy_estimated": false,
+      "limitations": [
+        "Exact input checks preserve all history and tool order; near-duplicate semantic independence is not established.",
+        "Schemas do not prove business-label correctness; native semantic checks and review remain required.",
+        "Tokenizer/loss-mask parity, numeric updates and export checks are separate required checks."
+      ]
+    },
+    "shared-v7r8-en-fr": {
+      "status": "STATIC CHECKS PASSED; NUMERICAL REHEARSAL PENDING",
+      "manifest_sha256": "90c2e6b7f4c017ed9f0de69573e5e71a02ac7e840e770b6190646a1b8cb54bd0",
+      "input_sha256": {
+        "train": "3c7bf1663a78e39e5445637bc69862e1c15c29166e63b0e7a44df9e273884bb4",
+        "valid": "2e4df66283668e397ffe8a5562312569540602b0e8b45e7fed0c16afc79846bc"
+      },
+      "rows_checked": {
+        "train": 2690,
+        "valid": 362
+      },
+      "exact_input_label_conflicts": 0,
+      "exact_input_cross_split_overlap": 0,
+      "complete_epoch_schedule": [
+        {
+          "first_step": 1,
+          "last_step": 300,
+          "by_application": {
+            "management_projet": 113,
+            "facturation": 96,
+            "design_workflow": 52,
+            "gestion_magasin": 22,
+            "contrat": 17
+          }
+        },
+        {
+          "first_step": 301,
+          "last_step": 600,
+          "by_application": {
+            "facturation": 97,
+            "design_workflow": 52,
+            "management_projet": 112,
+            "gestion_magasin": 22,
+            "contrat": 17
+          }
+        },
+        {
+          "first_step": 601,
+          "last_step": 900,
+          "by_application": {
+            "design_workflow": 53,
+            "management_projet": 112,
+            "facturation": 96,
+            "gestion_magasin": 22,
+            "contrat": 17
+          }
+        },
+        {
+          "first_step": 901,
+          "last_step": 1200,
+          "by_application": {
+            "management_projet": 113,
+            "facturation": 96,
+            "gestion_magasin": 22,
+            "design_workflow": 52,
+            "contrat": 17
+          }
+        },
+        {
+          "first_step": 1201,
+          "last_step": 1500,
+          "by_application": {
+            "facturation": 97,
+            "management_projet": 112,
+            "gestion_magasin": 22,
+            "design_workflow": 52,
+            "contrat": 17
+          }
+        },
+        {
+          "first_step": 1501,
+          "last_step": 1800,
+          "by_application": {
+            "management_projet": 113,
+            "gestion_magasin": 22,
+            "design_workflow": 52,
+            "contrat": 17,
+            "facturation": 96
+          }
+        },
+        {
+          "first_step": 1801,
+          "last_step": 2100,
+          "by_application": {
+            "gestion_magasin": 23,
+            "design_workflow": 52,
+            "contrat": 17,
+            "management_projet": 112,
+            "facturation": 96
+          }
+        },
+        {
+          "first_step": 2101,
+          "last_step": 2400,
+          "by_application": {
+            "design_workflow": 53,
+            "contrat": 17,
+            "management_projet": 112,
+            "facturation": 96,
+            "gestion_magasin": 22
+          }
+        },
+        {
+          "first_step": 2401,
+          "last_step": 2690,
+          "by_application": {
+            "contrat": 17,
+            "management_projet": 109,
+            "facturation": 93,
+            "design_workflow": 50,
+            "gestion_magasin": 21
+          }
+        }
+      ],
+      "rehearsal": {
+        "row_indices": [
+          2229,
+          2675,
+          704,
+          1382,
+          2456,
+          65,
+          409,
+          2611,
+          1993,
+          2322,
+          2346,
+          1626,
+          2658,
+          1882,
+          1814,
+          1599,
+          2428,
+          330,
+          2633,
+          1132,
+          251,
+          2337,
+          2415,
+          128,
+          2595,
+          1014,
+          374,
+          1285,
+          2485,
+          196,
+          2509,
+          1704,
+          269,
+          1289,
+          2410,
+          2238,
+          2622,
+          2292,
+          1506,
+          2117,
+          2630,
+          548,
+          101,
+          2421,
+          1295,
+          391,
+          2682,
+          564,
+          1636,
+          2400,
+          1513,
+          1717,
+          2684,
+          566,
+          1629,
+          2464,
+          1271,
+          454,
+          2668,
+          1025,
+          450,
+          2404,
+          1413,
+          2593,
+          909,
+          488,
+          89,
+          2469,
+          1322,
+          2619,
+          2239,
+          207
+        ],
+        "count": 72,
+        "by_application": {
+          "facturation": 23,
+          "gestion_magasin": 13,
+          "management_projet": 13,
+          "design_workflow": 12,
+          "contrat": 11
+        },
+        "covered_features": [
+          [
+            "contrat",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "contrat",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "contrat",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "contrat",
+            "tool",
+            "clarify"
+          ],
+          [
+            "contrat",
+            "tool",
+            "contract_document"
+          ],
+          [
+            "contrat",
+            "tool",
+            "get_record"
+          ],
+          [
+            "contrat",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "contrat",
+            "tool",
+            "navigate"
+          ],
+          [
+            "contrat",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "contrat",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "contrat",
+            "tool",
+            "search_records"
+          ],
+          [
+            "design_workflow",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "design_workflow",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"archive\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "design_workflow",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "design_workflow",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "clarify"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "get_record"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "navigate"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "search_records"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "time_report"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "workload_summary"
+          ],
+          [
+            "facturation",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "facturation",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"show\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"unpaid\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "facturation",
+            "tool",
+            "clarify"
+          ],
+          [
+            "facturation",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "facturation",
+            "tool",
+            "get_invoice"
+          ],
+          [
+            "facturation",
+            "tool",
+            "get_record"
+          ],
+          [
+            "facturation",
+            "tool",
+            "invoice_pdf"
+          ],
+          [
+            "facturation",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "facturation",
+            "tool",
+            "list_payments"
+          ],
+          [
+            "facturation",
+            "tool",
+            "navigate"
+          ],
+          [
+            "facturation",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "facturation",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_articles"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_clients"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_documents"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_invoices"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_operations"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_payments"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_quotes"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_users"
+          ],
+          [
+            "gestion_magasin",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "gestion_magasin",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "gestion_magasin",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "gestion_magasin",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "gestion_magasin",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "gestion_magasin",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "gestion_magasin",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "clarify"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "get_record"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "navigate"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "sale_document"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "search_records"
+          ],
+          [
+            "management_projet",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "management_projet",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "management_projet",
+            "tool",
+            "clarify"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "get_record"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "navigate"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "project_report"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "search_records"
+          ]
+        ],
+        "selected_rows_sha256": "fc749065be65fe71f97d1f0cf3beed7b6e1fac96e52f7926f757cbea4c614224",
+        "status": "PREPARATION ONLY; server numerical and export rehearsal not executed",
+        "limitations": [
+          "Covers tool, operation and clarification-reason groups, not every argument combination.",
+          "Language coverage is checked only where rows have explicit language metadata.",
+          "Selection uses training rows only and preserves genuine history.",
+          "This is a mechanics rehearsal proposal, not a validation set or accuracy forecast."
+        ]
+      },
+      "model_weights_loaded": false,
+      "training_executed": false,
+      "accuracy_estimated": false,
+      "limitations": [
+        "Exact input checks preserve all history and tool order; near-duplicate semantic independence is not established.",
+        "Schemas do not prove business-label correctness; native semantic checks and review remain required.",
+        "Tokenizer/loss-mask parity, numeric updates and export checks are separate required checks."
+      ]
+    },
+    "shared-v8r8-en-fr": {
+      "status": "STATIC CHECKS PASSED; NUMERICAL REHEARSAL PENDING",
+      "manifest_sha256": "547f55a7975524b3a2da23c605844ccc96e0a0cc7039a687e20a697128fa240d",
+      "input_sha256": {
+        "train": "5872c2f4ff3c1206504db3797318624058b52f1b755aafb1c1ee350feeaa30f1",
+        "valid": "b6f097226d4c79136cf9d3826f36da177dccb321130d25647e15ab5340a79368"
+      },
+      "rows_checked": {
+        "train": 2870,
+        "valid": 402
+      },
+      "exact_input_label_conflicts": 0,
+      "exact_input_cross_split_overlap": 0,
+      "complete_epoch_schedule": [
+        {
+          "first_step": 1,
+          "last_step": 300,
+          "by_application": {
+            "management_projet": 105,
+            "facturation": 90,
+            "design_workflow": 49,
+            "gestion_magasin": 21,
+            "reservation": 19,
+            "contrat": 16
+          }
+        },
+        {
+          "first_step": 301,
+          "last_step": 600,
+          "by_application": {
+            "management_projet": 106,
+            "facturation": 90,
+            "design_workflow": 49,
+            "contrat": 16,
+            "reservation": 19,
+            "gestion_magasin": 20
+          }
+        },
+        {
+          "first_step": 601,
+          "last_step": 900,
+          "by_application": {
+            "facturation": 91,
+            "gestion_magasin": 21,
+            "management_projet": 105,
+            "design_workflow": 49,
+            "contrat": 16,
+            "reservation": 18
+          }
+        },
+        {
+          "first_step": 901,
+          "last_step": 1200,
+          "by_application": {
+            "reservation": 19,
+            "management_projet": 105,
+            "facturation": 90,
+            "design_workflow": 49,
+            "gestion_magasin": 21,
+            "contrat": 16
+          }
+        },
+        {
+          "first_step": 1201,
+          "last_step": 1500,
+          "by_application": {
+            "management_projet": 106,
+            "facturation": 90,
+            "reservation": 19,
+            "design_workflow": 49,
+            "contrat": 16,
+            "gestion_magasin": 20
+          }
+        },
+        {
+          "first_step": 1501,
+          "last_step": 1800,
+          "by_application": {
+            "gestion_magasin": 21,
+            "facturation": 90,
+            "management_projet": 105,
+            "design_workflow": 49,
+            "reservation": 19,
+            "contrat": 16
+          }
+        },
+        {
+          "first_step": 1801,
+          "last_step": 2100,
+          "by_application": {
+            "facturation": 90,
+            "management_projet": 106,
+            "gestion_magasin": 21,
+            "design_workflow": 48,
+            "reservation": 19,
+            "contrat": 16
+          }
+        },
+        {
+          "first_step": 2101,
+          "last_step": 2400,
+          "by_application": {
+            "facturation": 91,
+            "design_workflow": 49,
+            "management_projet": 105,
+            "gestion_magasin": 21,
+            "contrat": 16,
+            "reservation": 18
+          }
+        },
+        {
+          "first_step": 2401,
+          "last_step": 2700,
+          "by_application": {
+            "reservation": 19,
+            "design_workflow": 49,
+            "management_projet": 106,
+            "facturation": 90,
+            "contrat": 16,
+            "gestion_magasin": 20
+          }
+        },
+        {
+          "first_step": 2701,
+          "last_step": 2870,
+          "by_application": {
+            "design_workflow": 28,
+            "facturation": 51,
+            "reservation": 11,
+            "gestion_magasin": 12,
+            "management_projet": 59,
+            "contrat": 9
+          }
+        }
+      ],
+      "rehearsal": {
+        "row_indices": [
+          2229,
+          2675,
+          704,
+          1382,
+          2768,
+          2456,
+          65,
+          409,
+          2611,
+          1993,
+          2322,
+          2852,
+          2346,
+          1626,
+          2658,
+          1882,
+          1814,
+          1599,
+          2832,
+          2428,
+          330,
+          2633,
+          1132,
+          251,
+          2337,
+          2812,
+          2415,
+          128,
+          2595,
+          1014,
+          374,
+          1285,
+          2841,
+          2485,
+          196,
+          2509,
+          1704,
+          269,
+          1289,
+          2861,
+          2410,
+          2238,
+          2622,
+          2292,
+          1506,
+          2862,
+          2117,
+          2630,
+          548,
+          101,
+          2421,
+          1295,
+          2783,
+          391,
+          2682,
+          564,
+          1636,
+          2400,
+          1513,
+          2738,
+          1717,
+          2684,
+          566,
+          1629,
+          2464,
+          1271,
+          2807,
+          454,
+          2668,
+          1025,
+          450,
+          2404,
+          1413,
+          2776,
+          2593,
+          909,
+          488,
+          89,
+          2469,
+          1322,
+          2704,
+          2619,
+          2239,
+          207
+        ],
+        "count": 84,
+        "by_application": {
+          "facturation": 23,
+          "gestion_magasin": 13,
+          "management_projet": 13,
+          "design_workflow": 12,
+          "reservation": 12,
+          "contrat": 11
+        },
+        "covered_features": [
+          [
+            "contrat",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "contrat",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "contrat",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "contrat",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "contrat",
+            "tool",
+            "clarify"
+          ],
+          [
+            "contrat",
+            "tool",
+            "contract_document"
+          ],
+          [
+            "contrat",
+            "tool",
+            "get_record"
+          ],
+          [
+            "contrat",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "contrat",
+            "tool",
+            "navigate"
+          ],
+          [
+            "contrat",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "contrat",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "contrat",
+            "tool",
+            "search_records"
+          ],
+          [
+            "design_workflow",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "design_workflow",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"archive\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "design_workflow",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "design_workflow",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "design_workflow",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "clarify"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "get_record"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "navigate"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "search_records"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "time_report"
+          ],
+          [
+            "design_workflow",
+            "tool",
+            "workload_summary"
+          ],
+          [
+            "facturation",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "facturation",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"show\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"unpaid\""
+          ],
+          [
+            "facturation",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "facturation",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "facturation",
+            "tool",
+            "clarify"
+          ],
+          [
+            "facturation",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "facturation",
+            "tool",
+            "get_invoice"
+          ],
+          [
+            "facturation",
+            "tool",
+            "get_record"
+          ],
+          [
+            "facturation",
+            "tool",
+            "invoice_pdf"
+          ],
+          [
+            "facturation",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "facturation",
+            "tool",
+            "list_payments"
+          ],
+          [
+            "facturation",
+            "tool",
+            "navigate"
+          ],
+          [
+            "facturation",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "facturation",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_articles"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_clients"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_documents"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_invoices"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_operations"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_payments"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_quotes"
+          ],
+          [
+            "facturation",
+            "tool",
+            "search_users"
+          ],
+          [
+            "gestion_magasin",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "gestion_magasin",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "gestion_magasin",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "gestion_magasin",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "gestion_magasin",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "gestion_magasin",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "gestion_magasin",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "clarify"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "get_record"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "navigate"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "sale_document"
+          ],
+          [
+            "gestion_magasin",
+            "tool",
+            "search_records"
+          ],
+          [
+            "management_projet",
+            "explicit_language",
+            "en"
+          ],
+          [
+            "management_projet",
+            "explicit_language",
+            "fr"
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "management_projet",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "management_projet",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "management_projet",
+            "tool",
+            "clarify"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "get_record"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "navigate"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "project_report"
+          ],
+          [
+            "management_projet",
+            "tool",
+            "search_records"
+          ],
+          [
+            "reservation",
+            "operation",
+            "\"delete\""
+          ],
+          [
+            "reservation",
+            "operation",
+            "\"list\""
+          ],
+          [
+            "reservation",
+            "operation",
+            "\"open\""
+          ],
+          [
+            "reservation",
+            "operation",
+            "\"update\""
+          ],
+          [
+            "reservation",
+            "reason",
+            "\"ambiguous_metric\""
+          ],
+          [
+            "reservation",
+            "reason",
+            "\"missing_details\""
+          ],
+          [
+            "reservation",
+            "reason",
+            "\"unsupported\""
+          ],
+          [
+            "reservation",
+            "tool",
+            "clarify"
+          ],
+          [
+            "reservation",
+            "tool",
+            "financial_summary"
+          ],
+          [
+            "reservation",
+            "tool",
+            "get_record"
+          ],
+          [
+            "reservation",
+            "tool",
+            "knowledge"
+          ],
+          [
+            "reservation",
+            "tool",
+            "navigate"
+          ],
+          [
+            "reservation",
+            "tool",
+            "prepare_change"
+          ],
+          [
+            "reservation",
+            "tool",
+            "previous_results"
+          ],
+          [
+            "reservation",
+            "tool",
+            "search_records"
+          ]
+        ],
+        "selected_rows_sha256": "b91b0029aaab6c17e6d17c9738b17e893b201ded018c65e4e05471d449e4070e",
+        "status": "PREPARATION ONLY; server numerical and export rehearsal not executed",
+        "limitations": [
+          "Covers tool, operation and clarification-reason groups, not every argument combination.",
+          "Language coverage is checked only where rows have explicit language metadata.",
+          "Selection uses training rows only and preserves genuine history.",
+          "This is a mechanics rehearsal proposal, not a validation set or accuracy forecast."
+        ]
+      },
+      "model_weights_loaded": false,
+      "training_executed": false,
+      "accuracy_estimated": false,
+      "limitations": [
+        "Exact input checks preserve all history and tool order; near-duplicate semantic independence is not established.",
+        "Schemas do not prove business-label correctness; native semantic checks and review remain required.",
+        "Tokenizer/loss-mask parity, numeric updates and export checks are separate required checks."
+      ]
+    }
+  },
+  "review_findings": [
+    {
+      "classification": "prevention_gap",
+      "finding": "Existing capacity probe updates one longest training example twice; it does not check learning across different tools.",
+      "followup": "Use the prepared varied training-only rehearsal set before future full runs."
+    },
+    {
+      "classification": "unconfirmed_hypothesis",
+      "finding": "Training rounds base weights to BF16, while export merges into FP32 and inference uses FP16 storage plus dense int8 computation.",
+      "followup": "Measure the same small rehearsal through training, merged export and Colibri; do not attribute poor accuracy to this transition without evidence."
+    }
+  ],
+  "next_full_run_requirements": [
+    "Rerun static/native/tokenizer checks and review any changed inputs.",
+    "Freeze a training-only numerical rehearsal and a separate development-validation probe before optimization.",
+    "Run only one optimizer or model-evaluation job at a time on the approved server.",
+    "Verify finite gradients, actual adapter updates and representative decoded tool arguments.",
+    "Compare the original base, rehearsal adapter, merged artifact and Colibri output with exact artifact/config bindings.",
+    "Investigate unexpected serialization, critical target or export discrepancies before admitting a full run.",
+    "Discard rehearsal adapters; start full training from the original pinned base because current checkpoints lack full optimizer/RNG state.",
+    "Keep acceptance cases excluded from optimization and checkpoint selection."
+  ],
+  "numerical_rehearsal_executed": false,
+  "model_training_started_by_audit": false,
+  "model_accuracy_estimated": false,
+  "current_run_modified": false
+}
