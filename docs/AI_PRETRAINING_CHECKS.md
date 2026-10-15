@@ -168,3 +168,12 @@ CHAT_AI_TRAINING_SERVER=1 python -B training/scripts/replay_rehearsal.py \
 Fresh child environments exclude inherited termination, model, proxy and loader overrides. Export and conversion finish before the worker starts. Requests use the original frozen capture payloads. Before/after checks cover base, runtime, tokenizer, exported artifacts, worker executable, command, environment, process creation identity, loopback listener and advertised model. The supervisor stops only its owned session even if readiness, collection or verification fails. Two small Linux checks verified cleanup after an exited parent and a simulated readiness failure, without loading a model or altering a service.
 
 A complete transport replay can still contain incorrect actions. Its completion status therefore requires action review and keeps model acceptance and full-training authorization false. Training continues from the approved original base, never from the disposable rehearsal adapter. Real numerical execution, export and model replay are still pending; this preparation does not supply an accuracy score.
+
+
+## Expected reply budget
+
+IMPLEMENTED: preflight now rejects an expected assistant reply that exceeds the serving budget before numerical rehearsal or training. Contract conservative-target-v1 uses the lesser of 512 output tokens and the remaining 8192-token context. It conservatively counts the complete supervised suffix, including EOS, trailing template tokens and any prompt-boundary overlap.
+
+All 4,010 prepared six-application examples pass the real pinned tokenizer and Colibri parser checks: 2,870 training, 402 validation and 738 evaluation examples. Maximum expected reply lengths are 131, 116 and 134 tokens respectively. Two long training prompts reduce the available output budget below 512, to a minimum of 488; their expected replies still fit.
+
+All 308 training integrity tests pass, including six new tests for output overflow, exact limits, terminal formatting, prompt-boundary overlap, reduced context and invalid budgets. One reviewer found no issues. This is a preparation safeguard, not a model accuracy result. Historical inputs and scores remain unchanged. New runs must bind the updated preflight source hash; numerical rehearsal and model acceptance remain separate requirements. [Verification results](../training/reports/pretraining-output-budget-20261015.json).

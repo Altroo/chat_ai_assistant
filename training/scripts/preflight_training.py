@@ -9,10 +9,15 @@ from jsonschema import validate
 from semantic_loss import semantic_token_weights
 
 
-def verify_split(payload, tools_parser, tokenizer, maximum_tokens, runtime_renderer, semantic_weight=1):
+def verify_split(payload, tools_parser, tokenizer, maximum_tokens, runtime_renderer, semantic_weight=1, maximum_output_tokens=512):
+    for value in (maximum_tokens, maximum_output_tokens):
+        if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+            raise ValueError('Positive integer context and output budgets required')
     rows=[json.loads(line) for line in payload.decode().splitlines()]
     if not rows:raise ValueError('Empty dataset split')
     maximum=0
+    maximum_target=0
+    minimum_output_budget=maximum_output_tokens
     for row in rows:
         target=row['messages'][-1]
         if target.get('role')!='assistant' or len(target.get('tool_calls',[]))!=1:raise ValueError('Exactly one assistant tool target is required')
@@ -37,13 +42,22 @@ def verify_split(payload, tools_parser, tokenizer, maximum_tokens, runtime_rende
             if left!=right:break
             shared+=1
         if not shared or len(prompt_tokens)-shared>8 or shared>=len(tokens):raise ValueError('Unexpected tokenization loss boundary')
+        # Count the complete supervised suffix, including EOS, trailing template
+        # tokens and any tokens crossing the prompt boundary. This conservative
+        # bound must fit the same context-aware limit used by Colibri replay.
+        target_tokens=len(tokens)-shared
+        output_budget=min(maximum_output_tokens, maximum_tokens-len(prompt_tokens))
+        if target_tokens>output_budget:
+            raise ValueError('Expected assistant target exceeds serving output budget')
+        maximum_target=max(maximum_target,target_tokens)
+        minimum_output_budget=min(minimum_output_budget,output_budget)
         offsets=tokenizer(full,add_special_tokens=False,return_offsets_mapping=True)
         if offsets['input_ids']!=tokens:raise ValueError('Offset/template token-ID mismatch')
         weights=semantic_token_weights(full,len(prefix),offsets['offset_mapping'],shared,semantic_weight)
         if len(weights)!=len(tokens)-shared:raise ValueError('Semantic loss-token mismatch')
         maximum=max(maximum,len(tokens))
         if len(tokens)>maximum_tokens:raise ValueError('Example exceeds context; no truncation permitted')
-    return {'count':len(rows),'round_trip_passed':len(rows),'runtime_prefix_parity_passed':len(rows),'loss_boundary_passed':len(rows),'semantic_alignment_passed':len(rows),'semantic_loss_weight':semantic_weight,'maximum_tokens':maximum,'sha256':hashlib.sha256(payload).hexdigest()}
+    return {'count':len(rows),'round_trip_passed':len(rows),'runtime_prefix_parity_passed':len(rows),'loss_boundary_passed':len(rows),'semantic_alignment_passed':len(rows),'semantic_loss_weight':semantic_weight,'maximum_tokens':maximum,'output_budget_contract':'conservative-target-v1','output_budget_passed':len(rows),'maximum_target_tokens':maximum_target,'maximum_output_tokens':maximum_output_tokens,'minimum_output_budget':minimum_output_budget,'sha256':hashlib.sha256(payload).hexdigest()}
 
 
 def main():
