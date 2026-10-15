@@ -81,7 +81,8 @@ def file_sha(path):
 
 def save(path, value):
     with path.open('x') as handle:
-        handle.write(encoded(value) + '\n')
+        # Request artifacts must retain tool-schema key order for exact replay.
+        handle.write(json.dumps(value, ensure_ascii=False, separators=(',', ':')) + '\n')
 
 
 def check_predecessor(binding, plan):

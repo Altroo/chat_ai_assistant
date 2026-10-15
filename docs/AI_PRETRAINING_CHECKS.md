@@ -1,13 +1,15 @@
 # Pre-training correctness checks
 
 
-## Shared refinement rehearsal running - 15 October 2026
+## Shared rehearsal complete; corrected Colibri replay pending - 15 October 2026
 
-PARTIALLY IMPLEMENTED: the reviewed shared V5r10 numerical rehearsal is running on the approved CPU server using the existing R8 step-2339 FP32 model. It captures 20 training and six development examples before and after 63 selected training updates. The process uses 14 threads with a 16 GiB ceiling and a 10% host-memory reserve. No later application training or production activation has started. [Verified launch](../training/reports/shared-v5r10-rehearsal-launch.json).
+IMPLEMENTED and verified: all 63 numerical updates completed, all 24 intended layers received finite gradients and actual updates, the saved adapter matches the live model and frozen base parameters remain unchanged. Independent action checks and the single reviewer confirm training captures improved from 16/20 to 20/20; development captures stayed 5/6, with no correct-to-incorrect changes. This demonstrates learning on the rehearsed examples, not acceptance or development improvement.
 
-The initial launch admission rejected a newline-only difference between server and local proof serialization before creating any run directory or process. The exact serialization comparison was corrected and independently reviewed; original failed-attempt evidence is preserved.
+PARTIALLY IMPLEMENTED: merge and Colibri conversion completed, but the first replay was invalid for prompt parity. Its client alphabetically reordered tool-schema keys during JSON serialization, changing all 26 prompts. Reproducing that ordering explains all 26 server-reported token counts. Original evidence is preserved and the temporary worker stopped.
 
-IMPLEMENTED and tested as preparation: the separate shared-refinement export supervisor passes 78 synthetic tests and single-reviewer verification. The actual running rehearsal plan also passes its admission calculation with the serving-artifact lookup stubbed; this is not an export or model test. The original Contracts supervisor and its accepted-predecessor gate are unchanged. Numerical completion, real adapter merge, Colibri conversion/replay and paired action review remain pending. The disposable rehearsal adapter must not seed full training. [Export supervisor evidence](../training/reports/shared-refinement-replay-preparation.json).
+IMPLEMENTED and tested: request bytes, hashes and saved artifacts now preserve nested schema order. The 82 affected tests pass, including three regressions that failed before the fix and coverage of nested properties and both supervisors. Tokenizer-only checks preserve all 26 original prompt strings and token counts. The single reviewer found no remaining issue. Prompt/token validation and exact-action scoring were not weakened.
+
+Corrected Colibri replay, six R11 wording checks, full refinement and acceptance remain incomplete. The disposable adapter must not seed full training. Production is unchanged. [Rehearsal diagnosis and fix](../training/reports/shared-v5r10-rehearsal-diagnostics.json).
 
 ## Earlier results and preparations
 

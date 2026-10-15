@@ -1,0 +1,43 @@
+{
+  "version": "shared-v5r11-wording-preparation-v1",
+  "status": "PREPARATION ONLY; no full training or serving check executed",
+  "dataset_manifest_sha256": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
+  "changed_english_requests": 6,
+  "targets_unchanged": true,
+  "other_training_rows_byte_identical": 2413,
+  "validation_and_evaluation_unchanged": true,
+  "focused_tests_passed": 4,
+  "single_reviewer": "No issues",
+  "metadata_checks": {
+    "scope": "Six changed prompts only. Metadata checks, not inference or training. Retained rows reuse byte-identical prior metadata verification.",
+    "manifest_sha256": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
+    "tokenizer_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+    "parser_sha256": "b72c440a9dbf59b475aed255d5707dfcd547c7c47a4840fde92e7c1f5b8c2c18",
+    "train": {
+      "count": 6,
+      "round_trip_passed": 6,
+      "runtime_prefix_parity_passed": 6,
+      "loss_boundary_passed": 6,
+      "semantic_alignment_passed": 6,
+      "semantic_loss_weight": 4,
+      "maximum_tokens": 2403,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 6,
+      "maximum_target_tokens": 96,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "a1576e757c78edd295f70255b836b29a9aeb939f361344b37a3db6856fdb184a"
+    }
+  },
+  "source_sha256": {
+    "training/scripts/prepare_shared_v5r11.py": "29c41d90090050af09beb3532f15070e3f3edafbcdb14dfcd0302dad41ad2179",
+    "training/tests/test_shared_v5r11.py": "5b9c17485ebda1e79041ae0165ef107245f26e6232374377b50bd50d832729a3"
+  },
+  "remaining": [
+    "Complete corrected R10 Colibri replay and comparison.",
+    "Run targeted serving checks for the six clarified requests.",
+    "Select and bind the full refinement run after reviewing evidence."
+  ],
+  "production_activation": false,
+  "later_application_training_started": false
+}

@@ -15,6 +15,11 @@ EVIDENCE_FILES = ('plan.json', 'before.json', 'after.json', 'steps.jsonl',
                   'before.events.jsonl', 'after.events.jsonl')
 
 
+def request_json(value):
+    """Preserve insertion order: tool-schema order affects the rendered prompt."""
+    return json.dumps(value, ensure_ascii=False, separators=(',', ':'))
+
+
 def load_captures(rehearsal, data):
     complete = json.loads((rehearsal / 'complete.json').read_text())
     if (complete.get('model_accepted') is not False or complete.get('export_compared') is not False or
@@ -98,10 +103,10 @@ def replay_requests(evidence, renderer, tokenizer, model_id):
                    'tool_choice': 'auto', 'stream': True, 'stream_options': {'include_usage': True},
                    'temperature': 0, 'max_tokens': budget, 'enable_thinking': False,
                    'chat_template_kwargs': {'enable_thinking': False}}
-        if len(json.dumps(payload).encode()) > 48000:
+        if len(request_json(payload).encode()) > 48000:
             raise ValueError('Replay exceeds the native provider request limit')
         requests.append({'reference': reference, 'target': target(row), 'payload': payload,
-                         'request_sha256': digest(encoded(payload).encode())})
+                         'request_sha256': digest(request_json(payload).encode())})
     return requests
 
 
@@ -202,7 +207,7 @@ def compare_pairs(requests, responses):
         if response['identity'] != identity:
             raise ValueError('Replay capture identity or order changed')
         payload = request['payload']
-        payload_hash = digest(encoded(payload).encode())
+        payload_hash = digest(request_json(payload).encode())
         if payload_hash != request['request_sha256'] or payload_hash != response['request_sha256']:
             raise ValueError('Sent replay payload differs from the frozen request')
         actual_input = encoded({'messages': payload['messages'], 'tools': payload['tools']})

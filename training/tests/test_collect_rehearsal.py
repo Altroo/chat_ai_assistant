@@ -42,7 +42,7 @@ class CollectorTests(unittest.TestCase):
         raw = wire()
         result, connection = self.collect([raw])
         body = connection.request.call_args.kwargs['body']
-        self.assertEqual(body, collector.encoded(requests()[0]['payload']).encode())
+        self.assertEqual(body, collector.request_json(requests()[0]['payload']).encode())
         self.assertEqual(result['request_sha256'], collector.digest(body))
         self.assertEqual(base64.b64decode(result['response_body_base64']), raw)
         self.assertEqual(result['response_body_sha256'], collector.digest(raw))
@@ -50,6 +50,28 @@ class CollectorTests(unittest.TestCase):
         self.assertTrue(result['sse_done'])
         self.assertIsNone(result['transport_error'])
         self.assertTrue(compare_pairs(requests()[:1], [result])['pairs'][0]['same_valid_action'])
+
+    def test_sent_tool_schema_order_matches_the_rendered_input(self):
+        _, connection = self.collect([wire()])
+        sent = json.loads(connection.request.call_args.kwargs['body'])
+        original = requests()[0]['payload']
+        # JSON object equality hides ordering changes that alter the model prompt.
+        self.assertEqual(json.dumps(sent['tools']), json.dumps(original['tools']))
+
+    def test_saved_request_preserves_tool_schema_order(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'replay'
+            def send(request, address, timeout):
+                saved = json.loads((output / 'requests.json').read_text())[0]
+                self.assertEqual(json.dumps(saved['payload']['tools']),
+                                 json.dumps(request['payload']['tools']))
+                return {'identity': collector.identity(request),
+                        'request_sha256': request['request_sha256'],
+                        'events': [], 'transport_error': 'MODEL_TIMEOUT'}
+            with patch.object(collector.sys, 'platform', 'linux'), \
+                 patch.dict(os.environ, {'CHAT_AI_TRAINING_SERVER': '1'}), \
+                 patch.object(collector, 'collect_one', side_effect=send):
+                collector.collect_replay(requests(), 'http://127.0.0.1:12345/chat/completions', output)
 
     def test_arbitrary_byte_chunks_and_multiline_events(self):
         raw = b': heartbeat\r\n\r\nevent: message\n'

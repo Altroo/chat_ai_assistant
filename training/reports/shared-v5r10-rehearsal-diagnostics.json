@@ -1,0 +1,120 @@
+{
+  "version": "shared-v5r10-rehearsal-diagnostics-v1",
+  "status": "NUMERICAL REHEARSAL VERIFIED; CORRECTED COLIBRI REPLAY PENDING",
+  "numerical": {
+    "complete_sha256": "69b54ec3f7cff0d842a811918d34b840cb310e89bfbfd7ef072799bc37dacc52",
+    "steps": 63,
+    "updated_layers": 24,
+    "all_losses_and_gradients_finite": true,
+    "saved_adapter_matches_live": true,
+    "frozen_parameters_unchanged": true,
+    "summary": {
+      "before": {
+        "train": {
+          "management_projet": {
+            "count": 4,
+            "correct": 4,
+            "schema_valid": 4
+          },
+          "design_workflow": {
+            "count": 4,
+            "correct": 4,
+            "schema_valid": 4
+          },
+          "facturation": {
+            "count": 12,
+            "correct": 8,
+            "schema_valid": 10
+          }
+        },
+        "valid": {
+          "design_workflow": {
+            "count": 2,
+            "correct": 2,
+            "schema_valid": 2
+          },
+          "facturation": {
+            "count": 2,
+            "correct": 1,
+            "schema_valid": 2
+          },
+          "management_projet": {
+            "count": 2,
+            "correct": 2,
+            "schema_valid": 2
+          }
+        }
+      },
+      "after": {
+        "train": {
+          "management_projet": {
+            "count": 4,
+            "correct": 4,
+            "schema_valid": 4
+          },
+          "design_workflow": {
+            "count": 4,
+            "correct": 4,
+            "schema_valid": 4
+          },
+          "facturation": {
+            "count": 12,
+            "correct": 12,
+            "schema_valid": 12
+          }
+        },
+        "valid": {
+          "design_workflow": {
+            "count": 2,
+            "correct": 2,
+            "schema_valid": 2
+          },
+          "facturation": {
+            "count": 2,
+            "correct": 1,
+            "schema_valid": 2
+          },
+          "management_projet": {
+            "count": 2,
+            "correct": 2,
+            "schema_valid": 2
+          }
+        }
+      }
+    }
+  },
+  "initial_replay": {
+    "requests": 26,
+    "worker_stopped": true,
+    "valid_for_prompt_parity": false,
+    "reason": "Sorted JSON transport changed nested tool-schema order and therefore the model prompts.",
+    "changed_prompts": 26,
+    "server_token_counts_reproduced_by_reordering": 26,
+    "original_evidence_preserved": true
+  },
+  "fix": {
+    "description": "Preserve nested order in HTTP request bytes, request hashes and persisted requests. Keep prompt-token, schema and exact-action validation unchanged.",
+    "affected_tests_passed": 82,
+    "three_regressions_failed_before_fix": true,
+    "single_reviewer": "No issues",
+    "native_metadata_checks": {
+      "scope": "Metadata only; no inference or model acceptance",
+      "prompt_and_token_count_checks_passed": 26,
+      "wire_order_integrity_checks_passed": 26
+    },
+    "source_sha256": {
+      "training/scripts/rehearsal_comparison.py": "416ab2d3bc0761ab0eb5277f9fb2b9324e8cb6bc309ce679c1feee0372c5ab80",
+      "training/scripts/collect_rehearsal.py": "31953dce94a3aaec20d9ba9d9154ed2df1724c8b1ee0be3b15cbfa957910bd50",
+      "training/scripts/replay_rehearsal.py": "f72e7f8176e87f6816f981baf55d31357033f28a78438b587e963a3c5768fa2e",
+      "training/scripts/replay_shared_rehearsal_v1.py": "f4cca1aedee8bce93a24dacaa83ec0133e0f87993901af2cc74471466d4dc7f8"
+    }
+  },
+  "limitations": [
+    "Twenty rehearsed training cases improved from 16/20 to 20/20; six development cases stayed 5/6. This does not establish model acceptance.",
+    "The first Colibri replay changed every prompt and cannot establish export parity.",
+    "R11 wording corrections have not been trained or tested through corrected serving."
+  ],
+  "model_accepted": false,
+  "full_training_started": false,
+  "production_activation": false
+}

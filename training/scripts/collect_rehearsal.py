@@ -14,7 +14,7 @@ import sys
 import time
 from urllib.parse import urlsplit
 
-from rehearsal_comparison import compare_pairs
+from rehearsal_comparison import compare_pairs, request_json
 from audit_training_inputs import digest, encoded
 
 MAX_RESPONSE_BYTES = 500000
@@ -84,7 +84,7 @@ def identity(request):
 
 
 def collect_one(request, address, *, timeout):
-    body = encoded(request['payload']).encode('utf-8')
+    body = request_json(request['payload']).encode('utf-8')
     if digest(body) != request['request_sha256'] or len(body) > 48000:
         raise ValueError('Changed or oversized replay payload')
     result = {'identity': identity(request), 'request_sha256': digest(body),
@@ -177,11 +177,11 @@ def collect_replay(requests, endpoint, output, *, timeout=90):
                      'events': []} for item in requests]
     compare_pairs(requests, placeholders)
     for item in requests:
-        if len(encoded(item['payload']).encode('utf-8')) > 48000:
+        if len(request_json(item['payload']).encode('utf-8')) > 48000:
             raise ValueError('Oversized replay request')
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
-    (output / 'requests.json').write_text(encoded(requests) + '\n')
+    (output / 'requests.json').write_text(request_json(requests) + '\n')
     responses = []
     with (output / 'responses.jsonl').open('x') as log:
         for request in requests:

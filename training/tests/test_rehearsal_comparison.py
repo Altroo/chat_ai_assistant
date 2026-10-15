@@ -19,7 +19,7 @@ def row():
                 'name': 'find', 'arguments': {'limit': 1}}}]}],
         'tools': [
             {'type': 'function', 'function': {'name': 'find', 'parameters': {
-                'type': 'object', 'properties': {'limit': {'type': 'integer'}},
+                'type': 'object', 'properties': {'query': {'type': 'string'}, 'limit': {'type': 'integer'}},
                 'required': ['limit'], 'additionalProperties': False}}},
             {'type': 'function', 'function': {'name': 'clarify', 'parameters': {
                 'type': 'object', 'properties': {'reason': {'type': 'string'}},
@@ -197,6 +197,31 @@ class ComparisonTests(unittest.TestCase):
         resp[0]['request_sha256'] = '0' * 64
         with self.assertRaisesRegex(ValueError, 'payload differs'):
             comparison.compare_pairs(req, resp)
+
+    def test_reordering_schema_keys_is_a_changed_request(self):
+        for nested in (False, True):
+            with self.subTest(nested_properties=nested):
+                req, resp = requests(), responses()
+                function = req[0]['payload']['tools'][0]['function']
+                container = function['parameters'] if nested else function
+                key = 'properties' if nested else 'parameters'
+                before = container[key]
+                container[key] = dict(reversed(list(before.items())))
+                self.assertEqual(container[key], before)
+                with self.assertRaisesRegex(ValueError, 'payload differs'):
+                    comparison.compare_pairs(req, resp)
+
+    def test_supervisor_saved_requests_preserve_exact_wire_order(self):
+        import replay_rehearsal
+        import replay_shared_rehearsal_v1
+        for supervisor in (replay_rehearsal, replay_shared_rehearsal_v1):
+            with self.subTest(supervisor=supervisor.__name__), tempfile.TemporaryDirectory() as folder:
+                path = Path(folder) / 'requests.json'
+                original = requests()
+                supervisor.save(path, original)
+                restored = json.loads(path.read_text())
+                self.assertEqual(comparison.request_json(restored),
+                                 comparison.request_json(original))
 
     def test_invalid_or_mismatched_usage_never_counts_as_agreement(self):
         for usage in ({'prompt_tokens': 1, 'completion_tokens': 20},
