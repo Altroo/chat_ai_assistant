@@ -1,0 +1,33 @@
+{
+  "version": "shared-v5r10-rehearsal-launch-v1",
+  "status": "RUNNING; numerical result and export replay pending",
+  "source_commit": "bc25f9fa595a12a7d30c34a39f79cc5c63db6898",
+  "base_selected_step": 2339,
+  "predecessor_accepted": false,
+  "diagnostic_only": true,
+  "rehearsal_steps": 63,
+  "captures_per_phase": 26,
+  "training_captures": 20,
+  "development_captures": 6,
+  "cpu_threads": 14,
+  "memory_limit_gib": 16,
+  "spare_memory_floor_percent": 10,
+  "started_timestamp": 1792060479.62,
+  "dataset_manifest_sha256": "d76e13b44f6e679b4bfa792c9020cd20f37abaf5a690dfdbfcf6de5d37ca32a6",
+  "runner_sha256": "7cab40bfc0a9f171cb1d9c2caa1f1a1cc52ecf23062e77c26dd3d37b22e163a8",
+  "categories": [
+    "custom_currency_summary",
+    "custom_receipts",
+    "inclusive_document_bound",
+    "natural_product_location",
+    "resource_completion_status",
+    "unchosen_invoice",
+    "unpaid_open_interval",
+    "verbatim_remark"
+  ],
+  "production_unchanged": true,
+  "production_activation": false,
+  "full_training_started": false,
+  "review": "Single reviewer: no remaining findings",
+  "note": "First launch admission stopped before creating a run or service due to proof JSON newline formatting. Corrected exact serialization comparison was reviewed; second admission launched successfully."
+}

@@ -1,6 +1,17 @@
 # Chat AI Assistant progress
 
 
+## Shared refinement rehearsal running - 15 October 2026
+
+PARTIALLY IMPLEMENTED: the reviewed shared V5r10 numerical rehearsal is running on the approved CPU server using the existing R8 step-2339 FP32 model. It captures 20 training and six development examples before and after 63 selected training updates. The process uses 14 threads with a 16 GiB ceiling and a 10% host-memory reserve. No later application training or production activation has started. [Verified launch](../training/reports/shared-v5r10-rehearsal-launch.json).
+
+The initial launch admission rejected a newline-only difference between server and local proof serialization before creating any run directory or process. The exact serialization comparison was corrected and independently reviewed; original failed-attempt evidence is preserved.
+
+IMPLEMENTED and tested as preparation: the separate shared-refinement export supervisor passes 78 synthetic tests and single-reviewer verification. The actual running rehearsal plan also passes its admission calculation with the serving-artifact lookup stubbed; this is not an export or model test. The original Contracts supervisor and its accepted-predecessor gate are unchanged. Numerical completion, real adapter merge, Colibri conversion/replay and paired action review remain pending. The disposable rehearsal adapter must not seed full training. [Export supervisor evidence](../training/reports/shared-refinement-replay-preparation.json).
+
+## Earlier results and preparations
+
+
 ## Latest completed acceptance, 15 October 2026
 
 PARTIALLY IMPLEMENTED: R8 completed all 2,339 training updates and eight development checkpoint comparisons. The selected final checkpoint failed acceptance: 409/438 fully correct regression actions (93.38%), 309/334 exact arguments (92.51%) and 438/438 valid structures. Four of 15 regression sets pass every frozen gate.

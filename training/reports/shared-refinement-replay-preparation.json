@@ -1,0 +1,25 @@
+{
+  "version": "shared-refinement-replay-preparation-v1",
+  "status": "IMPLEMENTED AND SYNTHETICALLY TESTED; real export/replay pending",
+  "tests_passed": 78,
+  "single_reviewer": "No issues",
+  "real_running_plan_admission": "Passed against captured running plan with serving-artifact lookup stubbed; no model loaded",
+  "source_sha256": {
+    "training/scripts/replay_shared_rehearsal_v1.py": "50749ab5fc1f1a5253148c2f765799f7742eae3a8a28cd2e8b893b26db48c32a",
+    "training/tests/test_shared_replay_supervisor.py": "be8a3ad3bc1f4320b8543aafeabc1aacfc21adb4e0b69859bda6a4e590dcdf3d",
+    "training/scripts/replay_rehearsal.py": "120f6a6e6c8a02f0bfd97ed88c70e2e1a3d5eb6405219639aecc5b0c0be59070"
+  },
+  "invariants": [
+    "Only the three-app shared V5r10 curriculum is admitted.",
+    "A completed selected candidate can be diagnosed without implying model acceptance.",
+    "Category coverage and captures are recalculated from the bound training inputs.",
+    "Numerical unit identity, source, base, adapter and runtime must match.",
+    "Merge, conversion and one loopback Colibri worker execute sequentially.",
+    "Owned workers are cleaned up after success or failure.",
+    "Original Contracts accepted-predecessor supervisor is unchanged."
+  ],
+  "numerical_complete": false,
+  "export_replayed": false,
+  "full_training_authorized": false,
+  "production_activation": false
+}
