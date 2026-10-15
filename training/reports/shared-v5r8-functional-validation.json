@@ -1,0 +1,1351 @@
+{
+  "version": "shared-v5r8-functional-validation-v1",
+  "selection": {
+    "selected_step": 2339,
+    "candidates": [
+      {
+        "step": 0,
+        "count": 275,
+        "action_matches": 242,
+        "application_macro_action_percent": 90.75222109761583,
+        "application_macro_valid_percent": 98.82076987340145,
+        "scenario_grouped_application_macro_action_percent": 90.9527972027972,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 105,
+            "valid_structures": 130
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 74,
+            "valid_structures": 77
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 300,
+        "count": 275,
+        "action_matches": 228,
+        "application_macro_action_percent": 86.08962309620205,
+        "application_macro_valid_percent": 99.07139643981749,
+        "scenario_grouped_application_macro_action_percent": 87.35431235431236,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 97,
+            "valid_structures": 131
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 69,
+            "valid_structures": 77
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 62,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 600,
+        "count": 275,
+        "action_matches": 245,
+        "application_macro_action_percent": 91.32737693592956,
+        "application_macro_valid_percent": 99.49874686716792,
+        "scenario_grouped_application_macro_action_percent": 92.23484848484848,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 109,
+            "valid_structures": 131
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 73,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 900,
+        "count": 275,
+        "action_matches": 239,
+        "application_macro_action_percent": 89.82361753743332,
+        "application_macro_valid_percent": 99.49874686716792,
+        "scenario_grouped_application_macro_action_percent": 89.99125874125875,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 103,
+            "valid_structures": 131
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 73,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 1200,
+        "count": 275,
+        "action_matches": 243,
+        "application_macro_action_percent": 91.09633057001479,
+        "application_macro_valid_percent": 100.0,
+        "scenario_grouped_application_macro_action_percent": 91.98232323232324,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 106,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 73,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 64,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 1500,
+        "count": 275,
+        "action_matches": 239,
+        "application_macro_action_percent": 90.4472720262194,
+        "application_macro_valid_percent": 100.0,
+        "scenario_grouped_application_macro_action_percent": 90.88480963480963,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 100,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 75,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 64,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 1800,
+        "count": 275,
+        "action_matches": 234,
+        "application_macro_action_percent": 88.5602427543217,
+        "application_macro_valid_percent": 100.0,
+        "scenario_grouped_application_macro_action_percent": 89.23853923853923,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 97,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 76,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 61,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 2100,
+        "count": 275,
+        "action_matches": 238,
+        "application_macro_action_percent": 89.04281938821413,
+        "application_macro_valid_percent": 99.74937343358395,
+        "scenario_grouped_application_macro_action_percent": 89.50563325563326,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 105,
+            "valid_structures": 132
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 70,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      {
+        "step": 2339,
+        "count": 275,
+        "action_matches": 247,
+        "application_macro_action_percent": 92.53552551249919,
+        "application_macro_valid_percent": 99.74937343358395,
+        "scenario_grouped_application_macro_action_percent": 92.8564491064491,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 107,
+            "valid_structures": 132
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 77,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      }
+    ],
+    "status": "VALIDATION SELECTION ONLY; ACCEPTANCE NOT ESTABLISHED"
+  },
+  "cases_per_candidate": 275,
+  "total_inference_cases": 2200,
+  "reused_baseline_cases": 275,
+  "underlying_validation_scenarios": 222,
+  "validation_only": true,
+  "acceptance_established": false,
+  "production_activation": false,
+  "next_training_started": false,
+  "training": {
+    "updates_completed": 2339,
+    "updates_planned": 2339,
+    "losses_are_accuracy": false
+  },
+  "inference": {
+    "runtime": "Colibri",
+    "model_family": "Qwen3.5-0.8B",
+    "workers": 3,
+    "threads_per_worker": 4,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "mode": "native"
+  },
+  "policy_sha256": "1a411474539f22be63ece6b0ba3f85ee1618b145a7c11da26ca68da8b33b65a6",
+  "selection_sha256": "c933abd495aaa6a9273bbe38097ba6e625c1d3916da18035e91f6e2cff165eea",
+  "binding_sha256": "e5bf31cf1fb9cbf226e68c33fe96bc219b9f0be9fd44b320749a3d40ce6a3eb9",
+  "training_report_sha256": "2b6b9b19fa28d38072cfaf38c61a4cfa7d635424548f4d66064c3421eea62f81",
+  "reporter_sha256": "50b703d1d44b8a237287747ee4033f797c081e063ae4c2a0c5920567c94cbae8",
+  "candidates": [
+    {
+      "step": 0,
+      "reused_baseline": true,
+      "validation_macro_loss": 0.07357404731320448,
+      "score": {
+        "count": 275,
+        "action_matches": 242,
+        "application_macro_action_percent": 90.75222109761583,
+        "application_macro_valid_percent": 98.82076987340145,
+        "scenario_grouped_application_macro_action_percent": 90.9527972027972,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 105,
+            "valid_structures": 130
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 74,
+            "valid_structures": 77
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 267,
+          "structured_valid": 271,
+          "action_matches": 242
+        },
+        "percent": {
+          "tool_correct": 97.09,
+          "structured_valid": 98.55,
+          "action_matches": 88.0
+        },
+        "exact_arguments": {
+          "passed": 181,
+          "count": 211,
+          "percent": 85.78
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 63
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 98.44
+            },
+            "exact_arguments": {
+              "passed": 45,
+              "count": 46,
+              "percent": 97.83
+            }
+          },
+          "development_targets_passed": true
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 128,
+              "structured_valid": 130,
+              "action_matches": 105
+            },
+            "percent": {
+              "tool_correct": 96.24,
+              "structured_valid": 97.74,
+              "action_matches": 78.95
+            },
+            "exact_arguments": {
+              "passed": 85,
+              "count": 111,
+              "percent": 76.58
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 75,
+              "structured_valid": 77,
+              "action_matches": 74
+            },
+            "percent": {
+              "tool_correct": 96.15,
+              "structured_valid": 98.72,
+              "action_matches": 94.87
+            },
+            "exact_arguments": {
+              "passed": 51,
+              "count": 54,
+              "percent": 94.44
+            }
+          },
+          "development_targets_passed": false
+        }
+      },
+      "evidence_sha256": {
+        "frozen_baseline_results": "d4af3fe69052450e7bec8962986d53aa66fb3292a5ae460903021364788d31b1",
+        "before": "1289e959c1f7a2bd4cb0dbf59ece4cfb8d117cac09801c2a96013c9733fe913b",
+        "after": "1289e959c1f7a2bd4cb0dbf59ece4cfb8d117cac09801c2a96013c9733fe913b",
+        "stop": "25656a2049a4e643ba8a0b8e1dfb6682fb562bad70b00672e79afd22fed0eea7"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    },
+    {
+      "step": 300,
+      "reused_baseline": false,
+      "validation_macro_loss": 0.07141068813942293,
+      "score": {
+        "count": 275,
+        "action_matches": 228,
+        "application_macro_action_percent": 86.08962309620205,
+        "application_macro_valid_percent": 99.07139643981749,
+        "scenario_grouped_application_macro_action_percent": 87.35431235431236,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 97,
+            "valid_structures": 131
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 69,
+            "valid_structures": 77
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 62,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 258,
+          "structured_valid": 272,
+          "action_matches": 228
+        },
+        "percent": {
+          "tool_correct": 93.82,
+          "structured_valid": 98.91,
+          "action_matches": 82.91
+        },
+        "exact_arguments": {
+          "passed": 167,
+          "count": 211,
+          "percent": 79.15
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 62
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 96.88
+            },
+            "exact_arguments": {
+              "passed": 44,
+              "count": 46,
+              "percent": 95.65
+            }
+          },
+          "development_targets_passed": true
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 124,
+              "structured_valid": 131,
+              "action_matches": 97
+            },
+            "percent": {
+              "tool_correct": 93.23,
+              "structured_valid": 98.5,
+              "action_matches": 72.93
+            },
+            "exact_arguments": {
+              "passed": 77,
+              "count": 111,
+              "percent": 69.37
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 70,
+              "structured_valid": 77,
+              "action_matches": 69
+            },
+            "percent": {
+              "tool_correct": 89.74,
+              "structured_valid": 98.72,
+              "action_matches": 88.46
+            },
+            "exact_arguments": {
+              "passed": 46,
+              "count": 54,
+              "percent": 85.19
+            }
+          },
+          "development_targets_passed": false
+        }
+      },
+      "evidence_sha256": {
+        "results": "130ce4def645ad0142cd6014c8f8225daf8f4d3f7da7445e9406eef23b5d3026",
+        "before": "db15a6f9fc5d9a9107cc20c857ee49c65bd1aad461965bd5cc1e796030400295",
+        "after": "db15a6f9fc5d9a9107cc20c857ee49c65bd1aad461965bd5cc1e796030400295",
+        "stop": "484884062832048b9992410e891737d42b17f7600b16467c1d6c6a50eb4b005e"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    },
+    {
+      "step": 600,
+      "reused_baseline": false,
+      "validation_macro_loss": 0.07209099701249345,
+      "score": {
+        "count": 275,
+        "action_matches": 245,
+        "application_macro_action_percent": 91.32737693592956,
+        "application_macro_valid_percent": 99.49874686716792,
+        "scenario_grouped_application_macro_action_percent": 92.23484848484848,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 109,
+            "valid_structures": 131
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 73,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 264,
+          "structured_valid": 273,
+          "action_matches": 245
+        },
+        "percent": {
+          "tool_correct": 96.0,
+          "structured_valid": 99.27,
+          "action_matches": 89.09
+        },
+        "exact_arguments": {
+          "passed": 185,
+          "count": 211,
+          "percent": 87.68
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 63
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 98.44
+            },
+            "exact_arguments": {
+              "passed": 45,
+              "count": 46,
+              "percent": 97.83
+            }
+          },
+          "development_targets_passed": true
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 127,
+              "structured_valid": 131,
+              "action_matches": 109
+            },
+            "percent": {
+              "tool_correct": 95.49,
+              "structured_valid": 98.5,
+              "action_matches": 81.95
+            },
+            "exact_arguments": {
+              "passed": 91,
+              "count": 111,
+              "percent": 81.98
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 73,
+              "structured_valid": 78,
+              "action_matches": 73
+            },
+            "percent": {
+              "tool_correct": 93.59,
+              "structured_valid": 100.0,
+              "action_matches": 93.59
+            },
+            "exact_arguments": {
+              "passed": 49,
+              "count": 54,
+              "percent": 90.74
+            }
+          },
+          "development_targets_passed": false
+        }
+      },
+      "evidence_sha256": {
+        "results": "f4c00842ae630e76d0094b14d96d66aac2f7ed4146d22880150f1f94d39a0e5a",
+        "before": "e80e2ef757ba0e831d1067a62037e3c3c6e513c4000cce3ce168fe7d759d5082",
+        "after": "e80e2ef757ba0e831d1067a62037e3c3c6e513c4000cce3ce168fe7d759d5082",
+        "stop": "c5470627a7cf4010c170ee663ca0cf78d0486fe22633eb8841f7f80631d87c11"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    },
+    {
+      "step": 900,
+      "reused_baseline": false,
+      "validation_macro_loss": 0.06483426882334496,
+      "score": {
+        "count": 275,
+        "action_matches": 239,
+        "application_macro_action_percent": 89.82361753743332,
+        "application_macro_valid_percent": 99.49874686716792,
+        "scenario_grouped_application_macro_action_percent": 89.99125874125875,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 103,
+            "valid_structures": 131
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 73,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 264,
+          "structured_valid": 273,
+          "action_matches": 239
+        },
+        "percent": {
+          "tool_correct": 96.0,
+          "structured_valid": 99.27,
+          "action_matches": 86.91
+        },
+        "exact_arguments": {
+          "passed": 179,
+          "count": 211,
+          "percent": 84.83
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 63
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 98.44
+            },
+            "exact_arguments": {
+              "passed": 45,
+              "count": 46,
+              "percent": 97.83
+            }
+          },
+          "development_targets_passed": true
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 127,
+              "structured_valid": 131,
+              "action_matches": 103
+            },
+            "percent": {
+              "tool_correct": 95.49,
+              "structured_valid": 98.5,
+              "action_matches": 77.44
+            },
+            "exact_arguments": {
+              "passed": 85,
+              "count": 111,
+              "percent": 76.58
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 73,
+              "structured_valid": 78,
+              "action_matches": 73
+            },
+            "percent": {
+              "tool_correct": 93.59,
+              "structured_valid": 100.0,
+              "action_matches": 93.59
+            },
+            "exact_arguments": {
+              "passed": 49,
+              "count": 54,
+              "percent": 90.74
+            }
+          },
+          "development_targets_passed": false
+        }
+      },
+      "evidence_sha256": {
+        "results": "79686daa5fa6e5d34240cfe013cf450db46db7517f9ad28691606dd26cc429d1",
+        "before": "9bc40bb636c5b0700ca42ab3a28e7dbd167dfe517e13887108cb7b52bc2cd0b6",
+        "after": "9bc40bb636c5b0700ca42ab3a28e7dbd167dfe517e13887108cb7b52bc2cd0b6",
+        "stop": "fb70baeecd71231685a9dee1de062ed93970d6487912a4abdc3a03b135798cae"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    },
+    {
+      "step": 1200,
+      "reused_baseline": false,
+      "validation_macro_loss": 0.06612951501928353,
+      "score": {
+        "count": 275,
+        "action_matches": 243,
+        "application_macro_action_percent": 91.09633057001479,
+        "application_macro_valid_percent": 100.0,
+        "scenario_grouped_application_macro_action_percent": 91.98232323232324,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 106,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 73,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 64,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 264,
+          "structured_valid": 275,
+          "action_matches": 243
+        },
+        "percent": {
+          "tool_correct": 96.0,
+          "structured_valid": 100.0,
+          "action_matches": 88.36
+        },
+        "exact_arguments": {
+          "passed": 182,
+          "count": 211,
+          "percent": 86.26
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 64
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 100.0
+            },
+            "exact_arguments": {
+              "passed": 46,
+              "count": 46,
+              "percent": 100.0
+            }
+          },
+          "development_targets_passed": true
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 127,
+              "structured_valid": 133,
+              "action_matches": 106
+            },
+            "percent": {
+              "tool_correct": 95.49,
+              "structured_valid": 100.0,
+              "action_matches": 79.7
+            },
+            "exact_arguments": {
+              "passed": 87,
+              "count": 111,
+              "percent": 78.38
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 73,
+              "structured_valid": 78,
+              "action_matches": 73
+            },
+            "percent": {
+              "tool_correct": 93.59,
+              "structured_valid": 100.0,
+              "action_matches": 93.59
+            },
+            "exact_arguments": {
+              "passed": 49,
+              "count": 54,
+              "percent": 90.74
+            }
+          },
+          "development_targets_passed": false
+        }
+      },
+      "evidence_sha256": {
+        "results": "bb45c6aa448945c50034acdec1e3ce78c9694fc7b7cb04ef26851e3fbc3604ea",
+        "before": "04d69a40189fabd360624fe8ecbe8c1f98344ba056fc1fb14fff540b3dc6e76f",
+        "after": "04d69a40189fabd360624fe8ecbe8c1f98344ba056fc1fb14fff540b3dc6e76f",
+        "stop": "96b1fe5e0f9a654ff356510c8d013ee21ad7cf666546c701b5a365b7f4268f89"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    },
+    {
+      "step": 1500,
+      "reused_baseline": false,
+      "validation_macro_loss": 0.06903511772375222,
+      "score": {
+        "count": 275,
+        "action_matches": 239,
+        "application_macro_action_percent": 90.4472720262194,
+        "application_macro_valid_percent": 100.0,
+        "scenario_grouped_application_macro_action_percent": 90.88480963480963,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 100,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 75,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 64,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 270,
+          "structured_valid": 275,
+          "action_matches": 239
+        },
+        "percent": {
+          "tool_correct": 98.18,
+          "structured_valid": 100.0,
+          "action_matches": 86.91
+        },
+        "exact_arguments": {
+          "passed": 177,
+          "count": 211,
+          "percent": 83.89
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 64
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 100.0
+            },
+            "exact_arguments": {
+              "passed": 46,
+              "count": 46,
+              "percent": 100.0
+            }
+          },
+          "development_targets_passed": true
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 130,
+              "structured_valid": 133,
+              "action_matches": 100
+            },
+            "percent": {
+              "tool_correct": 97.74,
+              "structured_valid": 100.0,
+              "action_matches": 75.19
+            },
+            "exact_arguments": {
+              "passed": 80,
+              "count": 111,
+              "percent": 72.07
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 76,
+              "structured_valid": 78,
+              "action_matches": 75
+            },
+            "percent": {
+              "tool_correct": 97.44,
+              "structured_valid": 100.0,
+              "action_matches": 96.15
+            },
+            "exact_arguments": {
+              "passed": 51,
+              "count": 54,
+              "percent": 94.44
+            }
+          },
+          "development_targets_passed": false
+        }
+      },
+      "evidence_sha256": {
+        "results": "629fbd01ff639bbbaf2b8375f849a9d13a35977fd1fbde4c875ce38aa2ae02be",
+        "before": "09b5b554accf2aa6df1d8ebc85886dc5569a0fc4972c3a7b87e64abe31002eba",
+        "after": "09b5b554accf2aa6df1d8ebc85886dc5569a0fc4972c3a7b87e64abe31002eba",
+        "stop": "f876793e7387181f1f3c3a479ef564a238307473ba89a57f7e69ba69e05f578a"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    },
+    {
+      "step": 1800,
+      "reused_baseline": false,
+      "validation_macro_loss": 0.07531930543165553,
+      "score": {
+        "count": 275,
+        "action_matches": 234,
+        "application_macro_action_percent": 88.5602427543217,
+        "application_macro_valid_percent": 100.0,
+        "scenario_grouped_application_macro_action_percent": 89.23853923853923,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 97,
+            "valid_structures": 133
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 76,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 61,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 262,
+          "structured_valid": 275,
+          "action_matches": 234
+        },
+        "percent": {
+          "tool_correct": 95.27,
+          "structured_valid": 100.0,
+          "action_matches": 85.09
+        },
+        "exact_arguments": {
+          "passed": 172,
+          "count": 211,
+          "percent": 81.52
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 61
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 95.31
+            },
+            "exact_arguments": {
+              "passed": 43,
+              "count": 46,
+              "percent": 93.48
+            }
+          },
+          "development_targets_passed": false
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 122,
+              "structured_valid": 133,
+              "action_matches": 97
+            },
+            "percent": {
+              "tool_correct": 91.73,
+              "structured_valid": 100.0,
+              "action_matches": 72.93
+            },
+            "exact_arguments": {
+              "passed": 77,
+              "count": 111,
+              "percent": 69.37
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 76,
+              "structured_valid": 78,
+              "action_matches": 76
+            },
+            "percent": {
+              "tool_correct": 97.44,
+              "structured_valid": 100.0,
+              "action_matches": 97.44
+            },
+            "exact_arguments": {
+              "passed": 52,
+              "count": 54,
+              "percent": 96.3
+            }
+          },
+          "development_targets_passed": true
+        }
+      },
+      "evidence_sha256": {
+        "results": "9b58635bc1b109b4e81030f78f856f30f764d84157212ad06e4331c2f1cb49be",
+        "before": "3f62fa9e758956ef5a8f704b024e24be14abb234f5533e13ef9c7431f92136a2",
+        "after": "3f62fa9e758956ef5a8f704b024e24be14abb234f5533e13ef9c7431f92136a2",
+        "stop": "03c764520e6b75570d6368a82de92c4a1c854f1f448d28588977b6ebfd048e14"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    },
+    {
+      "step": 2100,
+      "reused_baseline": false,
+      "validation_macro_loss": 0.06937113060038515,
+      "score": {
+        "count": 275,
+        "action_matches": 238,
+        "application_macro_action_percent": 89.04281938821413,
+        "application_macro_valid_percent": 99.74937343358395,
+        "scenario_grouped_application_macro_action_percent": 89.50563325563326,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 105,
+            "valid_structures": 132
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 70,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 262,
+          "structured_valid": 274,
+          "action_matches": 238
+        },
+        "percent": {
+          "tool_correct": 95.27,
+          "structured_valid": 99.64,
+          "action_matches": 86.55
+        },
+        "exact_arguments": {
+          "passed": 178,
+          "count": 211,
+          "percent": 84.36
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 63
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 98.44
+            },
+            "exact_arguments": {
+              "passed": 45,
+              "count": 46,
+              "percent": 97.83
+            }
+          },
+          "development_targets_passed": true
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 127,
+              "structured_valid": 132,
+              "action_matches": 105
+            },
+            "percent": {
+              "tool_correct": 95.49,
+              "structured_valid": 99.25,
+              "action_matches": 78.95
+            },
+            "exact_arguments": {
+              "passed": 86,
+              "count": 111,
+              "percent": 77.48
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 71,
+              "structured_valid": 78,
+              "action_matches": 70
+            },
+            "percent": {
+              "tool_correct": 91.03,
+              "structured_valid": 100.0,
+              "action_matches": 89.74
+            },
+            "exact_arguments": {
+              "passed": 47,
+              "count": 54,
+              "percent": 87.04
+            }
+          },
+          "development_targets_passed": false
+        }
+      },
+      "evidence_sha256": {
+        "results": "4fc542084142250316406b25e472d49a6c520fc27e86174399168ced470b889b",
+        "before": "951289db529abfb47f274fe7b8d800fc26986d5142ad7cfc713f399763a2cba1",
+        "after": "951289db529abfb47f274fe7b8d800fc26986d5142ad7cfc713f399763a2cba1",
+        "stop": "deccc7830eee310e2b3a7c78f18edf9f0870cc30c6253ffe2f8fbe7610483332"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    },
+    {
+      "step": 2339,
+      "reused_baseline": false,
+      "validation_macro_loss": 0.0708635335083837,
+      "score": {
+        "count": 275,
+        "action_matches": 247,
+        "application_macro_action_percent": 92.53552551249919,
+        "application_macro_valid_percent": 99.74937343358395,
+        "scenario_grouped_application_macro_action_percent": 92.8564491064491,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 107,
+            "valid_structures": 132
+          },
+          "management_projet": {
+            "count": 78,
+            "action_matches": 77,
+            "valid_structures": 78
+          },
+          "design_workflow": {
+            "count": 64,
+            "action_matches": 63,
+            "valid_structures": 64
+          }
+        }
+      },
+      "metrics": {
+        "count": 275,
+        "counts": {
+          "tool_correct": 268,
+          "structured_valid": 274,
+          "action_matches": 247
+        },
+        "percent": {
+          "tool_correct": 97.45,
+          "structured_valid": 99.64,
+          "action_matches": 89.82
+        },
+        "exact_arguments": {
+          "passed": 186,
+          "count": 211,
+          "percent": 88.15
+        }
+      },
+      "by_application": {
+        "design_workflow": {
+          "metrics": {
+            "count": 64,
+            "counts": {
+              "tool_correct": 64,
+              "structured_valid": 64,
+              "action_matches": 63
+            },
+            "percent": {
+              "tool_correct": 100.0,
+              "structured_valid": 100.0,
+              "action_matches": 98.44
+            },
+            "exact_arguments": {
+              "passed": 45,
+              "count": 46,
+              "percent": 97.83
+            }
+          },
+          "development_targets_passed": true
+        },
+        "facturation": {
+          "metrics": {
+            "count": 133,
+            "counts": {
+              "tool_correct": 127,
+              "structured_valid": 132,
+              "action_matches": 107
+            },
+            "percent": {
+              "tool_correct": 95.49,
+              "structured_valid": 99.25,
+              "action_matches": 80.45
+            },
+            "exact_arguments": {
+              "passed": 88,
+              "count": 111,
+              "percent": 79.28
+            }
+          },
+          "development_targets_passed": false
+        },
+        "management_projet": {
+          "metrics": {
+            "count": 78,
+            "counts": {
+              "tool_correct": 77,
+              "structured_valid": 78,
+              "action_matches": 77
+            },
+            "percent": {
+              "tool_correct": 98.72,
+              "structured_valid": 100.0,
+              "action_matches": 98.72
+            },
+            "exact_arguments": {
+              "passed": 53,
+              "count": 54,
+              "percent": 98.15
+            }
+          },
+          "development_targets_passed": true
+        }
+      },
+      "evidence_sha256": {
+        "results": "80722ffc101521ce6981c9234880e39be314c204e7fd5167820839a46b986a10",
+        "before": "219e268380ada7122bdc3797ff405eb1ab0fc5a276ce5f9cd42586042f084b63",
+        "after": "219e268380ada7122bdc3797ff405eb1ab0fc5a276ce5f9cd42586042f084b63",
+        "stop": "d6a7f3c8a0322bef5c50b4d63aa009f2a621a62b96eaf80f9ba54d4fcea76515"
+      },
+      "artifact_identity_unchanged": true,
+      "temporary_workers_stopped": true
+    }
+  ],
+  "limitations": [
+    "Checkpoint selection uses development data only. The 438 regression cases and 48 fresh controls are evaluated separately.",
+    "The 275 development rows represent 222 underlying scenarios, including neutral-history variants.",
+    "Development rows lack explicit language labels; no per-language accuracy is inferred.",
+    "Frozen exact-argument scoring remains unchanged, including native article query/product_name alias limitations.",
+    "The selected checkpoint misses Facturation development targets. A high score on another application does not establish shared acceptance.",
+    "No production model activation or later-application training is authorized by this report."
+  ]
+}

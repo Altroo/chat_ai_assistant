@@ -1,5 +1,24 @@
 # Chat AI Assistant progress
 
+
+## Current checkpoint results, 15 October 2026
+
+PARTIALLY IMPLEMENTED: R8 training completed all 2,339 updates. All eight saved checkpoints completed the same 275 development cases, with unchanged artifacts and stopped temporary workers verified. The frozen selection rule chose the final checkpoint, step 2339. This completes checkpoint comparison; it does not establish model acceptance.
+
+| Application | Fully correct development actions | Exact arguments | Tool selection | Structured output |
+|---|---:|---:|---:|---:|
+| facturation | 107/133 (80.45%) | 88/111 (79.28%) | 127/133 (95.49%) | 132/133 (99.25%) |
+| management_projet | 77/78 (98.72%) | 53/54 (98.15%) | 77/78 (98.72%) | 78/78 (100%) |
+| design_workflow | 63/64 (98.44%) | 45/46 (97.83%) | 64/64 (100%) | 64/64 (100%) |
+
+Facturation remains below target. Management Projet and Design Workflow meet the development thresholds on this checkpoint, but final acceptance is still pending. The selected candidate has entered the separate 438-case regression evaluation; 48 fresh controls follow. Production uses its existing model. Contracts, Gestion Magasin and Reservation have prepared datasets but their training has not started.
+
+[Verified checkpoint comparison](../training/reports/shared-v5r8-functional-validation.json). The 275 rows include neutral-history variants of 222 underlying scenarios. These are development scores, not blind acceptance scores or measured live application accuracy.
+
+IMPLEMENTED: the expected-reply budget safeguard is reviewed and published. All 308 training integrity tests and all 4,010 prepared six-application metadata examples pass. The guard does not establish numerical learning, export parity or model accuracy. [Pretraining budget verification](../training/reports/pretraining-output-budget-20261015.json).
+
+## Earlier implementation and training records
+
 PARTIALLY IMPLEMENTED: the server export/replay supervisor is prepared for Contracts after actual R8 acceptance. All 302 training-integrity tests pass, including 22 supervisor tests, and two Linux subprocess checks verify cleanup without model loading or service changes. One reviewer found two provenance issues; both were fixed and re-reviewed. The supervisor requires accepted predecessor evidence, independently pinned numerical output, exact service invocation, sequential export/serving and before/after worker verification. It never grants model acceptance or starts full training. Actual bindings, numerical rehearsal, model export and replay remain pending. [Supervisor preparation](../training/reports/rehearsal-supervisor-preparation-20261014.json).
 
 IMPLEMENTED and verified as preparation: the review caught a rehearsal mismatch where a tool call after a Qwen role boundary could be credited although Colibri would stop before it. The runner now uses the pinned native stop filter before thinking/tool parsing and retains raw plus filtered evidence. Replay rejects older unfiltered captures. All 280 training-integrity tests pass, including 26 focused synthetic capture/replay tests; the single reviewer found no remaining issue in this fix. Rechecking all four corrected preparations changed no dataset hash or rehearsal selection. Numerical execution, real export comparison and accuracy measurement remain pending. The active R8 run and frozen controller are unchanged. [Stop-handling evidence](../training/reports/rehearsal-stop-preflight-20261014.json).
@@ -48,27 +67,27 @@ PARTIALLY IMPLEMENTED: R7 training and evaluation completed on 2026-10-14, but m
 
 IMPLEMENTED and verified: the queued R8 preparations retain every byte of the current shared curriculum and append the existing reviewed synthetic examples for each later application. Contracts V6r8 contains 2,492 training / 319 validation / 564 evaluation cases; Gestion Magasin V7r8 contains 2,690 / 362 / 654; Reservation V8r8 contains 2,870 / 402 / 738. Each evaluation total includes the 48 fresh controls, which remain excluded from optimization and checkpoint selection and must be reported separately from the original regressions. Thirteen retention, scope and trainer-startup tests pass. Metadata checks pass all 3,272 cumulative training/validation rows and 738 evaluation envelopes using the server-matching tokenizer and Colibri template/parser, without local model weights or inference. The sole reviewer found no source issues. These are preparations, not trained models; each stage still requires its exact accepted predecessor, a frozen baseline and server admission checks. [Metadata evidence](../training/reports/shared-v8r8-en-fr-metadata-preflight.json).
 
-## Draggable assistant launcher — 2026-10-12
+## Draggable assistant launcher - 2026-10-12
 
 IMPLEMENTED and deployed: the six frontends use the same dependency-free launcher hook. The default bottom offset is 96px; mouse, touch and pen dragging, a 6px drag threshold, keyboard arrows and Home reset keep the button movable without changing the robot or native theme. Position is clamped to the viewport and device safe areas, including classic scrollbar gutters. Route changes and chat close/reopen preserve position while the authenticated layout remains mounted; reload resets it.
 
 Verification: 358 assistant tests, six TypeScript checks, scoped lint and all six optimized production builds passed. One reviewer found a scrollbar coordinate issue, which was fixed and regression-tested; the final review has no remaining findings. Native dummy-login browser checks passed in all six apps; Facturation also passed authenticated live launcher checks. All six frontend releases passed normal Git pushes and remote-head verification; their live containers contain the compiled launcher and their HTTPS routes return 200. Production settings, 44 supporting containers, database volumes and the running training process were unchanged. Gestion Magasin’s tested footer still overlaps the default position; dragging clears it and restores next-page access. Training continues independently; production assistant feature flags and the shared model remain unchanged.
 
-## Current shared-model and rollout status — updated 2026-10-13
+## Current shared-model and rollout status - updated 2026-10-13
 
-IMPLEMENTED — training complete: V5r6 finished all 1,969 server optimization steps in 56,587.8 seconds (15 hours 43 minutes), covering 850 Management Projet, 689 Facturation and 430 Design Workflow examples. All recorded losses are finite. The original loss rule selected step 1800: validation macro loss 0.0702729237, compared with baseline 0.0709163280 and final-step loss 0.0731497569. Management Projet improves against its baseline loss; Facturation and Design Workflow remain above theirs. These are losses, not accuracy scores. [Completed training evidence](../training/reports/shared-v5r6-en-fr-training.json).
+IMPLEMENTED - training complete: V5r6 finished all 1,969 server optimization steps in 56,587.8 seconds (15 hours 43 minutes), covering 850 Management Projet, 689 Facturation and 430 Design Workflow examples. All recorded losses are finite. The original loss rule selected step 1800: validation macro loss 0.0702729237, compared with baseline 0.0709163280 and final-step loss 0.0731497569. Management Projet improves against its baseline loss; Facturation and Design Workflow remain above theirs. These are losses, not accuracy scores. [Completed training evidence](../training/reports/shared-v5r6-en-fr-training.json).
 
-PARTIALLY IMPLEMENTED — acceptance FAILED: all 438 frozen cases and the eight-request performance probe completed. R6 scores 420/438 correct tools (95.89%), 305/334 eligible exact arguments (91.32%) and 438/438 valid structures (100%). Only 3/15 frozen sets pass all gates. Management Projet reaches 95.95% exact arguments but 93% tool selection; Facturation and Design Workflow remain below the argument target. That step-1800 checkpoint is not promoted. The subsequent eight-checkpoint functional validation comparison completed all 2,200 requests and selected step 1969. Its separate unchanged 438-case acceptance run also FAILED: 415/438 tools (94.75%), 308/334 exact arguments (92.22%) and 435/438 valid structures (99.32%). Only 3/15 sets pass; critical actions match 130/150. The eight-request probe completed and all three workers stopped. Neither checkpoint is promoted and no later-app training has started. [Selected-checkpoint results](../training/reports/shared-v5r6-selected-en-fr-evaluation.json), [selected performance](../training/reports/shared-v5r6-selected-en-fr-performance.json). [Complete accuracy results](AI_MODEL_ACCURACY.md#v5r6-measured-results--2026-10-13), [performance evidence](../training/reports/shared-v5r6-en-fr-performance.json).
+PARTIALLY IMPLEMENTED - acceptance FAILED: all 438 frozen cases and the eight-request performance probe completed. R6 scores 420/438 correct tools (95.89%), 305/334 eligible exact arguments (91.32%) and 438/438 valid structures (100%). Only 3/15 frozen sets pass all gates. Management Projet reaches 95.95% exact arguments but 93% tool selection; Facturation and Design Workflow remain below the argument target. That step-1800 checkpoint is not promoted. The subsequent eight-checkpoint functional validation comparison completed all 2,200 requests and selected step 1969. Its separate unchanged 438-case acceptance run also FAILED: 415/438 tools (94.75%), 308/334 exact arguments (92.22%) and 435/438 valid structures (99.32%). Only 3/15 sets pass; critical actions match 130/150. The eight-request probe completed and all three workers stopped. Neither checkpoint is promoted and no later-app training has started. [Selected-checkpoint results](../training/reports/shared-v5r6-selected-en-fr-evaluation.json), [selected performance](../training/reports/shared-v5r6-selected-en-fr-performance.json). [Complete accuracy results](AI_MODEL_ACCURACY.md#v5r6-measured-results--2026-10-13), [performance evidence](../training/reports/shared-v5r6-en-fr-performance.json).
 
-IMPLEMENTED — checkpoint comparison complete: the fixed validation rule selects step 1969 with 231/275 fully matched actions and 86.65% application-macro action accuracy. The baseline scored 227/275 (85.39% macro); the loss-selected step 1800 scored 223/275 (84.11%). All eight candidates completed 275 rows representing 222 underlying scenarios. Their worker identities and artifacts matched before/after, temporary workers stopped, and production remained unchanged. Validation is not acceptance; the separate 438-case evaluation for step 1969 has completed and failed its frozen gates. [Full comparison](../training/reports/shared-v5r6-functional-validation.json).
+IMPLEMENTED - checkpoint comparison complete: the fixed validation rule selects step 1969 with 231/275 fully matched actions and 86.65% application-macro action accuracy. The baseline scored 227/275 (85.39% macro); the loss-selected step 1800 scored 223/275 (84.11%). All eight candidates completed 275 rows representing 222 underlying scenarios. Their worker identities and artifacts matched before/after, temporary workers stopped, and production remained unchanged. Validation is not acceptance; the separate 438-case evaluation for step 1969 has completed and failed its frozen gates. [Full comparison](../training/reports/shared-v5r6-functional-validation.json).
 
-IMPLEMENTED — precision diagnostic complete: the same 60 fixed validation scenarios score 47/60 fully matched actions with dense int8 enabled and disabled, with 58/60 valid structures in each. Two cases improve and two regress; 45 pass in both modes and 11 fail in both. All three diagnostic workers stopped and production remained unchanged. This small paired diagnostic does not establish acceptance or explain every remaining error. No overall gain supports changing the inference precision at this point. [Measured diagnostic](../training/reports/shared-v5r6-precision-diagnostic.json). The exported model contains 474 FP16 tensors, verified against the evaluated weight hashes. Disabling dense int8 uses FP32 computation from those exported values; it does not restore the original unrounded FP32 training weights. The historical report field `candidate_full_precision` refers to this int8-disabled mode. [Storage precision clarification](../training/reports/shared-v5r6-precision-storage-note.json).
+IMPLEMENTED - precision diagnostic complete: the same 60 fixed validation scenarios score 47/60 fully matched actions with dense int8 enabled and disabled, with 58/60 valid structures in each. Two cases improve and two regress; 45 pass in both modes and 11 fail in both. All three diagnostic workers stopped and production remained unchanged. This small paired diagnostic does not establish acceptance or explain every remaining error. No overall gain supports changing the inference precision at this point. [Measured diagnostic](../training/reports/shared-v5r6-precision-diagnostic.json). The exported model contains 474 FP16 tensors, verified against the evaluated weight hashes. Disabling dense int8 uses FP32 computation from those exported values; it does not restore the original unrounded FP32 training weights. The historical report field `candidate_full_precision` refers to this int8-disabled mode. [Storage precision clarification](../training/reports/shared-v5r6-precision-storage-note.json).
 
-IMPLEMENTED — framework reference complete: all twelve fixed development scenarios ran successfully with the same 474 FP16-rounded exported tensors and pinned configuration. The training framework and Colibri with dense int8 disabled return identical actions/errors on all twelve: eight correct and four incorrect. Normal Colibri dense-int8 mode previously matched nine of these twelve. All three modes produced twelve valid structures. This small diagnostic finds no overall framework advantage and does not establish acceptance or complete numerical equivalence. Production remains unchanged; no training or business operation ran. [Paired framework evidence](../training/reports/shared-v5r6-framework-reference.json).
+IMPLEMENTED - framework reference complete: all twelve fixed development scenarios ran successfully with the same 474 FP16-rounded exported tensors and pinned configuration. The training framework and Colibri with dense int8 disabled return identical actions/errors on all twelve: eight correct and four incorrect. Normal Colibri dense-int8 mode previously matched nine of these twelve. All three modes produced twelve valid structures. This small diagnostic finds no overall framework advantage and does not establish acceptance or complete numerical equivalence. Production remains unchanged; no training or business operation ran. [Paired framework evidence](../training/reports/shared-v5r6-framework-reference.json).
 
-IMPLEMENTED — R7 starting baseline measured: 50 changed cases were requested afresh, with 228 byte-identical validation and 435 byte-identical evaluation cases reused under the same step-1969 model, runtime, provider and settings. V2 validation matches 231/275 actions (86.83% application macro). The separately versioned V2 evaluation remains below target: 415/438 correct tools (94.75%), 306/334 exact arguments (91.62%), 435/438 valid structures (99.32%) and 394/438 fully matched actions; 2/15 sets pass. These are baseline results before R7 optimization, not training improvements. All temporary workers stopped and production remains unchanged. Original V1 scores are preserved; no combined latency claim is made. [Baseline and reuse evidence](../training/reports/shared-v5r7-baseline.json).
+IMPLEMENTED - R7 starting baseline measured: 50 changed cases were requested afresh, with 228 byte-identical validation and 435 byte-identical evaluation cases reused under the same step-1969 model, runtime, provider and settings. V2 validation matches 231/275 actions (86.83% application macro). The separately versioned V2 evaluation remains below target: 415/438 correct tools (94.75%), 306/334 exact arguments (91.62%), 435/438 valid structures (99.32%) and 394/438 fully matched actions; 2/15 sets pass. These are baseline results before R7 optimization, not training improvements. All temporary workers stopped and production remains unchanged. Original V1 scores are preserved; no combined latency claim is made. [Baseline and reuse evidence](../training/reports/shared-v5r7-baseline.json).
 
-PARTIALLY IMPLEMENTED — next training preparation: `shared-v5r7-en-fr` contains 2,065 training and 275 validation examples for the same three applications. It replaces twelve reviewed inconsistent instructions at their original indices, retains the other 1,957 parent rows byte-for-byte and appends 96 reviewed saved-selection context contrasts. The separately versioned V2 validation clarifies 47 rows without changing their targets. Original V1 training, validation and evaluation files remain unchanged; both 438-case evaluation versions are bound by hash.
+PARTIALLY IMPLEMENTED - next training preparation: `shared-v5r7-en-fr` contains 2,065 training and 275 validation examples for the same three applications. It replaces twelve reviewed inconsistent instructions at their original indices, retains the other 1,957 parent rows byte-for-byte and appends 96 reviewed saved-selection context contrasts. The separately versioned V2 validation clarifies 47 rows without changing their targets. Original V1 training, validation and evaluation files remain unchanged; both 438-case evaluation versions are bound by hash.
 
 Six integrity tests pass. All 2,340 training/validation rows pass schema, tokenizer, Colibri-template/parser and loss-boundary checks; maximum lengths are 7,662 training and 7,496 validation tokens within 8,192. The sole reviewer found no remaining issues. No weights were loaded locally during dataset preparation and no accuracy gain was claimed. Server metadata and capacity checks subsequently passed; R7 training has now started as recorded above. [Prepared dataset](../training/datasets/shared-v5r7-en-fr/manifest.json), [metadata evidence](../training/reports/shared-v5r7-en-fr-metadata-preflight.json).
 
@@ -98,7 +117,7 @@ No later application training has started. Contracts → Gestion Magasin → Ré
 
 Current step: shared V5r8 server training, model-quality evaluation and reviewed preparation for subsequent runs. All six application integrations and the named-list navigation releases are authorized; later application training remains sequential behind shared-model acceptance. The Facturation Phase 1 report and subsequent application reports remain available as historical implementation evidence. Successful basic workflows do not establish 95% broad model accuracy.
 
-## Historical Facturation rollout — 2026-10-08 and 2026-10-09
+## Historical Facturation rollout - 2026-10-08 and 2026-10-09
 
 The following results describe the earlier Facturation rollout and its model version. They remain evidence for that release; the current shared-model status and six-application releases are recorded above.
 
@@ -114,7 +133,7 @@ The following results describe the earlier Facturation rollout and its model ver
 - Real local v4 checks passed invoice/client/product search, quote/article search, EN/FR collected-payment summaries, unpaid/ordinal follow-ups, navigation/list return and reviewed EN/FR workflow answers. Original model failures remain recorded separately.
 - Public-repository audit found no actual credentials or private business artifacts in release commits. Runtime environments, keys, browser state, raw reports, weights and checkpoints are ignored. Application code is edited locally and released via Git pushes.
 
-### Suggestion-button update — 2026-10-09
+### Suggestion-button update - 2026-10-09
 - IMPLEMENTED: complete permission-filtered English/French starter questions, immediate sending on click, active-company isolation and explicit click-to-send instructions. Slash-menu entries remain editable drafts.
 - Validation: 831 assistant backend/security tests and 115 chat frontend tests passed; TypeScript, ESLint, production frontend build and source/wheel checks passed. The single reviewer found no unresolved code issues.
 - Initial production UI release: each of the five questions sent exactly once in the active company. Unpaid invoices, recent quotes, stock and invoice workflow completed safely; desktop/mobile fit, native English metadata and slash drafting passed.
@@ -141,7 +160,7 @@ Dedicated server8-request sample: sequential mean8.34s, p95(maximum of4)9.74s; c
 
 Historical work log: [AI_PROGRESS_HISTORY.md](AI_PROGRESS_HISTORY.md). Detailed evidence: [AI_TESTING.md](AI_TESTING.md), [AI_FINE_TUNING.md](AI_FINE_TUNING.md), and training/reports.
 
-## Shared UI revision — 2026-10-10
+## Shared UI revision - 2026-10-10
 
 IMPLEMENTED locally: canonical Design Workflow-based MUI interface, identical Facturation and Management Projet copies, local SVG robot/icons, scoped palette, optional company row, bold author labels, meaningful immediate suggestions, accessible shortcuts, draft-safe command switching, bare-slash help and mobile input sizing. Existing business handlers and permissions remain authoritative. Management Projet production activation is still disabled.
 
@@ -154,7 +173,7 @@ IMPLEMENTED: reviewed source published to company, personal and production for t
 PLANNED: remaining shared UI integrations. The six-app navigation follow-up is recorded below. Shared V5 server training continues; no V5 accuracy score is available yet. Colibri upstream PRs remain explicitly deferred.
 
 
-## Six-app return navigation — 2026-10-10
+## Six-app return navigation - 2026-10-10
 
 IMPLEMENTED and verified locally: all remaining history-based return controls removed from facturation, management_projet, design_workflow, contracts, gestion_magasin and reservation. The Holding portal is excluded. Contracts has four corrected list/form destinations, Gestion Magasin 22 and Reservation ten. Six not-found pages keep their explicit Home/dashboard action instead of a history-dependent Return button.
 
@@ -164,25 +183,25 @@ Validation: 297 focused frontend tests passed across the six apps; the broader M
 
 Publication: IMPLEMENTED. All six reviewed frontend commits are published to company, personal and production; all 18 remote heads matched. Deployed source matches the reviewed files in each app, all six frontend containers are healthy and all six login routes return HTTP 200. Production browser verification confirmed Facturation’s 404 Home navigation; the other checked apps reached their expected sign-in pages without active browser sessions. Authenticated navigation for those apps was verified locally where available, not claimed as a complete production business-flow test. No backend, database, model, permission or training configuration changes were included. The training process retained its original process identity; the shared inference service remained healthy with its original start time.
 
-## Serial training and Contracts preparation — 2026-10-10
+## Serial training and Contracts preparation - 2026-10-10
 
 PARTIALLY IMPLEMENTED: Contracts (`contrat`) native adapter and shared UI are under local validation. See [discovery](AI_CONTRACTS_DISCOVERY.md), [actual checks and remaining gates](AI_CONTRACTS_PROGRESS.md), and the [single-job training queue](AI_TRAINING_QUEUE.md). The current shared V5 run continues; no Contracts training or model accuracy is claimed.
 
 The user's additional login-theme request is limited to Contracts and Réservation, with Facturation as the reference. Local desktop/mobile screenshots confirm matching dark canvas, transparent outlined fields, heading size and a theme toggle 16px from the top/right. Theme switching preserves typed input and persists across reload. IMPLEMENTED: the two theme fixes are published to company, personal and production; all six remote heads matched. Exact-source production builds and 26 existing auth/theme tests per app passed. Live Contracts desktop and Réservation mobile login checks confirmed the palette, outlined fields and top-right toggle; both containers are healthy. The training process retained its original PID.
 
-## Contracts adapter preparation — 2026-10-10
+## Contracts adapter preparation - 2026-10-10
 
 PARTIALLY IMPLEMENTED: native permission/company tools, confirmed writes with actor history, EN/FR knowledge, history and canonical MUI UI are verified locally. Final checks: 576 backend tests plus 4 subtests; 60 final assistant/form frontend tests, TypeScript, ESLint and production build passed. Local dummy browser checks include scope isolation, read-only denial, actual PDF, confirmed deletion/audit, history and eight-state visual comparison. See [Contracts progress](AI_CONTRACTS_PROGRESS.md). The shared next-stage dataset passed tokenizer/Colibri preflight; Contracts model training/accuracy and activation are still incomplete. Shared V5 remains the only active training job.
 
 Contracts source is now published disabled: backend `00503a910cda`, frontend `875524520cc0`, six remote heads verified; additive migration/knowledge sync and native health checks passed with existing business row counts unchanged. Gestion Magasin now has the locally tested adapter and prepared dataset documented below; Réservation local implementation and dataset preparation are recorded below.
 
-## Gestion Magasin local preparation — 2026-10-10
+## Gestion Magasin local preparation - 2026-10-10
 
 PARTIALLY IMPLEMENTED: native store/role tools, controlled actor-attributed writes, history/RAG and canonical MUI UI are locally tested. Full backend run: 448 tests; final assistant subset: 56. Frontend: 40 focused tests; dummy browser scope, native PDF, confirmed deletion and read-only/history checks passed. Eight reference comparisons have no visual blocker. Synthetic EN/FR data is prepared, not trained; no model accuracy is claimed. See [details and remaining gates](AI_GESTION_MAGASIN_PROGRESS.md). Current shared V5 remains the only training job; its frozen inputs are unchanged.
 
 Gestion Magasin source release: backend `a7acaefa4891`, frontend `ee6ffbaf750e`, all six remote heads verified. Additive migration and twelve knowledge documents applied with all sixty business-table counts unchanged; services healthy. Assistant remains disabled, shared production model and current training unchanged.
 
-## Réservation local preparation — 2026-10-10
+## Réservation local preparation - 2026-10-10
 
 PARTIALLY IMPLEMENTED: native permissions (including independent Hilton access), seven bounded tools, actor-attributed confirmations, owner-scoped history/RAG and canonical MUI UI pass local checks. Final backend: 514 tests, including 43 assistant tests; frontend: 26 assistant tests, TypeScript, ESLint and production build pass. Native dummy-login browser checks cover search/navigation/list return, confirmed deletion/history, logout/read-only access and EN/FR responses. Eight side-by-side chat comparisons and two mobile sizes pass. See [details](AI_RESERVATION_PROGRESS.md).
 
@@ -193,11 +212,11 @@ Réservation source is published disabled: backend `105cc4e24c90`, frontend `3c0
 The prepared cumulative six-app dataset passed exact server tokenizer/Colibri preflight: 2,014 rows, maximum 4,977 tokens, no truncation. This was metadata-only validation and started no new training job. That metadata check started no optimization; V5 has subsequently completed.
 
 
-## Shared V5 status update — 2026-10-10
+## Shared V5 status update - 2026-10-10
 
 IMPLEMENTED: training, isolated export, 328 frozen evaluations, warm performance probe and artifact/process verification completed. Model acceptance remains PARTIALLY IMPLEMENTED: all eight evaluation sets miss at least one required gate. The native tokenizer check passed 328/328 prompt-ID comparisons; runtime diagnostics are now complete (see the later update). No further optimization job has started. Contracts, Gestion Magasin and Réservation source is published disabled with datasets prepared; serial model training and acceptance remain pending. Production model unchanged. See [measured scores and limitations](AI_MODEL_ACCURACY.md#shared-v5-measured-results--2026-10-10).
 
-## Shared V5r2 preparation — 2026-10-10
+## Shared V5r2 preparation - 2026-10-10
 
 IMPLEMENTED: failure diagnostics distinguish learned mistakes from export problems; all three native refinement generators pass schema validation with database access forbidden. Existing rows and frozen benchmarks are retained. The single reviewer found no native-label or permission/target issues. Fifteen training/acceptance regression tests pass.
 
@@ -205,19 +224,19 @@ PARTIALLY IMPLEMENTED: the 1,454/186 shared refinement dataset and 34 independen
 
 V5r2 reviewed preparation source is published as `c7fbddfda2eba43503dbf0e803f61d881b03b313`; all three remote heads and all 35 deployed file hashes were verified. The production inference service remained healthy with unchanged start time.
 
-## Serial runner preparation — 2026-10-10
+## Serial runner preparation - 2026-10-10
 
 IMPLEMENTED locally: separately versioned future-stage runner and strict cumulative application validation, with all 22 training integrity/acceptance/scope tests passing. The active V5r2 trainer, helper scripts, dataset and evaluator remain unchanged. No later-stage optimization has started. The single reviewer verified that obsolete mixtures, altered predecessor files and missing retained rows are rejected, with no remaining findings. The serial runner still requires its own server preflight and launch gates before use; model acceptance remains incomplete.
 
 The serial runner source was published as `3ee7b7d9f242bf26e6f6be686c0303fd711967cc`; all three remote heads and six deployed file hashes matched. Its 22 tests also passed on the server without loading weights or optimizing. The revised V8r2 cumulative dataset then passed the server tokenizer/template/parser/loss-boundary preflight for all 2,168 rows, with matching metadata/script hashes and no truncation. V6r2/V7r2 remain exact validated prefixes. [Server preflight evidence](../training/reports/shared-v8r2-en-fr-server-preflight.json). The current V5r2 training continues; no later-stage optimization or production model replacement has started.
 
-## Shared candidate and metadata follow-up — 2026-10-11
+## Shared candidate and metadata follow-up - 2026-10-11
 
 PARTIALLY IMPLEMENTED: V5r2 completed 1,454 server optimization steps and isolated Colibri export. Its 362-case frozen evaluation is complete and acceptance failed; no model activation or replacement is authorized by training completion. Follow-up local tool descriptions clarify supported filters, native status labels, budget rows versus totals, and editable form labels. Backend suites and one independent review passed; the source is not deployed and the separate description-only diagnostic is not measured. See [the serial queue](AI_TRAINING_QUEUE.md) for exact validation counts and remaining gates.
 
 V5r2 measured totals: 344/362 correct tools (95.03%), 254/280 eligible exact arguments (90.71%), 358/362 valid structures (98.90%). The matched V5 baseline was 322/362, 226/280 and 352/362. Only one of 11 sets passes every gate; aggregate gains do not erase critical-case failures. The isolated eight-request warm probe measured 7.805 s sequential mean, 11.699 s at concurrency two, 54.73 decode tokens/s excluding prefill, 2.60 GiB peak RSS and zero errors. [Full measured results](AI_MODEL_ACCURACY.md#shared-v5r2-measured-results--2026-10-11).
 
-## Shared model diagnostics and adapter corrections — 2026-10-11
+## Shared model diagnostics and adapter corrections - 2026-10-11
 
 The description-only V5r2 comparison completed all 362 cases on the same pinned candidate, provider and runtime. Tool selection increased from 344/362 to 346/362 (95.58%); exact arguments increased from 254/280 to 257/280 (91.79%); structured validity decreased from 358/362 to 356/362 (98.34%). Three of eleven sets passed all gates. Overall acceptance still FAILS; production was not changed. This is regression evidence, not an unseen certification. [Measured report](../training/reports/shared-metadata-v1-en-fr-comparison.json).
 
@@ -235,7 +254,7 @@ IMPLEMENTED locally and reviewed: exact ordinal-target validation now exists acr
 
 The eight malformed calls were replayed separately with the same pinned provider and candidate process: four invented an unsupported supplier filter for financial summaries, two used field names absent from Management Projet, one omitted the required operation, and one requested an unavailable previous-result deletion operation. Provider/schema validation rejected them; the diagnostic executed no business tool and did not replace benchmark results. [Failure analysis](../training/reports/shared-adapter-v2-malformed-calls.json).
 
-## Reviewed V5r3 preparation — 2026-10-11
+## Reviewed V5r3 preparation - 2026-10-11
 
 PARTIALLY IMPLEMENTED: `shared-v5r3-en-fr` preserves the reviewed current-metadata curriculum and adds 122 diverse English/French training examples plus 36 validation examples. Totals: 1,576 training and 222 validation rows. The existing 390 diagnostic cases remain unchanged; 48 newly authored cases are frozen separately, making 438 evaluation cases. They are authored by the implementation team, not a blind external certification. Failure categories informed training; exact normalized split overlap is rejected, while semantic-independence limitations remain explicit.
 
@@ -248,7 +267,7 @@ IMPLEMENTED and verified locally: the six native adapters use a shared safeguard
 Validation: 14 shared context tests and 22 training-integrity tests pass. Final native assistant suites: Facturation 860, Management Projet 86 plus 130 subtests, Design Workflow 90, Contracts 58 plus 4 subtests, Gestion Magasin 58, Réservation 45. The single reviewer found no unresolved code or final-dataset issues. Native adapter publication and packaged-wheel synchronization remain pending; no backend/model deployment or feature activation is claimed. Contracts, Gestion Magasin and Réservation optimization remain queued, one at a time, behind shared-model acceptance.
 
 
-## Conversation framing and V5r4 preparation — 2026-10-11
+## Conversation framing and V5r4 preparation - 2026-10-11
 
 The 48 new frozen V5r3 baseline cases completed against the unchanged V5r2 candidate: 14/48 correct tools, 0/34 eligible exact arguments, 48/48 valid structures. Acceptance fails. [Measured baseline](../training/reports/shared-refinement-v2-en-fr-baseline.json). V5r3 remains an untrained, preserved dataset; its multi-turn failures prompted a separate input-format investigation before sustained optimization.
 
@@ -263,7 +282,7 @@ PARTIALLY IMPLEMENTED: `shared-dialogue-v1-en-fr` preserves all 438 logical eval
 No V5r4 sustained optimization has started. Server preflight, capacity validation, packaged native wheel synchronization and publication remain pending. Production model and feature flags are unchanged. Contracts, Gestion Magasin and Réservation training remain sequential behind acceptance; Colibri PR work stays deferred.
 
 
-## Shared V5r4 training started — 2026-10-11
+## Shared V5r4 training started - 2026-10-11
 
 IMPLEMENTED: the complete baseline comparison is measured. Across 438 unchanged logical scenarios, conversation framing changes tool selection from 372/438 (84.93%) to 386/438 (88.13%), eligible exact arguments from 264/334 (79.04%) to 277/334 (82.93%), and valid structure from 430/438 (98.17%) to 425/438 (97.03%). All acceptance gates still fail. The 78 changed histories were measured freshly; 360 identical inputs reuse prior measurements with the same pinned candidate/provider. No combined latency claim is made. [Full comparison](../training/reports/shared-dialogue-v1-en-fr-baseline.json).
 
@@ -276,7 +295,7 @@ The launcher binds the exact baseline, capacity, data, scripts, base and runtime
 IMPLEMENTED locally: the identical shared core 0.2.1 wheel is packaged for all six backends with source-content hashes verified. Tests against that actual wheel passed: Facturation 860; Management Projet 87 plus 136 subtests; Design Workflow 90; Contracts 59 plus 10 subtests; Gestion Magasin 59 plus 6 subtests; Réservation 46 plus 6 subtests. Native source publication remains pending; this source-only central push did not deploy application code or activate a model.
 
 
-## Argument-rule diagnostic prepared — 2026-10-11
+## Argument-rule diagnostic prepared - 2026-10-11
 
 PARTIALLY IMPLEMENTED: a separate four-arm comparison preserves the same twelve synthetic cases and their targets, tools and permissions. Four are observed name/date failures; eight new controls cover names across languages, missing years, leap and non-leap centuries, and native status conversion. The arms use the original instructions, a literal-name rule, a complete-month/year rule, or both. This changes no application code or active frozen evaluation and performs no training.
 
@@ -285,7 +304,7 @@ Preparation checks passed: four integrity tests plus eight subtests; all 48 inpu
 No diagnostic inference has run. It must follow the original candidate evaluation and performance measurement. Known failures are regression cases, and these controls are not independent certification. Any useful rule still requires broader regression evaluation before application changes or activation.
 
 
-## Follow-up input diagnostic prepared — 2026-10-11
+## Follow-up input diagnostic prepared - 2026-10-11
 
 PARTIALLY IMPLEMENTED: the newest 48 cases expose repeated unsupported replies despite offered supported tools. A separately versioned 12-case EN/FR diagnostic includes three actionable bilingual scenarios, a business-background control, an unsupported-operation pair and a missing-year pair. Four arms preserve the original envelope, omit history diagnostically, change exact neutral greeting wording to the existing training phrasing, or put the current request first. The greeting arm is a wording intervention and preserves language; genuine task history remains byte-identical. The business-background control does not prove history dependence because trusted context already contains the selected records. Current-only is not a proposed production memory policy.
 
@@ -296,13 +315,13 @@ IMPLEMENTED locally and reviewed: shared core 0.2.2 and all six native adapters 
 Package verification: identical 0.2.2 wheel in all six backends; SHA-256 cb7683557d82a0a91c39bdc8e50a01d2708b2808c3aa54208a8234ae22b8eaa8. Shared/training suite: 68 tests plus 154 subtests. Native suites against the actual wheel: Facturation 863; Management Projet 90 plus 140 subtests; Design Workflow 93; Contracts 87 plus 14 subtests; Gestion Magasin 87 plus 10 subtests; Réservation 73 plus 10 subtests, with one inapplicable tenant-move case skipped. Single reviewer found no remaining issues.
 
 
-## Argument-rule diagnostic and malformed calls — 2026-10-11
+## Argument-rule diagnostic and malformed calls - 2026-10-11
 
 IMPLEMENTED: all 96 isolated rule-diagnostic requests completed. For V5r4, original/names/dates/both exact arguments were respectively 4/10, 5/10, 4/10 and 5/10. Neither explicit full-month regression was fixed by any arm. Name copying improved one selected search but could worsen time-report tool choice; century-date controls still produced incorrect dates/years. No runtime prompt change is justified by these limited results. V5r2 results and all unchanged acceptance evidence remain recorded separately. [Diagnostic results](../training/reports/planner-rules-v1-en-fr-results.json).
 
 IMPLEMENTED: four schema-rejected V5r4 calls were replayed without business execution. One used an unsupported stock-movement status, one invented a stock-write field, and two quote-number requests emitted no parsed tool call. A later inspection of the unchanged isolated log correlates both original requests and their replays with rejected prepare_change calls containing an invalid integer identifier. Their expected action was record search. The exact generated identifier value was not captured, and this does not establish a Colibri defect. Original errors and scores are preserved. [Malformed-call report](../training/reports/shared-v5r4-en-fr-malformed-calls.json).
 
-## Greeting-bias correction and V5r5 preparation — 2026-10-11
+## Greeting-bias correction and V5r5 preparation - 2026-10-11
 
 IMPLEMENTED: the 96-request history diagnostic is complete. V5r4 eligible exact arguments increased from 2/8 with the original envelope to 6/8 with current-only or longer neutral greetings, but both alternatives produced two invalid outputs. Current-first remained 2/8. No production history/prompt change is justified. The untouched full acceptance result remains 390/438 tool selections (89.04%), 284/334 exact arguments (85.03%) and 434/438 valid outputs (99.09%). [Diagnostic evidence](../training/reports/planner-history-v1-en-fr-results.json).
 
@@ -314,7 +333,7 @@ IMPLEMENTED: the six native target-binding fixes were fetched/pulled and publish
 
 V5r5 preparation verification: 78 shared/training tests plus 164 subtests pass. All 1,803 training and 275 validation rows pass schema validation, exact Colibri parser round-trip, template parity, loss masking and semantic weighting alignment. All 438 retained evaluation cases pass the same checks. Maximum training length is 7,662 tokens; maximum evaluation prompt is 7,235 plus 512 reserved output, within 8,192. Tokenizer metadata matches the existing server candidate; no local weights or optimization were used. [Metadata report](../training/reports/shared-v5r5-en-fr-metadata-preflight.json).
 
-## Shared V5r5 training completed — 2026-10-12
+## Shared V5r5 training completed - 2026-10-12
 
 IMPLEMENTED training, acceptance FAILED: the reviewed isolated continuation completed from the existing V5r2 base using source commit `3b976f8dd7d0`. One complete epoch covered 1,803 examples; 275 validation examples were checked initially, every 300 steps and at completion. The lowest application-macro validation loss selected step 600. All 438 frozen cases completed; the candidate failed acceptance and remains unpromoted. Learning rate 0.00002; 24 text layers; rank 16/alpha 32; semantic weight 4; 14 CPU threads; 12 GiB limit; no swap. Existing production inference remains healthy and unchanged.
 
@@ -326,7 +345,7 @@ IMPLEMENTED locally: corrected future datasets preserve exact predecessor byte p
 
 Verification of the later-stage preparation: 85 shared/training tests and 168 subtests pass. The sole reviewer found no remaining issues. The complete curated-source dry-run passed secret/private-path exclusions; generated model weights and private evaluation logs remain excluded. No future optimizer has run.
 
-## Resource allocation and V5r6 preparation — 2026-10-12
+## Resource allocation and V5r6 preparation - 2026-10-12
 
 IMPLEMENTED and verified: saved-checkpoint evaluation used three four-thread workers (12 threads total). All 825 comparisons completed. Finished R2/R4/R5 evaluation services were then stopped to release RAM; all weights/results and production inference were preserved. Training remains configured for 14 of 16 logical threads, retaining the 10% memory reserve.
 
@@ -338,7 +357,7 @@ All 69 training-integrity tests pass. Native audit passes all 166 new tool/schem
 
 Management Projet and the next three application assistants remain disabled. No production model replacement; future application training stays sequential after acceptance.
 
-## Named list pagination returns — 2026-10-12
+## Named list pagination returns - 2026-10-12
 
 IMPLEMENTED and verified locally in all six application frontends: named list buttons restore validated page, page size and ordering, scoped to the existing company/store target. Fresh list visits and direct links without saved state use the normal named list. No history-based return calls remain in application source. Browser checks caught and fixed a route-commit timing reset for non-default page sizes; pagination now reads Next's canonical query and uses the supported native-history update.
 
@@ -347,14 +366,14 @@ All six related test suites, type checks, scoped lint and optimized production b
 Limitations: only pagination and existing ordering are remembered, not in-memory search/filter text. Design Workflow's project board is unpaginated and unchanged. Training remains separate and the current run has no accepted accuracy score.
 
 
-## Sequential R6 preparation — 2026-10-12
+## Sequential R6 preparation - 2026-10-12
 
 IMPLEMENTED and verified: Contracts V6r6, Gestion Magasin V7r6 and Réservation V8r6 preserve every current V5r6 training/validation byte and the existing new-app splits. Training counts are 2,122, 2,320 and 2,500 respectively; held-out counts stay 516, 606 and 690. Seven focused integrity tests, the full 72-test training suite and 2,902 tokenizer/template/parser/semantic-boundary checks passed. The single reviewer found no remaining issues. Existing identical held-out metadata checks are reused by hash. The preparation adds one versioned generator, integrity tests, three synthetic dataset versions and one metadata report. No model weights or local training were used.
 
 PARTIALLY IMPLEMENTED: the V5r6 server training run remains active. These future stages require acceptance of their exact predecessor, a frozen baseline and launch-time server/resource checks. None has started; no accuracy or production-readiness claim follows from metadata validation.
 
 
-## Serial-stage capacity preparation — 2026-10-12
+## Serial-stage capacity preparation - 2026-10-12
 
 IMPLEMENTED and verified without loading weights: `training/scripts/probe_cpu_serial_v1.py` extends the existing two-step CPU capacity procedure to an explicitly selected Contracts, Gestion Magasin or Réservation stage. Before model import it checks both dataset hashes, exact cumulative application scope and byte-for-byte retention of the declared predecessor. It retains the Linux/server-only guard, CPU/memory protections, longest-example probe and per-layer gradient/update checks. The frozen three-application probe remains unchanged. Three startup tests passed, covering all stages, a stale predecessor, a skipped stage and the server-only restriction; the single reviewer found no issues.
 
@@ -364,7 +383,7 @@ PLANNED: execute this unsaved optimizer probe on the server after the preceding 
 IMPLEMENTED and verified: the exact server metadata check also passed all 2,902 cumulative training/validation rows, with maximum lengths of 7,662/7,496 tokens inside the 8,192-token context. It used 0.25 CPU core, a 2 GiB limit and 682,393,600 bytes peak memory. The completed temporary check was stopped; the active training PID and healthy production model remained unchanged. [Server metadata evidence](../training/reports/shared-v8r6-en-fr-server-preflight.json). This loaded no model weights and performed no optimization.
 
 
-## Clarification failure audit — 2026-10-12
+## Clarification failure audit - 2026-10-12
 
 IMPLEMENTED and independently reviewed: read-only analysis of the unchanged V5r5 synthetic evaluations identified 27 failed clarifications: six invalid structures, 18 valid but incorrect tool choices and three incorrect clarification reasons. Eight incorrect edit/archive targets were replayed through existing target guards and all rejected. This is a target-guard replay, not a new end-to-end authorization test, and all eight remain failures in model accuracy. Dataset/event hashes match the original 15 evaluation sets. [Audit evidence](../training/reports/shared-v5r5-clarification-audit.json).
 
@@ -373,7 +392,7 @@ KNOWN EVALUATION LIMITATION: one French supplier-summary question omits the supp
 PARTIALLY IMPLEMENTED: an isolated local branch removes invoicing-only record/metric assumptions from all six shared English/French clarification messages. The single reviewer found no issues; 30 existing core tests and 12 offline provider parsing checks pass. Integration, package updates and release remain pending until the active pinned evaluations finish. Main-branch provider hashes and production remain unchanged. This is a wording correction, not a model-accuracy improvement.
 
 
-## R6 validation and fallback preparation — updated 2026-10-13
+## R6 validation and fallback preparation - updated 2026-10-13
 
 PARTIALLY IMPLEMENTED: validation macro losses at steps 300/600/900/1200/1500/1800 are respectively 0.0962517421, 0.0851006019, 0.0817649788, 0.0749553844, 0.0854565879 and 0.0702729237. Step 1800 is the first checkpoint below the 0.0709163280 baseline application-macro loss and is now selected. All three application losses improved from step 1500 to step 1800. Management Projet is below its baseline loss; Facturation and Design Workflow remain above theirs. Training is now complete; final-step macro loss is 0.0731497569 and step 1800 remains selected. The selected candidate completed the unchanged frozen acceptance suite and failed acceptance. These losses are not tool-accuracy percentages; the complete R6 acceptance scores are recorded at the top of this page and no production activation occurred. [Latest measured checkpoint report](../training/reports/shared-v5r6-validation-through-1800.json), [preserved step-1500 report](../training/reports/shared-v5r6-validation-through-1500.json).
 
@@ -382,42 +401,42 @@ IMPLEMENTED and verified as preparation only: a separately frozen fallback compa
 PARTIALLY IMPLEMENTED: the private server export/evaluation runner is prepared and all ten offline safety tests pass. It binds published baseline provenance, exact validation batches, completed training, candidate artifacts and identical inference settings; it rejects overlapping optimization and insufficient resource reserves. One reviewer found two provenance gaps, both fixed and covered by mutation tests, then found no remaining issues. No server controller execution or fallback inference has started. The active training/evaluation controller and original loss-based selection remain unchanged. Any selected changed model still requires the existing 438-case acceptance suite; validation alone cannot accept it. [Controller checks](../training/reports/shared-v5r6-fallback-control-checks.json).
 
 
-## Selected-checkpoint acceptance preparation — 2026-10-12
+## Selected-checkpoint acceptance preparation - 2026-10-12
 
 PARTIALLY IMPLEMENTED: the separate functional fallback now has a prepared acceptance handoff for its selected changed checkpoint. It reuses the existing 438-case, 15-set evaluator and baseline comparison, with the same model/provider settings and scoring. All eight predetermined validation candidates must finish; the selection is recomputed from their complete frozen predictions before admission. The baseline cannot advance as a new candidate. No activation or subsequent training is performed by this runner.
 
 Eleven offline handoff tests pass, including altered selection/events, incomplete comparison, baseline selection, changed-candidate rejection and invalid performance evidence. The runner now also prepares the unchanged eight-request speed/memory probe on the same isolated candidate workers before stopping them. One reviewer found no issues; read-only server checks confirmed the pinned benchmark inputs. No candidate launch or inference has run; actual acceptance, performance and native security remain incomplete. The active R6 controller is unchanged. [Preparation evidence](../training/reports/shared-v5r6-selected-acceptance-controls.json).
 
 
-## Serial-stage acceptance reporting preparation — 2026-10-12
+## Serial-stage acceptance reporting preparation - 2026-10-12
 
 IMPLEMENTED and verified as preparation only: `report_serial_candidate_v1.py` recomputes the full baseline and candidate assessments for the prepared Contracts (516 cases), Gestion Magasin (606) and Réservation (690) stages. It requires all frozen sets and retained applications, verifies artifact file-map hashes and completion-pinned result hashes, and keeps the existing accuracy gates. A decline in a retained application's tool, structure, action or exact-argument count blocks stage acceptance even if aggregate targets pass.
 
 Eleven focused offline tests and all 90 training-integrity tests pass. The single reviewer found two provenance gaps; both were fixed and regression-tested, with no remaining findings. No future-stage inference or training has run. Launch-time accepted-predecessor bindings, actual measurements, native security and application verification remain incomplete. Current R6 controls and frozen evaluations are unchanged. [Preparation evidence](../training/reports/serial-stage-report-controls.json).
 
 
-## Completed training and recovery handoff — 2026-10-13
+## Completed training and recovery handoff - 2026-10-13
 
 IMPLEMENTED: all 1,969 optimization steps and final validation completed successfully; step 1800 remains selected. Export succeeded. The initial evaluation handoff stopped before submitting cases because systemd reports an absolute interpreter path. A separately reviewed recovery requires the exact absolute interpreter and executable realpath, retaining every model/argument/artifact check. Eleven offline checks pass; the original controls and failure evidence are preserved. The recovery completed all 438 unchanged cases and the eight-request performance probe. Acceptance failed; all three temporary workers stopped and production remained unchanged.
 
 PARTIALLY IMPLEMENTED: versioned fallback controls can admit that recovery only after complete recomputed results show failed acceptance and all three isolated workers stop. The fixed eight-checkpoint validation policy and all scoring remain unchanged. Fifteen offline fallback tests and eleven selected-checkpoint acceptance/performance handoff tests pass; the single reviewer found no remaining issues. Neither fallback inference nor later-app training has started. [Fallback controls](../training/reports/shared-v5r6-fallback-control-checks-v2.json), [selected-checkpoint handoff](../training/reports/shared-v5r6-selected-acceptance-controls-v2.json).
 
 
-## Versioned benchmark errata preparation — 2026-10-13
+## Versioned benchmark errata preparation - 2026-10-13
 
 IMPLEMENTED and verified as preparation only: `shared-dialogue-v2-en-fr` retains all 438 scenarios and 15 sets. It corrects only the three previously documented defects: the two payment-schedule requests saying “before 2026-11-01” now expect the inclusive upper bound 2026-10-31, and the French supplier-expense question explicitly identifies the supplier, matching its English counterpart. The other 435 rows remain byte-identical. V1 inputs, historical scores, active checkpoint comparison, training data and acceptance thresholds are unchanged.
 
 Eight generator tests pass. Fresh metadata checks pass all 438 V2 cases against the existing tokenizer, chat template and Colibri parser. The largest prompt is 7,235 tokens, with 512 output tokens reserved within 8,192. The single reviewer found no issues. No V2 model inference, training or acceptance has occurred. V2 requires separately bound baseline/candidate results, reported alongside V1; preparation cannot qualify a model or activate an application. [Dataset manifest](../training/datasets/shared-dialogue-v2-en-fr/manifest.json), [metadata checks](../training/reports/shared-dialogue-v2-en-fr-metadata-preflight.json).
 
 
-## Token-ID parity diagnostic — 2026-10-13
+## Token-ID parity diagnostic - 2026-10-13
 
 IMPLEMENTED and verified: a tokenizer-only harness compiled the unchanged Colibri C encoder, with its default settings, and compared its token IDs with the training tokenizer. The four encoder source files and tokenizer metadata match the server; its recorded inference binary hash was also rechecked. All 4,926 corpus comparisons passed: 3,938 prompt/full-example encodings from 1,969 training rows, 550 from 275 validation rows, and 438 V2 evaluation prompts. These are encoding checks, not additional model-accuracy cases. No weights or local inference were loaded. The single reviewer found no issues. [Evidence](../training/reports/shared-v5r6-tokenizer-id-parity.json).
 
-PARTIALLY IMPLEMENTED — Unicode edge case remains: five of six separate probes passed; a decomposed accented name differed because the default C path does not apply the tokenizer's NFC normalization. This did not affect the checked corpus and does not explain the observed validation failures. No runtime/provider change has been applied. Any correction must be separately tested without altering the active comparison. Numerical inference parity was not tested.
+PARTIALLY IMPLEMENTED - Unicode edge case remains: five of six separate probes passed; a decomposed accented name differed because the default C path does not apply the tokenizer's NFC normalization. This did not affect the checked corpus and does not explain the observed validation failures. No runtime/provider change has been applied. Any correction must be separately tested without altering the active comparison. Numerical inference parity was not tested.
 
 
-## Saved-result training contrasts — 2026-10-13
+## Saved-result training contrasts - 2026-10-13
 
 IMPLEMENTED and verified as preparation only: `selection-contrasts-v1-en-fr` contains 96 correlated variations of 36 existing Management Projet synthetic training requests. The variants preserve the user request and field values while changing the saved context: 36 use new valid identifiers, 36 have no saved selection, and 24 have fewer results than the requested position. Missing or out-of-range targets require clarification. The existing 1,969 training rows, 275 validation rows and frozen evaluations remain unchanged. This additional data has not been merged into a training run or used for optimization.
 
@@ -425,7 +444,7 @@ Six unit tests pass. The actual native target guard passed 244 synthetic request
 
 A separate audit of the original expected Management Projet edit/delete targets passed all 182 cases: 130 training, 12 validation and 40 V2 evaluation cases. This verifies request-to-record binding with synthetic context; it neither queries records nor certifies database permissions. [Expected-label audit](../training/reports/management-projet-target-label-audit.json).
 
-## Future validation wording corrections — 2026-10-13
+## Future validation wording corrections - 2026-10-13
 
 IMPLEMENTED and verified as preparation only: `shared-validation-v2-en-fr` keeps the same 275 rows, tools, trusted contexts and expected actions. It clarifies 39 distinct requests (47 rows including history variants); the remaining 228 rows are byte-identical. The single review of all 222 original scenarios identified two native-filter scope mismatches and several ambiguous or uncertain entity references.
 
@@ -435,7 +454,7 @@ Six integrity tests pass, including unchanged targets/history and exclusion of t
 
 PARTIALLY IMPLEMENTED: no V2 inference or checkpoint selection has run. Clearer questions change difficulty, so future V2 scores must be reported separately. The active eight-checkpoint comparison, historical results, training data and held-out acceptance inputs remain unchanged. This preparation does not improve or certify model accuracy. [Prepared validation](../training/datasets/shared-validation-v2-en-fr/manifest.json), [metadata evidence](../training/reports/shared-validation-v2-en-fr-preflight.json).
 
-## Training search-scope corrections — 2026-10-13
+## Training search-scope corrections - 2026-10-13
 
 IMPLEMENTED and verified as preparation only: `training-scope-errata-v1-en-fr` supplies twelve replacement rows for the existing 1,969-row training split. Review of all 28 Facturation article-search and 46 Management Projet budget-entry-search examples found four designation-only questions labelled with the broader reference-or-designation search, and eight stage-only questions labelled with the broader stage/description/notes search.
 
