@@ -1,0 +1,112 @@
+{
+  "version": "shared-v5r11-launch",
+  "status": "TRAINING_STARTED; ACCEPTANCE_NOT_ESTABLISHED",
+  "started_utc": "2026-10-15T12:00:36.140000+00:00",
+  "source_commit": "f65f2681864917fd4700ebe46d0a08fd15c7f9ec",
+  "model": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "base": "shared-v5r8 selected step 2339; original FP32 merged base, not disposable rehearsal weights",
+  "training_rows": 2419,
+  "validation_rows": 275,
+  "dataset_manifest_sha256": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
+  "configuration": {
+    "cpu_threads": 14,
+    "memory_limit_gib": 32,
+    "swap_limit_gib": 0,
+    "minimum_available_host_memory_fraction": 0.1,
+    "epochs": 1,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "learning_rate": 1e-05,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "gradient_checkpointing": "nonreentrant",
+    "semantic_loss_weight": 4,
+    "context_tokens": 8192,
+    "validation_interval_steps": 600,
+    "checkpoint_interval_steps": 600
+  },
+  "server_metadata_preflight_passed": true,
+  "capacity": {
+    "selected": "checkpointing_on",
+    "passed": true,
+    "sequence_tokens": 7745,
+    "peak_rss_gib": 6.508,
+    "updates": [
+      {
+        "step": 1,
+        "seconds": 180.00177860073745,
+        "updated_layers": 24,
+        "finite_loss": true
+      },
+      {
+        "step": 2,
+        "seconds": 167.20577004365623,
+        "updated_layers": 24,
+        "finite_loss": true
+      }
+    ],
+    "checkpointing_off": {
+      "passed": false,
+      "result": "memory cgroup OOM kill",
+      "memory_limit_gib": 32,
+      "completed_updates": 0,
+      "original_failure_evidence_preserved": true
+    },
+    "selection_reason": "Use the verified checkpointed configuration after the isolated non-checkpointed probe exceeded its memory limit. No speedup is claimed."
+  },
+  "checks": {
+    "corrected_colibri_replay_targets": {
+      "passed": 26,
+      "total": 26
+    },
+    "revised_wording_serving_targets": {
+      "passed": 6,
+      "total": 6
+    },
+    "native_validation_prompt_order": {
+      "passed": 275,
+      "total": 275,
+      "inference": false
+    },
+    "automatic_handoff_tests": 17,
+    "fallback_admission_tests": 8,
+    "single_reviewer": "No issues"
+  },
+  "automatic_handoff": {
+    "initial_phase": "waiting_for_training",
+    "controller_live_verified": true,
+    "checkpoint_validation_rows": 275,
+    "candidate_steps": [
+      0,
+      600,
+      1200,
+      1800,
+      2400,
+      2419
+    ],
+    "selected_candidate_regression_cases": 438,
+    "selected_candidate_fresh_cases": 48,
+    "fresh_controls_used_for_checkpoint_selection": false
+  },
+  "evidence_sha256": {
+    "preflight.json-server.json": "b8a7009afdbde26451fe5d808fdf63cc4b57c4ce0d5b942e7f262c0704ba5aaf",
+    "capacity-on.json-server.json": "ff327b812e65aff5993a6e76da9c2e07c1f5fcd5ae9cc6f630dd2e37a0223399",
+    "capacity-off-failure.json": "9aaeb6b5b083302565ea666d58e99a5fb24e15ae65c857fa1b8982e3d5eb0959",
+    "capacity-selection.json-server.json": "18ebf6205d6c866300cd20f1efa23ddf90c2fed013be1b547fb737e8edb5e9c2",
+    "training-plan.json-server.json": "bce7e2e6f9fc3727f2bdaa46e3caee1d344df0e6ff1368dfcc70b9e29a82e3ff",
+    "training-started.json-server.json": "6565e8b36dd693c8d44bf0c347d0f67619476858b792968804ebc75f7f3595f2",
+    "training-running-proof.json": "759bd384e6071ecc3c07e00c5ee41fe877a00d20faf7ea99a90cb8200256cf02",
+    "run-binding.json": "a14b438335b482c0435a450c8fccc507e80032ec22d9b393eb423dd90b9b6b0b",
+    "reviewed-controls.json": "66e887a78d766657ab6fdbf16cc6d29170b46987dbab67cad5f1c21fa295c1d9",
+    "reviewed-fallback.json": "9ab001651e07cba5c630f36c5af63b430529ee9723890e38b07aa4c4b5daaff6",
+    "pipeline-reviewed-controls.json": "be85e6e697f8799cd0c2624a2b34084ffe1a344d53ed545957556aa158283cbf",
+    "evaluation-order-check.json": "4fad82053404477371125b61f8612758df4924b3bd48715ecedad84a7e8c12bc"
+  },
+  "training_complete": false,
+  "post_training_accuracy_measured": false,
+  "production_healthy_unchanged": true,
+  "production_activation": false,
+  "next_application_training_started": false
+}

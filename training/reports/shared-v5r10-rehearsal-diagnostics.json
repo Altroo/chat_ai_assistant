@@ -1,6 +1,6 @@
 {
   "version": "shared-v5r10-rehearsal-diagnostics-v1",
-  "status": "NUMERICAL REHEARSAL VERIFIED; CORRECTED COLIBRI REPLAY PENDING",
+  "status": "NUMERICAL REHEARSAL AND CORRECTED COLIBRI REPLAY VERIFIED",
   "numerical": {
     "complete_sha256": "69b54ec3f7cff0d842a811918d34b840cb310e89bfbfd7ef072799bc37dacc52",
     "steps": 63,
@@ -110,11 +110,83 @@
     }
   },
   "limitations": [
-    "Twenty rehearsed training cases improved from 16/20 to 20/20; six development cases stayed 5/6. This does not establish model acceptance.",
-    "The first Colibri replay changed every prompt and cannot establish export parity.",
-    "R11 wording corrections have not been trained or tested through corrected serving."
+    "Twenty rehearsed training cases improved from 16/20 to 20/20; six framework development captures stayed 5/6. This does not establish model acceptance.",
+    "The first Colibri replay changed every prompt and cannot establish export parity; its evidence is preserved.",
+    "The corrected Colibri replay matched all 26 development/training targets. Its sole framework/action divergence corrected a literal-copy error; raw token parity is not claimed.",
+    "The six R11 wording checks use the disposable R10 adapter and are diagnostics on revised training prompts, not a held-out score. Full refinement must start from the original R8 selected base."
   ],
   "model_accepted": false,
   "full_training_started": false,
-  "production_activation": false
+  "production_activation": false,
+  "corrected_replay": {
+    "complete_sha256": "c18a4692707f552eacd985094fbb81eda7fc9257ece8f9e91b164c615ec47ff3",
+    "requests": 26,
+    "target_correct": 26,
+    "schema_valid": 26,
+    "same_valid_action": 25,
+    "correct_to_incorrect": 0,
+    "by_split_and_application": {
+      "train": {
+        "management_projet": {
+          "count": 4,
+          "hf_correct": 4,
+          "colibri_correct": 4,
+          "colibri_schema_valid": 4,
+          "same_valid_action": 4,
+          "correct_to_incorrect": 0
+        },
+        "design_workflow": {
+          "count": 4,
+          "hf_correct": 4,
+          "colibri_correct": 4,
+          "colibri_schema_valid": 4,
+          "same_valid_action": 4,
+          "correct_to_incorrect": 0
+        },
+        "facturation": {
+          "count": 12,
+          "hf_correct": 12,
+          "colibri_correct": 12,
+          "colibri_schema_valid": 12,
+          "same_valid_action": 12,
+          "correct_to_incorrect": 0
+        }
+      },
+      "valid": {
+        "design_workflow": {
+          "count": 2,
+          "hf_correct": 2,
+          "colibri_correct": 2,
+          "colibri_schema_valid": 2,
+          "same_valid_action": 2,
+          "correct_to_incorrect": 0
+        },
+        "facturation": {
+          "count": 2,
+          "hf_correct": 1,
+          "colibri_correct": 2,
+          "colibri_schema_valid": 2,
+          "same_valid_action": 1,
+          "correct_to_incorrect": 0
+        },
+        "management_projet": {
+          "count": 2,
+          "hf_correct": 2,
+          "colibri_correct": 2,
+          "colibri_schema_valid": 2,
+          "same_valid_action": 2,
+          "correct_to_incorrect": 0
+        }
+      }
+    },
+    "worker_stopped": true,
+    "source_and_artifacts_unchanged": true,
+    "single_reviewer": "No issues"
+  },
+  "full_training_followup": {
+    "version": "shared-v5r11",
+    "started": true,
+    "report": "training/reports/shared-v5r11-launch.json",
+    "scope": "Separate full run from the original R8 base; this disposable rehearsal itself did not launch training."
+  }
 }

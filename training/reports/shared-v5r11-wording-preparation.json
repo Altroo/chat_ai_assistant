@@ -1,6 +1,6 @@
 {
   "version": "shared-v5r11-wording-preparation-v1",
-  "status": "PREPARATION ONLY; no full training or serving check executed",
+  "status": "SERVING CHECKS VERIFIED; FULL R11 REFINEMENT STARTED, ACCEPTANCE INCOMPLETE",
   "dataset_manifest_sha256": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
   "changed_english_requests": 6,
   "targets_unchanged": true,
@@ -34,10 +34,21 @@
     "training/tests/test_shared_v5r11.py": "5b9c17485ebda1e79041ae0165ef107245f26e6232374377b50bd50d832729a3"
   },
   "remaining": [
-    "Complete corrected R10 Colibri replay and comparison.",
-    "Run targeted serving checks for the six clarified requests.",
-    "Select and bind the full refinement run after reviewing evidence."
+    "Complete the running full refinement from the original R8 selected base.",
+    "Evaluate saved checkpoints on unchanged validation, then test the selected changed candidate against the separate regression and fresh controls."
   ],
   "production_activation": false,
-  "later_application_training_started": false
+  "later_application_training_started": false,
+  "serving_checks": {
+    "count": 6,
+    "correct": 6,
+    "schema_valid": 6,
+    "runtime": "Colibri",
+    "model": "disposable R10 rehearsal adapter",
+    "worker_stopped": true,
+    "independently_recomputed": true,
+    "complete_sha256": "d44145332dbaec6ee777fa16b7e12fc5dd3151e4abcc93e1c3b1f126090224ad",
+    "scope": "Six revised training prompts; no acceptance or full-training claim"
+  },
+  "full_training_followup": "training/reports/shared-v5r11-launch.json"
 }

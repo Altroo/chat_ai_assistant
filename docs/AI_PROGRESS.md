@@ -1,5 +1,20 @@
 # Chat AI Assistant progress
 
+## Corrected serving checks verified - 15 October 2026
+
+IMPLEMENTED and verified: the corrected Colibri replay completed all 26 requests with schema-valid exact target actions and zero framework-correct to Colibri-incorrect changes. Twenty-five actions match the framework captures; the remaining action corrects the existing development literal-copy error. The independent verifier and single reviewer confirmed the paired results, unchanged artifacts and stopped worker. This is a bounded training/development diagnostic, not a full accuracy result.
+
+IMPLEMENTED and verified: all six clarified R11 financial-summary requests returned the exact expected actions through the same temporary Colibri model. Separately, all 275 validation prompts remain identical after serialization through the frozen native provider, with no HTTP requests or model inference. The full server metadata preflight passes all 2,419 training and 275 validation examples.
+
+PARTIALLY IMPLEMENTED: full R11 training started on 15 October 2026 at 12:00 UTC with 14 CPU threads, a 32 GiB service ceiling and no swap. It schedules all 2,419 updates from the original R8 selected checkpoint, not the disposable rehearsal weights. Checkpointing-on passed both capacity updates across all 24 intended layers, with 6.508 GiB peak RSS. The isolated checkpointing-off probe exceeded the 32 GiB memory cgroup before completing an update; its original failure is preserved. The reviewed fallback retains checkpointing-on and does not claim a speedup. Production remains unchanged.
+
+IMPLEMENTED and verified: the automatic controller is running and waits for successful full-epoch completion. It compares the baseline and steps 600, 1200, 1800, 2400 and 2419 on the unchanged 275 validation rows. Only the selected changed candidate advances to 438 regressions and 48 fresh controls, reported separately. Seventeen handoff tests and eight fallback admission tests pass; the single reviewer found no issues. Training completion, new accuracy measurements and acceptance remain incomplete. [Launch evidence](../training/reports/shared-v5r11-launch.json), [checkpoint selection policy](../training/reports/shared-v5r11-checkpoint-selection-policy.json).
+
+[Corrected replay evidence](../training/reports/shared-v5r10-rehearsal-diagnostics.json), [six wording checks](../training/reports/shared-v5r11-wording-preparation.json).
+
+## Earlier records
+
+
 
 ## Shared refinement wording preparation - 15 October 2026
 
