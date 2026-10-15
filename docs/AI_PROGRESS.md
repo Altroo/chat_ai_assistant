@@ -1,5 +1,13 @@
 # Chat AI Assistant progress
 
+## Later-app curriculum retention verified - 15 October 2026
+
+IMPLEMENTED as preparation only: the queued Contracts V6r11, Gestion Magasin V7r11 and Reservation V8r12 curricula retain the complete R11 training prefix, including all 80 coverage examples and the six clarified English requests. Existing new-application rows, validation and evaluation inputs remain unchanged. Each stage uses strict byte-for-byte retention without a correction exception.
+
+Eight integrity and bounded startup tests pass. Metadata checks pass all 3,352 cumulative training/validation examples and 738 evaluation cases, including tokenizer/template agreement, Colibri parsing, schemas, loss alignment and output budgets. The single reviewer found no issues. These checks do not measure model accuracy.
+
+R11 remains the only server training job. No later application has started training or received an accepted model. Each future stage still requires its actual accepted predecessor, current native-source verification, a frozen baseline, numerical/export rehearsal and resource checks. [Preparation results](../training/reports/serial-after-r11-preparation.json), [metadata checks](../training/reports/shared-v8r12-en-fr-metadata-preflight.json).
+
 ## Corrected serving checks verified - 15 October 2026
 
 IMPLEMENTED and verified: the corrected Colibri replay completed all 26 requests with schema-valid exact target actions and zero framework-correct to Colibri-incorrect changes. Twenty-five actions match the framework captures; the remaining action corrects the existing development literal-copy error. The independent verifier and single reviewer confirmed the paired results, unchanged artifacts and stopped worker. This is a bounded training/development diagnostic, not a full accuracy result.

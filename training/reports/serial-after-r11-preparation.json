@@ -1,0 +1,64 @@
+{
+  "version": "serial-after-r11-preparation-v1",
+  "status": "PREPARATION VERIFIED; NO LATER-APPLICATION TRAINING STARTED",
+  "retained_refinement": "shared-v5r11-en-fr",
+  "retained_manifest_sha256": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
+  "stages": [
+    {
+      "application": "contrat",
+      "version": "shared-v6r11-en-fr",
+      "manifest_sha256": "e22916a84cc694f35298a837ffe0db4abad9df320c1232133206fd4255b92343",
+      "train": 2572,
+      "valid": 319,
+      "evaluation_cases": 564,
+      "retained_dataset": "shared-v5r11-en-fr",
+      "training_started": false
+    },
+    {
+      "application": "gestion_magasin",
+      "version": "shared-v7r11-en-fr",
+      "manifest_sha256": "d03b8977bf5c284a78212efaafde53a25cf1858a1cdc3a59ca4f19a97335da65",
+      "train": 2770,
+      "valid": 362,
+      "evaluation_cases": 654,
+      "retained_dataset": "shared-v6r11-en-fr",
+      "training_started": false
+    },
+    {
+      "application": "reservation",
+      "version": "shared-v8r12-en-fr",
+      "manifest_sha256": "a7853bd6aae523feb65bffd42ba42ee0c6ebcb5fb895fd63b233f1178413f743",
+      "train": 2950,
+      "valid": 402,
+      "evaluation_cases": 738,
+      "retained_dataset": "shared-v7r11-en-fr",
+      "training_started": false
+    }
+  ],
+  "checks": {
+    "integrity_and_bounded_startup_tests_passed": 8,
+    "single_reviewer": "No issues",
+    "retained_bytes_exact": true,
+    "new_application_rows_unchanged": true,
+    "validation_and_evaluation_unchanged": true,
+    "retention_exceptions_used": false,
+    "tokenizer_template_parser_schema_loss_budget_train_valid_cases": 3352,
+    "evaluation_metadata_cases": 738,
+    "metadata_preflight_sha256": "6585f0712398b94d12537a68a3f0b590059e31190571640e3ac3c1948aa3be50"
+  },
+  "sources_sha256": {
+    "training/scripts/prepare_serial_after_r11.py": "27fb885e4f98a957a96c1ccd4445160c3467e9a87a0b2c26cd69db755f3e2175",
+    "training/tests/test_serial_after_r11.py": "7056630337b6aceee3df9c21800e1ac620c0cac98788366ea91b5d7db471eb90"
+  },
+  "active_r11_inputs_changed": false,
+  "later_training_started": false,
+  "model_accuracy_measured": false,
+  "model_accepted": false,
+  "production_activation": false,
+  "remaining": [
+    "Actual current shared-model acceptance.",
+    "Bind the accepted predecessor model and complete dataset for each successive stage.",
+    "Recheck current native source and server resources, then run numerical/export rehearsal before each full training.",
+    "Run all per-application regression and fresh-control acceptance gates after each stage."
+  ]
+}

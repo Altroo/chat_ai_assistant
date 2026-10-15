@@ -1,0 +1,235 @@
+{
+  "version": "shared-v8r12-en-fr",
+  "applications": [
+    "facturation",
+    "management_projet",
+    "design_workflow",
+    "contrat",
+    "gestion_magasin",
+    "reservation"
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "retained_dataset": {
+    "version": "shared-v7r11-en-fr",
+    "manifest_sha256": "d03b8977bf5c284a78212efaafde53a25cf1858a1cdc3a59ca4f19a97335da65",
+    "files": {
+      "train.jsonl": "a23ad90615f36531a602b8e49afe839d397c009a675e158bb4ba7f7829bf1462",
+      "valid.jsonl": "8790e04601f1300380f834b6561f94411826d1273e1ac42510fa2e3a3d03be37"
+    }
+  },
+  "added_dataset": {
+    "version": "reservation-dialogue-v4-en-fr",
+    "manifest_sha256": "2e1c0d173e4e424dbab98ff5cbea1f38edb6cf14c00af123d75d3f4dc260b3a6",
+    "files": {
+      "train.eval.jsonl": "63c15370c9af6904fb04cdb041cac787576d034d66f708d30b58eaa25039b920",
+      "train.jsonl": "0f9abdbd559394a80461095c7bcf1aceb38dd95e6ebd5d1d9b59c0cb41427a2a",
+      "valid.eval.jsonl": "d4dec4ab17d621a146be8909f469fcd3483db8082fe641e43963da1fd67c9767",
+      "valid.jsonl": "b2673afa36d9bd28bd6ee1d6a7182254e8903633423bd434b206cc7713079b97",
+      "test.eval.jsonl": "c19d78ef3714deb67f12a5f6712ec34f9fc3212ad9b271063591fd66821f4e25"
+    }
+  },
+  "counts": {
+    "train.jsonl": {
+      "facturation": 931,
+      "management_projet": 1012,
+      "design_workflow": 476,
+      "contrat": 153,
+      "gestion_magasin": 198,
+      "reservation": 180
+    },
+    "valid.jsonl": {
+      "facturation": 133,
+      "management_projet": 78,
+      "design_workflow": 64,
+      "contrat": 44,
+      "gestion_magasin": 43,
+      "reservation": 40
+    }
+  },
+  "files": {
+    "train.jsonl": "5a2a0d59edaebe7b0148928ef9ff58b977c27782f603a8bd0deaf3a1a15e0337",
+    "valid.jsonl": "ce5c35c7c7977f0da30273e06424ed5c4a0cc41b90783e74a2f12ea579b506b2"
+  },
+  "held_out": {
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+      "count": 24
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+      "count": 10
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": {
+      "sha256": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+      "count": 80
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a59f750fffeb6d9868b11d7be6493e3985ab7ed295981139afc11cbf8cd5f6fe",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": {
+      "sha256": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+      "count": 28
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "6ad3954b01fb07299952c9ee566e6d56ae36b34201aff75da4ee3c1d705b0f49",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da",
+      "count": 16
+    },
+    "training/datasets/shared-v5r8-fresh-en-fr/controls.eval.jsonl": {
+      "sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+      "count": 48
+    },
+    "training/datasets/contracts-dialogue-v4-en-fr/test.eval.jsonl": {
+      "sha256": "56862df3ed3ca7780582956590608bfa636d88a2ba10e63aebd03fc6a87b2616",
+      "count": 78
+    },
+    "training/datasets/gestion-magasin-dialogue-v4-en-fr/test.eval.jsonl": {
+      "sha256": "db4a807f871a932138e9a3427eba372d750e836d1b458ac1892dd45ef306732c",
+      "count": 90
+    },
+    "training/datasets/reservation-dialogue-v3-en-fr/test.eval.jsonl": {
+      "sha256": "c19d78ef3714deb67f12a5f6712ec34f9fc3212ad9b271063591fd66821f4e25",
+      "count": 84
+    }
+  },
+  "historical_regression_held_out": {
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+      "count": 24
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+      "count": 10
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": {
+      "sha256": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+      "count": 80
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": {
+      "sha256": "4bba62427783498ef0b28c06f2bfe838709551ec84e4e1a1b7528a0d07ea1bc7",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": {
+      "sha256": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+      "count": 28
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "35ea0592763e6c5fec0d3a72f51887d19d68de1fe94dfaf10685b4ee6e424cba",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da",
+      "count": 16
+    },
+    "training/datasets/gestion-magasin-dialogue-v3-en-fr/test.eval.jsonl": {
+      "sha256": "e01b4c5d5c6e93ffcb406d3f92000ecd21ad48e1a435b3ff6be3263233d7d42c",
+      "count": 90
+    }
+  },
+  "fresh_controls": {
+    "manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a",
+    "files": {
+      "training/datasets/shared-v5r8-fresh-en-fr/controls.eval.jsonl": {
+        "sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+        "count": 48
+      }
+    },
+    "scoring": "Report separately from original regressions; never use for optimization or checkpoint selection."
+  },
+  "held_out_count": 738,
+  "generator_sha256": "27fb885e4f98a957a96c1ccd4445160c3467e9a87a0b2c26cd69db755f3e2175",
+  "scope_validator_sha256": "83986f89fbf075a72faad32ed6f45d9332736d47d1bd5d0c7b40124e654e2312",
+  "split_policy": "Retain the complete R11 successor train/validation bytes. Append only unchanged reviewed new-application examples in their original splits. Preserve every evaluation input. Exact normalized request overlap is rejected; semantic independence is not established.",
+  "training_status": "PREPARATION ONLY. Require the actual accepted preceding model/run, frozen baseline, server numerical/export rehearsal and resource checks. No concurrent training or automatic activation.",
+  "source_preparation": {
+    "version": "shared-v8r11-en-fr",
+    "manifest_sha256": "a7c42869e348c275aeb34d43bc3d96233637c27c9d44a5a4cae1d36d6987f3ff"
+  },
+  "scope_dependencies": {
+    "serial_scope_v2.py": "459dab06b7b5dbb6c4d101c3f1d1eba1728593f5f346d444a6f70ea2091c6344",
+    "prepare_management_name_errata.py": "1545d5c4dd5c5c252ea13191d6d9d15f523f9ff5eebc46c69c42b03396d8afa3",
+    "prepare_management_name_errata_v2.py": "110d912942964b870766afa0c3ed57338effd7da8b40114f25f9440ffa913412",
+    "serial_scope_v3.py": "83986f89fbf075a72faad32ed6f45d9332736d47d1bd5d0c7b40124e654e2312"
+  },
+  "prompt_helper_sha256": "15fbd17a081a62371992148f2502b42a1e088da5b962e18c3fe9a45973d2c948",
+  "model_binding": {
+    "status": "UNBOUND; actual predecessor model has not passed acceptance",
+    "accepted_predecessor_required": "shared-v7r11-en-fr"
+  },
+  "retained_refinement": {
+    "version": "shared-v5r11-en-fr",
+    "manifest_sha256": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
+    "includes_all_80_coverage_rows_and_six_wording_changes": true
+  }
+}
