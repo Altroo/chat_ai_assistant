@@ -1,0 +1,32 @@
+{
+  "scope": "Metadata only; no model weights, inference or training. Supplement not accepted.",
+  "manifest_sha256": "a8f0f98964810756037b0b25b88275764570c0d78ab5ab6bce435238fa2a783c",
+  "tokenizer_sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+  "parser_sha256": "b72c440a9dbf59b475aed255d5707dfcd547c7c47a4840fde92e7c1f5b8c2c18",
+  "train": {
+    "count": 80,
+    "round_trip_passed": 80,
+    "runtime_prefix_parity_passed": 80,
+    "loss_boundary_passed": 80,
+    "semantic_alignment_passed": 80,
+    "semantic_loss_weight": 4,
+    "maximum_tokens": 4775,
+    "output_budget_contract": "conservative-target-v1",
+    "output_budget_passed": 80,
+    "maximum_target_tokens": 103,
+    "maximum_output_tokens": 512,
+    "minimum_output_budget": 512,
+    "sha256": "7e3218bdf2a89c97080a4f4af809b0a1c0316d26fce649c970e3b01e0fa01f14"
+  },
+  "version": "coverage-contrasts-v1-preflight",
+  "native_metadata_passed": 80,
+  "focused_tests_passed": 7,
+  "native_regeneration_identical": true,
+  "model_accepted": false,
+  "training_started": false,
+  "schema_and_labels_reviewed": true,
+  "full_training_authorized": false,
+  "metadata_source_manifest_sha256": "aceab8abd0ec3ee08dad597646d877637cae3d6aca700b7c838467777dc61f96",
+  "metadata_reused_after_provenance_only_refresh": true,
+  "metadata_source_train_sha256": "7e3218bdf2a89c97080a4f4af809b0a1c0316d26fce649c970e3b01e0fa01f14"
+}

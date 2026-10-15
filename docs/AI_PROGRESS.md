@@ -1,5 +1,11 @@
 # Chat AI Assistant progress
 
+## Reviewed coverage supplement - 2026-10-15
+
+IMPLEMENTED as preparation only: 80 synthetic English/French examples address reviewed development coverage gaps: 68 Facturation, four Management Projet and eight Design Workflow. They cover custom-period currency summaries, natural product/location filters, inclusive date bounds, unpaid balances, literal remarks, unchosen results, dated receipts and resource-specific completion statuses. All 80 pass actual native metadata checks with database access forbidden, tokenizer/Colibri template/parser round trips, semantic loss boundaries and output budgets. Seven focused tests pass. Maximum complete example length is 4,775 tokens; maximum expected output is 103 tokens within the 512-token limit.
+
+The single reviewer found no new incorrect targets and no copied frozen requests. The missing helper provenance inventory was corrected; a fresh native generation produced identical training bytes. The supplement remains separate: no cumulative continuation is assembled, no new numerical rehearsal or training has run, and no accuracy improvement is claimed. R8 evaluations, scoring and production are unchanged. [Supplement](../training/datasets/coverage-contrasts-v1-en-fr/manifest.json), [checks](../training/reports/coverage-contrasts-v1-preflight.json).
+
 
 ## Current checkpoint results, 15 October 2026
 
