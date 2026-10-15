@@ -1,5 +1,18 @@
 # Pre-training correctness checks
 
+
+## Current refinement rehearsal preparation - 2026-10-15
+
+The R8 pipeline has finished and failed its regression and fresh gates. Shared V5r10 is prepared with 2,419 training and 275 unchanged validation examples. It retains the six reviewed name-label corrections and appends the 80 coverage contrasts without modifying either acceptance set.
+
+Use the versioned category-aware audit and runner, audit_training_inputs_v2.py and rehearse_cpu_v3.py, for this refinement rehearsal. The default selection remains compatible with V2. Explicitly selecting the eight added categories gives 63 training updates, 20 training captures and six development captures before and after updates. Selection is deterministic and outcome-independent. Each added category has an English and French capture. All original 48 mechanics rows remain selected.
+
+Numerical rehearsal, serialized-adapter export and actual Colibri replay remain pending. This preparation does not predict 95% accuracy. The rehearsal adapter must be discarded for any full run; start the full run from its original pinned base. The old Contracts replay supervisor remains conditional on actual predecessor acceptance and cannot be used to bypass that gate.
+
+[Prepared counts, selected rows, source identities and metadata results](../training/reports/shared-v5r10-rehearsal-preparation.json).
+
+## Earlier preparation records
+
 ## Reviewed coverage supplement - 2026-10-15
 
 IMPLEMENTED as preparation only: 80 synthetic English/French examples address reviewed development coverage gaps: 68 Facturation, four Management Projet and eight Design Workflow. They cover custom-period currency summaries, natural product/location filters, inclusive date bounds, unpaid balances, literal remarks, unchosen results, dated receipts and resource-specific completion statuses. All 80 pass actual native metadata checks with database access forbidden, tokenizer/Colibri template/parser round trips, semantic loss boundaries and output budgets. Seven focused tests pass. Maximum complete example length is 4,775 tokens; maximum expected output is 103 tokens within the 512-token limit.

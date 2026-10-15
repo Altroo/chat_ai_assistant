@@ -1,5 +1,26 @@
 # Chat AI Assistant progress
 
+
+## Latest completed acceptance, 15 October 2026
+
+PARTIALLY IMPLEMENTED: R8 completed all 2,339 training updates and eight development checkpoint comparisons. The selected final checkpoint failed acceptance: 409/438 fully correct regression actions (93.38%), 309/334 exact arguments (92.51%) and 438/438 valid structures. Four of 15 regression sets pass every frozen gate.
+
+| Application | Regression full actions | Regression exact arguments | Fresh full actions | Fresh exact arguments |
+|---|---:|---:|---:|---:|
+| facturation | 98/108 (90.74%) | 77/86 (89.53%) | 6/16 (37.50%) | 4/14 (28.57%) |
+| management_projet | 187/200 (93.50%) | 138/148 (93.24%) | 16/16 (100%) | 10/10 (100%) |
+| design_workflow | 124/130 (95.38%) | 94/100 (94%) | 13/16 (81.25%) | 9/12 (75%) |
+
+The separate 48 fresh controls score 35/48 full actions (72.92%), 23/36 exact arguments (63.89%), and 48/48 correct tools and structures. These are 24 bilingual scenarios, not external certification. Frozen scoring, original inputs and checkpoint selection are unchanged. Independent recomputation matches every saved assessment. Temporary evaluation workers stopped; the production model remains unchanged. No app is fully accepted on this shared candidate. Contracts, Gestion Magasin and Reservation training have not started.
+
+[Completed evaluation](../training/reports/shared-v5r8-en-fr-evaluation.json). Earlier development scores below are checkpoint-selection measurements, not the final acceptance results.
+
+IMPLEMENTED as preparation: shared V5r10 retains all 2,339 corrected V5r9 training rows, appends the 80 reviewed development-coverage examples, and preserves all 275 validation rows plus 438 regression and 48 fresh controls. Tokenizer/template/parser/loss and output-budget checks pass all 2,694 training/validation rows. The category-aware rehearsal retains all 48 original mechanics examples and adds bilingual coverage for all eight new categories: 63 updates, 20 training captures and six development captures, before and after. Only training rows receive updates.
+
+The single reviewer found and verified a fix for concurrent older-rehearsal detection. Numerical execution, Colibri export replay and the full refinement remain pending. The existing Contracts supervisor still requires an actually accepted predecessor; it is unchanged. Later-app preparations will need the full accepted refinement curriculum before use. [Preparation evidence](../training/reports/shared-v5r10-rehearsal-preparation.json).
+
+## Earlier reports
+
 ## Reviewed coverage supplement - 2026-10-15
 
 IMPLEMENTED as preparation only: 80 synthetic English/French examples address reviewed development coverage gaps: 68 Facturation, four Management Projet and eight Design Workflow. They cover custom-period currency summaries, natural product/location filters, inclusive date bounds, unpaid balances, literal remarks, unchosen results, dated receipts and resource-specific completion statuses. All 80 pass actual native metadata checks with database access forbidden, tokenizer/Colibri template/parser round trips, semantic loss boundaries and output budgets. Seven focused tests pass. Maximum complete example length is 4,775 tokens; maximum expected output is 103 tokens within the 512-token limit.

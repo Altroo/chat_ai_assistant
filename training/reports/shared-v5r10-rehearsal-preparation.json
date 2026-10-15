@@ -1,0 +1,622 @@
+{
+  "version": "shared-v5r10-rehearsal-preparation-v1",
+  "status": "PREPARATION; numerical rehearsal and export pending",
+  "dataset_manifest_sha256": "d76e13b44f6e679b4bfa792c9020cd20f37abaf5a690dfdbfcf6de5d37ca32a6",
+  "counts": {
+    "train": 2419,
+    "valid": 275,
+    "retained_parent_rows_byte_identical": 2339,
+    "added": 80,
+    "by_application": {
+      "facturation": 931,
+      "management_projet": 1012,
+      "design_workflow": 476
+    },
+    "added_categories": {
+      "custom_currency_summary": 24,
+      "natural_product_location": 20,
+      "inclusive_document_bound": 12,
+      "unpaid_open_interval": 4,
+      "verbatim_remark": 4,
+      "unchosen_invoice": 4,
+      "custom_receipts": 4,
+      "resource_completion_status": 8
+    }
+  },
+  "metadata": {
+    "train.jsonl": {
+      "count": 2419,
+      "round_trip_passed": 2419,
+      "runtime_prefix_parity_passed": 2419,
+      "loss_boundary_passed": 2419,
+      "semantic_alignment_passed": 2419,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7745,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 2419,
+      "maximum_target_tokens": 131,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 488,
+      "sha256": "64294841ec449884dbc9062e9b1c228888164f1e6bdce3a667f2dcb3f5500413"
+    },
+    "valid.jsonl": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 275,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "scope": "Tokenizer/template/parser checks only; not model accuracy or training success"
+  },
+  "rehearsal": {
+    "row_indices": [
+      65,
+      564,
+      2322,
+      374,
+      101,
+      2407,
+      1626,
+      1506,
+      330,
+      2386,
+      2239,
+      2416,
+      207,
+      269,
+      704,
+      1295,
+      454,
+      1717,
+      1704,
+      2401,
+      1285,
+      2396,
+      909,
+      2406,
+      2413,
+      409,
+      488,
+      566,
+      128,
+      1271,
+      391,
+      1132,
+      2395,
+      1599,
+      1814,
+      1993,
+      2365,
+      2345,
+      1289,
+      251,
+      2292,
+      2380,
+      2337,
+      89,
+      2410,
+      1636,
+      1382,
+      196,
+      1882,
+      450,
+      2350,
+      1322,
+      1014,
+      2229,
+      2387,
+      1413,
+      2402,
+      1025,
+      2117,
+      2403,
+      1513,
+      548,
+      1629
+    ],
+    "count": 63,
+    "by_application": {
+      "facturation": 34,
+      "management_projet": 15,
+      "design_workflow": 14
+    },
+    "covered_features": [
+      [
+        "design_workflow",
+        "explicit_language",
+        "en"
+      ],
+      [
+        "design_workflow",
+        "explicit_language",
+        "fr"
+      ],
+      [
+        "design_workflow",
+        "operation",
+        "\"archive\""
+      ],
+      [
+        "design_workflow",
+        "operation",
+        "\"list\""
+      ],
+      [
+        "design_workflow",
+        "operation",
+        "\"open\""
+      ],
+      [
+        "design_workflow",
+        "operation",
+        "\"update\""
+      ],
+      [
+        "design_workflow",
+        "reason",
+        "\"missing_details\""
+      ],
+      [
+        "design_workflow",
+        "reason",
+        "\"unsupported\""
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "clarify"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "get_record"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "knowledge"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "navigate"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "prepare_change"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "previous_results"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "search_records"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "time_report"
+      ],
+      [
+        "design_workflow",
+        "tool",
+        "workload_summary"
+      ],
+      [
+        "facturation",
+        "explicit_language",
+        "en"
+      ],
+      [
+        "facturation",
+        "explicit_language",
+        "fr"
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"delete\""
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"open\""
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"show\""
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"unpaid\""
+      ],
+      [
+        "facturation",
+        "operation",
+        "\"update\""
+      ],
+      [
+        "facturation",
+        "reason",
+        "\"ambiguous_metric\""
+      ],
+      [
+        "facturation",
+        "reason",
+        "\"missing_details\""
+      ],
+      [
+        "facturation",
+        "reason",
+        "\"unsupported\""
+      ],
+      [
+        "facturation",
+        "tool",
+        "clarify"
+      ],
+      [
+        "facturation",
+        "tool",
+        "financial_summary"
+      ],
+      [
+        "facturation",
+        "tool",
+        "get_invoice"
+      ],
+      [
+        "facturation",
+        "tool",
+        "get_record"
+      ],
+      [
+        "facturation",
+        "tool",
+        "invoice_pdf"
+      ],
+      [
+        "facturation",
+        "tool",
+        "knowledge"
+      ],
+      [
+        "facturation",
+        "tool",
+        "list_payments"
+      ],
+      [
+        "facturation",
+        "tool",
+        "navigate"
+      ],
+      [
+        "facturation",
+        "tool",
+        "prepare_change"
+      ],
+      [
+        "facturation",
+        "tool",
+        "previous_results"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_articles"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_clients"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_documents"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_invoices"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_operations"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_payments"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_quotes"
+      ],
+      [
+        "facturation",
+        "tool",
+        "search_users"
+      ],
+      [
+        "management_projet",
+        "explicit_language",
+        "en"
+      ],
+      [
+        "management_projet",
+        "explicit_language",
+        "fr"
+      ],
+      [
+        "management_projet",
+        "operation",
+        "\"delete\""
+      ],
+      [
+        "management_projet",
+        "operation",
+        "\"list\""
+      ],
+      [
+        "management_projet",
+        "operation",
+        "\"open\""
+      ],
+      [
+        "management_projet",
+        "operation",
+        "\"update\""
+      ],
+      [
+        "management_projet",
+        "reason",
+        "\"ambiguous_metric\""
+      ],
+      [
+        "management_projet",
+        "reason",
+        "\"missing_details\""
+      ],
+      [
+        "management_projet",
+        "reason",
+        "\"unsupported\""
+      ],
+      [
+        "management_projet",
+        "tool",
+        "clarify"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "financial_summary"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "get_record"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "knowledge"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "navigate"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "prepare_change"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "previous_results"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "project_report"
+      ],
+      [
+        "management_projet",
+        "tool",
+        "search_records"
+      ]
+    ],
+    "selected_rows_sha256": "a47e749edf1ae5691297f9ee9cd4b0966f68d8be6d3f406d2d4b88c78abbfc79",
+    "status": "PREPARATION ONLY; server numerical and export rehearsal not executed",
+    "limitations": [
+      "Covers tool, operation and clarification-reason groups, not every argument combination.",
+      "Language coverage is checked only where rows have explicit language metadata.",
+      "Selection uses training rows only and preserves genuine history.",
+      "This is a mechanics rehearsal proposal, not a validation set or accuracy forecast.",
+      "One deterministic input per declared application/category/language does not cover every example or prove learning."
+    ],
+    "base_selection_count": 48,
+    "curriculum_categories": [
+      "custom_currency_summary",
+      "custom_receipts",
+      "inclusive_document_bound",
+      "natural_product_location",
+      "resource_completion_status",
+      "unchosen_invoice",
+      "unpaid_open_interval",
+      "verbatim_remark"
+    ],
+    "category_coverage": [
+      {
+        "application": "design_workflow",
+        "category": "resource_completion_status",
+        "language": "en",
+        "row_index": 2416
+      },
+      {
+        "application": "design_workflow",
+        "category": "resource_completion_status",
+        "language": "fr",
+        "row_index": 2413
+      },
+      {
+        "application": "facturation",
+        "category": "custom_currency_summary",
+        "language": "en",
+        "row_index": 2350
+      },
+      {
+        "application": "facturation",
+        "category": "custom_currency_summary",
+        "language": "fr",
+        "row_index": 2345
+      },
+      {
+        "application": "facturation",
+        "category": "inclusive_document_bound",
+        "language": "en",
+        "row_index": 2386
+      },
+      {
+        "application": "facturation",
+        "category": "inclusive_document_bound",
+        "language": "fr",
+        "row_index": 2387
+      },
+      {
+        "application": "facturation",
+        "category": "natural_product_location",
+        "language": "en",
+        "row_index": 2380
+      },
+      {
+        "application": "facturation",
+        "category": "natural_product_location",
+        "language": "fr",
+        "row_index": 2365
+      },
+      {
+        "application": "facturation",
+        "category": "unchosen_invoice",
+        "language": "en",
+        "row_index": 2406
+      },
+      {
+        "application": "facturation",
+        "category": "unchosen_invoice",
+        "language": "fr",
+        "row_index": 2403
+      },
+      {
+        "application": "facturation",
+        "category": "unpaid_open_interval",
+        "language": "en",
+        "row_index": 2396
+      },
+      {
+        "application": "facturation",
+        "category": "unpaid_open_interval",
+        "language": "fr",
+        "row_index": 2395
+      },
+      {
+        "application": "facturation",
+        "category": "verbatim_remark",
+        "language": "en",
+        "row_index": 2402
+      },
+      {
+        "application": "facturation",
+        "category": "verbatim_remark",
+        "language": "fr",
+        "row_index": 2401
+      },
+      {
+        "application": "management_projet",
+        "category": "custom_receipts",
+        "language": "en",
+        "row_index": 2410
+      },
+      {
+        "application": "management_projet",
+        "category": "custom_receipts",
+        "language": "fr",
+        "row_index": 2407
+      }
+    ],
+    "selection_contract": "tool-and-bilingual-category-v1"
+  },
+  "captures": {
+    "train": [
+      909,
+      1295,
+      1882,
+      2322,
+      2345,
+      2350,
+      2365,
+      2380,
+      2386,
+      2387,
+      2395,
+      2396,
+      2401,
+      2402,
+      2403,
+      2406,
+      2407,
+      2410,
+      2413,
+      2416
+    ],
+    "valid": [
+      211,
+      233,
+      5,
+      20,
+      142,
+      158
+    ]
+  },
+  "source_sha256": {
+    "audit_training_inputs_v2.py": "bf9fe152752ef054aaba5753a6ee721899f032c37100038b3ec308bf6ead3c0b",
+    "audit_training_inputs.py": "4a15488a8dd60dd38b710acb10d47c1c08c5828b2e7501045ef889f3ab5afcba",
+    "training_schedule.py": "0df6692fa360c6ee0f194275941908e89c62496bdc0627fd6d0731e829b7bb83",
+    "serial_scope_v3.py": "83986f89fbf075a72faad32ed6f45d9332736d47d1bd5d0c7b40124e654e2312",
+    "serial_scope_v2.py": "459dab06b7b5dbb6c4d101c3f1d1eba1728593f5f346d444a6f70ea2091c6344",
+    "prepare_management_name_errata.py": "1545d5c4dd5c5c252ea13191d6d9d15f523f9ff5eebc46c69c42b03396d8afa3",
+    "prepare_management_name_errata_v2.py": "110d912942964b870766afa0c3ed57338effd7da8b40114f25f9440ffa913412",
+    "semantic_loss.py": "03b2918106c5e7f9dca0b323cb476b4d8fa241f229543fdb6e49d2312319af12",
+    "text_lora.py": "806b1ccfd267f4ce23b498b13b2303223c5b4320cd7603f07343fdcc84d52b47",
+    "preflight_training.py": "465beefec17d2b97a8fc002a768d95b3a29ee0e14d18f0e4742d5bf115f19725",
+    "attest_colibri.py": "0f17fcb624839a3b38658733490d159b8d76aaba0b800cfc296f690cc6908f09",
+    "rehearse_cpu_v3.py": "7cab40bfc0a9f171cb1d9c2caa1f1a1cc52ecf23062e77c26dd3d37b22e163a8"
+  },
+  "model_accepted": false,
+  "production_activation": false,
+  "review": "Single reviewer: no remaining findings after concurrent-run detection correction",
+  "limitations": [
+    "Static checks cannot predict model accuracy.",
+    "No numerical update or export replay has run.",
+    "Later-app curricula must retain this complete dataset if its trained model is accepted."
+  ]
+}
