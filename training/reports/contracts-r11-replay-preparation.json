@@ -1,0 +1,51 @@
+{
+  "version": "contracts-r11-replay-preparation-v1",
+  "status": "PREPARED AND SYNTHETICALLY TESTED; NO SERVER REPLAY",
+  "purpose": "Admit a completed Contracts rehearsal only against an actually accepted R11 model and its exact retained curriculum.",
+  "predecessor": {
+    "version": "shared-v5r11-en-fr",
+    "manifest_sha256": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
+    "completed_training_updates": 2419,
+    "allowed_selected_steps": [
+      600,
+      1200,
+      1800,
+      2400,
+      2419
+    ]
+  },
+  "requirements": [
+    "Finished, accepted predecessor controller and unchanged selected model evidence.",
+    "All original model and critical-case gates passed.",
+    "All 15 frozen regression sets (438 cases) and 48 fresh controls present.",
+    "For each application, at least 95% correct tools, exact arguments and full actions, and 99% valid structure in each phase.",
+    "Integer counts, complete per-application denominators and consistent totals.",
+    "Selected FP32 export and serving artifacts pinned; before/after identities match and all three evaluation workers stopped.",
+    "Exact retained R11 training curriculum and completed rehearsal lineage."
+  ],
+  "checks": {
+    "tests_passed": 45,
+    "r11_admission_tests": 8,
+    "reused_behavior_tests_against_r11": 15,
+    "original_supervisor_tests": 22,
+    "fixture_scope": "Synthetic fixtures only; no model inference, business data or server replay.",
+    "source_review": "No issues",
+    "final_release_review": "No issues"
+  },
+  "active_r11_inputs_changed": false,
+  "server_replay_executed": false,
+  "contracts_training_started": false,
+  "model_accuracy_measured": false,
+  "production_activation": false,
+  "remaining": [
+    "Actual R11 acceptance.",
+    "Bind the accepted model and evidence; verify current native sources and available resources.",
+    "Run the Contracts numerical rehearsal, then real export/replay before full training."
+  ],
+  "sources_sha256": {
+    "training/scripts/replay_contracts_after_r11.py": "4e76ba9c51d15b2cab9af539592a672161a968b05ef2653386d6ba13956a549b",
+    "training/tests/test_replay_after_r11.py": "cf12a731bc81b31a1fb4b9131ea2311ec050b3f460b77bef57d44e04f9b6e740",
+    "training/scripts/replay_rehearsal.py": "f72e7f8176e87f6816f981baf55d31357033f28a78438b587e963a3c5768fa2e"
+  },
+  "frozen_active_files_verified": 79
+}

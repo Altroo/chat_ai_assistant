@@ -1,5 +1,13 @@
 # Pre-training correctness checks
 
+## Contracts replay admission prepared for R11 - 15 October 2026
+
+IMPLEMENTED as preparation only: replay_contracts_after_r11.py admits the forthcoming Contracts rehearsal against an actually accepted R11 model and its exact retained curriculum. The earlier supervisor expects 2,339 R8 updates; this separate version requires all 2,419 R11 updates and one of its five declared changed checkpoints. The original supervisor and the 79 frozen active R11 files remain unchanged.
+
+The checker preserves model identity, source, cleanup and rehearsal guards. It requires all 15 regression sets (438 cases), 48 fresh controls and complete per-application counts. Each application must reach at least 95% tool selection, exact arguments and full actions, plus 99% valid structure, in both phases. Existing critical-case gates also remain mandatory.
+
+All 45 synthetic tests pass: eight R11 admission tests, 15 existing behavior tests run against the new supervisor, and 22 original supervisor tests. These tests check the supervisor, not model accuracy. Actual R11 acceptance, selected-model binding, Contracts numerical rehearsal and server export/replay remain incomplete. No Contracts training or production activation occurred. [Preparation evidence](../training/reports/contracts-r11-replay-preparation.json).
+
 ## Later-app curriculum retention verified - 15 October 2026
 
 IMPLEMENTED as preparation only: the queued Contracts V6r11, Gestion Magasin V7r11 and Reservation V8r12 curricula retain the complete R11 training prefix, including all 80 coverage examples and the six clarified English requests. Existing new-application rows, validation and evaluation inputs remain unchanged. Each stage uses strict byte-for-byte retention without a correction exception.
