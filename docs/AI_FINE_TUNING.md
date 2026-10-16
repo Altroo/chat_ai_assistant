@@ -1,5 +1,15 @@
 # Model training and evaluation
 
+## Current Facturation V2 pilot status - 16 October 2026
+
+The V2 dataset and bounded pilot admission are prepared. The deterministic 92-update proposal selects 78 new contrasts and 14 retained examples, covering 154 declared marginal/pairwise axes and all ten new categories in English and French. It does not rehearse all 440 additions. All 12 admission tests pass; the numerical/capture/resource functions retain the reviewed V1 implementation.
+
+The approved-server metadata preflight passes all 1,487 training and 133 unchanged validation rows against the actual tokenizer and frozen Colibri parser/template, with semantic weight 4, an 8,192-token context and the existing context-aware output budget capped at 512 tokens. No model weights were loaded and no pilot updates were executed.
+
+The current evaluation must finish before binding the actual selected FP32 starting model and admitting numerical work. After a bounded server pilot, export/replay and all 275 shared development cases must be compared against that same starting model. No longer epoch is authorized by preparation alone; the disposable pilot adapter must not seed a full run. Production and later-application training remain unchanged. [Preparation evidence](../training/reports/facturation-focus-v2-pilot-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Current status: focused comparison complete; V2 data prepared - 16 October 2026
 
 The same shared Qwen3.5-0.8B completed the Facturation V1 checkpoint comparison through Colibri. On 133 unchanged development rows representing 104 scenarios, the full-action scores were: baseline 108/133, checkpoint 300 108/133, checkpoint 600 110/133, checkpoint 900 109/133 and checkpoint 1,047 108/133. The frozen rule selected 600, scoring 82.71% full actions and 79.28% eligible exact arguments. No candidate meets all development targets. Required shared development/regression/additional checks are running; selection is not acceptance.

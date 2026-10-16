@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Facturation V2 pilot admission and server preflight - 16 October 2026
+
+Twelve tests pass for bounded deterministic selection, date/filter pair coverage, bilingual category coverage, retained tool groups, captures, changed-manifest/parent/data rejection, and concurrent-workload rejection. AST comparison confirms the numerical, capture and resource-control functions are unchanged from the reviewed V1 runner. The first test invocation lacked temporary-file permissions for three tamper fixtures; the rerun with isolated temporary-file access passed all tests.
+
+Server metadata checks pass all 1,620 examples for tokenizer/Colibri prompt parity, strict target parsing, token loss boundaries, semantic weighting and conservative output budgets. Sources, data, runtime and tokenizer/configuration checksums remain unchanged. These checks did not load model weights or run numerical training.
+
+The 92 selected training updates cover 154 declared axes and all ten new categories in both languages. Twelve training and two development captures are planned diagnostics. This is not every Cartesian combination, a forecast of 95% accuracy, or native security certification. Terminal predecessor binding, server resource admission and actual pilot/export/development comparison remain pending. [Verified preparation](../training/reports/facturation-focus-v2-pilot-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation V2 preparation verified - 16 October 2026
 
 All 13 focused tests pass, covering exact Cartesian cells, fixed request/context components, independent date labels, leap/year boundaries, optional unpaid/limit combinations, full unquoted remarks, trusted navigation/selection, source-hash rejection and held-out request exclusions. Native metadata validation accepts all 440 additions with database connections prohibited. The single reviewer checked all 320 matrix cells and 120 other bilingual rows; no incorrect targets remain.

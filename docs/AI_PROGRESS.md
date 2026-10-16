@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Facturation V2 pilot admission and token checks verified - 16 October 2026
+
+IMPLEMENTED as preparation only: a deterministic pilot selects 92 unique training inputs: 78 new contrasts and 14 retained tool sentinels. It covers 154 declared marginal/pairwise axes, all ten added categories in English and French, and all existing tool/operation/clarification-reason groups. This does not cover every Cartesian combination or all 440 additions.
+
+All 12 admission tests pass. Numerical, capture and resource-control functions remain identical to the reviewed V1 runner. Other training/evaluation workloads block numerical launch. The single reviewer found no remaining issues. A missing tokenizer model-configuration pin was fixed and re-reviewed before the server metadata check ran.
+
+The server tokenizer, Colibri-template/parser, semantic-loss boundary and output-budget checks pass all 1,487 training and 133 validation rows. The longest sequences are 7,745 and 7,496 tokens respectively, within the 8,192-token context; no truncation is permitted. These checks loaded no model weights and executed no numerical training.
+
+PLANNED: finish the current frozen regression evaluation, bind the actual selected FP32 predecessor, verify resources, run the bounded server pilot, then compare Colibri development results against the same starting model. No longer epoch, production activation or later-application training is admitted. [Verified pilot preparation](../training/reports/facturation-focus-v2-pilot-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation extraction contrasts prepared; current regressions running - 16 October 2026
 
 IMPLEMENTED as preparation only: the next Facturation curriculum contains 1,487 training rows and the same 133 validation rows. All 1,047 parent training rows and every validation byte are retained. The 440 new synthetic rows comprise 220 English and 220 French examples, including 320 date/optional-filter matrix rows and 120 mixed-filter, unpaid-balance, calendar-boundary, literal-copy, navigation, selection and payment contrasts.

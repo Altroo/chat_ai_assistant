@@ -1,0 +1,118 @@
+{
+  "version": "facturation-focus-v2-pilot-preparation",
+  "observed_utc": "2026-10-16T22:28:48.813563+00:00",
+  "status": "IMPLEMENTED: pilot admission and server metadata preflight; PLANNED: terminal predecessor binding and numerical pilot",
+  "application": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "shared_model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "dataset_manifest_sha256": "b5e9850bd8bcd7a2090f618b60e9d5bdc0a4f1e015a5f744fafdb64305c1cc8b",
+  "dataset_rows": {
+    "train": 1487,
+    "valid": 133
+  },
+  "pilot": {
+    "updates": 92,
+    "added_training_examples": 78,
+    "retained_training_sentinels": 14,
+    "declared_axes_covered": 154,
+    "tool_operation_reason_language_features": 28,
+    "selected_rows_sha256": "0b42d186001043270d020c5b67fcebb8ec271bfd3b39849ff43ab1e25aa67f15",
+    "capture_counts": {
+      "train": 12,
+      "valid": 2
+    },
+    "all_ten_added_categories_in_both_languages": true,
+    "numerical_capture_and_resource_functions_unchanged_from": "rehearse_facturation_v1.py"
+  },
+  "verification": {
+    "unit_tests_passed": 12,
+    "unit_tests_failed": 0,
+    "single_reviewer_status": "No issues",
+    "reviewers": 1,
+    "server_metadata_preflight": {
+      "train.jsonl": {
+        "count": 1487,
+        "round_trip_passed": 1487,
+        "runtime_prefix_parity_passed": 1487,
+        "loss_boundary_passed": 1487,
+        "semantic_alignment_passed": 1487,
+        "semantic_loss_weight": 4.0,
+        "maximum_tokens": 7745,
+        "output_budget_contract": "conservative-target-v1",
+        "output_budget_passed": 1487,
+        "maximum_target_tokens": 129,
+        "maximum_output_tokens": 512,
+        "minimum_output_budget": 488,
+        "sha256": "023f8efe51bf9dc0dd3d2a0a4356907182462fca8f1f08ef31769b318993ade9"
+      },
+      "valid.jsonl": {
+        "count": 133,
+        "round_trip_passed": 133,
+        "runtime_prefix_parity_passed": 133,
+        "loss_boundary_passed": 133,
+        "semantic_alignment_passed": 133,
+        "semantic_loss_weight": 4.0,
+        "maximum_tokens": 7496,
+        "output_budget_contract": "conservative-target-v1",
+        "output_budget_passed": 133,
+        "maximum_target_tokens": 116,
+        "maximum_output_tokens": 512,
+        "minimum_output_budget": 512,
+        "sha256": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478"
+      },
+      "scope": "Tokenizer/template/parser checks only; not model accuracy or training success"
+    },
+    "server_preflight_report_sha256": "396a1bd114e6ffa95d35b1603c44f6da08a8b93a3f2bb4873c273b850e698a9c",
+    "metadata_source_and_input_hashes_unchanged": true,
+    "tokenizer_model_config_pin_verified": true,
+    "current_evaluation_controls_unchanged": 17,
+    "historical_controls_unchanged": 79
+  },
+  "source_sha256": {
+    "training/scripts/facturation_focus_v2_admission.py": "0bb94397282cf3c27f93ef17bd96c1bd92c056e44d7afa9167d04670bf970c99",
+    "training/scripts/rehearse_facturation_v2.py": "d2ef701fc2a5bd36677674f09d47a9fdc47aec74b1ca80810f276a8d96a0b40d",
+    "training/tests/test_facturation_focus_v2_admission.py": "817c6282ae50803ab2071b43e3b125313ce12155355658ce23f51ee6f5287abf"
+  },
+  "lineage": {
+    "application": "facturation",
+    "manifest_sha256": "b5e9850bd8bcd7a2090f618b60e9d5bdc0a4f1e015a5f744fafdb64305c1cc8b",
+    "source_manifest_sha256": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c",
+    "retained_training_rows_byte_identical": 1047,
+    "retained_validation_rows_byte_identical": 133,
+    "model_acceptance_verified": false,
+    "longer_training_admitted": false
+  },
+  "actual_starting_model_bound": false,
+  "numerical_pilot_executed": false,
+  "new_model_accuracy_available": false,
+  "longer_epoch_admitted": false,
+  "production_model_activation": false,
+  "later_application_training_started": false,
+  "next_steps": [
+    "Finish and independently verify the current frozen 438 regressions and 48 additional controls.",
+    "Bind the actual selected FP32 starting model and recheck server resources and workload isolation.",
+    "Run the bounded 92-update pilot on the approved server using unchanged reviewed training mechanics.",
+    "Export and replay through Colibri, then compare all 133 Facturation and 142 retained-app development cases against the same starting model.",
+    "Review measured extraction gains and regressions before admitting any longer epoch; never continue full training from the disposable pilot adapter."
+  ],
+  "limitations": [
+    "Covers declared marginal and pairwise axes, not every Cartesian cell or all 440 additions.",
+    "Shared bilingual variants are correlated, not independent observations.",
+    "Retained sentinels cover remaining tool/operation/reason groups, not every old training example.",
+    "Selection uses training inputs only. It does not predict validation or acceptance accuracy.",
+    "No longer epoch or production activation is admitted by this preparation.",
+    "Native metadata, static admission and tokenizer checks do not demonstrate a model accuracy gain or certify backend authorization.",
+    "Twelve training and two development captures are bounded diagnostics, not acceptance evaluation.",
+    "The full numerical launch still requires completed predecessor evidence and resource binding.",
+    "The current unchanged evaluation continues separately. Its acceptance controls were not used to select pilot training examples."
+  ],
+  "evidence_sha256": {
+    "focus-v2-pilot-admission-reviewed-controls.json": "591a251a9b65af7c0d4600d6a992b49562fa5533ce521263b29ddfcadc2e6584",
+    "focus-v2-tokenizer-preflight-reviewed-controls.json": "840dbe7ca047cca910867ec320c263ed01bc0f90cc9f389fd029ea022e2ccd60",
+    "focus-v2-tokenizer-preflight.stdout": "0e4ee0b24bfe859d37fa1f46fd597db28e8e6047759af296adfeb6eaa21d6e6c"
+  }
+}
