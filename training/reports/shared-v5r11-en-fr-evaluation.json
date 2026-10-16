@@ -1,0 +1,277 @@
+{
+  "observed_utc": "2026-10-16T10:35:19.542071+00:00",
+  "phase": "acceptance",
+  "checkpoint": 2400,
+  "cases": 438,
+  "by_application": {
+    "facturation": {
+      "metrics": {
+        "count": 108,
+        "counts": {
+          "tool_correct": 107,
+          "structured_valid": 108,
+          "action_matches": 97
+        },
+        "percent": {
+          "tool_correct": 99.07,
+          "structured_valid": 100.0,
+          "action_matches": 89.81
+        },
+        "exact_arguments": {
+          "passed": 75,
+          "count": 86,
+          "percent": 87.21
+        }
+      },
+      "targets_passed": false,
+      "regression_sets_passed": 0,
+      "regression_sets_total": 3,
+      "fresh_targets_passed": false,
+      "acceptance_passed": false
+    },
+    "management_projet": {
+      "metrics": {
+        "count": 200,
+        "counts": {
+          "tool_correct": 195,
+          "structured_valid": 200,
+          "action_matches": 193
+        },
+        "percent": {
+          "tool_correct": 97.5,
+          "structured_valid": 100.0,
+          "action_matches": 96.5
+        },
+        "exact_arguments": {
+          "passed": 143,
+          "count": 148,
+          "percent": 96.62
+        }
+      },
+      "targets_passed": false,
+      "regression_sets_passed": 3,
+      "regression_sets_total": 7,
+      "fresh_targets_passed": false,
+      "acceptance_passed": false
+    },
+    "design_workflow": {
+      "metrics": {
+        "count": 130,
+        "counts": {
+          "tool_correct": 130,
+          "structured_valid": 130,
+          "action_matches": 118
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 90.77
+        },
+        "exact_arguments": {
+          "passed": 88,
+          "count": 100,
+          "percent": 88.0
+        }
+      },
+      "targets_passed": false,
+      "regression_sets_passed": 0,
+      "regression_sets_total": 5,
+      "fresh_targets_passed": false,
+      "acceptance_passed": false
+    }
+  },
+  "overall_metrics": {
+    "count": 438,
+    "counts": {
+      "tool_correct": 432,
+      "structured_valid": 438,
+      "action_matches": 408
+    },
+    "percent": {
+      "tool_correct": 98.63,
+      "structured_valid": 100.0,
+      "action_matches": 93.15
+    },
+    "exact_arguments": {
+      "passed": 306,
+      "count": 334,
+      "percent": 91.62
+    }
+  },
+  "frozen_sets_passed": 3,
+  "frozen_sets_total": 15,
+  "regression_passed": false,
+  "artifact_identity_unchanged": true,
+  "workers_stopped": 3,
+  "complete_identity_and_scoring_verified": true,
+  "fresh_controls_verified": true,
+  "production_activation": false,
+  "evidence_sha256": {
+    "acceptance-2400-results.json": "5b0a7c50dcd5866c54f8e2c98d159b3424d1b5cf79ceb346691a61658f2043be",
+    "acceptance-2400-before.json": "32560831a7f2c3260dfdee82ef0f4821e7af42c12cc082112c5333e48db56265",
+    "acceptance-2400-after.json": "32560831a7f2c3260dfdee82ef0f4821e7af42c12cc082112c5333e48db56265",
+    "acceptance-2400-stop.json": "008554f478968ee95dc7234418fca33f8a562510bdd8a0deb3354b562c1b1f58",
+    "acceptance.json": "d4a6b1835c123179d59bef616697634287ea352afe47c40869a4dd1e81d37cc1",
+    "validation-2400-results.json": "8d9cbf0e093be596e35d94613b3009b1149bd0db3fe46056c202b9354644e67f",
+    "validation-2400-before.json": "0cbce3fec81e1c870e987286ca6d3f67a2f6c0a9c3d0f9ff4f01850ffcfb0171",
+    "validation-2400-after.json": "0cbce3fec81e1c870e987286ca6d3f67a2f6c0a9c3d0f9ff4f01850ffcfb0171",
+    "validation-2400-stop.json": "008554f478968ee95dc7234418fca33f8a562510bdd8a0deb3354b562c1b1f58",
+    "shared-v5r11-functional-validation.json": "d51c91d797074b87ab214549565281ad6498861de795263aea5fb161c750cc69",
+    "selected-fp32-artifacts-final.json": "d73beaf7af8d57435edbf989b285b952188f4d2abad53642ec05bb5886cee6f2",
+    "fresh.json": "f2629b8a69507dbfa6e74ce126b88150ee2a6fc2ab2278e7300e04bdbcd57939",
+    "pipeline-state.json": "aea0a35683809125cf3116e0fae097e0b19bffe4224fca9e480f494a34778f60",
+    "fresh-2400-results.json": "74798e627eff71fdc1b23ab20e8a9ffcc408d129aa854a3da3ba932c5e8dad54",
+    "fresh-2400-before.json": "5133207b44fc0bf404ad74b728db1ea6d2310e104c1e623b620a2ae945348b41",
+    "fresh-2400-after.json": "5133207b44fc0bf404ad74b728db1ea6d2310e104c1e623b620a2ae945348b41",
+    "fresh-2400-stop.json": "008554f478968ee95dc7234418fca33f8a562510bdd8a0deb3354b562c1b1f58"
+  },
+  "fresh": {
+    "by_application": {
+      "facturation": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 7
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 43.75
+        },
+        "exact_arguments": {
+          "passed": 5,
+          "count": 14,
+          "percent": 35.71
+        }
+      },
+      "management_projet": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 15
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 93.75
+        },
+        "exact_arguments": {
+          "passed": 9,
+          "count": 10,
+          "percent": 90.0
+        }
+      },
+      "design_workflow": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 14
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 87.5
+        },
+        "exact_arguments": {
+          "passed": 10,
+          "count": 12,
+          "percent": 83.33
+        }
+      }
+    },
+    "overall_metrics": {
+      "count": 48,
+      "counts": {
+        "tool_correct": 48,
+        "structured_valid": 48,
+        "action_matches": 36
+      },
+      "percent": {
+        "tool_correct": 100.0,
+        "structured_valid": 100.0,
+        "action_matches": 75.0
+      },
+      "exact_arguments": {
+        "passed": 24,
+        "count": 36,
+        "percent": 66.67
+      }
+    },
+    "passed": false,
+    "cases": 48
+  },
+  "controller_accepted": false,
+  "accepted": false,
+  "selected_fp32_artifacts": {
+    "weights": {
+      "sha256": "3a744645ae67b656c6009990965ba26a5de81ad23a00885ae85c123c3ae6cd91",
+      "files": {
+        "model-00001-of-00004.safetensors": {
+          "size_bytes": 1017118872,
+          "sha256": "30f25d5ccd0d08efdcaf838e6bf42c4b0047b81f7fb2658a4cb4c8a41f5e667a"
+        },
+        "model-00002-of-00004.safetensors": {
+          "size_bytes": 996479224,
+          "sha256": "09d6adcdc1263543d8afca2060015a41a33fbe550c4587defbff6f73fc783329"
+        },
+        "model-00003-of-00004.safetensors": {
+          "size_bytes": 998386792,
+          "sha256": "95f7267015430701e3d0aa2b461f5b1cb102a36d1579613e9f78c097b4ee6b52"
+        },
+        "model-00004-of-00004.safetensors": {
+          "size_bytes": 400016304,
+          "sha256": "78914295786286f12df64667b537a37e690a32992e69e268ca793a6ecc2eca43"
+        },
+        "model.safetensors.index.json": {
+          "size_bytes": 43939,
+          "sha256": "939e7e8b1749a572816564ef33838dc28741a3b04f7ea3e411c930f33c72919d"
+        }
+      }
+    },
+    "tokenizer": {
+      "sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+      "files": {
+        "chat_template.jinja": {
+          "size_bytes": 7755,
+          "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80"
+        },
+        "tokenizer.json": {
+          "size_bytes": 19989339,
+          "sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f"
+        },
+        "tokenizer_config.json": {
+          "size_bytes": 1464,
+          "sha256": "6fc30221b0ec773811dfa2a04ebf0eec1a7e36a3bb1698888e28b38eabc1126c"
+        }
+      }
+    },
+    "config": {
+      "sha256": "964c24512738e48b696945636fcce738bf8b8fd496dad5fb5cb87df4a5614353",
+      "files": {
+        "config.json": {
+          "size_bytes": 2708,
+          "sha256": "6a4f68ef2ea7362a9880cf5f1c1df563cb370b775f24be9cebb0c6dbce1bfbe3"
+        },
+        "generation_config.json": {
+          "size_bytes": 116,
+          "sha256": "290866a6d7d4a4442fe83ba2434a31517446f40a01de500ff97b4354e7e5d082"
+        }
+      }
+    }
+  },
+  "version": "shared-v5r11-en-fr-evaluation-v1",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "training_updates_completed": 2419,
+  "selected_step": 2400,
+  "limitations": [
+    "Regression sets have been repeatedly evaluated; these are not new independent cases.",
+    "Fresh controls are 24 bilingual scenarios (48 cases), not external certification.",
+    "Development-only checkpoint selection is unchanged; neither acceptance set supplies optimization examples.",
+    "These are model-planning measurements, not business-authorization or production-readiness certification.",
+    "No production activation or later-application training occurred."
+  ]
+}

@@ -1,5 +1,25 @@
 # Model training and evaluation
 
+## Current status: R11 evaluated, Facturation refinement next - 16 October 2026
+
+IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint development comparisons, 438 regressions and 48 additional English/French controls completed. The frozen development rule selected step 2400. Independent verification binds every scored event to its original worker log and selected artifact proofs. The selected FP32 base still has the same 473 F32 tensors. All temporary workers stopped and production inference remains unchanged.
+
+| Application | Fully correct regression actions | Exact regression arguments | Additional controls: full actions |
+| --- | ---: | ---: | ---: |
+| Facturation | 97/108 (89.81%) | 75/86 (87.21%) | 7/16 (43.75%) |
+| Management Projet | 193/200 (96.50%) | 143/148 (96.62%) | 15/16 (93.75%) |
+| Design Workflow | 118/130 (90.77%) | 88/100 (88.00%) | 14/16 (87.50%) |
+
+Acceptance FAILED. No application passes all required model gates. Management Projet's larger-suite averages exceed 95%, but its critical/subset checks and additional controls still fail. Only 3/15 regression sets pass all gates. These are planner measurements, not authorization or production-readiness certification. The 16 additional cases per application are small team-authored bilingual controls and are reported separately; they are not a population-accuracy estimate.
+
+The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. A reviewed 35-update server rehearsal precedes full training. No focused numerical run has started yet. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
+
+[Completed R11 evaluation](../training/reports/shared-v5r11-en-fr-evaluation.json), [development comparison](../training/reports/shared-v5r11-functional-validation.json), [focused preparation](../training/reports/facturation-focus-v1-preparation.json).
+
+## Earlier training observations
+
+The entries below retain their original observation state; the current campaign status is above.
+
 PARTIALLY IMPLEMENTED: the disposable server rehearsal runner is prepared and reviewed. All 172 training integrity tests pass, including 13 synthetic rehearsal tests; metadata selection passes all four curricula. It reuses pinned trainer functions, checks real updates and unchanged base parameters, and binds saved adapter weights to before/after captures. Numerical execution and export/Colibri comparison remain pending until the current controller finishes training and evaluation. No second optimizer or later application has started. [Procedure and remaining launch gates](AI_PRETRAINING_CHECKS.md), [preparation evidence](../training/reports/cpu-rehearsal-preparation-20261014.json).
 
 PARTIALLY IMPLEMENTED: R8 server training started on 2026-10-14 at 10:17 UTC with 14 CPU threads. Both capacity updates passed across all 24 intended layers; peak RSS was 5.86 GiB. The reviewed controller monitors training and continues into checkpoint evaluation. Training is incomplete and no R8 accuracy improvement is claimed. [Launch evidence](../training/reports/shared-v5r8-launch.json). The same shared Qwen3.5-0.8B candidate selected at R7 step 1200 scores 47/48 correct tools (97.92%), 18/36 eligible exact arguments (50%), 48/48 valid structures (100%) and 30/48 full actions (62.5%) on 48 new English/French controls. This exposes a generalization gap beyond the repeatedly inspected regressions. The controls comprise 24 bilingual scenarios authored by the implementation team, not independent external certification. All three temporary Colibri workers stopped and production remained unchanged. [Fresh baseline](../training/reports/shared-v5r8-baseline.json).

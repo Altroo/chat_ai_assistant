@@ -1,22 +1,20 @@
 # Shared model accuracy work
 
-## Current status: R11 evaluation running - 16 October 2026
+## Current status: R11 evaluated, Facturation refinement next - 16 October 2026
 
-The latest shared training round for Facturation, Management Projet and Design Workflow completed all 2,419 updates and final validation. All five saved checkpoints completed the same 275 development cases through Colibri. The independently verified selection rule chose step 2400, which is now undergoing 438 regression cases followed by 48 additional controls. No R11 acceptance percentage is available yet. The selected checkpoint differs from the lowest-loss checkpoint. [Verified training completion](../training/reports/shared-v5r11-training-completion.json), [complete development comparison](../training/reports/shared-v5r11-functional-validation.json).
-
-The latest completed acceptance measurements are from R8, reported below. These are model-planning checks; they do not execute business tools or certify backend authorization.
+IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint development comparisons, 438 regressions and 48 additional English/French controls completed. The frozen development rule selected step 2400. Independent verification binds every scored event to its original worker log and selected artifact proofs. The selected FP32 base still has the same 473 F32 tensors. All temporary workers stopped and production inference remains unchanged.
 
 | Application | Fully correct regression actions | Exact regression arguments | Additional controls: full actions |
 | --- | ---: | ---: | ---: |
-| Facturation | 98/108 (90.74%) | 77/86 (89.53%) | 6/16 (37.50%) |
-| Management Projet | 187/200 (93.50%) | 138/148 (93.24%) | 16/16 (100.00%) |
-| Design Workflow | 124/130 (95.38%) | 94/100 (94.00%) | 13/16 (81.25%) |
+| Facturation | 97/108 (89.81%) | 75/86 (87.21%) | 7/16 (43.75%) |
+| Management Projet | 193/200 (96.50%) | 143/148 (96.62%) | 15/16 (93.75%) |
+| Design Workflow | 118/130 (90.77%) | 88/100 (88.00%) | 14/16 (87.50%) |
 
-None of these three applications passes all required gates. The additional controls contain only 16 cases per application and are reported separately from the larger regression suite. They are team-authored bilingual scenarios, not an independent population-accuracy estimate. These existing cases remain excluded from training and checkpoint selection.
+Acceptance FAILED. No application passes all required model gates. Management Projet's larger-suite averages exceed 95%, but its critical/subset checks and additional controls still fail. Only 3/15 regression sets pass all gates. These are planner measurements, not authorization or production-readiness certification. The 16 additional cases per application are small team-authored bilingual controls and are reported separately; they are not a population-accuracy estimate.
 
-Contracts, Gestion Magasin and Reservation have prepared curricula but have not started their sequential training stages. No new model has been activated. [Completed R8 measurements and evidence hashes](../training/reports/shared-v5r8-en-fr-evaluation.json).
+The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. A reviewed 35-update server rehearsal precedes full training. No focused numerical run has started yet. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
 
-The next refinement now focuses on Facturation first, using the same shared model. A reviewed 1,047-row Facturation-only training curriculum and unchanged 133-case validation subset are prepared. No focused numerical training or accuracy gain has been established. Management Projet and Design Workflow regressions remain mandatory. [Preparation evidence](../training/reports/facturation-focus-v1-preparation.json).
+[Completed R11 evaluation](../training/reports/shared-v5r11-en-fr-evaluation.json), [development comparison](../training/reports/shared-v5r11-functional-validation.json), [focused preparation](../training/reports/facturation-focus-v1-preparation.json).
 
 The following sections are historical observations, not the current job state.
 

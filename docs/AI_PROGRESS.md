@@ -1,5 +1,20 @@
 # Chat AI Assistant progress
 
+## Current status: R11 evaluated, Facturation refinement next - 16 October 2026
+
+IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint development comparisons, 438 regressions and 48 additional English/French controls completed. The frozen development rule selected step 2400. Independent verification binds every scored event to its original worker log and selected artifact proofs. The selected FP32 base still has the same 473 F32 tensors. All temporary workers stopped and production inference remains unchanged.
+
+| Application | Fully correct regression actions | Exact regression arguments | Additional controls: full actions |
+| --- | ---: | ---: | ---: |
+| Facturation | 97/108 (89.81%) | 75/86 (87.21%) | 7/16 (43.75%) |
+| Management Projet | 193/200 (96.50%) | 143/148 (96.62%) | 15/16 (93.75%) |
+| Design Workflow | 118/130 (90.77%) | 88/100 (88.00%) | 14/16 (87.50%) |
+
+Acceptance FAILED. No application passes all required model gates. Management Projet's larger-suite averages exceed 95%, but its critical/subset checks and additional controls still fail. Only 3/15 regression sets pass all gates. These are planner measurements, not authorization or production-readiness certification. The 16 additional cases per application are small team-authored bilingual controls and are reported separately; they are not a population-accuracy estimate.
+
+The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. A reviewed 35-update server rehearsal precedes full training. No focused numerical run has started yet. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
+
+[Completed R11 evaluation](../training/reports/shared-v5r11-en-fr-evaluation.json), [development comparison](../training/reports/shared-v5r11-functional-validation.json), [focused preparation](../training/reports/facturation-focus-v1-preparation.json).
 
 ## R11 checkpoint comparison complete - 16 October 2026
 
@@ -32,7 +47,7 @@ PARTIALLY IMPLEMENTED: a dedicated Facturation-only rehearsal admission path is 
 
 No numerical rehearsal, export comparison or full focused run has executed. [Rehearsal preparation](../training/reports/facturation-focus-v1-rehearsal-preparation.json).
 
-PARTIALLY IMPLEMENTED: the focused export/replay supervisor is prepared with unchanged export, service isolation and cleanup mechanics. It requires a completed, independently verified R11 report covering all 438 regressions and 48 additional controls, plus the actual selected FP32 fingerprint and original serving proofs. An unaccepted candidate may be examined only for further Facturation refinement; this does not admit a later application or activate a model. All 23 synthetic supervisor tests pass. One category-order compatibility finding was fixed and re-reviewed. The actual terminal report, FP32 binding, numerical rehearsal and Colibri replay remain pending. [Replay preparation](../training/reports/facturation-focus-v1-replay-preparation.json).
+PARTIALLY IMPLEMENTED: the focused export/replay supervisor is prepared with unchanged export, service isolation and cleanup mechanics. It requires a completed, independently verified R11 report covering all 438 regressions and 48 additional controls, plus the actual selected FP32 fingerprint and original serving proofs. An unaccepted candidate may be examined only for further Facturation refinement; this does not admit a later application or activate a model. All 24 synthetic supervisor tests pass. Category-order compatibility and remote/controller proof-serialization findings were fixed and re-reviewed. The proof-content hash remains exact; the remote writer adds one newline that the controller omits. The actual terminal report, FP32 binding, numerical rehearsal and Colibri replay remain pending. [Replay preparation](../training/reports/facturation-focus-v1-replay-preparation.json).
 
 ## R11 training completed; accuracy evaluation running - 16 October 2026
 

@@ -1,5 +1,20 @@
 # Shared model training queue
 
+## Current queue - 16 October 2026
+
+R11 training and evaluation are complete for the first three applications; acceptance FAILED. None of the six applications is accepted by this campaign. Production inference has not been replaced.
+
+1. IN PROGRESS: Facturation-only refinement preparation using the same shared model, 1,047 training / 133 validation rows. Reviewed server rehearsal is next; no new optimizer is running.
+2. PLANNED: Management Projet, then Design Workflow, one at a time with earlier-app regressions.
+3. PLANNED: Contracts, Gestion Magasin and Reservation, one at a time after the preceding model passes all gates. The retained R11 preparations are V6r11, V7r11 and V8r12 respectively; none has been trained. Future retention must be updated to the actually accepted focused curriculum.
+4. PLANNED: complete six-app model, permission and runtime verification before any activation decision.
+
+[Actual R11 results](../training/reports/shared-v5r11-en-fr-evaluation.json), [current scores](AI_MODEL_ACCURACY.md), [retained curriculum preparation](../training/reports/serial-after-r11-preparation.json).
+
+## Earlier queue observations
+
+The entries below are historical preparations and do not override the current order or acceptance gates.
+
 IMPLEMENTED and verified as preparation: corrected cumulative datasets cover Contracts V6r10 (2,492 training / 319 validation), Gestion Magasin V7r10 (2,690 / 362) and Reservation V8r11 (2,870 / 402). Exactly six retained target labels change from each prior preparation; all other rows, application additions, validation and evaluation inputs remain unchanged. All 269 training-integrity tests pass, including 24 Contracts mutation/startup checks and nine final-stage tests. The latter reject skipped predecessors and altered retained rows before model import. A separate subprocess test verifies the isolated scripts/data/control layout. The single reviewer found no remaining issues.
 
 Final metadata checks pass all 3,272 training/validation examples and 738 evaluation cases, including the exact retained Contracts and Gestion Magasin prefixes. Full static audits select 59, 72 and 84 training-only rehearsal rows respectively. These checks do not establish semantic independence, numerical learning, export parity or model accuracy. No later-stage model has been trained or accepted. [Contracts metadata](../training/reports/shared-v6r10-en-fr-metadata-preflight.json), [Contracts audit and artifact inventory](../training/reports/shared-v6r10-en-fr-pretraining-audit.json), [final cumulative metadata](../training/reports/shared-v8r11-en-fr-metadata-preflight.json), [later-stage audits](../training/reports/later-name-corrections-preflight-20261014.json).

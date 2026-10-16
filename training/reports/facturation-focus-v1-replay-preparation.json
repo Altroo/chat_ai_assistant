@@ -1,17 +1,17 @@
 {
   "version": "facturation-focus-v1-replay-preparation",
-  "observed_utc": "2026-10-16T09:52:18Z",
+  "observed_utc": "2026-10-16T10:25:28.448340+00:00",
   "status": "PREPARATION ONLY; actual terminal R11 report and FP32 integration pending",
   "application": "facturation",
   "source_sha256": {
-    "training/scripts/replay_facturation_rehearsal_v1.py": "624ae73adee1baa916c538dd5c45246abdcdc8ab685779e8163267828954d925",
-    "training/tests/test_facturation_replay_supervisor.py": "5ef9e6cc1c847b86a58227d7f3a9b3eb4f60326675bdd6479ad90571d1573921"
+    "training/scripts/replay_facturation_rehearsal_v1.py": "a1ba0ba404a89489439c10a93cbb29426bd7a66e523182648ddb663209db7e31",
+    "training/tests/test_facturation_replay_supervisor.py": "2cb31a97cdbdc7d0b237aaeb305de2109e47bb8d2c8befd92f4fb28e2327f697"
   },
-  "unit_tests_passed": 23,
+  "unit_tests_passed": 24,
   "review": {
     "reviewers": 1,
-    "initial_findings": 1,
-    "findings_fixed": 1,
+    "initial_findings": 2,
+    "findings_fixed": 2,
     "remaining_findings": 0
   },
   "predecessor_contract": {
@@ -29,7 +29,7 @@
   "mechanics_retained_from": "training/scripts/replay_shared_rehearsal_v1.py",
   "checks": [
     "Exact focused audit, captures, lineage and duplicate-free bilingual categories",
-    "Original raw before/after proof hashes, selected step and serving artifacts",
+    "Exact pretty-JSON proof content hashes with the remote writer single-newline bridge, selected step and serving artifacts",
     "Actual FP32 fingerprint bound to the completed R11 report and reviewed model path",
     "Completed numerical service invocation and finite complete update coverage",
     "Unchanged resource admission, isolated export, loopback replay and worker cleanup"
@@ -38,5 +38,6 @@
   "export_compared": false,
   "full_training_started": false,
   "model_acceptance_established": false,
-  "production_changed": false
+  "production_changed": false,
+  "proof_serialization_contract": "Controller pretty JSON with no newline; remote equivalent adds exactly one newline"
 }

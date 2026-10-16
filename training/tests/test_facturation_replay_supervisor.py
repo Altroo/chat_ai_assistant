@@ -97,12 +97,22 @@ class FocusedPredecessorTests(unittest.TestCase):
                 else: v[5]["weights"] = "changed-after-proof"
                 with self.assertRaises(ValueError): self.evaluate(v)
 
-    def test_raw_proof_bytes_cannot_be_reserialized_or_replaced(self):
-        for mutation in ("newline", "changed"):
+    def test_remote_proof_newline_matches_controller_copy(self):
+        with tempfile.TemporaryDirectory() as folder:
+            v = fixture(Path(folder))
+            for when in ("before", "after"):
+                path = Path(v[0]["predecessor"][when])
+                path.write_bytes(path.read_bytes() + b"\n")
+            self.assertEqual(self.evaluate(v)["step"], 2400)
+
+    def test_proof_content_and_noncanonical_serialization_reject(self):
+        for mutation in ("extra_newline", "changed", "compact"):
             with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as folder:
                 v = fixture(Path(folder)); path = Path(v[0]["predecessor"]["after"])
                 raw = path.read_bytes()
-                path.write_bytes(raw + b"\n" if mutation == "newline" else raw.replace(b"2400", b"1200"))
+                if mutation == "extra_newline": path.write_bytes(raw + b"\n\n")
+                elif mutation == "compact": path.write_bytes(json.dumps(json.loads(raw)).encode())
+                else: path.write_bytes(raw.replace(b"2400", b"1200"))
                 with self.assertRaisesRegex(ValueError, "serving evidence"):
                     self.evaluate(v)
 

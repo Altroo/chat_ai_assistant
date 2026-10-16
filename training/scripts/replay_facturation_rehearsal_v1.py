@@ -128,9 +128,14 @@ def check_predecessor(binding, plan):
     proofs = []
     for when in ('before', 'after'):
         path = Path(pred[when])
-        if file_sha(path) != report['evidence_sha256'][f'fresh-{step}-{when}.json']:
+        proof = read(path)
+        canonical = json.dumps(proof, indent=2).encode()
+        # The remote writer appends one newline; the controller's saved copy
+        # omits it. Bind the same JSON bytes while rejecting other rewrites.
+        if (path.read_bytes() not in (canonical, canonical + b'\n') or
+                hashlib.sha256(canonical).hexdigest() != report['evidence_sha256'][f'fresh-{step}-{when}.json']):
             raise ValueError('Selected serving evidence changed')
-        proofs.append(read(path))
+        proofs.append(proof)
     if proofs[0] != proofs[1] or proofs[0]['step'] != step:
         raise ValueError('Selected serving identity changed during evaluation')
     artifacts = proofs[0]['artifacts']
