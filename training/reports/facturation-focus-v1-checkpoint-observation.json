@@ -1,0 +1,107 @@
+{
+  "version": "facturation-focus-v1-checkpoint-observation",
+  "observed_utc": "2026-10-16T19:41:50.872770+00:00",
+  "application": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "status": "PARTIALLY IMPLEMENTED: training and model acceptance incomplete",
+  "training_environment": "server CPU",
+  "base_run": "R11 selected step 2400 FP32 model",
+  "updates_completed_observed": 923,
+  "updates_planned": 1047,
+  "validation_rows": 133,
+  "training_complete": false,
+  "validation_losses": [
+    {
+      "step": 0,
+      "weighted_loss": 0.04873197006641808,
+      "unweighted_loss": 0.02600715355171808
+    },
+    {
+      "step": 300,
+      "weighted_loss": 0.06851522753666195,
+      "unweighted_loss": 0.03435934542308406,
+      "selected_by_loss": 0
+    },
+    {
+      "step": 600,
+      "weighted_loss": 0.06091881436126764,
+      "unweighted_loss": 0.03038343505487059,
+      "selected_by_loss": 0
+    },
+    {
+      "step": 900,
+      "weighted_loss": 0.04969219573642059,
+      "unweighted_loss": 0.02470715682671427,
+      "selected_by_loss": 0
+    }
+  ],
+  "loss_selected_step": 0,
+  "checkpoint_artifacts": [
+    {
+      "step": 300,
+      "size_bytes": 28536776,
+      "sha256": "4d9883e0f80178883eb4c0b20bee56992e841ac886c67e18ca139454bf9ae41c",
+      "tensor_count": 192,
+      "tensor_dtypes": [
+        "F32"
+      ]
+    },
+    {
+      "step": 600,
+      "size_bytes": 28536776,
+      "sha256": "689695aab6076fa710324fac6a34bf2ce38bbf67ddb17605dcc88550277392d1",
+      "tensor_count": 192,
+      "tensor_dtypes": [
+        "F32"
+      ]
+    },
+    {
+      "step": 900,
+      "size_bytes": 28536776,
+      "sha256": "510c27dffad4c2dce93716afac317a6217b0699282fb440206df4fb7ddb4c3d6",
+      "tensor_count": 192,
+      "tensor_dtypes": [
+        "F32"
+      ]
+    }
+  ],
+  "checkpoint_checks": {
+    "tensor_layout_and_adapter_config_match": true,
+    "model_weights_loaded": false,
+    "checks": [
+      "safetensors header structure",
+      "tensor names, shapes, dtypes and contiguous byte ranges",
+      "file size and SHA-256",
+      "matching LoRA configuration"
+    ]
+  },
+  "training_process_identity_unchanged": true,
+  "production_inference_healthy": true,
+  "production_model_container_not_restarted": true,
+  "model_activation_performed": false,
+  "later_application_training_started_by_this_workflow": false,
+  "model_accuracy_measured_for_this_run": false,
+  "unchanged_local_inputs": {
+    "current_evaluation_controls": 17,
+    "historical_pipeline_controls": 79,
+    "training_bound_inputs": 22
+  },
+  "frozen_selection_policy": "facturation-focus-v1-checkpoint-selection-policy.json",
+  "evidence_sha256": {
+    "checkpoint-report-source-observation.json": "22986f6e39eec145f34e1a0a436863f2aca5e1295cfef7ad0792d03fbcd284bc",
+    "checkpoint-600-integrity.json": "cc8e5308fdd1d6c9f28b249246869af34f1040b906240965ab62a6d92b8b5919",
+    "checkpoint-600-validation-observation.json": "b1466fe42d74d1cb8f06a19d3a22ad935b6f3524a8629ad2e492934337ddc57a",
+    "checkpoint-900-integrity.json": "7449c57ed88e5bbb6bc185e403c97105db1c6fd014643b44dba06b5bef01d476",
+    "checkpoint-900-validation-observation.json": "8ef30cbbbf36e0df7ab565dd9bffefc16f8a75b3291d40fa17dc006a4da42dc5"
+  },
+  "limitations": [
+    "Teacher-forced validation loss is not task accuracy or an acceptance result.",
+    "Checkpoint 900 improves loss relative to checkpoints 300 and 600 but remains above the original weighted-loss baseline.",
+    "Checkpoint inspection reads headers, configuration and bytes for checksums; it does not load model tensors or run inference.",
+    "The final update at 1047, final validation, frozen Colibri checkpoint comparison and any required changed-candidate regression evaluations remain incomplete.",
+    "This report does not certify runtime authorization, all-app model acceptance or production deployment readiness."
+  ]
+}

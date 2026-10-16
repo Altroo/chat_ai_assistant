@@ -1,5 +1,23 @@
 # Verification and acceptance record
 
+## Facturation checkpoints verified - 16 October 2026, 19:41 UTC
+
+PARTIALLY IMPLEMENTED: the server-only Facturation run reached 923/1,047 updates in this timestamped observation. Checkpoints 300, 600 and 900 are saved. Their 192 F32 adapter tensors have matching names, shapes, byte layout and LoRA configuration; file sizes and checksums were recorded without loading model tensors or running inference. The original training process remains live.
+
+| Checkpoint | Weighted validation loss |
+| --- | ---: |
+| Baseline | 0.04873197 |
+| 300 | 0.06851523 |
+| 600 | 0.06091881 |
+| 900 | 0.04969220 |
+
+Lower loss is better. Checkpoint 900 improves on 300 and 600, but remains above the baseline, so the loss selector still retains step 0. These are teacher-forced loss measurements, not tool-calling accuracy or acceptance scores.
+
+PLANNED: finish update 1,047 and final validation, then follow the frozen Colibri checkpoint comparison and acceptance policy. A changed selected model still requires the separate development/regression checks and additional controls. Seventeen current evaluation controls, 79 historical pipeline controls and all bound local training inputs remain unchanged. No production model activation or later-application training was performed by this workflow; production inference is healthy and its container has not restarted.
+
+[Verified checkpoint observations](../training/reports/facturation-focus-v1-checkpoint-observation.json). Earlier entries below retain their original observation state.
+
+
 ## Facturation logistics knowledge synchronized - 16 October 2026
 
 IMPLEMENTED and verified: English/French logistics knowledge now reflects supplier-purchase dossiers, retained historical client/proforma links, the registered supplier selector and separate brand selection. Guidance uses current form captions and distinguishes the date fields. Purchase conditions, advance proof, matching import-title amount/currency, payment triggers, receipts and closing requirements come from the existing business guards. Operational AI write permissions remain unchanged.
