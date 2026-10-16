@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## V2 export and development handoff checks - 16 October 2026
+
+Thirty-four focused offline tests pass: nine export-dispatch tests, eleven development-worker adapter tests and fourteen controller tests. They check source/inventory guards, successful trial admission, resource limits, single dispatch, failure preservation, correct export-unit status, unchanged evaluator reuse, exact baseline/case identity, retained metric comparisons and rejection of substituted or reordered export bindings.
+
+The original worker launch/settings, scorer and 275 shared development cases are reused. The controller verifies the launch binding's ordered content against both its pretty serialized input and compact completed-export bytes. Runtime admission and launch records are separately hash-pinned. The single reviewer found no remaining issues; all 17 current and 79 historical evaluation controls remain unchanged.
+
+These are synthetic guard tests, not model measurements. No live export or development-worker execution has occurred. They do not establish 95% accuracy, successful training completion, native authorization, activation permission or production readiness.
+
+[Preparation evidence](../training/reports/facturation-focus-v2-development-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Completed focused evaluation verified from original evidence - 16 October 2026
 
 IMPLEMENTED and verified: the final reporter recomputed every development, regression and additional-control assessment from the original event shards, inputs and unchanged scorer. It checked exact case coverage/order, summary settings, model/runtime/tokenizer artifacts, matching before/after worker proofs and successful shutdown of all three workers for every phase. All five candidate comparisons, 275 shared development cases, 438 regressions and 48 additional controls are complete.

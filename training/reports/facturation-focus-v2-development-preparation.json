@@ -1,0 +1,61 @@
+{
+  "version": "facturation-focus-v2-development-preparation",
+  "utc": "2026-10-16T23:38:09.052028+00:00",
+  "scope": "Preparation and timestamped live pilot observation; no pilot accuracy result",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "pilot": {
+    "observed_utc": "2026-10-16T23:37:30.599726+00:00",
+    "updates_completed": 39,
+    "updates_planned": 92,
+    "same_original_invocation_verified": true,
+    "running": true,
+    "cpu_threads_limit": 14,
+    "memory_limit_gib": 32,
+    "observed_busy_cpu_cores": 6.5,
+    "observed_process_rss_gib": 4.438,
+    "available_ram_gib": 42.52,
+    "production_healthy_unchanged": true
+  },
+  "offline_tests": {
+    "development_worker_adapter": 11,
+    "development_controller": 14,
+    "export_dispatch": 9,
+    "reviewers": 1
+  },
+  "verified_preparation": {
+    "original_evaluator_ast_change": "Model identifier only",
+    "unchanged_shared_development_cases": 275,
+    "baseline_selected_checkpoint": 600,
+    "paired_diagnostic_requests": 14,
+    "current_controls_unchanged": 17,
+    "historical_controls_unchanged": 79,
+    "export_unit_status_mapping": true,
+    "ordered_launch_to_completed_binding_bridge": true
+  },
+  "operator_source_sha256": {
+    "focus-v2-development-remote.py": "3989ec785808b376f0be8afc8e4e7a4e6d5bf0232c09e421c43ea0961a91c0b7",
+    "focus-v2-compare-development.py": "9c788a6e5a57bdf6fb522641aa05cccec38922a05d6a416aa33b6f5bd13a64c4",
+    "focus-v2-launch-replay-remote.py": "631f3516a6fddac9d748b4ba2bdb9e00dab5323dc88928e069011b03f32a5d86",
+    "test_focus_v2_development.py": "d3b8342c1ecc0a99326754b6e7e3328f8a4f56f68f957e56af610ae94122d4e7",
+    "test_focus_v2_development_controller.py": "804869079ee22715006f12d9d0a1b8179ddc113f3987259a2196c335e194b017",
+    "test_focus_v2_replay_launch.py": "bcdc1c0812edcf6a4b257589117bed470170b283d1ae1842a1789b7ceeb583b0"
+  },
+  "export_started": false,
+  "development_workers_started": false,
+  "development_comparison_executed": false,
+  "pilot_accuracy_measured": false,
+  "full_training_authorized": false,
+  "production_activation": false,
+  "accepted_applications": 0,
+  "limitations": [
+    "Synthetic guard tests do not predict model accuracy.",
+    "A live update count is not completed training.",
+    "A successful export and paired replay remain prerequisites for the planned shared development run.",
+    "Development gains alone neither accept a model nor authorize a longer epoch. Unchanged acceptance suites remain mandatory."
+  ]
+}

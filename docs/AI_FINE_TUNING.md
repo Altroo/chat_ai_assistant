@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Bounded V2 trial and comparison preparation - 16 October 2026
+
+PARTIALLY IMPLEMENTED: the same shared model's 92-update server trial was live at 39/92 at 2026-10-16T23:37:30.599726+00:00. This observation does not establish completed training or an accuracy improvement.
+
+The prepared comparison reuses all 275 unchanged shared development cases and the verified checkpoint-600 starting-model results. It reports Facturation, Management Projet and Design Workflow separately, including full actions, exact arguments and metric declines. A development gain cannot automatically accept a model or authorize longer training. The 438 regressions and 48 additional controls remain unchanged and separate.
+
+All 34 focused offline handoff tests pass; the single reviewer found no remaining issues. The real paired export/replay and development comparison have not run. Existing training datasets, held-out scoring and production inference are unchanged. Zero of six applications are fully accepted.
+
+[Verified preparation and timestamped observation](../training/reports/facturation-focus-v2-development-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Completed focused functional comparison - 16 October 2026
 
 All 1,047 updates and the complete functional evaluation have finished. The unchanged development selector chose checkpoint 600. Its Facturation development action score is 110/133 (82.71%), with 88/111 eligible exact arguments (79.28%); correct tool selection is 132/133 (99.25%) and structured validity is 133/133 (100%). Tool selection and valid structure alone do not establish correct business arguments.

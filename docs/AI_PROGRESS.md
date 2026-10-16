@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Facturation pilot running; development handoff prepared - 16 October 2026
+
+PARTIALLY IMPLEMENTED: at 2026-10-16T23:37:30.599726+00:00, the original server pilot was live at 39/92 updates. Production inference was healthy and unchanged. The trial has not completed, and no new pilot accuracy result exists.
+
+IMPLEMENTED as preparation only: the reviewed export dispatcher and development adapter/controller are ready for the completed trial. Nine export-dispatch checks, eleven worker-adapter checks and fourteen controller checks pass. The single reviewer found no remaining issues. The frozen evaluator changes only its model identifier; scoring and all 275 shared development cases remain unchanged.
+
+The completed export must preserve the admitted binding's ordered content across its pretty launch representation and compact completed representation, with both exact byte hashes checked. A stale export-service status mapping was also fixed. No export or development workers have started, and no longer epoch or candidate activation is authorized by these helpers. Seventeen current and 79 historical evaluation controls remain unchanged.
+
+[Timestamped progress and preparation evidence](../training/reports/facturation-focus-v2-development-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Completed Facturation-focused evaluation - 16 October 2026
 
 IMPLEMENTED and verified: the original evaluation completed all five 133-case development candidates, the selected checkpoint's 275 shared development cases, 438 frozen regressions and 48 additional controls. The original controller stopped cleanly at 23:12:37 UTC. Checkpoint 600 remains selected by the unchanged development policy; acceptance did not rerank candidates.
