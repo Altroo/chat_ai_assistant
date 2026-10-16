@@ -1,0 +1,497 @@
+{
+  "version": "facturation-focus-v1-en-fr-evaluation",
+  "training_complete": true,
+  "training_updates": 1047,
+  "training_application": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "selected_step": 600,
+  "selection": {
+    "selected_step": 600,
+    "candidates": [
+      {
+        "step": 0,
+        "count": 133,
+        "action_matches": 108,
+        "application_macro_action_percent": 81.203007518797,
+        "application_macro_valid_percent": 99.24812030075188,
+        "scenario_grouped_application_macro_action_percent": 80.76923076923077,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 108,
+            "valid_structures": 132
+          }
+        }
+      },
+      {
+        "step": 300,
+        "count": 133,
+        "action_matches": 108,
+        "application_macro_action_percent": 81.203007518797,
+        "application_macro_valid_percent": 99.24812030075188,
+        "scenario_grouped_application_macro_action_percent": 81.25,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 108,
+            "valid_structures": 132
+          }
+        }
+      },
+      {
+        "step": 600,
+        "count": 133,
+        "action_matches": 110,
+        "application_macro_action_percent": 82.70676691729324,
+        "application_macro_valid_percent": 100.0,
+        "scenario_grouped_application_macro_action_percent": 83.17307692307692,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 110,
+            "valid_structures": 133
+          }
+        }
+      },
+      {
+        "step": 900,
+        "count": 133,
+        "action_matches": 109,
+        "application_macro_action_percent": 81.95488721804512,
+        "application_macro_valid_percent": 99.24812030075188,
+        "scenario_grouped_application_macro_action_percent": 82.21153846153847,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 109,
+            "valid_structures": 132
+          }
+        }
+      },
+      {
+        "step": 1047,
+        "count": 133,
+        "action_matches": 108,
+        "application_macro_action_percent": 81.203007518797,
+        "application_macro_valid_percent": 99.24812030075188,
+        "scenario_grouped_application_macro_action_percent": 82.21153846153847,
+        "by_application": {
+          "facturation": {
+            "count": 133,
+            "action_matches": 108,
+            "valid_structures": 132
+          }
+        }
+      }
+    ],
+    "status": "VALIDATION SELECTION ONLY; ACCEPTANCE NOT ESTABLISHED"
+  },
+  "candidate_development": [
+    {
+      "step": 0,
+      "reused_baseline": true,
+      "semantic_loss": 0.04873197006641808,
+      "metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 130,
+          "structured_valid": 132,
+          "action_matches": 108
+        },
+        "percent": {
+          "tool_correct": 97.74,
+          "structured_valid": 99.25,
+          "action_matches": 81.2
+        },
+        "exact_arguments": {
+          "passed": 87,
+          "count": 111,
+          "percent": 78.38
+        }
+      },
+      "model_targets_passed": false
+    },
+    {
+      "step": 300,
+      "reused_baseline": false,
+      "semantic_loss": 0.06851522753666195,
+      "metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 130,
+          "structured_valid": 132,
+          "action_matches": 108
+        },
+        "percent": {
+          "tool_correct": 97.74,
+          "structured_valid": 99.25,
+          "action_matches": 81.2
+        },
+        "exact_arguments": {
+          "passed": 87,
+          "count": 111,
+          "percent": 78.38
+        }
+      },
+      "model_targets_passed": false
+    },
+    {
+      "step": 600,
+      "reused_baseline": false,
+      "semantic_loss": 0.06091881436126764,
+      "metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 132,
+          "structured_valid": 133,
+          "action_matches": 110
+        },
+        "percent": {
+          "tool_correct": 99.25,
+          "structured_valid": 100.0,
+          "action_matches": 82.71
+        },
+        "exact_arguments": {
+          "passed": 88,
+          "count": 111,
+          "percent": 79.28
+        }
+      },
+      "model_targets_passed": false
+    },
+    {
+      "step": 900,
+      "reused_baseline": false,
+      "semantic_loss": 0.04969219573642059,
+      "metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 130,
+          "structured_valid": 132,
+          "action_matches": 109
+        },
+        "percent": {
+          "tool_correct": 97.74,
+          "structured_valid": 99.25,
+          "action_matches": 81.95
+        },
+        "exact_arguments": {
+          "passed": 88,
+          "count": 111,
+          "percent": 79.28
+        }
+      },
+      "model_targets_passed": false
+    },
+    {
+      "step": 1047,
+      "reused_baseline": false,
+      "semantic_loss": 0.06773017209037537,
+      "metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 131,
+          "structured_valid": 132,
+          "action_matches": 108
+        },
+        "percent": {
+          "tool_correct": 98.5,
+          "structured_valid": 99.25,
+          "action_matches": 81.2
+        },
+        "exact_arguments": {
+          "passed": 86,
+          "count": 111,
+          "percent": 77.48
+        }
+      },
+      "model_targets_passed": false
+    }
+  ],
+  "development_cases_per_candidate": 133,
+  "development_scenarios": 104,
+  "new_checkpoint_inference_cases": 532,
+  "reused_baseline_cases": 133,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "native_backend_security_verified": false,
+  "model_planning_only": true,
+  "evidence_sha256": {
+    "binding.json": "d20b7663e25b19d54d7cc43a0f7d8c72061abc370bed6ac293b088e7c93bdc76",
+    "evaluation-reviewed-controls.json": "f9189a138b720ec6aa5d451de8815e975b337ebb9cbbfc5ae552c19586adcc5d",
+    "evaluation-state.json": "f74018bdd7c8909106b4e84a00549d865c51409021c405df57dd21027c2a13f1",
+    "selection.json": "5c06d2e376782ae7827e0c22a72737ac8db476af35c08a2544b596e5f80e5cc4",
+    "training_report": "7759680eaf44d80b4b8e7ecfe671598e0dbda81d371057c2d077ba0a9541e94c",
+    "reused-baseline.json": "b1da11a42ecf1b1038502db6f2be8ef9a20fc1a8ef796872b4a727b312fd6cd4",
+    "validation-300-results.json": "34d82773f94579a130cbee69c194078ade7defec0566dc7aa5be8ca1bf94d9be",
+    "validation-300-before.json": "d3cd1b5806e241ceeaa5e169fc6d845bcae1fce410154c20111edde4ff7b3175",
+    "validation-300-after.json": "d3cd1b5806e241ceeaa5e169fc6d845bcae1fce410154c20111edde4ff7b3175",
+    "validation-300-stop.json": "484884062832048b9992410e891737d42b17f7600b16467c1d6c6a50eb4b005e",
+    "validation-300-0.inputs.jsonl": "4c3635971df9551279666b2f64a7d1d5cba29fd81951d68d5c6176687cf6f3d2",
+    "validation-300-0.events.jsonl": "9f554d12a04158fbf2a8d8d2dc8b39970bd6fe4bc5a8192d06d0ff222782c66b",
+    "validation-300-1.inputs.jsonl": "56d3323ad5673cbc276b9e3acb10063efcb7b9d766e990908c9de575b12170a7",
+    "validation-300-1.events.jsonl": "b13bde96409539da6c145b0adab3bac6e18171e46d694a1f1f093b1b1d7added",
+    "validation-300-2.inputs.jsonl": "b2a001f0ab8ee2837be9f6aea529aa81e3a3a237c0b952f0212ded8bc26f97fd",
+    "validation-300-2.events.jsonl": "9076528a58d7e00415d9f483246b8b14d8aabfc639020148185e7f62aa10d36e",
+    "validation-600-results.json": "6fae51fc62c03a1a136d22962bbc7726bc749821014d1bb73f6ed0bf72c4081b",
+    "validation-600-before.json": "3c367e0811f5e56fc277641693c3f80ba8436f92eff58eb627d20683b963aa62",
+    "validation-600-after.json": "3c367e0811f5e56fc277641693c3f80ba8436f92eff58eb627d20683b963aa62",
+    "validation-600-stop.json": "c5470627a7cf4010c170ee663ca0cf78d0486fe22633eb8841f7f80631d87c11",
+    "validation-600-0.inputs.jsonl": "4c3635971df9551279666b2f64a7d1d5cba29fd81951d68d5c6176687cf6f3d2",
+    "validation-600-0.events.jsonl": "25ef311a82055f59fe13c42a2b9a0f639ccf9b86e99debb52ed895bfaf1d1f9b",
+    "validation-600-1.inputs.jsonl": "56d3323ad5673cbc276b9e3acb10063efcb7b9d766e990908c9de575b12170a7",
+    "validation-600-1.events.jsonl": "568f82974ba6b369fcd894bd43c1cc90e1ceb99b1c6a54d465e2675c69962bb9",
+    "validation-600-2.inputs.jsonl": "b2a001f0ab8ee2837be9f6aea529aa81e3a3a237c0b952f0212ded8bc26f97fd",
+    "validation-600-2.events.jsonl": "d65d56df2ad4c7e15e94bfe67725963167c663b94848b1cf11fa3b516bc572a9",
+    "validation-900-results.json": "a49c83a70d727e5b66d8cc425c3d1ec18b7e694c412901c378eabaeabb4628dd",
+    "validation-900-before.json": "ffac28748777f24bda50b5d4f61355af09db0932e28b26bdcf79e3977c080d3c",
+    "validation-900-after.json": "ffac28748777f24bda50b5d4f61355af09db0932e28b26bdcf79e3977c080d3c",
+    "validation-900-stop.json": "fb70baeecd71231685a9dee1de062ed93970d6487912a4abdc3a03b135798cae",
+    "validation-900-0.inputs.jsonl": "4c3635971df9551279666b2f64a7d1d5cba29fd81951d68d5c6176687cf6f3d2",
+    "validation-900-0.events.jsonl": "ae4d57f4577c7af4f59e765c8b7bdb7829b36661b3a8976fecccc9b4085e0e58",
+    "validation-900-1.inputs.jsonl": "56d3323ad5673cbc276b9e3acb10063efcb7b9d766e990908c9de575b12170a7",
+    "validation-900-1.events.jsonl": "b7f5072d5b3ff8a9ed14d65677ea7bbed5bc0c0516d5b67823cdef4fbd72ca88",
+    "validation-900-2.inputs.jsonl": "b2a001f0ab8ee2837be9f6aea529aa81e3a3a237c0b952f0212ded8bc26f97fd",
+    "validation-900-2.events.jsonl": "915180ade52bdfbbc31e8382b66056adb446e9e48979a4d571ffba87eb7b7880",
+    "validation-1047-results.json": "fd9dd7aa5f1b53371a924f9c120f5d7dede855301b2e76b6dc6c1edca1bc1a05",
+    "validation-1047-before.json": "0bda41dd39470284502c34d41cab8a8fb59f49ac349b210b25869f98c86c328f",
+    "validation-1047-after.json": "0bda41dd39470284502c34d41cab8a8fb59f49ac349b210b25869f98c86c328f",
+    "validation-1047-stop.json": "75e960715b75f41cf777382b6c169d955e390539d30400e7edc72950b65a163f",
+    "validation-1047-0.inputs.jsonl": "4c3635971df9551279666b2f64a7d1d5cba29fd81951d68d5c6176687cf6f3d2",
+    "validation-1047-0.events.jsonl": "aac0d092dadc59c70d5c645743bda846cb9b67d944d552a9a997938880588a36",
+    "validation-1047-1.inputs.jsonl": "56d3323ad5673cbc276b9e3acb10063efcb7b9d766e990908c9de575b12170a7",
+    "validation-1047-1.events.jsonl": "247d71e903063cada46292d56b5f473bd9e1bfd5309ff9cbbcc632d65e49acc3",
+    "validation-1047-2.inputs.jsonl": "b2a001f0ab8ee2837be9f6aea529aa81e3a3a237c0b952f0212ded8bc26f97fd",
+    "validation-1047-2.events.jsonl": "f88814e654fd80df03b9d44e9fbfe094a5b4eb921fda1bba8c0b447d1a1c4e67",
+    "development-600-results.json": "ba74d1b89804af66e4e425e8680d6609af87bd2be4457c16302178914840fd4a",
+    "development-600-before.json": "4ca53d200a001923b2e6db183331b815f51548b6fac52c9c160c5a55b6f9dce7",
+    "development-600-after.json": "4ca53d200a001923b2e6db183331b815f51548b6fac52c9c160c5a55b6f9dce7",
+    "development-600-stop.json": "c5470627a7cf4010c170ee663ca0cf78d0486fe22633eb8841f7f80631d87c11",
+    "development-600-0.inputs.jsonl": "0f3f4feeb5c060af976caf68df7503a254c8f9aaddd56b6c901ee05da9fdaa05",
+    "development-600-0.events.jsonl": "f1b1f40965f875f51fd07db8cdf2ee9f314d9c26ec9a3770a5373c40a03959ee",
+    "development-600-1.inputs.jsonl": "d97facfe8a23ebc9a5383aa9541f259654d965f235ad81ab42fdaf143a8f79c1",
+    "development-600-1.events.jsonl": "7b43368979f53ced94b63f68290daf7e3c4df0f49ba5b134afffee10a6bc632f",
+    "development-600-2.inputs.jsonl": "ef0c30b68ee203a169c9bfe76ae5b7cd60ee17d91821fb56d7dc7ef06bade921",
+    "development-600-2.events.jsonl": "309c07d68f74e48b493f54948983042cce73edc8f276a3693d5b51428df10192",
+    "acceptance-600-results.json": "d95c98d7c1ac21ab0f99e11511d25454111ae326714643f8b1a02ef98196486b",
+    "acceptance-600-before.json": "fbdfddd332c4126b8ec82c2fdf49162cb0f59bf1f2e80c1ed3fe91792c5a19ed",
+    "acceptance-600-after.json": "fbdfddd332c4126b8ec82c2fdf49162cb0f59bf1f2e80c1ed3fe91792c5a19ed",
+    "acceptance-600-stop.json": "c5470627a7cf4010c170ee663ca0cf78d0486fe22633eb8841f7f80631d87c11",
+    "acceptance-600-0.inputs.jsonl": "a57b612a8a65b3345d13e1c82682ddac2f326ba697c8b13becbae34c0850aeb0",
+    "acceptance-600-0.events.jsonl": "8f0641e69cfa2c2b4a3a7c60b82450b26e6ebff11e5025c797c330fe5b39d6f9",
+    "acceptance-600-1.inputs.jsonl": "a2e15607039cc1f40121318fda4606b4966142923bb017136161525eea8b24f6",
+    "acceptance-600-1.events.jsonl": "a0f4902fb5dacbb99adb4fa636e6ae998c1a85986ae56ccbf859fd11e5378002",
+    "acceptance-600-2.inputs.jsonl": "19f6235a8d54bcaa3cff015ed16618e107a0211137a118078a7428a47d35a5a0",
+    "acceptance-600-2.events.jsonl": "860f77aa2b4fac612f83cf6ba54e6c29ffcc64b17e094be5aaf5e7b5c4b85f55",
+    "fresh-600-results.json": "bd1589cd9f397417bea5e409484da67e6ef599d03fab252cc1175e8ac43a184d",
+    "fresh-600-before.json": "4a887c43af69dbf2fa87dfd91e3221f1287a311180f299c96e9dc0b2412e69c9",
+    "fresh-600-after.json": "4a887c43af69dbf2fa87dfd91e3221f1287a311180f299c96e9dc0b2412e69c9",
+    "fresh-600-stop.json": "c5470627a7cf4010c170ee663ca0cf78d0486fe22633eb8841f7f80631d87c11",
+    "fresh-600-0.inputs.jsonl": "602e6deebc75eba458aead816ca52401e7212524d106babc44e5403acb3f4012",
+    "fresh-600-0.events.jsonl": "73fa999df38a6b43b8913490973faacb968b6d653835ea3744f472f9614dfd58",
+    "fresh-600-1.inputs.jsonl": "c34f7d41f7e2c33681567db76d1e662e6a591d31da8f0a1dfbd5214b0b97eced",
+    "fresh-600-1.events.jsonl": "9e422c79c84ae8976a0052dea4ab564e0c565b2c61d8dd7a6e47c205aa5fd707",
+    "fresh-600-2.inputs.jsonl": "f80e16d6127fabe8f308e2595ff1a293935f0eefd979a8f0f311e286cff42d98",
+    "fresh-600-2.events.jsonl": "91bdad07af4594b29ea5f974337dd73c97f16dceb9729d3eb0fd201cb8ea9f84"
+  },
+  "limitations": [
+    "Development selection uses 133 unchanged rows with 104 underlying scenario groups; no per-language score is inferred for unlabeled development data.",
+    "The 438 frozen regressions and 48 team-authored additional controls are separate and repeatedly evaluated, not new independent certification.",
+    "All full-action thresholds use exact integer counts alongside unchanged critical, argument, tool and structured-output gates.",
+    "Model-planning results do not certify native permissions, frontend behavior or production readiness.",
+    "No production activation or training for the next application occurred."
+  ],
+  "model_acceptance_passed": false,
+  "facturation_model_acceptance_passed": false,
+  "by_application": {
+    "facturation": {
+      "regression_metrics": {
+        "count": 108,
+        "counts": {
+          "tool_correct": 107,
+          "structured_valid": 108,
+          "action_matches": 96
+        },
+        "percent": {
+          "tool_correct": 99.07,
+          "structured_valid": 100.0,
+          "action_matches": 88.89
+        },
+        "exact_arguments": {
+          "passed": 74,
+          "count": 86,
+          "percent": 86.05
+        }
+      },
+      "additional_metrics": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 9
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 56.25
+        },
+        "exact_arguments": {
+          "passed": 7,
+          "count": 14,
+          "percent": 50.0
+        }
+      },
+      "development_regression_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 132,
+          "structured_valid": 133,
+          "action_matches": 110
+        },
+        "percent": {
+          "tool_correct": 99.25,
+          "structured_valid": 100.0,
+          "action_matches": 82.71
+        },
+        "exact_arguments": {
+          "passed": 88,
+          "count": 111,
+          "percent": 79.28
+        }
+      },
+      "regression_sets_passed": 0,
+      "regression_sets_total": 3,
+      "critical_model_cases_passed": true,
+      "model_planning_acceptance_passed": false
+    },
+    "management_projet": {
+      "regression_metrics": {
+        "count": 200,
+        "counts": {
+          "tool_correct": 194,
+          "structured_valid": 200,
+          "action_matches": 192
+        },
+        "percent": {
+          "tool_correct": 97.0,
+          "structured_valid": 100.0,
+          "action_matches": 96.0
+        },
+        "exact_arguments": {
+          "passed": 141,
+          "count": 148,
+          "percent": 95.27
+        }
+      },
+      "additional_metrics": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 16
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 10,
+          "count": 10,
+          "percent": 100.0
+        }
+      },
+      "development_regression_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 77,
+          "structured_valid": 78,
+          "action_matches": 77
+        },
+        "percent": {
+          "tool_correct": 98.72,
+          "structured_valid": 100.0,
+          "action_matches": 98.72
+        },
+        "exact_arguments": {
+          "passed": 53,
+          "count": 54,
+          "percent": 98.15
+        }
+      },
+      "regression_sets_passed": 3,
+      "regression_sets_total": 7,
+      "critical_model_cases_passed": false,
+      "model_planning_acceptance_passed": false
+    },
+    "design_workflow": {
+      "regression_metrics": {
+        "count": 130,
+        "counts": {
+          "tool_correct": 130,
+          "structured_valid": 130,
+          "action_matches": 121
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 93.08
+        },
+        "exact_arguments": {
+          "passed": 91,
+          "count": 100,
+          "percent": 91.0
+        }
+      },
+      "additional_metrics": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 14
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 87.5
+        },
+        "exact_arguments": {
+          "passed": 10,
+          "count": 12,
+          "percent": 83.33
+        }
+      },
+      "development_regression_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 64
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 46,
+          "count": 46,
+          "percent": 100.0
+        }
+      },
+      "regression_sets_passed": 1,
+      "regression_sets_total": 5,
+      "critical_model_cases_passed": false,
+      "model_planning_acceptance_passed": false
+    }
+  },
+  "regression_cases": 438,
+  "additional_control_cases": 48,
+  "shared_development_regression_cases": 275,
+  "regression_rerun": true
+}

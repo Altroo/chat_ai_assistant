@@ -1,5 +1,25 @@
 # Chat AI Assistant progress
 
+## Completed Facturation-focused evaluation - 16 October 2026
+
+IMPLEMENTED and verified: the original evaluation completed all five 133-case development candidates, the selected checkpoint's 275 shared development cases, 438 frozen regressions and 48 additional controls. The original controller stopped cleanly at 23:12:37 UTC. Checkpoint 600 remains selected by the unchanged development policy; acceptance did not rerank candidates.
+
+| Application | Full regression actions | Exact regression arguments | Additional-control actions | Acceptance |
+| --- | ---: | ---: | ---: | --- |
+| facturation | 96/108 (88.89%) | 74/86 (86.05%) | 9/16 (56.25%) | Failed |
+| management_projet | 192/200 (96.00%) | 141/148 (95.27%) | 16/16 (100.00%) | Failed |
+| design_workflow | 121/130 (93.08%) | 91/100 (91.00%) | 14/16 (87.50%) | Failed |
+
+PARTIALLY IMPLEMENTED: the 95% accuracy target is not met. Facturation's development actions rose from 108/133 (81.20%) to 110/133 (82.71%), while its main regression actions fell from the previous 97/108 (89.81%) to 96/108 (88.89%). The changed model has not demonstrated an overall improvement and is not approved for activation. Management Projet's averages exceed 95%, but its critical/subset gates still fail. There are zero fully accepted applications in this six-app campaign.
+
+PLANNED: verify the actual selected model files, run the reviewed 92-update refinement pilot, export and replay through Colibri, and compare all 275 shared development cases against this same starting model. The 48 additional controls are small, repeatedly evaluated team-authored scenarios, not independent population certification. Existing acceptance cases and scoring remain unchanged. No production activation or later-application training occurred.
+
+[Verified complete evaluation](../training/reports/facturation-focus-v1-en-fr-evaluation.json).
+
+SUBSEQUENT OBSERVATION, 23:14 UTC: actual selected FP32 files, tokenizer/configuration, export metadata and serving artifacts were verified against the completed report. A metadata-only preview passed before the isolated 92-update server pilot started with 14 CPU threads and a 32 GiB memory ceiling. The pilot is running; no pilot accuracy improvement, longer-epoch admission or activation is claimed. Its adapter must not seed a subsequent full run.
+
+Earlier entries below retain their original observation state.
+
 ## Facturation V2 export/replay guards prepared - 16 October 2026
 
 IMPLEMENTED as preparation only: the V2 export/replay supervisor requires the completed focused predecessor report, matching terminal/application gates, exact pilot selection, selected serving proofs and a separate observation of actual selected FP32 files. The frozen report binds the serving export; it does not itself attest FP32 weight bytes. The future observation must bind those files, dtype/layout and export metadata to the same report before launch.

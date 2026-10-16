@@ -1,5 +1,25 @@
 # Verification and acceptance record
 
+## Completed focused evaluation verified from original evidence - 16 October 2026
+
+IMPLEMENTED and verified: the final reporter recomputed every development, regression and additional-control assessment from the original event shards, inputs and unchanged scorer. It checked exact case coverage/order, summary settings, model/runtime/tokenizer artifacts, matching before/after worker proofs and successful shutdown of all three workers for every phase. All five candidate comparisons, 275 shared development cases, 438 regressions and 48 additional controls are complete.
+
+| Application | Full regression actions | Exact regression arguments | Additional-control actions | Acceptance |
+| --- | ---: | ---: | ---: | --- |
+| facturation | 96/108 (88.89%) | 74/86 (86.05%) | 9/16 (56.25%) | Failed |
+| management_projet | 192/200 (96.00%) | 141/148 (95.27%) | 16/16 (100.00%) | Failed |
+| design_workflow | 121/130 (93.08%) | 91/100 (91.00%) | 14/16 (87.50%) | Failed |
+
+All application acceptance decisions remain false. Facturation passes this suite's critical-model-case gate but fails full-action and exact-argument targets; Management Projet and Design Workflow still have failing critical-model cases. These are planning tests, not proof of a backend authorization bypass or native security certification.
+
+Nine synthetic pilot-launch tests pass, including active-workload rejection, no dispatch/writes in preview, changed-source/model-evidence rejection, memory reserve, exact resource profile and a second-call rejection after failed dispatch. The single reviewer found no remaining issues. Seventeen current and 79 historical evaluation controls remain unchanged. These launcher tests are preparation checks, not model accuracy measurements.
+
+[Verified complete evaluation](../training/reports/facturation-focus-v1-en-fr-evaluation.json).
+
+SUBSEQUENT OBSERVATION, 23:14 UTC: actual selected FP32 files, tokenizer/configuration, export metadata and serving artifacts were verified against the completed report. A metadata-only preview passed before the isolated 92-update server pilot started with 14 CPU threads and a 32 GiB memory ceiling. The pilot is running; no pilot accuracy improvement, longer-epoch admission or activation is claimed. Its adapter must not seed a subsequent full run.
+
+Earlier entries below retain their original observation state.
+
 ## Facturation V2 export/replay supervisor - 16 October 2026
 
 All 27 synthetic tests pass, including rejection of incomplete candidate/regression reports, mismatched terminal/app gates, changed model selection, wrong curriculum/captures, altered serving evidence and incorrect FP32/report/export metadata bindings. Existing numerical-invocation, source-admission, resource-isolation, export-flow and process-cleanup tests remain in scope.

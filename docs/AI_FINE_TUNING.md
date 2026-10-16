@@ -1,5 +1,25 @@
 # Model training and evaluation
 
+## Completed focused functional comparison - 16 October 2026
+
+All 1,047 updates and the complete functional evaluation have finished. The unchanged development selector chose checkpoint 600. Its Facturation development action score is 110/133 (82.71%), with 88/111 eligible exact arguments (79.28%); correct tool selection is 132/133 (99.25%) and structured validity is 133/133 (100%). Tool selection and valid structure alone do not establish correct business arguments.
+
+| Application | Full regression actions | Exact regression arguments | Additional-control actions | Acceptance |
+| --- | ---: | ---: | ---: | --- |
+| facturation | 96/108 (88.89%) | 74/86 (86.05%) | 9/16 (56.25%) | Failed |
+| management_projet | 192/200 (96.00%) | 141/148 (95.27%) | 16/16 (100.00%) | Failed |
+| design_workflow | 121/130 (93.08%) | 91/100 (91.00%) | 14/16 (87.50%) | Failed |
+
+No application meets every acceptance gate. Facturation's main regression is one action below the previous 97/108 starting-model result, despite the two-action development gain. Management Projet still fails critical/subset checks. The shared three-app development scores are 110/133, 77/78 and 64/64 respectively. These are synthetic planner evaluations and do not certify executed business operations or native authorization.
+
+The next refinement curriculum and bounded pilot are prepared; this report does not claim that the pilot has run or improved accuracy. No candidate was activated and no later-app training started. The same shared Qwen3.5-0.8B and Colibri remain in use.
+
+[Verified complete evaluation](../training/reports/facturation-focus-v1-en-fr-evaluation.json).
+
+SUBSEQUENT OBSERVATION, 23:14 UTC: actual selected FP32 files, tokenizer/configuration, export metadata and serving artifacts were verified against the completed report. A metadata-only preview passed before the isolated 92-update server pilot started with 14 CPU threads and a 32 GiB memory ceiling. The pilot is running; no pilot accuracy improvement, longer-epoch admission or activation is claimed. Its adapter must not seed a subsequent full run.
+
+Earlier entries below retain their original observation state.
+
 ## Facturation V2 comparison supervisor prepared - 16 October 2026
 
 The V2 pilot export/replay supervisor and 27 passing synthetic guard tests are prepared. It requires the finished focused V1 evaluation and exact selected-model proofs. Because that frozen report records serving artifacts but not FP32 weight hashes, a separate operator-pinned observation of the actual selected FP32 export is mandatory. Input verification rehashes the model files and rejects a different selection.
