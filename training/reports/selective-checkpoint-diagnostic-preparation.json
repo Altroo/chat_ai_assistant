@@ -1,0 +1,50 @@
+{
+  "version": "selective-checkpoint-diagnostic-preparation-v1",
+  "status": "PREPARED AND SYNTHETICALLY TESTED; SERVER NUMERICAL PROOF PENDING",
+  "scope": "Future bounded Contracts mechanics/capacity diagnostic against an actually accepted R11 predecessor",
+  "tests": {
+    "total": 25,
+    "checkpoint_mask_contract": 8,
+    "probe_admission_and_resources": 9,
+    "comparison_evidence_and_invocations": 8,
+    "fixture_scope": "Synthetic objects and metadata only; no model weights or numerical training",
+    "review_findings_fixed": 3,
+    "final_review": "No issues"
+  },
+  "required_checks": [
+    "Terminal accepted R11 with all per-application regression and fresh gates",
+    "Actual selected FP32 base and exact retained curriculum",
+    "Repository and numerical framework source bindings",
+    "Reviewed interpreter and exact startup command",
+    "Dedicated 14-thread 32 GiB service with zero swap and 10% host memory reserve",
+    "Sequential full and alternate-mask jobs",
+    "All 24 layers participate in finite gradients and actual updates",
+    "Frozen base parameters unchanged",
+    "Independently pinned operator-binding and completion hashes",
+    "Stopped matching service invocations before comparison",
+    "Exact numerical equality of paired initial adapters, raw gradients and updated adapters",
+    "Existing 1.4 capacity margin"
+  ],
+  "server_probe_executed": false,
+  "paired_tensor_comparison_executed": false,
+  "capacity_fit_established": false,
+  "speedup_established": false,
+  "model_accuracy_measured": false,
+  "full_training_authorized": false,
+  "active_training_changed": false,
+  "production_activation": false,
+  "remaining": [
+    "Bind the actually accepted R11 model and forthcoming Contracts stage after all current work is terminal",
+    "Run each bounded diagnostic sequentially on the approved server",
+    "Compare actual tensor and cgroup evidence; do not infer full-run speed from two longest-row updates",
+    "If suitable, review trainer integration and run required rehearsal/export/Colibri checks before any full training change"
+  ],
+  "sources_sha256": {
+    "training/scripts/selective_checkpointing.py": "851f0a8ce831d66985c24f9a5db34746a2660507873c99b8052d0e732e38ac73",
+    "training/scripts/probe_cpu_selective.py": "e35d9e7b976c1e11691951dd6c8a6a50b051e82ed4fd0b67026c912f22e9d635",
+    "training/scripts/compare_selective_checkpointing.py": "066117bf055a23095b8fbbbfbb636234c447b8ca806b1044daee34b75c9615e4",
+    "training/tests/test_selective_checkpointing.py": "3e29a426fd06851f98fb82d34828b1a489d978a20c79a3b412b8130c58278ca4",
+    "training/tests/test_selective_probe.py": "bb4ae707b1118c727fe7837262eeb4d88427d603e1dd163d3233274c9093b3a1",
+    "training/tests/test_selective_comparison.py": "72e57f78a936d22f499cbc9b881f887626cfc78fc45cb5c5b0d1aec9aa486e6c"
+  }
+}
