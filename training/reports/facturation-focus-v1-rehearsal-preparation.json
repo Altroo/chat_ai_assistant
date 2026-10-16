@@ -1,0 +1,366 @@
+{
+  "version": "facturation-focus-v1-rehearsal-preparation",
+  "observed_utc": "2026-10-16T09:42:45Z",
+  "status": "PREPARATION ONLY; server numerical and export comparison pending",
+  "application": "facturation",
+  "manifest_sha256": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c",
+  "rehearsal_sha256": "574c5e8aeaca4d1bc560a77fe6bc1eebb568ea05644ba6fd52bdb191a55acbd6",
+  "tests_sha256": "7c759e6e88c1cd08fd4764a9ce869ad44798dc69807272b26818c4d39414389c",
+  "unit_tests_passed": 7,
+  "audit": {
+    "status": "STATIC CHECKS PASSED; NUMERICAL REHEARSAL PENDING",
+    "manifest_sha256": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c",
+    "input_sha256": {
+      "train": "9281a562865a6b7fb3003d0c4132b1a4ffa1b0691ae91426be0e5ab74ac60931",
+      "valid": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478"
+    },
+    "rows_checked": {
+      "train": 1047,
+      "valid": 133
+    },
+    "exact_input_label_conflicts": 0,
+    "exact_input_cross_split_overlap": 0,
+    "complete_epoch_schedule": [
+      {
+        "first_step": 1,
+        "last_step": 300,
+        "by_application": {
+          "facturation": 300
+        }
+      },
+      {
+        "first_step": 301,
+        "last_step": 600,
+        "by_application": {
+          "facturation": 300
+        }
+      },
+      {
+        "first_step": 601,
+        "last_step": 900,
+        "by_application": {
+          "facturation": 300
+        }
+      },
+      {
+        "first_step": 901,
+        "last_step": 1047,
+        "by_application": {
+          "facturation": 147
+        }
+      }
+    ],
+    "rehearsal": {
+      "row_indices": [
+        1032,
+        853,
+        1046,
+        207,
+        1029,
+        1037,
+        101,
+        1026,
+        1005,
+        128,
+        269,
+        450,
+        504,
+        598,
+        507,
+        409,
+        514,
+        1034,
+        488,
+        454,
+        330,
+        89,
+        196,
+        374,
+        930,
+        561,
+        1023,
+        970,
+        981,
+        251,
+        391,
+        978,
+        741,
+        1008,
+        1041
+      ],
+      "count": 35,
+      "by_application": {
+        "facturation": 35
+      },
+      "covered_features": [
+        [
+          "facturation",
+          "explicit_language",
+          "en"
+        ],
+        [
+          "facturation",
+          "explicit_language",
+          "fr"
+        ],
+        [
+          "facturation",
+          "operation",
+          "\"delete\""
+        ],
+        [
+          "facturation",
+          "operation",
+          "\"open\""
+        ],
+        [
+          "facturation",
+          "operation",
+          "\"show\""
+        ],
+        [
+          "facturation",
+          "operation",
+          "\"unpaid\""
+        ],
+        [
+          "facturation",
+          "operation",
+          "\"update\""
+        ],
+        [
+          "facturation",
+          "reason",
+          "\"ambiguous_metric\""
+        ],
+        [
+          "facturation",
+          "reason",
+          "\"missing_details\""
+        ],
+        [
+          "facturation",
+          "reason",
+          "\"unsupported\""
+        ],
+        [
+          "facturation",
+          "tool",
+          "clarify"
+        ],
+        [
+          "facturation",
+          "tool",
+          "financial_summary"
+        ],
+        [
+          "facturation",
+          "tool",
+          "get_invoice"
+        ],
+        [
+          "facturation",
+          "tool",
+          "get_record"
+        ],
+        [
+          "facturation",
+          "tool",
+          "invoice_pdf"
+        ],
+        [
+          "facturation",
+          "tool",
+          "knowledge"
+        ],
+        [
+          "facturation",
+          "tool",
+          "list_payments"
+        ],
+        [
+          "facturation",
+          "tool",
+          "navigate"
+        ],
+        [
+          "facturation",
+          "tool",
+          "prepare_change"
+        ],
+        [
+          "facturation",
+          "tool",
+          "previous_results"
+        ],
+        [
+          "facturation",
+          "tool",
+          "search_articles"
+        ],
+        [
+          "facturation",
+          "tool",
+          "search_clients"
+        ],
+        [
+          "facturation",
+          "tool",
+          "search_documents"
+        ],
+        [
+          "facturation",
+          "tool",
+          "search_invoices"
+        ],
+        [
+          "facturation",
+          "tool",
+          "search_operations"
+        ],
+        [
+          "facturation",
+          "tool",
+          "search_payments"
+        ],
+        [
+          "facturation",
+          "tool",
+          "search_quotes"
+        ],
+        [
+          "facturation",
+          "tool",
+          "search_users"
+        ]
+      ],
+      "selected_rows_sha256": "ca7c1e92f6ee72ee2f4a88b9ae5f02b79a507e8a1893028ec3929e99085cfe59",
+      "status": "PREPARATION ONLY; server numerical and export rehearsal not executed",
+      "limitations": [
+        "Covers tool, operation and clarification-reason groups, not every argument combination.",
+        "Language coverage is checked only where rows have explicit language metadata.",
+        "Selection uses training rows only and preserves genuine history.",
+        "This is a mechanics rehearsal proposal, not a validation set or accuracy forecast.",
+        "One deterministic input per declared application/category/language does not cover every example or prove learning."
+      ],
+      "base_selection_count": 23,
+      "curriculum_categories": [
+        "document_date_contrast",
+        "operation_filter_contrast",
+        "unselected_record",
+        "user_detail",
+        "user_list",
+        "verbatim_remark"
+      ],
+      "category_coverage": [
+        {
+          "application": "facturation",
+          "category": "document_date_contrast",
+          "language": "en",
+          "row_index": 978
+        },
+        {
+          "application": "facturation",
+          "category": "document_date_contrast",
+          "language": "fr",
+          "row_index": 981
+        },
+        {
+          "application": "facturation",
+          "category": "operation_filter_contrast",
+          "language": "en",
+          "row_index": 1008
+        },
+        {
+          "application": "facturation",
+          "category": "operation_filter_contrast",
+          "language": "fr",
+          "row_index": 1005
+        },
+        {
+          "application": "facturation",
+          "category": "unselected_record",
+          "language": "en",
+          "row_index": 1046
+        },
+        {
+          "application": "facturation",
+          "category": "unselected_record",
+          "language": "fr",
+          "row_index": 1041
+        },
+        {
+          "application": "facturation",
+          "category": "user_detail",
+          "language": "en",
+          "row_index": 1032
+        },
+        {
+          "application": "facturation",
+          "category": "user_detail",
+          "language": "fr",
+          "row_index": 1023
+        },
+        {
+          "application": "facturation",
+          "category": "user_list",
+          "language": "en",
+          "row_index": 1026
+        },
+        {
+          "application": "facturation",
+          "category": "user_list",
+          "language": "fr",
+          "row_index": 1029
+        },
+        {
+          "application": "facturation",
+          "category": "verbatim_remark",
+          "language": "en",
+          "row_index": 1034
+        },
+        {
+          "application": "facturation",
+          "category": "verbatim_remark",
+          "language": "fr",
+          "row_index": 1037
+        }
+      ],
+      "selection_contract": "tool-and-bilingual-category-v1"
+    },
+    "model_weights_loaded": false,
+    "training_executed": false,
+    "accuracy_estimated": false,
+    "limitations": [
+      "Exact input checks preserve all history and tool order; near-duplicate semantic independence is not established.",
+      "Schemas do not prove business-label correctness; native semantic checks and review remain required.",
+      "Tokenizer/loss-mask parity, numeric updates and export checks are separate required checks."
+    ]
+  },
+  "training_captures": 12,
+  "validation_captures": 2,
+  "numerical_and_capture_functions_unchanged_from": "training/scripts/rehearse_cpu_v3.py",
+  "review": {
+    "reviewers": 1,
+    "initial_findings": 2,
+    "findings_fixed": 2,
+    "remaining_findings": 0
+  },
+  "concurrency_guard_includes": [
+    "rehearse_cpu_v2.py",
+    "rehearse_cpu_v3.py",
+    "rehearse_facturation_v1.py",
+    "probe_cpu_selective.py"
+  ],
+  "numerical_rehearsal_executed": false,
+  "export_compared": false,
+  "full_training_started": false,
+  "model_accepted": false,
+  "production_changed": false,
+  "next_steps": [
+    "Finish the active R11 evaluation and bind its measured selected starting model.",
+    "Run the isolated server rehearsal with the reviewed 14-thread, 8192-token, checkpointing-on configuration.",
+    "Verify numerical updates, capacity, artifact identities and export/Colibri replay before full focused training.",
+    "Never use the disposable rehearsal adapter as the starting point for full training."
+  ]
+}

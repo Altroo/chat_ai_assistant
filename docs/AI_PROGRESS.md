@@ -12,6 +12,10 @@ PLANNED: bind the measured starting model after the current evaluation, run a bo
 
 [Preparation evidence](../training/reports/facturation-focus-v1-preparation.json), [dataset manifest](../training/datasets/facturation-focus-v1-en-fr/manifest.json).
 
+PARTIALLY IMPLEMENTED: a dedicated Facturation-only rehearsal admission path is prepared. It admits only the published focused manifest, rejects other stages and retained-data substitutions, and always covers all six new categories in both languages. The static audit proposes 35 updates, 12 training captures and two validation captures. Seven admission tests pass. The single reviewer found no remaining issues after fixing concurrent-job detection and default category recording. Numerical, capture, source-integrity and service-admission functions retain the existing implementation; the process denylist additionally recognizes the existing V3 rehearsal and selective capacity probe.
+
+No numerical rehearsal, export comparison or full focused run has executed. [Rehearsal preparation](../training/reports/facturation-focus-v1-rehearsal-preparation.json).
+
 ## R11 training completed; accuracy evaluation running - 16 October 2026
 
 IMPLEMENTED and verified: the server training service exited successfully after all 2,419 contiguous updates and final validation. The complete epoch covered 931 Facturation, 1,012 Management Projet and 476 Design Workflow examples. Reported training duration was 19 hours 16 minutes, with 7.734 GiB peak RSS. Dataset, trainer and exposure checks passed.
