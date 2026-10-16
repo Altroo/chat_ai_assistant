@@ -1,0 +1,60 @@
+{
+  "version": "facturation-focus-v1-launch",
+  "observed_utc": "2026-10-16T11:17:47.496839+00:00",
+  "status": "RUNNING",
+  "application": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "source_commit": "50e4e61f4e3fe41d5d4ebb22c35f367754b194b1",
+  "base_selected_step": 2400,
+  "original_selected_fp32_base": true,
+  "base_weights_sha256": "3a744645ae67b656c6009990965ba26a5de81ad23a00885ae85c123c3ae6cd91",
+  "training_rows": 1047,
+  "validation_rows": 133,
+  "updates_planned": 1047,
+  "updates_observed": 0,
+  "phase_observed": "baseline_validation",
+  "live_service_verified": true,
+  "settings": {
+    "threads": 14,
+    "memory_ceiling_gib": 32,
+    "swap_allowed": false,
+    "host_spare_memory_percent": 10,
+    "context_tokens": 8192,
+    "learning_rate": 1e-05,
+    "semantic_loss_weight": 4,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": "nonreentrant",
+    "attention": "sdpa",
+    "dtype": "bfloat16",
+    "complete_epochs": 1,
+    "checkpoint_interval": 300,
+    "validation_interval": 300,
+    "thinking": false
+  },
+  "evidence_sha256": {
+    "operator_binding": "d20b7663e25b19d54d7cc43a0f7d8c72061abc370bed6ac293b088e7c93bdc76",
+    "final_review": "e38c5e23333180852191733dfdcffdcda526c3a501e64a257c51cec0b21361fb",
+    "selection_policy": "9b5cd947c5c5aa73f67f35dd30f1a06bf3e346f670959777732e5e53e049c9ec",
+    "rehearsal_diagnostics": "a52952cc415e078f284f21fd29bb16c9e1eeb1cbbc5e9d0380119860064a9f2d",
+    "capacity_report": "ff327b812e65aff5993a6e76da9c2e07c1f5fcd5ae9cc6f630dd2e37a0223399",
+    "dataset_manifest": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c"
+  },
+  "training_complete": false,
+  "model_acceptance_established": false,
+  "production_activation": false,
+  "production_model_unchanged": true,
+  "next_application_training_started": false,
+  "limitations": [
+    "This is a verified launch observation, not completed training or an accuracy measurement.",
+    "Baseline validation precedes the first optimizer update. Loss values do not establish model acceptance.",
+    "The frozen development selection and unchanged regression/additional-control gates still apply.",
+    "Full training uses the original selected model and never the disposable rehearsal adapter."
+  ]
+}

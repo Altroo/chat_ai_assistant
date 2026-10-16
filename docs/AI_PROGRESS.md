@@ -1,5 +1,16 @@
 # Chat AI Assistant progress
 
+## Facturation full epoch running - 16 October 2026, 11:17 UTC
+
+PARTIALLY IMPLEMENTED: the reviewed Facturation-only full run is live on the server, starting from the original R11 step-2400 FP32 model. Its actual operator binding exactly matches the final reviewed preview. The published diagnostics, selection policy, source checkout and all three remote heads were verified before launch.
+
+The run plans one epoch of 1,047 updates using 14 CPU threads, checkpointing and a 32 GiB service ceiling with no swap. The first live observation was baseline validation with 0/1,047 updates, about 12.7 busy CPU cores and 2.323 GiB process RSS. Baseline validation occurs before optimization; these numbers are not completed training or accuracy results.
+
+Model acceptance remains incomplete. The latest completed larger-suite scores remain the failed R11 results below. No production model activation or later-application training occurred. [Verified launch](../training/reports/facturation-focus-v1-launch.json).
+
+Earlier entries below retain their original observation state.
+
+
 ## Facturation rehearsal and Colibri export verified - 16 October 2026
 
 IMPLEMENTED and verified: the isolated server rehearsal completed 35 finite updates across all 24 intended layers, with 14 captures before and after. Frozen base parameters remained unchanged, and the saved disposable adapter exactly matched the live model used for captures. Elapsed time from optimizer-loop start through final captures/integrity checks was 1,320.02 seconds; initial baseline captures are excluded.
