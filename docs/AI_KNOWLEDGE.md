@@ -28,3 +28,12 @@ Retrieval also supports a native stock-only superuser context: only documents ma
 ## Verified bilingual workflow delivery
 
 Actual small-model generation tests invented form steps and tax terminology even with relevant sources. Approved procedures now provide reviewed French and English text. High-confidence general workflow questions dispatch directly to the registered knowledge tool; other questions use model tool selection. Permission-filtered retrieval selects the highest-ranked procedure. The orchestrator delivers its current-language text verbatim through authenticated events, preserving native captions and calculation definitions. It checks source authorization before each line and final delivery and honors cancellation. This is retrieval with an approved answer, not a claim of reliable free-form model generation. Older documents without reviewed translations retain the bounded, label-filtered model-generation path. Source versions bind saved answers, so updated/revoked documentation cannot remain accessible through history.
+
+
+## Facturation logistics source synchronization - 16 October 2026
+
+The native adapter's reviewed `chat_ai/knowledge/logistics-find.json` is the authoritative logistics source. The central `knowledge/facturation/logistics-find.json` copy now matches it byte for byte so source packages retain the current supplier-purchase workflow.
+
+The guidance distinguishes registered suppliers from brands, the optional customer-order date from customer/proforma links, dossier completion from shipment dates, and supplier-proforma values from import-title checks. Existing historical links remain supported. Explanations use visible form captions in English/French guidance. Logistics tools remain limited to authorized search, viewing and navigation; this synchronization adds no payment or workflow action.
+
+Facturation's production knowledge was already synchronized and verified by the native release. Updating this central source copy does not resynchronize a database, change the active model, alter training inputs or establish model accuracy.
