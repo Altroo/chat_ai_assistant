@@ -1,5 +1,21 @@
 # Chat AI Assistant progress
 
+
+## R11 checkpoint comparison complete - 16 October 2026
+
+IMPLEMENTED and verified: all five saved checkpoints completed the same 275 development cases. Artifact identities, original result shards and stopped temporary workers were verified. The frozen application-macro selection rule chose step 2400, independently recomputed from every candidate. The final step 2419 was not the most accurate candidate.
+
+| Application | Fully correct development actions | Exact arguments | Tool selection | Structured output |
+|---|---:|---:|---:|---:|
+| facturation | 108/133 (81.20%) | 87/111 (78.38%) | 130/133 (97.74%) | 132/133 (99.25%) |
+| management_projet | 77/78 (98.72%) | 53/54 (98.15%) | 77/78 (98.72%) | 78/78 (100%) |
+| design_workflow | 64/64 (100%) | 46/46 (100%) | 64/64 (100%) | 64/64 (100%) |
+
+PARTIALLY IMPLEMENTED: the selected candidate is running the separate 438-case regression evaluation, followed by 48 additional controls. These development scores do not establish acceptance or live application accuracy. Facturation remains below its development targets and is the next focused refinement priority. No focused optimizer run has started. Other applications remain queued.
+
+[Verified checkpoint comparison](../training/reports/shared-v5r11-functional-validation.json). The 275 rows include neutral-history variants of 222 underlying scenarios. The matching R8 baseline was reused only for the identical frozen inputs, provider, model and inference settings. No model activation occurred.
+
+
 ## Facturation-only focus prepared - 16 October 2026
 
 IMPLEMENTED as preparation only: the next refinement focuses on Facturation, following the request to work on one application at a time. The model remains shared. The current R11 evaluation finishes first; no additional numerical workload has started.

@@ -2,7 +2,7 @@
 
 ## Current status: R11 evaluation running - 16 October 2026
 
-The latest shared training round for Facturation, Management Projet and Design Workflow completed all 2,419 updates and final validation. Its five saved checkpoints are now being compared through Colibri. No R11 acceptance percentage is available yet. The lowest-loss checkpoint is not automatically the most accurate checkpoint. [Verified training completion](../training/reports/shared-v5r11-training-completion.json).
+The latest shared training round for Facturation, Management Projet and Design Workflow completed all 2,419 updates and final validation. All five saved checkpoints completed the same 275 development cases through Colibri. The independently verified selection rule chose step 2400, which is now undergoing 438 regression cases followed by 48 additional controls. No R11 acceptance percentage is available yet. The selected checkpoint differs from the lowest-loss checkpoint. [Verified training completion](../training/reports/shared-v5r11-training-completion.json), [complete development comparison](../training/reports/shared-v5r11-functional-validation.json).
 
 The latest completed acceptance measurements are from R8, reported below. These are model-planning checks; they do not execute business tools or certify backend authorization.
 
