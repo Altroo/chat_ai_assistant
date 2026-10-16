@@ -1,5 +1,16 @@
 # Chat AI Assistant progress
 
+## Facturation logistics knowledge synchronized - 16 October 2026
+
+IMPLEMENTED and verified: English/French logistics knowledge now reflects supplier-purchase dossiers, retained historical client/proforma links, the registered supplier selector and separate brand selection. Guidance uses current form captions and distinguishes the date fields. Purchase conditions, advance proof, matching import-title amount/currency, payment triggers, receipts and closing requirements come from the existing business guards. Operational AI write permissions remain unchanged.
+
+All 442 selected regressions passed in 49.45 seconds, including native AI permissions, supplier-only dossiers, supplier-directory access and bilingual knowledge retrieval. All 1,180 frozen training/validation targets remain valid against current capability-scoped tool contracts, including 54 logistics targets. Only the 358 rows with explicit profile metadata were checked against a profile; no role was inferred for the 822 legacy rows. Runtime authorization is covered separately by backend tests.
+
+The reviewed source reached company, personal and production remotes. Production source hashes and the stored English/French knowledge version match. The web service is healthy, workers are running, and the production model and active training process are unchanged. The primary checkout already contains the released commit through concurrent work; the other agent's changes were preserved.
+
+PARTIALLY IMPLEMENTED: focused model training and accuracy acceptance remain incomplete. These checks are not a model score, full backend suite or production E2E security certification. The current logistics adapter searches, reads and opens dossiers and receipts; no supplier-directory CRUD or payment action was added. [Verified compatibility and release report](../training/reports/facturation-logistics-knowledge-v1.json).
+
+
 ## Facturation focused native regressions - 16 October 2026
 
 IMPLEMENTED and verified: 310 existing authorization, operation, history, confirmation and document-action regressions passed in 45.73 seconds. They used controlled fixtures in a unique local PostgreSQL test database, which was removed after the run. The application and shared-source snapshots were unchanged throughout testing; no production data or server numerical workload was involved.

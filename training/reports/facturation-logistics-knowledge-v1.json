@@ -1,0 +1,104 @@
+{
+  "version": "facturation-logistics-knowledge-v1",
+  "observed_utc": "2026-10-16T15:20:57.517714+00:00",
+  "status": "NATIVE COMPATIBILITY AND KNOWLEDGE RELEASE VERIFIED",
+  "application": "facturation",
+  "languages": [
+    "fr",
+    "en"
+  ],
+  "backend_base_commit": "b05c7cf85cee194bcc0f8eb0825bb2e381fe6625",
+  "knowledge_commit": "d2a7a631a617ceb695f71177044c444e40cf00e6",
+  "prior_knowledge_commit": "6cd7f5d2a0c21757f61214c77b85115deabc6d3c",
+  "changes": [
+    "Distinguish supplier-purchase dossiers from historical client/proforma-linked dossiers.",
+    "Use verified form captions for distinct order, completion, shipment, arrival and bank-document dates.",
+    "Explain purchase conditions, the strict advance threshold, import-title equality, advance proof, payment triggers, receipts and closing guards.",
+    "Explain the registered supplier selector and independent brand selection."
+  ],
+  "files_changed": [
+    "chat_ai/knowledge/logistics-find.json",
+    "chat_ai/test_logistics_knowledge.py"
+  ],
+  "source_sha256": {
+    "chat_ai/knowledge/logistics-find.json": "0ca9fd29c8dd0eacbc55bcf85e3227a52b12cbc702e5e2dfd3f96e039cbf0176",
+    "chat_ai/test_logistics_knowledge.py": "e947fc2d35b1dfd6d5a43260a755889f89f9ce2a1325d57c8f33a48874ca5b28"
+  },
+  "required_capabilities": [
+    "read"
+  ],
+  "operational_logistics_write_tools_added": false,
+  "tests_passed": 442,
+  "test_suites": [
+    "chat_ai/tests.py",
+    "chat_ai/test_operations.py",
+    "chat_ai/test_review_regressions.py",
+    "chat_ai/test_confirmation_history.py",
+    "chat_ai/test_document_actions.py",
+    "chat_ai/test_purchase_operations.py",
+    "chat_ai/test_knowledge_retrieval.py",
+    "chat_ai/test_localized_knowledge.py",
+    "chat_ai/test_logistics_knowledge.py",
+    "logistique/test_suppliers.py"
+  ],
+  "pytest_seconds": 49.45,
+  "harness_seconds": 51.49,
+  "pytest_warnings": 51,
+  "source_files_in_snapshot": 759,
+  "source_snapshot_unchanged": true,
+  "fixture_data": "synthetic",
+  "database": "isolated local PostgreSQL test database",
+  "test_database_cleanup_verified": true,
+  "native_contract": {
+    "training_targets": 1047,
+    "validation_targets": 133,
+    "total_targets": 1180,
+    "logistics_targets": 54,
+    "current_capability_scoped_schemas_match": true,
+    "explicit_profile_shortlist_checks": 358,
+    "legacy_rows_without_profile_metadata": 822,
+    "roles_inferred_for_legacy_rows": false,
+    "database_access_forbidden": true,
+    "frozen_dataset_sha256": {
+      "manifest.json": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c",
+      "train.jsonl": "9281a562865a6b7fb3003d0c4132b1a4ffa1b0691ae91426be0e5ab74ac60931",
+      "valid.jsonl": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478"
+    }
+  },
+  "deployment": {
+    "company_personal_production_verified": true,
+    "deployed_source_and_localized_knowledge_hashes_verified": true,
+    "document_version": "0ca9fd29c8dd0eacbc55bcf85e3227a52b12cbc702e5e2dfd3f96e039cbf0176",
+    "web_healthy": true,
+    "workers_running": true,
+    "production_model_healthy_and_unchanged": true,
+    "training_process_unchanged": true,
+    "deployment_hook_unchanged": true,
+    "production_business_records_queried": false,
+    "approved_knowledge_metadata_read": true
+  },
+  "server_training_modified": false,
+  "real_model_inference": false,
+  "model_accuracy_measured": false,
+  "full_backend_suite": false,
+  "production_security_certified": false,
+  "reviewers": 1,
+  "review_status": "No issues",
+  "evidence_sha256": {
+    "test_log": "bc99ed9d6df1dc26f00db00395acc34a0d5f4ca04d7f9e6789ffecdc5b1d7de3",
+    "source_before": "1cceaf22e3cff6a78246624b329f18aa280e10784f557e4b668cd2486d2759c9",
+    "source_after": "1cceaf22e3cff6a78246624b329f18aa280e10784f557e4b668cd2486d2759c9",
+    "result": "64f6fb24fca84ac7bdb9690951d6b5389f2550e24627817a843625603029ea9e",
+    "native_contract": "1ea99cc89d44f136b633f946d0fd3c1d8561fe46800d5eda76372a55b58eff38",
+    "native_audit": "04b50c6005ee211916e223c46485a544ba083ba126d4beeaa167dcf693d92d69",
+    "test_harness": "75afb12a12708afd3d64af56b841fbdb563ddb6dcb0c4e622d8698295f9be090",
+    "release_verification": "b162c2355d1dcf29e75c49f4de4cf96899ba1dd6c29b8d2c1e0953f193ff8505",
+    "reviewed_controls": "5dd0afbe362a92ab80d08c87cbce05edba0217feed48e396241fc2d0cb5e4407"
+  },
+  "limitations": [
+    "These are selected native regressions and schema/argument compatibility checks, not model accuracy, full backend coverage or real-model production E2E certification.",
+    "Earlier isolated settings and schema-comparison harness failures are preserved privately; the final run used explicit local test settings.",
+    "The active focused training, checkpoint selection inputs and all frozen accuracy evaluations remain unchanged.",
+    "The assistant's existing logistics adapter searches, reads and opens dossiers and receipts; this release adds no supplier-directory CRUD tool or operational payment action."
+  ]
+}
