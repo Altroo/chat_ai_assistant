@@ -1,0 +1,42 @@
+{
+  "version": "facturation-focus-v1-native-regressions",
+  "observed_utc": "2026-10-16T12:11:09.445600+00:00",
+  "status": "SELECTED NATIVE REGRESSIONS PASSED",
+  "application": "facturation",
+  "tests_passed": 310,
+  "test_suites": [
+    "chat_ai/tests.py",
+    "chat_ai/test_operations.py",
+    "chat_ai/test_review_regressions.py",
+    "chat_ai/test_confirmation_history.py",
+    "chat_ai/test_document_actions.py"
+  ],
+  "pytest_seconds": 45.73,
+  "harness_seconds": 47.77,
+  "fixture_data": "synthetic",
+  "database": "isolated local PostgreSQL test database",
+  "test_database_cleanup_verified": true,
+  "application_source_changed_by_this_check": false,
+  "source_snapshot_unchanged": true,
+  "shared_dependency": "current shared assistant source checkout",
+  "backend_checkout_has_concurrent_uncommitted_changes": true,
+  "server_training_modified": false,
+  "production_data_access": false,
+  "real_model_inference": false,
+  "model_accuracy_measured": false,
+  "full_backend_suite": false,
+  "production_security_certified": false,
+  "evidence_sha256": {
+    "test_log": "6c5b2251b09d86c5d170b16d8392f043791e3ff6d1d1c6ce54efc1bd57d9fa67",
+    "source_before": "483f1853e6f7f60b7b570eb3296f623273f5192426e9b90369aebe5ec92589e7",
+    "source_after": "483f1853e6f7f60b7b570eb3296f623273f5192426e9b90369aebe5ec92589e7",
+    "result": "f0d4ce742c4f57f964f128a42d8b7ba92e823c7581ad3b8d2e699ef8f91df5b5",
+    "harness": "fa021dacec367c5286a03dfbe1ed4176188b6881ec37a7d5515cd2c609a7e666"
+  },
+  "limitations": [
+    "This checks five existing native regression suites against a stable local source snapshot, including concurrent purchase/logistics edits owned by another agent.",
+    "The local installed assistant dependency was stale; tests explicitly used the current shared source without changing the dependency installation.",
+    "Two earlier harness attempts failed before executing tests: settings initialization, then missing installed shared module. Their evidence is retained.",
+    "These are controlled backend regressions, not a real-model end-to-end evaluation, full backend run or production security audit."
+  ]
+}

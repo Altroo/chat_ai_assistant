@@ -1,5 +1,14 @@
 # Chat AI Assistant progress
 
+## Facturation focused native regressions - 16 October 2026
+
+IMPLEMENTED and verified: 310 existing authorization, operation, history, confirmation and document-action regressions passed in 45.73 seconds. They used controlled fixtures in a unique local PostgreSQL test database, which was removed after the run. The application and shared-source snapshots were unchanged throughout testing; no production data or server numerical workload was involved.
+
+The working tree includes concurrent purchase/logistics work owned by another agent. It was tested without editing it. The current shared source was selected explicitly because the installed local package was stale. Two earlier harness failures occurred before test execution and remain preserved in private evidence.
+
+This is a selected native regression run, not a full backend suite, model-accuracy measurement, real-model E2E test or production security certification. Facturation model training continues separately. [Verified native regression report](../training/reports/facturation-focus-v1-native-regressions.json).
+
+
 ## Facturation full epoch running - 16 October 2026, 11:17 UTC
 
 PARTIALLY IMPLEMENTED: the reviewed Facturation-only full run is live on the server, starting from the original R11 step-2400 FP32 model. Its actual operator binding exactly matches the final reviewed preview. The published diagnostics, selection policy, source checkout and all three remote heads were verified before launch.

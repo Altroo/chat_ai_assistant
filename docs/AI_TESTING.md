@@ -1,5 +1,14 @@
 # Verification and acceptance record
 
+## Facturation focused native regressions - 16 October 2026
+
+IMPLEMENTED and verified: 310 existing authorization, operation, history, confirmation and document-action regressions passed in 45.73 seconds. They used controlled fixtures in a unique local PostgreSQL test database, which was removed after the run. The application and shared-source snapshots were unchanged throughout testing; no production data or server numerical workload was involved.
+
+The working tree includes concurrent purchase/logistics work owned by another agent. It was tested without editing it. The current shared source was selected explicitly because the installed local package was stale. Two earlier harness failures occurred before test execution and remain preserved in private evidence.
+
+This is a selected native regression run, not a full backend suite, model-accuracy measurement, real-model E2E test or production security certification. Facturation model training continues separately. [Verified native regression report](../training/reports/facturation-focus-v1-native-regressions.json).
+
+
 All application tests use controlled fixtures in the isolated local PostgreSQL database. No destructive test ran against production business data. Model selection metrics are separate from backend authorization tests.
 
 ## Backend
