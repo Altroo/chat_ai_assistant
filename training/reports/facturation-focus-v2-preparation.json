@@ -1,0 +1,203 @@
+{
+  "version": "facturation-focus-v2-preparation",
+  "observed_utc": "2026-10-16T22:10:45.810293+00:00",
+  "status": "IMPLEMENTED: synthetic dataset preparation and native metadata checks; PLANNED: token/serving preflight, pilot admission and numerical training",
+  "application": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "shared_model_family": "Qwen3.5-0.8B",
+  "intended_runtime": "Colibri",
+  "training_rows": 1487,
+  "validation_rows": 133,
+  "added_rows": 440,
+  "added_language_counts": {
+    "en": 220,
+    "fr": 220
+  },
+  "retained_training_rows_byte_identical": 1047,
+  "retained_validation_rows_byte_identical": 133,
+  "added_categories": {
+    "date_optional_document": 160,
+    "date_optional_operation": 160,
+    "mixed_document_filters": 20,
+    "unpaid_optional_filters": 32,
+    "exclusive_boundary": 16,
+    "literal_field_copy": 12,
+    "account_navigation": 8,
+    "explicit_result_choice": 8,
+    "payment_reference_limit": 8,
+    "payment_party_filters": 16
+  },
+  "dataset_manifest_sha256": "b5e9850bd8bcd7a2090f618b60e9d5bdc0a4f1e015a5f744fafdb64305c1cc8b",
+  "dataset_files_sha256": {
+    "train.jsonl": "023f8efe51bf9dc0dd3d2a0a4356907182462fca8f1f08ef31769b318993ade9",
+    "valid.jsonl": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478"
+  },
+  "source_manifest_sha256": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c",
+  "source_sha256": {
+    "training/scripts/prepare_facturation_focus_v2.py": "4ba70ed1d5f66dcd7d841c252ad035d1a398ee2d740207f89451de1e96c137e9",
+    "training/tests/test_facturation_focus_v2.py": "da4ae339f5c5e004b92c31db32dec4aee76034660b1b7e532eca76bf318bc45c"
+  },
+  "native_source_updates": {
+    "chat_ai/operations.py": {
+      "previous_sha256": "8107fc9dadc8c0d6051068f9ab6fe606214a96963656eb51e08b6c0041cff862",
+      "current_sha256": "06d87733927bf6eace463b8fbb2e235cca4acc45653909d8b64ab712203e74d0",
+      "source_commit": "e00a9012351f9d9287223e994cd455da36fe67e5",
+      "reason": "Reviewed supplier-workflow read scoping; tool schemas and permissions unchanged."
+    }
+  },
+  "verification": {
+    "unit_tests_passed": 13,
+    "unit_tests_failed": 0,
+    "native_added_labels_checked": 440,
+    "database_connections_prohibited_during_metadata_check": true,
+    "single_reviewer_status": "No issues",
+    "reviewers": 1,
+    "original_current_evaluation_controls_unchanged": 17,
+    "historical_pipeline_controls_unchanged": 79
+  },
+  "previous_curriculum_development_comparison": {
+    "curriculum": "facturation-focus-v1-en-fr",
+    "rows": 133,
+    "scenario_groups": 104,
+    "selected_step": 600,
+    "candidates": [
+      {
+        "step": 0,
+        "metrics": {
+          "count": 133,
+          "counts": {
+            "tool_correct": 130,
+            "structured_valid": 132,
+            "action_matches": 108
+          },
+          "percent": {
+            "tool_correct": 97.74,
+            "structured_valid": 99.25,
+            "action_matches": 81.2
+          },
+          "exact_arguments": {
+            "passed": 87,
+            "count": 111,
+            "percent": 78.38
+          }
+        },
+        "development_targets_passed": false
+      },
+      {
+        "step": 300,
+        "metrics": {
+          "count": 133,
+          "counts": {
+            "tool_correct": 130,
+            "structured_valid": 132,
+            "action_matches": 108
+          },
+          "percent": {
+            "tool_correct": 97.74,
+            "structured_valid": 99.25,
+            "action_matches": 81.2
+          },
+          "exact_arguments": {
+            "passed": 87,
+            "count": 111,
+            "percent": 78.38
+          }
+        },
+        "development_targets_passed": false
+      },
+      {
+        "step": 600,
+        "metrics": {
+          "count": 133,
+          "counts": {
+            "tool_correct": 132,
+            "structured_valid": 133,
+            "action_matches": 110
+          },
+          "percent": {
+            "tool_correct": 99.25,
+            "structured_valid": 100.0,
+            "action_matches": 82.71
+          },
+          "exact_arguments": {
+            "passed": 88,
+            "count": 111,
+            "percent": 79.28
+          }
+        },
+        "development_targets_passed": false
+      },
+      {
+        "step": 900,
+        "metrics": {
+          "count": 133,
+          "counts": {
+            "tool_correct": 130,
+            "structured_valid": 132,
+            "action_matches": 109
+          },
+          "percent": {
+            "tool_correct": 97.74,
+            "structured_valid": 99.25,
+            "action_matches": 81.95
+          },
+          "exact_arguments": {
+            "passed": 88,
+            "count": 111,
+            "percent": 79.28
+          }
+        },
+        "development_targets_passed": false
+      },
+      {
+        "step": 1047,
+        "metrics": {
+          "count": 133,
+          "counts": {
+            "tool_correct": 131,
+            "structured_valid": 132,
+            "action_matches": 108
+          },
+          "percent": {
+            "tool_correct": 98.5,
+            "structured_valid": 99.25,
+            "action_matches": 81.2
+          },
+          "exact_arguments": {
+            "passed": 86,
+            "count": 111,
+            "percent": 77.48
+          }
+        },
+        "development_targets_passed": false
+      }
+    ],
+    "acceptance_complete_at_comparison_observation": false,
+    "source_observation_sha256": "2228dc649761977de132d097437ad6228a264524db666068800910c66ed68957"
+  },
+  "new_curriculum_training_executed": false,
+  "new_curriculum_model_accuracy_available": false,
+  "full_tokenizer_template_parser_preflight_complete": false,
+  "pilot_admission_implemented": false,
+  "numerical_pilot_executed": false,
+  "longer_run_admitted": false,
+  "production_model_activation": false,
+  "later_application_training_started": false,
+  "limitations": [
+    "Development error families informed coverage; no evaluation request or target was copied into training.",
+    "The four optional states isolate omission and individual filters; mixed-argument examples are separate, not a full power set.",
+    "Request literals/history/context are controlled within a family; the actual native shortlist is recomputed and can differ when optional filters are mentioned. Complete model inputs are not identical.",
+    "Date modes are balanced across literals at matrix level; correlated bilingual and controlled variants are not independent observations.",
+    "Native metadata validation does not execute business operations or establish authorization or model accuracy.",
+    "The existing pilot admission does not admit this new manifest; new reviewed admission and resource checks are still required.",
+    "Preparation tests do not predict a 95 percent model score or certify native runtime authorization.",
+    "The existing curriculum's checkpoint/regression evaluation continues unchanged; these additions are not its inputs.",
+    "Any future pilot requires actual selected-base binding, resource checks and unchanged development/regression comparisons. No automatic longer epoch."
+  ],
+  "evidence_sha256": {
+    "focus-v2-dataset-reviewed-controls.json": "80b3f5d58aa48348342dc1bf7d31abf91408929ccf664665c40586d5b1c373d0"
+  }
+}

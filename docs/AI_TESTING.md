@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Facturation V2 preparation verified - 16 October 2026
+
+All 13 focused tests pass, covering exact Cartesian cells, fixed request/context components, independent date labels, leap/year boundaries, optional unpaid/limit combinations, full unquoted remarks, trusted navigation/selection, source-hash rejection and held-out request exclusions. Native metadata validation accepts all 440 additions with database connections prohibited. The single reviewer checked all 320 matrix cells and 120 other bilingual rows; no incorrect targets remain.
+
+The 1,047 parent training rows and all 133 validation rows remain byte-identical. The parent generator is checked against its manifest before invoking helpers. The reviewed supplier-workflow source update is an explicit exact-hash transition; other unexpected native changes still fail. Complete model inputs vary with the application's normal tool shortlist and are not claimed constant across optional-filter variants.
+
+These are dataset and source checks, not new model accuracy, executed business operations or production security certification. Full token/template/parser preflight, new pilot admission and numerical execution remain pending. The active previous-curriculum evaluation and its scoring are unchanged. [Preparation results](../training/reports/facturation-focus-v2-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation completed epoch verified; functional evaluation pending - 16 October 2026
 
 IMPLEMENTED and verified: the completed report is bound to the original successful training invocation, all 1,047 contiguous updates, the original selected FP32 base, frozen datasets and reviewed configuration. Final validation completed. Recorded duration was 34,166.99 seconds, excluding initial loading/encoding; peak process RSS was 7.714 GiB.

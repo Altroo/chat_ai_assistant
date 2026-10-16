@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Facturation extraction contrasts prepared; current regressions running - 16 October 2026
+
+IMPLEMENTED as preparation only: the next Facturation curriculum contains 1,487 training rows and the same 133 validation rows. All 1,047 parent training rows and every validation byte are retained. The 440 new synthetic rows comprise 220 English and 220 French examples, including 320 date/optional-filter matrix rows and 120 mixed-filter, unpaid-balance, calendar-boundary, literal-copy, navigation, selection and payment contrasts.
+
+Thirteen tests pass. Native metadata checks validate all 440 new labels with database connections prohibited. The single reviewer found no incorrect targets; the parent-generator hash guard and 42 French agreement errors were fixed and re-reviewed. The supplier-workflow read-scoping change is bound by an exact old/new source transition. Native tool shortlists are recomputed normally and can differ across variants, so complete model inputs are not claimed identical.
+
+The existing focused run completed its five-checkpoint development comparison. Checkpoint 600 was selected with 110/133 full actions (82.71%) and 88/111 eligible exact arguments (79.28%). Its 275-case shared development regression is running before 438 regressions and 48 additional controls. These are development measurements, not 95% acceptance. No production model activation or later-application training occurred.
+
+PLANNED: complete token/template/parser preflight, bind the actual measured starting model, implement explicitly balanced pilot admission, and run a bounded server pilot followed by same-base development/regression comparison. The new curriculum has not been trained, and no longer epoch is admitted. Current and historical evaluation controls remain unchanged. [Preparation evidence](../training/reports/facturation-focus-v2-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation epoch complete; Colibri comparison running - 16 October 2026
 
 IMPLEMENTED and verified: one server-only Facturation epoch completed all 1,047 updates and final validation, retaining the original R11 step-2400 FP32 starting model. The recorded training timer covers 34,166.99 seconds (about 9 hours 29 minutes), excluding initial model loading and dataset encoding. Peak process RSS was 7.714 GiB. Training used the same shared Qwen3.5-0.8B, 14 CPU threads and the reviewed checkpointing configuration.

@@ -1,6 +1,16 @@
 # Model training and evaluation
 
-## Current status: Facturation epoch complete; accuracy evaluation running - 16 October 2026
+## Current status: focused comparison complete; V2 data prepared - 16 October 2026
+
+The same shared Qwen3.5-0.8B completed the Facturation V1 checkpoint comparison through Colibri. On 133 unchanged development rows representing 104 scenarios, the full-action scores were: baseline 108/133, checkpoint 300 108/133, checkpoint 600 110/133, checkpoint 900 109/133 and checkpoint 1,047 108/133. The frozen rule selected 600, scoring 82.71% full actions and 79.28% eligible exact arguments. No candidate meets all development targets. Required shared development/regression/additional checks are running; selection is not acceptance.
+
+A versioned Facturation V2 curriculum is prepared with 1,487 training rows and 133 unchanged validation rows. It retains all 1,047 parent rows and appends 440 English/French synthetic examples. Separate optional-filter states, mixed arguments, unpaid balances, inclusive/exclusive calendar edges, multiword text, account-list navigation, explicit result choice and payment filters address reviewed coverage gaps without copying evaluation requests.
+
+All 13 preparation tests and 440 native metadata labels pass; one reviewer checked the actual additions. These checks do not predict accuracy. No V2 numerical training has run. Full token/template/parser preflight, actual-base binding, pilot admission and bounded server execution are still planned. Existing rehearsal admission deliberately rejects this new manifest. A longer run requires review of measured extraction gains and regressions. Production inference and later-application training remain unchanged. [V2 preparation](../training/reports/facturation-focus-v2-preparation.json), [dataset manifest](../training/datasets/facturation-focus-v2-en-fr/manifest.json).
+
+Earlier entries below retain their original observation state.
+
+## Earlier status: Facturation epoch complete; accuracy evaluation running - 16 October 2026
 
 IMPLEMENTED and verified: the Facturation-only epoch completed all 1,047 updates, one pass over 1,047 unique training examples and final validation on 133 unchanged development rows. It used the original R11 selected step-2400 FP32 model, never the disposable rehearsal adapter. The shared model remains Qwen3.5-0.8B and evaluation uses Colibri.
 
