@@ -1,5 +1,8 @@
 # Shared model accuracy work
 
+Facturation's bounded rehearsal and export check are complete: 35 finite updates, 24 updated layers, all 14 Colibri samples schema-valid and zero framework-correct to Colibri-incorrect changes. Twelve samples are training rows and two are development rows; these checks do not establish model accuracy or acceptance. Full training remains pending. [Verified diagnostics](../training/reports/facturation-focus-v1-rehearsal-diagnostics.json), [frozen selection policy](../training/reports/facturation-focus-v1-checkpoint-selection-policy.json).
+
+
 ## Current status: R11 evaluated, Facturation refinement next - 16 October 2026
 
 IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint development comparisons, 438 regressions and 48 additional English/French controls completed. The frozen development rule selected step 2400. Independent verification binds every scored event to its original worker log and selected artifact proofs. The selected FP32 base still has the same 473 F32 tensors. All temporary workers stopped and production inference remains unchanged.
@@ -12,7 +15,7 @@ IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint 
 
 Acceptance FAILED. No application passes all required model gates. Management Projet's larger-suite averages exceed 95%, but its critical/subset checks and additional controls still fail. Only 3/15 regression sets pass all gates. These are planner measurements, not authorization or production-readiness certification. The 16 additional cases per application are small team-authored bilingual controls and are reported separately; they are not a population-accuracy estimate.
 
-The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. A reviewed 35-update server rehearsal precedes full training. No focused numerical run has started yet. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
+The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. The 35-update focused server rehearsal and bounded Colibri export comparison are verified. The full 1,047-update epoch has not started; its final operator binding is next. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
 
 [Completed R11 evaluation](../training/reports/shared-v5r11-en-fr-evaluation.json), [development comparison](../training/reports/shared-v5r11-functional-validation.json), [focused preparation](../training/reports/facturation-focus-v1-preparation.json).
 

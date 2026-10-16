@@ -1,5 +1,20 @@
 # Chat AI Assistant progress
 
+## Facturation rehearsal and Colibri export verified - 16 October 2026
+
+IMPLEMENTED and verified: the isolated server rehearsal completed 35 finite updates across all 24 intended layers, with 14 captures before and after. Frozen base parameters remained unchanged, and the saved disposable adapter exactly matched the live model used for captures. Elapsed time from optimizer-loop start through final captures/integrity checks was 1,320.02 seconds; initial baseline captures are excluded.
+
+IMPLEMENTED and verified: all 14 export/replay responses were schema-valid. No framework-correct action became Colibri-incorrect. Colibri matched 11/12 training targets and 1/2 development targets; the framework matched 10/12 and 1/2 respectively. These are bounded mechanics samples, not held-out acceptance accuracy. The independent checker reconstructs original prompts, targets and references, preserves schema key order, and binds the completed service invocation. The temporary worker stopped and production inference remains unchanged.
+
+PLANNED: a single full Facturation epoch of 1,047 updates, using the original R11 step-2400 FP32 model. The disposable rehearsal adapter must never seed full training. The frozen policy compares steps 0, 300, 600, 900 and 1,047 on the unchanged 133-row Facturation development split, representing 104 underlying scenario groups. Lower loss alone does not establish an accuracy gain. Three-app validation, all 438 regressions and 48 additional controls remain required after selection. No new full epoch has started yet.
+
+The planned service uses 14 CPU threads, checkpointing and a 32 GiB ceiling with no swap and the existing 10% host-memory reserve. The prior successful two-update 7,745-token capacity probe has the same configuration and all 473 tensor shapes/dtypes as the selected base; its original service invocation and finite updates were rechecked. No second capacity workload was run.
+
+[Verified bounded diagnostics](../training/reports/facturation-focus-v1-rehearsal-diagnostics.json), [frozen focused selection policy](../training/reports/facturation-focus-v1-checkpoint-selection-policy.json).
+
+Earlier entries below retain their original observation state.
+
+
 ## Current status: R11 evaluated, Facturation refinement next - 16 October 2026
 
 IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint development comparisons, 438 regressions and 48 additional English/French controls completed. The frozen development rule selected step 2400. Independent verification binds every scored event to its original worker log and selected artifact proofs. The selected FP32 base still has the same 473 F32 tensors. All temporary workers stopped and production inference remains unchanged.
@@ -12,7 +27,7 @@ IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint 
 
 Acceptance FAILED. No application passes all required model gates. Management Projet's larger-suite averages exceed 95%, but its critical/subset checks and additional controls still fail. Only 3/15 regression sets pass all gates. These are planner measurements, not authorization or production-readiness certification. The 16 additional cases per application are small team-authored bilingual controls and are reported separately; they are not a population-accuracy estimate.
 
-The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. A reviewed 35-update server rehearsal precedes full training. No focused numerical run has started yet. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
+The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. The 35-update focused server rehearsal and bounded Colibri export comparison are verified. The full 1,047-update epoch has not started; its final operator binding is next. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
 
 [Completed R11 evaluation](../training/reports/shared-v5r11-en-fr-evaluation.json), [development comparison](../training/reports/shared-v5r11-functional-validation.json), [focused preparation](../training/reports/facturation-focus-v1-preparation.json).
 

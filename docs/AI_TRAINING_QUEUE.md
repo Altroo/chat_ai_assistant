@@ -4,7 +4,7 @@
 
 R11 training and evaluation are complete for the first three applications; acceptance FAILED. None of the six applications is accepted by this campaign. Production inference has not been replaced.
 
-1. IN PROGRESS: Facturation-only refinement preparation using the same shared model, 1,047 training / 133 validation rows. Reviewed server rehearsal is next; no new optimizer is running.
+1. IN PROGRESS: Facturation-only refinement preparation using the same shared model, 1,047 training / 133 validation rows. The 35-update rehearsal and bounded export comparison are verified. Full 1,047-update training is next; no optimizer is currently running.
 2. PLANNED: Management Projet, then Design Workflow, one at a time with earlier-app regressions.
 3. PLANNED: Contracts, Gestion Magasin and Reservation, one at a time after the preceding model passes all gates. The retained R11 preparations are V6r11, V7r11 and V8r12 respectively; none has been trained. Future retention must be updated to the actually accepted focused curriculum.
 4. PLANNED: complete six-app model, permission and runtime verification before any activation decision.

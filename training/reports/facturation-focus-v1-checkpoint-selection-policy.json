@@ -1,0 +1,54 @@
+{
+  "version": "facturation-focus-v1-functional-selection",
+  "application": "facturation",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "rows": 133,
+  "underlying_scenarios": 104,
+  "dataset_manifest_sha256": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c",
+  "training_sha256": "9281a562865a6b7fb3003d0c4132b1a4ffa1b0691ae91426be0e5ab74ac60931",
+  "source_validation_sha256": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478",
+  "evaluation_sha256": "ac1b70e353fc9ec632b21afd4d69de9743db24e07e865cb9f4b804d22b32ce58",
+  "candidate_steps": [
+    0,
+    300,
+    600,
+    900,
+    1047
+  ],
+  "selection": [
+    "highest Facturation development full-action fraction",
+    "highest Facturation development valid-structure fraction",
+    "lowest recorded Facturation validation semantic loss",
+    "lowest checkpoint step"
+  ],
+  "selection_script_sha256": "d5952e6aa77a0bc23319f046fe83f870bc527d58359b17aa51a6b0ef774bedd1",
+  "acceptance_sha256": "c9efde5b48a32d2900ed581477e65e677865a875b08400fe67fe70a521fcaebc",
+  "evaluator_sha256": "dca2abf86b2162ccd99b868108dd957f5ef600fe196a5bf9f21b15cafa4fbe7b",
+  "max_output_tokens": 512,
+  "thinking": false,
+  "mode": "native",
+  "prerequisites": [
+    "Successful reviewed focused rehearsal and export/Colibri comparison; original selected R11 base, never disposable rehearsal weights.",
+    "Complete exactly one focused training epoch, 1047 updates, with all original training rows retained.",
+    "Freeze this policy and validation inputs before training; do not select checkpoints using acceptance data.",
+    "Baseline reuse requires identical inputs, source/runtime/model artifacts, inference settings and complete verified prior events.",
+    "Only the selected changed candidate may advance; retain baseline if it wins. A loss-only tie-break does not establish an accuracy gain. Run the full three-app validation regression, 438 frozen regressions and 48 additional controls separately.",
+    "Facturation must pass all of its critical, subset, full-action, tool, exact-argument and structure gates. Recheck MP/DW before considering activation.",
+    "No production activation or later-application training follows development selection."
+  ],
+  "limitations": [
+    "Development rows include neutral-history variants; scenario groups do not establish independence.",
+    "These rows have no explicit language labels; no per-language score is inferred.",
+    "Repeated regression and additional control inputs remain excluded from training and checkpoint selection.",
+    "No accuracy improvement or 95 percent result is predicted by this policy."
+  ],
+  "predecessor": {
+    "report_version": "shared-v5r11-en-fr-evaluation-v1",
+    "selected_step": 2400,
+    "report_sha256": "fa1ddd5526f57c2e84148ff40014832f086628b9c9a4ee4e494bc61698fe3d40"
+  },
+  "shared_validation_regression_sha256": "b007326c32de9ede8424218ad4196a663324b1ad516df87a69df957f1b846a8b",
+  "regression_manifest_sha256": "6e8df0592ddcde75fd2d4c1277aaf789545cd7f1ca9224fc756787abe22e73f3",
+  "additional_controls_manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a"
+}

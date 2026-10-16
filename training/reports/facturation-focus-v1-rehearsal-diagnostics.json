@@ -1,0 +1,125 @@
+{
+  "version": "facturation-focus-v1-rehearsal-diagnostics",
+  "observed_utc": "2026-10-16T11:10:10.500239+00:00",
+  "status": "VERIFIED BOUNDED MECHANICS; NOT MODEL ACCEPTANCE",
+  "application": "facturation",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "numerical_updates": 35,
+  "updated_layers": 24,
+  "finite_updates_verified": true,
+  "frozen_parameters_unchanged": true,
+  "saved_adapter_matches_live": true,
+  "captures_before": 14,
+  "captures_after": 14,
+  "original_selected_fp32_artifacts": {
+    "weights": {
+      "sha256": "3a744645ae67b656c6009990965ba26a5de81ad23a00885ae85c123c3ae6cd91",
+      "files": {
+        "model-00001-of-00004.safetensors": {
+          "size_bytes": 1017118872,
+          "sha256": "30f25d5ccd0d08efdcaf838e6bf42c4b0047b81f7fb2658a4cb4c8a41f5e667a"
+        },
+        "model-00002-of-00004.safetensors": {
+          "size_bytes": 996479224,
+          "sha256": "09d6adcdc1263543d8afca2060015a41a33fbe550c4587defbff6f73fc783329"
+        },
+        "model-00003-of-00004.safetensors": {
+          "size_bytes": 998386792,
+          "sha256": "95f7267015430701e3d0aa2b461f5b1cb102a36d1579613e9f78c097b4ee6b52"
+        },
+        "model-00004-of-00004.safetensors": {
+          "size_bytes": 400016304,
+          "sha256": "78914295786286f12df64667b537a37e690a32992e69e268ca793a6ecc2eca43"
+        },
+        "model.safetensors.index.json": {
+          "size_bytes": 43939,
+          "sha256": "939e7e8b1749a572816564ef33838dc28741a3b04f7ea3e411c930f33c72919d"
+        }
+      }
+    },
+    "tokenizer": {
+      "sha256": "a5ab4c5fca17ea9ed852f68cdcc4d583e4507086a5799861c3f66cb22a48df2c",
+      "files": {
+        "chat_template.jinja": {
+          "size_bytes": 7755,
+          "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80"
+        },
+        "tokenizer.json": {
+          "size_bytes": 19989339,
+          "sha256": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f"
+        },
+        "tokenizer_config.json": {
+          "size_bytes": 1464,
+          "sha256": "6fc30221b0ec773811dfa2a04ebf0eec1a7e36a3bb1698888e28b38eabc1126c"
+        }
+      }
+    },
+    "config": {
+      "sha256": "964c24512738e48b696945636fcce738bf8b8fd496dad5fb5cb87df4a5614353",
+      "files": {
+        "config.json": {
+          "size_bytes": 2708,
+          "sha256": "6a4f68ef2ea7362a9880cf5f1c1df563cb370b775f24be9cebb0c6dbce1bfbe3"
+        },
+        "generation_config.json": {
+          "size_bytes": 116,
+          "sha256": "290866a6d7d4a4442fe83ba2434a31517446f40a01de500ff97b4354e7e5d082"
+        }
+      }
+    }
+  },
+  "numerical_elapsed_seconds": 1320.0190146807581,
+  "elapsed_scope": "Optimizer loop start through final captures/integrity checks; excludes initial baseline captures.",
+  "maximum_recorded_update_rss_bytes": 4536954880,
+  "requests": 14,
+  "correct_to_incorrect": 0,
+  "all_colibri_schema_valid": true,
+  "worker_stopped": true,
+  "paired_results": {
+    "train": {
+      "facturation": {
+        "count": 12,
+        "hf_correct": 10,
+        "colibri_correct": 11,
+        "colibri_schema_valid": 12,
+        "same_valid_action": 10,
+        "correct_to_incorrect": 0
+      }
+    },
+    "valid": {
+      "facturation": {
+        "count": 2,
+        "hf_correct": 1,
+        "colibri_correct": 1,
+        "colibri_schema_valid": 2,
+        "same_valid_action": 2,
+        "correct_to_incorrect": 0
+      }
+    }
+  },
+  "model_acceptance_established": false,
+  "full_training_may_resume_from_rehearsal_adapter": false,
+  "full_training_started": false,
+  "production_activation": false,
+  "production_changed": false,
+  "evidence_sha256": {
+    "numerical_complete": "1676f112d678469d17238a7910e026feb5ff8faa8a17a483428e540041aeb6a3",
+    "numerical_plan": "ad4fc05251a982e41f3ffea6c528729ea03930173aef1d0116e402839d6fb72b",
+    "replay_complete": "6ebbd4fa0b5584696093467a70bdf00c17e0f135b5412fffb5a964ec5f0be90c",
+    "replay_binding": "0ead232435c5943a7ddf39a50a7d25b35d155a25bc1aadac9743fe3873dbb4f8",
+    "completed_assessment": "1bba1f79c4966ac281f6ed17e93b9c3243727cc6f10ce0df1e18466a4a6d8153",
+    "replay_verifier": "3c2bca40822dff75bcc9609cbd6fbbd79fad72b61a5931f089769d08491c112d",
+    "focused_manifest": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c"
+  },
+  "limitations": [
+    "Twelve training captures and two development captures are a mechanics diagnostic, not held-out model accuracy.",
+    "These results do not establish 95 percent accuracy, business authorization or production readiness.",
+    "Full training must start from the original selected R11 FP32 model, never this disposable adapter.",
+    "The existing regression and additional-control gates remain unchanged; no automatic activation or later-app training follows."
+  ]
+}
