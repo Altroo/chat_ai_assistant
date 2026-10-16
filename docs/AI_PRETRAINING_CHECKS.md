@@ -1,5 +1,13 @@
 # Pre-training correctness checks
 
+## Selective checkpoint diagnostic preparation - 16 October 2026
+
+PARTIALLY IMPLEMENTED: a separate [text checkpoint-mask helper](../training/scripts/selective_checkpointing.py) is prepared for a future server diagnostic. It selects explicit text-decoder indices, preserves vision and parent checkpoint settings, observes checkpoint API calls, and restores its owned model's text settings. It requires the existing nonreentrant setup, training mode, and both root and text cache configurations disabled. The caller must also pass use_cache=False during forward execution. No active trainer uses this helper.
+
+Eight synthetic contract tests pass, and the single reviewer found no issues. These tests cover full and selective masks, invalid setup, missing or extra checkpoint calls, changed settings, and cleanup. They do not load model weights or establish numerical equivalence, actual backward recomputation, capacity fit, speedup, or model accuracy.
+
+The numerical runner, paired gradient/adapter comparison, and server measurements remain incomplete. Before use, bind the actual accepted predecessor and next-stage dataset, wait for the current training/export/evaluation pipeline to finish, preserve the existing resource and memory-reserve gates, and verify all intended layers' finite gradients and updates. The current shared-model run, its 79 frozen controls, and production inference remain unchanged.
+
 ## Contracts replay admission prepared for R11 - 15 October 2026
 
 IMPLEMENTED as preparation only: replay_contracts_after_r11.py admits the forthcoming Contracts rehearsal against an actually accepted R11 model and its exact retained curriculum. The earlier supervisor expects 2,339 R8 updates; this separate version requires all 2,419 R11 updates and one of its five declared changed checkpoints. The original supervisor and the 79 frozen active R11 files remain unchanged.
