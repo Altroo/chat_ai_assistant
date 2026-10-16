@@ -1,0 +1,96 @@
+{
+  "version": "facturation-focus-v1-preparation",
+  "observed_utc": "2026-10-16T09:31:16Z",
+  "status": "PREPARATION ONLY; no focused numerical run or accuracy improvement established",
+  "application": "facturation",
+  "model_family": "Qwen3.5-0.8B",
+  "shared_model": true,
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "manifest_sha256": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c",
+  "generator_sha256": "16defb82465eb6d64a8cefb3da17840145b31f730e4868bb3ba67de636b6ff18",
+  "tests_sha256": "9ce84e452976e449e723389204b6611037812db77333593819ba63b9736fa1be",
+  "counts": {
+    "train": 1047,
+    "valid": 133,
+    "retained_training_rows_byte_identical": 931,
+    "retained_validation_rows_byte_identical": 133,
+    "added": 116,
+    "added_categories": {
+      "document_date_contrast": 60,
+      "operation_filter_contrast": 30,
+      "user_list": 6,
+      "user_detail": 6,
+      "verbatim_remark": 8,
+      "unselected_record": 6
+    }
+  },
+  "unit_tests_passed": 9,
+  "native_schema_permission_profile_checks_passed": 116,
+  "database_access_forbidden": true,
+  "metadata_preflight": {
+    "train.jsonl": {
+      "count": 1047,
+      "round_trip_passed": 1047,
+      "runtime_prefix_parity_passed": 1047,
+      "loss_boundary_passed": 1047,
+      "semantic_alignment_passed": 1047,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7745,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 1047,
+      "maximum_target_tokens": 127,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 488,
+      "sha256": "9281a562865a6b7fb3003d0c4132b1a4ffa1b0691ae91426be0e5ab74ac60931"
+    },
+    "valid.jsonl": {
+      "count": 133,
+      "round_trip_passed": 133,
+      "runtime_prefix_parity_passed": 133,
+      "loss_boundary_passed": 133,
+      "semantic_alignment_passed": 133,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 133,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478"
+    },
+    "scope": "Tokenizer/template/parser checks only; not model accuracy or training success"
+  },
+  "tokenizer_warning": {
+    "previous_diagnosis_revalidated": true,
+    "tokenizer_and_loader_hashes_match": true,
+    "report": "training/reports/qwen-tokenizer-warning-check-20261014.json",
+    "patch_applied": false
+  },
+  "review": {
+    "reviewers": 1,
+    "new_labels_reviewed": 116,
+    "initial_provenance_findings": 2,
+    "findings_fixed": 2,
+    "remaining_findings": 0
+  },
+  "source_validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+  "helper_files_bound": 19,
+  "training_executed": false,
+  "model_accuracy_measured": false,
+  "production_changed": false,
+  "next_steps": [
+    "Finish the existing R11 comparison and acceptance evaluation.",
+    "Bind the measured starting model and run a bounded server rehearsal before full focused training.",
+    "Evaluate Facturation and retain unchanged Management Projet and Design Workflow regression checks.",
+    "Continue the other applications sequentially after the current application meets its required gates."
+  ],
+  "limitations": [
+    "Development failure categories informed this supplement; no evaluation request was copied.",
+    "Bilingual contrasts are correlated training data, not independent evaluation evidence.",
+    "Facturation-only updates may degrade other applications; regression testing remains mandatory."
+  ]
+}

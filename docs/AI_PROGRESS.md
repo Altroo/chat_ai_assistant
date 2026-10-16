@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Facturation-only focus prepared - 16 October 2026
+
+IMPLEMENTED as preparation only: the next refinement focuses on Facturation, following the request to work on one application at a time. The model remains shared. The current R11 evaluation finishes first; no additional numerical workload has started.
+
+The versioned curriculum contains 1,047 training rows: all 931 existing Facturation rows, byte-identical, plus 116 English/French contrasts. All 133 existing Facturation validation rows remain byte-identical. The additions vary date digits, inclusive/exclusive bounds, optional customer/product/location filters, users-list versus user-detail navigation, complete remarks and unselected-record clarification. Other applications and all acceptance inputs remain unchanged.
+
+Nine dataset tests pass. The actual native schema and permission-profile check accepts all 116 additions with database access prohibited. Tokenizer, Colibri-template/parser, loss-boundary and output-budget checks pass all 1,180 training/validation rows. One reviewer checked every new label; two provenance findings were fixed and re-reviewed. These are preparation checks, not model accuracy results.
+
+PLANNED: bind the measured starting model after the current evaluation, run a bounded server rehearsal and functional comparison, then train Facturation if those checks support proceeding. Recheck Management Projet and Design Workflow because updates to one shared model can degrade other applications. After Facturation meets the required gates, continue one application at a time. Contracts, Gestion Magasin and Reservation remain untrained.
+
+[Preparation evidence](../training/reports/facturation-focus-v1-preparation.json), [dataset manifest](../training/datasets/facturation-focus-v1-en-fr/manifest.json).
+
 ## R11 training completed; accuracy evaluation running - 16 October 2026
 
 IMPLEMENTED and verified: the server training service exited successfully after all 2,419 contiguous updates and final validation. The complete epoch covered 931 Facturation, 1,012 Management Projet and 476 Design Workflow examples. Reported training duration was 19 hours 16 minutes, with 7.734 GiB peak RSS. Dataset, trainer and exposure checks passed.

@@ -2,7 +2,7 @@
 
 ## Current status: R11 evaluation running - 16 October 2026
 
-The latest server training completed all 2,419 updates and final validation. Its five saved checkpoints are now being compared through Colibri. No R11 acceptance percentage is available yet. The lowest-loss checkpoint is not automatically the most accurate checkpoint. [Verified training completion](../training/reports/shared-v5r11-training-completion.json).
+The latest shared training round for Facturation, Management Projet and Design Workflow completed all 2,419 updates and final validation. Its five saved checkpoints are now being compared through Colibri. No R11 acceptance percentage is available yet. The lowest-loss checkpoint is not automatically the most accurate checkpoint. [Verified training completion](../training/reports/shared-v5r11-training-completion.json).
 
 The latest completed acceptance measurements are from R8, reported below. These are model-planning checks; they do not execute business tools or certify backend authorization.
 
@@ -15,6 +15,8 @@ The latest completed acceptance measurements are from R8, reported below. These 
 None of these three applications passes all required gates. The additional controls contain only 16 cases per application and are reported separately from the larger regression suite. They are team-authored bilingual scenarios, not an independent population-accuracy estimate. These existing cases remain excluded from training and checkpoint selection.
 
 Contracts, Gestion Magasin and Reservation have prepared curricula but have not started their sequential training stages. No new model has been activated. [Completed R8 measurements and evidence hashes](../training/reports/shared-v5r8-en-fr-evaluation.json).
+
+The next refinement now focuses on Facturation first, using the same shared model. A reviewed 1,047-row Facturation-only training curriculum and unchanged 133-case validation subset are prepared. No focused numerical training or accuracy gain has been established. Management Projet and Design Workflow regressions remain mandatory. [Preparation evidence](../training/reports/facturation-focus-v1-preparation.json).
 
 The following sections are historical observations, not the current job state.
 

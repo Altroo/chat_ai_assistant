@@ -1,0 +1,245 @@
+{
+  "version": "facturation-focus-v1-en-fr",
+  "applications": [
+    "facturation"
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "status": "PREPARATION ONLY; no numerical training or acceptance",
+  "source_manifest_sha256": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
+  "generator_sha256": "16defb82465eb6d64a8cefb3da17840145b31f730e4868bb3ba67de636b6ff18",
+  "helper_sha256": {
+    "src/chat_ai_assistant/calendar_context.py": "6ee2c0f63ef33c0ba8b8f1ea29fbcd5d6f1e88e4273dc40ece33dab75619aeb9",
+    "src/chat_ai_assistant/clarifications.py": "7103f85ac6e2d988508749e1664796d94875ce564f95c97a1e034bc6a87a1ed9",
+    "src/chat_ai_assistant/contracts.py": "ab31f8ff3f2f20b776ca412436e0730dc8fa00e892801772e863400bab4b6fa3",
+    "src/chat_ai_assistant/orchestrator.py": "f8fb0bc7764ec027599e4d109bab57964b17132ebd2827e0097b251af6b70af6",
+    "src/chat_ai_assistant/planning_messages.py": "d7024d3c9af58d501f680f2c79ae1e5108a6ec19faa92a2ba49b6c67893d1395",
+    "src/chat_ai_assistant/routing.py": "1640f46741e967711c7af246d0766b89992c4dc63d48c7a697ef775890d4a811",
+    "src/chat_ai_assistant/selection_context.py": "0fe2f1ca934c6915cc21cef11ac37e73bab89a598f801e6d1a057889d2efee15",
+    "training/scripts/audit_training_inputs.py": "4a15488a8dd60dd38b710acb10d47c1c08c5828b2e7501045ef889f3ab5afcba",
+    "training/scripts/build_dataset_v4.py": "f5f4deb354557d007f13ea23721577ca666aecf492f662bf3233ac6f4db34476",
+    "training/scripts/build_dialogue_v1.py": "2dcb6179735d96acd338e002e7006e4d85056e41281a119c5046a9283b987a5a",
+    "training/scripts/build_shared_v5r3.py": "98660f431de448ebfeb1daf31679cf2be931c82c30163da731f4ee7eee19dfe7",
+    "training/scripts/prepare_coverage_contrasts_v1.py": "b271c0df681c8e353b20adee71f1d1ba19e6b22a7791b31cecc03d9a1b180bde",
+    "training/scripts/prepare_management_name_errata.py": "1545d5c4dd5c5c252ea13191d6d9d15f523f9ff5eebc46c69c42b03396d8afa3",
+    "training/scripts/prepare_management_name_errata_v2.py": "110d912942964b870766afa0c3ed57338effd7da8b40114f25f9440ffa913412",
+    "training/scripts/prepare_shared_v5r5.py": "b7702319000f9d4f0b6f44bab28a2d1063093e0b44a0b2e5bf522f29891f87f6",
+    "training/scripts/prepare_shared_v5r6.py": "09670280de5d42b1df726d5eb968dfa25cd0a5ce21da2f5c7800dc71e08e7afd",
+    "training/scripts/prepare_shared_v5r8.py": "15a2dbfe9694aa7ea39ba96d11c52183baac04028452c69a60145669e994699a",
+    "training/scripts/training_contracts.py": "3a6001309a329d3c3644d1ab608dbaf542cef7a7be91612643d157ad5ce11382",
+    "training/scripts/training_schedule.py": "0df6692fa360c6ee0f194275941908e89c62496bdc0627fd6d0731e829b7bb83"
+  },
+  "source_validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+  "counts": {
+    "train": 1047,
+    "valid": 133,
+    "retained_training_rows_byte_identical": 931,
+    "retained_validation_rows_byte_identical": 133,
+    "added": 116,
+    "added_categories": {
+      "document_date_contrast": 60,
+      "operation_filter_contrast": 30,
+      "user_list": 6,
+      "user_detail": 6,
+      "verbatim_remark": 8,
+      "unselected_record": 6
+    }
+  },
+  "native_metadata": {
+    "facturation": {
+      "chat_ai/catalog.py": "f44a946bf2c148d8ecc341316930adccaccd75ff42c7801e137117408ef65f42",
+      "chat_ai/test_reference_followups.py": "8e6b345482e4a43dc0f886d40c10afaf37de1e6f318e65c3e057ea4ac03bb59f",
+      "chat_ai/labels.py": "9278362e793ab0c38c5e115a4f66a698667285481dd312104484499e30df41a8",
+      "chat_ai/services.py": "7a02272e6849c1452afb02f5d54cae59214fb37c2c70a2518abdca4fed175b7e",
+      "chat_ai/test_catalog.py": "b20d245c427e0546b3bf41141b7bef0df6047e30bb0962c23df22fadae9fff2b",
+      "chat_ai/tasks.py": "5f71c66a76e3136e10d47d8b1737a572d8f4b65289b186481b9f0c17d31f61b7",
+      "chat_ai/test_module_integration.py": "6e4deffb802bc14c93aba76abd42dff8a23add7d4c1215f16b5d4e3ce790351b",
+      "chat_ai/models.py": "8e78721fe95d9eca548f4f76a97352c88fd82d0bfdf734529f84d940c636ff41",
+      "chat_ai/confirmation_history.py": "64406e233f74e3be1d33c4715c407f500b187bf1dab79f5ae8d27de3571f0d27",
+      "chat_ai/test_greetings.py": "fda75472e111e21e50bc880cbdfb220c5576d66c670c6e254027d31e3b48d92d",
+      "chat_ai/shortcuts.py": "5c0c47bfccec21c8e7d7d56ad108d676834a34f52331e42ab99e633c5e7387d8",
+      "chat_ai/test_operations.py": "5855a27cad421c4223f906e4e9423d9ae7696e074aded78f619601326c2f16f3",
+      "chat_ai/documents.py": "ed49142ac4b7bf90f5dd49f95df1635070d2877defee360f0be56e7b744bfe95",
+      "chat_ai/tools.py": "2ae44104618a4a0fe3586399ad28a3cb1b06a477ecd9812c80f7b1cbf5969c0a",
+      "chat_ai/security.py": "377cb4bf4bb4e3974844959e9a2db89c5fcff73d08d41913a9b5f2eb62c36279",
+      "chat_ai/test_localized_knowledge.py": "8cbf43f29857aba3e692876a898bdec224f1c3fa16e12975a30f5b7614a5f250",
+      "chat_ai/actions.py": "59ffe668c040bec092afd8715509924f225cdc525f90020b26484385fea68984",
+      "chat_ai/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "chat_ai/test_response_language.py": "e352dec9a04ba2009b28aab38d25a84b2abd94cbf6e101feb4c06e21d1960c93",
+      "chat_ai/apps.py": "c21914a2336c89f8b789114209060fac3728f26fbb5cbf01cbdfcc88363a7a49",
+      "chat_ai/test_knowledge_retrieval.py": "2c9f862bf0a6d36969b336e6c43d1ef08ccc33ddd9d3534f2fb81c1bedbd127d",
+      "chat_ai/test_review_regressions.py": "3de01fc0bdf0d7d517e53dec3a9d5e42d13d8e13f1c4397bb9f484167f2eed7f",
+      "chat_ai/test_routing.py": "0849c4889b52088f28fae238157f5de43f7fe5b2b0aa3bb87b1d0b29cd021603",
+      "chat_ai/operations.py": "8107fc9dadc8c0d6051068f9ab6fe606214a96963656eb51e08b6c0041cff862",
+      "chat_ai/test_ordinal_targets.py": "e6fc1cd04b9fcad359f27087141b99b61d28ae4f65e78453f52d05e3e6bcacb6",
+      "chat_ai/test_document_actions.py": "6e296660063c42c40f7e1b47e96bac8633cd3e9d3ad09d137f430898d225e573",
+      "chat_ai/shortcut_catalog.py": "d835ee936f3372eb58a35d828de2fe9a15187ce7d6676ff7b2f99a6a94ac6a79",
+      "chat_ai/test_confirmation_history.py": "1ea28c6c5cb7ba315f4afa2cbf73923996e8c1341d53629cbae8c9b9d9003a59",
+      "chat_ai/admin.py": "b3bea11d59b5df839d6c2b37cb919cc4341eb06cc7d5ffa287e3a7b2d906c5a6",
+      "chat_ai/test_shortcut_modules.py": "7ff5689e4d24b8db23d14e44e961ee8b2f5e4db60deb45920d0551317d124683",
+      "chat_ai/test_throttles.py": "f0c68dc42f6a06399e833f8cbb57b19d02c8d3b7da4e62cb4a55a437fce2500e",
+      "chat_ai/navigation.py": "3aeb3a2d946fb01cfb816b8fd6137edb2e079abd0e0fa3c0f2dd76910aa5fb42",
+      "chat_ai/tests.py": "54d94683e544d1e25837be7df3162fc0eb372970380f096a75582a95a15fcebd",
+      "chat_ai/urls.py": "8d50f03fe165fa7992973e10646903ac36a3f05cef38ff8f5156e1f4ebf9ac7a",
+      "chat_ai/knowledge.py": "52f48c588ac58beed72fef21b8e6473e03e272f45ea44a2ffb6d0d3080bd733e",
+      "chat_ai/test_documents.py": "6d5f816ad283ab112ec43cf5d81187d807d665d524bee7e2028bcb8a57ba89c0",
+      "chat_ai/views.py": "553bbbc35305f4c4c714306df78b7452de21a1fb3443e92094cc36d0119319bf",
+      "chat_ai/test_client_search.py": "214879029bc9c16fff32bdfec394a678044005279cbef66e07df030c3a3bd736"
+    }
+  },
+  "held_out": {
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+      "count": 24
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+      "count": 10
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": {
+      "sha256": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+      "count": 80
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a59f750fffeb6d9868b11d7be6493e3985ab7ed295981139afc11cbf8cd5f6fe",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": {
+      "sha256": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+      "count": 28
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "6ad3954b01fb07299952c9ee566e6d56ae36b34201aff75da4ee3c1d705b0f49",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v2-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da",
+      "count": 16
+    },
+    "training/datasets/shared-v5r8-fresh-en-fr/controls.eval.jsonl": {
+      "sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+      "count": 48
+    }
+  },
+  "historical_regression_held_out": {
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": {
+      "sha256": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+      "count": 24
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+      "count": 10
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": {
+      "sha256": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+      "count": 80
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": {
+      "sha256": "4bba62427783498ef0b28c06f2bfe838709551ec84e4e1a1b7528a0d07ea1bc7",
+      "count": 60
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+      "count": 20
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": {
+      "sha256": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": {
+      "sha256": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+      "count": 32
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "count": 12
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": {
+      "sha256": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+      "count": 28
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/facturation-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/management-projet-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "35ea0592763e6c5fec0d3a72f51887d19d68de1fe94dfaf10685b4ee6e424cba",
+      "count": 16
+    },
+    "training/datasets/shared-dialogue-v1-en-fr/design-workflow-refinement-v2-en-fr--independent.eval.jsonl": {
+      "sha256": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da",
+      "count": 16
+    }
+  },
+  "fresh_controls": {
+    "manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a",
+    "files": {
+      "training/datasets/shared-v5r8-fresh-en-fr/controls.eval.jsonl": {
+        "sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+        "count": 48
+      }
+    },
+    "scoring": "Report separately from 438 original regressions; excluded from optimization and checkpoint selection."
+  },
+  "regression_applications": [
+    "facturation",
+    "management_projet",
+    "design_workflow"
+  ],
+  "training_policy": "Optimize Facturation only using one shared model. Do not oversample other applications. Finish the active evaluation and bind the measured base before a bounded server rehearsal and functional comparison. Preserve other-app regressions; no automatic activation.",
+  "limitations": [
+    "Development failure categories informed this supplement; no evaluation request was copied.",
+    "Bilingual contrasts are correlated training data, not independent evaluation evidence.",
+    "Facturation-only updates may degrade other applications; regression testing remains mandatory."
+  ],
+  "files": {
+    "train.jsonl": "9281a562865a6b7fb3003d0c4132b1a4ffa1b0691ae91426be0e5ab74ac60931",
+    "valid.jsonl": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478"
+  }
+}
