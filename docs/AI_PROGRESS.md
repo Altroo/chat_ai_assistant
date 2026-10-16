@@ -16,6 +16,8 @@ PARTIALLY IMPLEMENTED: a dedicated Facturation-only rehearsal admission path is 
 
 No numerical rehearsal, export comparison or full focused run has executed. [Rehearsal preparation](../training/reports/facturation-focus-v1-rehearsal-preparation.json).
 
+PARTIALLY IMPLEMENTED: the focused export/replay supervisor is prepared with unchanged export, service isolation and cleanup mechanics. It requires a completed, independently verified R11 report covering all 438 regressions and 48 additional controls, plus the actual selected FP32 fingerprint and original serving proofs. An unaccepted candidate may be examined only for further Facturation refinement; this does not admit a later application or activate a model. All 23 synthetic supervisor tests pass. One category-order compatibility finding was fixed and re-reviewed. The actual terminal report, FP32 binding, numerical rehearsal and Colibri replay remain pending. [Replay preparation](../training/reports/facturation-focus-v1-replay-preparation.json).
+
 ## R11 training completed; accuracy evaluation running - 16 October 2026
 
 IMPLEMENTED and verified: the server training service exited successfully after all 2,419 contiguous updates and final validation. The complete epoch covered 931 Facturation, 1,012 Management Projet and 476 Design Workflow examples. Reported training duration was 19 hours 16 minutes, with 7.734 GiB peak RSS. Dataset, trainer and exposure checks passed.

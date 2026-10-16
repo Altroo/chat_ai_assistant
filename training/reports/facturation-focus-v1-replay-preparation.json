@@ -1,0 +1,42 @@
+{
+  "version": "facturation-focus-v1-replay-preparation",
+  "observed_utc": "2026-10-16T09:52:18Z",
+  "status": "PREPARATION ONLY; actual terminal R11 report and FP32 integration pending",
+  "application": "facturation",
+  "source_sha256": {
+    "training/scripts/replay_facturation_rehearsal_v1.py": "624ae73adee1baa916c538dd5c45246abdcdc8ab685779e8163267828954d925",
+    "training/tests/test_facturation_replay_supervisor.py": "5ef9e6cc1c847b86a58227d7f3a9b3eb4f60326675bdd6479ad90571d1573921"
+  },
+  "unit_tests_passed": 23,
+  "review": {
+    "reviewers": 1,
+    "initial_findings": 1,
+    "findings_fixed": 1,
+    "remaining_findings": 0
+  },
+  "predecessor_contract": {
+    "version": "shared-v5r11-en-fr-evaluation-v1",
+    "training_updates_completed": 2419,
+    "regression_cases": 438,
+    "additional_control_cases": 48,
+    "complete_identity_and_scoring_verified": true,
+    "fresh_controls_verified": true,
+    "selected_fp32_artifacts": "Required actual artifact fingerprint; not yet bound",
+    "accepted_candidate_required": false,
+    "scope": "Further Facturation refinement only; no later-application admission or activation"
+  },
+  "focus_manifest_sha256": "70d19dd8ed341f13bd8dcd9b17f00382f0e75c996bb098260e27ddf5919b470c",
+  "mechanics_retained_from": "training/scripts/replay_shared_rehearsal_v1.py",
+  "checks": [
+    "Exact focused audit, captures, lineage and duplicate-free bilingual categories",
+    "Original raw before/after proof hashes, selected step and serving artifacts",
+    "Actual FP32 fingerprint bound to the completed R11 report and reviewed model path",
+    "Completed numerical service invocation and finite complete update coverage",
+    "Unchanged resource admission, isolated export, loopback replay and worker cleanup"
+  ],
+  "numerical_rehearsal_executed": false,
+  "export_compared": false,
+  "full_training_started": false,
+  "model_acceptance_established": false,
+  "production_changed": false
+}
