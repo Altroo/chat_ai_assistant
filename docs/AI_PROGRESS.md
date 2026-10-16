@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Facturation V2 export/replay guards prepared - 16 October 2026
+
+IMPLEMENTED as preparation only: the V2 export/replay supervisor requires the completed focused predecessor report, matching terminal/application gates, exact pilot selection, selected serving proofs and a separate observation of actual selected FP32 files. The frozen report binds the serving export; it does not itself attest FP32 weight bytes. The future observation must bind those files, dtype/layout and export metadata to the same report before launch.
+
+All 27 synthetic supervisor tests pass. Export execution, resource admission, process ownership and cleanup functions retain the reviewed V1 implementation. The single reviewer found no remaining issues. Seventeen current and 79 historical evaluation controls remain unchanged.
+
+PLANNED: finish the running regression/additional-control evaluation, derive and verify the selected-model observation, admit the bounded server pilot, then perform real export/Colibri replay and all 275 shared development comparisons. No numerical pilot, pilot export, new accuracy result, longer epoch, model activation or later-app training has occurred. [Verified supervisor preparation](../training/reports/facturation-focus-v2-replay-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation V2 pilot admission and token checks verified - 16 October 2026
 
 IMPLEMENTED as preparation only: a deterministic pilot selects 92 unique training inputs: 78 new contrasts and 14 retained tool sentinels. It covers 154 declared marginal/pairwise axes, all ten added categories in English and French, and all existing tool/operation/clarification-reason groups. This does not cover every Cartesian combination or all 440 additions.

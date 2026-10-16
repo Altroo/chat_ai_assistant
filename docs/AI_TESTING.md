@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Facturation V2 export/replay supervisor - 16 October 2026
+
+All 27 synthetic tests pass, including rejection of incomplete candidate/regression reports, mismatched terminal/app gates, changed model selection, wrong curriculum/captures, altered serving evidence and incorrect FP32/report/export metadata bindings. Existing numerical-invocation, source-admission, resource-isolation, export-flow and process-cleanup tests remain in scope.
+
+Only bootstrap, predecessor validation, numerical-runner identity and input dependency checks differ from the reviewed V1 supervisor. Export execution, resource and cleanup functions remain AST-identical. The single reviewer found no remaining issues; current/historical frozen evaluation controls are unchanged.
+
+These are synthetic guard tests. They neither load model weights nor demonstrate real export parity, a model accuracy gain, native authorization or production readiness. Completed predecessor evidence, actual selected-FP32 observation and the numerical pilot remain pending. [Supervisor evidence](../training/reports/facturation-focus-v2-replay-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation V2 pilot admission and server preflight - 16 October 2026
 
 Twelve tests pass for bounded deterministic selection, date/filter pair coverage, bilingual category coverage, retained tool groups, captures, changed-manifest/parent/data rejection, and concurrent-workload rejection. AST comparison confirms the numerical, capture and resource-control functions are unchanged from the reviewed V1 runner. The first test invocation lacked temporary-file permissions for three tamper fixtures; the rerun with isolated temporary-file access passed all tests.

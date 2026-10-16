@@ -1,0 +1,59 @@
+{
+  "version": "facturation-focus-v2-replay-preparation",
+  "observed_utc": "2026-10-16T22:38:26.756638+00:00",
+  "status": "IMPLEMENTED: export/replay supervisor and synthetic guards; PLANNED: completed predecessor and actual selected-FP32 binding",
+  "application": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "shared_model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "verification": {
+    "unit_tests_passed": 27,
+    "unit_tests_failed": 0,
+    "single_reviewer_status": "No issues",
+    "reviewers": 1,
+    "changed_function_names": [
+      "bootstrap",
+      "check_predecessor",
+      "completed_unit",
+      "verify_inputs"
+    ],
+    "export_execution_resource_cleanup_functions_unchanged": true,
+    "current_evaluation_controls_unchanged": 17,
+    "historical_controls_unchanged": 79
+  },
+  "requirements_before_execution": [
+    "An independently verified complete focused V1 report, all five candidate comparisons, 275 shared development cases, 438 regressions and 48 additional controls.",
+    "A terminal-state file whose checksum and selected/application acceptance gates match that report.",
+    "The exact V2 curriculum, categories, retained parent, pilot selection and captures.",
+    "Matching selected serving proofs and unchanged selected Colibri artifacts.",
+    "A separately pinned observation of actual selected FP32 files, dtype/layout, exporter/converter and export metadata, tied to the same completed report.",
+    "A completed pilot invocation with matching numerical configuration, source hashes, unique updates, captures and saved adapter.",
+    "Normal existing server workload isolation, resource reserves, loopback-only worker and owned-process cleanup."
+  ],
+  "source_sha256": {
+    "training/scripts/replay_facturation_rehearsal_v2.py": "e5723bcb2b69a3a19efb5ed961746619af1dc5507fd523850196c86a28c46f34",
+    "training/tests/test_facturation_replay_supervisor_v2.py": "ceb9d473ee705300b1d4d657e424f8db024929778a4ff444d7d173de48aaf6e6"
+  },
+  "completed_predecessor_bound": false,
+  "actual_selected_fp32_identity_observed": false,
+  "numerical_pilot_executed": false,
+  "pilot_export_executed": false,
+  "pilot_colibri_comparison_executed": false,
+  "new_model_accuracy_available": false,
+  "longer_epoch_admitted": false,
+  "production_model_activation": false,
+  "later_application_training_started": false,
+  "limitations": [
+    "Synthetic guard tests verify supervisor behavior, not real-model output equivalence, accuracy or authorization.",
+    "The frozen focused report binds serving artifacts but does not contain FP32 weight hashes; the separate actual-file observation remains required.",
+    "The current evaluation is running unchanged. No incomplete checkpoint or partial regression result admits the pilot.",
+    "Successful bounded capture replay alone does not establish 95 percent accuracy; all 275 development cases and later unchanged acceptance gates remain required.",
+    "No automatic longer training run or production activation is permitted by this preparation."
+  ],
+  "evidence_sha256": {
+    "focus-v2-replay-reviewed-controls.json": "f7e5bc49de7e438fc2c174a663131dd93f260f9befbb2a4b159a39e2efeb861c"
+  }
+}

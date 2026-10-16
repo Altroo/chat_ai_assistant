@@ -1,5 +1,13 @@
 # Model training and evaluation
 
+## Facturation V2 comparison supervisor prepared - 16 October 2026
+
+The V2 pilot export/replay supervisor and 27 passing synthetic guard tests are prepared. It requires the finished focused V1 evaluation and exact selected-model proofs. Because that frozen report records serving artifacts but not FP32 weight hashes, a separate operator-pinned observation of the actual selected FP32 export is mandatory. Input verification rehashes the model files and rejects a different selection.
+
+Export execution, resource limits, worker isolation and cleanup retain the reviewed V1 implementation. No numerical pilot, real pilot export/Colibri comparison or new accuracy result exists yet. The current evaluation must finish first, followed by actual model binding, server resource admission, the bounded pilot and all 275 shared development comparisons. No longer epoch or production activation is admitted. [Preparation evidence](../training/reports/facturation-focus-v2-replay-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Current Facturation V2 pilot status - 16 October 2026
 
 The V2 dataset and bounded pilot admission are prepared. The deterministic 92-update proposal selects 78 new contrasts and 14 retained examples, covering 154 declared marginal/pairwise axes and all ten new categories in English and French. It does not rehearse all 440 additions. All 12 admission tests pass; the numerical/capture/resource functions retain the reviewed V1 implementation.
