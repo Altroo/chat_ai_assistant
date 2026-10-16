@@ -1,9 +1,23 @@
 # Model training and evaluation
 
-Facturation's bounded rehearsal and export check are complete: 35 finite updates, 24 updated layers, all 14 Colibri samples schema-valid and zero framework-correct to Colibri-incorrect changes. Twelve samples are training rows and two are development rows; these checks do not establish model accuracy or acceptance. The full 1,047-update Facturation epoch is running on the server; the initial live observation was baseline validation before optimization. [Verified launch](../training/reports/facturation-focus-v1-launch.json). [Verified diagnostics](../training/reports/facturation-focus-v1-rehearsal-diagnostics.json), [frozen selection policy](../training/reports/facturation-focus-v1-checkpoint-selection-policy.json).
+## Current status: Facturation epoch complete; accuracy evaluation running - 16 October 2026
+
+IMPLEMENTED and verified: the Facturation-only epoch completed all 1,047 updates, one pass over 1,047 unique training examples and final validation on 133 unchanged development rows. It used the original R11 selected step-2400 FP32 model, never the disposable rehearsal adapter. The shared model remains Qwen3.5-0.8B and evaluation uses Colibri.
+
+The recorded training timer was 34,166.99 seconds (about 9 hours 29 minutes), excluding initial model loading and dataset encoding. Peak process RSS was 7.714 GiB. The final adapter's 192 F32 tensor headers, byte layout, file checksum and LoRA configuration were verified without loading tensors.
+
+No new checkpoint improved weighted validation loss: the starting loss was 0.04873197, compared with 0.06773017 at update 1,047. The loss selector retains step 0. Checkpoint 900 has lower unweighted loss than the baseline but higher weighted loss; neither value is tool-calling accuracy.
+
+PARTIALLY IMPLEMENTED: compare all four saved candidates on the frozen 133-row development split, then apply the unchanged regression and additional-control policy to a changed selected model. No completed new accuracy report or 95% model acceptance is available. The all-app training campaign remains incomplete, production inference is unchanged and later-application training has not started.
+
+The single-reviewer semantic audit found no new invalid gold actions in all 133 development rows and 116 training additions. The known equivalent-argument limitation in six article-search development cases is recorded without changing the original scoring. Source review and file integrity are separate from accuracy and native authorization. [Verified training completion](../training/reports/facturation-focus-v1-training-completion.json).
+
+## Earlier rehearsal and launch observation
+
+Facturation's bounded rehearsal and export check are complete: 35 finite updates, 24 updated layers, all 14 Colibri samples schema-valid and zero framework-correct to Colibri-incorrect changes. Twelve samples are training rows and two are development rows; these checks do not establish model accuracy or acceptance. At the earlier launch observation, the full 1,047-update Facturation epoch had started on the server; the initial observation was baseline validation before optimization. [Verified launch](../training/reports/facturation-focus-v1-launch.json). [Verified diagnostics](../training/reports/facturation-focus-v1-rehearsal-diagnostics.json), [frozen selection policy](../training/reports/facturation-focus-v1-checkpoint-selection-policy.json).
 
 
-## Current status: R11 evaluated, Facturation refinement next - 16 October 2026
+## Earlier R11 evaluation and refinement plan - 16 October 2026
 
 IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint development comparisons, 438 regressions and 48 additional English/French controls completed. The frozen development rule selected step 2400. Independent verification binds every scored event to its original worker log and selected artifact proofs. The selected FP32 base still has the same 473 F32 tensors. All temporary workers stopped and production inference remains unchanged.
 
@@ -15,7 +29,7 @@ IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint 
 
 Acceptance FAILED. No application passes all required model gates. Management Projet's larger-suite averages exceed 95%, but its critical/subset checks and additional controls still fail. Only 3/15 regression sets pass all gates. These are planner measurements, not authorization or production-readiness certification. The 16 additional cases per application are small team-authored bilingual controls and are reported separately; they are not a population-accuracy estimate.
 
-The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. The 35-update focused server rehearsal and bounded Colibri export comparison are verified. The full 1,047-update Facturation epoch is now running from the original selected model. No new acceptance score is available. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
+The model is still the same shared Qwen3.5-0.8B, served by Colibri. The next run focuses only on Facturation with 1,047 training rows and 133 unchanged validation rows. The 35-update focused server rehearsal and bounded Colibri export comparison are verified. At that observation, the full 1,047-update Facturation epoch was running from the original selected model. No new acceptance score is available. Management Projet and Design Workflow regression checks remain mandatory. Contracts, Gestion Magasin and Reservation are prepared but untrained. There are zero accepted applications from the six-app training campaign.
 
 [Completed R11 evaluation](../training/reports/shared-v5r11-en-fr-evaluation.json), [development comparison](../training/reports/shared-v5r11-functional-validation.json), [focused preparation](../training/reports/facturation-focus-v1-preparation.json).
 

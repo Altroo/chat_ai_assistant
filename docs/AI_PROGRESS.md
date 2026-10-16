@@ -1,5 +1,27 @@
 # Chat AI Assistant progress
 
+## Facturation epoch complete; Colibri comparison running - 16 October 2026
+
+IMPLEMENTED and verified: one server-only Facturation epoch completed all 1,047 updates and final validation, retaining the original R11 step-2400 FP32 starting model. The recorded training timer covers 34,166.99 seconds (about 9 hours 29 minutes), excluding initial model loading and dataset encoding. Peak process RSS was 7.714 GiB. Training used the same shared Qwen3.5-0.8B, 14 CPU threads and the reviewed checkpointing configuration.
+
+| Checkpoint | Weighted validation loss | Unweighted validation loss |
+| --- | ---: | ---: |
+| 0 | 0.04873197 | 0.02600715 |
+| 300 | 0.06851523 | 0.03435935 |
+| 600 | 0.06091881 | 0.03038344 |
+| 900 | 0.04969220 | 0.02470716 |
+| 1047 | 0.06773017 | 0.03382859 |
+
+Lower loss is better. None of the new checkpoints improved weighted validation loss over step 0, which denotes the original starting model. The final checkpoint therefore has not demonstrated a validation-loss improvement. Loss selection is separate from functional checkpoint selection and is not an accuracy score.
+
+PARTIALLY IMPLEMENTED: Colibri is comparing checkpoints 300, 600, 900 and 1,047 on the unchanged 133-row Facturation development split. A changed selected model still requires the separate three-app development regression, 438 frozen regressions and 48 additional controls. No new 95% result or model acceptance is established.
+
+The final adapter has 192 F32 tensors with matching layout and LoRA configuration; its file size and checksum were verified without loading model tensors. The single reviewer found no new invalid labels in all 133 development rows and 116 added examples, including 90 added date-bound rows. Six development rows retain a known equivalent-argument limitation under exact scoring; scoring remains unchanged.
+
+Seventeen current and 79 historical evaluation controls remain unchanged. The completed report collector verified all 22 bound training inputs. Production inference remains unchanged, and this workflow has not activated a new model or started later-application training. [Verified training completion](../training/reports/facturation-focus-v1-training-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation checkpoints verified - 16 October 2026, 19:41 UTC
 
 PARTIALLY IMPLEMENTED: the server-only Facturation run reached 923/1,047 updates in this timestamped observation. Checkpoints 300, 600 and 900 are saved. Their 192 F32 adapter tensors have matching names, shapes, byte layout and LoRA configuration; file sizes and checksums were recorded without loading model tensors or running inference. The original training process remains live.

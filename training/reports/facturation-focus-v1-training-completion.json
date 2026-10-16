@@ -1,0 +1,162 @@
+{
+  "version": "facturation-focus-v1-training-completion",
+  "observed_utc": "2026-10-16T20:56:16.974820+00:00",
+  "application": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "status": "IMPLEMENTED: one training epoch and final validation; PARTIALLY IMPLEMENTED: functional evaluation and model acceptance",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "training_environment": "server CPU",
+  "base_run": "Original R11 selected step 2400 FP32 model",
+  "training_complete": true,
+  "final_validation_complete": true,
+  "updates_completed": 1047,
+  "unique_training_examples": 1047,
+  "validation_rows": 133,
+  "underlying_validation_scenarios": 104,
+  "recorded_training_duration_seconds": 34166.992825774476,
+  "peak_process_rss_kib": 8088272,
+  "training_parameters": {
+    "threads": 14,
+    "service_memory_limit_gib": 32,
+    "workload_swap_gib": 0,
+    "context_tokens": 8192,
+    "complete_epochs": 1,
+    "learning_rate": 1e-05,
+    "semantic_loss_weight": 4,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": "nonreentrant",
+    "dtype": "bfloat16",
+    "attention_implementation": "sdpa"
+  },
+  "validation_losses": [
+    {
+      "step": 0,
+      "weighted_loss": 0.04873197006641808,
+      "unweighted_loss": 0.02600715355171808
+    },
+    {
+      "step": 300,
+      "weighted_loss": 0.06851522753666195,
+      "unweighted_loss": 0.03435934542308406
+    },
+    {
+      "step": 600,
+      "weighted_loss": 0.06091881436126764,
+      "unweighted_loss": 0.03038343505487059
+    },
+    {
+      "step": 900,
+      "weighted_loss": 0.04969219573642059,
+      "unweighted_loss": 0.02470715682671427
+    },
+    {
+      "step": 1047,
+      "weighted_loss": 0.06773017209037537,
+      "unweighted_loss": 0.033828587828283935
+    }
+  ],
+  "loss_selected_step": 0,
+  "functional_selected_step": null,
+  "functional_evaluation_complete": false,
+  "complete_new_accuracy_report_available": false,
+  "evaluation_state_observed": {
+    "phase": "evaluating_checkpoint",
+    "checkpoint_step": 300,
+    "candidate_checkpoints": [
+      300,
+      600,
+      900,
+      1047
+    ],
+    "development_cases_per_candidate": 133,
+    "baseline_cases_reused": 133
+  },
+  "checkpoint_artifacts": [
+    {
+      "step": 300,
+      "size_bytes": 28536776,
+      "sha256": "4d9883e0f80178883eb4c0b20bee56992e841ac886c67e18ca139454bf9ae41c",
+      "tensor_count": 192,
+      "tensor_dtypes": [
+        "F32"
+      ]
+    },
+    {
+      "step": 600,
+      "size_bytes": 28536776,
+      "sha256": "689695aab6076fa710324fac6a34bf2ce38bbf67ddb17605dcc88550277392d1",
+      "tensor_count": 192,
+      "tensor_dtypes": [
+        "F32"
+      ]
+    },
+    {
+      "step": 900,
+      "size_bytes": 28536776,
+      "sha256": "510c27dffad4c2dce93716afac317a6217b0699282fb440206df4fb7ddb4c3d6",
+      "tensor_count": 192,
+      "tensor_dtypes": [
+        "F32"
+      ]
+    },
+    {
+      "step": 1047,
+      "size_bytes": 28536776,
+      "sha256": "38f8ec83194a067335e72831cb02bd624c283a5bf2bf2228ea341246f56bdb50",
+      "tensor_count": 192,
+      "tensor_dtypes": [
+        "F32"
+      ]
+    }
+  ],
+  "checkpoint_checks": {
+    "tensor_layout_and_adapter_config_match": true,
+    "model_weights_loaded": false,
+    "numerical_tensor_validation": false,
+    "final_inspector_review": "No issues"
+  },
+  "semantic_review": {
+    "reviewers": 1,
+    "development_rows": 133,
+    "underlying_scenario_groups": 104,
+    "training_additions": 116,
+    "bilingual_added_scenarios": 58,
+    "recomputed_added_date_bounds": 90,
+    "status": "No new semantic defects",
+    "nonunique_argument_cases": 6,
+    "strict_scoring_modified": false,
+    "model_or_database_execution": false
+  },
+  "unchanged_controls": {
+    "current_evaluation_controls": 17,
+    "historical_pipeline_controls": 79,
+    "bound_training_inputs_verified_at_collection": 22
+  },
+  "production_model_activation_performed": false,
+  "production_model_healthy_unchanged_at_observation": true,
+  "later_application_training_started_by_this_workflow": false,
+  "frozen_selection_policy": "facturation-focus-v1-checkpoint-selection-policy.json",
+  "evidence_sha256": {
+    "checkpoint-final-validation-observation.json": "68d0fcb331b905eeeaa7806918aa0c68735ccc39ec294f8e98fa561d4204566e",
+    "checkpoint-final-integrity.json": "7c4af7ab1c43c2d8a10624699b085b9323cca8c369db92d4ec32ae8baf1df102",
+    "final-inspector-reviewed-controls.json": "ed4b18e9801d4f54052993dcfd4fef10dba39f0274c261b7c9a645c7a3d519a6",
+    "semantic-label-review.json": "a468fae3718ae6b7ede303d527e3588252ad63cb38dd64d54266c22f0245f8fe",
+    "collected_training_report": "7759680eaf44d80b4b8e7ecfe671598e0dbda81d371057c2d077ba0a9541e94c"
+  },
+  "limitations": [
+    "Weighted teacher-forced validation loss is not task accuracy or model acceptance. No new weighted-loss checkpoint improved on the original starting model.",
+    "Step 0 identifies the original R11 starting model, not a newly optimized checkpoint or the production model.",
+    "Functional checkpoint selection and any required changed-candidate development/regression/additional-control evaluations are incomplete.",
+    "Header, configuration and checksum checks do not load tensors or certify finite weights or numerical correctness.",
+    "The semantic source review does not execute business operations or measure accuracy; equivalent article-search argument aliases remain distinct in the original exact scorer.",
+    "Recorded training duration excludes initial model loading and dataset encoding before the training timer.",
+    "Repeated regression and additional-control evaluations are not new independent certification.",
+    "This report does not establish native authorization, frontend behavior, all-app model acceptance or production deployment readiness."
+  ]
+}

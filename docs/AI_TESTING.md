@@ -1,5 +1,19 @@
 # Verification and acceptance record
 
+## Facturation completed epoch verified; functional evaluation pending - 16 October 2026
+
+IMPLEMENTED and verified: the completed report is bound to the original successful training invocation, all 1,047 contiguous updates, the original selected FP32 base, frozen datasets and reviewed configuration. Final validation completed. Recorded duration was 34,166.99 seconds, excluding initial loading/encoding; peak process RSS was 7.714 GiB.
+
+Final weighted loss was 0.06773017 against the starting 0.04873197. All four new weighted-loss checkpoints remain above that baseline, so loss selection retains step 0. This is not functional checkpoint selection or accuracy acceptance.
+
+The reviewed read-only inspector verified the final 28,536,776-byte adapter, all 192 F32 tensor headers, contiguous byte ranges, checksum and matching LoRA configuration. It loaded no model weights and did not certify finite tensor values or numerical correctness.
+
+A source-only semantic review covered 133 development rows (104 scenario groups) and 116 additions, recomputing all 90 added date-bound rows. It found no new semantic defects. Six development rows permit equivalent article-search argument aliases; original exact scoring remains unchanged. This review did not execute business queries or model inference.
+
+PARTIALLY IMPLEMENTED: four sequential Colibri checkpoint comparisons are underway. Any selected changed candidate still requires the original three-app development, regression and additional-control gates. These checks do not establish native security, frontend behavior, all-app acceptance or production readiness. No model activation or later-application training occurred. [Verified training completion](../training/reports/facturation-focus-v1-training-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation checkpoints verified - 16 October 2026, 19:41 UTC
 
 PARTIALLY IMPLEMENTED: the server-only Facturation run reached 923/1,047 updates in this timestamped observation. Checkpoints 300, 600 and 900 are saved. Their 192 F32 adapter tensors have matching names, shapes, byte layout and LoRA configuration; file sizes and checksums were recorded without loading model tensors or running inference. The original training process remains live.
