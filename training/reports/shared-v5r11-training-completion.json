@@ -1,0 +1,81 @@
+{
+  "version": "shared-v5r11-training-completion-v1",
+  "status": "TRAINING_COMPLETE; CHECKPOINT_EVALUATION_RUNNING; ACCEPTANCE_NOT_ESTABLISHED",
+  "observed_utc": "2026-10-16T07:22:52Z",
+  "model": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training_completed": true,
+  "training_updates_completed": 2419,
+  "complete_epochs": 1,
+  "duration_seconds": 69378.68484490737,
+  "peak_rss_gib": 7.734,
+  "application_exposure": {
+    "management_projet": {
+      "steps": 1012,
+      "unique_examples": 1012
+    },
+    "facturation": {
+      "steps": 931,
+      "unique_examples": 931
+    },
+    "design_workflow": {
+      "steps": 476,
+      "unique_examples": 476
+    }
+  },
+  "validation_loss_steps": [
+    0,
+    600,
+    1200,
+    1800,
+    2400,
+    2419
+  ],
+  "loss_selected_step": 1200,
+  "functional_selected_step": null,
+  "functional_evaluation": {
+    "status": "RUNNING",
+    "candidate_steps": [
+      600,
+      1200,
+      1800,
+      2400,
+      2419
+    ],
+    "development_rows_per_candidate": 275,
+    "baseline": "Reuse only the verified identical R8 baseline predictions.",
+    "selected_changed_candidate_regression_cases": 438,
+    "selected_changed_candidate_additional_controls": 48
+  },
+  "verified": {
+    "successful_training_exit": true,
+    "contiguous_updates": true,
+    "finite_training_metrics": true,
+    "training_and_validation_hashes": true,
+    "trainer_hash": true,
+    "application_exposure": true,
+    "controller_process_identity": true,
+    "frozen_control_files": 79,
+    "production_healthy_unchanged": true
+  },
+  "training_report_sha256": "e73cc44999a1a72c258f82a4b3f841ab5c0308798afc8e274fd43d75185f592c",
+  "production_activation": false,
+  "next_application_training_started": false,
+  "later_applications": [
+    "contrat",
+    "gestion_magasin",
+    "reservation"
+  ],
+  "accepted": false,
+  "limitations": [
+    "Training completion and validation loss are not accuracy measurements.",
+    "All five changed checkpoints must finish the same development comparison before functional selection.",
+    "Only the selected changed candidate proceeds to regression and additional-control evaluation.",
+    "No 95 percent accuracy claim or production promotion is established.",
+    "Contracts, Gestion Magasin and Reservation remain prepared but untrained."
+  ]
+}

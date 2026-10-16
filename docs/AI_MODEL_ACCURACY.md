@@ -1,5 +1,23 @@
 # Shared model accuracy work
 
+## Current status: R11 evaluation running - 16 October 2026
+
+The latest server training completed all 2,419 updates and final validation. Its five saved checkpoints are now being compared through Colibri. No R11 acceptance percentage is available yet. The lowest-loss checkpoint is not automatically the most accurate checkpoint. [Verified training completion](../training/reports/shared-v5r11-training-completion.json).
+
+The latest completed acceptance measurements are from R8, reported below. These are model-planning checks; they do not execute business tools or certify backend authorization.
+
+| Application | Fully correct regression actions | Exact regression arguments | Additional controls: full actions |
+| --- | ---: | ---: | ---: |
+| Facturation | 98/108 (90.74%) | 77/86 (89.53%) | 6/16 (37.50%) |
+| Management Projet | 187/200 (93.50%) | 138/148 (93.24%) | 16/16 (100.00%) |
+| Design Workflow | 124/130 (95.38%) | 94/100 (94.00%) | 13/16 (81.25%) |
+
+None of these three applications passes all required gates. The additional controls contain only 16 cases per application and are reported separately from the larger regression suite. They are team-authored bilingual scenarios, not an independent population-accuracy estimate. These existing cases remain excluded from training and checkpoint selection.
+
+Contracts, Gestion Magasin and Reservation have prepared curricula but have not started their sequential training stages. No new model has been activated. [Completed R8 measurements and evidence hashes](../training/reports/shared-v5r8-en-fr-evaluation.json).
+
+The following sections are historical observations, not the current job state.
+
 ## R8 preparation and fresh baseline: 2026-10-14
 
 Server training started at 10:17 UTC with 14 CPU threads after metadata and capacity checks passed. The automatic checkpoint/evaluation controller is running. Training and post-training acceptance remain incomplete. [Launch evidence](../training/reports/shared-v5r8-launch.json).

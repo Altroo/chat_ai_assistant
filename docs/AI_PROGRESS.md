@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## R11 training completed; accuracy evaluation running - 16 October 2026
+
+IMPLEMENTED and verified: the server training service exited successfully after all 2,419 contiguous updates and final validation. The complete epoch covered 931 Facturation, 1,012 Management Projet and 476 Design Workflow examples. Reported training duration was 19 hours 16 minutes, with 7.734 GiB peak RSS. Dataset, trainer and exposure checks passed.
+
+PARTIALLY IMPLEMENTED: the Colibri comparison is evaluating the five saved checkpoints on the same 275 development cases. The matching baseline measurements are retained. Step 1200 has the lowest recorded validation loss; functional selection and new acceptance scores are not yet available. Only the selected changed candidate will advance to 438 regression cases and 48 additional controls.
+
+The controller and three evaluation workers were verified live. All 79 frozen control files still match. Production inference remains healthy and unchanged. Contracts, Gestion Magasin and Reservation remain prepared but untrained. Training completion does not establish 95% accuracy or authorize activation.
+
+[Training completion evidence](../training/reports/shared-v5r11-training-completion.json). The sections below retain their historical observation dates.
+
 ## Selective checkpoint diagnostic preparation - 16 October 2026
 
 PARTIALLY IMPLEMENTED: the separate [two-step server probe](../training/scripts/probe_cpu_selective.py), [paired comparator](../training/scripts/compare_selective_checkpointing.py), and [text checkpoint-mask helper](../training/scripts/selective_checkpointing.py) are prepared. They do not modify the active trainer. The probe requires a terminal, accepted R11 predecessor, its selected FP32 model, and the actual Contracts curriculum. It reuses the serial trainer's encoding and loss functions, with explicit full or alternating text-layer masks.
