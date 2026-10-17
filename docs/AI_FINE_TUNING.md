@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Joint-context replay successor, preparation only - 17 October 2026
+
+The V1 experiment remains rejected. The new recipe includes the 116 previously ineligible inherited examples and preserves whole optional-state contrast blocks. It selects 1,171 existing synthetic training rows: 126 new Facturation, 514 retained Facturation, 357 Management Projet and 174 Design Workflow. It covers 154 declared contrast axes and 2,098 retention projections, including joint finite intents, page/result context, request language and bilingual argument presence. These static projections are not model-accuracy measurements.
+
+Request-language provenance is separate from interface language. Explicit metadata and three hash-pinned training annotation files resolve 2,707 rows; 268 legacy rows remain unknown and eligible. No independent evaluation cases supply training labels. Original train/development bytes, evaluation controls, targets and scoring are unchanged. The prepared data includes the six pinned language-source files so admission works from an isolated server directory.
+
+The successor runner and Colibri export supervisor retain the original numerical/resource/cleanup functions and the independently pinned checkpoint-600 predecessor. Seventeen preparation, seven runner and twenty-nine export tests pass; the single reviewer cleared the implementation. No successor training or adapter exists yet. Its larger schedule does not establish retention or predict 95 percent accuracy.
+
+[Reproducible preparation record](../training/reports/facturation-replay-v2-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Completed replay experiment remains below target - 17 October 2026
 
 The unchanged 275-case Colibri comparison completed. Facturation actions remain 110/133 (82.71%), while exact arguments improve only from 88/111 (79.28%) to 89/111 (80.18%). Management Projet regresses from 77/78 to 72/78 actions (92.31%) and from 53/54 to 49/54 exact arguments (90.74%). Design Workflow retains 64/64 actions and 46/46 arguments. Facturation and Design Workflow have 100 percent structured validity; Management Projet has 76/78 valid structures (97.44%).

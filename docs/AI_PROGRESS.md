@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Joint-context bilingual replay correction prepared - 17 October 2026
+
+IMPLEMENTED and reviewed: the successor sampler preserves the frozen V1 recipe, all 2,975 training rows, all 275 development rows and existing control/scoring policies. All 116 inherited focused examples are replay-eligible. The selected 1,171 updates contain 126 new Facturation contrasts, 514 retained Facturation rows, 357 Management Projet rows and 174 Design Workflow rows. Ninety inherited focused rows are selected; all their available semantic projections are covered.
+
+Request language comes from explicit row metadata or exact matches in three pinned synthetic training annotation sources. Of 2,975 rows, 1,362 are labelled English, 1,345 French and 268 remain unknown. Interface language is kept separately; it is never substituted for request language. Joint intent, current-page and previous-result context now preserve combinations missed by marginal coverage.
+
+Seventeen successor preparation, seven runner and twenty-nine export checks pass. Twenty-seven earlier export checks and twelve original preparation checks also pass. The actual isolated-directory admission test passes. The single reviewer cleared the source. Numerical, resource and cleanup functions remain unchanged.
+
+PLANNED: verify source-only server release, stage the exact source/data closure and admit one isolated server experiment from the original selected checkpoint 600. No numerical update, new accuracy result or activation has occurred for this successor. The rejected adapter will not be reused. Zero of six applications are fully accepted.
+
+[Source, selection and actual checks](../training/reports/facturation-replay-v2-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Replay trial did not meet development targets - 17 October 2026
 
 IMPLEMENTED and independently verified: all 275 unchanged Colibri development cases finished at 04:14:06 UTC. Raw event booleans and the frozen scorer reproduce every reported metric and target gate. All bound artifacts and the explicitly scoped event-log prefix match; before/after serving proofs are byte-identical, stderr is empty, and the controller plus all three workers stopped.

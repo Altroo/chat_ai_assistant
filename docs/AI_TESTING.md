@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Joint-context replay preparation checks - 17 October 2026
+
+Seventeen successor preparation tests pass. They verify the 116 inherited examples remain eligible; complete optional-state blocks; all declared joint retention features; bilingual current-page payment schedules, previous-year service fees and missing-details contexts; language switching; pinned training-language provenance; unknown labels; deterministic unique selection; frozen controls; manifest/data tamper rejection; and an actual subprocess admission with only copied helpers plus prepared data.
+
+Seven runner checks and twenty-nine export/isolation checks pass. AST comparisons confirm numerical, capture, resource and cleanup functions remain unchanged. Twenty-seven prior export tests pass in the same 80-test invocation. The twelve frozen V1 preparation tests passed separately. These are implementation checks, not model tests or accuracy predictions.
+
+The single reviewer found and re-reviewed a portable-admission defect; the isolated regression now passes. No new numerical run, Colibri model evaluation or acceptance result has occurred for this successor.
+
+[Checks, source hashes and pinned selection](../training/reports/facturation-replay-v2-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Full replay-trial development verification - 17 October 2026
 
 IMPLEMENTED and verified: all 275 frozen development inputs were evaluated through the original Colibri/provider/settings/scorer. The independent verifier checks source pins before controller import, exact ordered shard inputs, request/case identity, booleans and frozen assessments, model/runtime artifacts, step/model/context/token/thread settings, the combined result's before-proof hash, and the explicit event-log prefix range.
