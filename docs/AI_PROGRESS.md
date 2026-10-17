@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Server metadata preflight passed; numerical handoff prepared - 17 October 2026
+
+IMPLEMENTED and verified on the server: all 2,975 training and 275 original development rows pass exact tokenizer/Colibri-template parity, tool-argument parsing, loss-boundary/alignment and output-budget checks. Maximum sequences are 7,745 and 7,496 tokens within the 8,192-token context; no truncation is permitted. This loaded tokenizer metadata only, not model weights.
+
+IMPLEMENTED as preparation: numerical/capture/resource functions retain the reviewed runner implementation. Export admission now also enforces the dataset's required checkpoint 600 and predecessor report hash. Thirty-six runner/export tests, seven staging tests and nine one-shot launch tests pass, in addition to the twelve preparation checks. These are 64 offline checks, not model-accuracy tests.
+
+The single reviewer cleared the private staging and launch handoff. PLANNED: stage the exact 21-file source closure and three prepared data files, rehash the actual selected FP32 model, check resources and admit one 306-update server experiment. No numerical trial or new model score exists yet. Production inference remains healthy and unchanged; zero of six applications are fully accepted.
+
+[Actual server preflight and handoff checks](../training/reports/facturation-replay-v1-execution-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Coherent Facturation contrasts and explicit replay prepared - 17 October 2026
 
 IMPLEMENTED as preparation only: a source-verified recipe preserves all 2,419 cumulative training rows and appends 556 existing focused inputs, yielding 2,975 training rows and the original 275 development rows. No labels were created or changed. The single reviewer found one missing inherited control-policy record; it was preserved, tested and re-reviewed with no remaining issues.

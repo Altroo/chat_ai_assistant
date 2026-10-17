@@ -1,0 +1,114 @@
+{
+  "version": "facturation-replay-v1-execution-preparation",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "focus_application": "facturation",
+  "retention_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "server_preflight": {
+    "train.jsonl": {
+      "count": 2975,
+      "round_trip_passed": 2975,
+      "runtime_prefix_parity_passed": 2975,
+      "loss_boundary_passed": 2975,
+      "semantic_alignment_passed": 2975,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7745,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 2975,
+      "maximum_target_tokens": 131,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 488,
+      "sha256": "c6fb838c8714b78ae6f0b17dab33d1ca9fa48dc086b4f1ca56a8aaf9e85e88ba"
+    },
+    "valid.jsonl": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 275,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "scope": "Tokenizer/template/parser checks only; not model accuracy or training success"
+  },
+  "server_preflight_verification": {
+    "utc": "2026-10-17T00:58:35.389824+00:00",
+    "sources_and_inputs_unchanged": true,
+    "production_healthy_unchanged": true,
+    "weights_loaded": false,
+    "training_executed": false,
+    "actual_starting_model_weight_binding_still_required": true,
+    "report_sha256": "e3b3074e00c2c1d9a4a577bbcd5d14024248fbf9a3f052d125c539600d07b037",
+    "data_manifest_sha256": "d4350995c0899c56b372fe13a20ff3cb5fce4527844e9e1c4f694b726bbdf4ae",
+    "preparation_sha256": "6f49f84866360de7e5cafe33eb41afab7ea6f17b402184b49c62c59a5e17faba"
+  },
+  "test_groups": {
+    "preparation": {
+      "passed": 12,
+      "seconds": 14.29,
+      "log_sha256": "1b2d5275f04d890a5606dae2c46e1ab5f24facae67aa4e647130147e4eea9723"
+    },
+    "runner_and_export": {
+      "passed": 36,
+      "seconds": 11.837,
+      "log_sha256": "ee882a0aeb3af4df3639ff229c53ec73fd69b0f4ec965506d38658d2999cc5e9"
+    },
+    "staging": {
+      "passed": 7,
+      "seconds": 0.164,
+      "log_sha256": "d108c3b116f08ec91183e4ccb0c3f93a5836e3e57f2282fb9312f7d6e1955692"
+    },
+    "launch": {
+      "passed": 9,
+      "seconds": 0.046,
+      "log_sha256": "34f266ec299011e28adbe4885b8e1033e5581d45e8b5e6aea5c4ad5b7774a8c0"
+    }
+  },
+  "offline_checks_passed": 64,
+  "numerical_capture_and_resource_functions_unchanged": true,
+  "export_cleanup_and_resource_functions_unchanged": true,
+  "predecessor_policy": {
+    "selected_step": 600,
+    "report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+    "enforced_by_export_admission": true
+  },
+  "source_inventory_status": "Discovered and checked locally; server staging not executed",
+  "planned_updates": 306,
+  "planned_cpu_threads": 14,
+  "planned_memory_limit_gib": 32,
+  "single_public_runner_export_review": "No issues",
+  "private_handoff_review": "No issues",
+  "files_sha256": {
+    "training/scripts/rehearse_facturation_replay_v1.py": "063a2a9ec69691c28819bed19ac87d21d89eaebcd142cfa84ccd11d79662d601",
+    "training/scripts/replay_facturation_replay_v1.py": "87724e4c11985325c7bd50c07723dd051ac47a56862b0a11ab6702727a8575c4",
+    "training/tests/test_facturation_replay_runner.py": "b9a1e5a9bd248b3c420800458c44ac92ff72ca910f1b50392e1e462261256583",
+    "training/tests/test_facturation_replay_supervisor_replay_v1.py": "a54fa012cee16a989fd48654594e13e2408f93222baa4dab83430c2e88b2fdf5"
+  },
+  "numerical_trial_started": false,
+  "model_weights_loaded_by_preflight": false,
+  "full_training_authorized": false,
+  "model_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "The server preflight verifies tokenizer/template/parser/masking/budgets, not learned accuracy.",
+    "Actual selected-model weight rehashing, resource admission and numerical dispatch remain incomplete.",
+    "Neither synthetic checks nor the prior failed pilot establish 95 percent accuracy or retention.",
+    "Production inference remains unchanged; no native authorization certification is claimed."
+  ],
+  "required_source_inventory_count": 21
+}

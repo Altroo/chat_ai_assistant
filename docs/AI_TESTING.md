@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Server metadata checks and execution guard tests - 17 October 2026
+
+All 2,975 training and 275 development rows pass actual server tokenizer/Colibri-prefix, argument round-trip, loss-boundary, semantic-alignment, context and target-output-budget checks. Source/data/runtime/tokenizer bookends match and production inference is healthy and unchanged. This is metadata validation, not inference or numerical training.
+
+Thirty-six runner/export tests pass, including exact numerical-function parity, local-training rejection, reviewed-data admission, overlapping-optimizer detection, wrong predecessor checkpoint/report rejection, complete invocation/layer/finite-loss checks, export failure handling and owned-worker cleanup. Seven staging and nine launcher checks also pass. Together with twelve preparation tests, 64 offline checks pass.
+
+No server staging, actual FP32 rehash, numerical dispatch, new accuracy score or native authorization certification is claimed by this preparation report. The private handoff review is cleared; actual runtime admission and all model acceptance gates remain necessary.
+
+[Measured preflight and test groups](../training/reports/facturation-replay-v1-execution-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Coherent contrast/replay preparation checks - 17 October 2026
 
 Twelve metadata/schema tests pass in 14.290 seconds. They verify original source bytes/targets, complete optional-state blocks, all 154 declared contrast axes, independent retained tool/argument/intent coverage, four-source scheduling through the tail, unique deterministic selection, rejected incomplete/uncontrolled contrasts, source-label conflict rejection, preserved additional-control identity/policy, and wrong-manifest/tampered-split rejection.

@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Server tokenizer/template preflight complete - 17 October 2026
+
+The revised replay recipe passes all 3,250 server preflight rows with the unchanged tokenizer and frozen Colibri runtime. Complete targets fit the same context-aware output limit (512 tokens maximum); template/tokenizer prefixes, parsed arguments and semantic-loss boundaries match. The longest training sequence is 7,745 tokens; the longest development sequence is 7,496.
+
+The proposed numerical runner retains the previous optimizer/capture/resource code. Its export supervisor enforces both the required predecessor checkpoint and report hash. There are 64 passing preparation/execution-handoff checks across four suites. They establish static contracts, not model accuracy.
+
+Actual FP32 model rehashing, resource admission, numerical training, export and unchanged development/acceptance evaluation remain incomplete. No candidate is accepted, and the failed pilot adapter must not seed the new trial. No production activation or later-app training has started.
+
+[Verified metadata preflight and preparation limits](../training/reports/facturation-replay-v1-execution-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Replay-preserving Facturation experiment prepared - 17 October 2026
 
 A new metadata-only preparer repairs two measured pilot-design limitations: isolated optional-filter variants and missing old-search/other-app rehearsal. It reuses existing reviewed synthetic training rows, preserving the complete cumulative training prefix and the original 275-row development split. It creates no labels and consumes no acceptance/additional-control cases to select training examples.
