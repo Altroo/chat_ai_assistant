@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Complete-shape replay running on the server - 17 October 2026
+
+PARTIALLY IMPLEMENTED: the reviewed 26-source/nine-data snapshot passed isolated server admission. All 2,975 training and 275 original development rows passed tokenizer, Colibri-template, parser, loss-boundary and output-budget checks. Actual original checkpoint-600 weights and the frozen Colibri runtime were rehashed before the one-shot launch; rejected trial adapters were not reused.
+
+At 2026-10-17T15:09:32Z, the original invocation had completed all 14 baseline diagnostics and 3 of 2,283 selected updates. Recorded update losses and gradients are finite. Fourteen CPU threads and a 32 GiB limit are configured, swap is disabled, and 43.75 GiB RAM was available. The observed service peak was 4.10 GiB.
+
+The single reviewer cleared preparation, numerical/export source, exact preflight/staging/launch payloads and actual launch evidence. Sixty-one implementation checks and seventeen private handoff simulations passed before execution. These checks and early updates do not forecast 95 percent accuracy.
+
+PLANNED: monitor this original invocation, verify completed numerical invariants, export through Colibri, then run the unchanged development and acceptance gates. No new accuracy or activation exists; zero of six applications are fully accepted. Production inference remains healthy and unchanged.
+
+[Actual launch and timestamped progress](../training/reports/facturation-replay-v3-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Generation failures diagnosed; complete-shape replay prepared - 17 October 2026
 
 IMPLEMENTED: four bounded requests through the actual Colibri candidate completed with terminal HTTP/SSE responses. Three generated quote changes used a business number as the internal identifier and were correctly rejected. One stock search generated an unsupported field and misplaced a product filter; schema validation correctly rejected it. The owned worker stopped, all 13 collected files were verified, and production inference remained healthy and unchanged. These fresh diagnostics do not replace the original failed development scores.

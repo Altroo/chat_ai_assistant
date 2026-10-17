@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Complete-shape replay numerical experiment started - 17 October 2026
+
+The server-only Transformers/PEFT LoRA experiment started from the original rehashed checkpoint 600, with 2,283 selected updates and explicit unchanged-app replay. All 3,250 training/development inputs passed the actual tokenizer/template/parser/loss/budget preflight without truncation. The rejected V2 adapter was not reused.
+
+At 2026-10-17T15:09:32Z, all 14 baseline captures and 3 optimizer updates were complete under the original invocation. Early recorded loss and gradient values are finite. Settings remain fourteen threads, 8,192-token context, 24 LoRA layers, rank 16, alpha 32, constant learning rate 1e-5 and semantic weight 4. Production inference remains unchanged.
+
+Completion, all-layer/frozen-weight and saved/live-adapter checks, real Colibri export and broader development/acceptance evaluation remain pending. No new accuracy result or accepted application is claimed.
+
+[Executed admission, launch and observation](../training/reports/facturation-replay-v3-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Source-only argument-shape replay prepared - 17 October 2026
 
 The rejected V2 candidate's four invalid-output diagnostics completed on Colibri. The observed failures are generated argument misuse, with complete transport and output below the 512-token cap. Parsing/schema validation correctly rejected the calls. No parser workaround, label change or benchmark rescore was applied.

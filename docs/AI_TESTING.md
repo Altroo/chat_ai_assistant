@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Actual complete-shape server admission and early updates - 17 October 2026
+
+All 2,975 training and 275 development rows passed the real server tokenizer round-trip, Colibri prompt-prefix parity, parser, loss-boundary, semantic-alignment and output-budget checks. Maximum sequences are 7,745 and 7,496 tokens within the 8,192-token context; every target fits and no truncation is allowed.
+
+The exact 26-source/nine-data snapshot, original selected checkpoint-600 FP32 model and frozen runtime were verified. The single reviewer cleared the source, exact handoff payloads and actual launch evidence. Sixty-one implementation tests and seventeen staging/one-shot/resource simulations passed. Four actual launch-file hashes, command, original invocation identity and resource profile were independently verified.
+
+At 2026-10-17T15:09:32Z, fourteen baseline diagnostics and 3 selected optimizer updates were recorded; early losses and gradients are finite. Production inference stayed healthy and unchanged. No completion, model-accuracy, application-security acceptance or production E2E claim follows from these observations.
+
+[Actual server launch evidence](../training/reports/facturation-replay-v3-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Independent coverage checks before the next numerical run - 17 October 2026
 
 Four real Colibri diagnostic requests completed HTTP/SSE with finish reasons and output counts of 95, 56, 56 and 56 tokens under the 512-token limit. The three quote requests generated a business-number string in the internal-ID field; the stock request generated an unsupported supplier field and misplaced its product filter. Runtime parsing and schema validation correctly rejected these outputs. Thirteen collected files, equal before/after identities, the original successful invocation and owned-worker cleanup were verified. Production inference stayed healthy and unchanged. No application operation ran and original benchmark scores remain unchanged.

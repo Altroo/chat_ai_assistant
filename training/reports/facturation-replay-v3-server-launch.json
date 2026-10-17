@@ -1,0 +1,102 @@
+{
+  "version": "facturation-replay-v3-server-launch",
+  "observed_at": "2026-10-17T15:09:32Z",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "training_framework": "Transformers and PEFT",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "focus_application": "facturation",
+  "retention_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "source_commit": "977cc0fd03a0754d1bac12cbf6675bffbd40ac6f",
+  "staged_source_files": 26,
+  "staged_data_files": 9,
+  "training_rows": 2975,
+  "unchanged_development_rows": 275,
+  "selected_updates": 2283,
+  "update_mix": {
+    "retained_facturation": 811,
+    "retained_management_projet": 709,
+    "new_facturation": 438,
+    "retained_design_workflow": 325
+  },
+  "starting_checkpoint": 600,
+  "starting_model_identity_sha256": "f61ff62845e3e62a49345c54b5aa3073a1f94e70b8e560a53bfc9917b3f296e8",
+  "actual_fp32_model_and_frozen_runtime_rehashed": true,
+  "failed_prior_trial_adapters_reused": false,
+  "resource_admission": {
+    "threads": 14,
+    "memory_limit_gib": 32,
+    "swap_limit_bytes": 0,
+    "available_ram_gib_at_admission": 47.28819274902344,
+    "remaining_after_reserved_limit_gib": 15.288192749023438,
+    "required_spare_gib": 6.202352142333985
+  },
+  "numerical_trial_started": true,
+  "original_invocation_observed": true,
+  "baseline_captures_completed": 14,
+  "planned_after_captures": 14,
+  "completed_updates_at_observation": 3,
+  "last_update_loss": 0.09707175940275192,
+  "last_update_gradient_norm": 51.016571044921875,
+  "max_recorded_step_rss_gib": 3.9387893676757812,
+  "observed_service_cgroup_peak_gib": 4.095584869384766,
+  "available_ram_gib_at_observation": 43.75361633300781,
+  "settings": {
+    "threads": 14,
+    "max_seq_length": 8192,
+    "learning_rate": 1e-05,
+    "semantic_loss_weight": 4.0,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32.0
+  },
+  "tokenizer_preflight": {
+    "training_rows_passed": 2975,
+    "development_rows_passed": 275,
+    "maximum_training_sequence_tokens": 7745,
+    "maximum_development_sequence_tokens": 7496,
+    "context_limit": 8192,
+    "output_cap": 512
+  },
+  "implementation_tests": {
+    "preparation": 25,
+    "runner": 7,
+    "export_supervisor": 29,
+    "private_stage_launch_guards": 17
+  },
+  "evidence_sha256": {
+    "started-unit.json": "27ae8f615af94961a6e6785e8382bd2a2b091e3a7aaff86ffedfa80354a7856d",
+    "launch-plan.json": "2618ff5297f39b5668899831d209d82dcf7de8f0e651ea9853f2c18eeaf6136f",
+    "model-binding.json": "54b23b6fac17f75d42cd1413dc26ce772c650d23bd115569560dfc0c944708c1",
+    "staging-binding.json": "b29a54a7a08e62c67f17f0b64781a841fa037c331fefd32438bb2584edaa223f",
+    "numerical_plan": "d5d22fa5a49c6991190d7f249938c35e52db5c7cf2cc88edbdfa4c93024ba87a",
+    "baseline_captures": "65d8231b26d669ab01d76b283e7941f96ce8fcaa6f9a0afd309ddf5a76869e0f",
+    "launch_stdout": "82da7488c5051c65e142edc5a9261c253d4ec21885a3f1fc40d253d6af730242",
+    "launch_payload_review": "f2b31c35bac59aea8cbbe63b44df347d19e88c515f5ad3e58c97b5249d535262",
+    "metadata_preflight_stdout": "1f39004ed4521c823793af8f3064fada3b9ca3955a40e8e7d08bdf4436700eea",
+    "actual_launch_verification": "a9482968a36c57e5a527656dec9a98b43908ab3f02f86c41bf61178ac7cf30c1"
+  },
+  "numerical_trial_complete": false,
+  "actual_export_replay_complete": false,
+  "new_development_accuracy": null,
+  "new_acceptance_accuracy": null,
+  "full_training_authorized": false,
+  "model_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "production_healthy_unchanged": true,
+  "next_application_training_started": false,
+  "limitations": [
+    "This timestamped observation records an active experiment, not completed training or acceptance.",
+    "Baseline diagnostics and early finite updates do not forecast model accuracy.",
+    "All-layer participation, frozen parameters and saved/live adapter equality remain completion requirements.",
+    "Real Colibri export/replay, all 275 unchanged development cases and existing acceptance gates remain required.",
+    "No rejected disposable adapter may seed another run."
+  ]
+}
