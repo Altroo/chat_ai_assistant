@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Completed V2 pilot development comparison - 17 October 2026
+
+IMPLEMENTED and verified: all 275 original development cases completed through Colibri. Independent recomputation reproduced every reported metric and target gate. All bound file hashes match, before/after serving proofs are byte-identical, stderr is empty and all three workers stopped.
+
+The candidate failed the Facturation and Management Projet development gates; Design Workflow passed this development set. Facturation exact actions were 107/133 (80.45%), Management Projet 72/78 (92.31%) and Design Workflow 64/64 (100.00%). Corresponding exact-argument counts were 85/111 (76.58%), 48/54 (88.89%) and 46/46 (100.00%).
+
+This comparison is not acceptance or native-security certification. All existing acceptance cases/scoring remain unchanged. No new acceptance score, full V2 epoch, model activation or later-application training is claimed. The failed pilot will not seed a longer run.
+
+[Verified complete development comparison](../training/reports/facturation-focus-v2-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Real V2 numerical and Colibri execution - 17 October 2026
 
 IMPLEMENTED and verified: the original numerical invocation exited successfully after 92 contiguous selected updates and 14 before/14 after captures. It verified saved/live adapter equality, frozen-parameter stability, and nonzero gradients/updates in all 24 intended layers. The export supervisor then completed the actual FP32 merge, Colibri conversion, 14-request streamed replay, artifact checks and owned-worker cleanup.

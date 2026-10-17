@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## V2 pilot measured development regression - 17 October 2026
+
+The completed 92-update trial's unchanged 275-case Colibri development comparison regressed. Facturation exact actions fell from 110/133 (82.71%) to 107/133 (80.45%); exact arguments fell from 88/111 (79.28%) to 85/111 (76.58%). Management Projet actions fell from 77/78 (98.72%) to 72/78 (92.31%), and arguments from 53/54 (98.15%) to 48/54 (88.89%). Design Workflow retained 64/64 actions and 46/46 argument matches.
+
+This is evidence against extending or activating this pilot. It is not a failed production release: the candidate remained isolated and all comparison workers stopped. All 92 updates used Facturation data; there was no other-application replay. Causality requires further review rather than assuming a longer run will recover the losses.
+
+PLANNED: review training/development evidence and any revised training recipe before a fresh experiment from the unchanged starting model. The disposable adapter must not be reused. No full 1487-row V2 epoch, new acceptance run, later-application training or activation occurred. Zero of six applications are fully accepted.
+
+[Recomputed development metrics and limitations](../training/reports/facturation-focus-v2-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Completed V2 pilot, real Colibri diagnostics pending full score - 17 October 2026
 
 The bounded 92-update numerical trial and real Colibri export/replay have completed successfully. This is executed LoRA optimization on selected inputs, not a complete 1487-row V2 training epoch. All 24 intended layers updated, frozen parameters stayed unchanged and the saved adapter matched the captured live model. It remains a disposable trial and must not seed a later full run.

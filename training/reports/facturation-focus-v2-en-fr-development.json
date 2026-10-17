@@ -1,0 +1,176 @@
+{
+  "version": "facturation-focus-v2-pilot-development",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "pilot_updates": 92,
+  "cases": 275,
+  "source_baseline_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+  "source_baseline_selected_step": 600,
+  "by_application": {
+    "facturation": {
+      "baseline_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 132,
+          "structured_valid": 133,
+          "action_matches": 110
+        },
+        "percent": {
+          "tool_correct": 99.25,
+          "structured_valid": 100.0,
+          "action_matches": 82.71
+        },
+        "exact_arguments": {
+          "passed": 88,
+          "count": 111,
+          "percent": 79.28
+        }
+      },
+      "pilot_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 128,
+          "structured_valid": 133,
+          "action_matches": 107
+        },
+        "percent": {
+          "tool_correct": 96.24,
+          "structured_valid": 100.0,
+          "action_matches": 80.45
+        },
+        "exact_arguments": {
+          "passed": 85,
+          "count": 111,
+          "percent": 76.58
+        }
+      },
+      "no_development_metric_decline": false
+    },
+    "management_projet": {
+      "baseline_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 77,
+          "structured_valid": 78,
+          "action_matches": 77
+        },
+        "percent": {
+          "tool_correct": 98.72,
+          "structured_valid": 100.0,
+          "action_matches": 98.72
+        },
+        "exact_arguments": {
+          "passed": 53,
+          "count": 54,
+          "percent": 98.15
+        }
+      },
+      "pilot_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 73,
+          "structured_valid": 76,
+          "action_matches": 72
+        },
+        "percent": {
+          "tool_correct": 93.59,
+          "structured_valid": 97.44,
+          "action_matches": 92.31
+        },
+        "exact_arguments": {
+          "passed": 48,
+          "count": 54,
+          "percent": 88.89
+        }
+      },
+      "no_development_metric_decline": false
+    },
+    "design_workflow": {
+      "baseline_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 64
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 46,
+          "count": 46,
+          "percent": 100.0
+        }
+      },
+      "pilot_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 64
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 46,
+          "count": 46,
+          "percent": 100.0
+        }
+      },
+      "no_development_metric_decline": true
+    }
+  },
+  "development_targets_passed": {
+    "facturation": false,
+    "management_projet": false,
+    "design_workflow": true
+  },
+  "model_accepted": false,
+  "full_training_authorized": false,
+  "production_activation": false,
+  "limitations": [
+    "One bounded pilot and unchanged synthetic development data; acceptance is separate.",
+    "Original serving/provider settings and scoring are retained. No new language-level accuracy is inferred.",
+    "Development gains alone neither authorize a longer epoch nor certify native authorization.",
+    "These are development results, not new acceptance/regression scores. The last completed Facturation regression remains 96/108 (88.89%).",
+    "All 92 pilot updates used Facturation inputs; this pilot did not include replay training from the other applications."
+  ],
+  "evidence_sha256": {
+    "development-92-results.json": "b0cadbae150f67670ed8dd3f822d4f15ff08284dffa99738cdf7f0562778dc6e",
+    "development-92-1.inputs.jsonl": "d97facfe8a23ebc9a5383aa9541f259654d965f235ad81ab42fdaf143a8f79c1",
+    "development-92-1.events.jsonl": "f600b0309900ee62401af3b5903d31f261a47a6793ea272943e0ee8ec8edfec2",
+    "development-92-0.events.jsonl": "6d0770b7ebb6748efad5410b302c9e72566788d2eca1e40136c1357eed28b417",
+    "development-92-0.inputs.jsonl": "0f3f4feeb5c060af976caf68df7503a254c8f9aaddd56b6c901ee05da9fdaa05",
+    "development-92-stop.json": "492ad1ad7134209c2c7db8d4d4100719ee6839c1c8c3772c13644165475da6d6",
+    "development-92-launch.json": "56803357d1fc0f8ee30fcda79e64593d633a478710b3a80ed424074d638f482d",
+    "development-92-2.events.jsonl": "4f13573fa61c62624436674419f72fb210fa02095490231151c8cf471c7cea70",
+    "development-92-2.inputs.jsonl": "ef0c30b68ee203a169c9bfe76ae5b7cd60ee17d91821fb56d7dc7ef06bade921",
+    "development-92-after.json": "64a13a2c22a26ffbe0de1bf2120cef22b34cf331a98db529933fc16b206fcffb",
+    "events.jsonl": "011b28aec58e28fbf483eb1183157b7b3f039462b039c5aa7a3edfdbfb15133c",
+    "operator-binding.json": "4ec9d3b9cc4e54fbd28178ece4e8eaa6578705305fedabb0ed390ab41e942a5b",
+    "development-92-before.json": "64a13a2c22a26ffbe0de1bf2120cef22b34cf331a98db529933fc16b206fcffb",
+    "development-92-prepare.json": "fcf08804887b44826ecf8cccce166682e77183c59d119e35e4e14be34061cbeb"
+  },
+  "completion_verification": {
+    "cases_recomputed": 275,
+    "bound_artifacts_verified": true,
+    "workers_stopped": 3,
+    "stderr_empty": true,
+    "source_report_sha256": "218ffe8cf911d183f4afe8fb7ee76e5bb7c63d04af3203d16852f3e4cc1d8f19",
+    "verification_sha256": "9fe6a5309f14afc1d0c92764769ec7b7d429d7fa4f9d1f7c4b379349f1a23fd5"
+  },
+  "decision": "Reject this pilot for activation or extension; review training/development evidence before another experiment from the unchanged predecessor.",
+  "accepted_applications": 0,
+  "full_v2_epoch_complete": false,
+  "evidence_scopes": {
+    "events.jsonl": {
+      "scope": "Pre-terminal event prefix captured before the report was written; excludes the later finished event",
+      "prefix_length_bytes": 403
+    }
+  }
+}

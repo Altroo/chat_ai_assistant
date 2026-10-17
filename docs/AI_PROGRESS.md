@@ -1,5 +1,23 @@
 # Chat AI Assistant progress
 
+## V2 pilot development regressed; candidate rejected - 17 October 2026
+
+IMPLEMENTED and verified: the unchanged 275-case development comparison finished at 00:35:37 UTC. All metrics were independently recomputed; bound artifact hashes match, before/after serving proofs are identical, stderr is empty and all three owned workers stopped.
+
+| Application | Exact actions, baseline to pilot | Exact arguments, baseline to pilot | Structured output, pilot |
+| --- | ---: | ---: | ---: |
+| facturation | 110/133 (82.71%) to 107/133 (80.45%) | 88/111 (79.28%) to 85/111 (76.58%) | 133/133 (100.00%) |
+| management_projet | 77/78 (98.72%) to 72/78 (92.31%) | 53/54 (98.15%) to 48/54 (88.89%) | 76/78 (97.44%) |
+| design_workflow | 64/64 (100.00%) to 64/64 (100.00%) | 46/46 (100.00%) to 46/46 (100.00%) | 64/64 (100.00%) |
+
+PARTIALLY IMPLEMENTED: the pilot failed to improve Facturation and regressed Management Projet. It is rejected for activation and must not seed a longer run. Design Workflow passes only this development comparison, not overall acceptance. The last completed Facturation regression remains 96/108 (88.89%); no new acceptance run was executed. Zero of six applications are fully accepted.
+
+PLANNED: review training/development error patterns and the training mix before another isolated experiment from the unchanged predecessor. All 92 updates were Facturation-only, without other-application replay. Existing acceptance contents/scoring remain unchanged. Production inference is unchanged; no later-application training or full V2 epoch has started.
+
+[Verified full development comparison](../training/reports/facturation-focus-v2-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation bounded trial and Colibri export complete - 17 October 2026
 
 IMPLEMENTED and verified: the original 92-update trial completed successfully, including all 14 baseline and 14 trained-model captures. All 24 intended LoRA layers received nonzero gradients and updates; frozen parameters stayed unchanged, and the saved adapter matched the live trained model. The recorded trial timer was 2561.42 seconds, covering updates, adapter persistence, trained captures and verification, excluding baseline capture/loading. The service cgroup peak was 7.170 GiB, which is not process RSS.
