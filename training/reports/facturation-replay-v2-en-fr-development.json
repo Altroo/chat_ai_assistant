@@ -1,0 +1,260 @@
+{
+  "version": "facturation-replay-v2-en-fr-development",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "pilot_updates": 1171,
+  "cases": 275,
+  "source_baseline_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+  "source_baseline_selected_step": 600,
+  "by_application": {
+    "facturation": {
+      "baseline_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 132,
+          "structured_valid": 133,
+          "action_matches": 110
+        },
+        "percent": {
+          "tool_correct": 99.25,
+          "structured_valid": 100.0,
+          "action_matches": 82.71
+        },
+        "exact_arguments": {
+          "passed": 88,
+          "count": 111,
+          "percent": 79.28
+        }
+      },
+      "pilot_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 128,
+          "structured_valid": 132,
+          "action_matches": 113
+        },
+        "percent": {
+          "tool_correct": 96.24,
+          "structured_valid": 99.25,
+          "action_matches": 84.96
+        },
+        "exact_arguments": {
+          "passed": 92,
+          "count": 111,
+          "percent": 82.88
+        }
+      },
+      "no_development_metric_decline": false
+    },
+    "management_projet": {
+      "baseline_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 77,
+          "structured_valid": 78,
+          "action_matches": 77
+        },
+        "percent": {
+          "tool_correct": 98.72,
+          "structured_valid": 100.0,
+          "action_matches": 98.72
+        },
+        "exact_arguments": {
+          "passed": 53,
+          "count": 54,
+          "percent": 98.15
+        }
+      },
+      "pilot_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 75,
+          "structured_valid": 75,
+          "action_matches": 75
+        },
+        "percent": {
+          "tool_correct": 96.15,
+          "structured_valid": 96.15,
+          "action_matches": 96.15
+        },
+        "exact_arguments": {
+          "passed": 51,
+          "count": 54,
+          "percent": 94.44
+        }
+      },
+      "no_development_metric_decline": false
+    },
+    "design_workflow": {
+      "baseline_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 64
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 46,
+          "count": 46,
+          "percent": 100.0
+        }
+      },
+      "pilot_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 64
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 46,
+          "count": 46,
+          "percent": 100.0
+        }
+      },
+      "no_development_metric_decline": true
+    }
+  },
+  "development_targets_passed": {
+    "facturation": false,
+    "management_projet": false,
+    "design_workflow": true
+  },
+  "model_accepted": false,
+  "full_training_authorized": false,
+  "production_activation": false,
+  "limitations": [
+    "One bounded pilot and unchanged synthetic development data; acceptance is separate.",
+    "Original serving/provider settings and scoring are retained. No new language-level accuracy is inferred.",
+    "Development gains alone neither authorize a longer epoch nor certify native authorization.",
+    "The candidate improved Facturation full actions by three cases but lost earlier correct cases and Management Projet performance.",
+    "Unchanged frozen scores include native-equivalent argument aliases; no favorable rescoring was applied.",
+    "Zero of six applications are fully accepted. This experiment has no new acceptance score and cannot seed a longer run.",
+    "No production model was replaced. Worker/controller cleanup and the existing inference-container health were verified, not all business application workflows."
+  ],
+  "evidence_sha256": {
+    "development-1171-before.json": "c57c9abfdf86a57e8fe779c3fb1b936fa007a1c58e96791c24cdae8e8af21aa8",
+    "development-1171-results.json": "00663a54983ebdd9a0db83bcccd39e956f7f1fa34ce9e8005e9e1fbdf33a8086",
+    "development-1171-2.events.jsonl": "fb407b9b530eaa93a73da2bb4a8a45569236d4b8f1208eb4046a81ae61a148dc",
+    "development-1171-2.inputs.jsonl": "ef0c30b68ee203a169c9bfe76ae5b7cd60ee17d91821fb56d7dc7ef06bade921",
+    "development-1171-stop.json": "d90449d8fcab18b0472125e8fe762c12b16c2c0ee435f93590c5fe0e26c76f5d",
+    "operator-binding.json": "fda66b19d5d2cc6dca055936d1858e81458440a9c5d9c93bf6cf7666fe11c0ef",
+    "development-1171-0.events.jsonl": "8b85cfce5f953b873b86b9778f08fe6ac4603f3acbc48e3b1ac9a8837e5297ff",
+    "development-1171-launch.json": "1fef02f849a4ec488397871c6adbb08f285600975976d4328bd8cc456457a5b7",
+    "development-1171-0.inputs.jsonl": "0f3f4feeb5c060af976caf68df7503a254c8f9aaddd56b6c901ee05da9fdaa05",
+    "development-1171-prepare.json": "e0acbaf198a1d5e3ac9d45c60fd23ad3a39c6b43eace0de85eb3c9a34ae44291",
+    "development-1171-after.json": "c57c9abfdf86a57e8fe779c3fb1b936fa007a1c58e96791c24cdae8e8af21aa8",
+    "development-1171-1.inputs.jsonl": "d97facfe8a23ebc9a5383aa9541f259654d965f235ad81ab42fdaf143a8f79c1",
+    "development-1171-1.events.jsonl": "93c0d474d5384a36f7a4d4bc38f802488a7654b3217fe0bbfa6f1cf477cc347f"
+  },
+  "events_prefix": {
+    "bytes": 407,
+    "sha256": "1ab660c519b7784b1d9fb4afc8f09b2f3cffcbf6a3d2b3b98b38f3f5c8932729",
+    "scope": "Event log prefix before terminal finished event; not the whole final file"
+  },
+  "decision": "REJECTED: Facturation targets unmet and Management Projet regression.",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "focus_application": "facturation",
+  "retention_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "completed_utc": "2026-10-17T14:11:16Z",
+  "independent_verification": {
+    "completed_utc": "2026-10-17T14:11:16Z",
+    "verified_cases": 275,
+    "metrics_independently_recomputed": true,
+    "artifacts_verified": true,
+    "before_after_proofs_identical": true,
+    "event_prefix_verified": true,
+    "workers_stopped": 3,
+    "controller_stopped": true,
+    "production_healthy_unchanged": true,
+    "by_application": {
+      "facturation": {
+        "count": 133,
+        "actions": 113,
+        "action_percent": 84.9624060150376,
+        "exact_arguments": 92,
+        "eligible_arguments": 111,
+        "argument_percent": 82.88288288288288,
+        "development_targets_passed": false,
+        "no_development_metric_decline": false
+      },
+      "management_projet": {
+        "count": 78,
+        "actions": 75,
+        "action_percent": 96.15384615384616,
+        "exact_arguments": 51,
+        "eligible_arguments": 54,
+        "argument_percent": 94.44444444444444,
+        "development_targets_passed": false,
+        "no_development_metric_decline": false
+      },
+      "design_workflow": {
+        "count": 64,
+        "actions": 64,
+        "action_percent": 100.0,
+        "exact_arguments": 46,
+        "eligible_arguments": 46,
+        "argument_percent": 100.0,
+        "development_targets_passed": true,
+        "no_development_metric_decline": true
+      }
+    },
+    "raw_report_sha256": "510345b212a440656a48ecb59dd9d157db32007e4aeb69d92b5887d2d9a61b71",
+    "model_accepted": false,
+    "new_acceptance_score": null
+  },
+  "accepted_applications": 0,
+  "new_acceptance_score": null,
+  "next_application_training_started": false,
+  "full_training_may_resume_from_this_adapter": false,
+  "performance": {
+    "concurrent_workers": 3,
+    "threads_per_worker": 4,
+    "latency_seconds": {
+      "count": 275,
+      "mean": 17.703712727272727,
+      "median": 15.969,
+      "p95_nearest_rank": 24.752
+    },
+    "first_visible_event_seconds": {
+      "count": 272,
+      "mean": 17.70594117647059,
+      "median": 15.914000000000001,
+      "p95_nearest_rank": 24.738
+    },
+    "completion_tokens_per_wall_second": {
+      "count": 271,
+      "mean": 3.2665461254612547,
+      "median": 3.23,
+      "p95_nearest_rank": 5.587
+    },
+    "usage_records": 271,
+    "scope": "Frozen model/tool-planning benchmark without business-tool execution. Request latency includes prompt prefill. First visible parsed event is not necessarily first generated token; per-request wall-time output rate is not decoder-only speed.",
+    "p95_method": "Nearest rank; median uses the standard midpoint rule.",
+    "memory_observation": {
+      "observed_utc": "2026-10-17T14:09:37.062709+00:00",
+      "individual_worker_cgroup_peak_gib": [
+        2.629680633544922,
+        2.6305313110351562,
+        2.7213211059570312
+      ],
+      "scope": "Cgroup peaks observed before cleanup at the stated time, not certified final whole-run peaks."
+    }
+  }
+}

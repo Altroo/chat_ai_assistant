@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Joint-context replay remains below acceptance targets - 17 October 2026
+
+PARTIALLY IMPLEMENTED: this Facturation experiment completed its server training, real Colibri export and all 275 unchanged development cases. Independent verification recomputed the frozen scores and confirmed artifact identities, exact case/target/shard matching, event-log prefix integrity and explicit cleanup of all three workers and the controller.
+
+Facturation full actions improved from 110/133 (82.71%) to 113/133 (84.96%); exact arguments improved from 88/111 (79.28%) to 92/111 (82.88%). Management Projet declined from 77/78 (98.72%) to 75/78 (96.15%) full actions and from 53/54 (98.15%) to 51/54 (94.44%) arguments. Design Workflow retained 64/64 actions and 46/46 arguments.
+
+This rejects activation or extension of the experiment. Its fourteen successful export diagnostics did not establish general accuracy. No new acceptance score exists, zero of six applications are fully accepted, and the disposable adapter cannot seed a longer run. The production inference model remains healthy and unchanged.
+
+PLANNED: review the concrete model failures and native contracts before another numerical run. Scores, frozen development/acceptance inputs and historical reports remain unchanged.
+
+[Independently verified development results and measured latency](../training/reports/facturation-replay-v2-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Joint-context replay optimization and export completed - 17 October 2026
 
 IMPLEMENTED and verified as a bounded experiment: all 1,171 selected server updates completed with finite losses and gradients, all 24 intended layers updated, unchanged frozen parameters and matching saved/live adapter. The numerical service peaked at 7.32 GiB within its 32 GiB limit. Fourteen baseline and fourteen trained diagnostic captures matched their targets.

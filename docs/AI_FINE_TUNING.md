@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Completed joint-context replay failed the development gate - 17 October 2026
+
+The 1,171-update Facturation experiment completed all 275 original Colibri development requests. The independent verifier recomputed scores from raw case events and checked serving identities, source pins and worker/controller cleanup.
+
+Full-action accuracy: Facturation 113/133 (84.96%), Management Projet 75/78 (96.15%), Design Workflow 64/64 (100%). Exact arguments: Facturation 92/111 (82.88%), Management Projet 51/54 (94.44%), Design Workflow 46/46 (100%). Facturation gained three full actions over the original checkpoint-600 baseline, while Management Projet lost two. Facturation also lost previously correct cases; no no-decline or acceptance claim is made.
+
+The candidate is rejected. No longer run starts from its disposable adapter, no production model is replaced, and no complete six-application training or 95 percent acceptance is claimed. The next step is a source/contract/failure review before choosing another experiment.
+
+[Complete development comparison](../training/reports/facturation-replay-v2-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Joint-context replay executed; general accuracy pending - 17 October 2026
 
 The server-only Transformers/PEFT LoRA experiment completed all 1,171 selected updates from the original checkpoint-600 export. All 24 intended layers received finite nonzero gradients and changed; frozen parameters remained unchanged and the saved adapter matched live parameters. The frozen runner recorded 31,414.21 seconds for updates, adapter persistence, trained captures and final verification, excluding initial loading and baseline captures.

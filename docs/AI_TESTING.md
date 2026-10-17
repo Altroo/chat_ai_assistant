@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## All 275 joint-context development cases independently verified - 17 October 2026
+
+IMPLEMENTED and verified as evaluation: all 275 original inputs, case IDs, expected targets and shard order match. Raw booleans and the frozen scorer reproduce the reported tool, argument, structure and full-action metrics. Bound model/runtime artifacts, before/after serving proofs, explicit event-log prefix and original source controls match. All three owned workers and the controller stopped; stderr files are empty and the production inference model remains healthy and unchanged.
+
+The measured candidate fails the Facturation and Management Projet development gates; Design Workflow passes its development gate. This is not application acceptance or a new acceptance-suite score. Native-equivalent argument aliases remain failures under the unchanged frozen exact scoring.
+
+With three four-thread workers, all 275 request latencies averaged 17.70 seconds and P95 was 24.75 seconds. This includes prompt prefill and excludes business-tool execution. The 271 available output-usage records average 3.27 completion tokens per request wall second; this is not decoder-only generation speed. Parsed first-visible-event timing is also not claimed as raw time to first token.
+
+[Verified comparison, methodology and limitations](../training/reports/facturation-replay-v2-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Actual joint-context completion and Colibri replay - 17 October 2026
 
 Independent evidence checks verified all 1,171 contiguous updates in the pinned selected-row order, finite loss/gradient values, all-layer updates, unchanged frozen weights and saved/live-adapter equality. All six numerical evidence hashes match. The original numerical invocation exited successfully.
