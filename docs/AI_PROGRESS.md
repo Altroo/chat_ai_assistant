@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Joint-context replay training started on server - 17 October 2026
+
+PARTIALLY IMPLEMENTED: one isolated 1,171-update experiment started from the rehashed original checkpoint 600. The server verified all 22 source files and nine prepared data files, including pinned synthetic language provenance. Full tokenizer/template/loss-boundary checks passed all 2,975 training and 275 unchanged development rows without truncation. No failed trial adapter was reused.
+
+At 2026-10-17T04:40:27Z, the original invocation was running with all 14 baseline captures and one update complete. Fourteen CPU threads and a 32 GiB limit are configured, swap is disabled, and 43.73 GiB RAM was available. The first update used an inherited Facturation row previously excluded by V1. Its finite loss/gradient confirms execution, not accuracy improvement.
+
+The single reviewer cleared source, staging, resource/model admission, one-shot launch and read-only observation. Fifty-three successor implementation tests and 51 private server-handoff simulations pass. These checks do not predict 95 percent accuracy.
+
+PLANNED: finish this original invocation, verify numerical/adapter invariants, export through Colibri and run all unchanged development and acceptance checks. No new model score, activation or later-app numerical job exists. Production inference remains healthy and unchanged; zero of six applications are fully accepted.
+
+[Actual launch and timestamped progress](../training/reports/facturation-replay-v2-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Joint-context bilingual replay correction prepared - 17 October 2026
 
 IMPLEMENTED and reviewed: the successor sampler preserves the frozen V1 recipe, all 2,975 training rows, all 275 development rows and existing control/scoring policies. All 116 inherited focused examples are replay-eligible. The selected 1,171 updates contain 126 new Facturation contrasts, 514 retained Facturation rows, 357 Management Projet rows and 174 Design Workflow rows. Ninety inherited focused rows are selected; all their available semantic projections are covered.

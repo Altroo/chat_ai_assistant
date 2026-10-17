@@ -1,0 +1,85 @@
+{
+  "version": "facturation-replay-v2-server-launch",
+  "observed_at": "2026-10-17T04:40:27Z",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "training_framework": "Transformers and PEFT",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "focus_application": "facturation",
+  "retention_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "source_commit": "e1ad81810512edeb1d7d10a5c2177ea4f9f5e2f9",
+  "staged_source_files": 22,
+  "staged_data_files": 9,
+  "training_rows": 2975,
+  "unchanged_development_rows": 275,
+  "selected_updates": 1171,
+  "update_mix": {
+    "retained_facturation": 514,
+    "retained_management_projet": 357,
+    "retained_design_workflow": 174,
+    "new_facturation": 126
+  },
+  "starting_checkpoint": 600,
+  "starting_model_identity_sha256": "f61ff62845e3e62a49345c54b5aa3073a1f94e70b8e560a53bfc9917b3f296e8",
+  "actual_fp32_model_and_frozen_runtime_rehashed": true,
+  "failed_prior_trial_adapters_reused": false,
+  "resource_admission": {
+    "threads": 14,
+    "memory_limit_gib": 32,
+    "swap_limit_bytes": 0,
+    "available_ram_gib_at_preview": 47.564029693603516,
+    "remaining_after_reserved_limit_gib": 15.564029693603516,
+    "required_spare_gib": 6.202352142333985
+  },
+  "numerical_trial_started": true,
+  "original_invocation_observed": true,
+  "baseline_captures_completed": 14,
+  "planned_after_captures": 14,
+  "completed_updates_at_observation": 1,
+  "max_recorded_step_rss_gib": 3.2951202392578125,
+  "observed_service_cgroup_peak_gib": 3.7801780700683594,
+  "available_ram_gib_at_observation": 43.72716522216797,
+  "settings": {
+    "threads": 14,
+    "max_seq_length": 8192,
+    "learning_rate": 1e-05,
+    "semantic_loss_weight": 4.0,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32.0
+  },
+  "evidence_sha256": {
+    "started-unit.json": "8e9a5e05672e5c97015f1830fffddcac2352ba664ce612c64250be3ef9dd87a8",
+    "launch-plan.json": "5b22f04b8c7008c4d07ddf919839154de987cb6f118f64d43ca4a1f41d5d64c8",
+    "model-binding.json": "8e64edd1bce65b3224411d77272d91ea660ed96a6313c79c9b0e866356308b6c",
+    "staging-binding.json": "f136eb2811a64f5c0f732e8ff6621f534ffdcc752a8e0367fa35b59055076812",
+    "numerical_plan": "eb40f6eb112b2d7d9eab79923cab6abb0b4f4c634a4e118230ab92a8a93bbd44",
+    "baseline_captures": "ff43f60714df4b8f385cdad2f00e42af49cc3946fca9fe072cd20dd0de016927",
+    "launch_stdout": "5c6f4c7d262bae536df448825a44d4ebadb34d01511d26180fa4a74f3e725d54",
+    "reviewed_launch_controls": "433e556f3b716a1433e2d8bfd6d152323f84920f46bb0791160eb2f7a832be22",
+    "metadata_preflight_stdout": "01c2418b25deb49d79a5c956ca964261b08688a73c1488ff7061015426540bb9"
+  },
+  "numerical_trial_complete": false,
+  "actual_export_replay_complete": false,
+  "new_development_accuracy": null,
+  "new_acceptance_accuracy": null,
+  "full_training_authorized": false,
+  "model_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "production_healthy_unchanged": true,
+  "next_application_training_started": false,
+  "limitations": [
+    "This timestamped observation records an active bounded experiment, not completed training or model acceptance.",
+    "Fourteen baseline captures and early finite updates do not estimate accuracy.",
+    "Completed training must still verify all intended layers, frozen parameters and saved/live adapter equality.",
+    "Actual Colibri export/replay, all 275 unchanged development cases and existing acceptance gates remain necessary.",
+    "The disposable adapter must not seed a longer training run."
+  ]
+}

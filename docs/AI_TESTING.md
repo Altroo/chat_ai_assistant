@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Actual server preflight and reviewed handoff - 17 October 2026
+
+The actual server metadata preflight passed all 2,975 training and 275 original development rows: tokenizer round-trip, runtime-prefix parity, loss boundary, semantic alignment and output-budget checks with a 512-token cap. The smallest available output budgets were 488 training tokens and 512 development tokens; every target fits. Maximum sequence lengths remain 7,745 and 7,496 within 8,192 tokens; no truncation is allowed. Source/data/runtime identities and production health were unchanged.
+
+The reviewed 22-source/9-data snapshot passed isolated admission. Seventeen stage/launch tests and 34 future export/development simulations pass. The frozen evaluator/scorer, original 275 cases and baseline are unchanged. Later stages have not executed.
+
+At 2026-10-17T04:40:27Z, the original numerical invocation had completed 14 baseline captures and one finite update. Model acceptance, performance and after-training captures remain pending. A passed implementation simulation does not forecast 95 percent accuracy.
+
+[Actual launch and source/model/resource checks](../training/reports/facturation-replay-v2-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Joint-context replay preparation checks - 17 October 2026
 
 Seventeen successor preparation tests pass. They verify the 116 inherited examples remain eligible; complete optional-state blocks; all declared joint retention features; bilingual current-page payment schedules, previous-year service fees and missing-details contexts; language switching; pinned training-language provenance; unknown labels; deterministic unique selection; frozen controls; manifest/data tamper rejection; and an actual subprocess admission with only copied helpers plus prepared data.

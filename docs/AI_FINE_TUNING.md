@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Joint-context replay server experiment running - 17 October 2026
+
+The server-only Transformers/PEFT experiment has started from the original rehashed checkpoint 600 with 1,171 selected updates. The previous disposable adapters are not reused. All 2,975 training and 275 unchanged development rows passed the actual tokenizer, Colibri-template, loss-mask and output-budget preflight. Isolated admission verified 22 source files and 9 prepared data files.
+
+At 2026-10-17T04:40:27Z, 14 baseline captures and one update were complete under the original invocation. The first update uses inherited focus row 2429, which V1 excluded from optimization. Finite early gradients are execution evidence, not an accuracy estimate. Training uses 14 CPU threads, 24 LoRA layers, rank 16, alpha 32, constant learning rate 1e-5 and semantic weight 4; production remains unchanged.
+
+Numerical completion, all-layer/frozen-weight and saved/live-adapter checks, real Colibri export, 275-case development comparison and existing acceptance/control gates remain pending. No new accuracy or accepted application is reported.
+
+[Actual server launch evidence](../training/reports/facturation-replay-v2-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Joint-context replay successor, preparation only - 17 October 2026
 
 The V1 experiment remains rejected. The new recipe includes the 116 previously ineligible inherited examples and preserves whole optional-state contrast blocks. It selects 1,171 existing synthetic training rows: 126 new Facturation, 514 retained Facturation, 357 Management Projet and 174 Design Workflow. It covers 154 declared contrast axes and 2,098 retention projections, including joint finite intents, page/result context, request language and bilingual argument presence. These static projections are not model-accuracy measurements.
