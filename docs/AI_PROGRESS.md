@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Contrast/replay trial and Colibri diagnostics complete - 17 October 2026
+
+IMPLEMENTED and verified: the original 306-update numerical invocation finished successfully, including all 14 baseline and 14 trained-model captures. All 24 intended layers received nonzero gradients and updates; frozen parameters stayed unchanged, and saved/live adapter equality passed. The trial timer was 8,474.95 seconds, covering updates through final verification and excluding baseline capture/loading. Service cgroup peak was 6.621 GiB.
+
+The real FP32 merge, Colibri conversion and all 14 streamed paired requests completed; the worker stopped. Thirteen actions matched validly across runtimes. Training-runtime target matches were 13/14 and Colibri target matches 14/14, with zero correct-to-incorrect export changes. These are small training/development diagnostics, not general accuracy.
+
+PARTIALLY IMPLEMENTED: the original 275-case Colibri development comparison is running against the unchanged checkpoint-600 baseline. At 2026-10-17T03:46:39.114630+00:00, six cases were complete, all three owned workers were running and controller stderr was empty. No new full development or acceptance score exists. The last completed Facturation regression remains 96/108 (88.89%).
+
+Production inference is healthy and unchanged. No longer epoch, later-application numerical job or activation has started. Zero of six applications are fully accepted; this disposable adapter must not seed a longer run.
+
+[Verified trial/export and timestamped comparison status](../training/reports/facturation-replay-v1-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Replay-preserving server trial running - 17 October 2026
 
 PARTIALLY IMPLEMENTED: the exact 21-file source closure and three prepared data files were staged. Actual checkpoint-600 FP32 model weights and the frozen Colibri runtime were rehashed and matched the original selection. One isolated 306-update trial started after resource admission; the failed V2 pilot adapter was not reused.

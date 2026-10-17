@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Completed replay trial and real Colibri export - 17 October 2026
+
+IMPLEMENTED and verified: 306 contiguous updates follow the selected row order; metrics are finite, all 24 intended layers updated, frozen parameters stayed unchanged, and saved/live adapter equality passed. Fourteen baseline and fourteen trained captures are preserved. The single reviewer independently confirmed the numerical evidence and found no reporting or handoff blocker.
+
+The real export completed all fourteen paired streamed requests with fourteen schema-valid Colibri actions and fourteen target matches. Thirteen actions agree validly across runtimes, and zero changed from framework-correct to Colibri-incorrect. Before/after serving proofs are byte-identical and the owned worker stopped. These small diagnostics are not an acceptance or security certification.
+
+PARTIALLY IMPLEMENTED: the original 275-case development comparison is running with its before-serving proof, three isolated workers and unchanged provider/settings/scorer. The observation at 2026-10-17T03:46:39.114630+00:00 records six completed cases and zero controller stderr bytes. Complete development scoring and the existing separate acceptance/native security gates remain pending.
+
+[Actual completion evidence and timestamped progress](../training/reports/facturation-replay-v1-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Actual replay-trial admission and early progress - 17 October 2026
 
 IMPLEMENTED and verified: the exact staged sources/data, actual selected FP32 model and frozen runtime passed admission checks. The one-shot launch used the reviewed 14-thread, 32 GiB, swap-disabled profile. Reserving the full limit at preview left 12.89 GiB available, exceeding the 6.20 GiB spare-memory requirement.

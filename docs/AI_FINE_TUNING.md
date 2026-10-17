@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Replay-preserving numerical experiment completed - 17 October 2026
+
+All 306 selected server updates completed with the declared replay mix, 24-layer gradient/update coverage, unchanged frozen parameters and matching saved/live adapter. The bounded trial completed its fourteen before/after captures. This is executed LoRA optimization, not a complete 2,975-row epoch or an accepted model.
+
+The training runtime matched 14/14 baseline targets and 13/14 trained-model targets. Its one supported combined-search diagnostic regressed to an unsupported clarification. The real Colibri export matched 14/14 targets, including that search, with 13/14 identical valid actions across runtimes and no correct-to-incorrect export change. This does not establish 100 percent general accuracy or numerical/token parity.
+
+The unchanged 275-case development comparison is running against the same checkpoint-600 starting model. New full accuracy remains pending; acceptance cases/scoring and production inference are unchanged. The disposable adapter must not seed a longer run. No later-application numerical job or activation has started.
+
+[Actual numerical/export results and comparison limits](../training/reports/facturation-replay-v1-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Contrast/replay numerical trial started - 17 October 2026
 
 One 306-update experiment is running from the unchanged selected checkpoint 600, following actual FP32/runtime hash verification and server resource admission. It includes explicit earlier-application replay and complete optional-filter contrast groups. The failed 92-update adapter was not reused.

@@ -1,0 +1,89 @@
+{
+  "version": "facturation-replay-v1-pilot-completion",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "focus_application": "facturation",
+  "retention_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "numerical": {
+    "completed_observed_at": "2026-10-17T03:38:29Z",
+    "steps": 306,
+    "layers_updated": 24,
+    "layers_with_nonzero_gradients": 24,
+    "frozen_parameters_unchanged": true,
+    "saved_adapter_matches_live": true,
+    "baseline_captures": 14,
+    "trained_captures": 14,
+    "baseline_target_matches": 14,
+    "trained_target_matches": 13,
+    "trial_timer_seconds": 8474.953527627513,
+    "timer_scope": "Updates, adapter persistence, trained captures and final verification; excludes loading and baseline captures",
+    "service_cgroup_peak_gib": 6.620693206787109,
+    "maximum_recorded_step_rss_gib": 5.503597259521484,
+    "disposable_adapter_sha256": "c4195ecc4b3bb9ef301085697c1f05302ade1504b90eba4bf89b2556df766f07",
+    "complete_sha256": "4ec77b93616d74dc551d3547cfa7969ce9dd099f7038b3e6195a1a7488964df3"
+  },
+  "export": {
+    "completed_observed_at": "2026-10-17T03:43:25Z",
+    "actual_merge_conversion_and_replay_complete": true,
+    "paired_requests": 14,
+    "same_valid_action": 13,
+    "training_runtime_target_matches": 13,
+    "colibri_target_matches": 14,
+    "correct_to_incorrect_after_export": 0,
+    "colibri_schema_valid": 14,
+    "worker_stopped": true,
+    "before_after_proof_sha256": "3be16367bd3bac328642c53aa49fef72db8f97363469bb09bbc7d43321732fc4",
+    "complete_sha256": "a843f916a34757e19ed576098ab256867c50c5a6b5aa365f7dbf4dfa268d0afd",
+    "service_cgroup_peak_gib": 9.505905151367188
+  },
+  "development": {
+    "observed_at": "2026-10-17T03:46:39.114630+00:00",
+    "controller_live": true,
+    "planned_cases": 275,
+    "completed_cases_at_observation": 6,
+    "before_worker_proof_exists": true,
+    "owned_workers_running": 3,
+    "controller_stderr_bytes": 0,
+    "baseline_selected_step": 600,
+    "same_cases_provider_serving_settings_and_scoring": true,
+    "new_full_score": null
+  },
+  "last_completed_facturation_regression": {
+    "action_passed": 96,
+    "count": 108,
+    "accuracy_percent": 88.88888888888889,
+    "exact_arguments_passed": 74,
+    "exact_arguments_count": 86,
+    "additional_control_actions_passed": 9,
+    "additional_control_count": 16
+  },
+  "evidence_sha256": {
+    "numerical_observation": "a83edcbfa985189224ef20f5a8e0a7309b5d71eab0d747dc4945c115314130a0",
+    "export_admission": "5d278e34469e48e06b3c02bbf175b97b0fb4e15b72a7e756702c427082fda693",
+    "export_launch": "dc94b8c5242453bfeb7d4ac10408fefe014c97f6156bb205ea85e62d67a0b0d4",
+    "development_binding": "7e23d4904eb1998047541e6b17a8d11b59b46ec611b32cce2d905b57b644e0ae"
+  },
+  "single_numerical_review": "No reporting or handoff blocker found",
+  "new_acceptance_accuracy": null,
+  "model_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "production_healthy_unchanged": true,
+  "full_training_authorized": false,
+  "next_application_training_started": false,
+  "full_training_may_resume_from_this_adapter": false,
+  "limitations": [
+    "This is a completed 306-update bounded experiment, not a full 2975-row training epoch or model acceptance.",
+    "The fourteen paired training/development captures are diagnostics, not a population accuracy estimate.",
+    "One supported Facturation development search regressed in the training runtime and was correct in Colibri; original evidence is preserved.",
+    "All 275 unchanged development cases, separate existing acceptance controls and native authorization gates remain required.",
+    "No trained candidate has been activated and the disposable trial adapter must not seed a longer run."
+  ]
+}
