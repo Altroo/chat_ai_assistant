@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Actual replay-trial admission and early progress - 17 October 2026
+
+IMPLEMENTED and verified: the exact staged sources/data, actual selected FP32 model and frozen runtime passed admission checks. The one-shot launch used the reviewed 14-thread, 32 GiB, swap-disabled profile. Reserving the full limit at preview left 12.89 GiB available, exceeding the 6.20 GiB spare-memory requirement.
+
+At 2026-10-17T01:18:19Z, the original service remained running with 14 completed baseline captures and two contiguous updates matching the selected row order. Production inference remained healthy with its original start identity. Early losses/gradients passed the runner's finite-value checks.
+
+PARTIALLY IMPLEMENTED: completion checks, all-layer update/frozen-parameter evidence, saved/live adapter equality, trained captures, export, development and acceptance are pending. No accuracy or native authorization certification is inferred from these admission and progress checks.
+
+[Launch evidence and limits](../training/reports/facturation-replay-v1-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Server metadata checks and execution guard tests - 17 October 2026
 
 All 2,975 training and 275 development rows pass actual server tokenizer/Colibri-prefix, argument round-trip, loss-boundary, semantic-alignment, context and target-output-budget checks. Source/data/runtime/tokenizer bookends match and production inference is healthy and unchanged. This is metadata validation, not inference or numerical training.

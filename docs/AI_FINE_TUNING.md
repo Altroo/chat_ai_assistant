@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Contrast/replay numerical trial started - 17 October 2026
+
+One 306-update experiment is running from the unchanged selected checkpoint 600, following actual FP32/runtime hash verification and server resource admission. It includes explicit earlier-application replay and complete optional-filter contrast groups. The failed 92-update adapter was not reused.
+
+The observation at 2026-10-17T01:18:19Z records 14 baseline diagnostic responses and two selected optimizer updates. Settings are 14 CPU threads, 24 LoRA layers, rank 16, alpha 32, learning rate 0.00001 and semantic loss weight 4. No new accuracy result exists; numerical completion, trained captures, actual Colibri export/replay and unchanged evaluation are pending.
+
+This remains a disposable bounded experiment. It must not seed a longer run. No model activation, later-application numerical job or acceptance is claimed.
+
+[Actual server launch](../training/reports/facturation-replay-v1-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Server tokenizer/template preflight complete - 17 October 2026
 
 The revised replay recipe passes all 3,250 server preflight rows with the unchanged tokenizer and frozen Colibri runtime. Complete targets fit the same context-aware output limit (512 tokens maximum); template/tokenizer prefixes, parsed arguments and semantic-loss boundaries match. The longest training sequence is 7,745 tokens; the longest development sequence is 7,496.

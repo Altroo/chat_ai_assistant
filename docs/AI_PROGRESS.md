@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Replay-preserving server trial running - 17 October 2026
+
+PARTIALLY IMPLEMENTED: the exact 21-file source closure and three prepared data files were staged. Actual checkpoint-600 FP32 model weights and the frozen Colibri runtime were rehashed and matched the original selection. One isolated 306-update trial started after resource admission; the failed V2 pilot adapter was not reused.
+
+At 2026-10-17T01:18:19Z, all 14 baseline captures and two contiguous selected updates were complete under the original invocation. Fourteen CPU threads and a 32 GiB limit are configured, with swap disabled. Available RAM was 40.63 GiB. Completion, all-layer/frozen-weight verification, trained captures, export and new accuracy remain pending.
+
+The reviewed selection mixes 126 new Facturation contrasts, 90 retained Facturation rows, 57 Management Projet rows and 33 Design Workflow rows. Production inference is healthy and unchanged. No later-application numerical job or full epoch has started; zero of six applications are fully accepted.
+
+[Actual launch and timestamped progress](../training/reports/facturation-replay-v1-server-launch.json).
+
+Earlier entries below retain their original observation state.
+
 ## Server metadata preflight passed; numerical handoff prepared - 17 October 2026
 
 IMPLEMENTED and verified on the server: all 2,975 training and 275 original development rows pass exact tokenizer/Colibri-template parity, tool-argument parsing, loss-boundary/alignment and output-budget checks. Maximum sequences are 7,745 and 7,496 tokens within the 8,192-token context; no truncation is permitted. This loaded tokenizer metadata only, not model weights.
