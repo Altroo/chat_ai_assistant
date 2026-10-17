@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Facturation bounded trial and Colibri export complete - 17 October 2026
+
+IMPLEMENTED and verified: the original 92-update trial completed successfully, including all 14 baseline and 14 trained-model captures. All 24 intended LoRA layers received nonzero gradients and updates; frozen parameters stayed unchanged, and the saved adapter matched the live trained model. The recorded trial timer was 2561.42 seconds, covering updates, adapter persistence, trained captures and verification, excluding baseline capture/loading. The service cgroup peak was 7.170 GiB, which is not process RSS.
+
+The real merge, Colibri conversion and all 14 streamed replay requests completed successfully; the replay worker stopped. Training-runtime and Colibri actions matched validly on 12/14 captures. Each matched 11/14 targets, but one development capture changed from correct to incorrect in Colibri. These small paired diagnostics do not establish acceptance accuracy.
+
+PARTIALLY IMPLEMENTED: the unchanged 275-row shared development comparison is running against checkpoint 600. At 2026-10-17T00:15:26.968748+00:00, 71/275 cases had completed, with the original controller live and no errors. Three attested workers use the original four-thread, 8192-context, 512-output-token, no-thinking settings. The new score is pending; the last completed Facturation regression remains 96/108 (88.89%).
+
+This is a completed bounded trial, not a full 1487-row V2 epoch or an accepted model. Zero of six applications are fully accepted. Production inference remains healthy and unchanged; no longer epoch, later-app training or activation has started. The disposable adapter must not seed a full run.
+
+[Verified trial, export and timestamped development status](../training/reports/facturation-focus-v2-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Facturation pilot running; development handoff prepared - 16 October 2026
 
 PARTIALLY IMPLEMENTED: at 2026-10-16T23:37:30.599726+00:00, the original server pilot was live at 39/92 updates. Production inference was healthy and unchanged. The trial has not completed, and no new pilot accuracy result exists.

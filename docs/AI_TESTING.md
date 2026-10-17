@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Real V2 numerical and Colibri execution - 17 October 2026
+
+IMPLEMENTED and verified: the original numerical invocation exited successfully after 92 contiguous selected updates and 14 before/14 after captures. It verified saved/live adapter equality, frozen-parameter stability, and nonzero gradients/updates in all 24 intended layers. The export supervisor then completed the actual FP32 merge, Colibri conversion, 14-request streamed replay, artifact checks and owned-worker cleanup.
+
+The paired replay had 12/14 identical valid actions and 11/14 target matches in each runtime. One development target match was lost in Colibri. These counts must not be presented as 14 successful correctness tests or as 95% model accuracy.
+
+PARTIALLY IMPLEMENTED: the 275-row development comparison has started with actual before-serving proof for all three workers. Model/runtime artifacts, worker identity, four threads each, 8192-token context, 512-token output budget and no-thinking settings match the prepared comparison. No completed new development score exists yet. The unchanged acceptance suites and independent native security checks remain necessary; production inference is unchanged.
+
+[Execution evidence and timestamped progress](../training/reports/facturation-focus-v2-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## V2 export and development handoff checks - 16 October 2026
 
 Thirty-four focused offline tests pass: nine export-dispatch tests, eleven development-worker adapter tests and fourteen controller tests. They check source/inventory guards, successful trial admission, resource limits, single dispatch, failure preservation, correct export-unit status, unchanged evaluator reuse, exact baseline/case identity, retained metric comparisons and rejection of substituted or reordered export bindings.

@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Completed V2 pilot, real Colibri diagnostics pending full score - 17 October 2026
+
+The bounded 92-update numerical trial and real Colibri export/replay have completed successfully. This is executed LoRA optimization on selected inputs, not a complete 1487-row V2 training epoch. All 24 intended layers updated, frozen parameters stayed unchanged and the saved adapter matched the captured live model. It remains a disposable trial and must not seed a later full run.
+
+On 14 small paired captures, training-runtime and Colibri actions agreed validly on 12; each matched 11 targets. One development answer changed from correct to incorrect after export. These totals are diagnostics, not a population-accuracy estimate or 95% acceptance result.
+
+The complete unchanged 275-row development comparison is now running against the same checkpoint-600 starting model, retaining separate Facturation, Management Projet and Design Workflow results. The new full score remains pending. All acceptance cases/scoring remain unchanged, zero of six applications are fully accepted, and production inference is unchanged.
+
+[Actual numerical/export completion and timestamped comparison progress](../training/reports/facturation-focus-v2-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Bounded V2 trial and comparison preparation - 16 October 2026
 
 PARTIALLY IMPLEMENTED: the same shared model's 92-update server trial was live at 39/92 at 2026-10-16T23:37:30.599726+00:00. This observation does not establish completed training or an accuracy improvement.
