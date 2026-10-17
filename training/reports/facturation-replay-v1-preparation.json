@@ -1,0 +1,102 @@
+{
+  "version": "facturation-replay-v1-preparation",
+  "status": "PREPARATION ONLY; no numerical execution or estimated accuracy",
+  "focus_application": "facturation",
+  "retention_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "data": {
+    "train": 2975,
+    "valid": 275,
+    "by_application": {
+      "facturation": 1487,
+      "management_projet": 1012,
+      "design_workflow": 476
+    },
+    "original_cumulative_training_prefix_bytes_preserved": true,
+    "original_cumulative_training_rows": 2419,
+    "focused_inputs_retained": 1487,
+    "appended_source_inputs": 556,
+    "new_labels_created": 0,
+    "validation_bytes_unchanged": true,
+    "manifest_sha256": "d4350995c0899c56b372fe13a20ff3cb5fce4527844e9e1c4f694b726bbdf4ae",
+    "input_sha256": {
+      "train": "c6fb838c8714b78ae6f0b17dab33d1ca9fa48dc086b4f1ca56a8aaf9e85e88ba",
+      "valid": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    }
+  },
+  "selection": {
+    "updates": 306,
+    "by_source_bucket": {
+      "new_facturation": 126,
+      "retained_facturation": 90,
+      "retained_management_projet": 57,
+      "retained_design_workflow": 33
+    },
+    "complete_four_state_matrix_blocks": 20,
+    "matrix_rows": 80,
+    "covered_axes": 154,
+    "retention_features": 424,
+    "all_schedule_windows_contain_all_four_source_buckets": true,
+    "selected_rows_sha256": "0fc3b38a87237bbac67cd9c5a3fcb1d7fb48e7c296ac2eb3904215444539a981",
+    "diagnostic_captures": {
+      "train": 8,
+      "valid": 6,
+      "total": 14
+    }
+  },
+  "static_checks": {
+    "exact_input_label_conflicts": 0,
+    "exact_input_cross_split_overlap": 0,
+    "model_weights_loaded": false,
+    "training_executed": false,
+    "accuracy_estimated": false,
+    "tests_passed": 12,
+    "test_seconds": 14.29,
+    "test_log_sha256": "1b2d5275f04d890a5606dae2c46e1ab5f24facae67aa4e647130147e4eea9723",
+    "single_review": "No issues"
+  },
+  "controls": {
+    "fresh_controls": {
+      "manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a",
+      "files": {
+        "training/datasets/shared-v5r8-fresh-en-fr/controls.eval.jsonl": {
+          "sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+          "count": 48
+        }
+      },
+      "scoring": "Report separately from 438 original regressions; excluded from optimization and checkpoint selection."
+    },
+    "evaluation_manifest_sha256": "6e8df0592ddcde75fd2d4c1277aaf789545cd7f1ca9224fc756787abe22e73f3",
+    "historical_evaluation_manifest_sha256": "5bfa383c276e28cf3a78a20788d1b51fd7769563243aa26f33fcab7fed9b13e3",
+    "held_out_identities_and_scoring_policies_preserved": true
+  },
+  "starting_model": {
+    "required_predecessor_selected_step": 600,
+    "required_predecessor_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+    "actual_model_binding_required_before_numerical_work": true,
+    "disposable_adapter_must_not_be_used": true
+  },
+  "files_sha256": {
+    "training/scripts/prepare_facturation_replay_v1.py": "9930425f1b1beb47932e9c632b30bb401f03ef63310661f08729191de783ac17",
+    "training/tests/test_facturation_replay_preparation.py": "c4699ed1a03e22acdadee50c2d914e23529ffcbfcef792ec12aa44eaae794bb5"
+  },
+  "model_accepted": false,
+  "full_training_authorized": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "accepted_applications": 0,
+  "limitations": [
+    "Static selection/schema checks do not establish 95 percent accuracy or learning retention.",
+    "Numerical loading, server tokenizer/template/context checks, real export and unchanged development/acceptance evaluation remain incomplete.",
+    "The previous pilot regressed; it remains rejected and must not seed a new run.",
+    "No native business permission or production readiness certification is claimed."
+  ]
+}

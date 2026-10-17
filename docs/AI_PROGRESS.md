@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Coherent Facturation contrasts and explicit replay prepared - 17 October 2026
+
+IMPLEMENTED as preparation only: a source-verified recipe preserves all 2,419 cumulative training rows and appends 556 existing focused inputs, yielding 2,975 training rows and the original 275 development rows. No labels were created or changed. The single reviewer found one missing inherited control-policy record; it was preserved, tested and re-reviewed with no remaining issues.
+
+The bounded selection contains 306 updates: 126 new Facturation contrasts, 90 retained Facturation examples, 57 Management Projet replay examples and 33 Design Workflow replay examples. Twenty complete four-state matrix groups replace isolated variants. All 154 existing contrast axes and 424 marginal replay features are covered. Every scheduled window, including the tail, contains all four source groups.
+
+Twelve metadata/schema tests pass, covering source-byte/target preservation, complete contrast groups, older searches, scheduling, control-policy inheritance, conflict/tamper rejection and separate pinned admission. These tests load no model weights and estimate no accuracy.
+
+PLANNED: bind the unchanged checkpoint-600 predecessor and run server tokenizer/template/context checks, then review numerical admission before one isolated experiment. No new numerical training, full epoch, model activation or later-app training has started. Existing acceptance sets/scoring remain unchanged. Zero of six applications are fully accepted.
+
+[Reviewed preparation and actual checks](../training/reports/facturation-replay-v1-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## V2 pilot development regressed; candidate rejected - 17 October 2026
 
 IMPLEMENTED and verified: the unchanged 275-case development comparison finished at 00:35:37 UTC. All metrics were independently recomputed; bound artifact hashes match, before/after serving proofs are identical, stderr is empty and all three owned workers stopped.

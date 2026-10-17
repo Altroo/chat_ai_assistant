@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Coherent contrast/replay preparation checks - 17 October 2026
+
+Twelve metadata/schema tests pass in 14.290 seconds. They verify original source bytes/targets, complete optional-state blocks, all 154 declared contrast axes, independent retained tool/argument/intent coverage, four-source scheduling through the tail, unique deterministic selection, rejected incomplete/uncontrolled contrasts, source-label conflict rejection, preserved additional-control identity/policy, and wrong-manifest/tampered-split rejection.
+
+The round-trip check validates 2,975 training and 275 original development rows with zero exact input-label conflicts or exact cross-split input overlap. It loads no model weights, executes no optimizer and reads no acceptance/additional-control case files. This does not establish semantic independence, model accuracy, native permission safety or deployment readiness.
+
+The single reviewer cleared the control-policy inheritance fix. Server tokenizer/template/context checks and numerical/export/evaluation work remain planned. No new model score exists.
+
+[Actual preparation checks](../training/reports/facturation-replay-v1-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Completed V2 pilot development comparison - 17 October 2026
 
 IMPLEMENTED and verified: all 275 original development cases completed through Colibri. Independent recomputation reproduced every reported metric and target gate. All bound file hashes match, before/after serving proofs are byte-identical, stderr is empty and all three workers stopped.

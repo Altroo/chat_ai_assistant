@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Replay-preserving Facturation experiment prepared - 17 October 2026
+
+A new metadata-only preparer repairs two measured pilot-design limitations: isolated optional-filter variants and missing old-search/other-app rehearsal. It reuses existing reviewed synthetic training rows, preserving the complete cumulative training prefix and the original 275-row development split. It creates no labels and consumes no acceptance/additional-control cases to select training examples.
+
+The proposed 306-update selection includes 126 focused contrasts and 180 replay rows. Complete four-state contrast groups, independent old-tool/argument/intent coverage and proportional source-group scheduling are checked. Fourteen diagnostic captures are selected from input identities: eight training and six development captures.
+
+All 12 tests pass and one reviewer reports no remaining issues. This is preparation, not executed fine-tuning or a predicted score. Server preflight, actual starting-model binding, numerical execution, Colibri export and unchanged evaluation remain required. The failed pilot adapter must not seed this experiment. No production activation or later-app training is authorized by preparation alone.
+
+[Preparation evidence and limitations](../training/reports/facturation-replay-v1-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## V2 pilot measured development regression - 17 October 2026
 
 The completed 92-update trial's unchanged 275-case Colibri development comparison regressed. Facturation exact actions fell from 110/133 (82.71%) to 107/133 (80.45%); exact arguments fell from 88/111 (79.28%) to 85/111 (76.58%). Management Projet actions fell from 77/78 (98.72%) to 72/78 (92.31%), and arguments from 53/54 (98.15%) to 48/54 (88.89%). Design Workflow retained 64/64 actions and 46/46 argument matches.
