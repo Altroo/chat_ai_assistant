@@ -1,0 +1,89 @@
+{
+  "version": "facturation-replay-v3-preparation",
+  "status": "IMPLEMENTED metadata-only preparation; server execution pending",
+  "model_family": "Qwen3.5-0.8B",
+  "training_application": "facturation",
+  "retained_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "manifest_sha256": "38b3d6d148940b2cfa7e44a9f59550fc4847ebb4e709b6c372b682f96c5b696f",
+  "full_preparation_sha256": "8b9fb2f76fb5334e16d234add8fcb29c07b242742e507ba86cc21f1cb474e1ed",
+  "source_manifests": {
+    "shared-v5r11-en-fr": "02f2addad85051fd20a180b29c01239f67f8ceeb8265ace8b054d09f1f81ccdc",
+    "facturation-focus-v2-en-fr": "b5e9850bd8bcd7a2090f618b60e9d5bdc0a4f1e015a5f744fafdb64305c1cc8b"
+  },
+  "input_sha256": {
+    "train.jsonl": "c6fb838c8714b78ae6f0b17dab33d1ca9fa48dc086b4f1ca56a8aaf9e85e88ba",
+    "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+  },
+  "training_rows": 2975,
+  "unchanged_development_rows": 275,
+  "selected_updates": 2283,
+  "by_source_bucket": {
+    "retained_facturation": 811,
+    "retained_management_projet": 709,
+    "new_facturation": 438,
+    "retained_design_workflow": 325
+  },
+  "source_bytes_and_targets_unchanged": true,
+  "evaluation_controls_and_scoring_unchanged": true,
+  "coverage": [
+    "Whole nested argument-field/type shape jointly with resource, finite intent, trusted context and request language.",
+    "Complete four-state contrast blocks; coverage applies to new and retained training pools.",
+    "Existing scenario categories require matching full messages, offered schemas and target; only four pinned neutral greetings normalize.",
+    "Unresolved legacy request languages and scenarios remain explicitly unresolved."
+  ],
+  "request_language_counts": {
+    "en": 1362,
+    "fr": 1345,
+    "unknown": 268
+  },
+  "unresolved_scenario_count": 514,
+  "selected_inherited_focus_count": 104,
+  "required_new_features": 1720,
+  "required_replay_features": 5544,
+  "starting_model": {
+    "required_predecessor_selected_step": 600,
+    "required_predecessor_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+    "actual_model_binding_required_before_numerical_work": true,
+    "disposable_adapter_must_not_be_used": true
+  },
+  "tests": {
+    "preparation": 25,
+    "runner": 7,
+    "export_supervisor": 29,
+    "logs_sha256": {
+      "preparation": "2fca0ac635585db54448c46d4a86321d6e37d43c912be84c1b3bcb7f0292cf70",
+      "runner_export": "91678826d6769cc797f6f2600a6c7ea88b82de9edc583a8a9e025dc7e3b650a7"
+    }
+  },
+  "source_sha256": {
+    "training/scripts/prepare_facturation_replay_v3.py": "0638fdeb8d9ffbdd97af54f1feba6b7bf218f977fafdea89ad4e217d17757814",
+    "training/scripts/rehearse_facturation_replay_v3.py": "9c3458eb1c477f1a0ac2d7d3cb76ee2034fd54a31b88465b2794acfc3cec965a",
+    "training/scripts/replay_facturation_replay_v3.py": "2252f47a4232f04bb0c1b9f3fbb6b408dc782ef44e38ecf68c7258c87c02c2fe",
+    "training/tests/test_facturation_replay_preparation_v3.py": "c9e7342979cd480114ca4b8ad14f5aebad4ac4526b266a4701f8bd36cf91b5a4",
+    "training/tests/test_facturation_replay_runner_v3.py": "a637b9c1864622838a72fa5b897c48cb8d1d0000a36c14c05f5257555325e141",
+    "training/tests/test_facturation_replay_supervisor_replay_v3.py": "ee768e77e80a532ee23676779fee895218c50db53fad9d312d68ca8fc73dc528"
+  },
+  "training_executed": false,
+  "accuracy_estimated": false,
+  "model_accepted": false,
+  "production_activation": false,
+  "limitations": [
+    "Covers every available nested argument-field/type, finite intent, trusted context and request-language conjunction.",
+    "New contrast selection covers these conjunctions as well as the original contrast axes.",
+    "Shape coverage does not imply coverage of every free-text meaning or paraphrase.",
+    "Inherited focus examples are replay-eligible; semantic coverage does not require every paraphrase.",
+    "Request language uses explicit or pinned training provenance; unresolved legacy rows stay unknown.",
+    "Interface language and background-history language are never request-language labels.",
+    "Scenario intent uses explicit metadata or matching full training messages/schemas/targets, normalizing only four pinned neutral greetings.",
+    "Uses only existing training inputs and metadata; evaluation outcomes do not select rows.",
+    "Static coverage and diagnostics do not predict retention or 95 percent accuracy.",
+    "No numerical work, longer run, acceptance result or production activation is admitted."
+  ]
+}

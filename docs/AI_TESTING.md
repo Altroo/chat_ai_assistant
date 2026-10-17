@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Independent coverage checks before the next numerical run - 17 October 2026
+
+Four real Colibri diagnostic requests completed HTTP/SSE with finish reasons and output counts of 95, 56, 56 and 56 tokens under the 512-token limit. The three quote requests generated a business-number string in the internal-ID field; the stock request generated an unsupported supplier field and misplaced its product filter. Runtime parsing and schema validation correctly rejected these outputs. Thirteen collected files, equal before/after identities, the original successful invocation and owned-worker cleanup were verified. Production inference stayed healthy and unchanged. No application operation ran and original benchmark scores remain unchanged.
+
+The successor preparation passes 25 tests, including independent workflow/resource/argument-key coverage, quote discovery before deletion in both languages, whole contrast blocks, nested field/type distinctions, strict provenance, arbitrary-history rejection, source-byte preservation and isolated-directory admission. Seven runner and twenty-nine export tests pass, including numerical/capture/resource AST parity, pinned predecessor and manifest admission, source binding and cleanup failures.
+
+These are implementation checks and four failure diagnostics. They do not prove general model accuracy, application security acceptance or production end-to-end behavior. V3 tokenizer admission, training, Colibri development evaluation and acceptance/control tests remain pending.
+
+[Actual diagnostic evidence](../training/reports/facturation-replay-v2-invalid-output-diagnostic.json) and [preparation checks](../training/reports/facturation-replay-v3-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## All 275 joint-context development cases independently verified - 17 October 2026
 
 IMPLEMENTED and verified as evaluation: all 275 original inputs, case IDs, expected targets and shard order match. Raw booleans and the frozen scorer reproduce the reported tool, argument, structure and full-action metrics. Bound model/runtime artifacts, before/after serving proofs, explicit event-log prefix and original source controls match. All three owned workers and the controller stopped; stderr files are empty and the production inference model remains healthy and unchanged.

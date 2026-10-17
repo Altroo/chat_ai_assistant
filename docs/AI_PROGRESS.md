@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Generation failures diagnosed; complete-shape replay prepared - 17 October 2026
+
+IMPLEMENTED: four bounded requests through the actual Colibri candidate completed with terminal HTTP/SSE responses. Three generated quote changes used a business number as the internal identifier and were correctly rejected. One stock search generated an unsupported field and misplaced a product filter; schema validation correctly rejected it. The owned worker stopped, all 13 collected files were verified, and production inference remained healthy and unchanged. These fresh diagnostics do not replace the original failed development scores.
+
+IMPLEMENTED as preparation: a new versioned sampler preserves all 2,975 training and 275 development rows, labels and existing scoring controls. It now covers complete nested argument shapes jointly with resource, intent, context and language for both new and retained training. Scenario provenance matches complete messages, schemas and targets, allowing only the four pinned neutral greeting augmentations. The independent preflight tests caught and resolved additional omitted combinations before training.
+
+The selected 2,283 updates contain 438 new Facturation contrasts, 811 retained Facturation rows, 709 Management Projet rows and 325 Design Workflow rows. Twenty-five preparation, seven runner and twenty-nine export tests pass. Numerical, capture, resource and cleanup functions retain their previous implementation.
+
+PLANNED: review the exact successor source and server handoff, verify the current checkpoint-600 model and tokenizer/template admission, then run one isolated server experiment. No V3 numerical update or accuracy result exists. No rejected adapter is reused; zero of six applications are fully accepted.
+
+[Verified raw-output diagnostic](../training/reports/facturation-replay-v2-invalid-output-diagnostic.json) and [successor preparation](../training/reports/facturation-replay-v3-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Joint-context replay remains below acceptance targets - 17 October 2026
 
 PARTIALLY IMPLEMENTED: this Facturation experiment completed its server training, real Colibri export and all 275 unchanged development cases. Independent verification recomputed the frozen scores and confirmed artifact identities, exact case/target/shard matching, event-log prefix integrity and explicit cleanup of all three workers and the controller.

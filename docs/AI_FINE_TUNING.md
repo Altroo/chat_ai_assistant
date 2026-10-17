@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Source-only argument-shape replay prepared - 17 October 2026
+
+The rejected V2 candidate's four invalid-output diagnostics completed on Colibri. The observed failures are generated argument misuse, with complete transport and output below the 512-token cap. Parsing/schema validation correctly rejected the calls. No parser workaround, label change or benchmark rescore was applied.
+
+The versioned V3 recipe keeps the original 2,975 training and 275 development rows. Its 2,283 selected updates preserve complete nested argument-field/type combinations jointly with native resource, finite intent, trusted context and current-request language. Existing scenario metadata is accepted only when full messages, offered schemas and expected action match; four hash-pinned synthetic neutral greetings may normalize. Other history stays exact and unresolved legacy annotations remain unresolved.
+
+All 61 preparation/runner/export tests pass. The original training and capture functions, LoRA optimizer settings and cleanup paths remain unchanged. This is metadata preparation, not fine-tuning execution or a forecast of 95 percent accuracy. The next numerical job must bind the original selected checkpoint 600, never the rejected disposable adapters. Server admission and numerical work remain pending.
+
+[Four-request generation diagnosis](../training/reports/facturation-replay-v2-invalid-output-diagnostic.json) and [recipe, provenance and test record](../training/reports/facturation-replay-v3-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Completed joint-context replay failed the development gate - 17 October 2026
 
 The 1,171-update Facturation experiment completed all 275 original Colibri development requests. The independent verifier recomputed scores from raw case events and checked serving identities, source pins and worker/controller cleanup.

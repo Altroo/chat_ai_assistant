@@ -1,0 +1,70 @@
+{
+  "version": "facturation-replay-v2-invalid-output-diagnostic",
+  "status": "IMPLEMENTED four bounded server Colibri diagnostic requests; candidate remains rejected",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "requests": 4,
+  "transport_complete": 4,
+  "schema_valid": 0,
+  "observations": [
+    {
+      "scope": "Three Management Projet diagnostic requests",
+      "finding": "Generated prepare_change used a quote business-number string as the internal integer identifier. The parser correctly rejected it."
+    },
+    {
+      "scope": "One Facturation diagnostic request",
+      "finding": "Generated stock_balance search included unsupported supplier_name, placed product text in location_name and omitted product_name. Wire preserved the call; schema validation correctly rejected it."
+    }
+  ],
+  "output_tokens": [
+    95,
+    56,
+    56,
+    56
+  ],
+  "output_token_cap": 512,
+  "thinking": false,
+  "threads": 4,
+  "memory_limit_gib": 8,
+  "finish_reasons": [
+    "tool_calls",
+    "stop",
+    "stop",
+    "stop"
+  ],
+  "request_duration_seconds": [
+    14.447803,
+    12.350523,
+    11.819865,
+    11.870213
+  ],
+  "guard_tests_passed": 14,
+  "review_result": "No issues",
+  "evidence_review_result": "No evidence issues",
+  "collected_files_verified": 13,
+  "before_after_identity_equal": true,
+  "worker_stopped": true,
+  "production_inference_healthy_unchanged": true,
+  "evidence_sha256": {
+    "complete": "78026175aab06c4dd41c523987758f0c6bb48fb7a1b5548b1c266767655e102d",
+    "requests_json": "8f4f5c5bfb4069426222408729594f2719d3e5e2fe8613fab2f04db19c4ae14c",
+    "responses_jsonl": "f2f7b366a9a36611e290eca638a31d152e2338ceca1d513a42e4888a91ec8767",
+    "before_json": "cfd311f56d995eb12022c838067d9fbda353f0ec41cb6c6c605fd1274a6190b8",
+    "after_json": "cfd311f56d995eb12022c838067d9fbda353f0ec41cb6c6c605fd1274a6190b8",
+    "worker_log": "c900df5a5a747bdab02febb0d75000253ea379fd5df61244f288a8e710584fe1"
+  },
+  "training_started": false,
+  "production_activation": false,
+  "benchmark_rescored": false,
+  "model_accepted": false,
+  "limitations": [
+    "Fresh cold diagnostic ordering and decoded-output logging do not reconstruct the exact unseen original generations.",
+    "Original 275-case scores remain authoritative.",
+    "No application business tool executed; these requests measure model output only.",
+    "This is failure diagnosis, not a new accuracy or security acceptance score."
+  ]
+}
