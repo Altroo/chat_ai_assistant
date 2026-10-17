@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Future queue retains the complete Facturation replay curriculum - 17 October 2026
+
+IMPLEMENTED as data preparation: versioned conditional successors retain all 2,975 replay V3 training rows, including the 556 Facturation examples absent from the older R11 queue. Unchanged reviewed new-app examples produce Contracts 3,128 training / 319 validation rows, Gestion Magasin 3,326 / 362 and Reservation 3,506 / 402. Validation, held-out cases and fresh controls remain unchanged. A read-only check found all 29 pinned native source files for these applications still matched their prepared datasets.
+
+Nine checks pass, including complete metadata/schema preflight for every queued stage, exact retained prefixes, rejected stale/skipped predecessors, altered evaluation inputs and overwrite prevention. The single reviewer cleared the exact source and tests. Tests reproduce the pinned base from tracked sources without depending on private prepared files.
+
+PARTIALLY IMPLEMENTED: the current Facturation numerical job continues. These private local dataset artifacts are unbound preparations, not accepted models or new accuracy scores. The original R11 launcher does not admit this lineage; a separately reviewed actual accepted predecessor binding and server rehearsal/export/resource checks remain required. No additional training or production activation started; zero of six applications are fully accepted.
+
+[Preparation checks and artifact identities](../training/reports/facturation-replay-v3-future-serial-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Current Facturation backend verified - 17 October 2026
 
 IMPLEMENTED and verified: the released Facturation backend and current shared assistant source passed all 2,657 backend tests and 41 subtests with isolated synthetic records. All 1,660 snapshot hashes remained unchanged, and an explicit post-run query confirmed removal of the temporary local test database. The single reviewer verified the harness, actual results and cleanup.

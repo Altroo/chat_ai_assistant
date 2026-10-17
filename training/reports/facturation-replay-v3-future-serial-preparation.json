@@ -1,0 +1,125 @@
+{
+  "version": "facturation-replay-v3-future-serial-preparation-v1",
+  "observed_utc": "2026-10-17T20:04:27.743647+00:00",
+  "status": "PREPARED AND METADATA TESTED; MODELS UNBOUND",
+  "base_manifest_sha256": "38b3d6d148940b2cfa7e44a9f59550fc4847ebb4e709b6c372b682f96c5b696f",
+  "base_training_rows_retained": 2975,
+  "facturation_rows_added_since_r11_retained": 556,
+  "sources_sha256": {
+    "training/scripts/prepare_serial_after_facturation_replay_v3.py": "4a5fcd5dbd98ecf96db859f90fa83c19008354abaeda6eb18d7cebc81abedac0",
+    "training/tests/test_serial_after_facturation_replay_v3.py": "d934bdc0936fed060ff73eb3c6eaa1613767d9511e0fc3c2a0c05075d9a9f739"
+  },
+  "checks": {
+    "tests_passed": 9,
+    "tests_failed": 0,
+    "test_seconds": 26.799,
+    "source_review": "No issues",
+    "source_review_scope": "Exact preparation utility and all nine tests; data preparation only",
+    "metadata_preflight": "Complete train/valid schema and lineage preflight for all three stages",
+    "native_source_hashes_checked": 29,
+    "native_source_hashes_changed": 0,
+    "native_hash_scope": "Pinned source files in current local Contracts, Gestion Magasin and Reservation checkouts; not a live endpoint or authorization test",
+    "original_inputs_unchanged": true,
+    "validation_held_out_fresh_controls_unchanged": true
+  },
+  "artifacts": [
+    {
+      "version": "shared-v6-facturation-replay-v3-en-fr",
+      "manifest_sha256": "07a4399d360c4b74faebb2a7177373c81e711594afafcc6a7a370f63757cff93",
+      "files": {
+        "train.jsonl": "b56f27be2bde8469d58f1ae7acef8a6f302580295218cf4700d02a902de0e975",
+        "valid.jsonl": "9f3d88ccf72f651f869bbb8f19495ed1570b1b2fe49aa67351f79ef7142e584d"
+      },
+      "counts": {
+        "train.jsonl": {
+          "facturation": 1487,
+          "management_projet": 1012,
+          "design_workflow": 476,
+          "contrat": 153
+        },
+        "valid.jsonl": {
+          "facturation": 133,
+          "management_projet": 78,
+          "design_workflow": 64,
+          "contrat": 44
+        }
+      },
+      "held_out_count": 564,
+      "model_binding": {
+        "status": "UNBOUND; actual predecessor acceptance is not verified",
+        "accepted_predecessor_required": "facturation-replay-v3-en-fr"
+      }
+    },
+    {
+      "version": "shared-v7-facturation-replay-v3-en-fr",
+      "manifest_sha256": "5727c5e4c86d5a6e52d065243094f5f347b34fbd2efdbe6fc03702b9e6206e79",
+      "files": {
+        "train.jsonl": "d41aeb367f6a97afb80a865062938d65393ad58d26be469be994530ec01e778a",
+        "valid.jsonl": "8790e04601f1300380f834b6561f94411826d1273e1ac42510fa2e3a3d03be37"
+      },
+      "counts": {
+        "train.jsonl": {
+          "facturation": 1487,
+          "management_projet": 1012,
+          "design_workflow": 476,
+          "contrat": 153,
+          "gestion_magasin": 198
+        },
+        "valid.jsonl": {
+          "facturation": 133,
+          "management_projet": 78,
+          "design_workflow": 64,
+          "contrat": 44,
+          "gestion_magasin": 43
+        }
+      },
+      "held_out_count": 654,
+      "model_binding": {
+        "status": "UNBOUND; actual predecessor acceptance is not verified",
+        "accepted_predecessor_required": "shared-v6-facturation-replay-v3-en-fr"
+      }
+    },
+    {
+      "version": "shared-v8-facturation-replay-v3-en-fr",
+      "manifest_sha256": "5cb61e122787e90114d999b28f13b2cfca3fa03491f0ad02e39ff884b198223b",
+      "files": {
+        "train.jsonl": "b78fba2ba0383440d2eb37a5ee10085ee149c33336daa23e22ab803ad4ba061c",
+        "valid.jsonl": "ce5c35c7c7977f0da30273e06424ed5c4a0cc41b90783e74a2f12ea579b506b2"
+      },
+      "counts": {
+        "train.jsonl": {
+          "facturation": 1487,
+          "management_projet": 1012,
+          "design_workflow": 476,
+          "contrat": 153,
+          "gestion_magasin": 198,
+          "reservation": 180
+        },
+        "valid.jsonl": {
+          "facturation": 133,
+          "management_projet": 78,
+          "design_workflow": 64,
+          "contrat": 44,
+          "gestion_magasin": 43,
+          "reservation": 40
+        }
+      },
+      "held_out_count": 738,
+      "model_binding": {
+        "status": "UNBOUND; actual predecessor acceptance is not verified",
+        "accepted_predecessor_required": "shared-v7-facturation-replay-v3-en-fr"
+      }
+    }
+  ],
+  "training_started": false,
+  "model_accuracy_measured": false,
+  "predecessor_acceptance_verified": false,
+  "production_activation": false,
+  "limitations": [
+    "Private local data preparations only. No additional numerical job or server upload.",
+    "The original R11 launcher cannot admit this new lineage; reviewed actual predecessor bindings remain required.",
+    "Current Facturation training must finish and pass unchanged development, regression and fresh controls before any later stage.",
+    "Current source hashes and static schemas do not prove semantic independence, model accuracy, native authorization or deployment readiness.",
+    "Zero of six applications are fully accepted."
+  ]
+}

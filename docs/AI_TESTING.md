@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Conditional replay V3 serial queue verified - 17 October 2026
+
+Nine tests pass in 26.799 seconds using only local synthetic dataset metadata. They reconstruct the exact reviewed V3 base from tracked sources, preserve every current training row and original new-app suffix, and run the existing full metadata/schema/lineage preflight on the Contracts, Gestion Magasin and Reservation preparations. Negative checks reject the old R11 parent, skipped Contracts stage, loss of 556 current Facturation rows even with an updated hash, modified evaluation inputs, unsafe paths and overwritten artifacts.
+
+All original input hashes remain unchanged. The single reviewer cleared both exact source files, including the complete-preflight test. No model weights, optimizer, inference, database or server numerical workload was used. These checks do not establish semantic independence, model accuracy, accepted predecessor identity or deployment readiness.
+
+Run: `.venv-training/bin/python -B -m unittest training.tests.test_serial_after_facturation_replay_v3 -v`.
+
+[Preparation results and explicit limitations](../training/reports/facturation-replay-v3-future-serial-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Current complete Facturation backend regression run - 17 October 2026
 
 The tracked backend at commit eb427df and shared assistant source passed 2,657 tests and 41 subtests in 120.28 seconds; total harness time was 122.84 seconds. Standalone vendored Colibri tests were excluded from Django collection. Existing application adapter, authorization, confirmation-history, business and logistics tests remained included.
