@@ -1,5 +1,19 @@
 # Verification and acceptance record
 
+## Actual joint-context completion and Colibri replay - 17 October 2026
+
+Independent evidence checks verified all 1,171 contiguous updates in the pinned selected-row order, finite loss/gradient values, all-layer updates, unchanged frozen weights and saved/live-adapter equality. All six numerical evidence hashes match. The original numerical invocation exited successfully.
+
+The actual export completed 14 real Colibri replay requests. Every response was schema-valid, matched its diagnostic target and agreed with the training-runtime action. All seven export evidence hashes and current model/runtime artifacts were checked; before/after proofs match and owned-worker cleanup completed.
+
+The single reviewer cleared the actual 24-file development handoff. Frozen input and baseline pins, 275 original cases and the inherited evaluator AST check passed before comparison launch. The broader development evaluation is running; implementation simulations and replay diagnostics are not general model accuracy or security acceptance.
+
+The current logistics field/route/guidance review found no mismatch. This read-only compatibility review is separate from model accuracy and production E2E tests.
+
+[Executed completion, actual export and timestamped development progress](../training/reports/facturation-replay-v2-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Actual server preflight and reviewed handoff - 17 October 2026
 
 The actual server metadata preflight passed all 2,975 training and 275 original development rows: tokenizer round-trip, runtime-prefix parity, loss boundary, semantic alignment and output-budget checks with a 512-token cap. The smallest available output budgets were 488 training tokens and 512 development tokens; every target fits. Maximum sequence lengths remain 7,745 and 7,496 within 8,192 tokens; no truncation is allowed. Source/data/runtime identities and production health were unchanged.

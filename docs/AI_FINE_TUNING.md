@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Joint-context replay executed; general accuracy pending - 17 October 2026
+
+The server-only Transformers/PEFT LoRA experiment completed all 1,171 selected updates from the original checkpoint-600 export. All 24 intended layers received finite nonzero gradients and changed; frozen parameters remained unchanged and the saved adapter matched live parameters. The frozen runner recorded 31,414.21 seconds for updates, adapter persistence, trained captures and final verification, excluding initial loading and baseline captures.
+
+All 14 baseline and 14 trained diagnostic targets matched. The real Colibri export also produced 14/14 matching target actions with 14/14 training-runtime agreement. The owned export worker stopped, and artifact hashes stayed unchanged. This small diagnostic sample does not predict a 95 percent benchmark score.
+
+The unchanged 275-case development comparison is running. No new complete development or acceptance score is available at this observation. The model is unaccepted, production is unchanged, and this disposable adapter cannot seed a longer run.
+
+[Actual completion and export record](../training/reports/facturation-replay-v2-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Joint-context replay server experiment running - 17 October 2026
 
 The server-only Transformers/PEFT experiment has started from the original rehashed checkpoint 600 with 1,171 selected updates. The previous disposable adapters are not reused. All 2,975 training and 275 unchanged development rows passed the actual tokenizer, Colibri-template, loss-mask and output-budget preflight. Isolated admission verified 22 source files and 9 prepared data files.

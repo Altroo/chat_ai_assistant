@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Joint-context replay optimization and export completed - 17 October 2026
+
+IMPLEMENTED and verified as a bounded experiment: all 1,171 selected server updates completed with finite losses and gradients, all 24 intended layers updated, unchanged frozen parameters and matching saved/live adapter. The numerical service peaked at 7.32 GiB within its 32 GiB limit. Fourteen baseline and fourteen trained diagnostic captures matched their targets.
+
+Actual merging, conversion and Colibri replay completed. All 14 paired actions matched the training runtime and their diagnostic targets; before/after artifact proofs match and the owned export worker stopped. These diagnostics do not establish general accuracy.
+
+PARTIALLY IMPLEMENTED: the original 275-case development comparison is now running against checkpoint 600 with unchanged cases, provider, settings and scorer. Its timestamped processed-case count is recorded separately from accuracy. Full acceptance and additional-control gates remain incomplete; zero of six applications are fully accepted. The production inference model is healthy and unchanged.
+
+The single reviewer cleared the actual export and development handoffs. It also checked the current logistics supplier form, removed customer selectors, visible field labels, historical routes and tool scope against both identical bilingual knowledge copies; no mismatch was found.
+
+[Executed numerical/export evidence and development observation](../training/reports/facturation-replay-v2-pilot-completion.json).
+
+Earlier entries below retain their original observation state.
+
 ## Joint-context replay training started on server - 17 October 2026
 
 PARTIALLY IMPLEMENTED: one isolated 1,171-update experiment started from the rehashed original checkpoint 600. The server verified all 22 source files and nine prepared data files, including pinned synthetic language provenance. Full tokenizer/template/loss-boundary checks passed all 2,975 training and 275 unchanged development rows without truncation. No failed trial adapter was reused.
