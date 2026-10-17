@@ -1,5 +1,23 @@
 # Chat AI Assistant progress
 
+## Replay trial did not meet development targets - 17 October 2026
+
+IMPLEMENTED and independently verified: all 275 unchanged Colibri development cases finished at 04:14:06 UTC. Raw event booleans and the frozen scorer reproduce every reported metric and target gate. All bound artifacts and the explicitly scoped event-log prefix match; before/after serving proofs are byte-identical, stderr is empty, and the controller plus all three workers stopped.
+
+| Application | Exact actions, baseline to trial | Exact arguments, baseline to trial | Trial structure |
+| --- | ---: | ---: | ---: |
+| facturation | 110/133 (82.71%) to 110/133 (82.71%) | 88/111 (79.28%) to 89/111 (80.18%) | 133/133 (100.00%) |
+| management_projet | 77/78 (98.72%) to 72/78 (92.31%) | 53/54 (98.15%) to 49/54 (90.74%) | 76/78 (97.44%) |
+| design_workflow | 64/64 (100.00%) to 64/64 (100.00%) | 46/46 (100.00%) to 46/46 (100.00%) | 64/64 (100.00%) |
+
+PARTIALLY IMPLEMENTED: the 306-update replay experiment did not improve Facturation action accuracy and regressed Management Projet. The candidate is rejected for activation and extension. Design Workflow passes only this development set. No new acceptance run occurred; the last completed Facturation regression remains 96/108 (88.89%). Zero of six applications are fully accepted.
+
+PLANNED: review training/development errors, replay effectiveness and prompt/tool contracts before another numerical experiment. Do not extend or reuse the disposable adapter. Acceptance/additional-control cases and scoring remain unchanged, and production inference is healthy and unchanged.
+
+[Verified completed comparison](../training/reports/facturation-replay-v1-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Contrast/replay trial and Colibri diagnostics complete - 17 October 2026
 
 IMPLEMENTED and verified: the original 306-update numerical invocation finished successfully, including all 14 baseline and 14 trained-model captures. All 24 intended layers received nonzero gradients and updates; frozen parameters stayed unchanged, and saved/live adapter equality passed. The trial timer was 8,474.95 seconds, covering updates through final verification and excluding baseline capture/loading. Service cgroup peak was 6.621 GiB.

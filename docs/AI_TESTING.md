@@ -1,5 +1,19 @@
 # Verification and acceptance record
 
+## Full replay-trial development verification - 17 October 2026
+
+IMPLEMENTED and verified: all 275 frozen development inputs were evaluated through the original Colibri/provider/settings/scorer. The independent verifier checks source pins before controller import, exact ordered shard inputs, request/case identity, booleans and frozen assessments, model/runtime artifacts, step/model/context/token/thread settings, the combined result's before-proof hash, and the explicit event-log prefix range.
+
+Final before/after serving proofs are byte-identical. The exact three owned worker names and step-306 stop record confirm cleanup; the original controller stopped and all stderr files are empty. Production inference remains healthy and unchanged.
+
+The measured development actions are Facturation 110/133 (82.71%), Management Projet 72/78 (92.31%) and Design Workflow 64/64 (100.00%). Exact arguments are 89/111 (80.18%), 49/54 (90.74%) and 46/46 (100.00%), respectively. Structure is valid for 133/133 Facturation, 76/78 Management Projet (97.44%) and 64/64 Design Workflow cases. Facturation and Management Projet fail the development targets; Design Workflow passes this set only.
+
+These are model-planning development results, not new acceptance or native-security certification. The candidate is rejected for activation/extension; no longer numerical run is admitted by these results.
+
+[Complete metrics, verification and limits](../training/reports/facturation-replay-v1-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Completed replay trial and real Colibri export - 17 October 2026
 
 IMPLEMENTED and verified: 306 contiguous updates follow the selected row order; metrics are finite, all 24 intended layers updated, frozen parameters stayed unchanged, and saved/live adapter equality passed. Fourteen baseline and fourteen trained captures are preserved. The single reviewer independently confirmed the numerical evidence and found no reporting or handoff blocker.

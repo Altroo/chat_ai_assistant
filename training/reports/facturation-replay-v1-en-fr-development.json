@@ -1,0 +1,186 @@
+{
+  "version": "facturation-replay-v1-en-fr-development",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "pilot_updates": 306,
+  "cases": 275,
+  "source_baseline_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+  "source_baseline_selected_step": 600,
+  "by_application": {
+    "facturation": {
+      "baseline_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 132,
+          "structured_valid": 133,
+          "action_matches": 110
+        },
+        "percent": {
+          "tool_correct": 99.25,
+          "structured_valid": 100.0,
+          "action_matches": 82.71
+        },
+        "exact_arguments": {
+          "passed": 88,
+          "count": 111,
+          "percent": 79.28
+        }
+      },
+      "pilot_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 126,
+          "structured_valid": 133,
+          "action_matches": 110
+        },
+        "percent": {
+          "tool_correct": 94.74,
+          "structured_valid": 100.0,
+          "action_matches": 82.71
+        },
+        "exact_arguments": {
+          "passed": 89,
+          "count": 111,
+          "percent": 80.18
+        }
+      },
+      "no_development_metric_decline": false
+    },
+    "management_projet": {
+      "baseline_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 77,
+          "structured_valid": 78,
+          "action_matches": 77
+        },
+        "percent": {
+          "tool_correct": 98.72,
+          "structured_valid": 100.0,
+          "action_matches": 98.72
+        },
+        "exact_arguments": {
+          "passed": 53,
+          "count": 54,
+          "percent": 98.15
+        }
+      },
+      "pilot_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 74,
+          "structured_valid": 76,
+          "action_matches": 72
+        },
+        "percent": {
+          "tool_correct": 94.87,
+          "structured_valid": 97.44,
+          "action_matches": 92.31
+        },
+        "exact_arguments": {
+          "passed": 49,
+          "count": 54,
+          "percent": 90.74
+        }
+      },
+      "no_development_metric_decline": false
+    },
+    "design_workflow": {
+      "baseline_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 64
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 46,
+          "count": 46,
+          "percent": 100.0
+        }
+      },
+      "pilot_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 64
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 46,
+          "count": 46,
+          "percent": 100.0
+        }
+      },
+      "no_development_metric_decline": true
+    }
+  },
+  "development_targets_passed": {
+    "facturation": false,
+    "management_projet": false,
+    "design_workflow": true
+  },
+  "model_accepted": false,
+  "full_training_authorized": false,
+  "production_activation": false,
+  "limitations": [
+    "One bounded pilot and unchanged synthetic development data; acceptance is separate.",
+    "Original serving/provider settings and scoring are retained. No new language-level accuracy is inferred.",
+    "Development gains alone neither authorize a longer epoch nor certify native authorization."
+  ],
+  "evidence_sha256": {
+    "development-306-2.events.jsonl": "6c70143abd0e15b69e199f1c58db8b798e96a4207245fb3b0797dbac627f2934",
+    "development-306-stop.json": "55af383de7ce38845936365c3d4d9598b610a1e4026e893cc17b1cf9a93cb210",
+    "development-306-2.inputs.jsonl": "ef0c30b68ee203a169c9bfe76ae5b7cd60ee17d91821fb56d7dc7ef06bade921",
+    "development-306-after.json": "a279b892373e120b89d95255ebbe6f2d66968bfa81eae97bed9cca3c056669b9",
+    "development-306-launch.json": "fd5a54eedfe52ab712e70c5dd8008b2d58f7e6f9e928d291e0cb9c6f0b662bf4",
+    "development-306-results.json": "c035fbd9ada9f30ecd98126d7a4e973be9e4f4b93c2d8b6aa4a7d42cffbae12e",
+    "development-306-before.json": "a279b892373e120b89d95255ebbe6f2d66968bfa81eae97bed9cca3c056669b9",
+    "operator-binding.json": "7e23d4904eb1998047541e6b17a8d11b59b46ec611b32cce2d905b57b644e0ae",
+    "development-306-prepare.json": "1f54ee869d4b215d3dd36142491379e8bcd297b1142c9ad839b3848f64968c38",
+    "development-306-0.events.jsonl": "800a5aebe71f9cbf722ef7691873a2bbaacf2a0f85947f7b8756a22401a45c4b",
+    "development-306-0.inputs.jsonl": "0f3f4feeb5c060af976caf68df7503a254c8f9aaddd56b6c901ee05da9fdaa05",
+    "development-306-1.inputs.jsonl": "d97facfe8a23ebc9a5383aa9541f259654d965f235ad81ab42fdaf143a8f79c1",
+    "development-306-1.events.jsonl": "6b4aef42c0c934e64db17513c8b4d90b687f4ccd7a480ad3bf420d6f83b87db6"
+  },
+  "events_prefix": {
+    "bytes": 405,
+    "sha256": "fa2b0ca000a7480fd095fdc05082a06a1632632eb2626251b3106a9efeadf18b",
+    "scope": "Event log prefix before terminal finished event; not the whole final file"
+  },
+  "completed_utc": "2026-10-17T04:14:06Z",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "metrics_independently_recomputed": true,
+  "bound_artifacts_verified": true,
+  "before_after_proofs_byte_identical": true,
+  "owned_workers_stopped": 3,
+  "original_controller_stopped": true,
+  "controller_and_shard_stderr_empty": true,
+  "production_healthy_unchanged": true,
+  "raw_report_sha256": "b3b52ad1348dd872587519c1c6247ecb80eebc7f70edd14386a4696f01b3b238",
+  "independent_verification_sha256": "83188467a18278fe35b195c4170ae2af79b21fd460a18174697cbaab466638a7",
+  "event_log_hash_scope": "events_prefix explicitly binds the pre-terminal byte range; final events.jsonl is excluded from whole-file digest map",
+  "candidate_rejected_for_activation_and_extension": true,
+  "new_acceptance_score": null,
+  "accepted_applications": 0,
+  "last_completed_facturation_regression": {
+    "actions_passed": 96,
+    "count": 108,
+    "accuracy_percent": 88.88888888888889
+  },
+  "next_action": "Review training/development errors, replay effectiveness and prompt/tool contracts before any new numerical experiment from the unchanged predecessor",
+  "disposable_adapter_must_not_seed_full_run": true
+}

@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Completed replay experiment remains below target - 17 October 2026
+
+The unchanged 275-case Colibri comparison completed. Facturation actions remain 110/133 (82.71%), while exact arguments improve only from 88/111 (79.28%) to 89/111 (80.18%). Management Projet regresses from 77/78 to 72/78 actions (92.31%) and from 53/54 to 49/54 exact arguments (90.74%). Design Workflow retains 64/64 actions and 46/46 arguments. Facturation and Design Workflow have 100 percent structured validity; Management Projet has 76/78 valid structures (97.44%).
+
+This rejects activation or extension of the 306-update trial. Its fourteen successful Colibri diagnostic targets did not predict general development accuracy. The explicit replay mix was insufficient to preserve Management Projet at the original development level.
+
+No longer epoch or acceptance run has started. Review actual training/development errors and prompt/tool contracts before selecting another experiment from the unchanged predecessor. Keep the failed disposable adapter out of subsequent training lineage. Production inference and all acceptance/additional-control cases/scoring are unchanged; zero of six applications are fully accepted.
+
+[Independently recomputed scores and evidence](../training/reports/facturation-replay-v1-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Replay-preserving numerical experiment completed - 17 October 2026
 
 All 306 selected server updates completed with the declared replay mix, 24-layer gradient/update coverage, unchanged frozen parameters and matching saved/live adapter. The bounded trial completed its fourteen before/after captures. This is executed LoRA optimization, not a complete 2,975-row epoch or an accepted model.
