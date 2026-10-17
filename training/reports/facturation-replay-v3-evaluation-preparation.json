@@ -1,0 +1,110 @@
+{
+  "version": "facturation-replay-v3-evaluation-preparation",
+  "status": "IMPLEMENTED and reviewed offline preparation; actual export and development execution pending",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training_focus": "facturation",
+  "retention_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "selected_updates": 2283,
+  "frozen_development_cases": 275,
+  "development_cases_by_application": {
+    "facturation": 133,
+    "management_projet": 78,
+    "design_workflow": 64
+  },
+  "frozen_development_input_sha256": "b007326c32de9ede8424218ad4196a663324b1ad516df87a69df957f1b846a8b",
+  "frozen_worker_core_sha256": "876e8accba78ffb26c905022e24dd46284c3dd3ac1c94f4bbd3dd0a9cfc6ca16",
+  "source_baseline_selected_step": 600,
+  "source_baseline_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+  "frozen_provider_metadata_sha256": "c1569db63f2bb825ea7b09a1c536cea25a3a49a0b85d244b52c3e0f032c2562d",
+  "prepared_artifact_sha256": {
+    "export_admission": "2d2ff89556a08b5c974a268c33d2acf0b6c04113d05631196fc520a9876625bb",
+    "export_launch": "876075b064d13310ae15a5cd28c0d90f27c47b92dcef1de5b161edf2294da7fb",
+    "development_remote": "7c80a2f289babc0e44727ddac248d137eed586967f204c34f121f79471c6ed26",
+    "development_controller": "38ed5aa7a55db7ca2a49fb7ba3a1f032013f1e4710e9ae3c2746a9688b477ee6",
+    "development_verifier": "328bf05a1c8537e10b95719c7b9a72ad4a1adc70aa24cf4fdecf0a892ee93a19",
+    "admission_tests": "909df68de28df6445ebdbce96718e7440f82d128052045cf4e6b9ef01b777b32",
+    "export_launch_tests": "5471ed91c604ad9351c90dfeccf16ee8816a0cbc57912235e3488b157ad9e25c",
+    "development_remote_tests": "bb7338aa2f59a1bb2a14c5642968e772e9c00c61c9913adf2388a1f6dbe258e6",
+    "development_controller_tests": "b615f8796a33165819ee258563f13b18be36fcd9a26d19fdcd8b7e4819422ec1",
+    "completion_verifier_tests": "0df2de62da5084ffd14936ca2abacc3179f625a04f6c3afb16bf3827062c27af",
+    "admission_payload": "2309bb4521d9d8c32581bd8bc685154801e3e3baee6bfdf2d73dcfbf500e1e4d"
+  },
+  "offline_tests": {
+    "export_admission": 12,
+    "export_launch": 9,
+    "development_worker": 11,
+    "development_controller": 14,
+    "completion_verifier": 8,
+    "total": 54,
+    "log_sha256": "4e744b397ab7b7767ca04ffccdeebec38a55cf84fa351b754791bb10b38a040e"
+  },
+  "review": {
+    "result": "No issues",
+    "reviewer_count": 1,
+    "record_sha256": "e4ff7cadca1f57aa3fc8bcce59ecb43d470830ac30b171709bf599bb9b6e9ee7",
+    "scope": "Preparation only; not execution or acceptance"
+  },
+  "required_before_export": [
+    "Original numerical invocation is terminal with successful exit and exactly 2,283 verified updates.",
+    "Source/data/launch/model/runtime identities and numerical completion evidence match.",
+    "All-layer updates, frozen parameters and saved/live adapter equality pass.",
+    "Resources are available and no numerical/evaluation/export job overlaps.",
+    "Exact actual export binding is independently verified and reviewed."
+  ],
+  "required_before_development": [
+    "Real Colibri conversion and 14 diagnostic requests complete with owned-worker cleanup.",
+    "Actual export artifact/evidence bindings are verified and reviewed.",
+    "Original 275 inputs, provider, worker profile, model settings and scorer remain unchanged."
+  ],
+  "completion_checks": [
+    "Independently recompute per-application tool, argument, structure and full-action results.",
+    "Require all original case IDs, targets and shard order.",
+    "Bind executed/completed export serializations, event prefix and artifact identities.",
+    "Confirm the controller and all three owned evaluation workers stopped."
+  ],
+  "training_observation": {
+    "observed_at": "2026-10-17T15:18:30Z",
+    "running": true,
+    "completed_updates": 23,
+    "total_updates": 2283,
+    "production_inference_healthy_unchanged": true
+  },
+  "resource_sample": {
+    "observed_at": "2026-10-17T15:17:42.738443+00:00",
+    "sample_seconds": 3.0027326233685017,
+    "effective_cpu_cores": 12.67459869847006,
+    "configured_cpu_cores": 14,
+    "logical_server_cpus": 16,
+    "process_rss_gib": 4.635341644287109,
+    "available_ram_gib": 43.02775955200195,
+    "memory_events": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    },
+    "scope": "Short CPU sample and cumulative memory counters at this observation; not whole-run profiling."
+  },
+  "actual_export_started": false,
+  "actual_development_started": false,
+  "new_accuracy": null,
+  "model_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "limitations": [
+    "All 54 tests use offline fixtures or frozen metadata; no model inference or business operation ran.",
+    "Passing implementation checks cannot predict 95 percent accuracy.",
+    "Completion and actual export/development/acceptance results remain pending.",
+    "No future model/export/development binding is treated as verified before it exists."
+  ]
+}

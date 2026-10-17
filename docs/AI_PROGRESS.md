@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Evaluation safeguards prepared while training continues - 17 October 2026
+
+IMPLEMENTED as preparation: the single reviewer cleared versioned export admission, one-shot export, Colibri development and independent completion-verification helpers. Fifty-four offline tests pass, including twelve new admission checks that reject live, failed, incomplete or substituted training, changed bindings, resource pressure and overlapping jobs. The frozen 275-case development inputs, original checkpoint-600 baseline, provider and scoring remain unchanged.
+
+The actual export and development bindings are not yet available and are not treated as verified. Execution stays gated on the original training invocation finishing successfully, complete numerical invariants and reviewed actual artifact/evidence bindings. No export, evaluation, activation or later-application training started.
+
+At 2026-10-17T15:18:30Z, the original training process had completed 23 of 2,283 updates and remained healthy. A separate three-second sample measured about 12.7 effective CPU cores under the fourteen-thread configuration, with no cumulative memory-pressure or OOM events recorded at that point. This sample is not a whole-run performance benchmark.
+
+No new accuracy score exists; zero of six applications are fully accepted.
+
+[Reviewed evaluation preparation and actual observations](../training/reports/facturation-replay-v3-evaluation-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Complete-shape replay running on the server - 17 October 2026
 
 PARTIALLY IMPLEMENTED: the reviewed 26-source/nine-data snapshot passed isolated server admission. All 2,975 training and 275 original development rows passed tokenizer, Colibri-template, parser, loss-boundary and output-budget checks. Actual original checkpoint-600 weights and the frozen Colibri runtime were rehashed before the one-shot launch; rejected trial adapters were not reused.

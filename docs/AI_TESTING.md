@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Successor export and evaluation guards checked offline - 17 October 2026
+
+Fifty-four offline checks pass: twelve export-admission, nine one-shot export-launch, eleven development-worker, fourteen development-controller and eight completion-verifier tests. They cover the original invocation, terminal completion, source/model/runtime bindings, resource reserve, changed providers, unchanged case/target/scoring contracts, export byte-serialization binding and explicit cleanup. Even perfect synthetic fixture metrics cannot grant model acceptance.
+
+The single reviewer cleared the exact private helper sources and original-invocation admission payload. The original 275-case development input hash, frozen worker implementation and scoring remain unchanged. Actual export/development bindings still require terminal evidence and review before execution; no live evaluation ran during training.
+
+The running numerical process was observed at 23/2,283 updates. A three-second CPU sample and cumulative memory counters are documented separately from model accuracy and complete-run performance. No new acceptance score or production activation is claimed.
+
+[Offline checks, preserved controls and execution gates](../training/reports/facturation-replay-v3-evaluation-preparation.json).
+
+Earlier entries below retain their original observation state.
+
 ## Actual complete-shape server admission and early updates - 17 October 2026
 
 All 2,975 training and 275 development rows passed the real server tokenizer round-trip, Colibri prompt-prefix parity, parser, loss-boundary, semantic-alignment and output-budget checks. Maximum sequences are 7,745 and 7,496 tokens within the 8,192-token context; every target fits and no truncation is allowed.
