@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Current complete Facturation backend regression run - 17 October 2026
+
+The tracked backend at commit eb427df and shared assistant source passed 2,657 tests and 41 subtests in 120.28 seconds; total harness time was 122.84 seconds. Standalone vendored Colibri tests were excluded from Django collection. Existing application adapter, authorization, confirmation-history, business and logistics tests remained included.
+
+The local harness disabled parent environment-file loading and restricted database connections to the isolated test database and local maintenance database. It used synthetic fixtures, verified all 1,660 source hashes before and after execution, and separately confirmed deletion of its uniquely scoped test database. The one reviewer checked actual evidence. All 1,086 warnings are retained in the private log, including warnings caused by the synthetic JWT test key.
+
+No model inference or numerical training ran locally. These results do not replace the unchanged model development, acceptance and additional-control evaluations, or prove production end-to-end behavior.
+
+[Verified complete backend results](../training/reports/facturation-current-backend-regressions.json).
+
+Earlier entries below retain their original observation state.
+
 ## Successor export and evaluation guards checked offline - 17 October 2026
 
 Fifty-four offline checks pass: twelve export-admission, nine one-shot export-launch, eleven development-worker, fourteen development-controller and eight completion-verifier tests. They cover the original invocation, terminal completion, source/model/runtime bindings, resource reserve, changed providers, unchanged case/target/scoring contracts, export byte-serialization binding and explicit cleanup. Even perfect synthetic fixture metrics cannot grant model acceptance.

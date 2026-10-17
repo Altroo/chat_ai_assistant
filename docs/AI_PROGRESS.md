@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Current Facturation backend verified - 17 October 2026
+
+IMPLEMENTED and verified: the released Facturation backend and current shared assistant source passed all 2,657 backend tests and 41 subtests with isolated synthetic records. All 1,660 snapshot hashes remained unchanged, and an explicit post-run query confirmed removal of the temporary local test database. The single reviewer verified the harness, actual results and cleanup.
+
+PARTIALLY IMPLEMENTED: model training continues separately. This backend run does not provide a new accuracy score or production end-to-end acceptance; zero of six applications are fully accepted.
+
+[Current backend regression results and scope](../training/reports/facturation-current-backend-regressions.json).
+
+Earlier entries below retain their original observation state.
+
 ## Evaluation safeguards prepared while training continues - 17 October 2026
 
 IMPLEMENTED as preparation: the single reviewer cleared versioned export admission, one-shot export, Colibri development and independent completion-verification helpers. Fifty-four offline tests pass, including twelve new admission checks that reject live, failed, incomplete or substituted training, changed bindings, resource pressure and overlapping jobs. The frozen 275-case development inputs, original checkpoint-600 baseline, provider and scoring remain unchanged.

@@ -1,0 +1,51 @@
+{
+  "version": "facturation-current-backend-regressions-v1",
+  "observed_utc": "2026-10-17T15:52:39.126157+00:00",
+  "status": "CURRENT BACKEND REGRESSIONS PASSED",
+  "application": "facturation",
+  "backend_commit": "eb427df7e14d6ed9923f15731a77a3b2cd807061",
+  "shared_source_base_commit": "339df00e442ac69bc62db71c46eaf4d0cc9cfa7b",
+  "tests_passed": 2657,
+  "subtests_passed": 41,
+  "tests_failed": 0,
+  "pytest_warnings": 1086,
+  "warning_categories": [
+    "InsecureKeyLengthWarning",
+    "UserWarning"
+  ],
+  "pytest_seconds": 120.28,
+  "harness_seconds": 122.84,
+  "full_backend_suite": true,
+  "collection_exclusion": "Standalone vendored assistant/Colibri tests; application adapter tests remain included.",
+  "source_snapshot_files": 1660,
+  "source_snapshot_unchanged": true,
+  "source_archive_sha256": "2081d628633b254a7ad2d4482fb7fe6ac0554ae87ae354dcb35c5d34e596e979",
+  "fixture_data": "synthetic",
+  "database": "isolated local PostgreSQL test database",
+  "test_database_cleanup_verified": true,
+  "harness_static_review": "No issues",
+  "result_review": "No issues",
+  "reviewers": 1,
+  "server_training_modified": false,
+  "production_data_access": false,
+  "real_model_inference": false,
+  "model_accuracy_measured": false,
+  "model_accepted": false,
+  "production_security_certified": false,
+  "production_activation": false,
+  "evidence_sha256": {
+    "test_log": "2e667e3e4e9dcd8b041ba7d96b1dd83eb53af70b284800b49caa23c4d611b685",
+    "source_before": "9495e13e33d1b715395ff81f3040b24d01373cf3f9eb5dce612de861fd537603",
+    "source_after": "9495e13e33d1b715395ff81f3040b24d01373cf3f9eb5dce612de861fd537603",
+    "result": "d45c06a22b68a064ddcc40e92f5cb8ba5d488672b34a015b6c0c47b94d714dfa",
+    "harness": "165efe55b325393520f3ca3001805c62c1f225e67909c4e39e6fb96502fac4c9",
+    "harness_review": "ab422d418c7f6ceeba79c514685071db491ba4071c0c635e679d6ff15b0721dd",
+    "database_cleanup": "d2006cf12b30c350540ae512ad58284623fb91552f7393432f2424f03246c6cb"
+  },
+  "limitations": [
+    "This verifies the tracked Facturation backend at the stated commit with the current shared assistant source using isolated synthetic fixtures.",
+    "It is not new model accuracy, real-model end-to-end evidence or a production security certification.",
+    "Warnings were retained. They include a short synthetic JWT key supplied only by this test harness; no production-key finding is inferred.",
+    "The current numerical job, frozen training/evaluation inputs and production model were not changed."
+  ]
+}
