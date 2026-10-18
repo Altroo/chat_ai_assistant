@@ -1,5 +1,19 @@
 # Model training and evaluation
 
+## Failed-generation diagnostics completed - 18 October 2026
+
+IMPLEMENTED and verified as diagnostics: four failed Colibri requests ended normally but generated invalid arguments. Thirteen captures using the saved training-runtime adapter matched six targets and eleven schemas; seven of ten selected original failures persisted before export. This includes one native-equivalent article-search alias that remains a strict-scoring failure. These observations do not isolate quantization as the cause.
+
+The paired shortlist probe completed all 26 requests. Full tool lists matched 3/13 targets; previously model-chosen tool plus clarification matched 5/13. It gained 2 matches and lost 0. Only offered tool lists changed, with fresh sequential workers and unchanged selected schemas, messages and settings. The first four selected tool names came from the fresh raw diagnostic. This is a failure-heavy conditional diagnostic, not an end-to-end planner score or acceptance result.
+
+All diagnostic workers stopped; model parameters and production inference remained unchanged. Nineteen offline shortlist guards passed. The current logistics form, bilingual knowledge and all 40 native pins remain compatible; no removed selector is presented as a required step.
+
+PARTIALLY IMPLEMENTED: original development and acceptance scores remain unchanged. Zero of six applications are fully accepted. No numerical successor, acceptance run, model activation or later-application training started. Select and verify a concrete planning/training improvement before another long numerical run.
+
+[Verified diagnostic scope, results and evidence](../training/reports/facturation-replay-v3-failure-diagnostics.json).
+
+Earlier entries below retain their original observation state.
+
 ## Complete-shape experiment finished; candidate rejected - 18 October 2026
 
 The server-only Transformers/PEFT LoRA experiment completed all 2,283 selected updates from original checkpoint 600. Settings were 14 threads, 24 text layers, rank 16, alpha 32, BF16 SDPA, learning rate 1e-5 and semantic weight 4. All intended layers changed, frozen parameters remained unchanged and saved/live equality passed. The numerical timer was 63,421.13 seconds, excluding initial loading and baseline captures.

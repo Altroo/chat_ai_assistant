@@ -1,0 +1,183 @@
+{
+  "version": "facturation-replay-v3-failure-diagnostics-v1",
+  "model_family": "Qwen3.5-0.8B",
+  "production_runtime": "Colibri",
+  "candidate_accepted": false,
+  "original_development_report_sha256": "10f3f1448891b1c41fcbafa175a9cac5a50dde437178ac6d9d231dfb88d12358",
+  "original_scores_unchanged": true,
+  "raw_colibri": {
+    "requests": 4,
+    "complete_http_sse_tool_call_responses": 4,
+    "schema_valid": 0,
+    "output_tokens": [
+      95,
+      95,
+      26,
+      26
+    ],
+    "output_budget": 512,
+    "interpretation": "Generated unsupported/misassigned arguments; these four errors are not transport truncation or omitted tool-call parsing."
+  },
+  "training_runtime": {
+    "method": "Saved PEFT adapter over the same original BF16/SDPA training model, no optimizer or parameter change.",
+    "requests": 13,
+    "selection": "Four invalid and six other named original development failures, plus one deterministically chosen original success per retained application.",
+    "target_matches": 6,
+    "schema_valid": 11,
+    "original_colibri_target_matches": 3,
+    "original_failures_persisting_before_export": 7,
+    "original_failures_correct_before_export": 3,
+    "interpretation": "Most sampled errors already occur before export. Differences do not isolate quantization as a cause.",
+    "schema_neutral_alias_limit": "One persistent article search differs only by a native-equivalent field alias under frozen strict scoring."
+  },
+  "conditional_tool_filter": {
+    "method": "Two fresh sequential Colibri workers, same 13 cases/order/model/settings. Only offered tools change to the previously model-chosen entire tool schema plus clarification; messages and schema properties/order stay unchanged.",
+    "selection_provenance": "First four tool choices recovered from the fresh raw diagnostic; remaining nine from original model outputs. No gold tool is substituted.",
+    "by_arm": {
+      "full": {
+        "target_matches": 3,
+        "schema_valid": 9,
+        "count": 13,
+        "mean_latency_s": 10.38116276923077,
+        "mean_prompt_tokens": 2394.5384615384614
+      },
+      "filtered": {
+        "target_matches": 5,
+        "schema_valid": 9,
+        "count": 13,
+        "mean_latency_s": 7.477847538461538,
+        "mean_prompt_tokens": 1714.7692307692307
+      }
+    },
+    "pairs": [
+      {
+        "id": "validation-034",
+        "full_target_match": false,
+        "filtered_target_match": false,
+        "full_schema_valid": false,
+        "filtered_schema_valid": false
+      },
+      {
+        "id": "validation-036",
+        "full_target_match": false,
+        "filtered_target_match": false,
+        "full_schema_valid": false,
+        "filtered_schema_valid": false
+      },
+      {
+        "id": "validation-121",
+        "full_target_match": false,
+        "filtered_target_match": false,
+        "full_schema_valid": false,
+        "filtered_schema_valid": false
+      },
+      {
+        "id": "validation-267",
+        "full_target_match": false,
+        "filtered_target_match": false,
+        "full_schema_valid": false,
+        "filtered_schema_valid": false
+      },
+      {
+        "id": "validation-033",
+        "full_target_match": false,
+        "filtered_target_match": true,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      },
+      {
+        "id": "validation-004",
+        "full_target_match": false,
+        "filtered_target_match": false,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      },
+      {
+        "id": "validation-086",
+        "full_target_match": false,
+        "filtered_target_match": false,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      },
+      {
+        "id": "validation-067",
+        "full_target_match": false,
+        "filtered_target_match": false,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      },
+      {
+        "id": "validation-248",
+        "full_target_match": false,
+        "filtered_target_match": false,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      },
+      {
+        "id": "validation-171",
+        "full_target_match": false,
+        "filtered_target_match": true,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      },
+      {
+        "id": "validation-006",
+        "full_target_match": true,
+        "filtered_target_match": true,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      },
+      {
+        "id": "validation-119",
+        "full_target_match": true,
+        "filtered_target_match": true,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      },
+      {
+        "id": "validation-187",
+        "full_target_match": true,
+        "filtered_target_match": true,
+        "full_schema_valid": true,
+        "filtered_schema_valid": true
+      }
+    ],
+    "new_matches": [
+      "validation-033",
+      "validation-171"
+    ],
+    "lost_matches": [],
+    "offline_guard_tests_passed": 19,
+    "interpretation": "Failure-heavy conditional diagnostic, not an end-to-end two-pass score or a general accuracy estimate. The two previously chosen wrong-navigation calls cannot recover the correct retrieval tool from this shortlist."
+  },
+  "current_logistics": {
+    "all_three_remote_heads_match": true,
+    "backend_commit": "eb427df7e14d6ed9923f15731a77a3b2cd807061",
+    "frontend_commit": "a369b97264e0720f66ad3d2f385384587bf416e5",
+    "native_source_pins_unchanged": 40,
+    "assistant_contract_correction_required": false,
+    "knowledge_sha256": "0ca9fd29c8dd0eacbc55bcf85e3227a52b12cbc702e5e2dfd3f96e039cbf0176",
+    "finding": "Current supplier-form labels and removed customer/pro-forma selectors are already covered. Historical customer/pro-forma search links remain supported."
+  },
+  "controls": {
+    "all_diagnostic_workers_stopped": true,
+    "diagnostic_port_free": true,
+    "production_inference_healthy_unchanged": true,
+    "new_numerical_training_started": false,
+    "acceptance_evaluation_run": false,
+    "source_cases_targets_and_scorer_changed": false,
+    "business_operations_executed": false,
+    "no_application_fully_accepted": true
+  },
+  "evidence_sha256": {
+    "raw_collection": "baf685d5fe07b40ec5ded4dc08462cf7608bfbcbcaa4537664d34a423e170fbd",
+    "training_runtime_collection": "0d2751b04a72bf9486c05e6d7f28d5872c392d6d494aec6d75eb748da50fc649",
+    "paired_tool_filter_collection": "9567862c4fb6edbac5fe21cca4062e1baa63db96e9d28f51a10ec967a9462ad3",
+    "current_logistics_refresh": "c07502071bed19f7e67bb88cd117e6e2a7c9f1ef6214a55cd5260a5a8e13f0dd"
+  },
+  "limitations": [
+    "These deliberately selected diagnostics do not establish 95 percent application accuracy.",
+    "No business authorization or live end-to-end claim follows from model-only calls.",
+    "The rejected disposable adapter cannot seed later training or be activated."
+  ]
+}
