@@ -1,5 +1,13 @@
 # Verification and acceptance record
 
+## Functional checkpoint comparison prepared - 18 October 2026
+
+IMPLEMENTED as policy preparation only, while training is active and before any new candidate Colibri generation: compare original checkpoint 600 as baseline against the seven scheduled checkpoint/final adapters on the unchanged 133 Facturation development cases. Ranking reuses the frozen full-action and valid-structure fractions, then recorded Facturation semantic validation loss and lowest step. The trainer's separate minimum application-macro-loss adapter is a diagnostic, not functional acceptance.
+
+PLANNED: actual export and inference require the successful completed training invocation, complete artifact and provenance checks, and a separately reviewed launch. After development selection, the chosen candidate must pass all unchanged 275 shared development cases, 438 regressions and 48 additional controls with existing application, subset, critical and retained-application regression gates. Acceptance outcomes cannot rerank checkpoints. No production activation or later-application training follows this policy.
+
+The new policy records the new candidate steps without changing original inputs, source policies or scores. It does not predict accuracy. [Bound comparison policy](../training/reports/facturation-search-refinement-evaluation-policy.json).
+
 ## Facturation refinement launched - 18 October 2026
 
 PARTIALLY IMPLEMENTED: the reviewed server run started at 12:34 UTC from original checkpoint 600, using the existing Transformers/PEFT pipeline. The 3,103 planned updates include 2,069 Facturation examples and retained replay for Management Projet (709) and Design Workflow (325). This is one Facturation-focused refinement, not completion of training or acceptance for any application.
