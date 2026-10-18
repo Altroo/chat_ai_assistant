@@ -1,0 +1,72 @@
+{
+  "version": "facturation-search-refinement-handoff-preparation-v1",
+  "created_utc": "2026-10-18T13:25:40.188252+00:00",
+  "status": "PREPARED; TRAINING ACTIVE; NO NEW MODEL SCORE",
+  "application_focus": "facturation",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "training_complete": false,
+  "training_updates_planned": 3103,
+  "original_baseline_checkpoint": 600,
+  "rejected_v3_adapter_used": false,
+  "candidate_steps": [
+    0,
+    512,
+    1024,
+    1536,
+    2048,
+    2560,
+    3072,
+    3103
+  ],
+  "checkpoint_development_cases": 133,
+  "post_selection_cases": {
+    "shared_development": 275,
+    "unchanged_regressions": 438,
+    "additional_controls": 48
+  },
+  "offline_handoff_tests": {
+    "passed": 23,
+    "failed": 0,
+    "scope": "Source provenance, checkpoint paths, frozen scoring, three-shard orchestration and owned-worker cleanup; simulations are not model scores"
+  },
+  "review": {
+    "reviewers": 1,
+    "result": "No issues",
+    "scope": "Prepared sources only; actual completion, binding and runtime evidence remain required",
+    "outer_files_pinned": 118,
+    "fixed_finding": "Historical evaluator inventory now has an independent outer pin; exact evaluator bytes are verified before dispatch"
+  },
+  "baseline_saved_event_recomputation": {
+    "unchanged": true,
+    "completed_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258"
+  },
+  "live_admission_check": {
+    "active_training_rejected": true,
+    "new_comparison_directory_absent": true,
+    "server_files_written": false,
+    "model_jobs_started": false
+  },
+  "source_sha256": {
+    "facturation-search-refinement-comparison-remote-v1.py": "80c8266ab7b6c374c137222e84eedfa6d89ed62f7d39c4bfb4cbf66059271bbf",
+    "run_facturation_search_refinement_comparison_v1.py": "c87a40ac0e539000fe16d2d34f1e85f1556d8b308ad366180a47595a190b60f0"
+  },
+  "private_evidence_sha256": {
+    "facturation-search-refinement-comparison-guards-v1.json": "43988dcaf3034566039b8df98b1e9e6681775e4b6f21e354d37747f6227aa400",
+    "facturation-search-refinement-comparison-reviewed-controls-v1.json": "335f4044e8a4a4f08ed0ef05f946a8df087a7e92622d9e0c34b571270bb7d158",
+    "facturation-search-refinement-comparison-preparation-verification-v1.json": "508dfd6d83d5b236885fe883bc0db6410804e67857b244eb414d5144246276b2",
+    "facturation-search-refinement-active-training-admission-rejection-v1.json": "1cf74e86457230423847d11dba9655f43bef34e38e585b963349e7f9389a42c2"
+  },
+  "export_started": false,
+  "new_candidate_inference_started": false,
+  "new_model_accuracy_percent": null,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "fully_accepted_applications": 0,
+  "limitations": [
+    "The numerical run is still active; no completed adapter or new accuracy result is claimed.",
+    "Saved baseline outputs were recomputed; the baseline model was not regenerated in this preparation.",
+    "Privately retained operational controls require the successful actual training packet before any export, then verified runtime identities and immutable evaluation inputs.",
+    "Prepared comparison controls do not prove model targets, native authorization, frontend behavior or production readiness."
+  ]
+}

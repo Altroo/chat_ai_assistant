@@ -1,5 +1,11 @@
 # Model training and evaluation
 
+## Checkpoint handoff controls verified - 18 October 2026
+
+The sequential Colibri comparison controls are prepared and reviewed, with 23 offline checks passing. They retain original checkpoint 600, all seven scheduled successors, the unchanged evaluator and the published selection policy. The active numerical run must finish before an actual completion packet, export binding and serving evidence can admit candidate generation. No new model-accuracy result exists.
+
+[Handoff preparation evidence and limits](../training/reports/facturation-search-refinement-handoff-preparation.json).
+
 ## Functional checkpoint comparison prepared - 18 October 2026
 
 IMPLEMENTED as policy preparation only, while training is active and before any new candidate Colibri generation: compare original checkpoint 600 as baseline against the seven scheduled checkpoint/final adapters on the unchanged 133 Facturation development cases. Ranking reuses the frozen full-action and valid-structure fractions, then recorded Facturation semantic validation loss and lowest step. The trainer's separate minimum application-macro-loss adapter is a diagnostic, not functional acceptance.

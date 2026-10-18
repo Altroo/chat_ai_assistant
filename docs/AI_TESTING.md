@@ -1,5 +1,11 @@
 # Verification and acceptance record
 
+## Checkpoint handoff controls verified - 18 October 2026
+
+All 23 local handoff checks pass, including final-adapter paths, immutable evaluator bytes, complete-candidate selection, simulated three-shard delivery and owned-worker cleanup. The single reviewer caught and cleared a missing independent historical-evaluator pin. Recomputed saved checkpoint-600 events reproduce the original report exactly. A read-only server check confirms that active training is rejected before export; no model generation ran. These results validate controls and baseline evidence, not candidate accuracy or native business authorization.
+
+[Handoff preparation evidence and limits](../training/reports/facturation-search-refinement-handoff-preparation.json).
+
 ## Functional checkpoint comparison prepared - 18 October 2026
 
 IMPLEMENTED as policy preparation only, while training is active and before any new candidate Colibri generation: compare original checkpoint 600 as baseline against the seven scheduled checkpoint/final adapters on the unchanged 133 Facturation development cases. Ranking reuses the frozen full-action and valid-structure fractions, then recorded Facturation semantic validation loss and lowest step. The trainer's separate minimum application-macro-loss adapter is a diagnostic, not functional acceptance.
