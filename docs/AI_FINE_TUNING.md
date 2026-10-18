@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Natural search training candidate - 18 October 2026
+
+IMPLEMENTED and verified as preparation: 112 natural stock questions cover English and French evenly, with product-first and location-first phrasing. All retain reviewed TRAIN arguments, tool schemas and trusted context. Native stock dates use the actual creation or update event and inclusive bounds. Four genuine or unrecognized histories remain intact; 108 questions are plain requests.
+
+The candidate contains 3,103 examples: the exact 2,283 previously optimized TRAIN rows, plus 268 native stock-profile, 112 natural-question and 440 name-role contrasts. This retains all earlier optimized inputs and targets, including their verified language, nested edit fields and permission-profile distinctions. The other 692 original TRAIN rows remain outside this schedule. Fifty inherited neutral-wrapper duplicate groups are retained deliberately; there are zero exact-input duplicates.
+
+All 56 preparation tests pass. The single reviewer independently checked every ordered row, schema, source hash and canonical development-input exclusion. The original 275 development rows remain byte-identical. Original evaluation targets, scoring and provider behavior are unchanged.
+
+PARTIALLY IMPLEMENTED: server preflight and numerical admission remain pending. The required parent is original checkpoint 600; the rejected V3 adapter cannot seed training. No new model-accuracy result or production activation is claimed, and zero of six applications have passed the full acceptance gate. Two authored natural-language families and role-name variations cannot predict a 95% result or prove the cause of earlier errors.
+
+[Candidate preparation and limitations](../training/reports/facturation-search-refinement-preparation.json).
+
 ## Search-generalization checks and stock-profile data - 18 October 2026
 
 IMPLEMENTED and verified as data preparation: the new helpers prepare 440 name-role variants from 220 source questions and 268 native stock-only profile variants. Review excluded ambiguous role assignments and duplicate neutral greetings before model work. All 34 preparation tests pass together. Stock-profile variants preserve every question, target and argument; native schema and source-hash checks pass. Neither dataset has been trained.

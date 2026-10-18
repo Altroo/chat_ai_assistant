@@ -1,0 +1,89 @@
+{
+  "version": "facturation-search-refinement-v1-preparation",
+  "status": "PREPARED; SERVER PREFLIGHT AND NUMERICAL ADMISSION PENDING",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "starting_model": {
+    "selected_step": 600,
+    "rejected_v3_adapter_used": false
+  },
+  "candidate": {
+    "count": 3103,
+    "by_application": {
+      "facturation": 2069,
+      "management_projet": 709,
+      "design_workflow": 325
+    },
+    "retained_prior_optimized_rows": 2283,
+    "other_original_rows_not_in_schedule": 692,
+    "additions": {
+      "native_stock_profiles": 268,
+      "natural_stock_questions": 112,
+      "role_name_variants": 440
+    },
+    "inherited_neutral_wrapper_duplicate_groups": 50,
+    "exact_input_duplicates": 0,
+    "canonical_development_input_overlap": 0,
+    "all_targets_schema_valid": 3103,
+    "natural_question_languages": {
+      "en": 56,
+      "fr": 56
+    },
+    "natural_question_orderings": {
+      "product_first": 56,
+      "location_first": 56
+    },
+    "manifest_sha256": "8e8213fe8c0c89bddcfa1751588ad16773f7bc227bb8db4eade131c96fb1639f",
+    "files": {
+      "train.jsonl": "d15058b975111808ed14166af92921bdfd14adeb63069a8bf0fd8b281af2c276",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "selection_plan_sha256": "d5d22fa5a49c6991190d7f249938c35e52db5c7cf2cc88edbdfa4c93024ba87a",
+    "source_files_sha256": {
+      "manifest.json": "38b3d6d148940b2cfa7e44a9f59550fc4847ebb4e709b6c372b682f96c5b696f",
+      "train.jsonl": "c6fb838c8714b78ae6f0b17dab33d1ca9fa48dc086b4f1ca56a8aaf9e85e88ba",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "contrast_sources": {
+      "profiles": {
+        "manifest_sha256": "5f539a4902e0e1163be53b412029f90706607638188fe9a097921ee1c73da210",
+        "contrasts_sha256": "14378b89b5ce62a310fb67a77592f295744b722e83427fe6bd82a1df0fa3f6f8"
+      },
+      "natural": {
+        "manifest_sha256": "54e7668bcc8536696cc7133ee7442a726d743b1da036d154a3dc760fa7b1ea88",
+        "contrasts_sha256": "3f06f930007f9519f00a92d98ee8ac6bc7137d086c8482c2835e7b1d1ecc2741"
+      },
+      "roles": {
+        "manifest_sha256": "68b7b32033ef8abe1ce37615d7e5ad6fd78608fc4805c9152b94015a31479ae6",
+        "contrasts_sha256": "95d88af62759f2a3fb013e2a65223357b54ac44ee778be3f676101465162530a"
+      }
+    },
+    "generator_sha256": "3900ecdd09844fff727929cb2084c6725c150887e4f5cd952760704d0793fcfd"
+  },
+  "verification": {
+    "preparation_tests_passed": 56,
+    "single_reviewer": "Final candidate data cleared; numerical handoff remains separately gated.",
+    "original_development_rows": 275,
+    "original_development_bytes_unchanged": true,
+    "evaluation_labels_used_as_training_labels": false,
+    "frozen_scorer_changed": false,
+    "frozen_provider_changed": false
+  },
+  "training": {
+    "started": false,
+    "completed": false,
+    "accepted": false
+  },
+  "production_activation": false,
+  "accepted_applications": 0,
+  "limitations": [
+    "The 2283 prior optimized rows are retained exactly; 692 other original TRAIN rows remain outside this schedule.",
+    "The two natural wording families do not establish generalization.",
+    "Role contrasts retain their original tool bundles; not every name, profile and phrasing combination is crossed.",
+    "Passing four-family name probes did not establish naming as the source of failures.",
+    "The original 275 development rows remain byte-identical; acceptance and fresh cases are not opened.",
+    "The original checkpoint 600 and unchanged Colibri accuracy and regression gates remain mandatory.",
+    "These synthetic variations and structural checks cannot predict a 95 percent score.",
+    "The earlier V3 model remains rejected; no original accuracy score is replaced."
+  ]
+}
