@@ -1,5 +1,19 @@
 # Verification and acceptance record
 
+## Facturation refinement launched - 18 October 2026
+
+PARTIALLY IMPLEMENTED: the reviewed server run started at 12:34 UTC from original checkpoint 600, using the existing Transformers/PEFT pipeline. The 3,103 planned updates include 2,069 Facturation examples and retained replay for Management Projet (709) and Design Workflow (325). This is one Facturation-focused refinement, not completion of training or acceptance for any application.
+
+The actual child process, interpreter, cgroup, dataset, sources and model provenance were verified. Settings are 14 CPU threads, a 32 GiB memory ceiling, zero swap, a 10% spare-memory floor, 24 LoRA layers and checkpointing enabled. The run is preparing inputs and performing initial validation; zero optimization updates were observed at the recorded launch check. Checkpoint and validation intervals are 512 updates.
+
+All 3,103 training and 275 unchanged development examples passed server tokenizer/template/Colibri-parser parity, supervised-token alignment and output-budget checks. The largest training example is 7,745 tokens. All 56 preparation tests and 11 offline launch guards pass. The single reviewer cleared the exact evidence and one-shot launch.
+
+Both checkpointing-enabled capacity updates passed on the longest training row, with finite gradients and real updates in all 24 layers and about 5.8 GiB peak process RSS. The comparison supervisor then stopped on its post-arm reserve-admission guard. A separate checkpointing-disabled probe exceeded its isolated 32 GiB limit before producing an update result. Checkpointing stays enabled; no speedup or numerical-equivalence claim is made.
+
+No new model-accuracy score exists. Zero of six applications have passed full acceptance. The original scores, frozen evaluation inputs, scorer and provider remain unchanged. Production inference is healthy and unchanged; no candidate was activated.
+
+[Verified launch, preflight and resource findings](../training/reports/facturation-search-refinement-launch.json).
+
 ## Natural search training candidate - 18 October 2026
 
 IMPLEMENTED and verified as preparation: 112 natural stock questions cover English and French evenly, with product-first and location-first phrasing. All retain reviewed TRAIN arguments, tool schemas and trusted context. Native stock dates use the actual creation or update event and inclusive bounds. Four genuine or unrecognized histories remain intact; 108 questions are plain requests.

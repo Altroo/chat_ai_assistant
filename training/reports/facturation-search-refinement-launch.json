@@ -1,0 +1,112 @@
+{
+  "version": "facturation-search-refinement-v1-launch",
+  "status": "RUNNING INPUT PREPARATION / INITIAL VALIDATION; NOT ACCEPTED",
+  "observed_utc": "2026-10-18T12:35:48.676744+00:00",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "training": {
+    "supervisor_started": true,
+    "completed": false,
+    "expected_updates": 3103,
+    "optimizer_updates_observed": 0,
+    "starting_selected_checkpoint": 600,
+    "rejected_v3_adapter_used": false,
+    "applications": {
+      "facturation": 2069,
+      "management_projet": 709,
+      "design_workflow": 325
+    },
+    "focus_application": "facturation",
+    "other_applications": "Retained replay and regression scope only",
+    "framework_versions": {
+      "torch": "2.14.1+cpu",
+      "transformers": "5.19.0",
+      "peft": "0.21.2",
+      "safetensors": "0.8.0"
+    },
+    "threads": 14,
+    "memory_ceiling_gib": 32,
+    "swap_allowed": false,
+    "spare_memory_floor_percent": 10,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "learning_rate": 1e-05,
+    "semantic_loss_weight": 4,
+    "gradient_checkpointing": "nonreentrant",
+    "attention": "sdpa",
+    "complete_epochs": 1,
+    "context_tokens": 8192,
+    "checkpoint_and_validation_interval": 512
+  },
+  "preflight": {
+    "status": "PASSED; metadata only, not model accuracy",
+    "training": {
+      "count": 3103,
+      "round_trip_passed": 3103,
+      "runtime_prefix_parity_passed": 3103,
+      "loss_boundary_passed": 3103,
+      "semantic_alignment_passed": 3103,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7745,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 3103,
+      "maximum_target_tokens": 131,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 488,
+      "sha256": "d15058b975111808ed14166af92921bdfd14adeb63069a8bf0fd8b281af2c276"
+    },
+    "development": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 275,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "original_development_unchanged": true
+  },
+  "capacity": {
+    "selected_checkpointing_enabled": true,
+    "longest_training_row_tokens": 7745,
+    "enabled_updates_passed": 2,
+    "all_intended_gradient_and_updated_layers": 24,
+    "enabled_step_seconds": [
+      195.00169095396996,
+      198.81009512208402
+    ],
+    "enabled_peak_process_rss_kib": 6085744,
+    "enabled_probe_overall_supervisor_status": "Failed post-arm reserve admission after successful measurement; OFF had not started.",
+    "disabled_probe_status": "Isolated 32 GiB cgroup OOM before any update result",
+    "disabled_step_measurements": 0,
+    "speedup_or_equivalence_established": false,
+    "model_weights_saved_by_probes": false
+  },
+  "verification": {
+    "preparation_tests_passed": 56,
+    "offline_launch_guard_tests_passed": 11,
+    "single_reviewer": "Exact data, preflight, capacity evidence and one-shot handoff cleared.",
+    "actual_child_process_and_cgroup_verified": true,
+    "original_base_and_source_binding_verified": true,
+    "all_three_source_remotes_verified": true
+  },
+  "candidate_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "production_inference_unchanged_and_healthy": true,
+  "new_accuracy_score": null,
+  "limitations": [
+    "Initial validation and optimization are incomplete at this observation.",
+    "Training loss does not establish tool-calling accuracy; unchanged Colibri development, acceptance and regression gates remain required.",
+    "The 95 percent target has not been reached.",
+    "Capacity step timings describe the longest-row probe, not mean training or inference throughput.",
+    "No later-application training or automatic model activation is authorized by this run."
+  ]
+}
