@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Second refinement validation completed - 18 October 2026
+
+IMPLEMENTED and verified: checkpoint 1024 completed the unchanged 275-case development validation. Its saved adapter contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload. The original baseline and checkpoint-512 history remain unchanged, and the recorded observation contains 1,029 contiguous finite updates. The single reviewer confirmed the figures and storage evidence.
+
+Weighted semantic validation loss increased from checkpoint 512 by 18.94% for Facturation, 13.26% for Management Projet and 18.18% for Design Workflow. Relative to initial validation, changes are -3.70%, +17.68% and -9.62%, respectively. These are teacher-forced loss changes, not accuracy scores. Checkpoint 512 remains selected by application-macro loss; the pending functional comparison must still include checkpoint 1024.
+
+The checkpoint-save to history-record span was 1,121.74 seconds and includes validation and bookkeeping. No selected-adapter save occurred at this checkpoint because loss did not improve. Raw evidence is preserved with a separate reporting correction.
+
+PARTIALLY IMPLEMENTED: optimization resumed and the original 3,103-update run remains incomplete. Candidate export, Colibri generation and functional acceptance remain pending. Zero of six applications are fully accepted. Production inference and the original evaluation inputs, scorer and provider remain unchanged; no later-application training started.
+
+[Second validation and checkpoint integrity evidence](../training/reports/facturation-search-refinement-second-validation.json).
+
 ## Natural-timeout contingency declared - 18 October 2026
 
 PREPARED as policy only: a separate interrupted-run protocol can preserve fully saved and validated scheduled checkpoints if the original supervisor naturally reaches its pinned child timeout. The original successful-completion policy and running job remain unchanged. Operator stops, numerical corruption, changed provenance and unexplained failures are not admitted.

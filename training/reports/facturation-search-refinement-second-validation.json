@@ -1,0 +1,92 @@
+{
+  "application_focus": "facturation",
+  "candidate_colibri_generation_started": false,
+  "checkpoint_integrity": {
+    "adapter_sha256": "6b45b942b9b08a1caf68efd4393174c48cc9997ec100f70324c1460617b65a4a",
+    "all_values_finite": true,
+    "all_zero_tensor_count": 0,
+    "checkpoint_bytes": 28536776,
+    "float32_values_checked": 7127040,
+    "layer_count": 24,
+    "payload_offsets_contiguous_and_complete": true,
+    "scope": "Storage and finite-value checks only; does not establish optimizer trajectory or functional acceptance",
+    "step": 1024,
+    "tensor_count": 192
+  },
+  "checkpoint_save_to_validation_record_seconds": 1121.735904932022,
+  "created_utc": "2026-10-18T21:43:51.583083+00:00",
+  "evidence_sha256": {
+    "finite_probe": "570d6f9809ae8c7dba35881a6d08b9818fe0e94844c9fcce7787dbeab5f5204e",
+    "finite_probe_result": "347ee95cd8c049add5f45a8c654bafaf3c79ba20f4dad9836cda60428ff1d912",
+    "validation_corrected_derived_report": "57e10328788435f2bb8006d99d969196a38319d08deb957bbf500dd9d90aeeb7",
+    "validation_raw": "d3b913c342e07ee95b762d0b57ef6cd7a65cc4e6504e023a767c63a87bd55c61"
+  },
+  "fully_accepted_applications": 0,
+  "functional_model_accuracy_measured": false,
+  "inference_runtime": "Colibri",
+  "later_application_training_started": false,
+  "limitations": [
+    "Relative loss changes are not accuracy percentages.",
+    "All three weighted losses increased from checkpoint 512. This does not establish a measured action-accuracy regression.",
+    "Checkpoint 512 remains selected by application-macro loss; functional model ranking has not started.",
+    "No checkpoint has passed functional acceptance in this run.",
+    "No 95 percent accuracy or training completion is predicted."
+  ],
+  "loss_based_selection": {
+    "checkpoint_1024_improved": false,
+    "metric": "validation application-macro semantic loss",
+    "scope": "Trainer loss diagnostic only. Functional checkpoint ranking remains pending and must include checkpoint 1024.",
+    "selected_step": 512
+  },
+  "next_gate": "Continue the unchanged 3103-update run, then complete the bound Colibri comparison for baseline and all scheduled candidates, including checkpoint 1024, followed by unchanged acceptance gates.",
+  "original_baseline_checkpoint": 600,
+  "original_evaluation_inputs_scorer_and_provider_unchanged": true,
+  "periodic_checkpoint_observed": 1024,
+  "production_model_activated": false,
+  "production_unchanged_and_healthy_at_observation": true,
+  "rejected_v3_adapter_used": false,
+  "shared_model_family": "Qwen3.5-0.8B",
+  "status": "PARTIALLY IMPLEMENTED; SECOND PERIODIC VALIDATION COMPLETE; NO NEW ACCURACY SCORE",
+  "teacher_forced_validation": {
+    "by_application_case_count": {
+      "design_workflow": 64,
+      "facturation": 133,
+      "management_projet": 78
+    },
+    "case_count": 275,
+    "macro_loss_baseline": 0.05236723428903093,
+    "macro_loss_step_1024": 0.053322482420825074,
+    "macro_loss_step_512": 0.04576689307228133,
+    "scope": "Development teacher-forced loss, not tool selection, action correctness, exact arguments or structured-output accuracy",
+    "weighted_semantic_loss": {
+      "design_workflow": {
+        "baseline": 0.04271494309662671,
+        "relative_change_from_baseline_percent": -9.618831431265129,
+        "relative_change_from_step_512_percent": 18.180551902991905,
+        "step_1024": 0.03860626472420137,
+        "step_512": 0.032667189400072516
+      },
+      "facturation": {
+        "baseline": 0.061982057838501796,
+        "relative_change_from_baseline_percent": -3.6970277585125833,
+        "relative_change_from_step_512_percent": 18.944578420434755,
+        "step_1024": 0.05969056395491506,
+        "step_512": 0.050183509620695906
+      },
+      "management_projet": {
+        "baseline": 0.052404701931964275,
+        "relative_change_from_baseline_percent": 17.681460460216393,
+        "relative_change_from_step_512_percent": 13.261048693280596,
+        "step_1024": 0.061670618583358795,
+        "step_512": 0.05444998019607557
+      }
+    }
+  },
+  "timing_scope": "Checkpoint-save to validation-history record span includes validation and bookkeeping; not an instrumented pure-validation duration. No selected-adapter save occurred at checkpoint 1024 because validation did not improve.",
+  "total_applications": 6,
+  "training_complete": false,
+  "training_resumed_after_validation": true,
+  "training_updates_observed": 1029,
+  "training_updates_planned": 3103,
+  "version": "facturation-search-refinement-second-validation-v1"
+}
