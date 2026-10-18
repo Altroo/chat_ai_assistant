@@ -1,5 +1,21 @@
 # Verification and acceptance record
 
+## All 275 complete-shape development cases independently verified - 18 October 2026
+
+The unchanged original scorer and a separate completion verifier reproduced every complete-action, tool, argument and structure count. Case IDs, expected actions, shard order, model/runtime bindings and the event-log prefix match. Before/after serving proofs are identical. All three workers and the controller stopped, all evaluator stderr files are empty, and the production inference container stayed healthy and unchanged.
+
+Facturation scored 110/133 complete actions and 89/111 exact arguments; Management Projet 74/78 and 51/54; Design Workflow 63/64 and 45/46. Facturation and Management Projet fail the inherited development gates. Design Workflow passes development only, with a decline from its original baseline. No V3 acceptance/control evaluation ran; historical scores remain unchanged.
+
+Numerical verification covered all 2,283 selected updates, 24 changed/nonzero-gradient layers, unchanged frozen weights and saved/live equality. Actual Colibri export diagnostics matched 14/14 targets, compared with 13/14 in the training runtime and 13/14 exact runtime agreement. These are diagnostic observations, not acceptance percentages.
+
+The one reviewer found no new wrong gold action or supplier-form contract break in its bounded review of 164 unique development rows across 132 scenario groups, including all 133 Facturation rows. Three article-search calls are native-equivalent aliases but remain failures under frozen exact scoring. Twenty-one other parsed planning errors and four invalid outputs remain. Raw invalid responses require investigation before assigning an export/runtime or model cause.
+
+The report records real request latency, wall-time output rate and a one-second CPU/RAM sample with explicit limits on interpretation. These checks do not certify production business workflows or any of the six applications as accepted.
+
+[Actual completion, unchanged development scores and measured performance](../training/reports/facturation-replay-v3-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Conditional replay V3 serial queue verified - 17 October 2026
 
 Nine tests pass in 26.799 seconds using only local synthetic dataset metadata. They reconstruct the exact reviewed V3 base from tracked sources, preserve every current training row and original new-app suffix, and run the existing full metadata/schema/lineage preflight on the Contracts, Gestion Magasin and Reservation preparations. Negative checks reject the old R11 parent, skipped Contracts stage, loss of 556 current Facturation rows even with an updated hash, modified evaluation inputs, unsafe paths and overwritten artifacts.

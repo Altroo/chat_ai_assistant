@@ -1,5 +1,19 @@
 # Model training and evaluation
 
+## Complete-shape experiment finished; candidate rejected - 18 October 2026
+
+The server-only Transformers/PEFT LoRA experiment completed all 2,283 selected updates from original checkpoint 600. Settings were 14 threads, 24 text layers, rank 16, alpha 32, BF16 SDPA, learning rate 1e-5 and semantic weight 4. All intended layers changed, frozen parameters remained unchanged and saved/live equality passed. The numerical timer was 63,421.13 seconds, excluding initial loading and baseline captures.
+
+Real Colibri export and the unchanged 275-case development comparison completed. Complete-action accuracy is Facturation 110/133 (82.71%), Management Projet 74/78 (94.87%) and Design Workflow 63/64 (98.44%). Exact arguments are 89/111 (80.18%), 51/54 (94.44%) and 45/46 (97.83%). The first two applications fail development targets; no application is fully accepted.
+
+Fourteen Colibri diagnostic targets passed, but that small result did not generalize. The training runtime matched 13/14 targets; runtime agreement was 13/14. Neither agreement nor disagreement isolates quantization as a cause.
+
+The disposable candidate is rejected for activation, extension and longer-run reseeding. Original scores and cases remain unchanged, and no new acceptance run occurred. Review raw generation and training/serving behavior before another numerical job; the updated logistics fields require no dataset or tool-contract correction.
+
+[Actual completion, unchanged development scores and measured performance](../training/reports/facturation-replay-v3-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Complete-shape replay numerical experiment started - 17 October 2026
 
 The server-only Transformers/PEFT LoRA experiment started from the original rehashed checkpoint 600, with 2,283 selected updates and explicit unchanged-app replay. All 3,250 training/development inputs passed the actual tokenizer/template/parser/loss/budget preflight without truncation. The rejected V2 adapter was not reused.

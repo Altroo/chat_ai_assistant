@@ -1,5 +1,25 @@
 # Chat AI Assistant progress
 
+## Complete-shape replay failed the development gate - 18 October 2026
+
+IMPLEMENTED and independently verified as an experiment: all 2,283 server updates, real Colibri export and 275 unchanged development cases completed. All 24 intended layers received finite gradients and updates; frozen parameters stayed unchanged and the saved adapter matched the live model. Fourteen Colibri diagnostic targets passed, while the training-runtime diagnostic matched 13 of 14. These small diagnostics did not predict the broad result.
+
+| Application | Complete actions | Exact arguments | Structured output |
+| --- | --- | --- | --- |
+| facturation | 110/133 (82.71%) | 89/111 (80.18%) | 131/133 (98.50%) |
+| management_projet | 74/78 (94.87%) | 51/54 (94.44%) | 76/78 (97.44%) |
+| design_workflow | 63/64 (98.44%) | 45/46 (97.83%) | 64/64 (100%) |
+
+PARTIALLY IMPLEMENTED: Facturation and Management Projet fail development targets. Design Workflow passes only this development gate and declined from its baseline. The candidate is rejected for activation and extension. No acceptance run followed, no later application training started, and zero of six applications are fully accepted. All three workers and the controller stopped; production inference remained healthy and unchanged.
+
+The single reviewer checked the current supplier form, removed selectors, visible labels, both identical bilingual knowledge copies and all 40 native pins. No logistics contract correction is justified. Three article-search failures are native-equivalent aliases under strict exact scoring; original scores remain unchanged. Other failures include dropped/swapped filters, literal-copy errors and invalid outputs.
+
+PLANNED: inspect raw failed outputs and training/serving behavior before selecting another numerical experiment. Preserve original cases, scoring and rejected artifacts.
+
+[Actual completion, unchanged development scores and measured performance](../training/reports/facturation-replay-v3-en-fr-development.json).
+
+Earlier entries below retain their original observation state.
+
 ## Future queue retains the complete Facturation replay curriculum - 17 October 2026
 
 IMPLEMENTED as data preparation: versioned conditional successors retain all 2,975 replay V3 training rows, including the 556 Facturation examples absent from the older R11 queue. Unchanged reviewed new-app examples produce Contracts 3,128 training / 319 validation rows, Gestion Magasin 3,326 / 362 and Reservation 3,506 / 402. Validation, held-out cases and fresh controls remain unchanged. A read-only check found all 29 pinned native source files for these applications still matched their prepared datasets.

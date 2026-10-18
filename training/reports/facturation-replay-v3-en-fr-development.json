@@ -1,0 +1,314 @@
+{
+  "version": "facturation-replay-v3-pilot-development",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "pilot_updates": 2283,
+  "cases": 275,
+  "source_baseline_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+  "source_baseline_selected_step": 600,
+  "by_application": {
+    "facturation": {
+      "baseline_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 132,
+          "structured_valid": 133,
+          "action_matches": 110
+        },
+        "percent": {
+          "tool_correct": 99.25,
+          "structured_valid": 100.0,
+          "action_matches": 82.71
+        },
+        "exact_arguments": {
+          "passed": 88,
+          "count": 111,
+          "percent": 79.28
+        }
+      },
+      "pilot_metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 129,
+          "structured_valid": 131,
+          "action_matches": 110
+        },
+        "percent": {
+          "tool_correct": 96.99,
+          "structured_valid": 98.5,
+          "action_matches": 82.71
+        },
+        "exact_arguments": {
+          "passed": 89,
+          "count": 111,
+          "percent": 80.18
+        }
+      },
+      "no_development_metric_decline": false
+    },
+    "management_projet": {
+      "baseline_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 77,
+          "structured_valid": 78,
+          "action_matches": 77
+        },
+        "percent": {
+          "tool_correct": 98.72,
+          "structured_valid": 100.0,
+          "action_matches": 98.72
+        },
+        "exact_arguments": {
+          "passed": 53,
+          "count": 54,
+          "percent": 98.15
+        }
+      },
+      "pilot_metrics": {
+        "count": 78,
+        "counts": {
+          "tool_correct": 75,
+          "structured_valid": 76,
+          "action_matches": 74
+        },
+        "percent": {
+          "tool_correct": 96.15,
+          "structured_valid": 97.44,
+          "action_matches": 94.87
+        },
+        "exact_arguments": {
+          "passed": 51,
+          "count": 54,
+          "percent": 94.44
+        }
+      },
+      "no_development_metric_decline": false
+    },
+    "design_workflow": {
+      "baseline_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 64
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 100.0
+        },
+        "exact_arguments": {
+          "passed": 46,
+          "count": 46,
+          "percent": 100.0
+        }
+      },
+      "pilot_metrics": {
+        "count": 64,
+        "counts": {
+          "tool_correct": 64,
+          "structured_valid": 64,
+          "action_matches": 63
+        },
+        "percent": {
+          "tool_correct": 100.0,
+          "structured_valid": 100.0,
+          "action_matches": 98.44
+        },
+        "exact_arguments": {
+          "passed": 45,
+          "count": 46,
+          "percent": 97.83
+        }
+      },
+      "no_development_metric_decline": false
+    }
+  },
+  "development_targets_passed": {
+    "facturation": false,
+    "management_projet": false,
+    "design_workflow": true
+  },
+  "evidence_sha256": {
+    "development-2283-0.inputs.jsonl": "0f3f4feeb5c060af976caf68df7503a254c8f9aaddd56b6c901ee05da9fdaa05",
+    "development-2283-0.events.jsonl": "6436e9c5a160f1b9e374cfaef650a0427df4ff1222387340dc29b3f2058b5158",
+    "development-2283-after.json": "7ead9f6fdb319a40d2fb9ee132e84788f5033c0ae62864613c6efb734e85c8b5",
+    "development-2283-1.events.jsonl": "ac3bf315205d795fbededc877f4487b4a4db1aa1d789a31958b3132f8e58b419",
+    "development-2283-1.inputs.jsonl": "d97facfe8a23ebc9a5383aa9541f259654d965f235ad81ab42fdaf143a8f79c1",
+    "development-2283-stop.json": "dc7da5b957e4e59842f2d5936e52a15fca3d1df1a82915b1acc4798956bc2ead",
+    "development-2283-before.json": "7ead9f6fdb319a40d2fb9ee132e84788f5033c0ae62864613c6efb734e85c8b5",
+    "development-2283-prepare.json": "4794757fbf382140076909d65f71ead8e79829a4527c125fe7c0284ff96c26e4",
+    "development-2283-results.json": "b212a18a10c5dab62d61f29d8f66e09f361bdcd36cbf27e2a0a416e532e1ad56",
+    "operator-binding.json": "632a66206c24a0b38860e3d729fd17cfb92bac228a4de27b2fc609231f6a4b84",
+    "development-2283-2.inputs.jsonl": "ef0c30b68ee203a169c9bfe76ae5b7cd60ee17d91821fb56d7dc7ef06bade921",
+    "development-2283-2.events.jsonl": "021af27e016f05e878fc46ffeef982e0091876abbfcb6f7d8fccc510bbcd687b",
+    "development-2283-launch.json": "8515918653cdb09e85da57b13172455c14987bbe5a59c6315be75b5e05d9b457"
+  },
+  "events_prefix": {
+    "bytes": 407,
+    "sha256": "bbeb45b5c8189a14696615fee11002c6d2709cd524636076064ebae09b652c07",
+    "scope": "Event log prefix before terminal finished event; not the whole final file"
+  },
+  "decision": "REJECTED: Facturation and Management Projet targets unmet; retained development metrics declined.",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "focus_application": "facturation",
+  "retention_applications": [
+    "management_projet",
+    "design_workflow"
+  ],
+  "completed_utc": "2026-10-18T09:40:00Z",
+  "independent_verification": {
+    "completed_utc": "2026-10-18T09:40:00Z",
+    "verified_cases": 275,
+    "metrics_independently_recomputed": true,
+    "artifacts_verified": true,
+    "before_after_proofs_identical": true,
+    "event_prefix_verified": true,
+    "workers_stopped": 3,
+    "controller_stopped": true,
+    "production_healthy_unchanged": true,
+    "by_application": {
+      "facturation": {
+        "count": 133,
+        "actions": 110,
+        "action_percent": 82.70676691729324,
+        "exact_arguments": 89,
+        "eligible_arguments": 111,
+        "argument_percent": 80.18018018018019,
+        "development_targets_passed": false,
+        "no_development_metric_decline": false
+      },
+      "management_projet": {
+        "count": 78,
+        "actions": 74,
+        "action_percent": 94.87179487179488,
+        "exact_arguments": 51,
+        "eligible_arguments": 54,
+        "argument_percent": 94.44444444444444,
+        "development_targets_passed": false,
+        "no_development_metric_decline": false
+      },
+      "design_workflow": {
+        "count": 64,
+        "actions": 63,
+        "action_percent": 98.4375,
+        "exact_arguments": 45,
+        "eligible_arguments": 46,
+        "argument_percent": 97.82608695652173,
+        "development_targets_passed": true,
+        "no_development_metric_decline": false
+      }
+    },
+    "raw_report_sha256": "f508927b7726099c2faa75ad7e98e0f853ea7a89533c23a1f58de2e1754229f4",
+    "model_accepted": false,
+    "new_acceptance_score": null
+  },
+  "model_accepted": false,
+  "accepted_applications": 0,
+  "new_acceptance_score": null,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "full_training_may_resume_from_this_adapter": false,
+  "numerical": {
+    "updates": 2283,
+    "layers_updated": 24,
+    "layers_with_nonzero_gradients": 24,
+    "frozen_parameters_unchanged": true,
+    "saved_adapter_matches_live": true,
+    "timer_seconds": 63421.12678904086,
+    "timer_scope": "Selected updates, adapter persistence, trained captures and final verification; excludes initial loading and baseline captures.",
+    "baseline_diagnostic_targets": {
+      "passed": 14,
+      "count": 14
+    },
+    "trained_hf_diagnostic_targets": {
+      "passed": 13,
+      "count": 14
+    },
+    "configured_threads": 14,
+    "configured_memory_limit_gib": 32,
+    "swap_limit_gib": 0,
+    "complete_sha256": "415d7d7861991a135058863a70864b9b09b22a0ead912f23cf4f9f13fe17270f"
+  },
+  "export": {
+    "real_merge_conversion_and_colibri_replay_complete": true,
+    "requests": 14,
+    "training_runtime_target_matches": 13,
+    "colibri_target_matches": 14,
+    "same_valid_action": 13,
+    "correct_to_incorrect": 0,
+    "worker_stopped": true,
+    "port_free": true,
+    "complete_sha256": "eec3b2e04c45046b448429790d6353703dcfeb4dca7d9bcec5ad58dc4e01eb04",
+    "binding_sha256": "695b0aa5feb598bd8bc5c051af3809385c118f90f550f683f82a84c654f13f20",
+    "diagnostic_scope": "Eight training and six development captures; not general accuracy or acceptance."
+  },
+  "performance": {
+    "concurrent_workers": 3,
+    "threads_per_worker": 4,
+    "latency_seconds": {
+      "count": 275,
+      "mean": 18.00151272727273,
+      "median": 16.263,
+      "p95_nearest_rank": 24.638
+    },
+    "first_visible_event_seconds": {
+      "count": 275,
+      "mean": 17.99078181818182,
+      "median": 16.254,
+      "p95_nearest_rank": 24.622
+    },
+    "completion_tokens_per_wall_second": {
+      "count": 271,
+      "mean": 3.228963099630996,
+      "median": 3.194,
+      "p95_nearest_rank": 5.655
+    },
+    "usage_records": 271,
+    "scope": "Frozen model/tool-planning benchmark without business-tool execution. Request latency includes prompt prefill. First parsed visible event is not raw first-token timing; wall-time output rate is not decoder-only speed.",
+    "p95_method": "Nearest rank; median uses standard midpoint rule.",
+    "resource_sample": {
+      "observed_utc": "2026-10-18T09:24:04.524304+00:00",
+      "busy_cpu_cores": 12.00050317373167,
+      "host_cpu_threads": 16,
+      "available_ram_gib": 39.56529235839844,
+      "worker_rss_gib": [
+        2.6326828002929688,
+        2.625812530517578,
+        2.69146728515625
+      ],
+      "scope": "One one-second CPU/RAM sample with all original worker identities checked; not a whole-run peak."
+    }
+  },
+  "logistics_source_review": {
+    "review": "No issues",
+    "backend_commit": "eb427df",
+    "frontend_commit": "a369b972",
+    "native_source_pins_unchanged": 40,
+    "knowledge_copies_identical": true,
+    "knowledge_sha256": "0ca9fd29c8dd0eacbc55bcf85e3227a52b12cbc702e5e2dfd3f96e039cbf0176",
+    "current_supplier_fields_removed_selectors_visible_labels_and_search_contracts_verified": true
+  },
+  "limitations": [
+    "One bounded 2283-update experiment, not complete six-application training or an accepted model.",
+    "All original development cases, expected labels, frozen provider, serving settings and scoring remain unchanged.",
+    "The 14 diagnostic captures do not predict general accuracy. BF16 training and merged/exported Colibri numerics can differ.",
+    "Three strict failures across two scenario groups use native-equivalent article-search aliases. No favorable rescoring is applied.",
+    "The other 25 failures comprise 21 parsed planning errors and four invalid outputs. Invalid responses require raw-output diagnostics before assigning a cause.",
+    "No new acceptance/control evaluation ran because the development gates failed; zero of six applications are fully accepted.",
+    "The disposable adapter cannot seed longer training. No production model was replaced.",
+    "Current logistics source compatibility and inference-container health do not establish production business-flow E2E acceptance."
+  ],
+  "evidence_bindings": {
+    "facturation-replay-v3-export-admission.stdout": "bd3f8addc0c1448e1f42d5e2b23857a194744c51a87a215f898f2eff6a7f3d91",
+    "facturation-replay-v3-export-launch.stdout": "bc55b5f3ae89697b1a1477410a27b8f40d47a378e44d59447348dbeb7754df72",
+    "facturation-replay-v3-export-completion-observation.stdout": "de09465044563bb9e59343104e1cf4399d045573ee9d20d32e82ff1a2ad5c671",
+    "facturation-replay-v3-development-binding.json": "25541fee67c89a1d9f91be17a25e899b11e6bff0824c244f78ad75cc15186e23",
+    "facturation-replay-v3-development-reviewed-controls.json": "dc55f5ef00c98835b32144c38ad0a48f5b8e2656f55066a75e3420970fa51b69",
+    "facturation-replay-v3-development-completion-verification.json": "8503bb0d91ef3ab85f2e077fd7a7ea6741be86816c25aa9eca1d266117b64517"
+  }
+}
