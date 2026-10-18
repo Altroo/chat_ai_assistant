@@ -1,0 +1,74 @@
+{
+  "version": "facturation-search-refinement-first-validation-v1",
+  "created_utc": "2026-10-18T17:45:21.313659+00:00",
+  "status": "PARTIALLY IMPLEMENTED; FIRST PERIODIC VALIDATION COMPLETE; NO NEW ACCURACY SCORE",
+  "application_focus": "facturation",
+  "shared_model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "original_baseline_checkpoint": 600,
+  "rejected_v3_adapter_used": false,
+  "training_updates_planned": 3103,
+  "periodic_checkpoint_observed": 512,
+  "training_resumed_after_validation": true,
+  "training_complete": false,
+  "teacher_forced_validation": {
+    "case_count": 275,
+    "by_application_case_count": {
+      "facturation": 133,
+      "management_projet": 78,
+      "design_workflow": 64
+    },
+    "weighted_semantic_loss": {
+      "facturation": {
+        "baseline": 0.061982057838501796,
+        "step_512": 0.050183509620695906,
+        "relative_change_percent": -19.03542513633181
+      },
+      "management_projet": {
+        "baseline": 0.052404701931964275,
+        "step_512": 0.05444998019607557,
+        "relative_change_percent": 3.9028525851871594
+      },
+      "design_workflow": {
+        "baseline": 0.04271494309662671,
+        "step_512": 0.032667189400072516,
+        "relative_change_percent": -23.52280716803223
+      }
+    },
+    "macro_loss_baseline": 0.05236723428903093,
+    "macro_loss_step_512": 0.04576689307228133,
+    "scope": "Development teacher-forced loss, not tool selection, action correctness, exact arguments or structured-output accuracy"
+  },
+  "checkpoint_integrity": {
+    "step": 512,
+    "adapter_sha256": "ace956c9e4147f7df54cd9ebf7e4f3748123bd881d0aee680e98a2cdd2a5cb2f",
+    "adapter_bytes": 28536776,
+    "tensor_count": 192,
+    "layer_count": 24,
+    "float32_values_checked": 7127040,
+    "all_values_finite": true,
+    "payload_offsets_contiguous_and_complete": true,
+    "all_zero_tensor_count": 0,
+    "scope": "Storage and finite-value checks only; does not establish optimizer trajectory or functional acceptance"
+  },
+  "functional_model_accuracy_measured": false,
+  "candidate_colibri_generation_started": false,
+  "fully_accepted_applications": 0,
+  "total_applications": 6,
+  "production_model_activated": false,
+  "production_unchanged_and_healthy_at_observation": true,
+  "later_application_training_started": false,
+  "original_evaluation_inputs_scorer_and_provider_unchanged": true,
+  "evidence_sha256": {
+    "validation": "0bacd53d2d9bbb90ac1fe5a08429eda45a86109434e5ad7961b3e7373b851d6b",
+    "finite_probe": "5a4ea2b07d2ab8842d4053c58e9835a208a8da0feed93ab6563ee5245b9ad2b5",
+    "finite_probe_result": "f996419eb16979221ad707f35f725774e833a4cda0e224103aee9b25dae6f962"
+  },
+  "next_gate": "Successful completion of all 3103 updates, then the separately bound Colibri checkpoint comparison and unchanged acceptance gates",
+  "limitations": [
+    "Relative loss changes are not accuracy percentages.",
+    "The Management Projet weighted-loss increase is not a measured action-accuracy regression.",
+    "No checkpoint has passed functional acceptance in this run.",
+    "No 95 percent accuracy or training completion is predicted."
+  ]
+}

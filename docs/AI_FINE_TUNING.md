@@ -1,5 +1,15 @@
 # Model training and evaluation
 
+## First refinement validation completed - 18 October 2026
+
+IMPLEMENTED and verified: checkpoint 512 was saved and its first periodic 275-case development validation completed. A read-only integrity scan verified all 7,127,040 stored float32 values across 192 tensors and 24 layers: every value is finite, the payload is complete, and the adapter hash matches the saved checkpoint. The single reviewer cleared both evidence checks. These checks do not establish the optimizer trajectory or model accuracy.
+
+Weighted semantic validation loss changed by -19.04% for Facturation, +3.90% for Management Projet and -23.52% for Design Workflow relative to the initial validation. These are relative teacher-forced loss changes, not accuracy scores. The Management Projet increase is not a measured action-accuracy regression.
+
+PARTIALLY IMPLEMENTED: optimization resumed after validation; the 3,103-update run remains incomplete. Candidate export, Colibri generation and functional acceptance remain pending under the unchanged comparison policy. Zero of six applications are fully accepted. Production inference and the original evaluation inputs, scorer and provider remain unchanged; no later-application training started.
+
+[First validation and checkpoint integrity evidence](../training/reports/facturation-search-refinement-first-validation.json).
+
 ## Checkpoint handoff controls verified - 18 October 2026
 
 The sequential Colibri comparison controls are prepared and reviewed, with 23 offline checks passing. They retain original checkpoint 600, all seven scheduled successors, the unchanged evaluator and the published selection policy. The active numerical run must finish before an actual completion packet, export binding and serving evidence can admit candidate generation. No new model-accuracy result exists.
