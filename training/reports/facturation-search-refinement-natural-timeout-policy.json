@@ -1,0 +1,154 @@
+{
+  "version": "facturation-search-refinement-natural-timeout-selection-v1",
+  "created_utc": "2026-10-18T18:01:13.565928+00:00",
+  "status": "PROSPECTIVE POLICY ONLY; ORIGINAL RUN ACTIVE; NO EXPORT OR INFERENCE ADMISSION",
+  "application_focus": "facturation",
+  "shared_model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "original_completion_policy_sha256": "bba6b96ee8f361222d4e7ca26f6b61b3658c0f40a946b6e3690bc4446555b05d",
+  "original_training_binding_sha256": "8d292c4c3de148ce3badb78e5213fe0b3cb48955ce9ec3e018490d1342ba0ad2",
+  "original_training_controller_sha256": "ca4b5e33eef9400524ebacdd6b3b3b2ee8334ad29c996d49b96eee3013c672f2",
+  "original_training_invocation_id": "9cb502a44c1c40e6a83abf03cc23b3cc",
+  "training_manifest_sha256": "8e8213fe8c0c89bddcfa1751588ad16773f7bc227bb8db4eade131c96fb1639f",
+  "training_sha256": "d15058b975111808ed14166af92921bdfd14adeb63069a8bf0fd8b281af2c276",
+  "source_validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+  "planned_training_updates": 3103,
+  "original_successful_completion_protocol_unchanged": true,
+  "declaration_timing": "Declared after observing checkpoint-512 development losses and integrity, while original training was still active, before new candidate export or Colibri generation and before any natural terminal event.",
+  "allowed_trigger": {
+    "cause": "The pinned supervisor naturally raises subprocess.TimeoutExpired for its unchanged bound training command at 28*3600 seconds.",
+    "child_timeout_seconds": 100800,
+    "operator_initiated_interruption_allowed": false,
+    "restart_or_stop_authorized": false,
+    "other_failure_types_admitted": false,
+    "must_preserve": [
+      "Original invocation and command identity",
+      "Actual terminal unit status, journal and supervisor traceback",
+      "Original launch anchors, logs and unmodified artifacts",
+      "Evidence that original trainer/controller are stopped and the owned cgroup is empty"
+    ],
+    "must_reject": [
+      "Still-running trainer or supervisor",
+      "Operator-initiated stop or cancellation",
+      "Numerical corruption",
+      "Changed source, dataset, base model or framework provenance",
+      "Unexplained failure or failure cause not matching the pinned child timeout"
+    ]
+  },
+  "candidate_universe": [
+    0,
+    512,
+    1024,
+    1536,
+    2048,
+    2560,
+    3072,
+    3103
+  ],
+  "baseline": {
+    "candidate_step": 0,
+    "original_selected_checkpoint": 600,
+    "completed_baseline_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+    "rejected_v3_adapter_allowed": false
+  },
+  "registered_candidate_adapters": {
+    "512": "checkpoint-512",
+    "1024": "checkpoint-1024",
+    "1536": "checkpoint-1536",
+    "2048": "checkpoint-2048",
+    "2560": "checkpoint-2560",
+    "3072": "checkpoint-3072",
+    "3103": "final"
+  },
+  "eligibility": {
+    "all_eligible_scheduled_checkpoints_required": true,
+    "baseline_and_at_least_one_changed_candidate_required": true,
+    "selected_aliases_are_candidates": false,
+    "validation_improvement_is_an_eligibility_filter": false,
+    "requirements": [
+      "Preserve a stable terminal read-only snapshot before model work.",
+      "Verify all original launch, data, source, base-model and dependency hashes.",
+      "Verify the complete finite contiguous update prefix and planned row order through each candidate step.",
+      "Require a complete matching development-validation record for each candidate, including finite per-application losses.",
+      "Verify stable adapter/config hashes in repeated read-only observations, expected LoRA names/shapes, all finite tensor values and complete payload layout.",
+      "Preserve and match every independently recorded checkpoint observation; checkpoint 512 must retain its already-recorded adapter hash.",
+      "Inventory every original scheduled checkpoint, final output, selected alias and partial artifact with explicit eligibility or exclusion reasons.",
+      "Never silently exclude a previously validated checkpoint that is missing, changed or corrupt; halt for investigation.",
+      "A not-yet-reached checkpoint or a save/validation interrupted at the natural cutoff may be excluded only with preserved evidence.",
+      "Freeze and review the entire eligible candidate list and terminal evidence before any candidate export or generation."
+    ],
+    "checkpoint_512_adapter_sha256": "ace956c9e4147f7df54cd9ebf7e4f3748123bd881d0aee680e98a2cdd2a5cb2f",
+    "export_or_evaluation_failure_policy": "Halt and preserve evidence; never remove a declared eligible candidate to continue ranking."
+  },
+  "selection": [
+    "highest Facturation development full-action fraction",
+    "highest Facturation development valid-structure fraction",
+    "lowest recorded Facturation validation semantic loss",
+    "lowest checkpoint step"
+  ],
+  "selection_loss_source": "Per-checkpoint Facturation semantic validation loss from the complete recorded history; the generic selector field is validation_macro_loss.",
+  "selection_script_sha256": "d5952e6aa77a0bc23319f046fe83f870bc527d58359b17aa51a6b0ef774bedd1",
+  "acceptance_sha256": "c9efde5b48a32d2900ed581477e65e677865a875b08400fe67fe70a521fcaebc",
+  "evaluator_sha256": "dca2abf86b2162ccd99b868108dd957f5ef600fe196a5bf9f21b15cafa4fbe7b",
+  "development_rows": 133,
+  "underlying_scenarios": 104,
+  "evaluation_sha256": "ac1b70e353fc9ec632b21afd4d69de9743db24e07e865cb9f4b804d22b32ce58",
+  "inference": {
+    "max_output_tokens": 512,
+    "context_tokens": 8192,
+    "thinking": false,
+    "mode": "native"
+  },
+  "shared_validation_regression_sha256": "b007326c32de9ede8424218ad4196a663324b1ad516df87a69df957f1b846a8b",
+  "regression_manifest_sha256": "6e8df0592ddcde75fd2d4c1277aaf789545cd7f1ca9224fc756787abe22e73f3",
+  "additional_controls_manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a",
+  "post_selection": {
+    "shared_development_cases": {
+      "facturation": 133,
+      "management_projet": 78,
+      "design_workflow": 64
+    },
+    "unchanged_regression_cases": {
+      "facturation": 108,
+      "management_projet": 200,
+      "design_workflow": 130
+    },
+    "additional_controls": {
+      "facturation": 16,
+      "management_projet": 16,
+      "design_workflow": 16
+    },
+    "tool_selection_minimum_percent": 95,
+    "full_action_minimum_percent": 95,
+    "exact_arguments_minimum_percent": 95,
+    "valid_structure_minimum_percent": 99,
+    "critical_and_clarification_cases": "Every critical proposed-change and clarification case must match; all existing subset and per-application gates remain required.",
+    "retained_application_development_metrics": "No decline from original checkpoint 600 in tools, valid structures, full actions or eligible exact arguments.",
+    "acceptance_reranking_allowed": false,
+    "production_activation": false,
+    "next_application_training_authorized": false
+  },
+  "baseline_winner_behavior": "Retain the baseline prior failed acceptance; do not claim a new accepted model.",
+  "required_separate_controls": [
+    "A natural-timeout terminal collector and immutable evidence inventory.",
+    "A new binding to actual eligible adapters, source/runtime/provider hashes, export artifacts and complete evidence.",
+    "Reviewed one-shot export/evaluation controls, negative admission tests and owned-worker cleanup.",
+    "The unchanged 133-case development ranking and every unchanged downstream acceptance, retained-application, native security and activation gate."
+  ],
+  "fallback_execution_controls_implemented": false,
+  "fallback_execution_admitted": false,
+  "candidate_export_started": false,
+  "candidate_generation_started": false,
+  "model_accuracy_measured": false,
+  "production_activation": false,
+  "next_application_training": false,
+  "limitations": [
+    "This protocol does not satisfy or replace the published successful 3103-update completion protocol.",
+    "Interrupted training must remain explicitly incomplete; never synthesize a successful completion report or use the original successful-run driver with fabricated evidence.",
+    "The declared candidate subset is based only on complete artifact/validation evidence, not observed functional or acceptance results.",
+    "Original cases, labels, provider, scorer, thresholds and historical scores remain unchanged.",
+    "Development and regression safeguards have been inspected repeatedly; they are not fresh blind statistical certification.",
+    "Passing the three retained-application test scopes cannot establish all-six-app acceptance or replace actual native permission/security tests.",
+    "Preparation does not predict 95 percent accuracy, authorize a restart, or admit model inference, activation or subsequent training."
+  ]
+}

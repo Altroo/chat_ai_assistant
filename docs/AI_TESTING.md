@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Natural-timeout contingency declared - 18 October 2026
+
+PREPARED as policy only: a separate interrupted-run protocol can preserve fully saved and validated scheduled checkpoints if the original supervisor naturally reaches its pinned child timeout. The original successful-completion policy and running job remain unchanged. Operator stops, numerical corruption, changed provenance and unexplained failures are not admitted.
+
+The policy was declared after checkpoint-512 loss and integrity observations, while training was still active and before candidate export or generation. All eligible checkpoints must be frozen before generation and complete the same development ranking and downstream accuracy, regression, critical-case and native security gates. Interrupted training must remain recorded as incomplete.
+
+PLANNED: separate terminal collection, actual artifact bindings, implementation, negative tests and review are still required before this contingency can execute. This is neither a new accuracy result nor authorization to stop training, activate a model or start the next application.
+
+[Separate natural-timeout policy and limitations](../training/reports/facturation-search-refinement-natural-timeout-policy.json).
+
 ## First refinement validation completed - 18 October 2026
 
 IMPLEMENTED and verified: checkpoint 512 was saved and its first periodic 275-case development validation completed. A read-only integrity scan verified all 7,127,040 stored float32 values across 192 tensors and 24 layers: every value is finite, the payload is complete, and the adapter hash matches the saved checkpoint. The single reviewer cleared both evidence checks. These checks do not establish the optimizer trajectory or model accuracy.
