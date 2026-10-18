@@ -1,0 +1,322 @@
+{
+  "version": "facturation-search-generalization-diagnostics-v1",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "status": "DATA PREPARATION AND DIAGNOSTICS VERIFIED; NUMERICAL SUCCESSOR NOT STARTED",
+  "candidate_accepted": false,
+  "production_activation": false,
+  "accepted_applications": 0,
+  "original_scores_unchanged": true,
+  "original_development_report_sha256": "10f3f1448891b1c41fcbafa175a9cac5a50dde437178ac6d9d231dfb88d12358",
+  "data_preparation": {
+    "role_variants": {
+      "count": 440,
+      "parents": 220,
+      "by_kind": {
+        "rotate_roles": 220,
+        "opaque_roles": 220
+      },
+      "contrast_sha256": "95d88af62759f2a3fb013e2a65223357b54ac44ee778be3f676101465162530a",
+      "review_fixes": "Excluded two ambiguous bare-conjunction parents and seven neutral greeting duplicate parents; preserved original sources and genuine history.",
+      "training_executed": false
+    },
+    "native_stock_profiles": {
+      "count": 268,
+      "by_resource": {
+        "stock_balance": 74,
+        "stock_movement": 62,
+        "stock_receipt": 68,
+        "stock_inventory": 64
+      },
+      "contrast_sha256": "14378b89b5ce62a310fb67a77592f295744b722e83427fe6bd82a1df0fa3f6f8",
+      "template_train_index": 1867,
+      "all_messages_and_targets_preserved": true,
+      "all_native_schemas_valid": true,
+      "prepared_complete_product_location_date_limit_combinations": {
+        "stock_balance": 16,
+        "stock_movement": 16,
+        "stock_receipt": 16,
+        "stock_inventory": 16
+      },
+      "training_executed": false
+    }
+  },
+  "coverage_audit": {
+    "scope": "Input tool-schema coverage; no original scoring changes or model-causality claim",
+    "source_train_sha256": "c6fb838c8714b78ae6f0b17dab33d1ca9fa48dc086b4f1ca56a8aaf9e85e88ba",
+    "source_development_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+    "training_offered_operation_shapes": [
+      {
+        "resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory"
+        ],
+        "rows": 47
+      },
+      {
+        "resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory",
+          "logistics_order"
+        ],
+        "rows": 409
+      }
+    ],
+    "development_offered_operation_shapes": [
+      {
+        "resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory"
+        ],
+        "rows": 15,
+        "present_in_training_inputs": true
+      },
+      {
+        "resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory",
+          "logistics_order"
+        ],
+        "rows": 12,
+        "present_in_training_inputs": true
+      }
+    ],
+    "training_target_and_offered_shape": [
+      {
+        "target_resource": "stock_balance",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory"
+        ],
+        "rows": 10
+      },
+      {
+        "target_resource": "stock_balance",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory",
+          "logistics_order"
+        ],
+        "rows": 74
+      },
+      {
+        "target_resource": "stock_movement",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory"
+        ],
+        "rows": 11
+      },
+      {
+        "target_resource": "stock_movement",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory",
+          "logistics_order"
+        ],
+        "rows": 62
+      },
+      {
+        "target_resource": "stock_receipt",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory"
+        ],
+        "rows": 10
+      },
+      {
+        "target_resource": "stock_receipt",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory",
+          "logistics_order"
+        ],
+        "rows": 69
+      },
+      {
+        "target_resource": "stock_inventory",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory"
+        ],
+        "rows": 11
+      },
+      {
+        "target_resource": "stock_inventory",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory",
+          "logistics_order"
+        ],
+        "rows": 64
+      },
+      {
+        "target_resource": "logistics_order",
+        "offered_resources": [
+          "stock_balance",
+          "stock_movement",
+          "stock_receipt",
+          "stock_inventory",
+          "logistics_order"
+        ],
+        "rows": 85
+      }
+    ]
+  },
+  "probes": {
+    "role-name": {
+      "scope": "Four hash-selected TRAIN families; source/rotated/opaque names. Descriptive only, no acceptance or population accuracy.",
+      "by_arm": {
+        "source": {
+          "target_matches": 4,
+          "schema_valid": 4,
+          "count": 4,
+          "mean_latency_s": 21.67288475
+        },
+        "rotate_roles": {
+          "target_matches": 4,
+          "schema_valid": 4,
+          "count": 4,
+          "mean_latency_s": 21.671861
+        },
+        "opaque_roles": {
+          "target_matches": 4,
+          "schema_valid": 4,
+          "count": 4,
+          "mean_latency_s": 21.285698
+        }
+      },
+      "collection_sha256": "f12caa386f52f01e759460714b19530a89b22e655848270c6786e34d8190f854",
+      "evidence_files_verified": 13,
+      "raw_sse_reconstructed": true,
+      "ordered_payloads_verified": true,
+      "worker_stopped": true,
+      "production_inference_unchanged": true
+    },
+    "search-phrasing": {
+      "scope": "Four previously hash-selected TRAIN families, each original/product-first/location-first. Wording and clause order vary together; descriptive only, no isolated order-effect or population-accuracy claim.",
+      "by_arm": {
+        "source": {
+          "target_matches": 4,
+          "schema_valid": 4,
+          "count": 4,
+          "mean_latency_s": 21.147088
+        },
+        "product_first": {
+          "target_matches": 4,
+          "schema_valid": 4,
+          "count": 4,
+          "mean_latency_s": 20.6949015
+        },
+        "location_first": {
+          "target_matches": 4,
+          "schema_valid": 4,
+          "count": 4,
+          "mean_latency_s": 21.05014175
+        }
+      },
+      "collection_sha256": "f950610c20f508937470c90427a0737cd72e013d24cb0149fe810874643298c5",
+      "evidence_files_verified": 13,
+      "raw_sse_reconstructed": true,
+      "ordered_payloads_verified": true,
+      "worker_stopped": true,
+      "production_inference_unchanged": true
+    },
+    "profile-transfer": {
+      "scope": "Four hash-selected optimized TRAIN compound stock queries: original versus actual stock_only TRAIN tool bundle. No text/context/target change, business execution, population accuracy or acceptance claim.",
+      "by_arm": {
+        "source": {
+          "target_matches": 4,
+          "schema_valid": 4,
+          "count": 4,
+          "mean_latency_s": 20.58096975
+        },
+        "stock_only": {
+          "target_matches": 4,
+          "schema_valid": 4,
+          "count": 4,
+          "mean_latency_s": 14.985075
+        }
+      },
+      "collection_sha256": "a320932e31c925cc5b1e93ef0d4bf5c760a906a7db61587fa2f049a880db0b7c",
+      "evidence_files_verified": 13,
+      "raw_sse_reconstructed": true,
+      "ordered_payloads_verified": true,
+      "worker_stopped": true,
+      "production_inference_unchanged": true
+    },
+    "neutral-history": {
+      "scope": "Two original English development failures, fresh original versus same request wrapped with one neutral Hello. Failure-focused diagnostic, not population accuracy or a training-label source.",
+      "by_arm": {
+        "source": {
+          "target_matches": 0,
+          "schema_valid": 0,
+          "count": 2,
+          "mean_latency_s": 14.6062455
+        },
+        "neutral": {
+          "target_matches": 0,
+          "schema_valid": 1,
+          "count": 2,
+          "mean_latency_s": 14.162812
+        }
+      },
+      "collection_sha256": "e79fa10b9ed1bcafbc84a2fdf47a13109c2e7105ea6d401ae780e22a0a25113d",
+      "evidence_files_verified": 13,
+      "raw_sse_reconstructed": true,
+      "ordered_payloads_verified": true,
+      "worker_stopped": true,
+      "production_inference_unchanged": true
+    }
+  },
+  "interpretation": [
+    "Name substitutions and combined wording/order changes did not reproduce failures on the four selected TRAIN families.",
+    "Whole native stock-only tool-bundle transfer also matched every target on four selected TRAIN families. The coverage gap is real but is not established as the error cause.",
+    "The neutral-history wrapper repaired no exact target on two original English stock failures. One response became schema-valid but still swapped product and location.",
+    "The probes reuse several source families and are not independent population samples or acceptance scores.",
+    "All original development/acceptance/fresh cases, labels, provider and scoring remain unchanged; the rejected adapter is not a next-training parent."
+  ],
+  "tests": {
+    "role_generator": 21,
+    "stock_profile_generator": 13,
+    "combined_public_suites": 34,
+    "offline_diagnostic_guards": {
+      "role-name": 18,
+      "search-phrasing": 18,
+      "profile-transfer": 18,
+      "neutral-history": 17
+    },
+    "offline_collector_guards_per_probe": 9,
+    "review": "Single independent reviewer checked source/data semantics, exact payloads, collection and observed results."
+  },
+  "planned_next_step": "Prepare reviewed natural compound-search training variants from existing TRAIN targets, then bind original selected checkpoint 600 and perform server preflight before one candidate run.",
+  "limitations": [
+    "No new training accuracy, fine-tuned acceptance or six-application completion is claimed.",
+    "Backend authorization and actual user permissions were not modified.",
+    "Production health here is inference health, not a complete business end-to-end certification."
+  ]
+}

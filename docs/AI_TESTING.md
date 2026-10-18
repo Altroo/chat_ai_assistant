@@ -1,5 +1,19 @@
 # Verification and acceptance record
 
+## Search-generalization checks and stock-profile data - 18 October 2026
+
+IMPLEMENTED and verified as data preparation: the new helpers prepare 440 name-role variants from 220 source questions and 268 native stock-only profile variants. Review excluded ambiguous role assignments and duplicate neutral greetings before model work. All 34 preparation tests pass together. Stock-profile variants preserve every question, target and argument; native schema and source-hash checks pass. Neither dataset has been trained.
+
+Four isolated Colibri diagnostics completed. Original/rotated/opaque names each matched 4/4 targets; original/product-first/location-first wording each matched 4/4; original/native-stock-only tool bundles each matched 4/4. These reuse selected TRAIN families and do not estimate general accuracy. A separate check on two actual English development failures matched 0/2 targets with both original and Hello-wrapped prompts. The wrapper made one response schema-valid but still swapped product and location, so it is not a correctness fix.
+
+The training audit found that stock-only examples omit combined product, location, date and limit filters present under broader access. The prepared data fills that coverage gap, but the passing profile probe does not establish it as the failure cause. All workers stopped and production inference remained unchanged. Original cases, labels, provider, scores and acceptance gates remain unchanged.
+
+PARTIALLY IMPLEMENTED: no numerical successor or model activation started; zero of six apps are fully accepted. Next, prepare and review natural compound-search variants from TRAIN labels, bind original checkpoint 600, and run server tokenizer/template preflight before another candidate. Do not reuse the rejected adapter as a training parent.
+
+[Verified preparations, diagnostic scope and actual results](../training/reports/facturation-search-generalization-diagnostics.json).
+
+Earlier entries below retain their original observation state.
+
 ## Failed-generation diagnostics completed - 18 October 2026
 
 IMPLEMENTED and verified as diagnostics: four failed Colibri requests ended normally but generated invalid arguments. Thirteen captures using the saved training-runtime adapter matched six targets and eleven schemas; seven of ten selected original failures persisted before export. This includes one native-equivalent article-search alias that remains a strict-scoring failure. These observations do not isolate quantization as the cause.
@@ -420,14 +434,14 @@ After the full2,272-test backend run, the assistant suite passed765tests (39.13s
 The local v4 French status explanation initially failed with a truncated repetitive model call. That failure is retained in final-local-v4-ui-review.json. Exact retry after verified-help dispatch passed in0.826s; a fresh English workflow passed in1.337s. These trusted application handlers are excluded from raw-model accuracy figures.
 
 
-## Module catalogue regression — 2026-10-08
+## Module catalogue regression - 2026-10-08
 
 The full assistant/backend suite passed **819 tests in 44.16 seconds** after the permission-derived module catalogue and exact capability-question handlers. Chat UI/client tests passed **112 tests in 7.73 seconds**; TypeScript and changed-file ESLint passed. Tests cover every bare module's existing tool mapping, usage examples, filter-preserving planner hints, native staff-only users, stock-only superusers without membership, denied write shortcuts, localized capabilities and the exact English logistics-access question without model inference or business queries. Raw logs remain ignored.
 
 The prepared authenticated production checklist separately passed **12/12 checks**: one dashboard FAB, current company, bare help, natural invoice lookup, safe detail/list navigation, English/French workflows, verified collected-payment equality, history, company isolation, article lookup, mobile fit and anonymous-login absence. These selected application workflows do not replace the frozen model benchmark. The subsequent module release passed nine additional checks, detailed below.
 
 
-## Production module verification — 2026-10-09
+## Production module verification - 2026-10-09
 
 The reviewed frontend/backend release passed **9/9 actual MCP Playwright checks** with the existing authenticated production account. The slash catalogue exactly matches the active-company backend catalogue and native staff/edit/delete/print permissions. It includes all 14 supported modules and six permitted actions for this account.
 
@@ -439,7 +453,7 @@ Evidence: [production-module-shortcuts-checks.json](../training/reports/producti
 
 Release verification also checked all nine Git remote heads, clean production source checkouts, installed core hash, current model start time, backend `/api/health/` HTTP 200 with the trusted HTTPS proxy header, and native frontend login HTTP 200. For an internal HTTP health probe, use the registered route with the configured trusted-proxy HTTPS header.
 
-## Shared interface release — 2026-10-10
+## Shared interface release - 2026-10-10
 
 The canonical MUI interface and native adapters passed 125 Facturation and 55 Management Projet assistant frontend tests. Design Workflow's bold author-label change passed its 26 assistant tests. Bare-slash permission-filtered help passed 12 focused Facturation and 3 Management Projet backend tests; the latter includes English/French subcases. The affected Facturation form suites passed 190 tests. TypeScript/changed-source lint and all three frontend production builds passed.
 
@@ -449,11 +463,11 @@ Additional checks covered mobile 390×844 and 390×420 sizing, six-line input wi
 
 Release verification matched all 18 requested remote heads, confirmed deployed UI source and byte-identical MUI copies, healthy application containers and anonymous production login HTTP 200. Authenticated production interactions were not repeated for this UI revision. Management Projet remains disabled in production; shared inference and V5 training continued. These application checks do not count toward raw-model accuracy.
 
-## Saved-checkpoint comparison verification — 2026-10-12
+## Saved-checkpoint comparison verification - 2026-10-12
 
 All 825 validation calls completed and their model/process/artifact, dataset and scoring hashes passed pre/post checks. Step 600 won the fixed validation-only selection rule. All 63 training tests, including eight checkpoint-selection tests, passed. The single reviewer found no remaining publisher issues after clarification-dependency and complete-output checks were added. Temporary workers stopped; production remained unchanged. The existing 438-case acceptance evaluation for the identical selected candidate remains failed and was not repeated. [Measured results](../training/reports/shared-v5r5-functional-validation.json).
 
-## V5r6 preparation checks and CPU resource probe — 2026-10-12
+## V5r6 preparation checks and CPU resource probe - 2026-10-12
 
 IMPLEMENTED and verified: saved-checkpoint evaluation used three four-thread workers (12 threads total). All 825 comparisons completed. Finished R2/R4/R5 evaluation services were then stopped to release RAM; all weights/results and production inference were preserved. Training remains configured for 14 of 16 logical threads, retaining the 10% memory reserve.
 
@@ -465,14 +479,14 @@ All 69 training-integrity tests pass. Native audit passes all 166 new tool/schem
 
 Management Projet and the next three application assistants remain disabled. No production model replacement; future application training stays sequential after acceptance.
 
-## V5r6 resumed server checks and training launch — 2026-10-12
+## V5r6 resumed server checks and training launch - 2026-10-12
 
-PARTIALLY IMPLEMENTED — current run: V5r6 server training has started from the verified V5r5 step-600 checkpoint. One complete epoch covers 1,969 English/French training rows; all 275 validation rows and 438 held-out cases remain unchanged. The run uses 14 CPU threads, a 16 GiB limit with at least 10% host memory reserved, gradient checkpointing, 24 LoRA layers and a learning rate of 0.00001. Validation/checkpoint selection runs every 300 steps, with the unchanged baseline eligible. There is no V5r6 accuracy score or production activation yet. [Verified run start](../training/reports/shared-v5r6-en-fr-training-start.json).
+PARTIALLY IMPLEMENTED - current run: V5r6 server training has started from the verified V5r5 step-600 checkpoint. One complete epoch covers 1,969 English/French training rows; all 275 validation rows and 438 held-out cases remain unchanged. The run uses 14 CPU threads, a 16 GiB limit with at least 10% host memory reserved, gradient checkpointing, 24 LoRA layers and a learning rate of 0.00001. Validation/checkpoint selection runs every 300 steps, with the unchanged baseline eligible. There is no V5r6 accuracy score or production activation yet. [Verified run start](../training/reports/shared-v5r6-en-fr-training-start.json).
 
 IMPLEMENTED and verified: the exact training base matches 473 previously verified FP32 tensors, all three attested tokenizer files and the full shard index. Server metadata checks passed 1,969 training and 275 validation rows. Two resumed capacity updates passed across all 24 layers; the earlier user-interrupted attempt is preserved and does not count as a completed capacity test.
 
 
-## Draggable launcher verification — 2026-10-12
+## Draggable launcher verification - 2026-10-12
 
 The same dependency-free hook is synchronized into all six frontends; Design Workflow retains its native interface. Assistant suites passed **358 tests**: Facturation 137, Management Projet 67, Design Workflow 38, Contracts 37, Gestion Magasin 41 and Réservation 38. All six TypeScript checks, scoped ESLint checks and optimized production builds passed. The single reviewer’s scrollbar-gutter finding was fixed and covered by a regression; final review reported no remaining findings.
 
@@ -484,7 +498,7 @@ The deployed Facturation launcher was additionally checked through the existing 
 
 Release verification: all 18 frontend remote heads matched their reviewed commits; all six deployed source trees matched the changed-file hashes. All six containers were healthy and contained the compiled launcher. Native frontend login routes and backend health routes returned HTTPS 200. Production environment/configuration hashes, database-volume mounts, 44 supporting container identities and the training process were unchanged. Existing assistant activation settings were preserved.
 
-## Named list return regression checks — 2026-10-12
+## Named list return regression checks - 2026-10-12
 
 Local related tests: facturation 851, management_projet 195, design_workflow 78, contracts 160, gestion_magasin 84, reservation 299. All six TypeScript checks, scoped lint runs and production builds pass.
 

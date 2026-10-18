@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Search-generalization checks and stock-profile data - 18 October 2026
+
+IMPLEMENTED and verified as data preparation: the new helpers prepare 440 name-role variants from 220 source questions and 268 native stock-only profile variants. Review excluded ambiguous role assignments and duplicate neutral greetings before model work. All 34 preparation tests pass together. Stock-profile variants preserve every question, target and argument; native schema and source-hash checks pass. Neither dataset has been trained.
+
+Four isolated Colibri diagnostics completed. Original/rotated/opaque names each matched 4/4 targets; original/product-first/location-first wording each matched 4/4; original/native-stock-only tool bundles each matched 4/4. These reuse selected TRAIN families and do not estimate general accuracy. A separate check on two actual English development failures matched 0/2 targets with both original and Hello-wrapped prompts. The wrapper made one response schema-valid but still swapped product and location, so it is not a correctness fix.
+
+The training audit found that stock-only examples omit combined product, location, date and limit filters present under broader access. The prepared data fills that coverage gap, but the passing profile probe does not establish it as the failure cause. All workers stopped and production inference remained unchanged. Original cases, labels, provider, scores and acceptance gates remain unchanged.
+
+PARTIALLY IMPLEMENTED: no numerical successor or model activation started; zero of six apps are fully accepted. Next, prepare and review natural compound-search variants from TRAIN labels, bind original checkpoint 600, and run server tokenizer/template preflight before another candidate. Do not reuse the rejected adapter as a training parent.
+
+[Verified preparations, diagnostic scope and actual results](../training/reports/facturation-search-generalization-diagnostics.json).
+
+Earlier entries below retain their original observation state.
+
 ## Failed-generation diagnostics completed - 18 October 2026
 
 IMPLEMENTED and verified as diagnostics: four failed Colibri requests ended normally but generated invalid arguments. Thirteen captures using the saved training-runtime adapter matched six targets and eleven schemas; seven of ten selected original failures persisted before export. This includes one native-equivalent article-search alias that remains a strict-scoring failure. These observations do not isolate quantization as the cause.
