@@ -1,5 +1,5 @@
 {
-  "version": "facturation-replay-v3-failure-diagnostics-v1",
+  "version": "facturation-replay-v3-failure-diagnostics-v2",
   "model_family": "Qwen3.5-0.8B",
   "production_runtime": "Colibri",
   "candidate_accepted": false,
@@ -173,11 +173,154 @@
     "raw_collection": "baf685d5fe07b40ec5ded4dc08462cf7608bfbcbcaa4537664d34a423e170fbd",
     "training_runtime_collection": "0d2751b04a72bf9486c05e6d7f28d5872c392d6d494aec6d75eb748da50fc649",
     "paired_tool_filter_collection": "9567862c4fb6edbac5fe21cca4062e1baa63db96e9d28f51a10ec967a9462ad3",
-    "current_logistics_refresh": "c07502071bed19f7e67bb88cd117e6e2a7c9f1ef6214a55cd5260a5a8e13f0dd"
+    "current_logistics_refresh": "c07502071bed19f7e67bb88cd117e6e2a7c9f1ef6214a55cd5260a5a8e13f0dd",
+    "focused_planner_collection": "b9e845ab58bdd28d1da2448f58964600aefdfbce5c5834450d6706d80cc5cc2f",
+    "training_only_generation_collection": "50b477095c69df4d794003c5c98f3bb5dcfe1aaedb13185337cf87686810fe4c",
+    "training_lexical_audit": "f728c9eb766aa594cf30995a3563649ee5ac818b4ac1be0bb68d7fd662c78f42"
   },
   "limitations": [
     "These deliberately selected diagnostics do not establish 95 percent application accuracy.",
     "No business authorization or live end-to-end claim follows from model-only calls.",
     "The rejected disposable adapter cannot seed later training or be activated."
-  ]
+  ],
+  "source_loss_review": {
+    "finding": "No demonstrated alignment, masking, train/eval restoration or cache-state defect found by code review.",
+    "scope": "The pinned source shifts logits correctly, preserves positive syntax/EOS supervision and restores capture mode/RNG. This is not kernel-level numerical equivalence."
+  },
+  "two_stage_focused_planning": {
+    "counts": {
+      "cases": 13,
+      "requests": 26,
+      "first_target_matches": 3,
+      "final_target_matches": 4,
+      "first_schema_valid": 9,
+      "final_schema_valid": 10,
+      "new_matches": 2,
+      "lost_matches": 1,
+      "mean_total_latency_s": 18.097227384615387
+    },
+    "method": "Fresh first pass followed by generic extraction instruction and model-derived whole-tool/unique resource-branch shortlist. Invalid non-branch proposals retry original permitted tools. Both narrowed and original schemas enforced.",
+    "new_matches": [
+      "validation-033",
+      "validation-171"
+    ],
+    "lost_matches": [
+      "validation-119"
+    ],
+    "decision": "REJECTED: one previously correct financial retrieval becomes unsupported clarification; core errors persist.",
+    "offline_guard_tests_passed": 23,
+    "scope": "Failure-heavy combined-strategy diagnostic, not causal isolation, original rescoring or representative accuracy.",
+    "provider_implementation_changed": false
+  },
+  "training_only_generation": {
+    "requests": 16,
+    "selection": "Two deterministic input-hash selections from each of eight predeclared TRAIN cohorts, all actually used in completed optimization. No validation, acceptance or fresh-control row selects or labels this probe.",
+    "free_target_matches": 16,
+    "free_schema_valid": 16,
+    "current_teacher_greedy_exact_rows": 16,
+    "zero_prefix_boundary_delta_rows": 16,
+    "free_failures_despite_exact_teacher_and_prefix": [],
+    "by_cohort": {
+      "stock_balance": {
+        "count": 2,
+        "free_target_matches": 2,
+        "teacher_greedy_exact": 2
+      },
+      "stock_movement": {
+        "count": 2,
+        "free_target_matches": 2,
+        "teacher_greedy_exact": 2
+      },
+      "stock_receipt": {
+        "count": 2,
+        "free_target_matches": 2,
+        "teacher_greedy_exact": 2
+      },
+      "stock_inventory": {
+        "count": 2,
+        "free_target_matches": 2,
+        "teacher_greedy_exact": 2
+      },
+      "logistics_order": {
+        "count": 2,
+        "free_target_matches": 2,
+        "teacher_greedy_exact": 2
+      },
+      "composed-unpaid-invoices": {
+        "count": 2,
+        "free_target_matches": 2,
+        "teacher_greedy_exact": 2
+      },
+      "literal-multi-field": {
+        "count": 2,
+        "free_target_matches": 2,
+        "teacher_greedy_exact": 2
+      },
+      "current-payment-schedule": {
+        "count": 2,
+        "free_target_matches": 2,
+        "teacher_greedy_exact": 2
+      }
+    },
+    "current_weighted_teacher_loss_mean": 5.080651186517571e-05,
+    "current_weighted_teacher_loss_max": 0.00033204694045707583,
+    "interpretation": "All selected training examples generate correctly while development remains below target. This is consistent with a generalization gap on these selected cases, not proof of a sole cause.",
+    "method": "Frozen saved adapter, BF16/SDPA on server with 14 threads; original trainer encode/loss functions plus separate same-input arithmetic and token-argmax inspection, followed by untouched target-free generation capture.",
+    "offline_guard_tests_passed": 20,
+    "optimizer_created": false,
+    "model_parameters_unchanged": true,
+    "scope_limit": "Current eval-mode arithmetic does not independently prove causal masking, equal historical train-mode loss or population accuracy.",
+    "pre_run_review_fixes": [
+      "Used recognized precision service name so existing overlap guards detect the job.",
+      "Removed unused inherited development provenance and bound the actual training selection."
+    ]
+  },
+  "training_lexical_audit": {
+    "scope": "Actual selected Facturation stock/logistics TRAIN rows only; literal positions describe observed inputs, not causality.",
+    "rows_by_resource": {
+      "stock_balance": 79,
+      "stock_movement": 69,
+      "stock_receipt": 74,
+      "stock_inventory": 71,
+      "logistics_order": 81
+    },
+    "unique_values_by_role": {
+      "product_name": 26,
+      "location_name": 24,
+      "supplier_name": 2,
+      "client_name": 2
+    },
+    "cross_role_literal_overlap": {
+      "product_name__location_name": 0,
+      "product_name__supplier_name": 0,
+      "product_name__client_name": 0,
+      "location_name__supplier_name": 0
+    },
+    "joint_product_location_order": {
+      "product-before-location": 75,
+      "location-before-product": 7
+    },
+    "joint_order_by_resource": {
+      "stock_balance": {
+        "product-before-location": 16,
+        "location-before-product": 2
+      },
+      "stock_movement": {
+        "product-before-location": 15,
+        "location-before-product": 1
+      },
+      "stock_receipt": {
+        "product-before-location": 14,
+        "location-before-product": 2
+      },
+      "stock_inventory": {
+        "product-before-location": 16
+      },
+      "logistics_order": {
+        "product-before-location": 14,
+        "location-before-product": 2
+      }
+    },
+    "interpretation": "Observed limited entity/order diversity, not a proven cause or a forecast of accuracy."
+  }
 }
