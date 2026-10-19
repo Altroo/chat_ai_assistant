@@ -403,6 +403,11 @@ class CorrectivePreparationTests(unittest.TestCase):
         inventory = plan["conjunction_coverage"]["tool_5"]
         self.assertTrue(inventory["uncovered"])
         self.assertLess(inventory["selected"], inventory["available"])
+        _, complete = subject.facturation_retained(values, 64)
+        full = complete["conjunction_coverage"]["tool_5"]
+        self.assertEqual(full["selected"], 40)
+        self.assertEqual(full["selected"], full["available"])
+        self.assertFalse(full["uncovered"])
 
     def test_offered_tool_schema_variants_are_kept_as_distinct_bundles(self):
         values = rows(360, "facturation", "BUNDLES", tool_count=18)

@@ -263,9 +263,9 @@ def prepare(source, supplement, output, *, facturation_replay_rows=0):
             manifest["variant"] = "facturation-native-tool-replay"
             manifest["facturation_replay_rows"] = facturation_replay_rows
             manifest["limitations"].append(
-                "Facturation replay covers measured marginal and critical/lookup conjunctions, "
-                "not every full conjunction, wording, value combination, tool-selection "
-                "behavior or model accuracy. The retained plan records uncovered inventory.")
+                "Facturation replay coverage is limited to the recorded TRAIN inventory in its "
+                "retained plan. Even complete structural coverage does not establish every "
+                "wording, value combination, tool-selection behavior or model accuracy.")
     output.mkdir()
     for name, raw in files.items():
         (output / name).write_bytes(raw)

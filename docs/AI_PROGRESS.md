@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Pilot development comparison and full replay preparation - 19 October 2026
+
+IMPLEMENTED and verified: all three successor checkpoints completed the unchanged 133-case Facturation development evaluation. Correct full actions were 111/133 (83.46 percent) at step 72, 107/133 (80.45 percent) at step 144 and 103/133 (77.44 percent) at step 216. The unchanged selector chose step 72. Its exact arguments were 89/111 (80.18 percent), with 22/24 critical planner cases. The single reviewer independently verified the scores, all candidate evidence, selection and frozen controls.
+
+PARTIALLY IMPLEMENTED: this pilot misses the primary development targets. At this recorded observation, its planned shared development and remaining regression comparisons are still running. Selection is not acceptance. Zero of six applications are fully accepted, and production inference remains unchanged.
+
+IMPLEMENTED and verified as data preparation only: a larger conditional replay contains 704 rows, with 520 Facturation, 112 Management Projet and 72 Design Workflow examples. It preserves every row from the preceding 384-row candidate. Its 448-row Facturation replay covers all 418 recorded structural argument conjunctions, all 174 measured marginals, all 51 designated critical/exact-lookup conjunctions, all 25 edit/delete combinations and all 58 offered-tool schema bundles. All 275 development bytes and 141 frozen controls remain unchanged. The recorded structural sampling omissions are closed; complete semantic, language, context and value coverage is not established.
+
+All 49 affected synthetic tests pass, including the sufficient-budget coverage check. This preparation neither trains nor accepts a model. The intended experimental parent remains the prior unaccepted checkpoint 2048, subject to fresh FP32 attestation, completion of the current comparison and new numerical/evaluation review. The current comparison and next-application queue remain unchanged.
+
+[Actual development results](../training/reports/facturation-entity-pilot-v1-development-comparison.json) and [complete recorded TRAIN inventory preparation](../training/reports/facturation-entity-pilot-v2-full-inventory-preparation.json).
+
 ## Optional Facturation replay prepared - 19 October 2026
 
 IMPLEMENTED and verified as local data preparation only: an optional 128-row Facturation replay extends the conditional corpus to 384 rows, consisting of 200 Facturation, 112 Management Projet and 72 Design Workflow examples. All 216 original pilot rows remain byte-preserved. The default 256-row corpus still produces identical train, validation and retained-plan bytes. The 275 development rows and frozen comparison controls remain unchanged.

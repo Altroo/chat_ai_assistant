@@ -1,0 +1,115 @@
+{
+  "version": "facturation-entity-pilot-v2-full-inventory-preparation",
+  "status": "PREPARED; CONDITIONAL; NOT TRAINED OR ACCEPTED",
+  "observed_utc": "2026-10-19T22:59:55.234251+00:00",
+  "focus_application": "facturation",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "dataset": {
+    "rows": 704,
+    "by_application": {
+      "facturation": 520,
+      "management_projet": 112,
+      "design_workflow": 72
+    },
+    "original_pilot_rows_byte_preserved": 216,
+    "additional_facturation_train_rows": 448,
+    "additional_management_projet_train_rows": 40,
+    "development_rows": 275,
+    "development_bytes_unchanged": true,
+    "default_256_three_data_files_byte_preserved": true,
+    "facturation_replay_language_metadata": {
+      "en": 134,
+      "fr": 112,
+      "unspecified": 202
+    },
+    "selection": "One maximum-feature TRAIN row per tool; greedy marginal coverage; all prepare_change and top-level identifier/invoice_number/reference conjunctions; unseen offered-tool bundles and full conjunctions; tool-count/hash ties.",
+    "signature_definition": "Tool plus the sorted full set of argument path/types and schema-enum/top-level resource/operation codes; no other free-text or numeric values.",
+    "evaluation_outcomes_used_for_selection": false,
+    "facturation_replay_coverage": {
+      "native_tools": 18,
+      "marginal_features": {
+        "selected": 174,
+        "available": 174,
+        "additional_plain_schema_resource_codes": 5
+      },
+      "critical_or_exact_lookup_conjunctions": {
+        "available": 51,
+        "selected": 51,
+        "uncovered": []
+      },
+      "edit_delete_conjunctions": {
+        "available": 25,
+        "selected": 25,
+        "uncovered": []
+      },
+      "offered_tool_schema_bundles": {
+        "available": 58,
+        "selected": 58,
+        "uncovered": []
+      },
+      "full_conjunctions": {
+        "selected": 418,
+        "available": 418,
+        "uncovered": 0
+      },
+      "source_inventory_candidates": 2044
+    },
+    "manifest_sha256": "f321b2d2e0dd900f1b25f8e24cbcc709b4c5379a909de59741b07ab0e5fceff3",
+    "files": {
+      "train.jsonl": "2523aa3744e25ff24641dfd8c1bb67dbe051be4db74df7cc2b8d6331f08b0b58",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+      "retained-plan.json": "5a0b7efb19733154fba49a5d055258c6d8b1e19cc57d17b3e0fbab4b11570001"
+    },
+    "previous_candidate_rows_byte_preserved": 384
+  },
+  "requested_experimental_parent": {
+    "selected_step": 2048,
+    "accepted": false,
+    "actual_model_sha256": null
+  },
+  "original_regression_reference_step": 600,
+  "current_pilot_failure_evidence_sha256": null,
+  "verification": {
+    "test_modules": [
+      "training.tests.test_facturation_entity_spans_v1",
+      "training.tests.test_facturation_entity_pilot_v1",
+      "training.tests.test_facturation_entity_pilot_v2"
+    ],
+    "synthetic_data_tests_passed": 49,
+    "preparer_tests_passed": 26,
+    "frozen_control_files_unchanged": 141,
+    "source_sha256": {
+      "training/scripts/prepare_facturation_entity_pilot_v2.py": "7df5a19e1dde26f336c2763d6dcf39f6aaee1c3f4aed1081111b2c0cba887897",
+      "training/tests/test_facturation_entity_pilot_v2.py": "854ae7b46dd05712c4f601523dbfa559581906e9c839c518978a5bef904be371"
+    }
+  },
+  "required_before_training": [
+    "The current pilot comparison must finish unsuccessfully.",
+    "Freshly attest the experimental merged FP32 parent and retained reference.",
+    "Use a new optimizer and adapter; never apply the old adapter twice.",
+    "Review new versioned numerical and evaluation bindings before any launch.",
+    "Preserve all frozen cases, thresholds and earlier-app regression protection."
+  ],
+  "current_pilot_changed": false,
+  "new_numerical_job_started": false,
+  "training_executed": false,
+  "model_accepted": false,
+  "new_accuracy_score": null,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "Shape/enum coverage is not semantic retention or model accuracy.",
+    "The first 72 Management Projet rows, all 72 Design Workflow rows and all 72 Facturation rows are preserved from the original preparation.",
+    "Development bytes stay unchanged; their input keys only exclude collisions.",
+    "Missing retained language labels remain missing.",
+    "Changing the parent and replay together would test their combined recipe.",
+    "No inference, training, parity probe or accepted predecessor is established.",
+    "Facturation replay coverage is limited to the recorded TRAIN inventory in its retained plan. Even complete structural coverage does not establish every wording, value combination, tool-selection behavior or model accuracy.",
+    "Complete recorded structural coverage does not establish every language, trusted context, entity value or business behavior.",
+    "Canonical input uniqueness does not establish independent scenarios.",
+    "No faster validation schedule, capacity change or optimization parity is established.",
+    "A new generated-action comparison and separate native authorization testing remain required."
+  ]
+}

@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Completed pilot development and complete TRAIN inventory - 19 October 2026
+
+The sole reviewer independently reproduced all four development candidates, including the original checkpoint-600 baseline, against the unchanged 133 cases. Step 72 was selected with 111 correct full actions, 89/111 exact arguments, 129/133 correct tools, 132/133 valid structures, 22/24 critical planner matches and 16/16 clarification matches. Steps 144 and 216 scored 107 and 103 full actions. Their input identities, ordered shard results, serving proofs, cleanup and 141 frozen control files were verified. Primary targets remain failed; broader comparisons were still active at the captured observation.
+
+A second actual preparation uses the same deterministic sampler with 448 Facturation replay rows, producing 704 total examples. All 384 previous candidate rows remain byte-preserved. It covers all 418 recorded full conjunctions and 58 complete tool schema bundles, with no remaining entries in those finite inventories. All marginal and designated critical/lookup coverage also remains complete. The single reviewer independently reproduced the hashes, schema validity, canonical uniqueness, development separation and unchanged validation bytes.
+
+Passed: all 49 affected synthetic preparation tests, including a fixture that verifies both insufficient and sufficient structural replay budgets. These checks do not measure model accuracy, semantic generalization, native backend authorization or production readiness. No new numerical work has started, and no new model has been accepted or activated.
+
+[Development metrics and evidence hashes](../training/reports/facturation-entity-pilot-v1-development-comparison.json) and [704-row preparation](../training/reports/facturation-entity-pilot-v2-full-inventory-preparation.json).
+
 ## Optional Facturation replay checks - 19 October 2026
 
 Passed: 49 synthetic tests across the supplement, original pilot and conditional preparer, including 26 preparer tests. New checks cover preservation of every synthetic edit and exact invoice lookup combination, rejection of a budget that covers only marginal features, exclusion of free text/numeric values from conjunction inventories, distinct offered-tool schema bundles and truthful reporting of unselected combinations.

@@ -1,0 +1,288 @@
+{
+  "version": "facturation-entity-pilot-v1-development-comparison",
+  "status": "CANDIDATE DEVELOPMENT COMPLETE; PRIMARY TARGETS FAILED; BROADER COMPARISON RUNNING",
+  "observed_utc": "2026-10-19T22:59:55.235558+00:00",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "focus_application": "facturation",
+  "starting_checkpoint": 600,
+  "completed_training_updates": 216,
+  "development_cases_per_candidate": 133,
+  "selected_step": 72,
+  "selection_sha256": "db051be1f4953636ef5910a837e772d5a7e5671919f5f1133be1e036b0119309",
+  "baseline": {
+    "metrics": {
+      "count": 133,
+      "counts": {
+        "tool_correct": 132,
+        "structured_valid": 133,
+        "action_matches": 110
+      },
+      "percent": {
+        "tool_correct": 99.25,
+        "structured_valid": 100,
+        "action_matches": 82.71
+      },
+      "exact_arguments": {
+        "passed": 88,
+        "count": 111,
+        "percent": 79.28
+      }
+    },
+    "targets": {
+      "tool_selection": true,
+      "exact_arguments": false,
+      "structured_output": true,
+      "clarification_reason_and_language": true,
+      "critical_model_cases": false
+    },
+    "model_targets_passed": false,
+    "clarifications": {
+      "count": 16,
+      "counts": {
+        "tool_correct": 16,
+        "structured_valid": 16,
+        "action_matches": 16
+      },
+      "percent": {
+        "tool_correct": 100,
+        "structured_valid": 100,
+        "action_matches": 100
+      },
+      "exact_arguments": {
+        "passed": 0,
+        "count": 0,
+        "percent": null
+      }
+    },
+    "critical_model_cases": {
+      "count": 24,
+      "counts": {
+        "tool_correct": 24,
+        "structured_valid": 24,
+        "action_matches": 22
+      },
+      "percent": {
+        "tool_correct": 100,
+        "structured_valid": 100,
+        "action_matches": 91.67
+      },
+      "exact_arguments": {
+        "passed": 6,
+        "count": 8,
+        "percent": 75
+      }
+    }
+  },
+  "candidates": {
+    "72": {
+      "metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 129,
+          "structured_valid": 132,
+          "action_matches": 111
+        },
+        "percent": {
+          "tool_correct": 96.99,
+          "structured_valid": 99.25,
+          "action_matches": 83.46
+        },
+        "exact_arguments": {
+          "passed": 89,
+          "count": 111,
+          "percent": 80.18
+        }
+      },
+      "targets": {
+        "tool_selection": true,
+        "exact_arguments": false,
+        "structured_output": true,
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false
+      },
+      "model_targets_passed": false,
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 16
+        },
+        "percent": {
+          "tool_correct": 100,
+          "structured_valid": 100,
+          "action_matches": 100
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "tool_correct": 24,
+          "structured_valid": 24,
+          "action_matches": 22
+        },
+        "percent": {
+          "tool_correct": 100,
+          "structured_valid": 100,
+          "action_matches": 91.67
+        },
+        "exact_arguments": {
+          "passed": 6,
+          "count": 8,
+          "percent": 75
+        }
+      }
+    },
+    "144": {
+      "metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 125,
+          "structured_valid": 132,
+          "action_matches": 107
+        },
+        "percent": {
+          "tool_correct": 93.98,
+          "structured_valid": 99.25,
+          "action_matches": 80.45
+        },
+        "exact_arguments": {
+          "passed": 85,
+          "count": 111,
+          "percent": 76.58
+        }
+      },
+      "targets": {
+        "tool_selection": false,
+        "exact_arguments": false,
+        "structured_output": true,
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false
+      },
+      "model_targets_passed": false,
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 16,
+          "structured_valid": 16,
+          "action_matches": 16
+        },
+        "percent": {
+          "tool_correct": 100,
+          "structured_valid": 100,
+          "action_matches": 100
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "tool_correct": 24,
+          "structured_valid": 24,
+          "action_matches": 22
+        },
+        "percent": {
+          "tool_correct": 100,
+          "structured_valid": 100,
+          "action_matches": 91.67
+        },
+        "exact_arguments": {
+          "passed": 6,
+          "count": 8,
+          "percent": 75
+        }
+      }
+    },
+    "216": {
+      "metrics": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 131,
+          "structured_valid": 133,
+          "action_matches": 103
+        },
+        "percent": {
+          "tool_correct": 98.5,
+          "structured_valid": 100,
+          "action_matches": 77.44
+        },
+        "exact_arguments": {
+          "passed": 82,
+          "count": 111,
+          "percent": 73.87
+        }
+      },
+      "targets": {
+        "tool_selection": true,
+        "exact_arguments": false,
+        "structured_output": true,
+        "clarification_reason_and_language": false,
+        "critical_model_cases": false
+      },
+      "model_targets_passed": false,
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "tool_correct": 15,
+          "structured_valid": 16,
+          "action_matches": 15
+        },
+        "percent": {
+          "tool_correct": 93.75,
+          "structured_valid": 100,
+          "action_matches": 93.75
+        },
+        "exact_arguments": {
+          "passed": 0,
+          "count": 0,
+          "percent": null
+        }
+      },
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "tool_correct": 23,
+          "structured_valid": 24,
+          "action_matches": 21
+        },
+        "percent": {
+          "tool_correct": 95.83,
+          "structured_valid": 100,
+          "action_matches": 87.5
+        },
+        "exact_arguments": {
+          "passed": 6,
+          "count": 8,
+          "percent": 75
+        }
+      }
+    }
+  },
+  "result_sha256": {
+    "72": "9ffe4eebf7c7391e634f8b97d969667f0894ecf71e795c5ec19a38092916b496",
+    "144": "100d93f02acac49981121148aac9998b1f2e9487b55dee2fb2b70fe67ae57f52",
+    "216": "11779e43d0c5b8a60ef28b059bc267a39eb248230a6d046ec8c33b82ccc9d27a"
+  },
+  "frozen_controls_unchanged": 141,
+  "primary_development_targets_passed": false,
+  "overall_model_acceptance": null,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "These are completed development scores, not held-out acceptance or native backend security results.",
+    "Selection follows the unchanged policy; it does not establish acceptance.",
+    "The planned275 shared development,438 held-out and48 additional comparisons remain incomplete at this observation.",
+    "No cases, scorer, provider, runtime, threshold or checkpoint ranking changed."
+  ]
+}
