@@ -1,0 +1,202 @@
+{
+  "version": "facturation-entity-pilot-v1-training-completion",
+  "status": "TRAINING COMPLETE; FUNCTIONAL COMPARISON RUNNING; NOT ACCEPTED",
+  "observed_utc": "2026-10-19T22:08:43.631544+00:00",
+  "focus_application": "facturation",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "parent": "Original checkpoint 600 FP32",
+  "scheduled_updates": 216,
+  "completed_updates": 216,
+  "complete_epochs": 1,
+  "application_exposure": {
+    "design_workflow": {
+      "steps": 72,
+      "unique_examples": 72
+    },
+    "facturation": {
+      "steps": 72,
+      "unique_examples": 72
+    },
+    "management_projet": {
+      "steps": 72,
+      "unique_examples": 72
+    }
+  },
+  "measurements": {
+    "trainer_duration_seconds": 8957.627120403573,
+    "trainer_peak_rss_kib": 7009192,
+    "unit_peak_memory_bytes": 7350595584,
+    "cpu_threads": 14,
+    "device": "cpu",
+    "dtype": "bfloat16"
+  },
+  "teacher_forced_validation_history": [
+    {
+      "step": 0,
+      "loss": {
+        "micro": 0.05478158836872023,
+        "by_application": {
+          "facturation": 0.061982057838501796,
+          "management_projet": 0.052404701931964275,
+          "design_workflow": 0.04271494309662671
+        },
+        "macro": 0.05236723428903093,
+        "unweighted": {
+          "micro": 0.025832757943828916,
+          "by_application": {
+            "facturation": 0.030891577116445024,
+            "management_projet": 0.023341726222873567,
+            "design_workflow": 0.0183558442606504
+          },
+          "macro": 0.024196382533322996
+        }
+      }
+    },
+    {
+      "step": 72,
+      "loss": {
+        "micro": 0.05921274271622761,
+        "by_application": {
+          "facturation": 0.06846216649395008,
+          "management_projet": 0.05484278287984486,
+          "design_workflow": 0.045317172478739565
+        },
+        "macro": 0.05620737395084483,
+        "unweighted": {
+          "micro": 0.029224502607792767,
+          "by_application": {
+            "facturation": 0.035198441075553796,
+            "management_projet": 0.025358578899651246,
+            "design_workflow": 0.021521506248774358
+          },
+          "macro": 0.027359508741326467
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    },
+    {
+      "step": 144,
+      "loss": {
+        "micro": 0.06440180762105477,
+        "by_application": {
+          "facturation": 0.07653143158092934,
+          "management_projet": 0.05743479013451109,
+          "design_workflow": 0.04768598539116553
+        },
+        "macro": 0.060550735702201985,
+        "unweighted": {
+          "micro": 0.03207470283832208,
+          "by_application": {
+            "facturation": 0.03965346094452244,
+            "management_projet": 0.026604771744135364,
+            "design_workflow": 0.022991574669914527
+          },
+          "macro": 0.029749935786190774
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    },
+    {
+      "step": 216,
+      "loss": {
+        "micro": 0.06201958908929555,
+        "by_application": {
+          "facturation": 0.07235212741674113,
+          "management_projet": 0.05521192137500573,
+          "design_workflow": 0.04884412790436343
+        },
+        "macro": 0.058802725565370105,
+        "unweighted": {
+          "micro": 0.031105010080918875,
+          "by_application": {
+            "facturation": 0.03779015391250366,
+            "management_projet": 0.02572956216477433,
+            "design_workflow": 0.023763772703707886
+          },
+          "macro": 0.029094496260328628
+        }
+      },
+      "improved": false,
+      "selected_step": 0
+    }
+  ],
+  "diagnostic_selected_step": 0,
+  "adapters": {
+    "checkpoint-144": {
+      "adapter_model.safetensors": "d7928d39dbd219eb7f93ee373ab2f0ca6a8a0929ab30c73ba7da90f8e445d454",
+      "adapter_config.json": "e03744a3a18289f8cf360b3dc5abeccf10c2310e55348649b5ddfcaf8d47e40a"
+    },
+    "checkpoint-216": {
+      "adapter_model.safetensors": "77528e5384245d54667b6d0283876b2623b7234e3b3bbf413aef00e356f6f473",
+      "adapter_config.json": "e03744a3a18289f8cf360b3dc5abeccf10c2310e55348649b5ddfcaf8d47e40a"
+    },
+    "checkpoint-72": {
+      "adapter_model.safetensors": "e7a1d9882da69690fdb319c67c85769fd6f3eade62bb6f4fc4e6f5a0d1202ee2",
+      "adapter_config.json": "e03744a3a18289f8cf360b3dc5abeccf10c2310e55348649b5ddfcaf8d47e40a"
+    },
+    "final": {
+      "adapter_model.safetensors": "77528e5384245d54667b6d0283876b2623b7234e3b3bbf413aef00e356f6f473",
+      "adapter_config.json": "e03744a3a18289f8cf360b3dc5abeccf10c2310e55348649b5ddfcaf8d47e40a"
+    }
+  },
+  "provenance": {
+    "completion_collection_sha256": "b9a9f25a8ed2b3c6b3b3e34a46cbd1013ed1d8071db6b664e1f94e90689983bc",
+    "training_report_sha256": "ef3ad99813a9d91f31457b4614c8d04cf57c204b6bd952b76c1f0be02dee62b7",
+    "training_complete_sha256": "10646ced1c021c5cf6ba7b7782f03ebf9b8d143215d3021bfdeca25970e6f723",
+    "dataset_sha256": "de28c9ce947c4310f22b8df3460944d3ee1d3b653e559633b919849f4c92676a",
+    "validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+    "trainer_sha256": "eb95582e72fee62e7e593cbc166712ae0755ef94c97de027041e035d5b083fd4"
+  },
+  "verification": {
+    "terminal_result": "success",
+    "exit_status": 0,
+    "captured_files_verified": 12,
+    "original_launch_anchors_verified": 8,
+    "finite_values_checked_per_saved_checkpoint": 7127040,
+    "tensor_count_per_saved_checkpoint": 192,
+    "layer_count_per_saved_checkpoint": 24,
+    "saved_checkpoint_identities_match_early_inspections": true,
+    "final_equals_checkpoint_216": true,
+    "frozen_controls_unchanged": 141,
+    "single_reviewer_completion_status": "No issues; completed evidence only",
+    "completion_review_sha256": "334a58f19a073a547f68efbd1d1ac46767af67549a2faf70666c9a9767e4b656"
+  },
+  "planned_functional_comparison": {
+    "steps": [
+      0,
+      72,
+      144,
+      216
+    ],
+    "facturation_development_cases_per_candidate": 133,
+    "selected_successor_shared_development_cases": 275,
+    "selected_successor_held_out_cases": 438,
+    "selected_successor_additional_controls": 48,
+    "baseline_reused_only_after_identity_verification": true,
+    "known_failed_baseline_cannot_be_accepted": true,
+    "original_inputs_scorer_provider_and_gates_unchanged": true
+  },
+  "training_completed": true,
+  "functional_comparison_completed": false,
+  "new_accuracy_score": null,
+  "model_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "Teacher-forced losses are not generated-action accuracy.",
+    "Loss selection keeps baseline 0; all declared functional candidates remain required.",
+    "Checkpoint integrity does not establish model quality or native authorization.",
+    "The conditional 256-row fallback remains unbound and untrained.",
+    "No subsequent application is advanced or production model replaced by this report."
+  ],
+  "comparison_progress": {
+    "started_utc": "2026-10-19T22:08:08Z",
+    "phase": "exporting_checkpoint",
+    "step": 72,
+    "snapshot_utc": "2026-10-19T22:08:43.631544+00:00"
+  }
+}

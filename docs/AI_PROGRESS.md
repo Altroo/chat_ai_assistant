@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Entity pilot training completed - 19 October 2026
+
+IMPLEMENTED and verified: the server-only pilot completed all 216 scheduled updates and the final 275-case validation. Each of Facturation, Management Projet and Design Workflow received 72 unique TRAIN examples. All updates are contiguous and finite. The final adapter equals saved checkpoint 216, and checkpoints 72, 144 and 216 match the earlier finite-tensor inspections. The trainer recorded approximately 2.49 hours of execution.
+
+Final weighted semantic losses are 0.07235212742 for Facturation, 0.05521192138 for Management Projet and 0.04884412790 for Design Workflow. Each remains above its original checkpoint-600 baseline; the diagnostic loss selector therefore keeps baseline step 0. These are teacher-forced losses, not accuracy percentages. Every saved successor still requires its declared Colibri functional comparison.
+
+PARTIALLY IMPLEMENTED: the single reviewer cleared the completed evidence, and the sequential Colibri comparison started with checkpoint 72. Generated-action accuracy and acceptance remain pending. No new generated-action accuracy, accepted application, next-application training or production activation is claimed. Production inference is healthy and unchanged.
+
+[Actual training completion](../training/reports/facturation-entity-pilot-v1-training-completion.json).
+
 ## Conditional corrective corpus prepared - 19 October 2026
 
 IMPLEMENTED and verified as data preparation only: a separate 256-row corpus preserves every row from the current 216-row pilot and adds 40 approved Management Projet TRAIN rows. All 72 Facturation and 72 Design Workflow rows remain byte-identical. The 112-row Management Projet sample covers all 106 measured shape/enum features; Design Workflow retains all 61. Each retained application covers nine native tools. All 275 development rows and 141 frozen control files remain unchanged.

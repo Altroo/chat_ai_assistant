@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Entity pilot terminal completion - 19 October 2026
+
+The original server invocation exited successfully after 216 contiguous finite updates and validation history at steps 0, 72, 144 and 216. Its 12 collected evidence files hash-match the server. All original launch anchors, dataset/configuration provenance and 141 frozen comparison controls remain unchanged. The three saved checkpoint identities match their earlier finite-value captures; final weights equal checkpoint 216.
+
+The trainer recorded 8,957.63 seconds. The unit peak was 7,350,595,584 bytes, approximately 6.85 GiB. These measurements cover training and its teacher-forced validations; they are not generated-response performance benchmarks.
+
+The single reviewer cleared the completion evidence, and the sequential Colibri comparison started with checkpoint 72. Generated-action results remain pending. All three successors must complete the 133-case Facturation development comparison. If a successor is selected, it must also complete 275 shared development cases, 438 regression cases and 48 additional controls under the unchanged gates. The known failed baseline is not accepted if selected instead. Native authorization testing remains separate.
+
+[Completed artifacts and remaining gates](../training/reports/facturation-entity-pilot-v1-training-completion.json).
+
 ## Conditional corrective preparation - 19 October 2026
 
 Thirty-five synthetic data tests pass across the entity supplement, original pilot and conditional corrective preparer. Twelve new tests cover exact row preservation, deterministic output, schema/shape coverage, unbound/non-training metadata, development input overlap in newly added rows, unapproved or changing sources, language validation and output isolation.
