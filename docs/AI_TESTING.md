@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Optional Facturation replay checks - 19 October 2026
+
+Passed: 49 synthetic tests across the supplement, original pilot and conditional preparer, including 26 preparer tests. New checks cover preservation of every synthetic edit and exact invoice lookup combination, rejection of a budget that covers only marginal features, exclusion of free text/numeric values from conjunction inventories, distinct offered-tool schema bundles and truthful reporting of unselected combinations.
+
+Actual isolated preparation produces 384 rows. Facturation replay covers 174/174 measured marginal features, 51/51 mandatory critical or exact-lookup conjunctions, all 25 edit/delete combinations and 58/58 offered-tool schema bundles. Full conjunction coverage is 119/418, leaving 299 explicitly recorded omissions. This is a TRAIN-only structural audit, not a prediction that the model will achieve 95 percent.
+
+The original default train, validation and retained-plan files remain byte-identical. Approved sources and helpers are pinned, the 275 development bytes stay unchanged, and all 141 frozen comparison controls retain their hashes. No model was loaded, trained or accepted by these tests. New server numerical and evaluation bindings, actual model attestation and independent review remain required.
+
+[Measured optional preparation](../training/reports/facturation-entity-pilot-v2-facturation-replay-preparation.json).
+
 ## Entity pilot terminal completion - 19 October 2026
 
 The original server invocation exited successfully after 216 contiguous finite updates and validation history at steps 0, 72, 144 and 216. Its 12 collected evidence files hash-match the server. All original launch anchors, dataset/configuration provenance and 141 frozen comparison controls remain unchanged. The three saved checkpoint identities match their earlier finite-value captures; final weights equal checkpoint 216.

@@ -13,17 +13,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import prepare_facturation_entity_pilot_v2 as subject
 
 
-def rows(count, application, prefix, fields=0):
+def rows(count, application, prefix, fields=0, tool_count=9):
     result = []
     for i in range(count):
-        tool = f"tool_{i % 9}"
+        tool = f"tool_{i % tool_count}"
         properties = {"query": {"type": "string"}, "period": {
             "type": "string", "enum": ["current_year", "previous_year"]}}
         arguments = {"query": f"{prefix}-{i}", "period": (
             "current_year" if i % 2 else "previous_year")}
         if fields and tool == "tool_5":
             properties.update({f"field_{j}": {"type": "string"} for j in range(fields)})
-            arguments[f"field_{(i // 9) % fields}"] = f"VALUE-{i}"
+            arguments[f"field_{(i // tool_count) % fields}"] = f"VALUE-{i}"
         result.append({
             "application": application,
             "messages": [
@@ -39,6 +39,50 @@ def rows(count, application, prefix, fields=0):
     return result
 
 
+def critical_rows():
+    """Synthetic real tool contracts expose combinations hidden by marginals."""
+    values = rows(360, "facturation", "STRUCTURAL", tool_count=18)
+    for i, row in enumerate(values):
+        function = row["messages"][-1]["tool_calls"][0]["function"]
+        tool = function["name"]
+        variant = i // 18
+        if tool == "tool_0":
+            function["name"] = "prepare_change"
+            arguments = {"resource": "invoice" if variant % 2 else "quote",
+                         "operation": "update", "identifier": i + 1}
+            if variant < 14:
+                mask = variant // 2 + 1
+                arguments["changes"] = {key: f"SYN-{i}" for bit, key in enumerate(
+                    ("remarque", "date_echeance", "termes_paiement")) if mask & (1 << bit)}
+            else:
+                arguments["operation"] = "delete"
+            function["arguments"] = arguments
+            row["tools"] = [{"function": {"name": "prepare_change", "parameters": {
+                "type": "object", "properties": {
+                    "resource": {"type": "string"},
+                    "operation": {"enum": ["update", "delete"]},
+                    "identifier": {"type": "integer"},
+                    "changes": {"type": "object", "properties": {
+                        key: {"type": "string"} for key in
+                        ("remarque", "date_echeance", "termes_paiement")},
+                        "additionalProperties": False}},
+                "required": ["resource", "operation", "identifier"],
+                "additionalProperties": False}}}]
+        elif tool == "tool_1":
+            function["name"] = "search_payments"
+            arguments = {"invoice_number": f"SYN-FAC-{i}"}
+            if variant % 4 in (1, 3):
+                arguments["limit"] = 3
+            if variant % 4 in (2, 3):
+                arguments["status"] = "Valide" if variant % 8 < 4 else "Annulé"
+            function["arguments"] = arguments
+            row["tools"] = [{"function": {"name": "search_payments", "parameters": {
+                "type": "object", "properties": {
+                    "invoice_number": {"type": "string"}, "limit": {"type": "integer"},
+                    "status": {"enum": ["Valide", "Annulé"]}},
+                "required": [], "additionalProperties": False}}}]
+    return values
+
 def write_rows(path, values):
     path.write_text("".join(json.dumps(row) + "\n" for row in values))
 
@@ -52,7 +96,7 @@ class CorrectivePreparationTests(unittest.TestCase):
         self.extra = self.root / "supplement"
         self.source.mkdir()
         self.extra.mkdir()
-        self.training = (rows(2069, "facturation", "BASE-FACT")
+        self.training = (rows(2069, "facturation", "BASE-FACT", 16, tool_count=18)
                          + rows(709, "management_projet", "TRAIN-MP", 12)
                          + rows(325, "design_workflow", "TRAIN-DW"))
         self.validation = (rows(133, "facturation", "VALID-FACT")
@@ -83,8 +127,9 @@ class CorrectivePreparationTests(unittest.TestCase):
             with patch.object(subject, "REFERENCE_SHA256", pins):
                 yield
 
-    def prepare(self, name="candidate"):
-        return subject.prepare(self.source, self.extra, self.root / name)
+    def prepare(self, name="candidate", *, facturation_replay_rows=0):
+        return subject.prepare(self.source, self.extra, self.root / name,
+                               facturation_replay_rows=facturation_replay_rows)
 
     def test_counts_prefixes_validation_and_sources_are_preserved(self):
         before = {str(p): p.read_bytes() for folder in (self.source, self.extra)
@@ -191,7 +236,7 @@ class CorrectivePreparationTests(unittest.TestCase):
         self.assertFalse((self.root / "candidate").exists())
 
     def test_missing_coverage_cannot_be_hidden(self):
-        self.training = (rows(2069, "facturation", "BASE-FACT")
+        self.training = (rows(2069, "facturation", "BASE-FACT", 16, tool_count=18)
                          + rows(709, "management_projet", "TRAIN-MP", 43)
                          + rows(325, "design_workflow", "TRAIN-DW"))
         write_rows(self.source / "train.jsonl", self.training)
@@ -204,6 +249,172 @@ class CorrectivePreparationTests(unittest.TestCase):
         for output in (self.root / "candidate", self.source / "nested", self.extra / "nested"):
             with self.subTest(output=output), self.assertRaisesRegex(ValueError, "isolated"):
                 subject.prepare(self.source, self.extra, output)
+
+    def test_expanded_replay_preserves_default_rows_sources_and_validation(self):
+        before = {str(p): p.read_bytes() for folder in (self.source, self.extra)
+                  for p in folder.iterdir()}
+        with self.approved():
+            self.prepare("default")
+            manifest = self.prepare("expanded", facturation_replay_rows=128)
+        old = (self.root / "default/train.jsonl").read_bytes().splitlines()
+        new = (self.root / "expanded/train.jsonl").read_bytes().splitlines()
+        self.assertEqual(new[:72], old[:72])
+        self.assertEqual(new[200:], old[72:])
+        self.assertEqual(len(new), 384)
+        source_rows = set((self.source / "train.jsonl").read_bytes().splitlines())
+        self.assertTrue(all(line in source_rows for line in new[72:200]))
+        self.assertTrue(all(Path(name).read_bytes() == raw for name, raw in before.items()))
+        self.assertEqual((self.root / "expanded/valid.jsonl").read_bytes(),
+                         (self.source / "valid.jsonl").read_bytes())
+        self.assertEqual(manifest["by_application"],
+                         {"facturation": 200, "management_projet": 112, "design_workflow": 72})
+
+    def test_expanded_replay_covers_all_facturation_tools_and_features(self):
+        _, before = subject.original.retained(self.training, "facturation", 128)
+        self.assertTrue(any(info["uncovered"] for info in before["feature_coverage"].values()))
+        with self.approved():
+            self.prepare(facturation_replay_rows=128)
+        plan = json.loads((self.root / "candidate/retained-plan.json").read_text())
+        facturation = plan["applications"]["facturation"]
+        self.assertEqual(len(facturation["by_tool"]), 18)
+        self.assertEqual(sum(facturation["by_tool"].values()), 128)
+        self.assertTrue(all(not info["uncovered"]
+                            for info in facturation["feature_coverage"].values()))
+        self.assertLess(facturation["first_full_feature_coverage_at"], 128)
+        self.assertFalse(plan["evaluation_outcomes_used_for_selection"])
+
+    def test_expanded_replay_metadata_remains_unbound_and_untrained(self):
+        with self.approved():
+            manifest = self.prepare(facturation_replay_rows=128)
+        self.assertEqual(manifest["variant"], "facturation-native-tool-replay")
+        self.assertEqual(manifest["facturation_replay_rows"], 128)
+        self.assertEqual(manifest["updates_requested"], 384)
+        self.assertIsNone(manifest["requested_experimental_parent"]["actual_model_sha256"])
+        self.assertIsNone(manifest["current_pilot_failure_evidence_sha256"])
+        self.assertFalse(manifest["requested_experimental_parent"]["accepted"])
+        for key in ("numerical_admission", "training_executed", "model_accepted",
+                    "production_activation", "next_application_training_started"):
+            self.assertFalse(manifest[key])
+        data = [json.loads(line) for line in
+                (self.root / "candidate/train.jsonl").read_text().splitlines()]
+        self.assertTrue(all("language" not in row for row in data[72:]))
+
+    def test_development_overlap_in_facturation_replay_is_rejected(self):
+        indices, _ = subject.facturation_retained(self.training, 128)
+        self.validation[0] = deepcopy(self.training[indices[0]])
+        write_rows(self.source / "valid.jsonl", self.validation)
+        with self.approved(), self.assertRaisesRegex(ValueError, "overlap"):
+            self.prepare(facturation_replay_rows=128)
+        self.assertFalse((self.root / "candidate").exists())
+
+    def test_supplement_overlap_in_facturation_replay_is_rejected(self):
+        indices, _ = subject.facturation_retained(self.training, 128)
+        self.supplement[0] = deepcopy(self.training[indices[0]])
+        self.supplement[0]["language"] = "fr"
+        write_rows(self.extra / "contrasts.jsonl", self.supplement)
+        with self.approved(), self.assertRaisesRegex(ValueError, "Duplicate"):
+            self.prepare(facturation_replay_rows=128)
+        self.assertFalse((self.root / "candidate").exists())
+
+    def test_insufficient_facturation_replay_coverage_is_rejected(self):
+        with self.approved(), self.assertRaisesRegex(ValueError, "every measured shape/enum"):
+            self.prepare(facturation_replay_rows=18)
+        self.assertFalse((self.root / "candidate").exists())
+
+    def test_invalid_facturation_replay_counts_are_rejected(self):
+        for value in (True, -1, 1.5, None):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "non-negative integer"):
+                self.prepare(facturation_replay_rows=value)
+        self.assertFalse((self.root / "candidate").exists())
+
+    def test_missing_facturation_tool_is_rejected(self):
+        altered = deepcopy(self.training)
+        for row in altered:
+            if row["application"] == "facturation" and row["tools"][0]["function"]["name"] == "tool_17":
+                row["tools"][0]["function"]["name"] = "tool_16"
+                row["messages"][-1]["tool_calls"][0]["function"]["name"] = "tool_16"
+        with self.assertRaisesRegex(ValueError, "18 native tools"):
+            subject.facturation_retained(altered, 128)
+
+    def test_expanded_outputs_are_deterministic(self):
+        with self.approved():
+            self.prepare("expanded-one", facturation_replay_rows=128)
+            self.prepare("expanded-two", facturation_replay_rows=128)
+        for name in ("train.jsonl", "valid.jsonl", "retained-plan.json", "manifest.json"):
+            self.assertEqual((self.root / "expanded-one" / name).read_bytes(),
+                             (self.root / "expanded-two" / name).read_bytes())
+
+    def test_priority_conjunctions_preserve_every_edit_and_exact_lookup_shape(self):
+        values = critical_rows()
+        selected, plan = subject.facturation_retained(values, 128)
+        actual_changes, actual_lookups = set(), set()
+        expected_changes, expected_lookups = set(), set()
+        for i, row in enumerate(values):
+            function = row["messages"][-1]["tool_calls"][0]["function"]
+            args = function["arguments"]
+            if function["name"] == "prepare_change":
+                key = (args["resource"], args["operation"], tuple(sorted(args.get("changes", {}))))
+                expected_changes.add(key)
+                if i in selected:
+                    actual_changes.add(key)
+            elif function["name"] == "search_payments":
+                key = (tuple(sorted(args)), args.get("status"))
+                expected_lookups.add(key)
+                if i in selected:
+                    actual_lookups.add(key)
+        self.assertEqual(len(expected_changes), 16)
+        self.assertEqual(len(expected_lookups), 6)
+        self.assertEqual(actual_changes, expected_changes)
+        self.assertEqual(actual_lookups, expected_lookups)
+        coverage = plan["priority_conjunction_coverage"]
+        self.assertEqual(coverage["selected"], coverage["available"])
+        self.assertFalse(coverage["uncovered"])
+
+    def test_marginal_coverage_alone_cannot_satisfy_priority_budget(self):
+        values = critical_rows()
+        _, plan = subject.facturation_retained(values, 128)
+        marginal_budget = plan["first_full_feature_coverage_at"]
+        self.assertLess(marginal_budget, plan["first_full_priority_conjunction_coverage_at"])
+        with self.assertRaisesRegex(ValueError, "critical or exact-lookup"):
+            subject.facturation_retained(values, marginal_budget)
+
+    def test_free_text_and_numeric_values_do_not_inflate_conjunctions(self):
+        _, plan = subject.facturation_retained(self.training, 128)
+        self.assertEqual(plan["conjunction_coverage"]["tool_0"]["available"], 1)
+        self.assertEqual(plan["conjunction_coverage"]["tool_5"]["available"], 16)
+        for tool, inventory in plan["conjunction_coverage"].items():
+            self.assertEqual(inventory["selected"] + len(inventory["uncovered"]),
+                             inventory["available"])
+
+    def test_remaining_combinations_are_reported_without_claiming_full_coverage(self):
+        values = rows(720, "facturation", "COMBINATIONS", tool_count=18)
+        for i, row in enumerate(values):
+            function = row["messages"][-1]["tool_calls"][0]["function"]
+            if function["name"] != "tool_5":
+                continue
+            mask = i // 18 + 1
+            function["arguments"] = {f"field_{bit}": f"SYN-{i}" for bit in range(6)
+                                     if mask & (1 << bit)}
+            row["tools"][0]["function"]["parameters"] = {
+                "type": "object", "properties": {f"field_{bit}": {"type": "string"}
+                                                 for bit in range(6)},
+                "additionalProperties": False}
+        _, plan = subject.facturation_retained(values, 24)
+        inventory = plan["conjunction_coverage"]["tool_5"]
+        self.assertTrue(inventory["uncovered"])
+        self.assertLess(inventory["selected"], inventory["available"])
+
+    def test_offered_tool_schema_variants_are_kept_as_distinct_bundles(self):
+        values = rows(360, "facturation", "BUNDLES", tool_count=18)
+        for i, row in enumerate(values):
+            if row["tools"][0]["function"]["name"] == "tool_0":
+                row["tools"][0]["function"]["parameters"]["properties"]["query"][
+                    "maxLength"] = 100 if i % 36 else 200
+        _, plan = subject.facturation_retained(values, 64)
+        bundles = plan["offered_tool_bundle_coverage"]
+        self.assertEqual(bundles["available"], 19)
+        self.assertEqual(bundles["selected"], 19)
+        self.assertFalse(bundles["uncovered"])
 
     def test_outputs_are_deterministic(self):
         with self.approved():

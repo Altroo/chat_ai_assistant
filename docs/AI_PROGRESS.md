@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Optional Facturation replay prepared - 19 October 2026
+
+IMPLEMENTED and verified as local data preparation only: an optional 128-row Facturation replay extends the conditional corpus to 384 rows, consisting of 200 Facturation, 112 Management Projet and 72 Design Workflow examples. All 216 original pilot rows remain byte-preserved. The default 256-row corpus still produces identical train, validation and retained-plan bytes. The 275 development rows and frozen comparison controls remain unchanged.
+
+TRAIN-only selection covers all 18 Facturation tools, 174 measured marginal features, all 25 edit/delete resource and field-shape combinations, all 51 designated critical or exact-lookup conjunctions, and all 58 distinct offered-tool schema bundles. It covers 119 of 418 full argument conjunctions; the remaining 299 are explicitly listed in the private retained plan. The broader feature definition includes five resource codes from schemas that use plain strings. These inventory counts are not model accuracy or semantic/security coverage.
+
+Forty-nine affected synthetic tests pass. Source/data changes, duplicate/development inputs, missing mandatory coverage and output reuse are rejected. Model identity and failure evidence remain unbound. No further numerical work, model acceptance, production activation or next-application training is authorized by this preparation. The current Colibri comparison continues unchanged.
+
+[Optional replay preparation and limitations](../training/reports/facturation-entity-pilot-v2-facturation-replay-preparation.json).
+
 ## Entity pilot training completed - 19 October 2026
 
 IMPLEMENTED and verified: the server-only pilot completed all 216 scheduled updates and the final 275-case validation. Each of Facturation, Management Projet and Design Workflow received 72 unique TRAIN examples. All updates are contiguous and finite. The final adapter equals saved checkpoint 216, and checkpoints 72, 144 and 216 match the earlier finite-tensor inspections. The trainer recorded approximately 2.49 hours of execution.
