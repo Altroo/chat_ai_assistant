@@ -1,0 +1,58 @@
+{
+  "version": "facturation-entity-pilot-v1-initial-validation",
+  "status": "INITIAL VALIDATION COMPLETE; OPTIMIZATION RUNNING; NOT ACCEPTED",
+  "observed_utc": "2026-10-19T20:02:19.116429+00:00",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "initial_validation_cases": 275,
+  "initial_baseline_exact_match": true,
+  "baseline_semantic_loss_by_application": {
+    "facturation": 0.061982057838501796,
+    "management_projet": 0.052404701931964275,
+    "design_workflow": 0.04271494309662671
+  },
+  "baseline_macro_semantic_loss": 0.05236723428903093,
+  "baseline_metric": "Teacher-forced assistant loss with supplied expected answers; not generated action accuracy.",
+  "original_parent_validation_and_precision_config_identical": true,
+  "training": {
+    "updates_observed": 6,
+    "updates_expected": 216,
+    "complete_epochs": 1,
+    "parent_checkpoint": 600,
+    "threads": 14,
+    "completed": false,
+    "by_application_expected": {
+      "facturation": 72,
+      "management_projet": 72,
+      "design_workflow": 72
+    }
+  },
+  "comparison_preparation": {
+    "reviewed": true,
+    "single_reviewer": true,
+    "offline_tests_passed": 39,
+    "original_controls_unchanged": 118,
+    "candidate_steps": [
+      0,
+      72,
+      144,
+      216
+    ],
+    "actual_completed_artifact_review_required_before_inference": true,
+    "model_inference_started": false,
+    "control_files_pinned": 141
+  },
+  "observation_evidence_sha256": "ba60e2c378803829e0b50207308725b8fdb66c242febe2fdeabdebda1719a625",
+  "new_accuracy_measured": false,
+  "model_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "production_inference_unchanged_and_healthy": true,
+  "next_application_training_started": false,
+  "limitations": [
+    "The exact baseline match confirms a consistent starting point, not improved model accuracy.",
+    "Only six optimizer updates were recorded in this captured observation; no successor checkpoint was available.",
+    "Every declared checkpoint and unchanged development, retained, critical, held-out and control gate remain required.",
+    "Native backend permission/security acceptance remains separate from model planning evaluation."
+  ]
+}

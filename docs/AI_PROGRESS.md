@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Entity pilot initial validation completed - 19 October 2026
+
+IMPLEMENTED and verified: the 275-case initial validation finished and optimization began. The captured observation contains six of 216 planned updates. Initial losses match the original checkpoint-600 baseline exactly for Facturation, Management Projet and Design Workflow, with unchanged model artifacts, validation bytes and declared precision/configuration.
+
+The separate Colibri comparison preparation passed 39 offline tests and independent review of its 141-file closure, including all 118 historical controls. Actual successful training completion and an independently reviewed completion packet are required before export or inference.
+
+PARTIALLY IMPLEMENTED: no new generated-action accuracy has been measured, no successor checkpoint is available in this observation and zero of six applications are fully accepted. Production inference remains healthy and unchanged.
+
+[Initial validation observation](../training/reports/facturation-entity-pilot-v1-initial-validation.json).
+
 ## Entity pilot started - 19 October 2026
 
 IMPLEMENTED and verified: the server-only 216-update pilot has an actual training process and original checkpoint-600 model provenance. The captured launch observation has zero optimizer updates; initial validation is not yet complete. The shared model is unchanged in production.

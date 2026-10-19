@@ -1,5 +1,13 @@
 # Verification and acceptance record
 
+## Entity pilot baseline consistency and comparison preparation - 19 October 2026
+
+Verified: the actual 275-case initial validation exactly reproduces the original teacher-forced baseline for all three applications. Parent model artifacts, validation bytes and seed, device, dtype, attention, threads, context, thinking, checkpointing, semantic loss weight and LoRA settings match. The observed numerical process then recorded six updates.
+
+Passed: 26 offline comparison tests and 13 completion-collector tests. They cover actual invocation/binding identity, failed or changed completion rejection, pending completion review, all scheduled candidates, frozen scoring, final-adapter mapping and owned-worker cleanup. The sole reviewer cleared the 141-file preparation closure. These tests and baseline consistency are not a new model accuracy result.
+
+[Exact captured observation and limitations](../training/reports/facturation-entity-pilot-v1-initial-validation.json).
+
 ## Entity pilot actual preflight and launch - 19 October 2026
 
 Passed on the server: all 216 TRAIN and 275 validation rows matched the exact Colibri parser and runtime template, valid loss boundaries, semantic-token alignment and serving output budgets. Maximum total lengths were 3,320/7,496 tokens; maximum target lengths were 131/116, within the 512-token output budget.

@@ -1,5 +1,13 @@
 # Model training and evaluation
 
+## Entity pilot initial validation completed - 19 October 2026
+
+Initial validation completed on all 275 unchanged cases. The loss values match the original run exactly across the three applications, confirming the same parent/validation/precision starting point. Optimization is now running; six of the planned 216 updates were captured.
+
+The values are teacher-forced losses with expected answers supplied, not accuracy percentages. No model acceptance or production activation follows this observation. The separate comparison source is prepared and reviewed, with 39 offline tests passing; completed weights must still be independently verified before Colibri generation.
+
+[Initial validation evidence](../training/reports/facturation-entity-pilot-v1-initial-validation.json).
+
 ## Entity pilot started - 19 October 2026
 
 The bounded pilot is now running through the existing server-only PyTorch/PEFT framework, from the original checkpoint 600 FP32. Its actual child process and provenance were verified after the reviewed preflight. The launch observation contains zero optimizer updates; initial validation is not yet complete. Planned updates remain 216, with 72 rows per application and checkpoints every 72 updates.
