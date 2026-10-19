@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Small entity pilot prepared - 19 October 2026
+
+IMPLEMENTED and verified: prepared 72 TRAIN-only Facturation entity-copying examples from 18 distinct source rows, with 36 English and 36 French requests. Client names, article terms/references and payment search literals vary together with their target arguments. Native schemas, argument keys, filters, trusted context and history remain unchanged.
+
+The isolated pilot corpus contains 216 rows: those 72 examples plus 72 byte-preserved TRAIN rows from each of Management Projet and Design Workflow. Each retained sample covers all nine native tools. Selection uses TRAIN-only tool and shape/enum coverage with stable hash ties. Nine MP features remain uncovered; missing source language metadata stays missing. The original 275-row validation split is byte-identical.
+
+All 54 generator regression tests and seven offline preflight guard tests passed. The single reviewer independently reproduced both prepared corpora. PARTIALLY IMPLEMENTED: server tokenizer preflight, numerical training, Colibri evaluation and acceptance remain pending. Planned training is one 216-update epoch from the original checkpoint 600, with checkpoint comparisons at 72, 144 and 216. Preparation does not predict 95 percent accuracy. Zero of six applications are fully accepted.
+
+[Preparation results](../training/reports/facturation-entity-pilot-v1-preparation.json) and [separate evaluation policy](../training/reports/facturation-entity-pilot-v1-evaluation-policy.json).
+
 ## Full refinement evaluation rejected - 19 October 2026
 
 IMPLEMENTED and verified: all eight frozen candidates completed the Colibri development comparison. Checkpoint 2048 was selected, then completed 275 shared development cases, 438 held-out cases and 48 additional controls. The evaluation process exited successfully; the model failed overall acceptance.

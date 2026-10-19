@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Entity pilot preparation checks - 19 October 2026
+
+Passed: 54 generator regression tests and seven offline one-shot preflight launch guard tests. The single reviewer reproduced the exact 216-row corpus and selection plan, confirmed all 144 retained source lines and 72 cleared supplement lines, and checked unchanged validation bytes, schema validity, canonical uniqueness and development-input separation.
+
+Covered tests include grounded literal substitution, preservation of nonentity filters and trusted history, native payment-query meaning, article alias-key preservation, invalid schemas, unoffered tools, deterministic retained sampling, conflicting canonical targets, path traversal, tampered data/controller bindings, competing jobs and the host memory reserve.
+
+These are preparation checks. Server tokenizer/template/parser preflight, training, generated model accuracy and native backend security acceptance have not run for this pilot. Tool-family and shape coverage do not establish all semantic behavior or retention safety.
+
+[Exact preparation report](../training/reports/facturation-entity-pilot-v1-preparation.json).
+
 ## Full refinement evaluation rejected - 19 October 2026
 
 IMPLEMENTED and verified: seven new checkpoints each generated all 133 Facturation development cases; the original checkpoint-600 baseline reused its 133 frozen results. The selected checkpoint 2048 then generated 275 shared development cases, 438 held-out cases and 48 additional controls, for 1,692 new generation cases in total. All exact case IDs, labels, ordered shards, summaries and artifact bindings passed integrity checks. One reviewer independently reproduced selection, all 15 held-out subsets and final gates with unchanged scoring.

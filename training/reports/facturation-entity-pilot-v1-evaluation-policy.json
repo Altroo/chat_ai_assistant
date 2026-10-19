@@ -1,0 +1,122 @@
+{
+  "version": "facturation-entity-pilot-v1-functional-selection",
+  "status": "FROZEN PRE-PILOT POLICY; NO NUMERICAL ADMISSION",
+  "created_utc": "2026-10-19T19:27:23.921341+00:00",
+  "application": "facturation",
+  "model_family": "Qwen3.5-0.8B",
+  "runtime": "Colibri",
+  "training_manifest_sha256": "e45463a270e61db770ca2bf6503f990fa3be82b2c890add9b257bb89a2df6baa",
+  "training_sha256": "de28c9ce947c4310f22b8df3460944d3ee1d3b653e559633b919849f4c92676a",
+  "source_validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+  "rows": 133,
+  "underlying_scenarios": 104,
+  "evaluation_sha256": "ac1b70e353fc9ec632b21afd4d69de9743db24e07e865cb9f4b804d22b32ce58",
+  "candidate_steps": [
+    0,
+    72,
+    144,
+    216
+  ],
+  "baseline": {
+    "candidate_step": 0,
+    "original_selected_checkpoint": 600,
+    "completed_baseline_report_sha256": "388e6dfd0fe915cb13f85deb9e85aaf16df7272c8f2306ee0e3dd54290fcc258",
+    "rejected_v3_adapter_allowed": false
+  },
+  "candidate_adapters": {
+    "72": "checkpoint-72",
+    "144": "checkpoint-144",
+    "216": "final"
+  },
+  "selection": [
+    "highest Facturation development full-action fraction",
+    "highest Facturation development valid-structure fraction",
+    "lowest recorded Facturation validation semantic loss",
+    "lowest checkpoint step"
+  ],
+  "selection_loss_source": "Per-checkpoint Facturation semantic validation loss from the complete recorded history; the generic selector field is validation_macro_loss.",
+  "trainer_loss_selection_is_separate": true,
+  "selection_script_sha256": "d5952e6aa77a0bc23319f046fe83f870bc527d58359b17aa51a6b0ef774bedd1",
+  "acceptance_sha256": "c9efde5b48a32d2900ed581477e65e677865a875b08400fe67fe70a521fcaebc",
+  "evaluator_sha256": "dca2abf86b2162ccd99b868108dd957f5ef600fe196a5bf9f21b15cafa4fbe7b",
+  "max_output_tokens": 512,
+  "context_tokens": 8192,
+  "thinking": false,
+  "mode": "native",
+  "shared_validation_regression_sha256": "b007326c32de9ede8424218ad4196a663324b1ad516df87a69df957f1b846a8b",
+  "regression_manifest_sha256": "6e8df0592ddcde75fd2d4c1277aaf789545cd7f1ca9224fc756787abe22e73f3",
+  "additional_controls_manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a",
+  "post_selection": {
+    "shared_development_cases": {
+      "facturation": 133,
+      "management_projet": 78,
+      "design_workflow": 64
+    },
+    "unchanged_regression_cases": {
+      "facturation": 108,
+      "management_projet": 200,
+      "design_workflow": 130
+    },
+    "additional_controls": {
+      "facturation": 16,
+      "management_projet": 16,
+      "design_workflow": 16
+    },
+    "tool_selection_minimum_percent": 95,
+    "full_action_minimum_percent": 95,
+    "exact_arguments_minimum_percent": 95,
+    "valid_structure_minimum_percent": 99,
+    "critical_and_clarification_cases": "Every critical proposed-change and clarification case must match; all existing subset and per-application gates remain required.",
+    "retained_application_development_metrics": "No decline from original checkpoint 600 in tools, valid structures, full actions or eligible exact arguments.",
+    "acceptance_reranking_allowed": false,
+    "production_activation": false,
+    "next_application_training_authorized": false
+  },
+  "admission_required": [
+    "Actual successful terminal training invocation and complete source/data/model/framework provenance.",
+    "All scheduled adapter directories checkpoint-72, checkpoint-144, checkpoint-216 and final, unchanged validation history and selected output identities verified; evaluated successors are steps 72, 144 and 216, with step 216 mapped to final.",
+    "Fresh reviewed export binding with actual report, adapter and exported model hashes, runtime/tokenizer fingerprints and owned-worker cleanup.",
+    "Identical frozen provider, evaluator, scorer, case inputs and inference settings; verified baseline reuse or rerun.",
+    "Every listed development candidate completes before selection; no acceptance or additional-control outcomes influence checkpoint ranking."
+  ],
+  "limitations": [
+    "Frozen before any numerical work for this pilot.",
+    "Only 72 new Facturation literal variants; source wording and existing alias inconsistency remain.",
+    "Retained samples cover all native tool families and reported shape/enum features, not all behavior.",
+    "Most retained source rows lack individual EN/FR labels; no inferred language score or balanced replay claim.",
+    "The trainer minimum macro-loss adapter remains diagnostic; compare every declared development candidate.",
+    "Repeatedly inspected regression/control cases are safeguards, not fresh blind statistical certification.",
+    "No 95 percent result is predicted. Existing subset, critical, clarification and no-decline gates remain unchanged.",
+    "No business operation executes during model evaluation; native backend security acceptance remains separately required.",
+    "No production activation or later-application training is authorized by pilot selection."
+  ],
+  "training_config": {
+    "complete_epochs": 1,
+    "updates": 216,
+    "threads": 14,
+    "context_tokens": 8192,
+    "learning_rate": 1e-05,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "semantic_loss_weight": 4,
+    "attention": "sdpa",
+    "gradient_checkpointing": "nonreentrant",
+    "checkpoint_interval": 72,
+    "validation_interval": 72,
+    "model_family": "Qwen3.5-0.8B",
+    "parent": "original checkpoint 600 FP32, never rejected successor",
+    "maximum_training_hours": 6,
+    "maximum_unit_hours": 7,
+    "memory_limit_gib": 32,
+    "swap_allowed": false,
+    "spare_host_memory_floor_percent": 10
+  },
+  "pilot_question": "Does TRAIN-only literal diversity improve exact entity copying without retained-app regression?",
+  "pilot_rows": {
+    "facturation": 72,
+    "management_projet": 72,
+    "design_workflow": 72
+  },
+  "next_step_if_rejected": "Review TRAIN/development evidence; do not activate or automatically extend epochs."
+}

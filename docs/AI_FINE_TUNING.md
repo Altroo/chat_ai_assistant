@@ -1,5 +1,15 @@
 # Model training and evaluation
 
+## Small entity pilot prepared - 19 October 2026
+
+A bounded 216-update experiment is prepared to test literal copying before another long refinement. It uses 72 new Facturation examples and 72 retained TRAIN examples from each previously trained application. The 18 Facturation parents supply four literal variants each, balanced across three native search tools and English/French. The original source questions, schemas, filters and alias keys are preserved.
+
+Retention selection is deterministic and TRAIN-only. All nine tools per retained application are covered, but nine MP argument-shape/schema-enum features remain uncovered. Original retained rows are byte-preserved and mostly lack individual language labels; no balanced replay-language claim is made.
+
+The intended framework and parent are unchanged: server-only PyTorch/PEFT LoRA from the original checkpoint 600 FP32, never a rejected successor. Every declared checkpoint must complete the frozen Colibri development comparison before selection. All retained no-decline, subset, critical, clarification and existing acceptance gates remain required. No new numerical work or score is claimed at preparation.
+
+[Preparation evidence](../training/reports/facturation-entity-pilot-v1-preparation.json) and [pre-pilot policy](../training/reports/facturation-entity-pilot-v1-evaluation-policy.json).
+
 ## Full refinement evaluation rejected - 19 October 2026
 
 The successful 3,103-update shared-model refinement was evaluated through Colibri with the frozen provider, labels, scorer and selection policy. All saved candidates were compared. Loss selected checkpoint 512 diagnostically; full-action development scoring selected checkpoint 2048. Held-out outcomes did not rerank candidates.

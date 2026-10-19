@@ -1,0 +1,90 @@
+{
+  "version": "facturation-entity-pilot-v1-preparation",
+  "status": "PREPARED; NOT TRAINED OR ACCEPTED",
+  "observed_utc": "2026-10-19T19:27:56.466174+00:00",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "focus_application": "facturation",
+  "question": "Does literal diversity improve entity argument copying without retained-app regression?",
+  "dataset": {
+    "rows": 216,
+    "by_application": {
+      "facturation": 72,
+      "management_projet": 72,
+      "design_workflow": 72
+    },
+    "new_facturation_rows": 72,
+    "source_facturation_parents": 18,
+    "facturation_by_language": {
+      "en": 36,
+      "fr": 36
+    },
+    "facturation_by_tool": {
+      "search_clients": 24,
+      "search_articles": 24,
+      "search_payments": 24
+    },
+    "retained_rows_byte_preserved": 144,
+    "retained_native_tool_families_per_application": 9,
+    "retained_missing_language_metadata_preserved": true,
+    "development_rows": 275,
+    "development_bytes_unchanged": true,
+    "manifest_sha256": "e45463a270e61db770ca2bf6503f990fa3be82b2c890add9b257bb89a2df6baa",
+    "files": {
+      "train.jsonl": "de28c9ce947c4310f22b8df3460944d3ee1d3b653e559633b919849f4c92676a",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+      "retained-plan.json": "eadeb3af47d9179cdead8b1660fd4f053c989f2fd54017b8f437d9d87906cc6f"
+    },
+    "selection": "TRAIN-only native-tool round-robin; unseen argument shape/schema-enum features; stable hash tie-break",
+    "management_projet_uncovered_features": 9
+  },
+  "verification": {
+    "data_generator_tests_passed": 54,
+    "offline_preflight_guard_tests_passed": 7,
+    "single_reviewer": "Both the 72-row supplement and 216-row assembled corpus independently reproduced and cleared.",
+    "server_tokenizer_preflight": "PENDING",
+    "numerical_admission": "PENDING"
+  },
+  "planned_training": {
+    "parent": "original checkpoint 600 FP32",
+    "rejected_successor_used": false,
+    "complete_epochs": 1,
+    "updates": 216,
+    "threads": 14,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "learning_rate": 1e-05,
+    "semantic_loss_weight": 4,
+    "attention": "sdpa",
+    "gradient_checkpointing": "nonreentrant",
+    "checkpoint_and_validation_interval": 72
+  },
+  "planned_evaluation": {
+    "development_candidates": [
+      0,
+      72,
+      144,
+      216
+    ],
+    "selection": "Unchanged Facturation development action/structure/loss/step ranking",
+    "shared_development_cases": 275,
+    "held_out_cases": 438,
+    "additional_controls": 48,
+    "original_inputs_labels_scorer_provider_unchanged": true,
+    "retained_no_decline_and_all_critical_checks_required": true
+  },
+  "training_started": false,
+  "new_accuracy_score": null,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "Preparation tests and coverage do not predict 95 percent model accuracy.",
+    "Literal variants preserve source wording and existing article alias keys.",
+    "Retained sampling cannot prove regression safety; nine available MP shape/enum features remain uncovered.",
+    "Most retained rows have unspecified language metadata; no inferred balanced language split.",
+    "Repeatedly inspected held-out/control cases are safeguards, not fresh blind certification.",
+    "Native backend permission/security testing is separate from model action comparison."
+  ]
+}
