@@ -1,5 +1,24 @@
 # Verification and acceptance record
 
+## Focused-app status reporting - 19 October 2026
+
+Eight synthetic reporting tests pass. They verify that a focused application's recorded pass is visible when later applications fail, retention failure remains visible without erasing that result, three applications cannot stand in for six, and even six recorded model passes do not prove native security or authorize work. Running the reporter against the completed 3,103-update comparison preserves its failed Facturation/global gates and its development retention failure.
+
+Run the tests:
+
+```sh
+python3 -B -m unittest training.tests.test_focused_stage_status_v1 -v
+```
+
+After a completed comparison has selected and evaluated a successor, produce the separate read-only status:
+
+```sh
+python3 -B training/scripts/report_focused_stage_v1.py \
+  --comparison <completed-comparison-directory> --application facturation
+```
+
+The report checks terminal/checkpoint/application consistency, records the exact hashes of its five input files and rejects changes during analysis. It consumes existing gate verdicts; it does not rescore predictions, rerank checkpoints, change thresholds or prove provenance beyond those input snapshots. Retention is explicitly limited to the recorded development comparisons. A baseline-only outcome continues to use its existing baseline result because no selected-successor gate packet exists. The frozen comparison files remain unchanged. These checks are not new model-accuracy or backend-security test results.
+
 ## Entity pilot baseline consistency and comparison preparation - 19 October 2026
 
 Verified: the actual 275-case initial validation exactly reproduces the original teacher-forced baseline for all three applications. Parent model artifacts, validation bytes and seed, device, dtype, attention, threads, context, thinking, checkpointing, semantic loss weight and LoRA settings match. The observed numerical process then recorded six updates.

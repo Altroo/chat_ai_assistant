@@ -1,5 +1,13 @@
 # Chat AI Assistant progress
 
+## Focused-app reporting correction - 19 October 2026
+
+IMPLEMENTED and verified as reporting only: `report_focused_stage_v1.py` separates the focused application's recorded model gate, retained development results, all evaluated applications and six-app model coverage. It does not reuse the legacy focused flag that can be suppressed by another application's failure. The frozen pilot driver, checkpoint selection, model scores and acceptance thresholds remain unchanged.
+
+Eight synthetic regression tests pass, including mixed application results, retention failure, incomplete or inconsistent evidence, and the distinction between six model gates and native security. A read-only run against the completed 3,103-update comparison still reports Facturation and global model gates as failed. Native security is unassessed by this reporter; training and activation are never authorized by its output.
+
+PARTIALLY IMPLEMENTED: the entity pilot and its generated-action comparison remain incomplete. No new accuracy, focused-model acceptance or next-application training is claimed.
+
 ## Entity pilot initial validation completed - 19 October 2026
 
 IMPLEMENTED and verified: the 275-case initial validation finished and optimization began. The captured observation contains six of 216 planned updates. Initial losses match the original checkpoint-600 baseline exactly for Facturation, Management Projet and Design Workflow, with unchanged model artifacts, validation bytes and declared precision/configuration.
