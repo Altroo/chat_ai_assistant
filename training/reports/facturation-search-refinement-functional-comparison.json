@@ -1,0 +1,1402 @@
+{
+  "additional_controls": {
+    "design_workflow": {
+      "clarifications": {
+        "count": 4,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 8,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 4,
+          "passed": 2,
+          "percent": 50.0
+        },
+        "percent": {
+          "action_matches": 75.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 12,
+        "passed": 8,
+        "percent": 66.67
+      },
+      "full_action_percent": 75.0,
+      "full_actions": 12,
+      "passed": false,
+      "structured": 16,
+      "tools": 16
+    },
+    "facturation": {
+      "clarifications": {
+        "count": 2,
+        "counts": {
+          "action_matches": 2,
+          "structured_valid": 2,
+          "tool_correct": 2
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 4,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 2,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 14,
+        "passed": 7,
+        "percent": 50.0
+      },
+      "full_action_percent": 56.25,
+      "full_actions": 9,
+      "passed": false,
+      "structured": 16,
+      "tools": 16
+    },
+    "management_projet": {
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 10,
+        "passed": 10,
+        "percent": 100.0
+      },
+      "full_action_percent": 100.0,
+      "full_actions": 16,
+      "passed": true,
+      "structured": 16,
+      "tools": 16
+    }
+  },
+  "all_eight_candidates_compared": true,
+  "application_focus": "facturation",
+  "application_status": {
+    "contrat": "NOT TRAINED BY THIS REFINEMENT; NOT ACCEPTED",
+    "design_workflow": "MODEL ACCEPTANCE FAILED",
+    "facturation": "MODEL ACCEPTANCE FAILED",
+    "gestion_magasin": "NOT TRAINED BY THIS REFINEMENT; NOT ACCEPTED",
+    "management_projet": "MODEL ACCEPTANCE FAILED",
+    "reservation": "NOT TRAINED BY THIS REFINEMENT; NOT ACCEPTED"
+  },
+  "candidate_development_metrics": {
+    "0": {
+      "cases": 133,
+      "development_targets_passed": false,
+      "exact_arguments_correct": 88,
+      "exact_arguments_eligible": 111,
+      "exact_arguments_percent": 79.27927927927928,
+      "full_action_correct": 110,
+      "full_action_percent": 82.70676691729324,
+      "structured_valid": 133,
+      "structured_valid_percent": 100.0,
+      "tool_correct": 132,
+      "tool_selection_percent": 99.24812030075188
+    },
+    "1024": {
+      "cases": 133,
+      "development_targets_passed": false,
+      "exact_arguments_correct": 93,
+      "exact_arguments_eligible": 111,
+      "exact_arguments_percent": 83.78378378378379,
+      "full_action_correct": 114,
+      "full_action_percent": 85.71428571428571,
+      "structured_valid": 133,
+      "structured_valid_percent": 100.0,
+      "tool_correct": 131,
+      "tool_selection_percent": 98.49624060150376
+    },
+    "1536": {
+      "cases": 133,
+      "development_targets_passed": false,
+      "exact_arguments_correct": 96,
+      "exact_arguments_eligible": 111,
+      "exact_arguments_percent": 86.48648648648648,
+      "full_action_correct": 116,
+      "full_action_percent": 87.21804511278195,
+      "structured_valid": 133,
+      "structured_valid_percent": 100.0,
+      "tool_correct": 131,
+      "tool_selection_percent": 98.49624060150376
+    },
+    "2048": {
+      "cases": 133,
+      "development_targets_passed": false,
+      "exact_arguments_correct": 100,
+      "exact_arguments_eligible": 111,
+      "exact_arguments_percent": 90.09009009009009,
+      "full_action_correct": 121,
+      "full_action_percent": 90.97744360902256,
+      "structured_valid": 132,
+      "structured_valid_percent": 99.24812030075188,
+      "tool_correct": 132,
+      "tool_selection_percent": 99.24812030075188
+    },
+    "2560": {
+      "cases": 133,
+      "development_targets_passed": false,
+      "exact_arguments_correct": 95,
+      "exact_arguments_eligible": 111,
+      "exact_arguments_percent": 85.58558558558559,
+      "full_action_correct": 114,
+      "full_action_percent": 85.71428571428571,
+      "structured_valid": 131,
+      "structured_valid_percent": 98.49624060150376,
+      "tool_correct": 129,
+      "tool_selection_percent": 96.99248120300751
+    },
+    "3072": {
+      "cases": 133,
+      "development_targets_passed": false,
+      "exact_arguments_correct": 97,
+      "exact_arguments_eligible": 111,
+      "exact_arguments_percent": 87.38738738738739,
+      "full_action_correct": 115,
+      "full_action_percent": 86.46616541353383,
+      "structured_valid": 131,
+      "structured_valid_percent": 98.49624060150376,
+      "tool_correct": 127,
+      "tool_selection_percent": 95.48872180451127
+    },
+    "3103": {
+      "cases": 133,
+      "development_targets_passed": false,
+      "exact_arguments_correct": 95,
+      "exact_arguments_eligible": 111,
+      "exact_arguments_percent": 85.58558558558559,
+      "full_action_correct": 113,
+      "full_action_percent": 84.9624060150376,
+      "structured_valid": 131,
+      "structured_valid_percent": 98.49624060150376,
+      "tool_correct": 128,
+      "tool_selection_percent": 96.2406015037594
+    },
+    "512": {
+      "cases": 133,
+      "development_targets_passed": false,
+      "exact_arguments_correct": 93,
+      "exact_arguments_eligible": 111,
+      "exact_arguments_percent": 83.78378378378379,
+      "full_action_correct": 114,
+      "full_action_percent": 85.71428571428571,
+      "structured_valid": 131,
+      "structured_valid_percent": 98.49624060150376,
+      "tool_correct": 130,
+      "tool_selection_percent": 97.74436090225564
+    }
+  },
+  "candidate_step_zero_means": "Reused original checkpoint 600 baseline",
+  "case_counts": {
+    "additional_controls": 48,
+    "facturation_development_per_candidate": 133,
+    "held_out_acceptance": 438,
+    "new_checkpoint_development_generations": 931,
+    "reused_baseline_development_cases": 133,
+    "shared_development_regression": 275,
+    "total_new_generation_cases": 1692
+  },
+  "checkpoint_selection_scope": "Frozen 133-case Facturation development selection only; no held-out reranking",
+  "comparison_duration_seconds": 11604.0,
+  "comparison_finished_utc": "2026-10-19T18:55:52Z",
+  "comparison_started_utc": "2026-10-19T15:42:28Z",
+  "evidence_sha256": {
+    "additional_controls": "2a60dbe7dfbcd3ad32f3d02d118efc7e2e23cbe77496af2b80f0d22de9363421",
+    "evaluation_policy": "bba6b96ee8f361222d4e7ca26f6b61b3658c0f40a946b6e3690bc4446555b05d",
+    "final_independent_review": "fb00a85baf38aa4602eb1dfede3f4d9e59e8d80cb6bf20bb4a165657c124a7fb",
+    "held_out_acceptance": "c836d8927de6de230d187baae516b094cd3590a1e3445e43dc0c64b33aa58863",
+    "model_gates": "6cc0275fa172cba5139b8394351fd126c052bb519b2e418931c4c41c723745d7",
+    "selection": "178e0aecef016e92725beaa2bbce19bb4be8f5791898a26417c4f57bfa0e205a",
+    "shared_development": "94d446ffb4c27b88ce90baf924442441399c5099577fb0fe87b3a008c5d2e62a",
+    "terminal_state": "22c509aa5038268f2496a911d3659200233872b0d01877abcd7109996cfcaaea",
+    "training_completion_public_report": "28672dc4040832d31bfa3e783b1fe0a3ce2c26218a118ade17129d9aa4feac85"
+  },
+  "fully_accepted_applications": 0,
+  "held_out_acceptance": {
+    "design_workflow": {
+      "clarifications": {
+        "count": 26,
+        "counts": {
+          "action_matches": 26,
+          "structured_valid": 26,
+          "tool_correct": 26
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 130,
+      "critical_model_cases": {
+        "count": 40,
+        "counts": {
+          "action_matches": 38,
+          "structured_valid": 40,
+          "tool_correct": 40
+        },
+        "exact_arguments": {
+          "count": 14,
+          "passed": 12,
+          "percent": 85.71
+        },
+        "percent": {
+          "action_matches": 95.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 100,
+        "passed": 92,
+        "percent": 92.0
+      },
+      "full_action_percent": 93.84615384615384,
+      "full_actions": 122,
+      "passed": false,
+      "structured": 130,
+      "tools": 130
+    },
+    "facturation": {
+      "clarifications": {
+        "count": 18,
+        "counts": {
+          "action_matches": 18,
+          "structured_valid": 18,
+          "tool_correct": 18
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 108,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 24,
+          "structured_valid": 24,
+          "tool_correct": 24
+        },
+        "exact_arguments": {
+          "count": 6,
+          "passed": 6,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 86,
+        "passed": 78,
+        "percent": 90.7
+      },
+      "full_action_percent": 92.5925925925926,
+      "full_actions": 100,
+      "passed": false,
+      "structured": 108,
+      "tools": 107
+    },
+    "management_projet": {
+      "clarifications": {
+        "count": 46,
+        "counts": {
+          "action_matches": 41,
+          "structured_valid": 44,
+          "tool_correct": 41
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 89.13,
+          "structured_valid": 95.65,
+          "tool_correct": 89.13
+        }
+      },
+      "count": 200,
+      "critical_model_cases": {
+        "count": 86,
+        "counts": {
+          "action_matches": 81,
+          "structured_valid": 84,
+          "tool_correct": 81
+        },
+        "exact_arguments": {
+          "count": 40,
+          "passed": 40,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 94.19,
+          "structured_valid": 97.67,
+          "tool_correct": 94.19
+        }
+      },
+      "exact_arguments": {
+        "count": 148,
+        "passed": 144,
+        "percent": 97.3
+      },
+      "full_action_percent": 95.5,
+      "full_actions": 191,
+      "passed": false,
+      "structured": 198,
+      "tools": 193
+    }
+  },
+  "held_out_subsets": [
+    {
+      "clarifications": {
+        "count": 8,
+        "counts": {
+          "action_matches": 8,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 60,
+      "critical_model_cases": {
+        "count": 14,
+        "counts": {
+          "action_matches": 14,
+          "structured_valid": 14,
+          "tool_correct": 14
+        },
+        "exact_arguments": {
+          "count": 6,
+          "passed": 6,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl",
+      "exact_arguments": {
+        "count": 48,
+        "passed": 47,
+        "percent": 97.92
+      },
+      "full_action_percent": 98.33333333333333,
+      "full_actions": 59,
+      "passed": true,
+      "structured": 60,
+      "tools": 60
+    },
+    {
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 24,
+      "critical_model_cases": {
+        "count": 8,
+        "counts": {
+          "action_matches": 7,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 1,
+          "percent": 50.0
+        },
+        "percent": {
+          "action_matches": 87.5,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 18,
+        "passed": 17,
+        "percent": 94.44
+      },
+      "full_action_percent": 95.83333333333333,
+      "full_actions": 23,
+      "passed": false,
+      "structured": 24,
+      "tools": 24
+    },
+    {
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 20,
+      "critical_model_cases": {
+        "count": 8,
+        "counts": {
+          "action_matches": 8,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 2,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 14,
+        "passed": 12,
+        "percent": 85.71
+      },
+      "full_action_percent": 90.0,
+      "full_actions": 18,
+      "passed": false,
+      "structured": 20,
+      "tools": 20
+    },
+    {
+      "clarifications": {
+        "count": 2,
+        "counts": {
+          "action_matches": 2,
+          "structured_valid": 2,
+          "tool_correct": 2
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 10,
+      "critical_model_cases": {
+        "count": 2,
+        "counts": {
+          "action_matches": 2,
+          "structured_valid": 2,
+          "tool_correct": 2
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 8,
+        "passed": 5,
+        "percent": 62.5
+      },
+      "full_action_percent": 70.0,
+      "full_actions": 7,
+      "passed": false,
+      "structured": 10,
+      "tools": 10
+    },
+    {
+      "clarifications": {
+        "count": 10,
+        "counts": {
+          "action_matches": 10,
+          "structured_valid": 10,
+          "tool_correct": 10
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 80,
+      "critical_model_cases": {
+        "count": 14,
+        "counts": {
+          "action_matches": 14,
+          "structured_valid": 14,
+          "tool_correct": 14
+        },
+        "exact_arguments": {
+          "count": 4,
+          "passed": 4,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl",
+      "exact_arguments": {
+        "count": 66,
+        "passed": 61,
+        "percent": 92.42
+      },
+      "full_action_percent": 93.75,
+      "full_actions": 75,
+      "passed": false,
+      "structured": 80,
+      "tools": 79
+    },
+    {
+      "clarifications": {
+        "count": 4,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 12,
+      "critical_model_cases": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 2,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 8,
+        "passed": 6,
+        "percent": 75.0
+      },
+      "full_action_percent": 83.33333333333333,
+      "full_actions": 10,
+      "passed": false,
+      "structured": 12,
+      "tools": 12
+    },
+    {
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 60,
+      "critical_model_cases": {
+        "count": 10,
+        "counts": {
+          "action_matches": 10,
+          "structured_valid": 10,
+          "tool_correct": 10
+        },
+        "exact_arguments": {
+          "count": 4,
+          "passed": 4,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl",
+      "exact_arguments": {
+        "count": 50,
+        "passed": 48,
+        "percent": 96.0
+      },
+      "full_action_percent": 96.66666666666667,
+      "full_actions": 58,
+      "passed": true,
+      "structured": 60,
+      "tools": 60
+    },
+    {
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 20,
+      "critical_model_cases": {
+        "count": 8,
+        "counts": {
+          "action_matches": 8,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 2,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 14,
+        "passed": 14,
+        "percent": 100.0
+      },
+      "full_action_percent": 100.0,
+      "full_actions": 20,
+      "passed": true,
+      "structured": 20,
+      "tools": 20
+    },
+    {
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 32,
+      "critical_model_cases": {
+        "count": 8,
+        "counts": {
+          "action_matches": 8,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 2,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 26,
+        "passed": 24,
+        "percent": 92.31
+      },
+      "full_action_percent": 93.75,
+      "full_actions": 30,
+      "passed": false,
+      "structured": 32,
+      "tools": 30
+    },
+    {
+      "clarifications": {
+        "count": 10,
+        "counts": {
+          "action_matches": 8,
+          "structured_valid": 10,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 80.0,
+          "structured_valid": 100.0,
+          "tool_correct": 80.0
+        }
+      },
+      "count": 32,
+      "critical_model_cases": {
+        "count": 12,
+        "counts": {
+          "action_matches": 10,
+          "structured_valid": 12,
+          "tool_correct": 10
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 2,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 83.33,
+          "structured_valid": 100.0,
+          "tool_correct": 83.33
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 20,
+        "passed": 20,
+        "percent": 100.0
+      },
+      "full_action_percent": 93.75,
+      "full_actions": 30,
+      "passed": false,
+      "structured": 32,
+      "tools": 30
+    },
+    {
+      "clarifications": {
+        "count": 4,
+        "counts": {
+          "action_matches": 3,
+          "structured_valid": 4,
+          "tool_correct": 3
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 75.0,
+          "structured_valid": 100.0,
+          "tool_correct": 75.0
+        }
+      },
+      "count": 12,
+      "critical_model_cases": {
+        "count": 6,
+        "counts": {
+          "action_matches": 5,
+          "structured_valid": 6,
+          "tool_correct": 5
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 2,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 83.33,
+          "structured_valid": 100.0,
+          "tool_correct": 83.33
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 8,
+        "passed": 8,
+        "percent": 100.0
+      },
+      "full_action_percent": 91.66666666666667,
+      "full_actions": 11,
+      "passed": false,
+      "structured": 12,
+      "tools": 11
+    },
+    {
+      "clarifications": {
+        "count": 8,
+        "counts": {
+          "action_matches": 8,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 28,
+      "critical_model_cases": {
+        "count": 28,
+        "counts": {
+          "action_matches": 28,
+          "structured_valid": 28,
+          "tool_correct": 28
+        },
+        "exact_arguments": {
+          "count": 20,
+          "passed": 20,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 20,
+        "passed": 20,
+        "percent": 100.0
+      },
+      "full_action_percent": 100.0,
+      "full_actions": 28,
+      "passed": true,
+      "structured": 28,
+      "tools": 28
+    },
+    {
+      "clarifications": {
+        "count": 4,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 4,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "facturation-refinement-v2-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 12,
+        "passed": 11,
+        "percent": 91.67
+      },
+      "full_action_percent": 93.75,
+      "full_actions": 15,
+      "passed": false,
+      "structured": 16,
+      "tools": 16
+    },
+    {
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 66.67,
+          "structured_valid": 66.67,
+          "tool_correct": 66.67
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 14,
+        "counts": {
+          "action_matches": 12,
+          "structured_valid": 12,
+          "tool_correct": 12
+        },
+        "exact_arguments": {
+          "count": 8,
+          "passed": 8,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 85.71,
+          "structured_valid": 85.71,
+          "tool_correct": 85.71
+        }
+      },
+      "dataset": "management-projet-refinement-v2-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 10,
+        "passed": 10,
+        "percent": 100.0
+      },
+      "full_action_percent": 87.5,
+      "full_actions": 14,
+      "passed": false,
+      "structured": 14,
+      "tools": 14
+    },
+    {
+      "clarifications": {
+        "count": 4,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 8,
+        "counts": {
+          "action_matches": 7,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 4,
+          "passed": 3,
+          "percent": 75.0
+        },
+        "percent": {
+          "action_matches": 87.5,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "dataset": "design-workflow-refinement-v2-en-fr--independent.eval.jsonl",
+      "exact_arguments": {
+        "count": 12,
+        "passed": 11,
+        "percent": 91.67
+      },
+      "full_action_percent": 93.75,
+      "full_actions": 15,
+      "passed": false,
+      "structured": 16,
+      "tools": 16
+    }
+  ],
+  "inference_runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "limitations": [
+    "Full-action and exact-argument generalization remain below target in Facturation and Design Workflow.",
+    "Management Projet aggregate held-out accuracy does not override failed critical and clarification cases, subsets and retained-development regression.",
+    "The 48-case control set is small and is reported separately from the held-out aggregate.",
+    "These tests evaluate model planning; they do not execute business operations or certify native backend authorization.",
+    "Production end-to-end latency, concurrency, security and rollout acceptance are not established by this report.",
+    "Contracts, Gestion Magasin and Reservation were not trained by this refinement."
+  ],
+  "loss_selected_diagnostic_checkpoint": 512,
+  "model_gates": {
+    "all_six_apps_accepted": false,
+    "by_application": {
+      "design_workflow": false,
+      "facturation": false,
+      "management_projet": false
+    },
+    "production_activation": false,
+    "retained_no_decline": {
+      "design_workflow": true,
+      "management_projet": false
+    },
+    "selected_step": 2048
+  },
+  "next_step": "Prepare a reviewed correction grounded in TRAIN and development evidence before further server-only training. Preserve held-out cases and scoring; no production activation or next-application training.",
+  "operational_result": {
+    "comparison_ports_free_after_completion": true,
+    "comparison_workers_stopped": 3,
+    "evaluation_terminal_success": true,
+    "next_application_training_started": false,
+    "production_model_activated": false,
+    "production_unchanged_and_healthy_after_completion": true
+  },
+  "original_baseline_checkpoint": 600,
+  "retained_development_no_decline": {
+    "design_workflow": true,
+    "management_projet": false
+  },
+  "review": {
+    "all_shared_development_and_held_out_subsets_recomputed": true,
+    "final_controls_and_gates_recomputed": true,
+    "frozen_provider_files": 4,
+    "frozen_runtime_files": 151,
+    "one_reviewer": true,
+    "training_and_all_candidate_evidence_verified": true,
+    "unchanged_control_files": 118
+  },
+  "schema_version": 1,
+  "selected_functional_checkpoint": 2048,
+  "shared_development": {
+    "design_workflow": {
+      "clarifications": {
+        "count": 14,
+        "counts": {
+          "action_matches": 14,
+          "structured_valid": 14,
+          "tool_correct": 14
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 64,
+      "critical_model_cases": {
+        "count": 21,
+        "counts": {
+          "action_matches": 21,
+          "structured_valid": 21,
+          "tool_correct": 21
+        },
+        "exact_arguments": {
+          "count": 7,
+          "passed": 7,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 46,
+        "passed": 46,
+        "percent": 100.0
+      },
+      "full_action_percent": 100.0,
+      "full_actions": 64,
+      "passed": true,
+      "structured": 64,
+      "tools": 64
+    },
+    "facturation": {
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "action_matches": 15,
+          "structured_valid": 15,
+          "tool_correct": 15
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 93.75,
+          "structured_valid": 93.75,
+          "tool_correct": 93.75
+        }
+      },
+      "count": 133,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 21,
+          "structured_valid": 23,
+          "tool_correct": 23
+        },
+        "exact_arguments": {
+          "count": 8,
+          "passed": 6,
+          "percent": 75.0
+        },
+        "percent": {
+          "action_matches": 87.5,
+          "structured_valid": 95.83,
+          "tool_correct": 95.83
+        }
+      },
+      "exact_arguments": {
+        "count": 111,
+        "passed": 100,
+        "percent": 90.09
+      },
+      "full_action_percent": 90.97744360902256,
+      "full_actions": 121,
+      "passed": false,
+      "structured": 132,
+      "tools": 132
+    },
+    "management_projet": {
+      "clarifications": {
+        "count": 20,
+        "counts": {
+          "action_matches": 20,
+          "structured_valid": 20,
+          "tool_correct": 20
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 78,
+      "critical_model_cases": {
+        "count": 32,
+        "counts": {
+          "action_matches": 32,
+          "structured_valid": 32,
+          "tool_correct": 32
+        },
+        "exact_arguments": {
+          "count": 12,
+          "passed": 12,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 54,
+        "passed": 51,
+        "percent": 94.44
+      },
+      "full_action_percent": 96.15384615384616,
+      "full_actions": 75,
+      "passed": false,
+      "structured": 78,
+      "tools": 76
+    }
+  },
+  "shared_model_family": "Qwen3.5-0.8B",
+  "status": "IMPLEMENTED: FULL EVALUATION COMPLETED; MODEL REJECTED",
+  "training_completed_epochs": 1,
+  "training_completed_updates": 3103,
+  "training_cpu_threads": 14,
+  "training_duration_hours": 27.03377100500899
+}

@@ -1,5 +1,21 @@
 # Verification and acceptance record
 
+## Full refinement evaluation rejected - 19 October 2026
+
+IMPLEMENTED and verified: seven new checkpoints each generated all 133 Facturation development cases; the original checkpoint-600 baseline reused its 133 frozen results. The selected checkpoint 2048 then generated 275 shared development cases, 438 held-out cases and 48 additional controls, for 1,692 new generation cases in total. All exact case IDs, labels, ordered shards, summaries and artifact bindings passed integrity checks. One reviewer independently reproduced selection, all 15 held-out subsets and final gates with unchanged scoring.
+
+| Application | Development full actions | Held-out full actions | Held-out exact arguments | Additional controls |
+|---|---:|---:|---:|---:|
+| Facturation | 121/133 (90.98%) | 100/108 (92.59%) | 78/86 (90.70%) | 9/16 (56.25%) |
+| Management Projet | 75/78 (96.15%) | 191/200 (95.50%) | 144/148 (97.30%) | 16/16 (100.00%) |
+| Design Workflow | 64/64 (100.00%) | 122/130 (93.85%) | 92/100 (92.00%) | 12/16 (75.00%) |
+
+Overall model gates fail for all three evaluated applications. In held-out critical cases, Facturation passed 24/24, Management Projet 81/86 and Design Workflow 38/40 full actions. Held-out clarifications passed 18/18, 41/46 and 26/26, respectively. Management Projet passed its 16 additional controls but failed retained-development regression and other required gates. Passing one aggregate does not override these failures.
+
+The review verified 151 runtime files, four provider files and 118 frozen controls, with identical before/after serving proofs. The evaluation exited successfully and all three final workers stopped. A subsequent server check verified free comparison ports, the unchanged deployment hook and healthy unchanged production inference. No production model activation or later-application training occurred. These model-planning tests do not execute business operations, establish native authorization security or prove production readiness. Zero of six applications are fully accepted.
+
+[Complete functional comparison](../training/reports/facturation-search-refinement-functional-comparison.json).
+
 ## Refinement training completed - 19 October 2026
 
 IMPLEMENTED and verified: the original Facturation-focused run completed all 3,103 updates, one full scheduled epoch and all eight development-validation checkpoints. The terminal result is successful. The single reviewer verified the original launch and input hashes, report provenance, finite contiguous updates, all candidate adapters, the final adapter's saved-weight identity and the unchanged evaluation controls. Runtime was approximately 27.03 hours on 14 CPU threads.

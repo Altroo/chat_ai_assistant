@@ -1,5 +1,32 @@
 # Model training and evaluation
 
+## Full refinement evaluation rejected - 19 October 2026
+
+The successful 3,103-update shared-model refinement was evaluated through Colibri with the frozen provider, labels, scorer and selection policy. All saved candidates were compared. Loss selected checkpoint 512 diagnostically; full-action development scoring selected checkpoint 2048. Held-out outcomes did not rerank candidates.
+
+| Candidate step | Full actions | Exact arguments | Valid structures |
+|---|---:|---:|---:|
+| 0 (original 600) | 110/133 | 88/111 | 133/133 |
+| 512 | 114/133 | 93/111 | 131/133 |
+| 1024 | 114/133 | 93/111 | 133/133 |
+| 1536 | 116/133 | 96/111 | 133/133 |
+| 2048 | 121/133 | 100/111 | 132/133 |
+| 2560 | 114/133 | 95/111 | 131/133 |
+| 3072 | 115/133 | 97/111 | 131/133 |
+| 3103 | 113/133 | 95/111 | 131/133 |
+
+| Application | Development full actions | Held-out full actions | Held-out exact arguments | Additional controls |
+|---|---:|---:|---:|---:|
+| Facturation | 121/133 (90.98%) | 100/108 (92.59%) | 78/86 (90.70%) | 9/16 (56.25%) |
+| Management Projet | 75/78 (96.15%) | 191/200 (95.50%) | 144/148 (97.30%) | 16/16 (100.00%) |
+| Design Workflow | 64/64 (100.00%) | 122/130 (93.85%) | 92/100 (92.00%) | 12/16 (75.00%) |
+
+The selected model is rejected. Facturation development critical actions passed 21/24 and clarifications 15/16. Management Projet development exact arguments were 51/54 (94.44%), below 53/54 in the original baseline. Design Workflow retained its 64/64 development full actions, but failed held-out and additional-control gates. Lower validation loss and training completion did not demonstrate acceptable generalization.
+
+The remaining correction must be based on TRAIN and development evidence, with independent review before more server-only numerical work. Existing held-out cases and expected labels remain unchanged. No candidate was activated; Contracts, Gestion Magasin and Reservation were not trained by this refinement.
+
+[Complete functional comparison](../training/reports/facturation-search-refinement-functional-comparison.json).
+
 ## Refinement training completed - 19 October 2026
 
 IMPLEMENTED and verified: the original Facturation-focused run completed all 3,103 updates, one full scheduled epoch and all eight development-validation checkpoints. The terminal result is successful. The single reviewer verified the original launch and input hashes, report provenance, finite contiguous updates, all candidate adapters, the final adapter's saved-weight identity and the unchanged evaluation controls. Runtime was approximately 27.03 hours on 14 CPU threads.

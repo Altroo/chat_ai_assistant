@@ -1,5 +1,21 @@
 # Chat AI Assistant progress
 
+## Full refinement evaluation rejected - 19 October 2026
+
+IMPLEMENTED and verified: all eight frozen candidates completed the Colibri development comparison. Checkpoint 2048 was selected, then completed 275 shared development cases, 438 held-out cases and 48 additional controls. The evaluation process exited successfully; the model failed overall acceptance.
+
+| Application | Development full actions | Held-out full actions | Held-out exact arguments | Additional controls |
+|---|---:|---:|---:|---:|
+| Facturation | 121/133 (90.98%) | 100/108 (92.59%) | 78/86 (90.70%) | 9/16 (56.25%) |
+| Management Projet | 75/78 (96.15%) | 191/200 (95.50%) | 144/148 (97.30%) | 16/16 (100.00%) |
+| Design Workflow | 64/64 (100.00%) | 122/130 (93.85%) | 92/100 (92.00%) | 12/16 (75.00%) |
+
+PARTIALLY IMPLEMENTED: zero of six applications are fully accepted. Management Projet regressed against the original development baseline and also failed held-out critical and clarification checks. Contracts, Gestion Magasin and Reservation were not trained by this refinement. All comparison workers stopped cleanly and production inference remained healthy and unchanged.
+
+PLANNED: diagnose generalization using TRAIN and development evidence, review the correction, then run further server-only training and unchanged acceptance gates. No next-application training or model activation has started.
+
+[Complete functional comparison](../training/reports/facturation-search-refinement-functional-comparison.json).
+
 ## Refinement training completed - 19 October 2026
 
 IMPLEMENTED and verified: the original Facturation-focused run completed all 3,103 updates, one full scheduled epoch and all eight development-validation checkpoints. The terminal result is successful. The single reviewer verified the original launch and input hashes, report provenance, finite contiguous updates, all candidate adapters, the final adapter's saved-weight identity and the unchanged evaluation controls. Runtime was approximately 27.03 hours on 14 CPU threads.
