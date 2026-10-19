@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Fifth refinement validation completed - 19 October 2026
+
+IMPLEMENTED and verified: checkpoint 2560 completed the unchanged 275-case development validation. The captured observation contains 2,565 contiguous finite updates after optimization resumed. All earlier validation history remains unchanged. The adapter matches its initial saved-weight hash and contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload and no all-zero tensors. The single reviewer verified the captured evidence, all ten bound inputs and the unchanged evaluation controls.
+
+Facturation weighted semantic validation loss increased by 32.06% from checkpoint 2048. Management Projet and Design Workflow losses decreased by 8.26% and 3.55%, respectively. Relative to initial validation, changes are -12.71%, +27.04% and -0.43%, respectively. These are teacher-forced loss changes, not accuracy scores. The application-macro loss is 0.05440315349; checkpoint 512 remains selected by loss. All three weighted losses remain above checkpoint 512. Every scheduled candidate, including 2560, remains mandatory in the pending functional comparison.
+
+The checkpoint-save to history-record span was 1,131.73 seconds and includes validation and bookkeeping. No selected-adapter save occurred at this checkpoint.
+
+PARTIALLY IMPLEMENTED: the original 3,103-update run remains incomplete, with the next periodic validation at 3072. Candidate export, Colibri generation, functional accuracy and retained-app regression acceptance remain pending. Zero of six applications are fully accepted. Production inference and the original evaluation inputs, scorer and provider remain unchanged; no later-application training started.
+
+[Fifth validation and checkpoint integrity evidence](../training/reports/facturation-search-refinement-fifth-validation.json).
+
 ## Fourth refinement validation completed - 19 October 2026
 
 IMPLEMENTED and verified: checkpoint 2048 completed the unchanged 275-case development validation. The captured observation contains 2,405 contiguous finite updates after optimization resumed. All earlier validation history remains unchanged. The adapter contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload and no all-zero tensors. The single reviewer verified the captured evidence, all ten bound inputs and the unchanged evaluation controls.

@@ -1,0 +1,119 @@
+{
+  "application_focus": "facturation",
+  "candidate_colibri_generation_started": false,
+  "checkpoint_integrity": {
+    "adapter_sha256": "dea0bc8a5498ef3006f06a84ce21566556a06a88cb995e4e9d0f5bacc56c954c",
+    "all_values_finite": true,
+    "all_zero_tensor_count": 0,
+    "checkpoint_bytes": 28536776,
+    "float32_values_checked": 7127040,
+    "layer_count": 24,
+    "payload_offsets_contiguous_and_complete": true,
+    "scope": "Storage and finite-value checks only; does not establish optimizer trajectory or functional acceptance",
+    "step": 2560,
+    "tensor_count": 192
+  },
+  "checkpoint_save_to_validation_record_seconds": 1131.7309091091156,
+  "created_utc": "2026-10-19T10:42:11.286975+00:00",
+  "evidence_sha256": {
+    "collector": "5dbc36d17058bcdb45ded4926726597e66bfb7e4868af49e7129d51a3ab5e362",
+    "initial_saved_observation": "3815f38032d7e7901e79d171cc8dbe99dbd783ff3674b871fc30547dc3bef27a",
+    "read_only_probe": "14cb3e8696b93aa6a7647df44a00931715b104509ef4f0cf8ac4ba82272550a7",
+    "saved_observation_review": "9c4175d02adfe456c2c165f422daa4a49dbab2cb645387ac2ff2a47096794430",
+    "validation_raw": "affec8dc35de2f9d29e1be0b2bfecdd66290bca47e0995eed1c26af140f61157",
+    "validation_review": "e1cc87ad60a449d71560dfe058ead2bbb5ca06ea7b7b659cf3de19d6465ba2b0"
+  },
+  "fully_accepted_applications": 0,
+  "functional_model_accuracy_measured": false,
+  "inference_runtime": "Colibri",
+  "later_application_training_started": false,
+  "limitations": [
+    "Relative loss changes are not accuracy percentages.",
+    "Facturation weighted validation loss increased from checkpoint 2048; Management Projet and Design Workflow losses decreased.",
+    "All three checkpoint 2560 weighted losses remain above checkpoint 512.",
+    "Checkpoint 512 remains selected by application-macro loss; functional model ranking has not started.",
+    "Checkpoint 2560 remains mandatory in the frozen functional comparison despite its higher macro loss.",
+    "No checkpoint has passed functional acceptance in this run.",
+    "No 95 percent accuracy or training completion is predicted."
+  ],
+  "loss_based_selection": {
+    "checkpoint_2560_improved": false,
+    "metric": "validation application-macro semantic loss",
+    "scope": "Trainer loss diagnostic only. Functional checkpoint ranking remains pending and must include every scheduled candidate, including 2560.",
+    "selected_step": 512
+  },
+  "next_gate": "Continue the unchanged 3103-update run, then complete the bound Colibri comparison for baseline and all scheduled candidates, including 2560, followed by unchanged acceptance gates.",
+  "next_periodic_validation_step": 3072,
+  "original_baseline_checkpoint": 600,
+  "original_evaluation_inputs_scorer_and_provider_unchanged": true,
+  "periodic_checkpoint_observed": 2560,
+  "production_model_activated": false,
+  "production_unchanged_and_healthy_at_observation": true,
+  "rejected_v3_adapter_used": false,
+  "selected_adapter_saved_at_checkpoint": false,
+  "shared_model_family": "Qwen3.5-0.8B",
+  "status": "PARTIALLY IMPLEMENTED; FIFTH PERIODIC VALIDATION COMPLETE; NO NEW ACCURACY SCORE",
+  "teacher_forced_validation": {
+    "by_application_case_count": {
+      "design_workflow": 64,
+      "facturation": 133,
+      "management_projet": 78
+    },
+    "case_count": 275,
+    "macro_loss_baseline": 0.05236723428903093,
+    "macro_loss_step_1024": 0.053322482420825074,
+    "macro_loss_step_1536": 0.047556297647995044,
+    "macro_loss_step_2048": 0.052544608489756804,
+    "macro_loss_step_2560": 0.05440315349079062,
+    "macro_loss_step_512": 0.04576689307228133,
+    "scope": "Development teacher-forced loss, not tool selection, action correctness, exact arguments or structured-output accuracy",
+    "weighted_semantic_loss": {
+      "design_workflow": {
+        "baseline": 0.04271494309662671,
+        "relative_change_from_baseline_percent": -0.42739089152257215,
+        "relative_change_from_step_1024_percent": 10.16964118222532,
+        "relative_change_from_step_1536_percent": 35.129227824591624,
+        "relative_change_from_step_2048_percent": -3.548002189370414,
+        "relative_change_from_step_512_percent": 30.19908997869973,
+        "step_1024": 0.03860626472420137,
+        "step_1536": 0.031475339573258765,
+        "step_2048": 0.04409694385389429,
+        "step_2560": 0.04253238332051268,
+        "step_512": 0.032667189400072516
+      },
+      "facturation": {
+        "baseline": 0.061982057838501796,
+        "relative_change_from_baseline_percent": -12.71334478398659,
+        "relative_change_from_step_1024_percent": -9.362449377849803,
+        "relative_change_from_step_1536_percent": -0.937823032907481,
+        "relative_change_from_step_2048_percent": 32.06013304141495,
+        "relative_change_from_step_512_percent": 7.8084524781246945,
+        "step_1024": 0.05969056395491506,
+        "step_1536": 0.054614250138330045,
+        "step_2048": 0.0409677499751695,
+        "step_2560": 0.05410206512128308,
+        "step_512": 0.050183509620695906
+      },
+      "management_projet": {
+        "baseline": 0.052404701931964275,
+        "relative_change_from_baseline_percent": 27.040150170129372,
+        "relative_change_from_step_1024_percent": 7.952560814009257,
+        "relative_change_from_step_1536_percent": 17.66672303673125,
+        "relative_change_from_step_2048_percent": -8.259875065543042,
+        "relative_change_from_step_512_percent": 22.268202469198386,
+        "step_1024": 0.061670618583358795,
+        "step_1536": 0.056579303232396315,
+        "step_2048": 0.07256913164020663,
+        "step_2560": 0.0665750120305761,
+        "step_512": 0.05444998019607557
+      }
+    }
+  },
+  "timing_scope": "Checkpoint-save to validation-history timestamp span includes validation and bookkeeping; no selected-adapter saving occurred at 2560. This is not an instrumented validation-only duration.",
+  "total_applications": 6,
+  "training_complete": false,
+  "training_resumed_after_validation": true,
+  "training_updates_observed": 2565,
+  "training_updates_planned": 3103,
+  "version": "facturation-search-refinement-fifth-validation-v1"
+}
