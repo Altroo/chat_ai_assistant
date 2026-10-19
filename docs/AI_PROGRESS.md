@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Corrective numerical recipe prepared - 19 October 2026
+
+IMPLEMENTED as admission code: the 704-update recipe checks all 520 Facturation, 112 Management Projet and 72 Design Workflow examples are trained exactly once. It checks the unchanged tokenizer/Colibri preflight, measured capacity recipe, finite update history, source and environment identities, and validation at steps 0, 352 and 704. Saved checkpoints are 176, 352, 528 and 704. Twelve new public recipe tests pass.
+
+The distinct private controller and launcher are prepared with a 12-hour child budget and 14-hour service budget. Nine local private guard tests pass. They include the actual frozen concurrency guard, complete input-inventory requirements, owned terminal service identity, FP32 header checks and duplicate-dispatch rejection. The single reviewer identified and the implementation fixed the service naming and incomplete evidence-inventory guards before any dispatch.
+
+A read-only server observation independently verified the actual experimental checkpoint-2048 merged FP32 files and original checkpoint-600 reference. Each has 473 unique FP32 tensors; their identities differ. The experimental export uses the original checkpoint 600 plus its already merged checkpoint-2048 adapter. The adapter, completed training report and Colibri serving/runtime bytes match the earlier evidence. No model weights were loaded and no numerical job was started for this observation.
+
+PARTIALLY IMPLEMENTED: the actual next run remains unbound. The current comparison must finish and receive evidence review. Fresh 704/275 preflight, the chosen mode's capacity measurement and reviewed numerical admission are still required. The proposed capacity ceiling is 40 GiB only when it preserves at least ten percent of host RAM; the CPU quota remains 14 of 16 logical CPUs. No speedup, new accuracy, accepted application or model activation is established.
+
 ## Corrective checkpoint selection prepared - 19 October 2026
 
 IMPLEMENTED and verified as selection code only: a separately versioned selector supports saved checkpoints 176, 352, 528 and 704 without inventing validation losses for checkpoints 176 or 528. Every declared 133-case development candidate, including the actual experimental checkpoint-2048 parent as step 0, must complete. The original checkpoint-600 regression reference stays separate.

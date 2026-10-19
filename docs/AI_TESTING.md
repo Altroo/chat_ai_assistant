@@ -1,5 +1,24 @@
 # Verification and acceptance record
 
+## Corrective numerical admission checks - 19 October 2026
+
+Passed locally: 12 new public recipe tests and nine private controller/launcher guard tests. The public checks cover one complete 704-update epoch, 520/112/72 unique application exposure, unchanged data hashes, all required preflight checks, longest-row capacity with both explicit checkpointing modes, finite optimizer/layer evidence, correct model parent and dependency identities, saved-checkpoint and validation schedules, and rejection of incomplete or changed training reports. They also verify the extended 12-hour child and 14-hour service budgets.
+
+The private checks verify owned successful terminal service invocations, changed-invocation rejection, complete fixed and dynamic hashed inputs, unsafe-path rejection, duplicate-dispatch rejection and FP32 header type/count checks. The actual digest-pinned frozen idle guard rejects a competing service with the launcher's corrected training service name and permits its own service cgroup.
+
+Run the public recipe and checkpoint-selection checks:
+
+```sh
+python3 -B -m unittest \
+  training.tests.test_facturation_corrective_training_v1 \
+  training.tests.test_select_facturation_corrective_v1 \
+  training.tests.test_compare_saved_checkpoints -v
+```
+
+All 39 tests in that public command pass locally, including the available private historical scoring fixture. The nine private wrapper tests pass separately; their operator bindings and server paths are intentionally excluded from the public repository.
+
+A separate read-only server attestation rehashed both actual FP32 checkpoints, their 473 unique FP32 tensor headers, the experimental adapter and completed training lineage, and the frozen serving/runtime artifacts. This was metadata and file verification only. Actual 704-row preflight, capacity measurement, terminal training, adapter inspection and functional accuracy are not established by these local tests or the read-only observation.
+
 ## Prospective corrective selection checks - 19 October 2026
 
 Passed locally: 27 selection tests, consisting of 19 new tests and eight unchanged selector regression tests. They cover all scheduled checkpoints, exact fractional ranking, primary eligibility before ranking, critical-case failures, the explicit 95 percent full-action requirement, missing/changed results and policy fields, wrong parent/reference declarations, changed prompts, altered scoring sources, input immutability and rejection of the actual unbound public policy template.
