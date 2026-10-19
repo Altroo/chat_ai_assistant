@@ -1,0 +1,99 @@
+{
+  "version": "facturation-entity-pilot-v1-launch",
+  "status": "RUNNING; INITIAL VALIDATION INCOMPLETE; NOT ACCEPTED",
+  "observed_utc": "2026-10-19T19:34:52.348626+00:00",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "training": {
+    "supervisor_started": true,
+    "actual_training_process_verified": true,
+    "completed": false,
+    "expected_updates": 216,
+    "optimizer_updates_observed": 0,
+    "initial_validation_completed": false,
+    "starting_selected_checkpoint": 600,
+    "rejected_successor_used": false,
+    "applications": {
+      "facturation": 72,
+      "management_projet": 72,
+      "design_workflow": 72
+    },
+    "focus_application": "facturation",
+    "other_applications": "Retained TRAIN replay and regression scope only",
+    "framework_versions": {
+      "torch": "2.14.1+cpu",
+      "transformers": "5.19.0",
+      "peft": "0.21.2",
+      "safetensors": "0.8.0"
+    },
+    "threads": 14,
+    "memory_ceiling_gib": 32,
+    "swap_allowed": false,
+    "spare_memory_floor_percent": 10,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "learning_rate": 1e-05,
+    "semantic_loss_weight": 4,
+    "gradient_checkpointing": "nonreentrant",
+    "attention": "sdpa",
+    "complete_epochs": 1,
+    "context_tokens": 8192,
+    "checkpoint_and_validation_interval": 72,
+    "provenance_sha256": "4ec424e45019fab3ffd2977d80728df6f4897c091ddf44d57fb92ed211d6b561"
+  },
+  "preflight": {
+    "status": "PASSED; tokenizer metadata only, not model accuracy",
+    "training": {
+      "count": 216,
+      "round_trip_passed": 216,
+      "runtime_prefix_parity_passed": 216,
+      "loss_boundary_passed": 216,
+      "semantic_alignment_passed": 216,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 3320,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 216,
+      "maximum_target_tokens": 131,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "de28c9ce947c4310f22b8df3460944d3ee1d3b653e559633b919849f4c92676a"
+    },
+    "development": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 275,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "original_development_unchanged": true
+  },
+  "verification": {
+    "generator_tests_passed": 54,
+    "offline_launch_guard_tests_passed": 11,
+    "single_reviewer": "Corpus, protocol and actual successful preflight cleared before numerical dispatch.",
+    "actual_child_process_and_model_provenance_verified": true,
+    "original_model_source_dependencies_runtime_verified": true,
+    "preparation_release_verified_on_three_remotes": true
+  },
+  "candidate_accepted": false,
+  "accepted_applications": 0,
+  "production_activation": false,
+  "production_inference_unchanged_and_healthy": true,
+  "new_accuracy_score": null,
+  "limitations": [
+    "Initial validation and optimization are incomplete at this observation.",
+    "Complete all 216 updates and unchanged Colibri development, retained, critical, held-out and control gates before any acceptance claim.",
+    "The 95 percent target has not been reached; preparation tests do not predict model accuracy.",
+    "Comparison execution for this separately declared pilot remains to be adapted and reviewed.",
+    "No later-application training or automatic activation has started."
+  ]
+}

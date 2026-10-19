@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Entity pilot actual preflight and launch - 19 October 2026
+
+Passed on the server: all 216 TRAIN and 275 validation rows matched the exact Colibri parser and runtime template, valid loss boundaries, semantic-token alignment and serving output budgets. Maximum total lengths were 3,320/7,496 tokens; maximum target lengths were 131/116, within the 512-token output budget.
+
+All 11 offline launch guard tests passed, including altered preflight invocation/completion rejection and prevention of an existing training-output relaunch. The single reviewer checked the actual successful preflight, unchanged model/source/dependency/runtime bindings and conditional one-shot dispatch. The running numerical child and original checkpoint-600 provenance were then verified.
+
+No model accuracy or acceptance result exists for this pilot yet. The actual launch observation has zero optimizer updates; initial validation is not yet complete.
+
+[Actual launch report](../training/reports/facturation-entity-pilot-v1-launch.json).
+
 ## Entity pilot preparation checks - 19 October 2026
 
 Passed: 54 generator regression tests and seven offline one-shot preflight launch guard tests. The single reviewer reproduced the exact 216-row corpus and selection plan, confirmed all 144 retained source lines and 72 cleared supplement lines, and checked unchanged validation bytes, schema validity, canonical uniqueness and development-input separation.

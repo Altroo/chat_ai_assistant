@@ -1,5 +1,13 @@
 # Model training and evaluation
 
+## Entity pilot started - 19 October 2026
+
+The bounded pilot is now running through the existing server-only PyTorch/PEFT framework, from the original checkpoint 600 FP32. Its actual child process and provenance were verified after the reviewed preflight. The launch observation contains zero optimizer updates; initial validation is not yet complete. Planned updates remain 216, with 72 rows per application and checkpoints every 72 updates.
+
+Server tokenizer/Colibri preflight passed 216 TRAIN and 275 unchanged validation examples. This establishes format/template/context compatibility, not model accuracy. The separate functional comparison executor remains to be adapted and reviewed; the declared policy, frozen case labels, scorer and provider remain unchanged.
+
+[Actual launch evidence and configuration](../training/reports/facturation-entity-pilot-v1-launch.json).
+
 ## Small entity pilot prepared - 19 October 2026
 
 A bounded 216-update experiment is prepared to test literal copying before another long refinement. It uses 72 new Facturation examples and 72 retained TRAIN examples from each previously trained application. The 18 Facturation parents supply four literal variants each, balanced across three native search tools and English/French. The original source questions, schemas, filters and alias keys are preserved.

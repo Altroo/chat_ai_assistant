@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Entity pilot started - 19 October 2026
+
+IMPLEMENTED and verified: the server-only 216-update pilot has an actual training process and original checkpoint-600 model provenance. The captured launch observation has zero optimizer updates; initial validation is not yet complete. The shared model is unchanged in production.
+
+Tokenizer/Colibri preflight passed all 216 TRAIN and 275 unchanged validation rows, including schema round-trip, runtime-prefix parity, loss/semantic alignment and serving output budgets. Maximum lengths were 3,320 and 7,496 tokens. All 54 preparation tests and 11 offline launch guard tests passed. The sole reviewer cleared the actual preflight evidence before numerical dispatch.
+
+PARTIALLY IMPLEMENTED: training completion and every functional acceptance gate remain pending. All three planned successor checkpoints must be compared; the separate comparison executor still needs adaptation and review. Zero of six apps are fully accepted. No next-application training or automatic model activation started.
+
+[Actual pilot launch](../training/reports/facturation-entity-pilot-v1-launch.json).
+
 ## Small entity pilot prepared - 19 October 2026
 
 IMPLEMENTED and verified: prepared 72 TRAIN-only Facturation entity-copying examples from 18 distinct source rows, with 36 English and 36 French requests. Client names, article terms/references and payment search literals vary together with their target arguments. Native schemas, argument keys, filters, trusted context and history remain unchanged.
