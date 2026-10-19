@@ -1,15 +1,16 @@
 # Shared model training queue
 
-## Current queue - 16 October 2026
+## Current queue - 19 October 2026
 
-R11 training and evaluation are complete for the first three applications; acceptance FAILED. None of the six applications is accepted by this campaign. Production inference has not been replaced.
+Zero of six applications are fully accepted by this campaign. The preceding Facturation search refinement completed all 3,103 updates; its selected checkpoint failed the functional acceptance gates. That run is finished. Production inference has not been replaced.
 
-1. IN PROGRESS: Facturation-only refinement preparation using the same shared model, 1,047 training / 133 validation rows. The 35-update rehearsal and bounded export comparison are verified. Full 1,047-update training is running from the original selected model. The first live observation was baseline validation before the first update.
-2. PLANNED: Management Projet, then Design Workflow, one at a time with earlier-app regressions.
-3. PLANNED: Contracts, Gestion Magasin and Reservation, one at a time after the preceding model passes all gates. The retained R11 preparations are V6r11, V7r11 and V8r12 respectively; none has been trained. Future retention must be updated to the actually accepted focused curriculum.
-4. PLANNED: complete six-app model, permission and runtime verification before any activation decision.
+1. IN PROGRESS: the separate Facturation entity pilot uses the same shared Qwen3.5-0.8B model and one 216-update epoch. Its corpus contains 72 new Facturation TRAIN-only literal variants and 144 retained Management Projet / Design Workflow examples. The initial 275-example validation completed. At the verified 19 October 20:32 UTC observation, the same worker had completed 72 updates and the checkpoint-72 validation result was pending. This is a timestamped observation, not a live progress counter.
+2. PENDING: after successful pilot completion and review, compare checkpoints 72, 144 and 216 through Colibri against the original checkpoint-600 baseline. The selected candidate must pass the unchanged development, regression, additional-control, critical-case and retained-application gates. No new generated-action accuracy or 95% result is claimed.
+3. PLANNED: Management Projet, then Design Workflow, one at a time after Facturation passes, with regressions for earlier applications.
+4. PLANNED: Contracts (contrat), Gestion Magasin and Reservation, one at a time after the preceding model passes all gates. The retained R11 preparations are V6r11, V7r11 and V8r12 respectively; these preparations have not been trained. Refresh their native contracts and retained curriculum against the actually accepted predecessor before launch.
+5. PLANNED: complete six-app model, permission and runtime verification before any activation decision. Use one shared model and only one numerical training stage at a time.
 
-[Actual R11 results](../training/reports/shared-v5r11-en-fr-evaluation.json), [current scores](AI_MODEL_ACCURACY.md), [retained curriculum preparation](../training/reports/serial-after-r11-preparation.json).
+[Completed 3,103-update comparison](../training/reports/facturation-search-refinement-functional-comparison.json), [pilot initial validation](../training/reports/facturation-entity-pilot-v1-initial-validation.json), [pilot evaluation policy](../training/reports/facturation-entity-pilot-v1-evaluation-policy.json), [measured accuracy](AI_MODEL_ACCURACY.md), [retained future-stage preparations](../training/reports/serial-after-r11-preparation.json).
 
 ## Earlier queue observations
 
