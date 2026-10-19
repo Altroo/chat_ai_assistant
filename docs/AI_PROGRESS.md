@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Corrective checkpoint selection prepared - 19 October 2026
+
+IMPLEMENTED and verified as selection code only: a separately versioned selector supports saved checkpoints 176, 352, 528 and 704 without inventing validation losses for checkpoints 176 or 528. Every declared 133-case development candidate, including the actual experimental checkpoint-2048 parent as step 0, must complete. The original checkpoint-600 regression reference stays separate.
+
+Candidates meeting every unchanged primary development target take priority, followed by full-action accuracy, structured validity and the earliest step. Tool, full-action and exact-argument targets remain 95 percent; valid structure remains 99 percent, and every existing critical planner and clarification case must match. If no candidate meets these necessary targets, the future comparison reports a primary rejection and leaves later checks explicitly unexecuted. An eligible selection still requires all 275 shared development, 438 regression and 48 additional cases, with no acceptance reranking.
+
+The single review caught a loader mismatch before numerical execution: direct imports used current application clarification wording. The fixed loader executes the pinned historical clarification and scoring implementations in isolated globals. All three completed pilot candidates now reproduce their entire frozen score reports and published assessments exactly. All 27 local selection tests pass, including the actual saved checkpoint-72 evidence and historical English/French replies. No new inference or accuracy improvement is established by these checks.
+
+PARTIALLY IMPLEMENTED: the prospective policy deliberately leaves actual FP32 identities and resource choices unbound and is rejected by the selector in that state. A distinct numerical controller/launcher, fresh parent/reference attestation, actual preflight and capacity evidence, and execution review remain required. The current comparison, all 141 frozen controls, production inference and the next-application queue remain unchanged.
+
+[Prospective policy and incomplete admission](../training/reports/facturation-entity-pilot-v2-evaluation-policy.json).
+
 ## Pilot development comparison and full replay preparation - 19 October 2026
 
 IMPLEMENTED and verified: all three successor checkpoints completed the unchanged 133-case Facturation development evaluation. Correct full actions were 111/133 (83.46 percent) at step 72, 107/133 (80.45 percent) at step 144 and 103/133 (77.44 percent) at step 216. The unchanged selector chose step 72. Its exact arguments were 89/111 (80.18 percent), with 22/24 critical planner cases. The single reviewer independently verified the scores, all candidate evidence, selection and frozen controls.

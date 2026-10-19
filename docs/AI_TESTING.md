@@ -1,5 +1,23 @@
 # Verification and acceptance record
 
+## Prospective corrective selection checks - 19 October 2026
+
+Passed locally: 27 selection tests, consisting of 19 new tests and eight unchanged selector regression tests. They cover all scheduled checkpoints, exact fractional ranking, primary eligibility before ranking, critical-case failures, the explicit 95 percent full-action requirement, missing/changed results and policy fields, wrong parent/reference declarations, changed prompts, altered scoring sources, input immutability and rejection of the actual unbound public policy template.
+
+The scoring loader pins the historical clarification source before isolated execution, instead of importing current application wording. The local historical test verifies the actual saved 133-case checkpoint-72 result: 111 full actions, 16 clarification matches and 89/111 exact arguments. This private test skips explicitly when the ignored evidence files are absent from a public checkout; no private prediction payload is published. Independent local analysis also reproduced the entire frozen reports and assessments for checkpoints 72, 144 and 216 exactly.
+
+Run the selection checks:
+
+```sh
+python3 -B -m unittest \
+  training.tests.test_select_facturation_corrective_v1 \
+  training.tests.test_compare_saved_checkpoints -v
+```
+
+These are code and historical scoring checks, not new model accuracy. Primary rejection in the prospective policy cannot be overturned by later test results; skipped checks remain unexecuted and no model is accepted. Actual fresh model identities, numerical orchestration, tokenizer/runtime preflight, capacity measurements and their review are still required. The current comparison and its frozen policy/scorer/provider/runtime remain untouched.
+
+[Prospective selection rules](../training/reports/facturation-entity-pilot-v2-evaluation-policy.json).
+
 ## Completed pilot development and complete TRAIN inventory - 19 October 2026
 
 The sole reviewer independently reproduced all four development candidates, including the original checkpoint-600 baseline, against the unchanged 133 cases. Step 72 was selected with 111 correct full actions, 89/111 exact arguments, 129/133 correct tools, 132/133 valid structures, 22/24 critical planner matches and 16/16 clarification matches. Steps 144 and 216 scored 107 and 103 full actions. Their input identities, ordered shard results, serving proofs, cleanup and 141 frozen control files were verified. Primary targets remain failed; broader comparisons were still active at the captured observation.
