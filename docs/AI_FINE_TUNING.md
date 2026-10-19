@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Fourth refinement validation completed - 19 October 2026
+
+IMPLEMENTED and verified: checkpoint 2048 completed the unchanged 275-case development validation. The captured observation contains 2,405 contiguous finite updates after optimization resumed. All earlier validation history remains unchanged. The adapter contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload and no all-zero tensors. The single reviewer verified the captured evidence, all ten bound inputs and the unchanged evaluation controls.
+
+Facturation weighted semantic validation loss decreased by 33.90% from initial validation and by 24.99% from checkpoint 1536. Management Projet loss increased by 38.48% from initial validation and by 28.26% from checkpoint 1536. Design Workflow loss increased by 3.24% and 40.10%, respectively. These are teacher-forced loss changes, not accuracy scores. The application-macro loss is 0.05254460849; checkpoint 512 remains selected by loss. Every scheduled candidate, including 2048, remains mandatory in the pending functional comparison.
+
+The checkpoint-save to history-record span was 1,126.05 seconds and includes validation and bookkeeping. No selected-adapter save occurred at this checkpoint.
+
+PARTIALLY IMPLEMENTED: the original 3,103-update run remains incomplete, with the next periodic validation at 2560. Candidate export, Colibri generation, functional accuracy and retained-app regression acceptance remain pending. Zero of six applications are fully accepted. Production inference and the original evaluation inputs, scorer and provider remain unchanged; no later-application training started.
+
+[Fourth validation and checkpoint integrity evidence](../training/reports/facturation-search-refinement-fourth-validation.json).
+
 ## Third refinement validation completed - 19 October 2026
 
 IMPLEMENTED and verified: checkpoint 1536 completed the unchanged 275-case development validation. The recorded observation contains 1,539 contiguous finite updates after optimization resumed. The baseline, checkpoint 512 and checkpoint 1024 history remain unchanged. The adapter contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload. The single reviewer verified the captured evidence and all ten bound input hashes.
