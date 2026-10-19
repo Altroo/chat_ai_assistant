@@ -1,0 +1,183 @@
+{
+  "application_focus": "facturation",
+  "checkpoint_integrity": {
+    "all_candidate_and_config_hashes_verified": true,
+    "final_adapter_sha256": "b6aa6beeb316aa244258082726fce0b22c90cd088ee65216a113358ea08e0542",
+    "matches_initial_saved_final_adapter": true,
+    "saved_candidate_count": 7,
+    "selected_alias_count": 1
+  },
+  "evidence_sha256": {
+    "completion_packet": "770ce10458ea5b63cb2d8ca28057a6413adec0a78f88b3dd2bb3603e089c3fc4",
+    "completion_review": "d94ac22b98df44fce9a9894c6fdaf74c4a4ea416ded14e13673a743d540e2fef",
+    "training_report": "08ad88f2c1fd8280235881f47c6054326ea308a426e4a19bb3a9c79c289b7b43"
+  },
+  "fully_accepted_applications": 0,
+  "functional_comparison": {
+    "acceptance_reranking": false,
+    "additional_control_cases_for_changed_winner": 48,
+    "facturation_development_cases_per_candidate": 133,
+    "held_out_acceptance_cases_for_changed_winner": 438,
+    "model_accuracy_measured_for_this_run": false,
+    "original_inputs_scorer_provider_and_policy_unchanged": true,
+    "required_candidate_steps": [
+      0,
+      512,
+      1024,
+      1536,
+      2048,
+      2560,
+      3072,
+      3103
+    ],
+    "shared_development_regression_cases_for_changed_winner": 275,
+    "status": "PENDING AT THIS TRAINING COMPLETION OBSERVATION",
+    "step_zero_means": "Original checkpoint 600 baseline"
+  },
+  "inference_runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "later_application_training_started": false,
+  "limitations": [
+    "Training completion and lower validation loss do not demonstrate 95 percent functional accuracy.",
+    "The final checkpoint reduced Facturation loss from the baseline but increased Management Projet and Design Workflow loss.",
+    "Every scheduled checkpoint remains mandatory in the frozen Colibri comparison.",
+    "No new candidate has passed functional, retained-app or production acceptance.",
+    "Contracts, Gestion Magasin and Reservation were not trained in this run."
+  ],
+  "next_gate": "Run the unchanged sequential Colibri checkpoint comparison, then the original held-out and retained-application acceptance gates.",
+  "observed_utc": "2026-10-19T15:37:18.594088+00:00",
+  "original_baseline_checkpoint": 600,
+  "production_model_activated": false,
+  "production_unchanged_and_healthy_at_observation": true,
+  "rejected_v3_adapter_used": false,
+  "shared_model_family": "Qwen3.5-0.8B",
+  "status": "IMPLEMENTED: TRAINING COMPLETED; FUNCTIONAL ACCEPTANCE PENDING",
+  "teacher_forced_validation": {
+    "by_application_case_count": {
+      "design_workflow": 64,
+      "facturation": 133,
+      "management_projet": 78
+    },
+    "case_count": 275,
+    "history": [
+      {
+        "application_macro_loss": 0.05236723428903093,
+        "scope": "Teacher-forced development loss, not functional accuracy.",
+        "step": 0,
+        "weighted_semantic_loss_by_application": {
+          "design_workflow": 0.04271494309662671,
+          "facturation": 0.061982057838501796,
+          "management_projet": 0.052404701931964275
+        }
+      },
+      {
+        "application_macro_loss": 0.04576689307228133,
+        "scope": "Teacher-forced development loss, not functional accuracy.",
+        "step": 512,
+        "weighted_semantic_loss_by_application": {
+          "design_workflow": 0.032667189400072516,
+          "facturation": 0.050183509620695906,
+          "management_projet": 0.05444998019607557
+        }
+      },
+      {
+        "application_macro_loss": 0.053322482420825074,
+        "scope": "Teacher-forced development loss, not functional accuracy.",
+        "step": 1024,
+        "weighted_semantic_loss_by_application": {
+          "design_workflow": 0.03860626472420137,
+          "facturation": 0.05969056395491506,
+          "management_projet": 0.061670618583358795
+        }
+      },
+      {
+        "application_macro_loss": 0.047556297647995044,
+        "scope": "Teacher-forced development loss, not functional accuracy.",
+        "step": 1536,
+        "weighted_semantic_loss_by_application": {
+          "design_workflow": 0.031475339573258765,
+          "facturation": 0.054614250138330045,
+          "management_projet": 0.056579303232396315
+        }
+      },
+      {
+        "application_macro_loss": 0.052544608489756804,
+        "scope": "Teacher-forced development loss, not functional accuracy.",
+        "step": 2048,
+        "weighted_semantic_loss_by_application": {
+          "design_workflow": 0.04409694385389429,
+          "facturation": 0.0409677499751695,
+          "management_projet": 0.07256913164020663
+        }
+      },
+      {
+        "application_macro_loss": 0.05440315349079062,
+        "scope": "Teacher-forced development loss, not functional accuracy.",
+        "step": 2560,
+        "weighted_semantic_loss_by_application": {
+          "design_workflow": 0.04253238332051268,
+          "facturation": 0.05410206512128308,
+          "management_projet": 0.0665750120305761
+        }
+      },
+      {
+        "application_macro_loss": 0.058600722735947346,
+        "scope": "Teacher-forced development loss, not functional accuracy.",
+        "step": 3072,
+        "weighted_semantic_loss_by_application": {
+          "design_workflow": 0.05300033429369222,
+          "facturation": 0.0510444618486113,
+          "management_projet": 0.07175737206553852
+        }
+      },
+      {
+        "application_macro_loss": 0.05887393626447174,
+        "scope": "Teacher-forced development loss, not functional accuracy.",
+        "step": 3103,
+        "weighted_semantic_loss_by_application": {
+          "design_workflow": 0.053263788489722685,
+          "facturation": 0.05059110220003605,
+          "management_projet": 0.07276691810365649
+        }
+      }
+    ],
+    "loss_selected_step": 512,
+    "selection_scope": "Trainer diagnostic only. Functional selection must compare all scheduled candidates."
+  },
+  "training": {
+    "all_step_losses_finite": true,
+    "application_exposure": {
+      "design_workflow": {
+        "steps": 325,
+        "unique_examples": 325
+      },
+      "facturation": {
+        "steps": 2069,
+        "unique_examples": 2069
+      },
+      "management_projet": {
+        "steps": 709,
+        "unique_examples": 709
+      }
+    },
+    "complete_epochs": 1,
+    "completed_updates": 3103,
+    "cpu_threads": 14,
+    "duration_seconds": 97321.57561803237,
+    "expected_updates": 3103,
+    "scheduled_validation_steps": [
+      0,
+      512,
+      1024,
+      1536,
+      2048,
+      2560,
+      3072,
+      3103
+    ],
+    "terminal_success": true
+  }
+}

@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Refinement training completed - 19 October 2026
+
+IMPLEMENTED and verified: the original Facturation-focused run completed all 3,103 updates, one full scheduled epoch and all eight development-validation checkpoints. The terminal result is successful. The single reviewer verified the original launch and input hashes, report provenance, finite contiguous updates, all candidate adapters, the final adapter's saved-weight identity and the unchanged evaluation controls. Runtime was approximately 27.03 hours on 14 CPU threads.
+
+The schedule contained 2,069 Facturation examples plus 709 Management Projet and 325 Design Workflow replay examples. This is one shared-model refinement run. Contracts, Gestion Magasin and Reservation were not trained by this run.
+
+Final weighted semantic loss was 0.05059110220 for Facturation, 0.07276691810 for Management Projet and 0.05326378849 for Design Workflow. These are teacher-forced losses, not accuracy percentages. Checkpoint 512 remains selected by application-macro loss as a diagnostic only. The Colibri functional comparison must include the original checkpoint 600 baseline and every saved successor at steps 512, 1024, 1536, 2048, 2560, 3072 and 3103.
+
+PARTIALLY IMPLEMENTED: functional accuracy, exact arguments, structured output, retained-app regression and held-out acceptance remain unverified for this run at the completion observation. Zero of six applications are fully accepted. No production model was activated and no later-application training started.
+
+[Training completion and remaining acceptance gates](../training/reports/facturation-search-refinement-training-completion.json).
+
 ## Sixth refinement validation completed - 19 October 2026
 
 IMPLEMENTED and verified: checkpoint 3072 completed the unchanged 275-case development validation. The captured observation contains 3,077 contiguous finite updates after optimization resumed. All earlier validation history remains unchanged. The adapter matches its initial saved-weight hash and contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload and no all-zero tensors. The single reviewer verified the captured evidence, all ten bound inputs and the unchanged evaluation controls.
