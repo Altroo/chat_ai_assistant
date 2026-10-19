@@ -1,5 +1,22 @@
 # Verification and acceptance record
 
+## Conditional corrective preparation - 19 October 2026
+
+Thirty-five synthetic data tests pass across the entity supplement, original pilot and conditional corrective preparer. Twelve new tests cover exact row preservation, deterministic output, schema/shape coverage, unbound/non-training metadata, development input overlap in newly added rows, unapproved or changing sources, language validation and output isolation.
+
+```sh
+python3 -B -m unittest \
+  training.tests.test_facturation_entity_spans_v1 \
+  training.tests.test_facturation_entity_pilot_v1 \
+  training.tests.test_facturation_entity_pilot_v2 -v
+```
+
+Actual preparation produces 256 rows: 72 Facturation, 112 Management Projet and 72 Design Workflow. Every original pilot row is preserved and all 275 validation bytes match their source. The 141 frozen comparison controls are unchanged. MP measured shape/enum coverage is 106/106 and DW is 61/61; these are data coverage counts, not accuracy.
+
+The new command only prepares data. The approved original reference and helper sources are pinned; changes are rejected before preparing the candidate. It does not load a model, perform training, establish optimization parity or authorize numerical work. Its manifest explicitly leaves model identity and current-pilot failure evidence unbound.
+
+[Measured preparation results](../training/reports/facturation-entity-pilot-v2-corrective-preparation.json).
+
 ## Focused-app status reporting - 19 October 2026
 
 Eight synthetic reporting tests pass. They verify that a focused application's recorded pass is visible when later applications fail, retention failure remains visible without erasing that result, three applications cannot stand in for six, and even six recorded model passes do not prove native security or authorize work. Running the reporter against the completed 3,103-update comparison preserves its failed Facturation/global gates and its development retention failure.

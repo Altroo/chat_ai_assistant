@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Conditional corrective corpus prepared - 19 October 2026
+
+IMPLEMENTED and verified as data preparation only: a separate 256-row corpus preserves every row from the current 216-row pilot and adds 40 approved Management Projet TRAIN rows. All 72 Facturation and 72 Design Workflow rows remain byte-identical. The 112-row Management Projet sample covers all 106 measured shape/enum features; Design Workflow retains all 61. Each retained application covers nine native tools. All 275 development rows and 141 frozen control files remain unchanged.
+
+Thirty-five synthetic data tests pass, including twelve tests for the new preparer. The preparer rejects source changes, duplicate/development inputs, missing measured coverage and invalid output locations. Missing retained language metadata remains missing. The approved original reference and helper sources are pinned; changes are rejected before preparing the candidate. Shape coverage does not establish semantic retention or model accuracy.
+
+PLANNED and conditional: a later experiment may use the prior unaccepted checkpoint 2048 as an experimental parent, with original checkpoint 600 retained as a regression reference. No model is bound, trained or accepted by this preparation. The current pilot must first complete its unchanged comparison unsuccessfully; a separate numerical protocol, actual model attestation and review remain required. The current pilot, production model and next-application queue are unchanged.
+
+[Conditional preparation and limitations](../training/reports/facturation-entity-pilot-v2-corrective-preparation.json).
+
 ## Focused-app reporting correction - 19 October 2026
 
 IMPLEMENTED and verified as reporting only: `report_focused_stage_v1.py` separates the focused application's recorded model gate, retained development results, all evaluated applications and six-app model coverage. It does not reuse the legacy focused flag that can be suppressed by another application's failure. The frozen pilot driver, checkpoint selection, model scores and acceptance thresholds remain unchanged.
