@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Sixth refinement validation completed - 19 October 2026
+
+IMPLEMENTED and verified: checkpoint 3072 completed the unchanged 275-case development validation. The captured observation contains 3,077 contiguous finite updates after optimization resumed. All earlier validation history remains unchanged. The adapter matches its initial saved-weight hash and contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload and no all-zero tensors. The single reviewer verified the captured evidence, all ten bound inputs and the unchanged evaluation controls.
+
+Facturation weighted semantic validation loss decreased by 5.65% from checkpoint 2560. Management Projet and Design Workflow losses increased by 7.78% and 24.61%, respectively. Relative to initial validation, changes are -17.65%, +36.93% and +24.08%, respectively. These are teacher-forced loss changes, not accuracy scores. The application-macro loss is 0.05860072274; checkpoint 512 remains selected by loss. All three weighted losses remain above checkpoint 512. Every scheduled candidate, including 3072, remains mandatory in the pending functional comparison.
+
+The checkpoint-save to history-record span was 1,136.47 seconds and includes validation and bookkeeping. No selected-adapter save occurred at this checkpoint.
+
+PARTIALLY IMPLEMENTED: the original 3,103-update run was incomplete at the captured observation, with the final periodic validation at 3103 still pending. Candidate export, Colibri generation, functional accuracy and retained-app regression acceptance remain pending. Zero of six applications are fully accepted. Production inference and the original evaluation inputs, scorer and provider remain unchanged; no later-application training started.
+
+[Sixth validation and checkpoint integrity evidence](../training/reports/facturation-search-refinement-sixth-validation.json).
+
 ## Fifth refinement validation completed - 19 October 2026
 
 IMPLEMENTED and verified: checkpoint 2560 completed the unchanged 275-case development validation. The captured observation contains 2,565 contiguous finite updates after optimization resumed. All earlier validation history remains unchanged. The adapter matches its initial saved-weight hash and contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload and no all-zero tensors. The single reviewer verified the captured evidence, all ten bound inputs and the unchanged evaluation controls.
