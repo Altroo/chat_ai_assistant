@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Third refinement validation completed - 19 October 2026
+
+IMPLEMENTED and verified: checkpoint 1536 completed the unchanged 275-case development validation. The recorded observation contains 1,539 contiguous finite updates after optimization resumed. The baseline, checkpoint 512 and checkpoint 1024 history remain unchanged. The adapter contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload. The single reviewer verified the captured evidence and all ten bound input hashes.
+
+Weighted semantic validation loss decreased from checkpoint 1024 by 8.50% for Facturation, 8.26% for Management Projet and 18.47% for Design Workflow. Relative to initial validation, changes are -11.89%, +7.97% and -26.31%, respectively. These are teacher-forced loss changes, not accuracy scores. Facturation and Management Projet loss remain above checkpoint 512, while Design Workflow loss is lower. Checkpoint 512 remains selected by application-macro loss; every scheduled candidate, including 1536, remains required in the pending functional comparison.
+
+The checkpoint-save to history-record span was 1,123.96 seconds and includes validation and bookkeeping. No selected-adapter save occurred at this checkpoint. A private observer's memory-unit reporting error was corrected in a fresh record while preserving the original; the training job and finite-value scan were unaffected.
+
+PARTIALLY IMPLEMENTED: the original 3,103-update run remains incomplete, with the next periodic validation at 2048. Candidate export, Colibri generation and functional acceptance remain pending. Zero of six applications are fully accepted. Production inference and the original evaluation inputs, scorer and provider remain unchanged; no later-application training started.
+
+[Third validation and checkpoint integrity evidence](../training/reports/facturation-search-refinement-third-validation.json).
+
 ## Second refinement validation completed - 18 October 2026
 
 IMPLEMENTED and verified: checkpoint 1024 completed the unchanged 275-case development validation. Its saved adapter contains 7,127,040 finite values across 192 tensors and 24 layers, with a complete payload. The original baseline and checkpoint-512 history remain unchanged, and the recorded observation contains 1,029 contiguous finite updates. The single reviewer confirmed the figures and storage evidence.
