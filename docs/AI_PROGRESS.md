@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Raw TRAIN diagnostic and wording correction - 20 October 2026
+
+IMPLEMENTED and verified: the existing experimental checkpoint 2048 completed 30 fixed English/French TRAIN analogues through three isolated Colibri workers. The unchanged native provider reproduces 19 exact actions, 25 schema-valid responses and zero transport failures; all 30 prompt-token counts match. This targeted diagnostic is not a new held-out or primary application score. The exact invocation completed successfully; all workers stopped, six original processes are gone and production is healthy and unchanged. The single reviewer independently reproduced the saved evidence and scoring.
+
+The raw update outputs omit the required operation and flatten change fields instead of using the supported changes object; at least one also truncates the requested text. Quote failures include the wrong month and an unsupported period argument. Review also found two TRAIN wording ambiguities: bounded payments lost the parent’s latest-payment cue, and current-month quotes did not distinguish the full calendar month from month-to-date. The original 19/30 result is preserved, including one native-equivalent payment call that remains a strict mismatch.
+
+IMPLEMENTED as corrected preparation only: v2 keeps the original generator and evidence unchanged, clarifies 20 latest-payment requests and 12 calendar/month-to-date requests, and changes only two explicitly month-to-date target end dates. All 704 replay rows and 275 validation rows remain byte-identical. The new corpus still contains 116 additions and 820 total rows. All 37 affected tests pass; the single reviewer cleared the source and exact corpus. Actual server preflight passes all 820/275 examples, with maximum full lengths 7,745/7,496.
+
+PARTIALLY IMPLEMENTED: no new numerical training, model acceptance, activation or next-application training has started. A smaller corrective numerical pilot and its resource admission remain to be selected and reviewed. The existing primary best remains 121/133 complete actions and 100/111 exact arguments. Zero of six applications are fully accepted.
+
+[Raw diagnostic](../training/reports/facturation-semantic-contrasts-v1-diagnostic.json) and [corrected preparation](../training/reports/facturation-semantic-contrasts-v2-preparation.json).
+
 ## TRAIN semantic contrasts and server preflight prepared - 20 October 2026
 
 IMPLEMENTED and verified as preparation only: a reproducible generator adds 116 focused Facturation TRAIN examples, balanced at 58 English and 58 French. All 704 existing replay rows remain byte-for-byte unchanged; the prepared corpus contains 820 rows (636 Facturation, 112 Management Projet, 72 Design Workflow). All 275 shared development rows and frozen scoring remain unchanged.

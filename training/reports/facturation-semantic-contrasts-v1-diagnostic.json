@@ -1,0 +1,106 @@
+{
+  "count": 30,
+  "exact_action_matches": 19,
+  "structured_valid": 25,
+  "transport_errors": 0,
+  "prompt_token_count_parity": 30,
+  "by_family": {
+    "date_boundaries": {
+      "count": 4,
+      "exact_action_matches": 0
+    },
+    "users_collection_versus_detail": {
+      "count": 4,
+      "exact_action_matches": 4
+    },
+    "logistics_entity_roles": {
+      "count": 2,
+      "exact_action_matches": 2
+    },
+    "verbatim_update_text": {
+      "count": 4,
+      "exact_action_matches": 0
+    },
+    "unpaid_with_other_filters": {
+      "count": 4,
+      "exact_action_matches": 4
+    },
+    "ambiguous_previous_result_selection": {
+      "count": 4,
+      "exact_action_matches": 4
+    },
+    "relative_quote_month": {
+      "count": 4,
+      "exact_action_matches": 1
+    },
+    "unsupported_current_language": {
+      "count": 4,
+      "exact_action_matches": 4
+    }
+  },
+  "elapsed_seconds": 269.841928,
+  "scope": "Thirty fixed TRAIN analogues; not application acceptance or held-out accuracy.",
+  "version": "facturation-semantic-contrasts-v1-train-diagnostic",
+  "status": "IMPLEMENTED: completed and reproduced; model remains unaccepted",
+  "model_checkpoint": 2048,
+  "languages": {
+    "en": 15,
+    "fr": 15
+  },
+  "review": {
+    "status": "No issues in saved evidence and scoring",
+    "reviewers": 1,
+    "independent_server_contact": false
+  },
+  "diagnosis": {
+    "payment_cases": {
+      "strict_matches": 0,
+      "cases": 4,
+      "correct_date_boundaries": 4,
+      "native_equivalent_call_without_score_change": 1,
+      "other_calls_omit_requested_valid_status": 3,
+      "training_issue": "Bounded wording dropped the source latest-payment cue; corrected separately in v2."
+    },
+    "quote_month_cases": {
+      "strict_matches": 1,
+      "cases": 4,
+      "ambiguous_calendar_versus_to_date_wording": 1,
+      "previous_month_returned_current_month": 1,
+      "unsupported_period_argument": 1,
+      "training_issue": "Current-month full-calendar intent clarified separately in v2."
+    },
+    "update_cases": {
+      "strict_matches": 0,
+      "cases": 4,
+      "all_omit_required_operation": true,
+      "all_flatten_change_fields": true,
+      "literal_truncation_observed": true,
+      "incorrect_remark_alias_observed": true,
+      "incorrect_document_number_argument_observed": true,
+      "colibri_rejection": "Missing required operation; frozen provider receives no function call."
+    },
+    "unsupported_clarifications": {
+      "strict_matches": 4,
+      "cases": 4,
+      "limitation": "Does not establish resolution of the earlier primary-development malformed French response."
+    }
+  },
+  "cleanup": {
+    "three_workers_stopped": true,
+    "six_original_processes_gone": true,
+    "terminal_proof": "Exact original invocation started and successfully deactivated in systemd journal; transient unit then garbage collected.",
+    "production_unchanged_and_healthy": true
+  },
+  "sha256": {
+    "collection": "1be6f0373e7ce11b7050bb9ffe62243ed2b39d835aa30908779eff67c3fdcf82",
+    "main_audit": "2a87c57a6922e3a7d5b21f6adaaa996b066a4ea3022530b98ca4510bcedd5e64",
+    "results": "4aab6fd123fd5e6f922d75f017dd4043539f13095dd69b596ab2c872ac482b5c",
+    "completion": "f579d3c3e906fa92db92f5747e1698a51ad66131cd2633983486d6cbb08548f0",
+    "review": "d3c2cd8a8dac534f2b32606ac5fc71f401e4ca86408bb2fc274882cdedff2f73"
+  },
+  "training_executed": false,
+  "held_out_or_primary_benchmark_changed": false,
+  "new_application_accuracy": null,
+  "model_accepted": false,
+  "fully_accepted_applications": 0
+}

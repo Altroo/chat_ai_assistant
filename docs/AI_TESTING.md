@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Raw diagnostic and corrected preparation verification - 20 October 2026
+
+IMPLEMENTED and verified: 61 offline checks first validate 30 native request/target round-trips, 30 invalid-argument rejections and unfinished-stream rejection using the frozen provider. The actual server diagnostic then completes 30 TRAIN-only requests: 19 exact matches, 25 schema-valid outputs, no transport failures and 30 matching prompt-token counts. Full raw SSE and worker debug logs are retained privately. Local replay reproduces every result. The successful systemd journal event belongs to the original invocation; the transient unit was subsequently garbage collected. Worker identities, cleanup and all 201 frozen controls are verified. Review checks saved evidence, not an independent server session.
+
+The diagnostic exposes malformed update arguments and wrong quote-month predictions, plus avoidable ambiguity in the new TRAIN wording. These observations do not change any benchmark score. V2 clarifies latest-payment and calendar/month-to-date intent; only two explicit month-to-date targets change. All other native actions and the 704-row replay/275-row validation remain unchanged.
+
+All 37 affected preparation tests pass in the main thread. The single reviewer independently runs 33 read-only tests and inspects four filesystem tests. Actual v2 server preflight passes 820 TRAIN and 275 validation examples for native round-trip, Colibri prefix parity, loss/semantic alignment and output budgets. No weights are loaded, no model response is generated and no optimizer update occurs during this preflight. Preparation and diagnostic checks do not establish new application accuracy, native security or model acceptance.
+
+[Raw diagnostic evidence](../training/reports/facturation-semantic-contrasts-v1-diagnostic.json) and [v2 data checks](../training/reports/facturation-semantic-contrasts-v2-preparation.json).
+
 ## Semantic-contrast preparation verification - 20 October 2026
 
 IMPLEMENTED and verified: 26 synthetic tests pass for the new TRAIN contrast generator. Coverage includes leap/year boundary arithmetic, inclusive/exclusive/unbounded dates, authorized user list/detail targets, logistics role cues and Transit retention, complete remarks, preserved identifiers/due dates, unpaid omitted/true counterparts, explicit second-result selection, ambiguous-choice clarifications, current-language behavior, immutable context/schema/history, stale metadata removal, development input/template exclusions, sensitive request rejection, changed source/native/helper rejection and existing preflight/trainer manifest compatibility. A full preparation fixture checks source byte preservation, application declarations, file hashes and isolated output reuse rejection.

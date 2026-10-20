@@ -1,0 +1,112 @@
+{
+  "version": "facturation-semantic-contrasts-v2-preparation",
+  "status": "IMPLEMENTED: corrected preparation and server tokenizer preflight only",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "source_replay_rows_preserved": 704,
+  "new_rows": 116,
+  "combined_rows": 820,
+  "validation_rows_unchanged": 275,
+  "application_rows": {
+    "facturation": 636,
+    "management_projet": 112,
+    "design_workflow": 72
+  },
+  "by_family": {
+    "date_boundaries": 22,
+    "users_collection_versus_detail": 12,
+    "logistics_entity_roles": 18,
+    "verbatim_update_text": 12,
+    "unpaid_with_other_filters": 24,
+    "ambiguous_previous_result_selection": 8,
+    "relative_quote_month": 12,
+    "unsupported_current_language": 8
+  },
+  "wording_corrections": {
+    "explicit_latest_payment_requests": 20,
+    "explicit_calendar_or_month_to_date_requests": 12,
+    "month_to_date_targets": 2
+  },
+  "target_changes": "Only two explicitly month-to-date examples now end at trusted today; all other native actions remain unchanged.",
+  "preserved": [
+    "Permission-filtered schemas",
+    "Trusted context and history",
+    "Capability metadata",
+    "All original replay bytes",
+    "Shared validation and frozen scoring",
+    "Earlier19/30 diagnostic"
+  ],
+  "tests": {
+    "main_passed": 37,
+    "independent_read_only_passed": 33,
+    "filesystem_reviewed_not_rerun": 4
+  },
+  "review": {
+    "status": "No issues in source and exact corpus",
+    "reviewers": 1,
+    "scope": "Preparation only"
+  },
+  "server_preflight": {
+    "train": {
+      "count": 820,
+      "round_trip_passed": 820,
+      "runtime_prefix_parity_passed": 820,
+      "loss_boundary_passed": 820,
+      "semantic_alignment_passed": 820,
+      "semantic_loss_weight": 4,
+      "maximum_tokens": 7745,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 820,
+      "maximum_target_tokens": 131,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 488,
+      "sha256": "439c1147c0131c79d7c00749a4a024a813ad1f9e96e5baae81bc9ed2a2d423d0"
+    },
+    "validation": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 275,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "duration_seconds": 10.1415696144104,
+    "optimizer_updates": 0,
+    "inference_requests": 0,
+    "scope": "Tokenizer/template/parser, loss alignment and output-budget checks only"
+  },
+  "sha256": {
+    "generator": "5a4b92ab4f602fc2af7d01f868bf8a4942ef6b08943b8e0391fb55ce7ed8b78f",
+    "tests": "58cc96a91d31d8f20ab7ef1dbe7d8501bdd98840df9f953abc487091bf3cf2f9",
+    "prior_generator": "3d7f2eee56c328593d8ccfbd01c4aea1e637da0b6a4d13079ee48d5489d27d43",
+    "manifest": "ba8613f903ba1097f5d86a7a40ecf65ebc18b4c5c708a52dba8a7b3591b41dfa",
+    "files": {
+      "contrasts.jsonl": "0a633ab1d423c42d724533a95672cf9917636f3d4ea23396a3635e695c20b1fa",
+      "train.jsonl": "439c1147c0131c79d7c00749a4a024a813ad1f9e96e5baae81bc9ed2a2d423d0",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "server_preflight": "9be5c17def67a6f97b43690d5982cdea9707447b7cd3360987076bcc4d985542",
+    "corpus_review": "6daed9f36c1b9c85d5c19c4028a880011bdc459b92e4b57843f7d10906439d05"
+  },
+  "remaining": [
+    "Wrong-month and unsupported date-period predictions",
+    "Malformed update operation/changes and verbatim text",
+    "Choose and review a numerical pilot and actual resource admission",
+    "Functional primary, regression, permission/security and retention gates"
+  ],
+  "training_executed": false,
+  "new_functional_accuracy": null,
+  "model_accepted": false,
+  "fully_accepted_applications": 0,
+  "next_application_training": false,
+  "production_activation": false
+}
