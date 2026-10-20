@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Corrective epoch started - 20 October 2026
+
+IMPLEMENTED and verified at launch: one server-only 704-update epoch is running from the attested experimental checkpoint-2048 merged FP32 parent, with a fresh adapter and optimizer. The original checkpoint 600 remains the separate retention reference. The actual trainer command, model/data identities, source/configuration and original service invocation are captured in 31 immutable launch records. At that observation, initial preparation/validation is incomplete and zero of 704 optimizer updates have completed.
+
+The run uses 520 Facturation, 112 Management Projet and 72 Design Workflow examples, 14 CPU threads, BF16 SDPA, rank 16/alpha 32 across all 24 layers, semantic loss weight 4 and a learning rate of 0.00001. Nonreentrant gradient checkpointing is enabled. Saved checkpoints are 176, 352, 528 and 704; teacher-forced validations are 0, 352 and 704. The child timeout is 12 hours and the service limit is 14 hours. The 40 GiB hard limit and zero job swap are guarded by a ten-percent host-memory reserve at admission.
+
+Both two-update capacity measurements passed on the same longest 7,745-token TRAIN example. Without checkpointing, cgroup peak was 39.5336 GiB; with checkpointing, it was 8.0296 GiB. The checkpointed two-update total took 11.0286 percent longer, with identical recorded losses and gradient norms. This supports the lower-memory choice; it does not establish whole-epoch equivalence, completion or generated-action accuracy. Preflight passed all 704 TRAIN and 275 validation rows.
+
+PARTIALLY IMPLEMENTED: the epoch and subsequent model evaluation remain incomplete. The prospective comparison coordinator and its six offline orchestration guards are prepared and reviewed. They require actual successful training completion and an independent evidence review before any new Colibri export or inference. All five declared development candidates must complete; an eligible selection still needs the unchanged shared development, regression and additional controls. Zero of six applications are fully accepted. Production inference is healthy and unchanged; no next-application training or model activation has started.
+
 ## Pilot comparison completed - 20 October 2026
 
 IMPLEMENTED and verified: all declared candidate comparisons and the selected checkpoint's 275 shared development, 438 regression and 48 additional cases finished. The single reviewer independently reproduced every score and gate, checked all 18 ordered shards and 141 unchanged frozen controls, and verified the recorded model/runtime/worker evidence and cleanup.
