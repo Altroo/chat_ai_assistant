@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Revised Facturation correction and representation checks - 20 October 2026
+
+The next bounded experiment is prepared from the best unaccepted checkpoint 125. Its 128 examples comprise 96 Facturation, 16 Management Projet and 16 Design Workflow rows. The 64 fresh Facturation examples are balanced English/French; retained rows keep their existing language metadata and raw prompt/argument order. Labels come only from approved TRAIN contracts, with development inputs used for duplicate/template exclusion.
+
+The actual 128/275 tokenizer preflight and 473-tensor parent reconstruction passed. Source checks pass 47 tests plus 32 stage guard cases. The two discarded capacity updates passed with finite gradients, updates across all 24 layers and approximately 5.73 GiB peak process memory. Independent numerical admission and fresh resource guards passed.
+
+The main 128-update run has started on the server. The launch capture records zero optimizer updates; initial preparation/validation is incomplete at that capture. Planned checkpoints are 32/64/96/128 and teacher validation 0/64/128. Functional ranking uses the unchanged Colibri scorer and every declared candidate, with loss excluded from ranking. A separately pinned terminal verifier couples the completed report to raw provenance, validation history and update logs.
+
+The original 30-row TRAIN diagnostic scored 27 exact actions. Generic prompt changes reduced this to 26 and are rejected. The corrected HF representation also produced 26 exact actions, including the same literal truncation and optional-date failures. These are fit diagnostics, not held-out scores or isolated quantization tests. No sufficient learning rate or update count is established, and no model is accepted or activated.
+
+[Reproducible preparation and measured checks](../training/reports/facturation-semantic-correction-v2-preparation.json).
+
 ## Semantic pilot complete; generated accuracy below target - 20 October 2026
 
 IMPLEMENTED and verified: server CPU training completed all 500 updates and one epoch in approximately 4.69 hours, using the existing merged checkpoint-2048 experimental parent and a fresh adapter/optimizer. The corpus contains 316 Facturation, 112 Management Projet and 72 Design Workflow rows. BF16 SDPA, nonreentrant checkpointing, rank 16/alpha 32 across 24 layers, learning rate 0.000002 and semantic weight 4 match the reviewed recipe.

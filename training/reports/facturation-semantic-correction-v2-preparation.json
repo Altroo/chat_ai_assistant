@@ -1,0 +1,213 @@
+{
+  "version": "facturation-semantic-correction-v2-preparation",
+  "date": "2026-10-20",
+  "status": "PARTIALLY IMPLEMENTED; MAIN TRAINING STARTED; FUNCTIONAL EVALUATION PENDING",
+  "application_focus": "facturation",
+  "model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "training_framework": [
+    "PyTorch",
+    "Transformers",
+    "PEFT LoRA"
+  ],
+  "source_dataset_only": true,
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "corpus": {
+    "rows": 128,
+    "by_application": {
+      "facturation": 96,
+      "management_projet": 16,
+      "design_workflow": 16
+    },
+    "fresh_contrasts": {
+      "full_literal": 16,
+      "optional_filters": 24,
+      "month_endings": 24
+    },
+    "retained_rows": 64,
+    "retained_raw_lines_byte_identical": true,
+    "mandatory_facturation_tool_family_and_shape_tags": 37,
+    "partial_retention_feature_coverage": {
+      "facturation": {
+        "available": 290,
+        "selected": 181
+      },
+      "management_projet": {
+        "available": 136,
+        "selected": 76
+      },
+      "design_workflow": {
+        "available": 90,
+        "selected": 68
+      }
+    },
+    "files_sha256": {
+      "train.jsonl": "dc0587953e42197d3e1b499af2913c13d94c971a9ced65ec0ab0769adf3f4bad",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+      "contrasts.jsonl": "eb4dbf495b2599b63f7ff8880d1ff0963a4a14a18b4d4710c95a7c6009c958c9"
+    },
+    "manifest_sha256": "6268e2531408918926f90bcf710d5f74a79daf5d802a0b07f9d7230032e4a16d"
+  },
+  "preflight": {
+    "status": "IMPLEMENTED AND VERIFIED",
+    "train": {
+      "count": 128,
+      "round_trip_passed": 128,
+      "runtime_prefix_parity_passed": 128,
+      "loss_boundary_passed": 128,
+      "semantic_alignment_passed": 128,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7706,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 128,
+      "maximum_target_tokens": 131,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "dc0587953e42197d3e1b499af2913c13d94c971a9ced65ec0ab0769adf3f4bad"
+    },
+    "validation": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 275,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "collection_sha256": "75f53253c49dfecdb2b56d9a4a2c1f7fddad6abc2b45191e375e2173baabd9e7",
+    "parent_tensor_reconstruction": {
+      "source_checkpoint": 125,
+      "tensor_count": 473,
+      "all_saved_tensors_exact": true
+    }
+  },
+  "tests": {
+    "stage_guard_cases_passed": 32,
+    "data_admission_selection_and_terminal_verification_tests_passed": 47
+  },
+  "prospective_training": {
+    "updates": 128,
+    "complete_epochs": 1,
+    "fresh_adapter_and_optimizer": true,
+    "already_merged_parent_checkpoint": 125,
+    "learning_rate": 1e-05,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_layers": 24,
+    "semantic_loss_weight": 4,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "gradient_checkpointing": "nonreentrant",
+    "cpu_threads": 14,
+    "memory_limit_gib": 40,
+    "swap_allowed": false,
+    "host_ram_reserve_percent": 10,
+    "saved_steps": [
+      32,
+      64,
+      96,
+      128
+    ],
+    "teacher_validation_steps": [
+      0,
+      64,
+      128
+    ],
+    "training_timeout_hours": 4,
+    "unit_timeout_hours": 5
+  },
+  "required_functional_evaluation": {
+    "candidate_steps": [
+      0,
+      32,
+      64,
+      96,
+      128
+    ],
+    "primary_cases_per_candidate": 133,
+    "shared_development_cases": 275,
+    "regression_cases": 438,
+    "additional_controls": 48,
+    "all_frozen_labels_and_gates_unchanged": true,
+    "validation_loss_used_for_ranking": false
+  },
+  "prior_training_representation_diagnostics": {
+    "scope": "Thirty original TRAIN prompts; not held-out accuracy",
+    "original_colibri": {
+      "exact_actions": 27,
+      "schema_valid": 28,
+      "count": 30
+    },
+    "generic_prompt_variant_colibri": {
+      "exact_actions": 26,
+      "schema_valid": 27,
+      "count": 30,
+      "adopted": false
+    },
+    "corrected_hf_representation": {
+      "exact_actions": 26,
+      "schema_valid": 28,
+      "eos_terminated": 30,
+      "count": 30
+    },
+    "conclusion": "Literal truncation and invented optional dates also occur before Colibri; no Colibri-only cause is established.",
+    "interrupted_initial_hf_stop_configuration": "Five partial generations are invalid for comparison and excluded."
+  },
+  "capacity_status": "IMPLEMENTED AND VERIFIED; TWO DISCARDED CAPACITY UPDATES",
+  "training_executed": true,
+  "new_functional_accuracy_established": false,
+  "best_existing_facturation_primary": {
+    "full_actions": 122,
+    "count": 133,
+    "percent": 91.73,
+    "exact_arguments": 102,
+    "exact_arguments_count": 111,
+    "exact_arguments_percent": 91.89
+  },
+  "model_accepted": false,
+  "fully_accepted_applications": 0,
+  "production_activation": false,
+  "limitations": [
+    "Coverage and tokenizer checks are not model accuracy.",
+    "Learning rate and update count are experimental and do not guarantee 95 percent.",
+    "Retention coverage is partial; actual regression evaluation remains mandatory.",
+    "Base and corrective training run only on the server; no local model weights are loaded."
+  ],
+  "capacity": {
+    "updates": 2,
+    "longest_sequence_tokens": 7706,
+    "finite_losses_and_gradients": true,
+    "updated_layers_per_update": 24,
+    "peak_rss_kib": 6003300,
+    "swap_allowed": false,
+    "seconds_per_update": [
+      182.4411348849535,
+      195.23775131069124
+    ],
+    "independent_review": "No issues",
+    "used_as_main_training_updates": false
+  },
+  "training_completed": false,
+  "main_training_at_launch": {
+    "status": "RUNNING; INITIAL PREPARATION/VALIDATION INCOMPLETE AT CAPTURE",
+    "scheduled_updates": 128,
+    "recorded_optimizer_updates": 0,
+    "one_dispatch": true,
+    "production_model_changed": false
+  },
+  "terminal_verification": {
+    "tests_passed": 8,
+    "replays_pinned_validation_selection": true,
+    "checks_provenance_history_and_logs": true,
+    "diagnostic_loss_used_for_functional_ranking": false
+  }
+}
