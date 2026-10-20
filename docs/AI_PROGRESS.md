@@ -1,5 +1,27 @@
 # Chat AI Assistant progress
 
+## Disposable learning test completed; fit target missed - 20 October 2026
+
+IMPLEMENTED and verified: all 32 optimizer updates completed on the server in 2,869.76 seconds (approximately 48 minutes), including validation. Eight approved Facturation TRAIN examples were used over four complete epochs. Weighted validation loss worsened from 0.038714 to 0.230300; unweighted loss worsened from 0.020905 to 0.131682.
+
+The original comparison completed the fresh baseline and export, then failed a port preflight before final-checkpoint inference. A reviewed continuation reused that evidence and ran only the 30 pending final-checkpoint requests. Training, export and baseline inference were not repeated.
+
+| TRAIN diagnostic | Baseline checkpoint 125 | Final 32 updates |
+| --- | --- | --- |
+| Exact actions | 23/30 | 26/30 |
+| Structured output | 25/30 | 27/30 |
+| Eight optimized examples | 6/8 | 7/8 |
+| Other TRAIN controls | 17/22 | 19/22 |
+| Transport failures | 0 | 0 |
+
+PARTIALLY IMPLEMENTED: the 8/8 fit target failed. Two French update responses exhausted their 512-token output budget; another update added forbidden arguments. One previously correct clarification regressed. These are TRAIN diagnostics, not new application accuracy. The weights remain quarantined and cannot be promoted. The primary best remains 122/133 (91.73%), with zero of six applications fully accepted in this campaign.
+
+The single reviewer verified 113 comparison records and replayed all 60 raw responses through the frozen provider. Completed-training provenance, artifact equality, stopped workers, free test ports and unchanged healthy production were also checked. A separate metadata-only tokenizer check found identical tokenizer files, rendered prompts and token IDs across all 30 requests; it applied no regex patch and did not explain or fix the generation failures.
+
+PLANNED: investigate update generation termination, forbidden arguments and the clarification regression before another full training recipe. No numerical training is currently running, and no next-application training or production activation occurred.
+
+[Completed diagnostic evidence](../training/reports/facturation-train-fit-sanity-v1-completion.json).
+
 ## Disposable Facturation learning test started - 20 October 2026
 
 PARTIALLY IMPLEMENTED: a separate 32-update server learning test started at 22:14 UTC after review of its actual preflight. It uses eight byte-preserved approved TRAIN rows, one per semantic family, with four English and four French examples. Four complete epochs use the existing merged experimental checkpoint 125 with a fresh adapter/AdamW optimizer, learning rate 0.0001, rank 16/alpha 32 across 24 layers, BF16 SDPA, checkpointing and 14 CPU threads. The 40 GiB ceiling, zero swap and ten-percent host-RAM reserve remain enforced.
