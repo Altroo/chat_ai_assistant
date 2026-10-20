@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Short semantic numerical pilot started - 20 October 2026
+
+IMPLEMENTED and verified: the 500-row Facturation pilot preserves 384 earlier TRAIN rows byte-for-byte and adds all 116 reviewed English/French semantic contrasts. It contains 316 Facturation, 112 Management Projet and 72 Design Workflow rows. The retained native replay covers 18 tools, 174 measured features, 51 priority conjunctions and 58 offered-tool bundles; it covers 119 of 418 full conjunctions. These are structural inventory counts, not model accuracy.
+
+All 16 new assembly/recipe tests pass. Actual server preflight passes every 500 TRAIN and 275 unchanged validation example. Both capacity updates pass on the 7,745-token longest row, with finite gradients and real weight changes in all 24 layers. Peak job memory is 5.90 GiB. The single reviewer cleared the exact source/data, saved actual preflight/capacity evidence and numerical admission; review did not independently contact the server.
+
+PARTIALLY IMPLEMENTED: the distinct server training job is running, with 0 of 500 optimizer updates recorded at this launch capture. It uses the existing merged experimental checkpoint 2048, a fresh adapter/optimizer, learning rate 0.000002, 14 CPU threads, BF16 SDPA, rank 16/alpha 32 across 24 layers, semantic weight 4 and nonreentrant checkpointing. Saved candidates are 125, 250, 375 and 500; teacher-forced validation is 0, 250 and 500. A ten-percent host-RAM floor and zero job swap remain enforced.
+
+No new functional score is established. Every declared candidate still needs unchanged Colibri evaluation. Existing best primary results remain 121/133 full actions and 100/111 exact arguments, below target. Zero of six applications are fully accepted. Production inference remains unchanged and no next-application training started.
+
+[Actual launch and prerequisite evidence](../training/reports/facturation-semantic-pilot-v1-training-launch.json).
+
 ## Raw TRAIN diagnostic and wording correction - 20 October 2026
 
 IMPLEMENTED and verified: the existing experimental checkpoint 2048 completed 30 fixed English/French TRAIN analogues through three isolated Colibri workers. The unchanged native provider reproduces 19 exact actions, 25 schema-valid responses and zero transport failures; all 30 prompt-token counts match. This targeted diagnostic is not a new held-out or primary application score. The exact invocation completed successfully; all workers stopped, six original processes are gone and production is healthy and unchanged. The single reviewer independently reproduced the saved evidence and scoring.

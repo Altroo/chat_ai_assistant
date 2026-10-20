@@ -1,0 +1,191 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: TRAINING ACTIVE; ACCEPTANCE INCOMPLETE",
+  "report_created_utc": "2026-10-20T10:16:14.267714+00:00",
+  "application_focus": "facturation",
+  "shared_model_family": "Qwen3.5-0.8B",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "server_only_training": true,
+  "inference_runtime": "Colibri",
+  "experimental_parent_checkpoint": 2048,
+  "separate_regression_reference": 600,
+  "fully_accepted_applications": 0,
+  "corpus": {
+    "rows": 500,
+    "by_application": {
+      "facturation": 316,
+      "management_projet": 112,
+      "design_workflow": 72
+    },
+    "replay_rows_byte_preserved": 384,
+    "clarified_semantic_contrasts": 116,
+    "validation_rows_unchanged": 275,
+    "recorded_native_replay_coverage": {
+      "native_tools": 18,
+      "measured_features": {
+        "selected": 174,
+        "available": 174
+      },
+      "critical_conjunctions": {
+        "available": 51,
+        "selected": 51,
+        "uncovered": []
+      },
+      "offered_tool_bundles": {
+        "available": 58,
+        "selected": 58,
+        "uncovered": []
+      }
+    },
+    "recorded_native_replay_full_conjunctions": {
+      "selected": 119,
+      "available": 418
+    },
+    "train_sha256": "05e792a632ba37cdbb71845e57c0444f4feb4c94851addc5ec84a9674da0cb0d",
+    "validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+  },
+  "training": {
+    "status": "RUNNING AT CAPTURE",
+    "observed_optimizer_updates": 0,
+    "phase_at_capture": "setup and initial validation",
+    "expected_updates": 500,
+    "complete_epochs": 1,
+    "updates": 500,
+    "threads": 14,
+    "context_tokens": 8192,
+    "learning_rate": 2e-06,
+    "lora_layers": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "semantic_loss_weight": 4,
+    "attention": "sdpa",
+    "gradient_checkpointing": "nonreentrant",
+    "checkpoint_interval": 125,
+    "validation_interval": 250,
+    "teacher_forced_validation_steps": [
+      0,
+      250,
+      500
+    ],
+    "maximum_training_hours": 12,
+    "maximum_unit_hours": 14,
+    "actual_memory_limit_gib": 40,
+    "swap_allowed": false,
+    "spare_host_memory_floor_percent": 10,
+    "exposure": {
+      "facturation": 316,
+      "management_projet": 112,
+      "design_workflow": 72
+    },
+    "fresh_adapter_and_optimizer": true,
+    "parent_adapter_already_merged": true
+  },
+  "preflight": {
+    "train": {
+      "count": 500,
+      "round_trip_passed": 500,
+      "runtime_prefix_parity_passed": 500,
+      "loss_boundary_passed": 500,
+      "semantic_alignment_passed": 500,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7745,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 500,
+      "maximum_target_tokens": 131,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 488,
+      "sha256": "05e792a632ba37cdbb71845e57c0444f4feb4c94851addc5ec84a9674da0cb0d"
+    },
+    "valid": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4.0,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 275,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "all_cases_passed": true,
+    "model_weights_loaded": false,
+    "inference_requests": 0,
+    "optimizer_updates": 0
+  },
+  "capacity_probe": {
+    "status": "PASSED",
+    "optimizer_updates": 2,
+    "longest_training_input_tokens": 7745,
+    "update_seconds": [
+      188.57182146422565,
+      194.35904005356133
+    ],
+    "peak_process_rss_gib": 5.876552581787109,
+    "peak_cgroup_gib": 5.903129577636719,
+    "all_24_layers_received_finite_gradients_and_updates_each_step": true,
+    "accuracy_measured": false
+  },
+  "validation": {
+    "automated_recipe_and_assembly_tests_passed": 16,
+    "single_reviewer": "No issues",
+    "scope": "Source, exact corpus, actual saved preflight/capacity and numerical admission.",
+    "independent_review_contacted_server": false,
+    "new_native_backend_security_tests_run": false,
+    "new_functional_model_accuracy": null
+  },
+  "functional_evaluation": {
+    "candidate_steps": [
+      0,
+      125,
+      250,
+      375,
+      500
+    ],
+    "unchanged_primary_cases": 133,
+    "selection": [
+      "all primary Facturation development targets met",
+      "highest Facturation development full-action fraction",
+      "highest Facturation development valid-structure fraction",
+      "lowest checkpoint step"
+    ],
+    "validation_loss_used_for_ranking": false,
+    "required_later_gates": [
+      275,
+      438,
+      48
+    ],
+    "tool_selection_target_percent": 95,
+    "full_action_target_percent": 95,
+    "exact_arguments_target_percent": 95,
+    "structured_output_target_percent": 99
+  },
+  "existing_best_primary": {
+    "correct_actions": 121,
+    "cases": 133,
+    "exact_arguments": 100,
+    "argument_cases": 111,
+    "status": "Previous experimental checkpoint2048; below acceptance targets"
+  },
+  "evidence_sha256": {
+    "binding": "da7181485500731f2ba63151ee878414ca8bf5c29ce308638fa4d39fbbcb8f8c",
+    "admission": "e357b93fad3e368d409f5850708efd9b7078138a17a11ef79449cbf3191b7e51",
+    "preflight_report": "e9e611c2bf28edd9cb69f9b4b87bd161be7ee2525fe04cd82239181cc09d4f05",
+    "capacity_report": "ef8455c49b96363a4eac280f3126303b4b50a788ebac4371adb25a6ba3fc544b",
+    "launch_observation": "99c46cbcfee7e494f78661bbb92e83a443dd4fae0843ea03a676e35ee4f6d778"
+  },
+  "production_model_activated": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "Training completion and 95 percent functional accuracy remain unproven.",
+    "Structural replay coverage is not semantic coverage or measured retention.",
+    "Every declared candidate needs unchanged Colibri evaluation.",
+    "Retention, multilingual, clarification and critical/security gates remain required.",
+    "Contracts, Gestion Magasin and Reservation were not trained by this pilot."
+  ]
+}

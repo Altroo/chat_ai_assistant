@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Short semantic pilot checks - 20 October 2026
+
+IMPLEMENTED: 12 numerical-recipe and four subset-assembly tests pass. Actual native-schema and TRAIN/development exclusion checks pass on the 500-row corpus. The new selector reproduces the saved primary 121/133 action result in an offline cache replay without changing frozen scoring; this is not new inference.
+
+Actual server preflight passes all 500/275 round-trip, prefix, loss-boundary, semantic-alignment and output-budget checks. Maximum full lengths are 7,745/7,496 tokens. The two-update capacity probe uses the exact new dataset, experimental parent, learning rate and checkpointing mode. Both updates produce finite gradients and change all 24 layers; measured peak job memory is 5.90 GiB. The single reviewer verified saved evidence and numerical admission.
+
+PARTIALLY IMPLEMENTED: full 500-update completion, new Colibri primary/shared/retention comparisons and native backend security acceptance remain incomplete. Training loss and inventory coverage do not establish 95 percent accuracy.
+
+[Measured prerequisites and launch](../training/reports/facturation-semantic-pilot-v1-training-launch.json).
+
 ## Raw diagnostic and corrected preparation verification - 20 October 2026
 
 IMPLEMENTED and verified: 61 offline checks first validate 30 native request/target round-trips, 30 invalid-argument rejections and unfinished-stream rejection using the frozen provider. The actual server diagnostic then completes 30 TRAIN-only requests: 19 exact matches, 25 schema-valid outputs, no transport failures and 30 matching prompt-token counts. Full raw SSE and worker debug logs are retained privately. Local replay reproduces every result. The successful systemd journal event belongs to the original invocation; the transient unit was subsequently garbage collected. Worker identities, cleanup and all 201 frozen controls are verified. Review checks saved evidence, not an independent server session.
