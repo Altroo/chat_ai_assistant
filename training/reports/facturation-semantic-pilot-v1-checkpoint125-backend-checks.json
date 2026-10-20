@@ -1,0 +1,93 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: TRAINING ACTIVE; ACCURACY AND ACCEPTANCE PENDING",
+  "application_focus": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "shared_model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "training_progress_at_capture": {
+    "observed_utc": "2026-10-20T11:42:27.205121+00:00",
+    "completed_optimizer_updates": 133,
+    "scheduled_optimizer_updates": 500,
+    "training_complete": false,
+    "same_original_training_process_verified": true
+  },
+  "checkpoint125_integrity": {
+    "observed_utc": "2026-10-20T11:38:22.539240+00:00",
+    "saved_checkpoint": 125,
+    "saved_adapter_tensors": 192,
+    "all_saved_adapter_tensors_finite_fp32": true,
+    "layers_with_nonzero_lora_b": 24,
+    "lora_rank": 16,
+    "lora_alpha": 32.0,
+    "stable_files_verified": true,
+    "bound_source_files_verified": 26,
+    "artifact_sha256": {
+      "adapter_model.safetensors": "c71ff13c039bfd9a4a33eee8b6d9c5a076aa50e777d9b03f04c159b2588765af",
+      "adapter_config.json": "dafec1536cb83dbbac949da2c1ce21091df3c0bfbd678cb780c09349f7f741ef"
+    },
+    "single_reviewer": "No issues",
+    "scope": "Saved-adapter integrity only; nonzero weights do not establish accuracy or the complete optimizer trajectory."
+  },
+  "native_backend_regression": {
+    "tested_source_commit": "eb427df7e14d6ed9923f15731a77a3b2cd807061",
+    "tests_passed": 896,
+    "test_modules": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "pytest_duration_seconds": 52.56,
+    "wrapper_duration_seconds": 53.740623499965295,
+    "logistics_knowledge_tests_included": 14,
+    "test_environment": "Isolated local synthetic PostgreSQL fixtures",
+    "production_required_package_version": "0.2.3",
+    "production_required_wheel_sha256": "bf4e00c22ba987981efe4dbace0711fd8e2538768d49093932c180ff49e4b6ff",
+    "application_source_and_worktree_unchanged": true,
+    "actual_model_inference_performed": false,
+    "single_reviewer": "No issues",
+    "scope": "Native assistant/backend regression under isolated test settings; not complete production-security acceptance."
+  },
+  "local_test_environment": {
+    "stale_package_version": "0.1.0",
+    "corrected_to_required_version": "0.2.3",
+    "offline_update": true,
+    "all_10_installed_package_files_match_tested_production_wheel": true,
+    "other_dependencies_changed": false,
+    "application_source_changed": false
+  },
+  "remaining_evaluation": {
+    "current_run_functional_evaluation_started": false,
+    "candidate_steps": [
+      0,
+      125,
+      250,
+      375,
+      500
+    ],
+    "baseline_logical_zero_actual_checkpoint": 2048,
+    "original_regression_reference": 600,
+    "primary_cases_per_candidate": 133,
+    "applicable_later_case_counts": [
+      275,
+      438,
+      48
+    ],
+    "thresholds_and_scoring_unchanged": true,
+    "actual_successful_training_completion_and_evidence_review_required": true
+  },
+  "evidence_sha256": {
+    "checkpoint125_integrity": "4dcaa41217ceec104761cfea614422ec97703ea6596e3599814e0764ebcac514",
+    "checkpoint125_review": "c658e4654790e01968e3ee9adda2de7790fe47840ef257a4f943d4b9441c6c69",
+    "native_backend_regression": "be5d6b210e3b8ceb3de351b382049beb35f8588159d2e0d5f450669e757aaf80",
+    "native_junit": "ef131d4b49b0e4eef3d70d4b8dea7eb3ae11632141401be6aaacea8d56c3e5e3",
+    "progress_observation": "03bb42ce9787a9f3bac51cbeea373895c39ec81f1788c8ae7b0090c3078317d0"
+  },
+  "production_healthy_and_unchanged": true,
+  "new_model_accuracy_established": false,
+  "model_accepted": false,
+  "fully_accepted_applications": 0,
+  "production_activation": false,
+  "next_application_training_started": false
+}

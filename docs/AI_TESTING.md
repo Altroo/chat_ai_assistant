@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Saved checkpoint and current native regression - 20 October 2026
+
+IMPLEMENTED: checkpoint 125 passes the exact adapter-audit function from the pinned completion guard: 192 finite FP32 tensors and nonzero LoRA_B in every trained layer, with stable weights/config hashes, matching rank/alpha and the original invocation identity. The single reviewer verified the saved evidence and exact function reuse.
+
+All 896 native assistant tests pass across the current 20 test modules in 52.56 seconds, with zero failures, errors or skips. The suite covers existing permissions, company isolation, history/delivery revocation, requester-bound confirmed actions, navigation and current logistics knowledge. It runs on isolated synthetic local PostgreSQL fixtures with the required 0.2.3 assistant wheel, and does not measure actual model accuracy. The initial 17 collection errors from the stale local 0.1.0 package are preserved; offline dependency alignment resolves that environment issue without application source changes.
+
+PARTIALLY IMPLEMENTED: the full 500-update run, completed-adapter review and unchanged functional model comparison remain pending. Neither the native regression pass nor the early checkpoint audit admits activation or proves complete production security.
+
+[Measured checks and explicit scope](../training/reports/facturation-semantic-pilot-v1-checkpoint125-backend-checks.json).
+
 ## Initial validation and comparison preparation - 20 October 2026
 
 IMPLEMENTED: the actual 275-example initial teacher-forced validation exactly matches the previous experiment's initial result on the unchanged parent and validation data. The first optimizer update is finite. These checks are not model accuracy.

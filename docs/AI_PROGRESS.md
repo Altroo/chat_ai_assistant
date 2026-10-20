@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Checkpoint 125 and native backend checks - 20 October 2026
+
+IMPLEMENTED and verified: the first scheduled Facturation checkpoint was saved correctly. All 192 saved adapter tensors are finite FP32, with nonzero LoRA_B weights across all 24 trained layers. Rank 16 and alpha 32 match the recipe; stable file hashes and all 26 bound source files were checked. The single reviewer found no issues in the captured integrity evidence.
+
+The current native Facturation assistant suite passed 896 tests across 20 modules, with zero failures, errors or skips, including 14 logistics knowledge cases. It used isolated synthetic local fixtures and the exact application-pinned 0.2.3 package. The stale local 0.1.0 installation was then corrected offline; its installed files match the tested wheel. Application source and production were unchanged. These backend checks are separate from model accuracy and complete production-security acceptance.
+
+PARTIALLY IMPLEMENTED: the original 500-update run remains active. Checkpoint integrity does not establish functional accuracy. Actual successful completion and its evidence review are still required before the prepared Colibri comparison. No new accuracy score, model acceptance, production activation or next-application training is established; zero of six applications are fully accepted.
+
+[Checkpoint and backend regression evidence](../training/reports/facturation-semantic-pilot-v1-checkpoint125-backend-checks.json).
+
 ## Initial validation complete; optimization active - 20 October 2026
 
 IMPLEMENTED and verified at capture: the original 500-update Facturation invocation completed its unchanged 275-example initial teacher-forced validation and then its first finite optimizer update. The initial loss result exactly reproduces the previous experiment on the same merged checkpoint-2048 parent and validation bytes. This is a reproducibility check, not an accuracy improvement.
