@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Initial validation and comparison preparation - 20 October 2026
+
+IMPLEMENTED: the actual 275-example initial teacher-forced validation exactly matches the previous experiment's initial result on the unchanged parent and validation data. The first optimizer update is finite. These checks are not model accuracy.
+
+All 24 offline completion/comparison guards pass. They cover exact original invocation and source identities, finite contiguous update requirements, complete saved adapters, scoring preservation, missing-review rejection before comparison results or SSH, every declared candidate, and the unchanged broader acceptance phases. The single reviewer reran 19 read-only cases and inspected five filesystem cases. The saved 24-file actual launch collection and 26 bound files pass review.
+
+PARTIALLY IMPLEMENTED: the full 500-update run and functional comparison remain incomplete. Source/preparation review does not admit evaluation before actual successful training completion and its evidence review.
+
+[Measured initial validation and source-preparation scope](../training/reports/facturation-semantic-pilot-v1-initial-validation.json).
+
 ## Short semantic pilot checks - 20 October 2026
 
 IMPLEMENTED: 12 numerical-recipe and four subset-assembly tests pass. Actual native-schema and TRAIN/development exclusion checks pass on the 500-row corpus. The new selector reproduces the saved primary 121/133 action result in an offline cache replay without changing frozen scoring; this is not new inference.

@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Initial validation complete; optimization active - 20 October 2026
+
+IMPLEMENTED and verified at capture: the original 500-update Facturation invocation completed its unchanged 275-example initial teacher-forced validation and then its first finite optimizer update. The initial loss result exactly reproduces the previous experiment on the same merged checkpoint-2048 parent and validation bytes. This is a reproducibility check, not an accuracy improvement.
+
+The separate completion observer and prospective Colibri comparison controls are prepared and cleared by the single reviewer. All 24 offline guards pass in the main thread. The reviewer independently reran 19 read-only tests and inspected five filesystem tests. All five functional candidates remain mandatory: logical 0 (actual 2048), 125, 250, 375 and 500. Frozen cases, scoring, thresholds, original-reference retention and applicable 275/438/48 gates stay unchanged.
+
+PARTIALLY IMPLEMENTED: 1 of 500 optimizer updates is recorded at this observation; the epoch remains running. Actual successful completion, saved-adapter verification and completed-training review are required before export or inference. No new functional accuracy or model acceptance is established. Zero of six applications are fully accepted; production remains healthy and unchanged, and no next-application training started.
+
+[Initial validation and prepared comparison checks](../training/reports/facturation-semantic-pilot-v1-initial-validation.json).
+
 ## Short semantic numerical pilot started - 20 October 2026
 
 IMPLEMENTED and verified: the 500-row Facturation pilot preserves 384 earlier TRAIN rows byte-for-byte and adds all 116 reviewed English/French semantic contrasts. It contains 316 Facturation, 112 Management Projet and 72 Design Workflow rows. The retained native replay covers 18 tools, 174 measured features, 51 priority conjunctions and 58 offered-tool bundles; it covers 119 of 418 full conjunctions. These are structural inventory counts, not model accuracy.

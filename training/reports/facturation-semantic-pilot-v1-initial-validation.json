@@ -1,0 +1,89 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: OPTIMIZATION ACTIVE; MODEL ACCEPTANCE INCOMPLETE",
+  "application_focus": "facturation",
+  "observed_utc": "2026-10-20T10:39:55.720208+00:00",
+  "shared_model_family": "Qwen3.5-0.8B",
+  "inference_runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training_progress": {
+    "updates_at_capture": 1,
+    "expected_updates": 500,
+    "initial_validation_complete": true,
+    "first_optimizer_update": {
+      "step": 1,
+      "loss": 7.498743798350915e-05,
+      "seconds": 15.98,
+      "rss_bytes": 4135796736
+    },
+    "accuracy_measured": false
+  },
+  "initial_validation": {
+    "count": 275,
+    "same_unchanged_validation_and_parent": true,
+    "identical_to_previous_experiment_initial_validation": true,
+    "teacher_forced_loss_not_accuracy": {
+      "micro": 0.05100539001999426,
+      "by_application": {
+        "facturation": 0.04094951357423871,
+        "management_projet": 0.07393930752181614,
+        "design_workflow": 0.04395204630348459
+      },
+      "macro": 0.052946955799846485,
+      "unweighted": {
+        "micro": 0.023647781454001232,
+        "by_application": {
+          "facturation": 0.022113108032918286,
+          "management_projet": 0.030899644468008365,
+          "design_workflow": 0.01799881660886804
+        },
+        "macro": 0.023670523036598234
+      }
+    }
+  },
+  "comparison_preparation": {
+    "status": "SOURCE PREPARED AND REVIEWED; NOT EXECUTED",
+    "candidate_steps": [
+      0,
+      125,
+      250,
+      375,
+      500
+    ],
+    "baseline_logical_zero_actual_checkpoint": 2048,
+    "original_regression_reference": 600,
+    "primary_cases_per_candidate": 133,
+    "unchanged_later_cases": [
+      275,
+      438,
+      48
+    ],
+    "thresholds_and_scoring_unchanged": true,
+    "offline_guard_tests_passed": 24,
+    "single_reviewer": "No issues",
+    "reviewer_read_only_tests_rerun": 19,
+    "reviewer_filesystem_tests_inspected": 5,
+    "actual_training_completion_review_required": true,
+    "evaluation_execution_admitted": false,
+    "export_started": false,
+    "inference_started": false
+  },
+  "evidence_sha256": {
+    "initial_validation_observation": "57ef1deaa1b1b29860a7c7e86e5d8ccba4f41352195f813eecb22ff526663a9a",
+    "comparison_preparation_review": "84a3601f694b4d2dbbf2b9f801f64850dd60fa830a5b6131bf98bdcb670b9f63",
+    "launch_collection": "ccf1862790ad5f19fd6c1cb6c4f58c3cec8cc8c8bd259930221c2babb360210f"
+  },
+  "production_healthy_and_unchanged": true,
+  "fully_accepted_applications": 0,
+  "model_accepted": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "Initial loss reproducibility is not generated-answer accuracy.",
+    "Every declared candidate needs unchanged Colibri evaluation after successful training and evidence review.",
+    "Native backend security acceptance remains separate from planning-model evaluation.",
+    "No new 95 percent score or acceptance is established."
+  ]
+}
