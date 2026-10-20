@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Disposable Facturation learning test started - 20 October 2026
+
+PARTIALLY IMPLEMENTED: a separate 32-update server learning test started at 22:14 UTC after review of its actual preflight. It uses eight byte-preserved approved TRAIN rows, one per semantic family, with four English and four French examples. Four complete epochs use the existing merged experimental checkpoint 125 with a fresh adapter/AdamW optimizer, learning rate 0.0001, rank 16/alpha 32 across 24 layers, BF16 SDPA, checkpointing and 14 CPU threads. The 40 GiB ceiling, zero swap and ten-percent host-RAM reserve remain enforced.
+
+Actual tokenizer/template/Colibri-parser checks pass all eight TRAIN and 133 unchanged Facturation validation examples, with the full 512-token output reserve. At the 22:15 UTC observation, the original controller and worker were live during initial preparation or validation, with zero optimizer updates recorded. The observation does not distinguish those initial phases. This is a timestamped observation.
+
+The purpose is to check whether the existing model can learn exact TRAIN actions before another full recipe. After completed-training review, fresh baseline/final Colibri comparison is planned on the 30 established TRAIN probes: eight fit rows and 22 other TRAIN controls. Neither subset is claimed unseen by the experimental parent. Diagnostic weights cannot be promoted, and no new application accuracy is established. The latest completed primary best remains 91.73%; zero of six applications are fully accepted by this campaign.
+
+[Launch and preflight evidence](../training/reports/facturation-train-fit-sanity-v1-launch.json).
+
 ## Facturation correction completed; primary targets missed - 20 October 2026
 
 IMPLEMENTED and verified: the server completed all 128 scheduled optimizer updates, one epoch and validation at 0/64/128 in 6,767.41 seconds (approximately 1 hour 53 minutes). Exposure was 96 Facturation, 16 Management Projet and 16 Design Workflow examples, each once. The same shared Qwen3.5-0.8B and reviewed BF16/LoRA recipe were used. The earlier launch snapshot is superseded by this completion.

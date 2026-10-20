@@ -1,0 +1,79 @@
+{
+  "application": "facturation",
+  "attention": "sdpa",
+  "cpu_threads": 14,
+  "dtype": "bfloat16",
+  "epochs": 4,
+  "evidence_sha256": {
+    "admission.json": "493a0150447f5bae7e2c2602524275b8f37933c4e21dbb2b59951235564676a0",
+    "binding.json": "afc9187b28f90234432d1f3d95435ece456e5d26cc535bc7e0d20697f31e2b6f",
+    "manifest.json": "9ab9d28f3b836165cfc9c3944b7df052eed2e0adae813d1b5b5e275fb5a2b0a6",
+    "preflight-collection.json": "53f553cd7ee08ad6e71dbb77bb446421d2697a1453e1a3f9c89b10d3c74f081f",
+    "preflight-complete.json": "01ff1f61d877b731200856d2b7cacca2327068202fda21b2db90a250112324d9",
+    "reviewed-controls.json": "b02c55b812f80d32580d5fedae04678e6176d11a07a0b27d59f2e82ea194d380",
+    "training-observation-20261020T221539559976Z.json": "901994a103b3ecb9466dafacb9a691c5ee5300d00d64c689663fe78cecdc4b26"
+  },
+  "fit_by_language": {
+    "en": 4,
+    "fr": 4
+  },
+  "fit_rows": 8,
+  "fit_target": "8/8 exact actions on the eight optimized TRAIN examples, not a 95% application-accuracy claim",
+  "fit_target_passed": null,
+  "framework": "Existing server-only PyTorch/PEFT trainer, unchanged",
+  "fresh_adapter_and_optimizer": true,
+  "fully_accepted_applications_in_campaign": 0,
+  "gradient_checkpointing": "nonreentrant",
+  "initial_preparation_or_validation_incomplete_at_observation": true,
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "learning_rate": 0.0001,
+  "limitations": [
+    "This is a timestamped launch observation, not a live progress counter.",
+    "Preflight proves format/template/parser compatibility, not learning or application accuracy.",
+    "No export, inference, acceptance or production-activation clearance follows from numerical admission.",
+    "Facturation still must pass all unchanged application gates before sequential remaining-app training."
+  ],
+  "lora_alpha": 32,
+  "lora_rank": 16,
+  "lora_text_layers": 24,
+  "memory_limit_gib": 40,
+  "minimum_available_host_memory_fraction": 0.1,
+  "model_accepted": false,
+  "new_application_accuracy": null,
+  "observation_utc": "2026-10-20T22:15:39.559976+00:00",
+  "optimizer_updates_at_observation": 0,
+  "parent_experimental_checkpoint": 125,
+  "planned_colibri_comparison": {
+    "candidates": [
+      0,
+      32
+    ],
+    "fit_rows": 8,
+    "other_train_control_rows": 22,
+    "scope": "Fresh baseline/final exact TRAIN actions only. The other 22 controls are not optimized in this diagnostic, but are not claimed unseen by the parent.",
+    "status": "NOT EXECUTED; COMPLETED TRAINING AND SEPARATE ADMISSION REQUIRED",
+    "train_probe_cases": 30
+  },
+  "preflight": {
+    "maximum_full_train_tokens": 7706,
+    "maximum_full_validation_tokens": 7496,
+    "output_tokens_reserved": 512,
+    "status": "COMPLETE; VERIFIED",
+    "train_rows_passed": 8,
+    "validation_rows_passed": 133
+  },
+  "production_activation": false,
+  "production_healthy_unchanged_at_observation": true,
+  "scheduled_updates": 32,
+  "schema_version": 1,
+  "semantic_families": 8,
+  "semantic_loss_weight": 4,
+  "shared_model_family": "Qwen3.5-0.8B",
+  "source_and_actual_preflight_review": "No issues; one disposable 32-update run only",
+  "status": "RUNNING; DISPOSABLE TRAIN-FIT DIAGNOSTIC ONLY",
+  "swap_limit_bytes": 0,
+  "weights_may_be_promoted": false
+}
