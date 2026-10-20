@@ -1,6 +1,28 @@
 # Chat AI Assistant progress
 
-## Corrective epoch started - 20 October 2026
+## Corrective epoch and primary comparison completed - 20 October 2026
+
+IMPLEMENTED and verified by the main evidence audit: all 704 scheduled updates completed successfully, followed by every declared Colibri primary candidate. The epoch used 520 Facturation, 112 Management Projet and 72 Design Workflow examples, with 14 CPU threads. Trainer execution took 22,985.47 seconds (approximately 6.38 hours); the comparison took 3,881 seconds. These are completed work records, not acceptance.
+
+| Candidate | Correct actions | Exact arguments | Structured output | Critical cases |
+| --- | --- | --- | --- | --- |
+| 0 (actual 2048, reused) | 121/133 (90.98%) | 100/111 (90.09%) | 132/133 | 21/24 |
+| 176 | 119/133 (89.47%) | 98/111 (88.29%) | 132/133 | 21/24 |
+| 352 | 117/133 (87.97%) | 96/111 (86.49%) | 132/133 | 21/24 |
+| 528 | 117/133 (87.97%) | 96/111 (86.49%) | 133/133 | 21/24 |
+| 704 | 117/133 (87.97%) | 97/111 (87.39%) | 132/133 | 20/24 |
+
+The unchanged selector retains logical 0, the previously measured actual 2048 experimental parent. It is still unaccepted. All candidates fail necessary primary targets, so the 275 shared development, 438 regression and 48 additional controls are explicitly NOT EXECUTED. This attempt provides no new Management Projet or Design Workflow acceptance score. Zero of six applications are fully accepted by the training gates.
+
+The audit reproduces 532 new cases plus 133 cached baseline cases, exact frozen shard bytes, summaries, all 201 reviewed controls and before/after artifacts. A separate live read-only check verifies all four completed exports, all 12 evaluation workers stopped, all 24 original processes gone and test ports free. Production is healthy and unchanged. The single reviewer independently reproduced the saved evidence and cleared this result report. The live server check was performed separately. No native business operation or new backend security test ran in this comparison.
+
+PARTIALLY IMPLEMENTED: Facturation remains below 95 percent. A TRAIN-only contrast design is being corrected for date boundaries, list/detail navigation, entity roles, complete text values, unpaid-filter omission and ambiguous/explicit selection pairs. Remaining quote, stock and search-field mechanisms are tracked. The design has not generated a new corpus or started another training run. No next-application training or model activation has started.
+
+[Completed primary model results](../training/reports/facturation-entity-pilot-v2-functional-comparison.json).
+
+## Historical corrective launch observation - 20 October 2026
+
+This launch snapshot is superseded by the completed comparison above.
 
 IMPLEMENTED and verified at launch: one server-only 704-update epoch is running from the attested experimental checkpoint-2048 merged FP32 parent, with a fresh adapter and optimizer. The original checkpoint 600 remains the separate retention reference. The actual trainer command, model/data identities, source/configuration and original service invocation are captured in 31 immutable launch records. At that observation, initial preparation/validation is incomplete and zero of 704 optimizer updates have completed.
 

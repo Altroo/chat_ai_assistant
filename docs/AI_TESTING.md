@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Completed corrective primary comparison - 20 October 2026
+
+Passed in the main evidence audit: all five declared 133-case candidates;532 new inference results and 133 reused actual 2048 baseline cases; exact ordered shard bytes; independently recounted summaries; frozen selection/scoring; all 201 reviewed controls; and identical before/after serving evidence. A fresh read-only server collection binds complete model/tokenizer/config/runtime artifacts to each successful export, checks adapter identities, exact worker commands/ports/environments and launch records, and verifies cleanup of 12 workers and 24 original processes. Production remains healthy and unchanged. The single reviewer independently reproduced the saved evidence and cleared this report. The review did not independently contact the server.
+
+Failed as model acceptance: every candidate misses necessary primary requirements. The best remains the reused experimental parent at 121/133 full actions (90.98 percent),100/111 exact arguments (90.09 percent) and 21/24 critical planner matches. Successors 176/352/528/704 score 119/117/117/117 full actions. The unchanged prospective policy therefore leaves 275 shared development, 438 regression and 48 additional controls NOT EXECUTED. Missing scores are not passes or failures. No new native authorization, retrieval-factuality or end-to-end business-security claim is made.
+
+Actual training completed 704 updates and one epoch in 22,985.47 seconds, preserving the 520/112/72 Facturation/Management Projet/Design Workflow exposure. Its unchanged launch and completion evidence had already received independent review. The final primary rejection does not authorize activation or the next application's training.
+
+[Sanitized completed primary results](../training/reports/facturation-entity-pilot-v2-functional-comparison.json).
+
 ## Completed pilot functional comparison - 20 October 2026
 
 Passed as evidence checks: independent reproduction of all candidate development scores and selection, all 275 shared development cases, all 438 regression cases across 15 subsets, and all 48 additional controls. The comparison generated 1,160 new case results and reused 133 original-baseline cases. The audit verifies 18 ordered raw shards, matching input hashes and summaries, exact serving worker identities/settings, unchanged before/after artifacts, all 141 frozen controls, 151 runtime files and four provider files. All owned workers stopped and the three evaluation ports were free.
