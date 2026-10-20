@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Semantic-contrast preparation verification - 20 October 2026
+
+IMPLEMENTED and verified: 26 synthetic tests pass for the new TRAIN contrast generator. Coverage includes leap/year boundary arithmetic, inclusive/exclusive/unbounded dates, authorized user list/detail targets, logistics role cues and Transit retention, complete remarks, preserved identifiers/due dates, unpaid omitted/true counterparts, explicit second-result selection, ambiguous-choice clarifications, current-language behavior, immutable context/schema/history, stale metadata removal, development input/template exclusions, sensitive request rejection, changed source/native/helper rejection and existing preflight/trainer manifest compatibility. A full preparation fixture checks source byte preservation, application declarations, file hashes and isolated output reuse rejection.
+
+Actual server preflight passes all 820 TRAIN and 275 unchanged validation examples. Every example passes tokenizer/native parser round-trip, runtime prefix parity, loss boundary, semantic alignment and serving-output-budget checks, using the experimental checkpoint-2048 tokenizer and pinned Colibri snapshot. Full lengths peak at 7,745/7,496 tokens, target lengths at 131/116 tokens and the smallest available output budget is 488/512 tokens. Context is 8,192 and the configured maximum output is 512.
+
+These are data and serving-format checks, not generated-action accuracy, model acceptance or backend security results. No optimizer update, inference request, model activation or next-application training occurs. The single reviewer cleared the source, exact corpus, saved preflight evidence and publication, independently running 23 read-only tests and reviewing three filesystem tests. The main thread executed all 26 tests and the server check. A bounded TRAIN-analogue diagnostic remains pending.
+
+[Preparation evidence and limitations](../training/reports/facturation-semantic-contrasts-v1-preparation.json).
+
 ## Completed corrective primary comparison - 20 October 2026
 
 Passed in the main evidence audit: all five declared 133-case candidates;532 new inference results and 133 reused actual 2048 baseline cases; exact ordered shard bytes; independently recounted summaries; frozen selection/scoring; all 201 reviewed controls; and identical before/after serving evidence. A fresh read-only server collection binds complete model/tokenizer/config/runtime artifacts to each successful export, checks adapter identities, exact worker commands/ports/environments and launch records, and verifies cleanup of 12 workers and 24 original processes. Production remains healthy and unchanged. The single reviewer independently reproduced the saved evidence and cleared this report. The review did not independently contact the server.

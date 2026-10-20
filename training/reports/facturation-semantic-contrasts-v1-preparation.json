@@ -1,0 +1,134 @@
+{
+  "version": "facturation-semantic-contrasts-v1-preparation",
+  "status": "IMPLEMENTED: preparation and tokenizer preflight only; no new training",
+  "application_focus": "facturation",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "source_rows_preserved": 704,
+  "added_rows": 116,
+  "combined_rows": 820,
+  "validation_rows_unchanged": 275,
+  "application_rows": {
+    "facturation": 636,
+    "management_projet": 112,
+    "design_workflow": 72
+  },
+  "families": {
+    "date_boundaries": 22,
+    "users_collection_versus_detail": 12,
+    "logistics_entity_roles": 18,
+    "verbatim_update_text": 12,
+    "unpaid_with_other_filters": 24,
+    "ambiguous_previous_result_selection": 8,
+    "relative_quote_month": 12,
+    "unsupported_current_language": 8
+  },
+  "new_language_counts": {
+    "en": 58,
+    "fr": 58
+  },
+  "sources": "Pinned synthetic TRAIN parents and verified native contracts; development inputs used for exclusion only.",
+  "preservation": {
+    "replay_bytes": true,
+    "validation_bytes": true,
+    "permission_schemas": true,
+    "trusted_context_and_history": true,
+    "frozen_scoring": true
+  },
+  "tests": {
+    "passed": 26,
+    "scope": "Synthetic preparation invariants and existing CLI manifest compatibility; not model accuracy."
+  },
+  "review": {
+    "status": "No issues",
+    "reviewers": 1,
+    "scope": "Local source, exact prepared corpus, saved server-preflight evidence and publication.",
+    "independent_read_only_tests_passed": 23,
+    "filesystem_tests_reviewed_not_rerun": 3,
+    "independent_server_observation": false,
+    "numerical_admission": false
+  },
+  "server_preflight": {
+    "passed": true,
+    "train": {
+      "count": 820,
+      "round_trip_passed": 820,
+      "runtime_prefix_parity_passed": 820,
+      "loss_boundary_passed": 820,
+      "semantic_alignment_passed": 820,
+      "semantic_loss_weight": 4,
+      "maximum_tokens": 7745,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 820,
+      "maximum_target_tokens": 131,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 488,
+      "sha256": "7e128e3b1738f0066aa57b609de2f13cab247be44568c2a31f76c25f9decd228"
+    },
+    "validation": {
+      "count": 275,
+      "round_trip_passed": 275,
+      "runtime_prefix_parity_passed": 275,
+      "loss_boundary_passed": 275,
+      "semantic_alignment_passed": 275,
+      "semantic_loss_weight": 4,
+      "maximum_tokens": 7496,
+      "output_budget_contract": "conservative-target-v1",
+      "output_budget_passed": 275,
+      "maximum_target_tokens": 116,
+      "maximum_output_tokens": 512,
+      "minimum_output_budget": 512,
+      "sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "duration_seconds": 10.098843751475215,
+    "context_tokens": 8192,
+    "max_output_tokens": 512,
+    "semantic_loss_weight": 4,
+    "weights_loaded": false,
+    "optimizer_updates": 0,
+    "inference_requests": 0,
+    "scope": "Tokenizer/template/parser, prefix parity, loss alignment and serving-output budget only."
+  },
+  "sha256": {
+    "generator": "3d7f2eee56c328593d8ccfbd01c4aea1e637da0b6a4d13079ee48d5489d27d43",
+    "tests": "313cde1e35867eac99f66c97573b94a56eac54f41b2df2fd0b414d3b9ef8b2ac",
+    "prepared_manifest": "cccefb636438ffeeb2fad4fd32bae4a3d93d27d07582a087b4303efe5539e320",
+    "prepared_files": {
+      "contrasts.jsonl": "ea9694d59e04d767c03d826e382c16fce2c0d641091d82efd15db11d8b8c5c08",
+      "train.jsonl": "7e128e3b1738f0066aa57b609de2f13cab247be44568c2a31f76c25f9decd228",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "source_files": {
+      "manifest.json": "f321b2d2e0dd900f1b25f8e24cbcc709b4c5379a909de59741b07ab0e5fceff3",
+      "train.jsonl": "2523aa3744e25ff24641dfd8c1bb67dbe051be4db74df7cc2b8d6331f08b0b58",
+      "valid.jsonl": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487"
+    },
+    "native_contract_files": {
+      "chat_ai/tools.py": "2ae44104618a4a0fe3586399ad28a3cb1b06a477ecd9812c80f7b1cbf5969c0a",
+      "chat_ai/catalog.py": "f44a946bf2c148d8ecc341316930adccaccd75ff42c7801e137117408ef65f42",
+      "chat_ai/navigation.py": "3aeb3a2d946fb01cfb816b8fd6137edb2e079abd0e0fa3c0f2dd76910aa5fb42",
+      "chat_ai/operations.py": "06d87733927bf6eace463b8fbb2e235cca4acc45653909d8b64ab712203e74d0",
+      "chat_ai/actions.py": "59ffe668c040bec092afd8715509924f225cdc525f90020b26484385fea68984"
+    },
+    "server_preflight_evidence": "9b82a26221eabc6b52f7d07027838f181ae704671ca0dd07bf9db6d08668766c"
+  },
+  "remaining": [
+    "Stock-resource product/location distinctions retained but no new contrast.",
+    "Staff name versus broader name/email query retained but no new contrast.",
+    "Payment client versus broad query retained but no new contrast.",
+    "Native-equivalent article aliases remain under frozen exact-argument scoring.",
+    "Unsupported invalid-output cause needs raw TRAIN-analogue diagnostic.",
+    "Bounded Colibri TRAIN-analogue raw-output diagnostic on experimental parent2048.",
+    "Numerical recipe and independent review before another training run.",
+    "Functional comparison and unchanged acceptance/security/retention gates."
+  ],
+  "training_executed": false,
+  "new_functional_accuracy": null,
+  "model_accepted": false,
+  "fully_accepted_applications": 0,
+  "next_application_training": false,
+  "production_activation": false,
+  "production_model_unchanged_and_healthy_at_preflight": true
+}

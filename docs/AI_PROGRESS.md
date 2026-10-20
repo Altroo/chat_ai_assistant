@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## TRAIN semantic contrasts and server preflight prepared - 20 October 2026
+
+IMPLEMENTED and verified as preparation only: a reproducible generator adds 116 focused Facturation TRAIN examples, balanced at 58 English and 58 French. All 704 existing replay rows remain byte-for-byte unchanged; the prepared corpus contains 820 rows (636 Facturation, 112 Management Projet, 72 Design Workflow). All 275 shared development rows and frozen scoring remain unchanged.
+
+The eight families cover inclusive/exclusive date boundaries, user list/detail navigation, logistics roles, complete multiword remarks, unpaid-filter omission pairs, ambiguous/explicit previous-result selection, relative quote months and current-language unsupported clarifications. New records retain source permission schemas, trusted context and history. Parent annotations are replaced with metadata describing the new example.
+
+All 26 preparation tests pass. Actual server tokenizer/template preflight passes all 820 TRAIN and 275 validation examples, including native parser round-trip, Colibri generation-prefix parity, loss/semantic alignment and output budgets. Maximum full lengths are 7,745 and 7,496 tokens. This check loads no model weights, generates no model response and performs zero optimizer updates. Production remains healthy and unchanged.
+
+The single reviewer cleared the source, exact corpus, saved preflight evidence and publication. The main thread performed the server check; review did not independently contact the server.
+
+PARTIALLY IMPLEMENTED: a bounded Colibri TRAIN-analogue raw-output diagnostic remains pending. No new numerical recipe or training run has started. There is no new measured functional accuracy. The previous best remains 121/133 complete actions (90.98 percent) and 100/111 exact arguments (90.09 percent), below target. Zero of six applications are fully accepted. Remaining stock, staff and payment search distinctions are retained and tracked rather than claimed newly corrected.
+
+[Preparation and tokenizer evidence](../training/reports/facturation-semantic-contrasts-v1-preparation.json).
+
 ## Corrective epoch and primary comparison completed - 20 October 2026
 
 IMPLEMENTED and verified by the main evidence audit: all 704 scheduled updates completed successfully, followed by every declared Colibri primary candidate. The epoch used 520 Facturation, 112 Management Projet and 72 Design Workflow examples, with 14 CPU threads. Trainer execution took 22,985.47 seconds (approximately 6.38 hours); the comparison took 3,881 seconds. These are completed work records, not acceptance.
