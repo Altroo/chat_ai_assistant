@@ -1,5 +1,27 @@
 # Model training and evaluation
 
+## Semantic pilot complete; generated accuracy below target - 20 October 2026
+
+IMPLEMENTED and verified: server CPU training completed all 500 updates and one epoch in approximately 4.69 hours, using the existing merged checkpoint-2048 experimental parent and a fresh adapter/optimizer. The corpus contains 316 Facturation, 112 Management Projet and 72 Design Workflow rows. BF16 SDPA, nonreentrant checkpointing, rank 16/alpha 32 across 24 layers, learning rate 0.000002 and semantic weight 4 match the reviewed recipe.
+
+Teacher-forced weighted macro loss declines from 0.05294696 to 0.04994770, but final Facturation weighted loss rises from 0.04094951 to 0.04485463, and unweighted macro loss rises from 0.02367052 to 0.02536789. Loss selection chooses 500; loss is not generated-action accuracy.
+
+| Candidate | Correct actions | Exact arguments | Structured output | Critical cases |
+| --- | --- | --- | --- | --- |
+| 0 (actual 2048, reused) | 121/133 (90.98%) | 100/111 (90.09%) | 132/133 | 21/24 |
+| 125 | 122/133 (91.73%) | 102/111 (91.89%) | 132/133 | 20/24 |
+| 250 | 122/133 (91.73%) | 101/111 (90.99%) | 132/133 | 21/24 |
+| 375 | 118/133 (88.72%) | 97/111 (87.39%) | 132/133 | 21/24 |
+| 500 | 115/133 (86.47%) | 93/111 (83.78%) | 133/133 | 22/24 |
+
+All declared Colibri candidates completed under the unchanged 8,192 context, 512-token output cap and non-thinking template. Functional selection chooses 125, but every candidate fails necessary primary gates. Later 275/438/48 comparisons remain NOT EXECUTED. No successor is accepted or activated, no next-application training started, and zero of six applications are fully accepted. Historical progress snapshots below do not override these results.
+
+Final checkpoint 500 also completed a fixed 30-row exact-TRAIN diagnostic: 27 exact actions, 28 valid structures and zero transport errors. All prompt-token counts match. Raw generation shortens one explicit literal and adds two invalid optional date strings. No demonstrated label, parser or inspected loss-alignment defect explains those misses. This is a TRAIN-fit diagnostic, not held-out application accuracy. A paired generic prompt-instruction check is planned before another numerical recipe.
+
+The one reviewer independently reproduces completed training, raw functional evidence and diagnostic scoring. Production remains unchanged. The original separate refinement run completed 3,103 updates; the incorrect earlier conversational count of 1,587 is not a completion count.
+
+[Full completed comparison](../training/reports/facturation-semantic-pilot-v1-functional-comparison.json) and [TRAIN diagnostic](../training/reports/facturation-semantic-pilot-v1-train-diagnostic.json).
+
 ## Entity pilot initial validation completed - 19 October 2026
 
 Initial validation completed on all 275 unchanged cases. The loss values match the original run exactly across the three applications, confirming the same parent/validation/precision starting point. Optimization is now running; six of the planned 216 updates were captured.

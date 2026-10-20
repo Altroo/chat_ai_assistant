@@ -1,0 +1,101 @@
+{
+  "application_focus": "facturation",
+  "by_family": {
+    "ambiguous_previous_result_selection": {
+      "count": 4,
+      "exact_action_matches": 4
+    },
+    "date_boundaries": {
+      "count": 4,
+      "exact_action_matches": 4
+    },
+    "logistics_entity_roles": {
+      "count": 2,
+      "exact_action_matches": 2
+    },
+    "relative_quote_month": {
+      "count": 4,
+      "exact_action_matches": 4
+    },
+    "unpaid_with_other_filters": {
+      "count": 4,
+      "exact_action_matches": 2
+    },
+    "unsupported_current_language": {
+      "count": 4,
+      "exact_action_matches": 4
+    },
+    "users_collection_versus_detail": {
+      "count": 4,
+      "exact_action_matches": 4
+    },
+    "verbatim_update_text": {
+      "count": 4,
+      "exact_action_matches": 3
+    }
+  },
+  "cleanup": {
+    "production_healthy_and_not_restarted": true,
+    "six_original_processes_gone": true,
+    "three_ports_free": true
+  },
+  "count": 30,
+  "duration_seconds": 277.417966,
+  "evidence_sha256": {
+    "facturation-semantic-pilot-v1-train-diagnostic-audit.json": "78baebff1fe90eef781703c5c97cb6cae72957eb1e31d79145f78eb6b89bf9cb",
+    "facturation-semantic-pilot-v1-train-diagnostic-completion-review.json": "385b412456a023b325d361ae22cd3c798a0bfe6dbb88946d5fff673c00523519",
+    "facturation-semantic-pilot-v1-train-diagnostic-run/collection.json": "be12726b1630f540e3fecc4cac80f78df6e511e7df5d4aeea87c6a55d05715f4",
+    "facturation-semantic-pilot-v1-train-diagnostic-run/complete.json": "fbb255641c188dfec14cbc0d7718e7761fc5d3a4a72741a5c5a89717895c34ba",
+    "facturation-semantic-pilot-v1-train-diagnostic-run/results.json": "c02c42fd36e98544f956f00e47688f7651921dd27c765ed5bfb5c66dd4b6ed12"
+  },
+  "exact_action_percent": 90.0,
+  "exact_actions": 27,
+  "failures": [
+    {
+      "id": "contrast-53",
+      "language": "en",
+      "schema_valid": true,
+      "type": "complete_literal_truncated"
+    },
+    {
+      "id": "contrast-77",
+      "language": "en",
+      "schema_valid": false,
+      "type": "unrequested_end_date_as_string_None"
+    },
+    {
+      "id": "contrast-78",
+      "language": "en",
+      "schema_valid": false,
+      "type": "unrequested_end_date_as_string_null"
+    }
+  ],
+  "fully_accepted_applications": 0,
+  "interpretation": [
+    "Raw generation already contains all three errors; provider replay reproduces them.",
+    "The two optional-date failures preserve other filters, including the omitted/true unpaid distinction.",
+    "No demonstrated label, transport/parser or inspected loss-alignment defect.",
+    "All 30 exact rows appeared in the completed epoch; this is not held-out accuracy or an acceptance score."
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "model_accepted": false,
+  "model_checkpoint": 500,
+  "next_step": "PLANNED: paired generic prompt instructions on every fixed diagnostic row, preserving nullable edits, successful controls, labels, model and runtime. Prompt sensitivity only.",
+  "optimizer_updates": 0,
+  "production_activation": false,
+  "prompt_token_count_parity": 30,
+  "review": {
+    "completed_comparison_files_unchanged": 229,
+    "independent_server_contact_by_reviewer": false,
+    "one_reviewer": true,
+    "saved_evidence_files_verified": 46
+  },
+  "runtime": "Colibri",
+  "schema_valid": 28,
+  "schema_version": 1,
+  "status": "COMPLETED; TRAIN DIAGNOSTIC ONLY",
+  "transport_errors": 0
+}

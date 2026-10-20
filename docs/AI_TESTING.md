@@ -1,5 +1,17 @@
 # Verification and acceptance record
 
+## Completed semantic comparison and TRAIN diagnostic - 20 October 2026
+
+IMPLEMENTED: the successful 500-update completion and all five primary candidates are verified. Independent review reproduces the 229 bound files, 12 ordered raw shards, all 532 new and 133 cached cases, exact native parsing, frozen scoring and selection. All 12 evaluation workers stopped; 24 original processes are gone, evaluation ports are free and production remains healthy without restart. Review checks saved evidence, not an independent server session.
+
+FAILED as primary model acceptance: checkpoint 125 is selected at 122/133 correct actions (91.73 percent), 102/111 exact arguments (91.89 percent) and 20/24 critical cases. No candidate qualifies. The 275/438/48 later phases remain NOT EXECUTED, not passes or failures.
+
+A separate final-500 diagnostic uses 30 exact seen TRAIN rows, balanced English/French across eight fixed families. Provider replay reproduces 27 exact actions, 28 valid structures, zero transport failures and 30 prompt-token matches. One output shortens a multiword remark; two add invalid optional end-date strings to an unbounded search. All other filters in those searches, including unpaid, match. Raw logs/SSE already contain the errors. The single reviewer verifies 46 collected files and 229 unchanged comparison pins, exact TRAIN membership and recorded successful cleanup. No label, parser or inspected loss-alignment defect is demonstrated.
+
+These are targeted TRAIN diagnostics, not held-out scores, native business-security acceptance or justification for activation. A paired prompt-sensitivity diagnostic is planned, not executed. The separate isolated native schema fix passes 937 backend tests with zero failures, errors or skips; that code is not yet integrated or deployed.
+
+[Completed measured comparison](../training/reports/facturation-semantic-pilot-v1-functional-comparison.json) and [diagnostic scope](../training/reports/facturation-semantic-pilot-v1-train-diagnostic.json).
+
 ## Saved checkpoint and current native regression - 20 October 2026
 
 IMPLEMENTED: checkpoint 125 passes the exact adapter-audit function from the pinned completion guard: 192 finite FP32 tensors and nonzero LoRA_B in every trained layer, with stable weights/config hashes, matching rank/alpha and the original invocation identity. The single reviewer verified the saved evidence and exact function reuse.

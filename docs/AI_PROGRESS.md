@@ -1,5 +1,27 @@
 # Chat AI Assistant progress
 
+## Semantic pilot completed; primary targets missed - 20 October 2026
+
+IMPLEMENTED and verified: all 500 scheduled optimizer updates completed in 16,874.54 seconds (approximately 4.69 hours). The single reviewer verified actual completion, all seven saved adapter directories and the unchanged recipe. The epoch used 316 Facturation, 112 Management Projet and 72 Design Workflow examples, each once. Earlier progress sections below are historical observations, superseded by this completion.
+
+All five declared Colibri primary candidates completed, including the cached experimental parent. The comparison took 3,873 seconds and produced 532 new cases plus 133 cached baseline cases.
+
+| Candidate | Correct actions | Exact arguments | Structured output | Critical cases |
+| --- | --- | --- | --- | --- |
+| 0 (actual 2048, reused) | 121/133 (90.98%) | 100/111 (90.09%) | 132/133 | 21/24 |
+| 125 | 122/133 (91.73%) | 102/111 (91.89%) | 132/133 | 20/24 |
+| 250 | 122/133 (91.73%) | 101/111 (90.99%) | 132/133 | 21/24 |
+| 375 | 118/133 (88.72%) | 97/111 (87.39%) | 132/133 | 21/24 |
+| 500 | 115/133 (86.47%) | 93/111 (83.78%) | 133/133 | 22/24 |
+
+The unchanged selector chooses 125, but every candidate fails necessary primary targets. The 275 shared development, 438 regression and 48 additional controls are explicitly NOT EXECUTED. This run gives no new Management Projet or Design Workflow acceptance score. Zero of six applications are fully accepted; production inference remains unchanged.
+
+IMPLEMENTED as diagnosis only: final checkpoint 500 completed 30 fixed exact TRAIN rows, with 27 exact actions, 28 schema-valid responses, zero transport failures and 30 matching prompt-token counts. Raw outputs contain one shortened literal and two unrequested end-date strings. These are generation errors, not evidence of a parser or label defect. The latter two preserve unpaid correctly. The single reviewer reproduced the saved raw evidence; workers stopped and production remained unchanged.
+
+PLANNED: a paired generic-instruction check across all 30 rows, preserving successful controls and explicit nullable edits. No new numerical run or application activation has started. Separately, the previous-result selection schema correction is committed in an isolated local branch, with 937 native backend tests passing; it is not integrated, pushed or deployed.
+
+[Completed primary comparison](../training/reports/facturation-semantic-pilot-v1-functional-comparison.json) and [TRAIN diagnostic](../training/reports/facturation-semantic-pilot-v1-train-diagnostic.json).
+
 ## Checkpoint 125 and native backend checks - 20 October 2026
 
 IMPLEMENTED and verified: the first scheduled Facturation checkpoint was saved correctly. All 192 saved adapter tensors are finite FP32, with nonzero LoRA_B weights across all 24 trained layers. Rank 16 and alpha 32 match the recipe; stable file hashes and all 26 bound source files were checked. The single reviewer found no issues in the captured integrity evidence.
