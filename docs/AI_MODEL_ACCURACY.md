@@ -1,9 +1,24 @@
 # Shared model accuracy work
 
-Facturation's bounded rehearsal and export check are complete: 35 finite updates, 24 updated layers, all 14 Colibri samples schema-valid and zero framework-correct to Colibri-incorrect changes. Twelve samples are training rows and two are development rows; these checks do not establish model accuracy or acceptance. The full 1,047-update Facturation epoch is running on the server; the initial live observation was baseline validation before optimization. [Verified launch](../training/reports/facturation-focus-v1-launch.json). [Verified diagnostics](../training/reports/facturation-focus-v1-rehearsal-diagnostics.json), [frozen selection policy](../training/reports/facturation-focus-v1-checkpoint-selection-policy.json).
+## Current result: Facturation correction rejected - 20 October 2026
 
+All 128 server training updates and every declared Colibri primary comparison completed. None reaches the required full-action, exact-argument and critical-case gates.
 
-## Current status: R11 evaluated, Facturation refinement next - 16 October 2026
+| Candidate | Correct actions | Exact arguments | Structured output | Critical cases |
+| --- | --- | --- | --- | --- |
+| 0 (actual 125, reused) | 122/133 (91.73%) | 102/111 (91.89%) | 132/133 | 20/24 |
+| 32 | 119/133 (89.47%) | 98/111 (88.29%) | 132/133 | 21/24 |
+| 64 | 118/133 (88.72%) | 96/111 (86.49%) | 133/133 | 21/24 |
+| 96 | 117/133 (87.97%) | 95/111 (85.59%) | 133/133 | 21/24 |
+| 128 | 118/133 (88.72%) | 96/111 (86.49%) | 133/133 | 21/24 |
+
+Logical 0 reuses the unaccepted experimental checkpoint 125; it is not the production model. All four new checkpoints regress against it. The 275 shared development, 438 regression and 48 additional-control cases were not executed after primary rejection. This run establishes no new Management Projet or Design Workflow acceptance result.
+
+Zero of six applications are fully accepted by the current campaign. Production inference remains healthy and unchanged. Facturation stays the focus; remaining apps train sequentially after acceptance. These inspected, correlated primary cases are not fresh blind certification. The original 3,103-update refinement and this separate 128-update correction must not be conflated.
+
+[Completed correction results](../training/reports/facturation-semantic-correction-v2-functional-comparison.json).
+
+## Historical R11 evaluation - 16 October 2026
 
 IMPLEMENTED and verified: all 2,419 R11 training updates, five saved-checkpoint development comparisons, 438 regressions and 48 additional English/French controls completed. The frozen development rule selected step 2400. Independent verification binds every scored event to its original worker log and selected artifact proofs. The selected FP32 base still has the same 473 F32 tensors. All temporary workers stopped and production inference remains unchanged.
 

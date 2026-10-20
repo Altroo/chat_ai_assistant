@@ -1,16 +1,26 @@
 # Model training and evaluation
 
-## Revised Facturation correction and representation checks - 20 October 2026
+## Facturation correction completed; generated accuracy regressed - 20 October 2026
 
-The next bounded experiment is prepared from the best unaccepted checkpoint 125. Its 128 examples comprise 96 Facturation, 16 Management Projet and 16 Design Workflow rows. The 64 fresh Facturation examples are balanced English/French; retained rows keep their existing language metadata and raw prompt/argument order. Labels come only from approved TRAIN contracts, with development inputs used for duplicate/template exclusion.
+The server completed all 128 reviewed updates in 6,767.41 seconds, with one exposure to 96 Facturation, 16 Management Projet and 16 Design Workflow examples. Training used a fresh adapter/optimizer on the already merged experimental checkpoint 125, learning rate 0.00001, rank 16/alpha 32 across 24 layers, BF16 SDPA and nonreentrant checkpointing. No new foundation model was downloaded.
 
-The actual 128/275 tokenizer preflight and 473-tensor parent reconstruction passed. Source checks pass 47 tests plus 32 stage guard cases. The two discarded capacity updates passed with finite gradients, updates across all 24 layers and approximately 5.73 GiB peak process memory. Independent numerical admission and fresh resource guards passed.
+| Candidate | Correct actions | Exact arguments | Structured output | Critical cases |
+| --- | --- | --- | --- | --- |
+| 0 (actual 125, reused) | 122/133 (91.73%) | 102/111 (91.89%) | 132/133 | 20/24 |
+| 32 | 119/133 (89.47%) | 98/111 (88.29%) | 132/133 | 21/24 |
+| 64 | 118/133 (88.72%) | 96/111 (86.49%) | 133/133 | 21/24 |
+| 96 | 117/133 (87.97%) | 95/111 (85.59%) | 133/133 | 21/24 |
+| 128 | 118/133 (88.72%) | 96/111 (86.49%) | 133/133 | 21/24 |
 
-The main 128-update run has started on the server. The launch capture records zero optimizer updates; initial preparation/validation is incomplete at that capture. Planned checkpoints are 32/64/96/128 and teacher validation 0/64/128. Functional ranking uses the unchanged Colibri scorer and every declared candidate, with loss excluded from ranking. A separately pinned terminal verifier couples the completed report to raw provenance, validation history and update logs.
+All five declared Colibri primary candidates completed with the unchanged 8,192-token context, 512-token output cap and non-thinking template. The frozen selector retains logical 0, the cached actual checkpoint 125, because every new candidate scores lower. Necessary primary targets fail for every candidate. The 275/438/48 broader comparisons are NOT EXECUTED; no new retained-application or full acceptance score follows this run.
 
-The original 30-row TRAIN diagnostic scored 27 exact actions. Generic prompt changes reduced this to 26 and are rejected. The corrected HF representation also produced 26 exact actions, including the same literal truncation and optional-date failures. These are fit diagnostics, not held-out scores or isolated quantization tests. No sufficient learning rate or update count is established, and no model is accepted or activated.
+Teacher validation selected step 64 diagnostically. Macro weighted loss changes from 0.05013630 to 0.04886681, while Facturation weighted loss worsens from 0.03871396 to 0.04883398. Loss was excluded from functional ranking. The final checkpoint's 100% structured validity does not compensate for 86.49% exact arguments and 21/24 critical cases.
 
-[Reproducible preparation and measured checks](../training/reports/facturation-semantic-correction-v2-preparation.json).
+The completed raw-evidence audit reproduces 532 new cases plus 133 cached baseline cases and binds 345 files. Fresh read-only server checks verify cleanup and unchanged healthy production inference. The candidate is rejected. Zero of six applications are fully accepted in this campaign; the deployed earlier Facturation model is unchanged.
+
+The separate original refinement completed 3,103 updates, not 1,587. Remaining work starts with semantic argument diagnosis, not an automatic repeat or extension of the failed recipe.
+
+[Completed correction results](../training/reports/facturation-semantic-correction-v2-functional-comparison.json).
 
 ## Semantic pilot complete; generated accuracy below target - 20 October 2026
 

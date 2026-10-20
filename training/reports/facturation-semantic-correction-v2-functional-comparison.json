@@ -1,0 +1,494 @@
+{
+  "additional_controls": {
+    "count": 48,
+    "status": "NOT EXECUTED"
+  },
+  "all_five_candidates_compared": true,
+  "application_focus": "facturation",
+  "candidate_development_metrics": [
+    {
+      "actual_checkpoint": 125,
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "action_matches": 14,
+          "structured_valid": 15,
+          "tool_correct": 14
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 87.5,
+          "structured_valid": 93.75,
+          "tool_correct": 87.5
+        }
+      },
+      "count": 133,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 20,
+          "structured_valid": 23,
+          "tool_correct": 22
+        },
+        "exact_arguments": {
+          "count": 8,
+          "passed": 6,
+          "percent": 75.0
+        },
+        "percent": {
+          "action_matches": 83.33,
+          "structured_valid": 95.83,
+          "tool_correct": 91.67
+        }
+      },
+      "exact_arguments": {
+        "count": 111,
+        "passed": 102,
+        "percent": 91.89
+      },
+      "full_action_percent": 91.73,
+      "full_actions": 122,
+      "primary_targets_passed": false,
+      "reused_baseline": true,
+      "step": 0,
+      "structured": 132,
+      "targets": {
+        "clarification_reason_and_language": false,
+        "critical_model_cases": false,
+        "exact_arguments": false,
+        "full_action_accuracy": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 130
+    },
+    {
+      "actual_checkpoint": 32,
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "action_matches": 15,
+          "structured_valid": 15,
+          "tool_correct": 15
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 93.75,
+          "structured_valid": 93.75,
+          "tool_correct": 93.75
+        }
+      },
+      "count": 133,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 21,
+          "structured_valid": 23,
+          "tool_correct": 23
+        },
+        "exact_arguments": {
+          "count": 8,
+          "passed": 6,
+          "percent": 75.0
+        },
+        "percent": {
+          "action_matches": 87.5,
+          "structured_valid": 95.83,
+          "tool_correct": 95.83
+        }
+      },
+      "exact_arguments": {
+        "count": 111,
+        "passed": 98,
+        "percent": 88.29
+      },
+      "full_action_percent": 89.47,
+      "full_actions": 119,
+      "primary_targets_passed": false,
+      "reused_baseline": false,
+      "step": 32,
+      "structured": 132,
+      "targets": {
+        "clarification_reason_and_language": false,
+        "critical_model_cases": false,
+        "exact_arguments": false,
+        "full_action_accuracy": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 131
+    },
+    {
+      "actual_checkpoint": 64,
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "action_matches": 16,
+          "structured_valid": 16,
+          "tool_correct": 16
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 133,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 21,
+          "structured_valid": 24,
+          "tool_correct": 24
+        },
+        "exact_arguments": {
+          "count": 8,
+          "passed": 5,
+          "percent": 62.5
+        },
+        "percent": {
+          "action_matches": 87.5,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 111,
+        "passed": 96,
+        "percent": 86.49
+      },
+      "full_action_percent": 88.72,
+      "full_actions": 118,
+      "primary_targets_passed": false,
+      "reused_baseline": false,
+      "step": 64,
+      "structured": 133,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false,
+        "exact_arguments": false,
+        "full_action_accuracy": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 132
+    },
+    {
+      "actual_checkpoint": 96,
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "action_matches": 16,
+          "structured_valid": 16,
+          "tool_correct": 16
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 133,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 21,
+          "structured_valid": 24,
+          "tool_correct": 24
+        },
+        "exact_arguments": {
+          "count": 8,
+          "passed": 5,
+          "percent": 62.5
+        },
+        "percent": {
+          "action_matches": 87.5,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 111,
+        "passed": 95,
+        "percent": 85.59
+      },
+      "full_action_percent": 87.97,
+      "full_actions": 117,
+      "primary_targets_passed": false,
+      "reused_baseline": false,
+      "step": 96,
+      "structured": 133,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false,
+        "exact_arguments": false,
+        "full_action_accuracy": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 131
+    },
+    {
+      "actual_checkpoint": 128,
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "action_matches": 16,
+          "structured_valid": 16,
+          "tool_correct": 16
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 133,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 21,
+          "structured_valid": 24,
+          "tool_correct": 24
+        },
+        "exact_arguments": {
+          "count": 8,
+          "passed": 5,
+          "percent": 62.5
+        },
+        "percent": {
+          "action_matches": 87.5,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 111,
+        "passed": 96,
+        "percent": 86.49
+      },
+      "full_action_percent": 88.72,
+      "full_actions": 118,
+      "primary_targets_passed": false,
+      "reused_baseline": false,
+      "step": 128,
+      "structured": 133,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false,
+        "exact_arguments": false,
+        "full_action_accuracy": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 132
+    }
+  ],
+  "candidate_step_zero_means": "Previously measured actual experimental checkpoint 125, cached; not the production model.",
+  "case_counts": {
+    "cached_baseline_cases": 133,
+    "new_cases": 532,
+    "primary_per_candidate": 133,
+    "raw_shards": 12
+  },
+  "comparison_duration_seconds": 4006.0,
+  "comparison_finished_utc": "2026-10-20T21:43:15Z",
+  "comparison_started_utc": "2026-10-20T20:36:29Z",
+  "eligible_development_steps": [],
+  "evidence_sha256": {
+    "facturation-semantic-correction-v2-comparison-completion-audit.json": "a73f51417010d208859c437ea847d4bb31c5c02e8d0a0c2dffa768a03983b53a",
+    "facturation-semantic-correction-v2-comparison-completion-review.json": "a3e18179cffd4403287a33fb2c5fa603463c7bde248d4fd1e0c58252f5d16ff2",
+    "facturation-semantic-correction-v2-comparison-post-completion-provenance.json": "ba1d62a6a92013a74993c18e0a03dd4f7258e303fb9dc512b676fe150653bc3a",
+    "facturation-semantic-correction-v2-comparison-terminal-observation.json": "919f781ad611085ab24f7812953505aae98115867728495e27c5247ae1563b9b",
+    "training-completion-review.json": "0e42a7ef177b570b909aad34bbcadb357fd69c09b723f2af4f91a3336cb1a683",
+    "training-report.json": "ddc5b46c3a7d5bef2be38bd641cd2dba72a80d775e494470484659d8839d4a2f"
+  },
+  "fully_accepted_applications_in_this_campaign": 0,
+  "held_out_regression": {
+    "count": 438,
+    "status": "NOT EXECUTED"
+  },
+  "inference_runtime": "Colibri",
+  "inference_settings": {
+    "context_tokens": 8192,
+    "max_output_tokens": 512,
+    "temperature": 0,
+    "thinking": false,
+    "threads_per_worker": 4,
+    "workers_per_candidate": 3
+  },
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "limitations": [
+    "All candidates fail necessary primary targets; selection is not acceptance.",
+    "The 133 primary cases include correlated history and bilingual scenarios and have been inspected repeatedly; this is not fresh independent certification.",
+    "This attempt establishes no fresh Management Projet or Design Workflow acceptance score.",
+    "No business operations execute in the model comparison; native permissions, confirmation, audit and tenant security require separate tests.",
+    "Native-equivalent article search aliases remain strict frozen-score mismatches; no relabeling was applied.",
+    "No export, Colibri-only, quantization or model-capacity defect has been established as the cause of these errors."
+  ],
+  "model_accepted": false,
+  "native_backend_security_verified_by_this_comparison": false,
+  "next_application_training_started": false,
+  "next_step": "Investigate semantic argument errors with approved TRAIN-only diagnostics before another reviewed server experiment; continue Facturation first.",
+  "operational_result": {
+    "all_12_owned_worker_units_stopped": true,
+    "evaluation_ports_free": true,
+    "production_healthy_and_not_restarted": true
+  },
+  "original_retention_reference": 600,
+  "production_activation": false,
+  "schema_version": 1,
+  "selected_actual_checkpoint": 125,
+  "selected_functional_checkpoint": 0,
+  "selected_primary_development_targets_passed": false,
+  "shared_development": {
+    "count": 275,
+    "status": "NOT EXECUTED"
+  },
+  "shared_model_family": "Qwen3.5-0.8B",
+  "status": "COMPLETED; PRIMARY DEVELOPMENT REJECTED",
+  "teacher_forced_validation": {
+    "diagnostic_selected_step": 64,
+    "history": [
+      {
+        "loss": {
+          "by_application": {
+            "design_workflow": 0.04125147672428753,
+            "facturation": 0.03871396243526842,
+            "management_projet": 0.07044345270256769
+          },
+          "macro": 0.050136297287374544,
+          "micro": 0.048304148454710476,
+          "unweighted": {
+            "by_application": {
+              "design_workflow": 0.01703694737632766,
+              "facturation": 0.02090526781325695,
+              "management_projet": 0.02946950520733702
+            },
+            "macro": 0.022470573465640544,
+            "micro": 0.02243413329971066
+          }
+        },
+        "step": 0
+      },
+      {
+        "improved": true,
+        "loss": {
+          "by_application": {
+            "design_workflow": 0.034483726964854355,
+            "facturation": 0.04611217235629341,
+            "management_projet": 0.0632289111791194
+          },
+          "macro": 0.04794160350008905,
+          "micro": 0.04826084553130551,
+          "unweighted": {
+            "by_application": {
+              "design_workflow": 0.01380961773048206,
+              "facturation": 0.023883907294774825,
+              "management_projet": 0.024436193772486056
+            },
+            "macro": 0.020709906265914315,
+            "micro": 0.021695993888035694
+          }
+        },
+        "selected_step": 64,
+        "step": 64
+      },
+      {
+        "improved": false,
+        "loss": {
+          "by_application": {
+            "design_workflow": 0.03426393312690834,
+            "facturation": 0.04883397904473841,
+            "management_projet": 0.0635025192331609
+          },
+          "macro": 0.04886681046826922,
+          "micro": 0.0496036633936687,
+          "unweighted": {
+            "by_application": {
+              "design_workflow": 0.013750480580053903,
+              "facturation": 0.025254847469821647,
+              "management_projet": 0.024647531064747687
+            },
+            "macro": 0.021217619704874412,
+            "micro": 0.022405210522400177
+          }
+        },
+        "selected_step": 64,
+        "step": 128
+      }
+    ],
+    "limitations": [
+      "Final Facturation weighted loss is worse than its step-0 value; a lower application-macro loss did not establish improved generated actions."
+    ],
+    "scope": "Loss diagnostics only; loss did not select the functional checkpoint."
+  },
+  "training_application_exposure": {
+    "design_workflow": {
+      "steps": 16,
+      "unique_examples": 16
+    },
+    "facturation": {
+      "steps": 96,
+      "unique_examples": 96
+    },
+    "management_projet": {
+      "steps": 16,
+      "unique_examples": 16
+    }
+  },
+  "training_completed_epochs": 1,
+  "training_completed_updates": 128,
+  "training_cpu_threads": 14,
+  "training_duration_seconds": 6767.40609104,
+  "training_peak_process_rss_kib": 6830940,
+  "training_recipe": {
+    "attention": "sdpa",
+    "context": 8192,
+    "dtype": "bfloat16",
+    "fresh_adapter_and_optimizer": true,
+    "gradient_checkpointing": "nonreentrant",
+    "learning_rate": 1e-05,
+    "lora_alpha": 32.0,
+    "lora_rank": 16,
+    "parent_checkpoint_already_merged": 125,
+    "semantic_loss_weight": 4,
+    "trainable_parameters": 7127040
+  },
+  "verification": {
+    "completed_training_review": "No issues",
+    "files_bound": 345,
+    "final_comparison_evidence_review": "No issues",
+    "independent_server_contact_by_reviewer": false,
+    "main_thread_audit_passed": true,
+    "one_reviewer": true,
+    "raw_shards_reproduced": 12,
+    "saved_raw_evidence_independently_reproduced": true
+  }
+}

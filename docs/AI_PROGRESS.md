@@ -1,20 +1,28 @@
 # Chat AI Assistant progress
 
-## Facturation correction started; functional evaluation pending - 20 October 2026
+## Facturation correction completed; primary targets missed - 20 October 2026
 
-IMPLEMENTED and verified: a 128-row English/French correction corpus contains 64 fresh synthetic contrasts and 64 byte-identical replay rows. Replay now includes all eight reviewed semantic families, explicit versus ambiguous result selection, user list versus detail, both article search aliases and invoice-payment search arguments. All 37 mandatory tool/family/shape tags are present. This is partial structural coverage, not model accuracy.
+IMPLEMENTED and verified: the server completed all 128 scheduled optimizer updates, one epoch and validation at 0/64/128 in 6,767.41 seconds (approximately 1 hour 53 minutes). Exposure was 96 Facturation, 16 Management Projet and 16 Design Workflow examples, each once. The same shared Qwen3.5-0.8B and reviewed BF16/LoRA recipe were used. The earlier launch snapshot is superseded by this completion.
 
-Actual server preflight passes all 128 TRAIN and 275 unchanged validation examples. Maximum lengths are 7,706 and 7,496 tokens; every row retains the configured 512-token output budget, and the longest supervised target is 131 tokens. The experimental checkpoint-125 parent was independently reconstructed exactly across all 473 saved tensors. Data, admission, selection and terminal-verification checks pass 47 tests; stage guards pass 32 cases.
+All five declared Colibri primary candidates completed: 532 new generated cases and 133 cached baseline cases. The frozen scorer and labels are unchanged.
 
-IMPLEMENTED and verified: both discarded capacity updates have finite gradients and real weight changes across all 24 layers. Peak process memory is 6,003,300 KiB, approximately 5.73 GiB, with swap disabled. The single reviewer verified the actual evidence and terminal verification. Fresh resource and concurrency checks passed before one main-training dispatch.
+| Candidate | Correct actions | Exact arguments | Structured output | Critical cases |
+| --- | --- | --- | --- | --- |
+| 0 (actual 125, reused) | 122/133 (91.73%) | 102/111 (91.89%) | 132/133 | 20/24 |
+| 32 | 119/133 (89.47%) | 98/111 (88.29%) | 132/133 | 21/24 |
+| 64 | 118/133 (88.72%) | 96/111 (86.49%) | 133/133 | 21/24 |
+| 96 | 117/133 (87.97%) | 95/111 (85.59%) | 133/133 | 21/24 |
+| 128 | 118/133 (88.72%) | 96/111 (86.49%) | 133/133 | 21/24 |
 
-PARTIALLY IMPLEMENTED at the launch capture: the 128-update main run is active, with zero recorded optimizer updates; initial preparation/validation is incomplete at that capture. It uses a fresh adapter and optimizer on the already merged parent, learning rate 0.00001, 14 CPU threads, BF16 SDPA and nonreentrant checkpointing. Candidates 0/32/64/96/128 must all complete unchanged Colibri primary evaluation before selection. Applicable 275/438/48 comparisons remain mandatory.
+The selector retains logical step 0, meaning the cached experimental checkpoint 125. Every candidate fails necessary primary targets. The 275 shared development, 438 regression and 48 additional controls are explicitly NOT EXECUTED under the frozen rejection policy. Lower teacher-forced macro loss and valid JSON did not establish correct arguments or 95% accuracy.
 
-The completed paired prompt diagnostic scored 26/30 exact TRAIN actions, below the original 27/30, so that prompt variant is rejected. A corrected HF representation diagnostic scored 26/30, with the same three principal failures also observed in Colibri. This supports a model-fit correction, without establishing a Colibri-only or quantization-specific cause. An earlier interrupted HF stopping attempt is excluded from comparisons.
+The completion audit reproduces all 12 raw shards and binds 345 evidence/source files. Fresh server checks verify stopped evaluation worker units, free evaluation ports and healthy production inference with its original start time. No production model activation or next-application training occurred. This campaign still has zero of six fully accepted applications; no new Management Projet or Design Workflow acceptance score is established.
 
-No new functional accuracy is established. The best measured Facturation primary score remains 122/133 (91.73%); zero of six applications are fully accepted. Production inference and other application source remain unchanged. Dated sections below preserve earlier observations and do not override this status.
+The original separate search-refinement run completed 3,103 updates, not 1,587. That count is distinct from this 128-update correction. The queued previous-result selection schema fix remains local and undeployed, with its earlier 937 native backend tests passing.
 
-[Preparation and diagnostic evidence](../training/reports/facturation-semantic-correction-v2-preparation.json).
+PLANNED: investigate the remaining argument errors using approved TRAIN diagnostics before another reviewed server experiment. Keep Facturation first and retain the unchanged acceptance gates.
+
+[Completed correction results](../training/reports/facturation-semantic-correction-v2-functional-comparison.json).
 
 ## Semantic pilot completed; primary targets missed - 20 October 2026
 

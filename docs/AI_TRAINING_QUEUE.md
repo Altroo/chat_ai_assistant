@@ -1,16 +1,16 @@
 # Shared model training queue
 
-## Current queue - 19 October 2026
+## Current queue - 20 October 2026
 
-Zero of six applications are fully accepted by this campaign. The preceding Facturation search refinement completed all 3,103 updates; its selected checkpoint failed the functional acceptance gates. That run is finished. Production inference has not been replaced.
+Zero of six applications are fully accepted by this campaign. The original 3,103-update refinement, subsequent 500-update semantic pilot and separate 128-update correction are finished. Training completion is not acceptance. Production inference has not been replaced.
 
-1. IN PROGRESS: the separate Facturation entity pilot uses the same shared Qwen3.5-0.8B model and one 216-update epoch. Its corpus contains 72 new Facturation TRAIN-only literal variants and 144 retained Management Projet / Design Workflow examples. The initial 275-example validation completed. At the verified 19 October 20:32 UTC observation, the same worker had completed 72 updates and the checkpoint-72 validation result was pending. This is a timestamped observation, not a live progress counter.
-2. PENDING: after successful pilot completion and review, compare checkpoints 72, 144 and 216 through Colibri against the original checkpoint-600 baseline. The selected candidate must pass the unchanged development, regression, additional-control, critical-case and retained-application gates. No new generated-action accuracy or 95% result is claimed.
-3. PLANNED: Management Projet, then Design Workflow, one at a time after Facturation passes, with regressions for earlier applications.
-4. PLANNED: Contracts (contrat), Gestion Magasin and Reservation, one at a time after the preceding model passes all gates. The retained R11 preparations are V6r11, V7r11 and V8r12 respectively; these preparations have not been trained. Refresh their native contracts and retained curriculum against the actually accepted predecessor before launch.
-5. PLANNED: complete six-app model, permission and runtime verification before any activation decision. Use one shared model and only one numerical training stage at a time.
+1. IN PROGRESS: Facturation model-quality work. The latest correction completed all 128 updates and five declared primary candidates. Cached checkpoint 125 remains best at 122/133 full actions (91.73%) and 102/111 exact arguments (91.89%); no candidate passes the required gates. Investigate semantic argument errors using approved TRAIN diagnostics before another reviewed server experiment. No optimizer is currently running.
+2. PENDING: an improved Facturation candidate must pass unchanged primary, shared development, held-out regression, additional-control, critical-case and retained-application gates. The latest attempt's 275/438/48 broader checks were not executed after primary rejection. Do not treat earlier Management Projet or Design Workflow percentages as new measurements.
+3. PLANNED: Management Projet, then Design Workflow, one at a time after Facturation passes, preserving earlier application performance.
+4. PLANNED: Contracts (contrat), Gestion Magasin and Reservation, one at a time after the predecessor passes. Their English/French dialogue-v4 native-source/data freshness checks are prepared; these stages have not executed optimization. Rebind the accepted shared predecessor and run fresh baseline/candidate comparisons before acceptance.
+5. PLANNED: complete six-app model, permission and runtime verification before any activation decision. Use the same shared model and Colibri, with only one numerical training stage at a time.
 
-[Completed 3,103-update comparison](../training/reports/facturation-search-refinement-functional-comparison.json), [pilot initial validation](../training/reports/facturation-entity-pilot-v1-initial-validation.json), [pilot evaluation policy](../training/reports/facturation-entity-pilot-v1-evaluation-policy.json), [measured accuracy](AI_MODEL_ACCURACY.md), [retained future-stage preparations](../training/reports/serial-after-r11-preparation.json).
+[Completed correction results](../training/reports/facturation-semantic-correction-v2-functional-comparison.json). [Measured accuracy](AI_MODEL_ACCURACY.md).
 
 ## Earlier queue observations
 
