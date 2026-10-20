@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Pilot comparison completed - 20 October 2026
+
+IMPLEMENTED and verified: all declared candidate comparisons and the selected checkpoint's 275 shared development, 438 regression and 48 additional cases finished. The single reviewer independently reproduced every score and gate, checked all 18 ordered shards and 141 unchanged frozen controls, and verified the recorded model/runtime/worker evidence and cleanup.
+
+Facturation remains below target: 111/133 full actions (83.46 percent) and 89/111 exact arguments (80.18 percent) on development; 97/108 full actions (89.81 percent) on regression; 10/16 full actions (62.5 percent) on additional controls. The additional controls selected the correct tool in all 16 cases, with eight of 14 eligible exact arguments matching. Management Projet fails the original-reference retention check. Design Workflow retains development behavior but fails broader model gates. All three final model gates fail; zero of six applications are fully accepted. No model was activated.
+
+PARTIALLY IMPLEMENTED: at the subsequent recorded preflight observation, all 704 corrective TRAIN and 275 unchanged validation rows passed tokenizer/template, runtime-prefix, loss/semantic alignment and output-budget checks. Maximum lengths were 7,745 and 7,496 tokens. This is not optimizer training or measured successor accuracy. Actual capacity evidence, numerical admission, successful training and the complete prospective functional comparison remain required.
+
+[Completed model results](../training/reports/facturation-entity-pilot-v1-functional-comparison.json).
+
 ## Corrective numerical recipe prepared - 19 October 2026
 
 IMPLEMENTED as admission code: the 704-update recipe checks all 520 Facturation, 112 Management Projet and 72 Design Workflow examples are trained exactly once. It checks the unchanged tokenizer/Colibri preflight, measured capacity recipe, finite update history, source and environment identities, and validation at steps 0, 352 and 704. Saved checkpoints are 176, 352, 528 and 704. Twelve new public recipe tests pass.

@@ -1,5 +1,15 @@
 # Verification and acceptance record
 
+## Completed pilot functional comparison - 20 October 2026
+
+Passed as evidence checks: independent reproduction of all candidate development scores and selection, all 275 shared development cases, all 438 regression cases across 15 subsets, and all 48 additional controls. The comparison generated 1,160 new case results and reused 133 original-baseline cases. The audit verifies 18 ordered raw shards, matching input hashes and summaries, exact serving worker identities/settings, unchanged before/after artifacts, all 141 frozen controls, 151 runtime files and four provider files. All owned workers stopped and the three evaluation ports were free.
+
+Failed as model acceptance: Facturation development full actions 111/133, exact arguments 89/111; regression full actions 97/108, exact arguments 75/86; additional full actions 10/16, exact arguments 8/14. Management Projet's no-decline development requirement fails. Design Workflow's broader regression and critical controls fail. All three final model gates remain false; zero of six applications are fully accepted. The comparison executes no business operation and does not establish native backend security for a successor.
+
+Separately, actual server preflight passed every check for 704 corrective TRAIN and 275 validation rows, using the attested experimental checkpoint-2048 parent and original checkpoint-600 reference. Maximum token lengths are 7,745/7,496 under the unchanged 8,192 context. This proves input/template compatibility only; capacity, training completion and generated-action accuracy remain unestablished at this observation.
+
+[Sanitized completed results](../training/reports/facturation-entity-pilot-v1-functional-comparison.json).
+
 ## Corrective numerical admission checks - 19 October 2026
 
 Passed locally: 12 new public recipe tests and nine private controller/launcher guard tests. The public checks cover one complete 704-update epoch, 520/112/72 unique application exposure, unchanged data hashes, all required preflight checks, longest-row capacity with both explicit checkpointing modes, finite optimizer/layer evidence, correct model parent and dependency identities, saved-checkpoint and validation schedules, and rejection of incomplete or changed training reports. They also verify the extended 12-hour child and 14-hour service budgets.

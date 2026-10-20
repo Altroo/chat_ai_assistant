@@ -1,0 +1,624 @@
+{
+  "additional_control_cases": 48,
+  "additional_controls": {
+    "design_workflow": {
+      "clarifications": {
+        "count": 4,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 8,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 8,
+          "tool_correct": 8
+        },
+        "exact_arguments": {
+          "count": 4,
+          "passed": 2,
+          "percent": 50.0
+        },
+        "percent": {
+          "action_matches": 75.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 12,
+        "passed": 9,
+        "percent": 75.0
+      },
+      "full_action_percent": 81.25,
+      "full_actions": 13,
+      "passed": false,
+      "structured": 16,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false,
+        "exact_arguments": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 16
+    },
+    "facturation": {
+      "clarifications": {
+        "count": 2,
+        "counts": {
+          "action_matches": 2,
+          "structured_valid": 2,
+          "tool_correct": 2
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 4,
+        "counts": {
+          "action_matches": 4,
+          "structured_valid": 4,
+          "tool_correct": 4
+        },
+        "exact_arguments": {
+          "count": 2,
+          "passed": 2,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 14,
+        "passed": 8,
+        "percent": 57.14
+      },
+      "full_action_percent": 62.5,
+      "full_actions": 10,
+      "passed": false,
+      "structured": 16,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": true,
+        "exact_arguments": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 16
+    },
+    "management_projet": {
+      "clarifications": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 16,
+      "critical_model_cases": {
+        "count": 6,
+        "counts": {
+          "action_matches": 6,
+          "structured_valid": 6,
+          "tool_correct": 6
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 10,
+        "passed": 10,
+        "percent": 100.0
+      },
+      "full_action_percent": 100.0,
+      "full_actions": 16,
+      "passed": true,
+      "structured": 16,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": true,
+        "exact_arguments": true,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 16
+    }
+  },
+  "all_declared_candidates_compared": true,
+  "all_six_apps_accepted": false,
+  "candidate_development": [
+    {
+      "action_matches": 110,
+      "application_macro_action_percent": 82.70676691729324,
+      "application_macro_valid_percent": 100.0,
+      "by_application": {
+        "facturation": {
+          "action_matches": 110,
+          "count": 133,
+          "valid_structures": 133
+        }
+      },
+      "count": 133,
+      "scenario_grouped_application_macro_action_percent": 83.17307692307692,
+      "step": 0
+    },
+    {
+      "action_matches": 111,
+      "application_macro_action_percent": 83.45864661654136,
+      "application_macro_valid_percent": 99.24812030075188,
+      "by_application": {
+        "facturation": {
+          "action_matches": 111,
+          "count": 133,
+          "valid_structures": 132
+        }
+      },
+      "count": 133,
+      "scenario_grouped_application_macro_action_percent": 84.13461538461539,
+      "step": 72
+    },
+    {
+      "action_matches": 107,
+      "application_macro_action_percent": 80.45112781954887,
+      "application_macro_valid_percent": 99.24812030075188,
+      "by_application": {
+        "facturation": {
+          "action_matches": 107,
+          "count": 133,
+          "valid_structures": 132
+        }
+      },
+      "count": 133,
+      "scenario_grouped_application_macro_action_percent": 82.21153846153847,
+      "step": 144
+    },
+    {
+      "action_matches": 103,
+      "application_macro_action_percent": 77.44360902255639,
+      "application_macro_valid_percent": 100.0,
+      "by_application": {
+        "facturation": {
+          "action_matches": 103,
+          "count": 133,
+          "valid_structures": 133
+        }
+      },
+      "count": 133,
+      "scenario_grouped_application_macro_action_percent": 77.88461538461539,
+      "step": 216
+    }
+  ],
+  "comparison_completed_utc": "2026-10-20T00:16:41Z",
+  "comparison_subsets": 15,
+  "context_tokens": 8192,
+  "development": {
+    "design_workflow": {
+      "clarifications": {
+        "count": 14,
+        "counts": {
+          "action_matches": 14,
+          "structured_valid": 14,
+          "tool_correct": 14
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 64,
+      "critical_model_cases": {
+        "count": 21,
+        "counts": {
+          "action_matches": 21,
+          "structured_valid": 21,
+          "tool_correct": 21
+        },
+        "exact_arguments": {
+          "count": 7,
+          "passed": 7,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 46,
+        "passed": 46,
+        "percent": 100.0
+      },
+      "full_action_percent": 100.0,
+      "full_actions": 64,
+      "passed": true,
+      "structured": 64,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": true,
+        "exact_arguments": true,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 64
+    },
+    "facturation": {
+      "clarifications": {
+        "count": 16,
+        "counts": {
+          "action_matches": 16,
+          "structured_valid": 16,
+          "tool_correct": 16
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 133,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 22,
+          "structured_valid": 24,
+          "tool_correct": 24
+        },
+        "exact_arguments": {
+          "count": 8,
+          "passed": 6,
+          "percent": 75.0
+        },
+        "percent": {
+          "action_matches": 91.67,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 111,
+        "passed": 89,
+        "percent": 80.18
+      },
+      "full_action_percent": 83.46,
+      "full_actions": 111,
+      "passed": false,
+      "structured": 132,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false,
+        "exact_arguments": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 129
+    },
+    "management_projet": {
+      "clarifications": {
+        "count": 20,
+        "counts": {
+          "action_matches": 19,
+          "structured_valid": 20,
+          "tool_correct": 20
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 95.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 78,
+      "critical_model_cases": {
+        "count": 32,
+        "counts": {
+          "action_matches": 31,
+          "structured_valid": 32,
+          "tool_correct": 32
+        },
+        "exact_arguments": {
+          "count": 12,
+          "passed": 12,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 96.88,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 54,
+        "passed": 53,
+        "percent": 98.15
+      },
+      "full_action_percent": 97.44,
+      "full_actions": 76,
+      "passed": false,
+      "structured": 78,
+      "targets": {
+        "clarification_reason_and_language": false,
+        "critical_model_cases": false,
+        "exact_arguments": true,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 78
+    }
+  },
+  "fully_accepted_applications": 0,
+  "limitations": [
+    "Model planning only; no business tools were executed.",
+    "Repeatedly inspected regression and additional cases are safeguards, not new blind statistical certification.",
+    "The source development rows lack separate English/French labels; no per-language result is inferred.",
+    "Passing a single phase or a retained-application check does not accept an application.",
+    "The rejected model was not activated. Training completion is separate from functional acceptance."
+  ],
+  "max_output_tokens": 512,
+  "mode": "native",
+  "model_accepted": false,
+  "model_gates": {
+    "by_application": {
+      "design_workflow": false,
+      "facturation": false,
+      "management_projet": false
+    }
+  },
+  "native_business_security_verified_by_this_comparison": false,
+  "new_inference_cases": 1160,
+  "next_application_training_started": false,
+  "ordered_shards_verified": 18,
+  "production_activation": false,
+  "provider_files_verified": 4,
+  "regression": {
+    "design_workflow": {
+      "clarifications": {
+        "count": 26,
+        "counts": {
+          "action_matches": 26,
+          "structured_valid": 26,
+          "tool_correct": 26
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 130,
+      "critical_model_cases": {
+        "count": 40,
+        "counts": {
+          "action_matches": 39,
+          "structured_valid": 40,
+          "tool_correct": 40
+        },
+        "exact_arguments": {
+          "count": 14,
+          "passed": 13,
+          "percent": 92.86
+        },
+        "percent": {
+          "action_matches": 97.5,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 100,
+        "passed": 89,
+        "percent": 89.0
+      },
+      "full_action_percent": 91.54,
+      "full_actions": 119,
+      "passed": false,
+      "structured": 130,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": false,
+        "exact_arguments": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 129
+    },
+    "facturation": {
+      "clarifications": {
+        "count": 18,
+        "counts": {
+          "action_matches": 18,
+          "structured_valid": 18,
+          "tool_correct": 18
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 108,
+      "critical_model_cases": {
+        "count": 24,
+        "counts": {
+          "action_matches": 24,
+          "structured_valid": 24,
+          "tool_correct": 24
+        },
+        "exact_arguments": {
+          "count": 6,
+          "passed": 6,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 86,
+        "passed": 75,
+        "percent": 87.21
+      },
+      "full_action_percent": 89.81,
+      "full_actions": 97,
+      "passed": false,
+      "structured": 108,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": true,
+        "exact_arguments": false,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 106
+    },
+    "management_projet": {
+      "clarifications": {
+        "count": 46,
+        "counts": {
+          "action_matches": 46,
+          "structured_valid": 46,
+          "tool_correct": 46
+        },
+        "exact_arguments": {
+          "count": 0,
+          "passed": 0,
+          "percent": null
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "count": 200,
+      "critical_model_cases": {
+        "count": 86,
+        "counts": {
+          "action_matches": 86,
+          "structured_valid": 86,
+          "tool_correct": 86
+        },
+        "exact_arguments": {
+          "count": 40,
+          "passed": 40,
+          "percent": 100.0
+        },
+        "percent": {
+          "action_matches": 100.0,
+          "structured_valid": 100.0,
+          "tool_correct": 100.0
+        }
+      },
+      "exact_arguments": {
+        "count": 148,
+        "passed": 141,
+        "percent": 95.27
+      },
+      "full_action_percent": 96.5,
+      "full_actions": 193,
+      "passed": true,
+      "structured": 200,
+      "targets": {
+        "clarification_reason_and_language": true,
+        "critical_model_cases": true,
+        "exact_arguments": true,
+        "structured_output": true,
+        "tool_selection": true
+      },
+      "tools": 195
+    }
+  },
+  "regression_cases": 438,
+  "retained_no_decline": {
+    "design_workflow": true,
+    "management_projet": false
+  },
+  "reused_baseline_cases": 133,
+  "runtime": "Colibri",
+  "runtime_files_verified": 151,
+  "selected_functional_checkpoint": 72,
+  "shared_development_cases": 275,
+  "single_independent_review": true,
+  "status": "COMPLETED COMPARISON; MODEL REJECTED",
+  "thinking": false,
+  "threads_per_worker": 4,
+  "training_completed_epochs": 1,
+  "training_completed_updates": 216,
+  "training_parent_checkpoint": 600,
+  "unchanged_frozen_controls": 141,
+  "worker_cleanup_verified": true,
+  "workers": 3
+}
