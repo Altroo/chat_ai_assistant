@@ -1,0 +1,128 @@
+{
+  "version": "qwen35-4b-transition-v1",
+  "status": "REPLACEMENT DOWNLOADED AND CONVERTED; FACTURATION BASELINE IN PROGRESS; NOT ACCEPTED",
+  "observed_at": "2026-10-21T14:24:24.603697+00:00",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "inference_runtime": "Colibri CPU",
+  "retired_training": {
+    "model_family": "Qwen3.5-0.8B",
+    "updates_observed": 82,
+    "scheduled_updates": 256,
+    "complete": false,
+    "status": "STOPPED FOR USER-APPROVED MODEL REPLACEMENT",
+    "logs_and_datasets_preserved": true,
+    "old_comparison_retired": true
+  },
+  "cleanup": {
+    "obsolete_weight_files_removed": 3131,
+    "obsolete_weight_links_removed": 349,
+    "freed_bytes": 590147190784,
+    "freed_gib": 549.62,
+    "datasets_logs_results_scripts_preserved": true,
+    "protected_services_unchanged": true,
+    "preserved_services": [
+      "KAT coding",
+      "translation",
+      "grammar correction",
+      "live assistant"
+    ]
+  },
+  "replacement": {
+    "model_id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "official_post_trained_model": true,
+    "license": "apache-2.0",
+    "downloaded_files": 13,
+    "downloaded_bytes": 9342905899,
+    "converted_files": 42,
+    "converted_bytes": 10362848887,
+    "text_layers": 32,
+    "runtime": "Colibri CPU",
+    "server_only": true,
+    "official_lfs_checksums_verified": 3,
+    "all_file_sizes_checked": true,
+    "all_file_sha256_recorded": true
+  },
+  "smoke": {
+    "count": 6,
+    "full_actions_passed": 4,
+    "structures_passed": 4,
+    "eligible_exact_arguments_passed": 4,
+    "eligible_exact_arguments_count": 4,
+    "clarification_failures": 2,
+    "failure_diagnosis": "Operator-observed diagnostic repeated both failed cases and saw plain-text replies with no function call; provider cause was Invalid call count. Raw diagnostic stream was not separately archived; frozen smoke error records are preserved. No parser or label change.",
+    "latency_mean_s": 35.938,
+    "latency_p95_s": 41.183,
+    "completion_tokens_per_wall_second_mean": 2.242,
+    "is_accuracy_acceptance": false
+  },
+  "primary_baseline": {
+    "status": "RUNNING AT RECORDED SNAPSHOT",
+    "cases_expected": 133,
+    "cases_observed": 2,
+    "completed": false,
+    "threads": 7,
+    "context_tokens": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0,
+    "dataset_sha256": "ac1b70e353fc9ec632b21afd4d69de9743db24e07e865cb9f4b804d22b32ce58",
+    "evaluator_sha256": "dca2abf86b2162ccd99b868108dd957f5ef600fe196a5bf9f21b15cafa4fbe7b",
+    "provider_labels_scoring_unchanged": true,
+    "source_review": "No issues",
+    "one_reviewer": true,
+    "offline_review_fixtures_passed": 10,
+    "actual_server_admission_passed": true,
+    "pre_generation_attempt_failures": [
+      {
+        "cause": "Frozen primary input omitted from initial transfer",
+        "generated_cases": 0
+      },
+      {
+        "cause": "Unnecessary KAT executable-path read denied to deploy account",
+        "generated_cases": 0
+      }
+    ],
+    "failures_preserved": true
+  },
+  "resource_snapshot": {
+    "worker_rss_gib": 8.362,
+    "worker_cpu_percent_1s": 698.8,
+    "host_available_gib": 39.73,
+    "not_peak_or_aggregate_metrics": true
+  },
+  "previous_08b_primary": {
+    "full_actions_passed": 123,
+    "full_actions_count": 133,
+    "full_actions_percent": 92.48,
+    "exact_arguments_passed": 101,
+    "exact_arguments_count": 111,
+    "exact_arguments_percent": 90.99,
+    "critical_passed": 21,
+    "critical_count": 24,
+    "accepted": false
+  },
+  "new_model_training_started": false,
+  "model_accepted": false,
+  "apps_accepted": 0,
+  "apps_total": 6,
+  "business_tools_executed": false,
+  "production_activation": false,
+  "next_steps": [
+    "Complete the unchanged Facturation baseline and diagnose failures.",
+    "Revalidate source-grounded EN/FR TRAIN metadata and tokenizer/template boundaries for the 4B model.",
+    "Measure actual server-only LoRA capacity before numerical training.",
+    "Use unchanged functional, critical, clarification and retained-application gates; train later apps sequentially after Facturation qualifies."
+  ],
+  "limitations": [
+    "Six-case smoke is not full application accuracy.",
+    "Primary cases are correlated development scenarios, not new blind certification.",
+    "Native tool buffering means completion tokens per wall second is not raw decode throughput.",
+    "Resource values are one observation, not peak RAM, average CPU or a controlled speedup comparison.",
+    "No new Management Projet, Design Workflow, Contracts, Gestion Magasin or Reservation accuracy is established.",
+    "Training for the replacement has not started; no 95% result or completion date is established."
+  ]
+}

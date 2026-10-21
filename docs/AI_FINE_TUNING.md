@@ -1,5 +1,15 @@
 # Model training and evaluation
 
+## Approved model replacement and training status - 21 October 2026
+
+The previous Qwen3.5-0.8B correction stopped at 82/256 updates for the approved replacement. It is incomplete; its comparison controls are retired. Obsolete experimental weights were removed, while datasets, logs, results and source were preserved. KAT coding, translation, grammar correction and the live assistant were preserved.
+
+The official post-trained Qwen/Qwen3.5-4B revision `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a` is downloaded with official checksums verified for the three LFS files, size checks and locally recorded hashes for all 13 files, and 42 converted Colibri artifacts across 32 text layers. The six-case smoke passed 4/6 full actions; the unchanged full Facturation baseline is running. This is inference evaluation, not fine-tuning.
+
+PLANNED: revalidate the source-grounded EN/FR corpus against this tokenizer/template and measure actual 32-layer CPU LoRA capacity before optimization. Existing training uses PyTorch/Transformers/PEFT; production inference remains Colibri. Model-specific capacity and functional comparison must pass before any acceptance or activation. No 4B optimizer updates or fine-tuned results exist yet.
+
+Facturation remains the sole current focus. The same shared model must later qualify on the other apps sequentially, preserving earlier performance. Zero of six apps are fully accepted. [Verified transition](../training/reports/qwen35-4b-transition-v1.json).
+
 ## Argument correction preparation - 21 October 2026
 
 The next 256-row TRAIN-only correction is prepared and its rows are data-reviewed. The original server metadata preflight passes all 531 examples. Capacity then failed before model loading because the application list was missing from the manifest. That metadata is corrected; both frozen consumer startup guards now pass locally, with all row bytes unchanged. Fresh corrected bindings and all 531 server preflight cases passed review; the capacity worker is running at the 12:27 UTC snapshot. Capacity completion and training admission remain pending; the training epoch has not started. Eighty balanced English/French examples address complete edits, unpaid filtering, date boundaries and permitted payment searches. Previous replay and validation bytes, scoring and all acceptance gates remain unchanged. All 52 correction tests pass. Best measured full actions remain 123/133 (92.48%); exact arguments remain 101/111 (90.99%). Zero of six apps are accepted.

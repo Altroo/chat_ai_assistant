@@ -1,5 +1,15 @@
 # Shared model accuracy work
 
+## Replacement baseline in progress - 21 October 2026
+
+Qwen/Qwen3.5-4B is downloaded and converted for Colibri CPU. Its six-case native-tool smoke passed 4/6 full actions and structures. The other two cases were rejected as invalid model output and remain failed. A separate operator-observed diagnostic saw plain-text replies with no clarification function. The four eligible argument cases passed, but this small technical smoke does not establish application accuracy.
+
+The unchanged 133-case Facturation baseline is running with 8192 context tokens, 512 output tokens and thinking disabled. No completed 4B baseline or fine-tuned accuracy is available. No parser, expected label, scoring alias or acceptance target changed.
+
+Historical best 0.8B primary performance remains 123/133 full actions (92.48%), 101/111 exact arguments (90.99%) and 21/24 critical cases. The later 256-update correction was retired at 82 updates without completion or acceptance. Zero of six apps are fully accepted. No new score exists for the other five apps.
+
+[Replacement methodology, measurements and limitations](../training/reports/qwen35-4b-transition-v1.json).
+
 ## Argument correction preparation - 21 October 2026
 
 The next 256-row TRAIN-only correction is prepared and its rows are data-reviewed. The original server metadata preflight passes all 531 examples. Capacity then failed before model loading because the application list was missing from the manifest. That metadata is corrected; both frozen consumer startup guards now pass locally, with all row bytes unchanged. Fresh corrected bindings and all 531 server preflight cases passed review; the capacity worker is running at the 12:27 UTC snapshot. Capacity completion and training admission remain pending; the training epoch has not started. Eighty balanced English/French examples address complete edits, unpaid filtering, date boundaries and permitted payment searches. Previous replay and validation bytes, scoring and all acceptance gates remain unchanged. All 52 correction tests pass. Best measured full actions remain 123/133 (92.48%); exact arguments remain 101/111 (90.99%). Zero of six apps are accepted.

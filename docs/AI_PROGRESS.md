@@ -1,5 +1,19 @@
 # Chat AI Assistant progress
 
+## Approved replacement model - 21 October 2026
+
+IMPLEMENTED and verified: the official post-trained Qwen/Qwen3.5-4B model is downloaded on the server at revision `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a` (Apache 2.0). All 13 source files were size-checked and their SHA256 hashes recorded; three LFS checksums were additionally verified against official metadata. Colibri conversion produced 42 artifacts across 32 text layers. KAT coding, translation, grammar correction and the live assistant remain unchanged.
+
+The preceding Qwen3.5-0.8B correction was stopped at 82/256 updates for this approved replacement. It did not complete and its prepared comparison is retired. Obsolete experimental weights were removed, freeing 549.62 GiB; datasets, logs, measurements and source were retained. Historical running snapshots below are superseded by this entry.
+
+PARTIALLY IMPLEMENTED: the new model's six-case native-tool smoke passed 4/6 full actions and structures. Both failures were rejected as invalid model output. A separate operator-observed diagnostic saw plain-text replies with no clarification function. The provider correctly rejected them; these failures remain in the score. Mean smoke latency was 35.938 seconds, observed P95 was 41.183 seconds. Completion tokens divided by request wall time averaged 2.242 tokens/second; this is not raw decoder speed.
+
+The reviewed 133-case Facturation baseline is running under Colibri CPU with 7 threads, 8192 context tokens, 512 maximum output tokens, thinking disabled and temperature 0. Labels, parser and scoring are unchanged. Both initial admission failures occurred before generation and are preserved; the complete read-only server admission subsequently passed. This is evaluation, not replacement-model fine-tuning. No final 4B accuracy is available.
+
+PLANNED: finish the baseline, validate the existing EN/FR training material against the 4B tokenizer/template, measure server LoRA capacity and fine-tune against verified failures. Facturation remains first; the same shared model will qualify on later applications sequentially. Zero of six apps are fully accepted. No model activation or business operation occurred.
+
+[Verified replacement and progress snapshot](../training/reports/qwen35-4b-transition-v1.json).
+
 ## Facturation correction progress and comparison preparation - 21 October 2026, 13:10 UTC
 
 PARTIALLY IMPLEMENTED: the original server training invocation is running at 13/256 contiguous updates after completing its initial 275-row teacher-forced validation. It still uses the reviewed recipe and 14 CPU threads. The latest three updates took 85.305, 16.314 and 19.906 seconds, demonstrating that update duration varies with the example. Available host memory was 43.66 GiB; production inference remains healthy and unchanged. Initial Facturation loss is 0.023521, Management Projet 0.024735 and Design Workflow 0.014350. These are teacher-forced losses, not accuracy percentages.

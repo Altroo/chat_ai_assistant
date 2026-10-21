@@ -1,5 +1,17 @@
 # Shared model training queue
 
+## Superseding queue - 21 October 2026
+
+The approved replacement is the official Qwen/Qwen3.5-4B model, downloaded, size-checked, locally fingerprinted and converted for Colibri CPU. The preceding 0.8B run stopped at 82/256 updates and its comparison is retired. Historical queue observations below do not authorize resuming it.
+
+1. IN PROGRESS: the unchanged 133-case Facturation baseline for the new model. The six-case smoke passed 4/6 full actions; this is not full accuracy.
+2. PLANNED: review failures, validate EN/FR training inputs for this model, measure server LoRA capacity and train Facturation. Replacement-model optimization has not started.
+3. PENDING: unchanged primary, clarification, critical, shared development, regression and retained-application qualification.
+4. PLANNED: Management Projet, Design Workflow, Contracts, Gestion Magasin and Reservation, sequentially with the same shared model after Facturation qualifies.
+5. PENDING: complete six-app runtime, permission and release verification. No candidate activation is authorized by these measurements.
+
+Zero of six apps are fully accepted. KAT coding, translation, grammar correction and the live assistant remain unchanged. [Replacement evidence](../training/reports/qwen35-4b-transition-v1.json).
+
 ## Current queue - 21 October 2026
 
 Zero of six applications are fully accepted by this campaign. The original 3,103-update refinement, subsequent 500-update semantic pilot, earlier weighted 128-update correction, latest ordinary-SFT 128-update correction and separate 176-update coverage correction are finished. Training completion is not acceptance. Production inference has not been replaced.
