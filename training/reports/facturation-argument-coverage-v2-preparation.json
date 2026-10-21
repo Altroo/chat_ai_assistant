@@ -1,0 +1,181 @@
+{
+  "version": "facturation-argument-coverage-v2-preparation",
+  "status": "PREPARED; CORRECTED PREFLIGHT PASSED; CAPACITY RUNNING",
+  "date": "2026-10-21",
+  "data": {
+    "train_rows": 256,
+    "by_application": {
+      "facturation": 224,
+      "management_projet": 16,
+      "design_workflow": 16
+    },
+    "addition_rows": 80,
+    "addition_languages": {
+      "en": 40,
+      "fr": 40
+    },
+    "families": {
+      "literal_field_boundaries": 32,
+      "unpaid_filter_presence": 16,
+      "inclusive_exclusive_dates": 16,
+      "available_payment_tool": 16
+    },
+    "previous176_replay_unchanged": true,
+    "validation275_unchanged": true,
+    "train_sha256": "f71f48c19a7fe3e469d800fb451aa2e624150407804fc90ff8abcec4c1596022",
+    "validation_sha256": "8deb2bde51e014a8f5cb3c453c700c9a70091850e467aa3c9ab941e788e56487",
+    "manifest_sha256": "c950d2a77726cb8c5b886df3ad67e742436f1cc0eced9baee673f1270333ca2f",
+    "development_informed_correction": true,
+    "new_independent_holdout_claimed": false,
+    "evaluation_targets_used_for_training": false,
+    "input_exclusions_checked": 894,
+    "new_exact_overlap": 0,
+    "new_near_duplicate_overlap": 0,
+    "legacy_exact_overlap_under_stronger_normalization": 0,
+    "near_duplicate_threshold": 0.9,
+    "near_duplicate_qualification": "Defined request normalization and SequenceMatcher threshold only; not a proof of semantic independence.",
+    "previous_manifest_sha256": "7dfa4d1242d9bef1907fc030dda9f68a4a35e8b1bf287038765d97eaabc98202",
+    "applications": [
+      "facturation",
+      "management_projet",
+      "design_workflow"
+    ],
+    "row_files_unchanged_after_metadata_fix": true
+  },
+  "verified": {
+    "root_correction_tests_passed": 52,
+    "stage_guard_cases_passed": 54,
+    "policy_mutations_rejected_within_stage_cases": 7,
+    "single_reviewer_data_reproduction": true,
+    "reviewer_read_only_data_tests_passed": 11,
+    "reviewer_filesystem_guard_inspected": true,
+    "stage_guard_cases_scope": "Corrected isolated namespace; independently rerun by the single reviewer"
+  },
+  "native_contract_probe": {
+    "tests_passed": 18,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "native_source_files_unchanged": 1651,
+    "production_data_used": false,
+    "scope": "Controlled local fixtures confirm narrow article single-filter aliases, intersection when both supplied, payment non-equivalence, revocation, tenant denial and user/users navigation distinction.",
+    "scoring_changed": false
+  },
+  "proposed_numerical_recipe": {
+    "parent": "Same verified already merged experimental checkpoint 32 as preceding correction",
+    "model_family": "Qwen3.5-0.8B",
+    "inference_runtime": "Colibri",
+    "training_environment": "Server-only PyTorch and PEFT",
+    "complete_epochs": 1,
+    "updates": 256,
+    "learning_rate": 2e-06,
+    "semantic_loss_weight": 1,
+    "threads": 14,
+    "memory_limit_gib": 40,
+    "swap_allowed": false,
+    "host_memory_reserve_percent": 10,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_layers": 24,
+    "saved_steps": [
+      64,
+      128,
+      192,
+      256
+    ],
+    "teacher_validation_steps": [
+      0,
+      128,
+      256
+    ],
+    "primary_candidates": [
+      0,
+      64,
+      128,
+      192,
+      256
+    ],
+    "primary_cases": 133,
+    "context_tokens": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "primary_and_applicable_broader_critical_retention_gates_unchanged": true
+  },
+  "latest_measured_result": {
+    "experiment": "Previous176-update coverage correction",
+    "candidate": 132,
+    "full_actions": 123,
+    "full_actions_total": 133,
+    "full_actions_percent": 92.4812030075188,
+    "exact_arguments": 101,
+    "exact_arguments_total": 111,
+    "exact_arguments_percent": 90.990990990991,
+    "critical": 21,
+    "critical_total": 24,
+    "accepted": false
+  },
+  "numerical_preflight_executed": true,
+  "capacity_executed": true,
+  "training_executed": false,
+  "model_accepted": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "fully_accepted_applications": 0,
+  "applications_total": 6,
+  "preflight": {
+    "train_rows_passed": 256,
+    "validation_rows_passed": 275,
+    "all_roundtrip_prefix_boundary_semantic_output_budget_checks_passed": true,
+    "maximum_tokens": {
+      "train": 7706,
+      "validation": 7496
+    },
+    "maximum_output_tokens": 512,
+    "semantic_loss_weight": 1,
+    "raw_evidence_files": 10,
+    "external_source_checks": 216,
+    "single_reviewer_actual_evidence_reviewed": true,
+    "reviewer_independent_server_recomputation": false,
+    "original_successful_invocation_verified": true,
+    "production_healthy_unchanged": true,
+    "collection_sha256": "b26aef3bb79fcc2a7f90f04c47df1a01735be2ed1a0bc5cfcf7408877a36d2a9",
+    "report_sha256": "ef61bf9ba2ace9ae3a61665f128735b24c66e2dc0bc2c1283625c455ae370196",
+    "corrected_manifest_used": true
+  },
+  "capacity_started": true,
+  "capacity_complete": false,
+  "capacity_result_claimed": false,
+  "capacity_start_utc": "2026-10-21T12:25:33Z",
+  "capacity_status": "CORRECTED ATTEMPT RUNNING; NO RESULT CLAIMED",
+  "corrected_metadata_startup_checks": {
+    "probe_cpu_capacity": true,
+    "train_cpu": true,
+    "model_framework_imported": false,
+    "fresh_server_stage_started": true,
+    "new_manifest_fields": [
+      "applications"
+    ],
+    "new_generator_fingerprint": true,
+    "fresh_preflight_passed_and_reviewed": true,
+    "fresh_capacity_started": true
+  },
+  "snapshot_observed_at_utc": "2026-10-21T12:27:10Z",
+  "original_failed_capacity_attempt": {
+    "exception": "Missing applications manifest key",
+    "optimizer_updates": 0,
+    "model_loaded": false,
+    "restarted": false,
+    "reported_measurements": false,
+    "status": "FAILED BEFORE FRAMEWORK IMPORT; PRESERVED"
+  },
+  "capacity_last_observation": {
+    "observed_at_utc": "2026-10-21T12:27:10Z",
+    "original_invocation_running": true,
+    "worker_running": true,
+    "recorded_optimizer_updates": 0,
+    "worker_rss_bytes": 5621653504,
+    "host_available_memory_gib": 41.12397766113281,
+    "production_healthy_unchanged": true,
+    "point_observation_not_peak_benchmark": true
+  }
+}

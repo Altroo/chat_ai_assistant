@@ -1,5 +1,11 @@
 # Model training and evaluation
 
+## Argument correction preparation - 21 October 2026
+
+The next 256-row TRAIN-only correction is prepared and its rows are data-reviewed. The original server metadata preflight passes all 531 examples. Capacity then failed before model loading because the application list was missing from the manifest. That metadata is corrected; both frozen consumer startup guards now pass locally, with all row bytes unchanged. Fresh corrected bindings and all 531 server preflight cases passed review; the capacity worker is running at the 12:27 UTC snapshot. Capacity completion and training admission remain pending; the training epoch has not started. Eighty balanced English/French examples address complete edits, unpaid filtering, date boundaries and permitted payment searches. Previous replay and validation bytes, scoring and all acceptance gates remain unchanged. All 52 correction tests pass. Best measured full actions remain 123/133 (92.48%); exact arguments remain 101/111 (90.99%). Zero of six apps are accepted.
+
+[Verified preparation](../training/reports/facturation-argument-coverage-v2-preparation.json). [Current progress](AI_PROGRESS.md).
+
 ## Latest coverage comparison: completed and rejected - 21 October 2026
 
 The 176-update server training and all five declared Colibri primary candidates completed. Four checkpoints produced 532 fresh responses across 12 shards; logical zero reuses 133 reviewed actual checkpoint 32 responses. The original coordinator exited successfully. Fresh artifact, adapter, export, stopped-worker and free-port checks passed, and the single reviewer reproduced the completed audit and all 544 evidence hashes. Production inference remains unchanged.
