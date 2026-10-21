@@ -1,0 +1,178 @@
+{
+  "status": "IMPLEMENTED: training complete; Colibri comparison running",
+  "generated_at": "2026-10-21T10:08:44.999595+00:00",
+  "model": "existing shared Qwen3.5-0.8B",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training": {
+    "scheduled_updates": 176,
+    "completed_updates": 176,
+    "complete": true,
+    "all_updates_contiguous_finite": true,
+    "complete_epochs": 1,
+    "learning_rate": 2e-06,
+    "duration_seconds": 7534.061521500349,
+    "peak_rss_gib": 6.872245788574219,
+    "cpu_threads": 14,
+    "semantic_loss_weight": 1.0,
+    "application_exposure": {
+      "facturation": {
+        "steps": 144,
+        "unique_examples": 144
+      },
+      "design_workflow": {
+        "steps": 16,
+        "unique_examples": 16
+      },
+      "management_projet": {
+        "steps": 16,
+        "unique_examples": 16
+      }
+    },
+    "validation_steps_completed": [
+      0,
+      88,
+      176
+    ],
+    "original_invocation_terminal_success": true,
+    "original_process_gone": true,
+    "original_cgroup_empty": true
+  },
+  "teacher_forced_validation": {
+    "examples": 275,
+    "baseline": {
+      "micro": 0.02173089889819163,
+      "by_application": {
+        "facturation": 0.023520789571848513,
+        "management_projet": 0.02473542514033001,
+        "design_workflow": 0.01434951598439227
+      },
+      "macro": 0.020868576898856933,
+      "unweighted": {
+        "micro": 0.02173089889819163,
+        "by_application": {
+          "facturation": 0.023520789571848513,
+          "management_projet": 0.02473542514033001,
+          "design_workflow": 0.01434951598439227
+        },
+        "macro": 0.020868576898856933
+      }
+    },
+    "step88": {
+      "micro": 0.021939609787050358,
+      "by_application": {
+        "facturation": 0.024112196905797186,
+        "management_projet": 0.024684217183244657,
+        "design_workflow": 0.014079711916792803
+      },
+      "macro": 0.020958708668611548,
+      "unweighted": {
+        "micro": 0.021939609787050358,
+        "by_application": {
+          "facturation": 0.024112196905797186,
+          "management_projet": 0.024684217183244657,
+          "design_workflow": 0.014079711916792803
+        },
+        "macro": 0.020958708668611548
+      }
+    },
+    "step176": {
+      "micro": 0.022198283876215433,
+      "by_application": {
+        "facturation": 0.02507434044278661,
+        "management_projet": 0.024181080291811714,
+        "design_workflow": 0.013804945692301729
+      },
+      "macro": 0.021020122142300018,
+      "unweighted": {
+        "micro": 0.022198283876215433,
+        "by_application": {
+          "facturation": 0.02507434044278661,
+          "management_projet": 0.024181080291811714,
+          "design_workflow": 0.013804945692301729
+        },
+        "macro": 0.021020122142300018
+      }
+    },
+    "raw_log_history_and_saved_selection_consistent": true,
+    "weighted_unweighted_losses_equal": true,
+    "loss_selected_step": 0,
+    "loss_selected_step_is_not_functional_model_selection": true,
+    "interpretation": "Final application-macro and Facturation losses increased. The parent remains selected by diagnostic loss. No functional accuracy improvement is established."
+  },
+  "artifacts": {
+    "checkpoint_steps": [
+      44,
+      88,
+      132,
+      176
+    ],
+    "final_equals_checkpoint176": true,
+    "verified_external_source_pins": 216,
+    "collected_evidence_files": 26
+  },
+  "next_evaluation": {
+    "status": "RUNNING checkpoint44 primary evaluation",
+    "runtime": "Colibri CPU",
+    "required_candidates": [
+      0,
+      44,
+      88,
+      132,
+      176
+    ],
+    "logical_zero_actual_source_checkpoint": 32,
+    "primary_cases_per_candidate": 133,
+    "fresh_primary_cases": 532,
+    "cached_baseline_cases": 133,
+    "unchanged_applicable_broader_gates": [
+      275,
+      438,
+      48
+    ],
+    "original_checkpoint600_retention_unchanged": true,
+    "scoring_labels_and_thresholds_unchanged": true,
+    "completed_functional_evaluation_for_this_run": false,
+    "started_at": "2026-10-21T10:03:02Z",
+    "first_step": 44,
+    "context_tokens": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "workers": 3,
+    "threads_per_worker": 4,
+    "status_observed_at": "2026-10-21T10:07:44.112402+00:00"
+  },
+  "current_primary_best": {
+    "source": "preceding ordinary-SFT checkpoint32 comparison",
+    "full_actions_correct": 122,
+    "total": 133,
+    "accuracy_percent": 91.72932330827068,
+    "exact_arguments_correct": 100,
+    "arguments_total": 111,
+    "critical_correct": 22,
+    "critical_total": 24,
+    "tool_selection_correct": 133,
+    "structured_output_correct": 133,
+    "clarifications_correct": 16,
+    "clarifications_total": 16
+  },
+  "fully_accepted_applications": 0,
+  "model_accepted": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "production_healthy_unchanged_at_capture": true,
+  "evidence_sha256": {
+    "collection": "707ce2160339063d2e30fa088955ef1163613e4405c2f574aa972d198ebdca1c",
+    "training_report": "9ad80467bdcdfa24397411104f939195442aa016e87a7169fe7f3fb92d9ee3f5",
+    "training_complete": "1e2ddb5d74b575a481c39d5fd2c256addf37cdd70e658a6b270f120768cd3421",
+    "adapter_inventory": "d6f5b327c3fb072a052c4a82bb596032611aa5f932d5c7ef80fcbf46b3b38f21",
+    "terminal_identity": "aa3f4030454ca3f73656c0db353f61c91a8ba03af9df0b1bbc81f4240db2bbeb",
+    "actual_training_completion_review": "f8b168be759b100cf45be84aecbf26caa416514b6298a2bbf83e5fb08bfe46b5",
+    "read_only_comparison_preflight": "b63a22f0ee9faf70ce46c827d1d14d0191a03ef2f3b53bda5602f7f2eede9f2b",
+    "actual_comparison_admission": "6edc55786ea782eb812d1bbbacd8df4e6760a32a3bdfe57ec32704d0f4526174",
+    "actual_comparison_launch": "96f2890666ad412f44e1b9d6e0ddb32ce1d9562d394ee4e00c605ca6b5c8cbf0"
+  },
+  "actual_completed_training_evidence_reviewed_by_one_reviewer": true
+}

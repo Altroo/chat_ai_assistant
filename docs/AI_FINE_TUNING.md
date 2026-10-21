@@ -1,6 +1,16 @@
 # Model training and evaluation
 
-## Running coverage experiment, 21 October 2026
+## Coverage correction training complete, 21 October 2026
+
+IMPLEMENTED and verified: the server-only ordinary-SFT correction completed all 176 updates and validation at 0/88/176. Its fresh adapter and optimizer started from the already merged experimental checkpoint32 parent, without applying that prior adapter again. One complete epoch consumed 144 Facturation and 16 retained examples from each of Management Projet and Design Workflow, using learning rate 0.000002 and uniform assistant-token weights. Runtime was 7,534.06 seconds and peak RSS 6.87 GiB.
+
+The single reviewer reproduced the actual collected evidence, including finite contiguous updates, ordered validation, bound source/dependency/parent metadata, five adapter inventories and the stable original terminal identity. Final equals checkpoint176. Macro loss increases from 0.020868577 to 0.021020122 and Facturation loss also rises. The diagnostic selector therefore retains logical zero. This is not a functional accuracy result.
+
+PARTIALLY IMPLEMENTED: actual Colibri completion/artifact/resource preflight and the single reviewer's final comparison admission passed. The comparison started at 10:03 UTC; checkpoint44 exported successfully and its 133 primary cases are running on three four-thread Colibri workers. The required primary comparison includes cached actual32 as logical0 and all fresh checkpoints44/88/132/176. The frozen scorer, labels, 8,192-token context, 512-token output allowance, non-thinking template and applicable broader/critical/retention gates remain unchanged. Best verified Facturation full-action accuracy remains 91.73%; zero of six applications are accepted. No new model download or production activation occurred.
+
+[Actual completed training](../training/reports/facturation-factor-coverage-v1-training-completion.json).
+
+## Earlier coverage experiment launch, 21 October 2026
 
 PARTIALLY IMPLEMENTED: a separate 176-row TRAIN-only correction is prepared and data-reviewed, with all original 128 rows retained and 48 EN/FR coverage additions. The experimental FP32 starting point is the prior functional selection at checkpoint 32, with all 473 saved tensors reproduced exactly on the server. This parent is not production-accepted.
 

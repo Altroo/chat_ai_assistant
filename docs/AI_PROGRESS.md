@@ -1,6 +1,28 @@
 # Chat AI Assistant progress
 
-## Facturation coverage correction running, 21 October 2026
+## Facturation coverage correction: training complete, 21 October 2026
+
+IMPLEMENTED and verified: the original server run completed all 176 scheduled updates, one complete epoch and final validation. All updates are finite and contiguous. The dataset was consumed once: 144 Facturation, 16 Management Projet and 16 Design Workflow examples. Runtime was 7,534.06 seconds (about 2 hours 6 minutes) on 14 CPU threads, with peak RSS 6.87 GiB.
+
+The advanced collector verifies 26 raw evidence files, 216 external source pins, the original successful execution, an empty training cgroup and unchanged healthy production inference. The single reviewer reproduced the saved transport, terminal identity and pinned terminal verification locally. The final adapter equals checkpoint 176; all four scheduled checkpoint inventories are present.
+
+| Teacher-forced loss, lower is better | Baseline | Update 88 | Update 176 |
+| --- | --- | --- | --- |
+| Micro | 0.021731 | 0.021940 | 0.022198 |
+| Application macro | 0.020869 | 0.020959 | 0.021020 |
+| Facturation | 0.023521 | 0.024112 | 0.025074 |
+| Management Projet | 0.024735 | 0.024684 | 0.024181 |
+| Design Workflow | 0.014350 | 0.014080 | 0.013805 |
+
+The diagnostic loss selector retains logical zero, the preceding experimental checkpoint 32. Final macro, micro and Facturation losses rise; Management Projet and Design Workflow losses fall. Weighted and unweighted losses agree. These measurements do not establish functional accuracy or select the functional model.
+
+PARTIALLY IMPLEMENTED: the Colibri comparison source is prepared and reviewed, and its actual read-only completion, artifact, resource and free-port preflight passed. The single reviewer cleared actual completion and comparison admission. The original comparison started at 10:03 UTC; checkpoint44 exported successfully and its 133-case primary evaluation is running on three four-thread Colibri workers. All four fresh checkpoints 44/88/132/176 and the reviewed actual32 baseline as logical zero remain mandatory on the unchanged 133-case primary set. Applicable 275/438/48, critical and original checkpoint-600 retention gates remain unchanged.
+
+The best verified Facturation primary score remains 122/133 full actions (91.73%). Zero of six applications are fully accepted. No new accuracy, production activation or next-application training is established.
+
+[Completed training evidence](../training/reports/facturation-factor-coverage-v1-training-completion.json).
+
+## Earlier Facturation coverage launch, 21 October 2026
 
 PARTIALLY IMPLEMENTED: launched a separate 176-example EN/FR correction after the completed ordinary-SFT run failed its unchanged primary gates. It preserves all 128 prior TRAIN rows byte for byte and adds 16 quoted/unquoted complete-text examples, 12 existing navigation examples and 20 existing date-boundary examples. Application exposure is 144 Facturation, 16 Management Projet and 16 Design Workflow. No evaluation answers were added to TRAIN; 894 evaluation-input envelopes were checked for exclusions.
 
