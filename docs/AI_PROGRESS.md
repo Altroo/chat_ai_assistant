@@ -1,5 +1,25 @@
 # Chat AI Assistant progress
 
+## Balanced correction: midpoint validation complete - 21 October 2026
+
+IMPLEMENTED and verified: the original job completed its scheduled 275-example validation at update 64. The raw log, validation history and saved loss selection agree under replay of the pinned selector; equal-token weighted and unweighted values match.
+
+| Teacher-forced loss, lower is better | Baseline | Update 64 |
+| --- | --- | --- |
+| Micro | 0.022434 | 0.022095 |
+| Application macro | 0.022471 | 0.020997 |
+| Facturation | 0.020905 | 0.024714 |
+| Management Projet | 0.029470 | 0.024252 |
+| Design Workflow | 0.017037 | 0.014024 |
+
+The results are mixed: overall macro loss falls while Facturation loss rises. These are training measurements, not functional accuracy. The loss selector currently retains 64; all five declared Colibri candidates remain required for functional selection.
+
+PARTIALLY IMPLEMENTED: optimization resumed. At 03:29 UTC, 71 of 128 contiguous, finite updates were recorded with the original controller and worker live. The final updates and update-128 validation remain pending. Actual checkpoint-32 integrity was checked and reviewed: 192 finite FP32 tensors, 24 nonzero LoRA-B layers and stable files. This does not establish per-step layer updates or model acceptance. The eight reviewed Logistics sources and bilingual knowledge still match at the midpoint refresh.
+
+Production inference remains healthy and unchanged at capture. The full primary best is still 122/133 (91.73%), with zero of six applications fully accepted. No new functional score, production activation or next-application training is established. Completed-training verification and review still precede the unchanged Colibri and broader acceptance gates.
+
+[Actual midpoint records and verification](../training/reports/facturation-uniform-correction-v1-midpoint.json).
+
 ## Balanced correction: initial validation complete - 21 October 2026
 
 IMPLEMENTED and verified: the original server invocation completed its unchanged 275-example initial teacher-forced validation. Micro loss 0.022434 and macro loss 0.022471 exactly reproduce the previous balanced run's unweighted reference, including all three application values. Parent artifacts and validation bytes match. This confirms the expected starting point and does not establish model accuracy.
