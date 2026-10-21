@@ -1,0 +1,53 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: reviewed comparison recovery started",
+  "observed_utc": "2026-10-21T05:23:40.674786+00:00",
+  "comparison_started_utc": "2026-10-21T05:22:36Z",
+  "original_training_complete": true,
+  "training_updates": 128,
+  "training_restarted": false,
+  "recovery_strategy": "Clean full comparison: fresh 32/64/96/128, cached attested parent 125 only.",
+  "logical_candidates": [
+    0,
+    32,
+    64,
+    96,
+    128
+  ],
+  "fresh_checkpoint_candidates": [
+    32,
+    64,
+    96,
+    128
+  ],
+  "cached_baseline_actual_checkpoint": 125,
+  "original_failed_comparison_preserved_separately": true,
+  "checkpoint32_repeated_to_keep_orchestration_unchanged": true,
+  "current_phase": "exporting_checkpoint",
+  "current_checkpoint": 32,
+  "primary_cases_per_candidate": 133,
+  "all_candidates_required": true,
+  "applicable_broader_case_counts": [
+    275,
+    438,
+    48
+  ],
+  "recovery_tests_passed": 29,
+  "terminal_helper_tests_passed": 13,
+  "one_reviewer_admission": true,
+  "new_functional_score_available": false,
+  "model_accepted": false,
+  "fully_accepted_applications": 0,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "labels_scorer_and_gates_changed": false,
+  "original_refinement_completed_updates": 3103,
+  "incorrect_earlier_conversational_count": 1587,
+  "evidence_sha256": {
+    "reviewed_controls": "9b2019a783c644d96f9326b8e23c783e29b4b5ad2fb0b578f35154cbb6592f09",
+    "driver": "2be57e6bb304ca9f3de8f42ea83b489951ac1f9641ca80683e7659e7a34603b1",
+    "prepared_server_response": "fbe51878ce611af3d80848ab11dc84743eef0b523318e085f6843415eb036556",
+    "export_started_response": "4b052fa6fce61c100b2c68aff5387a92f141e24fce378e75d9d193151a698054",
+    "training_collection": "c4c08200fcbcb7b133508e0e8355118d43ef69191cec80507edd722b3c0b7955",
+    "read_only_preflight": "c67cdbfcf109d13d5193195c66c920854bc09d79b9d000676c613c4afa88121b"
+  }
+}

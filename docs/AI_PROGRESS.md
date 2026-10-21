@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Clean comparison recovery started - 21 October 2026
+
+PARTIALLY IMPLEMENTED: the reviewed recovery started at 05:22 UTC. Fresh server admission passed and checkpoint 32 export started. The completed 128-update training is reused without restarting optimization. The original failed comparison and its raw outputs remain separate.
+
+The recovery runs checkpoints 32, 64, 96 and 128 afresh, using only the attested parent checkpoint 125 as cached logical candidate 0. Repeating checkpoint 32 preserves the existing orchestration and checks the corrected terminal-identity guard through the full path. All five logical candidates remain mandatory on the unchanged 133-case primary set; selection and applicable 275/438/48, critical and retention gates are unchanged.
+
+IMPLEMENTED and verified as controls: all 29 offline recovery tests and 13 terminal-helper tests pass. Read-only server preflight verified completed-training identity, pinned sources, artifacts and dependencies, idle evaluation ports and unchanged healthy production inference. The single reviewer cleared the exact recovery sources and evidence before launch.
+
+No recovery functional score is available yet. Zero of six applications are fully accepted, no model was activated and no next-application training started. The separate original refinement completed 3,103 updates; 1,587 was an incorrect conversational count.
+
+[Recovery launch and evidence hashes](../training/reports/facturation-comparison-recovery-launch.json).
+
 ## Facturation comparison halted; identity helper verified - 21 October 2026
 
 IMPLEMENTED and verified: checkpoint 32 completed all 133 primary cases, with equal before/after artifact and worker proofs and three workers stopped. It scores 122/133 full actions (91.73%), 100/111 exact arguments (90.09%), 100% tool selection, 100% structured output and 22/24 critical cases. It does not pass acceptance.
