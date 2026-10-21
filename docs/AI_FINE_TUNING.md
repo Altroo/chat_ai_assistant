@@ -1,5 +1,14 @@
 # Model training and evaluation
 
+
+## Current 4B training and source checks - 21 October 2026
+
+The original Facturation trainer has completed 20/632 optimizer updates at the verified 17:47 UTC observation. Initial teacher-forced validation is complete; no completed epoch or fine-tuned action score is available. Historical launch snapshots below retain their original timestamps. The other five applications have not started training on this replacement model.
+
+Independent current-source checks validate all 632 unchanged TRAIN and 133 validation targets against the real local registry without database access. All 133 validation shortlist schema sets match the application. Six legacy TRAIN examples offer extra tools but retain a currently valid intended target. Their bytes and labels remain unchanged. All 40 pinned assistant source files match; 66 separate stock/logistics ORM construction checks pass.
+
+These checks do not measure model accuracy or live authorization. Missing capability-profile annotations are disclosed, and no user role is inferred. No latency improvement or application qualification is claimed. [Evidence and limits](../training/reports/qwen35-4b-current-native-contract-audit-v1.json).
+
 ## First replacement-model epoch launched - 21 October 2026
 
 PARTIALLY IMPLEMENTED: the original server trainer is running initial preparation/validation at the 16:17 UTC observation, with zero optimizer updates logged out of 632 scheduled. This is a fresh adapter and optimizer on the official Qwen3.5-4B base. The reviewed recipe uses all 32 text layers, rank 16/alpha 32, 14 threads, BF16 SDPA with checkpointing, uniform assistant-only cross entropy, learning rate 0.00005 and one complete epoch of the 632 copied TRAIN rows. Checkpoints 158/316/474/632 and the actual cached untrained baseline must all be compared through Colibri. Initial/final teacher-forced validation remains diagnostic.

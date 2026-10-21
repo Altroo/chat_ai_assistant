@@ -1,0 +1,99 @@
+{
+  "version": "qwen35-4b-current-native-contract-audit-v1",
+  "reported_at": "2026-10-21T17:49:10.699602+00:00",
+  "status": "SOURCE COMPATIBILITY CHECKED; FACTURATION TRAINING RUNNING; MODEL QUALIFICATION INCOMPLETE",
+  "scope": "Current local Facturation source and the unchanged synthetic pilot data, not deployed runtime behavior",
+  "model": {
+    "id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "data": {
+    "train_count": 632,
+    "validation_count": 133,
+    "train_sha256": "fd53da92503e76ef38c77c09c94ab835b8da14cc7f79809b0a5eb79c3ca73537",
+    "validation_sha256": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478",
+    "rows_or_labels_modified": false
+  },
+  "native_checks": {
+    "train_targets_schema_valid": 632,
+    "validation_targets_schema_valid": 133,
+    "explicit_train_permission_profiles_checked": 301,
+    "train_profiles_not_recorded": 331,
+    "validation_profiles_not_recorded": 133,
+    "native_assistant_source_files_unchanged": 40,
+    "exact_shortlist_schema_sets": {
+      "train": 626,
+      "validation": 133
+    },
+    "legacy_train_shortlist_differences": {
+      "count": 6,
+      "zero_based_rows": [
+        317,
+        318,
+        319,
+        324,
+        376,
+        378
+      ],
+      "classification": "Additional tools in legacy training inputs; intended targets remain currently supported in eligible profiles",
+      "invalid_target_found": false,
+      "training_interrupted": false
+    },
+    "database_connection_attempts": 0,
+    "database_records_accessed": false
+  },
+  "operation_lookup_checks": {
+    "count": 66,
+    "resource_count": 5,
+    "by_resource": {
+      "stock_balance": 9,
+      "stock_movement": 12,
+      "stock_receipt": 11,
+      "stock_inventory": 9,
+      "logistics_order": 25
+    },
+    "errors": 0,
+    "database_connection_attempts": 0,
+    "sql_compiled": false,
+    "sql_executed": false,
+    "authorization_exercised": false,
+    "cards_rendered": false,
+    "actual_model_dependencies_sha256": {
+      "stock/models.py": "495ffd18a042057f9f9c7bb9723ac2a9e7ad5cf9665e2b2976c5133d3581034b",
+      "logistique/models.py": "744a0e2b7398e77b5583339da767ae48f55318ffa266c91a912b63feb2789dba"
+    }
+  },
+  "review": {
+    "one_reviewer": true,
+    "native_audit": "No issues",
+    "lookup_audit": "No issues within stated scope"
+  },
+  "private_evidence_sha256": {
+    "audit_current_native_contracts_v2.py": "9747b1bf79f47c90cbc9ea4f10198569fa3d5a418cd0bdd7917f15b81d25db52",
+    "current-native-contract-audit-v2.json": "8fd8a1231cf12e19129f8dc7a17982642b9a8baaf3dbe42a2054095cbe5349cf",
+    "shortlist-differences.json": "623f64f49dcc92a900efdca51eceb1e0b4d6a643e1897a6a669f155c1689d605",
+    "check_operation_model_lookups.py": "58df7b3d805f954a591f8619b58b88611fbb03ff08b377e21621f57b7cddc035",
+    "current-operation-lookups.json": "1a3a83e7ac4adcb407f83e8dd652f7d598795250a7ada9e196297e610a66b1d1"
+  },
+  "training_snapshot": {
+    "observed_at": "2026-10-21T17:47:01.020101+00:00",
+    "original_process_identity_matches": true,
+    "optimizer_updates_completed": 20,
+    "optimizer_updates_scheduled": 632,
+    "initial_validation_completed": true,
+    "allowed_cpu_threads": 14,
+    "protected_models_healthy": true
+  },
+  "model_accuracy_measured_by_this_audit": false,
+  "fine_tuned_accuracy_available": false,
+  "latency_improvement_measured": false,
+  "applications_qualified_on_new_model": 0,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "Schema and ORM construction checks do not measure generated actions, backend authorization, SQL results or financial correctness.",
+    "Rows without recorded capability profiles establish possible schema compatibility only; no actual user role or authorization is inferred.",
+    "Current local source compatibility does not prove deployed-source parity or production behavior.",
+    "No completed epoch, new accuracy percentage, latency improvement or completion estimate follows these audits."
+  ]
+}

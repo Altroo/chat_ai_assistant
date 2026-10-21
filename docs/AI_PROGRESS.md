@@ -1,5 +1,14 @@
 # Chat AI Assistant progress
 
+
+## Current Facturation contracts checked; training progressing - 21 October 2026
+
+IMPLEMENTED and independently reviewed: all 632 frozen TRAIN targets and 133 validation targets pass the current local Facturation registry schemas and business-shape checks without database access. All 40 pinned assistant source files match. Exact current shortlist schema sets match 626 TRAIN rows and all 133 validation rows. The six legacy TRAIN differences contain additional tools; every intended action remains supported in an eligible profile. No training input, label or scoring gate changed.
+
+The 301 explicitly annotated TRAIN profiles pass current permitted-tool checks. The other 331 TRAIN and 133 validation rows lack profile annotations; this audit does not invent roles or establish actual authorization. Separately, 66 ORM query-construction checks across five stock/logistics resources pass. No SQL, business operation, card rendering or runtime authorization is exercised.
+
+PARTIALLY IMPLEMENTED: at the verified 17:47 UTC observation the original 4B server trainer has completed 20/632 optimizer updates after initial validation, using 14 threads. Protected model services remain healthy. Fine-tuned accuracy and latency improvement are unmeasured; zero of six apps qualify on this replacement model. [Actual checks and limitations](../training/reports/qwen35-4b-current-native-contract-audit-v1.json).
+
 ## 4B comparison controls prepared; latency investigation - 21 October 2026
 
 IMPLEMENTED and verified as preparation: the new selector requires the actual cached untrained baseline and every saved checkpoint, 158/316/474/632, on all 133 unchanged primary cases. It uses the original frozen scorer and unchanged 95% full-action/tool/argument, 99% structure and complete critical/clarification gates. Ten checks pass, including actual-baseline replay, missing candidates, changed labels, scorer mutation and module-shadow rejection. The single reviewer cleared the five source/reference files. Public references contain only synthetic scenarios, actual untrained responses and the original pre-training policy.
