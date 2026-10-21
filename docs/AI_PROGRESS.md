@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Tool-call closure diagnosis and controlled SFT test - 21 October 2026
+
+IMPLEMENTED and verified: a 30-case Colibri raw-trace replay preserves the earlier final-32 actions, validity, transport outcomes, completion-token counts and finish reasons. Two French update outputs repeat parameters until their output budget; an English update adds forbidden parameters. The trace is decoded text before provider parsing, not pristine token IDs. No business operation executed.
+
+A separate teacher-only diagnostic completed 16 forward passes with zero optimizer updates. All eight final-32 variants favor the opening-angle token over the first function-closing token, despite low average loss. Moving operation last further reduces closure probability. These probabilities use gold prefixes and a BF16 training representation, so they do not predict every exported Colibri output or establish a sole cause. The single reviewer verified the actual evidence. No tokenizer, parser or EOS-token defect is established.
+
+PARTIALLY IMPLEMENTED: a controlled 32-update server test started at 00:24 UTC after all 8 TRAIN and 133 validation examples passed metadata preflight. Its only recipe change is semantic loss weight 4 to 1, giving all assistant target tokens equal weight. Parent checkpoint 125, data, learning rate 0.0001, four epochs, seed, LoRA and evaluation controls remain unchanged. At 00:25 UTC, the original controller and worker were live with zero optimizer updates recorded, during initial preparation or baseline validation. This is a timestamped observation, not a completed run.
+
+No new application accuracy is established. The primary best remains 122/133 (91.73%); zero of six applications are fully accepted. Diagnostic weights cannot be promoted. Production inference remains healthy and unchanged, and no next-application training started.
+
+[Completed diagnosis and new-run observation](../training/reports/facturation-tool-call-closure-diagnostic.json).
+
 ## Disposable learning test completed; fit target missed - 20 October 2026
 
 IMPLEMENTED and verified: all 32 optimizer updates completed on the server in 2,869.76 seconds (approximately 48 minutes), including validation. Eight approved Facturation TRAIN examples were used over four complete epochs. Weighted validation loss worsened from 0.038714 to 0.230300; unweighted loss worsened from 0.020905 to 0.131682.

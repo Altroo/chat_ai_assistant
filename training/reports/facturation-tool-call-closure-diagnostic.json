@@ -1,0 +1,472 @@
+{
+  "status": "IMPLEMENTED: raw replay and teacher-only TRAIN diagnostics completed; model not accepted",
+  "generated_at": "2026-10-21T00:19:44.189339+00:00",
+  "scope": "Existing synthetic English/French TRAIN probes only. No new application-accuracy measurement.",
+  "model": "existing shared Qwen3.5-0.8B",
+  "evidence_sha256": {
+    "raw_collection": "c62062d16f989320788fe6bb51005faea7f6628bfd4fa7e5c3e97ce434d10410",
+    "teacher_collection": "29a383b42f8e862eb0f508cbe93f2d5f0827243ff6edd9b355e3488567e2be28"
+  },
+  "raw_colibri_replay": {
+    "cases": 30,
+    "traces": 30,
+    "summary": {
+      "0": {
+        "count": 30,
+        "exact_actions": 23,
+        "structured_valid": 25,
+        "transport_errors": 0,
+        "fit": {
+          "count": 8,
+          "exact_actions": 6,
+          "structured_valid": 7,
+          "transport_errors": 0
+        },
+        "other_train_controls": {
+          "count": 22,
+          "exact_actions": 17,
+          "structured_valid": 18,
+          "transport_errors": 0
+        },
+        "by_language": {
+          "en": {
+            "count": 15,
+            "exact_actions": 12,
+            "structured_valid": 13,
+            "transport_errors": 0
+          },
+          "fr": {
+            "count": 15,
+            "exact_actions": 11,
+            "structured_valid": 12,
+            "transport_errors": 0
+          }
+        },
+        "by_family": {
+          "ambiguous_previous_result_selection": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "date_boundaries": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "logistics_entity_roles": {
+            "count": 2,
+            "exact_actions": 2,
+            "structured_valid": 2,
+            "transport_errors": 0
+          },
+          "relative_quote_month": {
+            "count": 4,
+            "exact_actions": 1,
+            "structured_valid": 3,
+            "transport_errors": 0
+          },
+          "unpaid_with_other_filters": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "unsupported_current_language": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "users_collection_versus_detail": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "verbatim_update_text": {
+            "count": 4,
+            "exact_actions": 0,
+            "structured_valid": 0,
+            "transport_errors": 0
+          }
+        }
+      },
+      "32": {
+        "count": 30,
+        "exact_actions": 26,
+        "structured_valid": 27,
+        "transport_errors": 0,
+        "fit": {
+          "count": 8,
+          "exact_actions": 7,
+          "structured_valid": 7,
+          "transport_errors": 0
+        },
+        "other_train_controls": {
+          "count": 22,
+          "exact_actions": 19,
+          "structured_valid": 20,
+          "transport_errors": 0
+        },
+        "by_language": {
+          "en": {
+            "count": 15,
+            "exact_actions": 14,
+            "structured_valid": 14,
+            "transport_errors": 0
+          },
+          "fr": {
+            "count": 15,
+            "exact_actions": 12,
+            "structured_valid": 13,
+            "transport_errors": 0
+          }
+        },
+        "by_family": {
+          "ambiguous_previous_result_selection": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "date_boundaries": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "logistics_entity_roles": {
+            "count": 2,
+            "exact_actions": 2,
+            "structured_valid": 2,
+            "transport_errors": 0
+          },
+          "relative_quote_month": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "unpaid_with_other_filters": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "unsupported_current_language": {
+            "count": 4,
+            "exact_actions": 3,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "users_collection_versus_detail": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "verbatim_update_text": {
+            "count": 4,
+            "exact_actions": 1,
+            "structured_valid": 1,
+            "transport_errors": 0
+          }
+        }
+      }
+    },
+    "trace_scope": "COLI_DEBUG decoded output after StopFilter, before reasoning/tool parsing; interleaved logs, not pristine token IDs.",
+    "observed_failures": {
+      "contrast-54": "Correct action values then repeated operation/delete and resource/proforma parameters until output budget; no closed tool call.",
+      "contrast-56": "Correct action values then repeated operation/delete and resource/proforma parameters until output budget; no closed tool call.",
+      "contrast-55": "Correct action values with forbidden extra invoice_number and type parameters.",
+      "contrast-115": "Clarification reason missing_details instead of unsupported."
+    },
+    "backend_business_operations_executed": 0,
+    "parity_with_previous_final32": {
+      "cases": 30,
+      "checks": [
+        "parsed action",
+        "schema validity",
+        "transport outcome",
+        "completion token count",
+        "finish reason"
+      ],
+      "raw_sse_byte_equality_checked": false
+    },
+    "summary_baseline_provenance": "Summary logical step0 reuses the earlier completed baseline125 comparison; raw replay reran only final32."
+  },
+  "teacher_only": {
+    "teacher_forwards": 16,
+    "cases": 4,
+    "order_variants": 2,
+    "representations": 2,
+    "computation_elapsed_seconds": 104.03374469466507,
+    "optimizer_updates": 0,
+    "generation_requests": 0,
+    "all_baseline_first_closure_tokens_argmax": true,
+    "eos_given_correct_close_rank_one_all_variants": true,
+    "model_parameters_unchanged": "asserted inside original process; no independent post-exit parameter scan",
+    "results": [
+      {
+        "stage": "baseline125",
+        "train_case": "contrast-53",
+        "argument_order": "original",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.6723054647445679,
+        "unweighted_mean_loss": 0.4068261981010437,
+        "first_teacher_argmax_mismatch": 12,
+        "closure_target_rank": 1,
+        "closure_argmax_id": 510,
+        "closure_target_probability": 1.0,
+        "target_tokens": 102
+      },
+      {
+        "stage": "baseline125",
+        "train_case": "contrast-53",
+        "argument_order": "operation_last",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.7430167198181152,
+        "unweighted_mean_loss": 0.4486876428127289,
+        "first_teacher_argmax_mismatch": 12,
+        "closure_target_rank": 1,
+        "closure_argmax_id": 510,
+        "closure_target_probability": 1.0,
+        "target_tokens": 102
+      },
+      {
+        "stage": "baseline125",
+        "train_case": "contrast-54",
+        "argument_order": "original",
+        "optimized_in_32_update_fit": true,
+        "weighted_mean_loss": 0.2846421003341675,
+        "unweighted_mean_loss": 0.17186890542507172,
+        "first_teacher_argmax_mismatch": 12,
+        "closure_target_rank": 1,
+        "closure_argmax_id": 510,
+        "closure_target_probability": 1.0,
+        "target_tokens": 102
+      },
+      {
+        "stage": "baseline125",
+        "train_case": "contrast-54",
+        "argument_order": "operation_last",
+        "optimized_in_32_update_fit": true,
+        "weighted_mean_loss": 0.31735292077064514,
+        "unweighted_mean_loss": 0.1919364482164383,
+        "first_teacher_argmax_mismatch": 12,
+        "closure_target_rank": 1,
+        "closure_argmax_id": 510,
+        "closure_target_probability": 1.0,
+        "target_tokens": 102
+      },
+      {
+        "stage": "baseline125",
+        "train_case": "contrast-55",
+        "argument_order": "original",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.3447161018848419,
+        "unweighted_mean_loss": 0.22109200060367584,
+        "first_teacher_argmax_mismatch": 12,
+        "closure_target_rank": 1,
+        "closure_argmax_id": 510,
+        "closure_target_probability": 1.0,
+        "target_tokens": 103
+      },
+      {
+        "stage": "baseline125",
+        "train_case": "contrast-55",
+        "argument_order": "operation_last",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.41103577613830566,
+        "unweighted_mean_loss": 0.2509942948818207,
+        "first_teacher_argmax_mismatch": 12,
+        "closure_target_rank": 1,
+        "closure_argmax_id": 510,
+        "closure_target_probability": 1.0,
+        "target_tokens": 103
+      },
+      {
+        "stage": "baseline125",
+        "train_case": "contrast-56",
+        "argument_order": "original",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.3228021562099457,
+        "unweighted_mean_loss": 0.19619280099868774,
+        "first_teacher_argmax_mismatch": 12,
+        "closure_target_rank": 1,
+        "closure_argmax_id": 510,
+        "closure_target_probability": 1.0,
+        "target_tokens": 103
+      },
+      {
+        "stage": "baseline125",
+        "train_case": "contrast-56",
+        "argument_order": "operation_last",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.3691956698894501,
+        "unweighted_mean_loss": 0.22506077587604523,
+        "first_teacher_argmax_mismatch": 12,
+        "closure_target_rank": 1,
+        "closure_argmax_id": 510,
+        "closure_target_probability": 1.0,
+        "target_tokens": 103
+      },
+      {
+        "stage": "final32",
+        "train_case": "contrast-53",
+        "argument_order": "original",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.016320601105690002,
+        "unweighted_mean_loss": 0.02087123692035675,
+        "first_teacher_argmax_mismatch": 95,
+        "closure_target_rank": 2,
+        "closure_argmax_id": 27,
+        "closure_target_probability": 0.26893066528531306,
+        "target_tokens": 102
+      },
+      {
+        "stage": "final32",
+        "train_case": "contrast-53",
+        "argument_order": "operation_last",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.04214673861861229,
+        "unweighted_mean_loss": 0.07190154492855072,
+        "first_teacher_argmax_mismatch": 73,
+        "closure_target_rank": 2,
+        "closure_argmax_id": 27,
+        "closure_target_probability": 0.0021826805287872546,
+        "target_tokens": 102
+      },
+      {
+        "stage": "final32",
+        "train_case": "contrast-54",
+        "argument_order": "original",
+        "optimized_in_32_update_fit": true,
+        "weighted_mean_loss": 0.0406869612634182,
+        "unweighted_mean_loss": 0.03432140499353409,
+        "first_teacher_argmax_mismatch": 73,
+        "closure_target_rank": 2,
+        "closure_argmax_id": 27,
+        "closure_target_probability": 0.32079985445807213,
+        "target_tokens": 102
+      },
+      {
+        "stage": "final32",
+        "train_case": "contrast-54",
+        "argument_order": "operation_last",
+        "optimized_in_32_update_fit": true,
+        "weighted_mean_loss": 0.0319419801235199,
+        "unweighted_mean_loss": 0.07135661691427231,
+        "first_teacher_argmax_mismatch": 95,
+        "closure_target_rank": 2,
+        "closure_argmax_id": 27,
+        "closure_target_probability": 0.0010322166956473486,
+        "target_tokens": 102
+      },
+      {
+        "stage": "final32",
+        "train_case": "contrast-55",
+        "argument_order": "original",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.014442764222621918,
+        "unweighted_mean_loss": 0.017326219007372856,
+        "first_teacher_argmax_mismatch": 96,
+        "closure_target_rank": 2,
+        "closure_argmax_id": 27,
+        "closure_target_probability": 0.3486219421363153,
+        "target_tokens": 103
+      },
+      {
+        "stage": "final32",
+        "train_case": "contrast-55",
+        "argument_order": "operation_last",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.04036422073841095,
+        "unweighted_mean_loss": 0.06551345437765121,
+        "first_teacher_argmax_mismatch": 74,
+        "closure_target_rank": 2,
+        "closure_argmax_id": 27,
+        "closure_target_probability": 0.004070009849660517,
+        "target_tokens": 103
+      },
+      {
+        "stage": "final32",
+        "train_case": "contrast-56",
+        "argument_order": "original",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.04045556113123894,
+        "unweighted_mean_loss": 0.03230433911085129,
+        "first_teacher_argmax_mismatch": 74,
+        "closure_target_rank": 2,
+        "closure_argmax_id": 27,
+        "closure_target_probability": 0.4072765183380613,
+        "target_tokens": 103
+      },
+      {
+        "stage": "final32",
+        "train_case": "contrast-56",
+        "argument_order": "operation_last",
+        "optimized_in_32_update_fit": false,
+        "weighted_mean_loss": 0.028274890035390854,
+        "unweighted_mean_loss": 0.06043677031993866,
+        "first_teacher_argmax_mismatch": 96,
+        "closure_target_rank": 2,
+        "closure_argmax_id": 27,
+        "closure_target_probability": 0.0031725726715161285,
+        "target_tokens": 103
+      }
+    ],
+    "representations_scope": "BF16 training parent with FP32 PEFT adapter, not the merged/exported/quantized Colibri serving representation. Teacher probabilities do not predict every serving output; EN contrast53 closes in Colibri despite teacher closure preference.",
+    "all_final32_first_closure_tokens_prefer_open_angle_to_closing_angle": true
+  },
+  "conclusion": "All eight final32 teacher-forced variants favor the opening-angle token over the first function-closing token. Colibri raw traces independently show extra/repeated parameters in cases54/55/56. The operation-last variant further reduces teacher closure probability. These findings motivate a controlled token-weight ablation, but do not prove the sole cause or a Colibri runtime or EOS-token defect.",
+  "next_experiment": {
+    "status": "PARTIALLY IMPLEMENTED: server numerical run started after reviewed metadata preflight; not completed",
+    "only_recipe_change": "semantic_loss_weight 4 to 1: ordinary assistant-only SFT with equal target-token weights",
+    "unchanged": [
+      "experimental checkpoint125 parent",
+      "eight TRAIN rows",
+      "133 validation rows",
+      "30 TRAIN generation probes",
+      "four epochs, 32 optimizer updates",
+      "learning_rate=0.0001",
+      "seed=17",
+      "LoRA and runtime/scoring controls"
+    ],
+    "weights_may_be_promoted": false,
+    "predicted_accuracy": null,
+    "started_at_utc": "2026-10-21T00:24:42Z",
+    "preflight_passed_rows": 141,
+    "latest_observation": {
+      "at": "2026-10-21T00:25:05.320086+00:00",
+      "recorded_updates": 0,
+      "scheduled_updates": 32,
+      "phase": "Initial preparation or baseline validation; observation cannot distinguish these phases",
+      "original_controller_and_worker_live": true,
+      "production_healthy_unchanged": true
+    },
+    "evidence_sha256": {
+      "binding.json": "9cb3df65f9579aee4ea9da2258f2ac0b1e02b7f3c9959419dbab64692a974738",
+      "reviewed-controls.json": "8ec1a989464f2b6260825f92be7acf8766fbe5672da79c72b5ac1f6a951407e7",
+      "preflight-collection.json": "dcd20840b15564fde3c77e11b83b9d22027a0f6fcf2d8cc37bb1996857ef078c",
+      "admission.json": "702cb8d5b2b6d6e21c3be5b6dd6952e97ff0142797214e456bb39c9132e6687e",
+      "training-observation-initial.json": "dd9dbb8a11ab8509a1388bd7768c539ffb03bc5f96eea91c788ea9b3c1b04664"
+    }
+  },
+  "current_primary_best": {
+    "full_actions_correct": 122,
+    "total": 133,
+    "accuracy_percent": 91.7293,
+    "exact_arguments_correct": 102,
+    "arguments_total": 111,
+    "critical_correct": 20,
+    "critical_total": 24
+  },
+  "fully_accepted_applications": 0,
+  "model_accepted": false,
+  "production_activation": false,
+  "production_healthy_unchanged": true,
+  "review_status": "Single reviewer verified completed raw/teacher evidence and reviewed one-variable preparation plus actual server metadata preflight. Numerical run admitted only, no export, generation, acceptance or activation clearance."
+}
