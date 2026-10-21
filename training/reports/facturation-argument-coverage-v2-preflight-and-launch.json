@@ -1,0 +1,97 @@
+{
+  "version": "facturation-argument-coverage-v2-preflight-and-launch",
+  "status": "TRAINING RUNNING AT THE RECORDED SNAPSHOT; NO NEW ACCURACY",
+  "observed_at": "2026-10-21T12:39:45.690472+00:00",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "model_family": "Qwen3.5-0.8B",
+  "training_environment": "Server-only PyTorch/PEFT CPU",
+  "inference_runtime": "Colibri",
+  "corrected_manifest_sha256": "c950d2a77726cb8c5b886df3ad67e742436f1cc0eced9baee673f1270333ca2f",
+  "dataset_sha256": "f71f48c19a7fe3e469d800fb451aa2e624150407804fc90ff8abcec4c1596022",
+  "binding_sha256": "4b4c1158412be11bbb7354b12a024ffa2bf2908cd4e37fda46416171e029f61b",
+  "admission_sha256": "e9eefabf11dfa8c0a1e669b88b7c1f49e649da63fce3d298d0e3939dd148fc5d",
+  "preflight": {
+    "train_rows_passed": 256,
+    "validation_rows_passed": 275,
+    "all_roundtrip_runtime_prefix_loss_boundary_semantic_and_output_budget_checks_passed": true,
+    "maximum_tokens": {
+      "train": 7706,
+      "validation": 7496
+    },
+    "maximum_output_tokens": 512,
+    "actual_completion_reviewed": true,
+    "collection_sha256": "b26aef3bb79fcc2a7f90f04c47df1a01735be2ed1a0bc5cfcf7408877a36d2a9"
+  },
+  "capacity": {
+    "complete": true,
+    "actual_completion_reviewed": true,
+    "longest_row_tokens": 7706,
+    "completed_updates": 2,
+    "update_seconds": [
+      190.08610418625176,
+      182.54663607478142
+    ],
+    "all24_layers_received_finite_nonzero_gradients_and_updated": true,
+    "peak_rss_kib": 6022436,
+    "peak_rss_gib": 5.743442535400391,
+    "collection_sha256": "86526b6a4d1e4ecd5efd2c5b1da36550d23b7f7cf8034e6ab4f77707d1ce1ee3"
+  },
+  "training": {
+    "started_at_utc": "2026-10-21T12:39:01Z",
+    "running": true,
+    "scheduled_updates": 256,
+    "completed_optimizer_updates_at_snapshot": 0,
+    "initial_baseline_validation_logged": false,
+    "complete_epochs": 1,
+    "threads": 14,
+    "context_tokens": 8192,
+    "learning_rate": 2e-06,
+    "semantic_loss_weight": 1,
+    "fresh_adapter_optimizer": true,
+    "parent": "Same verified already merged experimental checkpoint32",
+    "saved_steps": [
+      64,
+      128,
+      192,
+      256
+    ],
+    "teacher_validation_steps": [
+      0,
+      128,
+      256
+    ],
+    "memory_ceiling_gib": 40,
+    "swap_allowed": false,
+    "reserve_host_memory_percent": 10,
+    "observation_sha256": "52d447104f110c37bddef519e5352c76a04eaf2fedc3f90a55b833f497f1a240",
+    "complete": false
+  },
+  "source_publication_at_launch": {
+    "commit": "809b2952df780e12d5f12ee734f501faedf40db1",
+    "all_three_remote_heads_verified": true,
+    "deployed_source_files_verified": 14,
+    "source_only_hook_unchanged": true,
+    "verification_sha256": "3d506d865cd0c928e4dc971f66cc5bbdd88af2e98d6c305ad516eb79a95379f9"
+  },
+  "original_pre_import_capacity_failure_preserved": true,
+  "root_correction_tests_passed": 52,
+  "corrected_stage_guard_cases_passed": 54,
+  "model_accepted": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "fully_accepted_applications": 0,
+  "applications_total": 6,
+  "best_previous_primary": {
+    "full_actions": 123,
+    "full_actions_total": 133,
+    "exact_arguments": 101,
+    "exact_arguments_total": 111,
+    "critical": 21,
+    "critical_total": 24
+  },
+  "unchanged_functional_acceptance_still_required": true,
+  "new_accuracy_claimed": false
+}

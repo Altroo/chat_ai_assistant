@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Facturation correction training started - 21 October 2026, 12:39 UTC
+
+PARTIALLY IMPLEMENTED: the fresh 256-update server epoch is running after the corrected metadata, all 531 tokenizer/template preflight cases and both longest-row capacity updates passed review. Capacity updates took 190.09 and 182.55 seconds; peak process RSS was 5.74 GiB, with finite nonzero gradients and changed adapter weights across all 24 layers.
+
+The original trainer and exact reviewed command were observed running at 12:39:45 UTC, with zero optimizer updates logged and initial baseline validation not yet logged. The recipe uses the same already merged checkpoint-32 parent, a fresh adapter/optimizer, uniform token weights, learning rate 0.000002 and 14 CPU threads. It schedules saves at 64/128/192/256 and teacher-forced validation at 0/128/256. The source preparation commit was verified on all three remotes and all 14 deployed source files; production inference remains healthy.
+
+Training completion and the unchanged Colibri functional/critical/retention gates remain pending. No new accuracy is established. The best previous primary result remains 123/133 full actions (92.48%) and 101/111 exact arguments (90.99%); zero of six applications are fully accepted.
+
+[Actual preflight, capacity and initial launch evidence](../training/reports/facturation-argument-coverage-v2-preflight-and-launch.json).
+
 ## Facturation argument correction prepared - 21 October 2026
 
 IMPLEMENTED and verified as preparation: the next correction preserves the previous 176 TRAIN rows and all 275 validation rows byte for byte, adding 80 synthetic examples, 40 English and 40 French. The resulting 256 rows comprise 224 Facturation and 16 retained examples each from Management Projet and Design Workflow. The additions cover complete multi-field text edits, unpaid filter presence, inclusive/exclusive calendar boundaries and permission-filtered payment searches. The single reviewer reproduced all additions and 894 input-only exclusions with no detected new exact or near-duplicate overlap. This is a development-informed correction, not a new blind holdout.
