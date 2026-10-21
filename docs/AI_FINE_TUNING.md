@@ -1,5 +1,13 @@
 # Model training and evaluation
 
+## Prepared coverage experiment, 21 October 2026
+
+PARTIALLY IMPLEMENTED: a separate 176-row TRAIN-only correction is prepared and data-reviewed, with all original 128 rows retained and 48 EN/FR coverage additions. The experimental FP32 starting point is the prior functional selection at checkpoint 32, with all 473 saved tensors reproduced exactly on the server. This parent is not production-accepted.
+
+The proposed fresh LoRA/AdamW run uses learning rate 0.000002, one complete epoch and unchanged uniform assistant-token loss. New checkpoints are 44/88/132/176, compared with logical zero representing actual preceding checkpoint 32. Primary scoring and acceptance thresholds are unchanged; 95% remains an unachieved target. Changes to starting weights, training coverage and learning rate mean this experiment cannot isolate the effect of one factor.
+
+Server tokenizer and capacity checks, their independent review, numerical training and Colibri functional evaluation remain pending. No training completion or accuracy is claimed for this prepared experiment. No new model download or production activation is involved.
+
 ## Latest ordinary-SFT outcome - 21 October 2026
 
 IMPLEMENTED and verified: server training completed all 128 ordinary-SFT updates, followed by a complete Colibri CPU comparison of cached parent 125 and fresh checkpoints 32/64/96/128. No optimization restarted during recovery. The shared model remains Qwen3.5-0.8B; current training and support scope is English and French.

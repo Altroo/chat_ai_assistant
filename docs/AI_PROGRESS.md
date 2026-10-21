@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Facturation coverage correction prepared, 21 October 2026
+
+PARTIALLY IMPLEMENTED: prepared a separate 176-example EN/FR correction after the completed ordinary-SFT run failed its unchanged primary gates. It preserves all 128 prior TRAIN rows byte for byte and adds 16 quoted/unquoted complete-text examples, 12 existing navigation examples and 20 existing date-boundary examples. Application exposure is 144 Facturation, 16 Management Projet and 16 Design Workflow. No evaluation answers were added to TRAIN; 894 evaluation-input envelopes were checked for exclusions.
+
+The single reviewer independently reproduced the actual prepared bytes, coverage, schemas, unchanged context and validation. The server also reproduced all 473 persisted FP32 tensors exactly from the preceding merged parent plus its checkpoint-32 adapter. The reviewer checked the saved proof and transport, without independently rerunning the server calculation. The next run must create a fresh adapter and optimizer and must not apply that adapter a second time.
+
+Prepared numerical controls use one 176-update epoch, learning rate 0.000002, equal assistant-token weights, checkpoints 44/88/132/176 and teacher-forced validation at 0/88/176. Functional selection compares those four candidates with actual preceding checkpoint 32 as logical zero. Frozen scoring, the 133-case primary gates, original checkpoint-600 retention reference and applicable 275/438/48 broader gates remain unchanged.
+
+PLANNED: actual server tokenizer/parser preflight, two complete capacity updates, review of those results, then a single fresh training run. Prepared scripts and tests do not establish model accuracy or authorize activation. The best verified primary full-action score remains 122/133 (91.73%); zero of six applications are fully accepted.
+
 ## Balanced correction: comparison complete, model rejected - 21 October 2026
 
 IMPLEMENTED and verified: the clean Colibri recovery completed all four fresh checkpoint candidates, 532 requests across 12 shards, plus the attested parent checkpoint 125 as cached logical candidate 0. The original 128-update training did not restart. The actual coordinator exited successfully. A fresh server collector rechecked every fresh model, adapter, export and before/after proof, with workers stopped, evaluation ports free and production inference unchanged. The single reviewer independently reproduced the completed audit and all 392 evidence hashes.
