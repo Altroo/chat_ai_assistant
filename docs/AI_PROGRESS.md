@@ -1,5 +1,27 @@
 # Chat AI Assistant progress
 
+## Ordinary-SFT learning test completed; application targets unmet - 21 October 2026
+
+IMPLEMENTED and verified: the server completed 32 optimizer updates over four epochs of the same eight TRAIN examples in 2,830.52 seconds (about 47 minutes), using 14 CPU threads. Equal assistant-token weighting was the only recipe change from the earlier weighted fit. Validation loss worsened from 0.020905 to 0.105029.
+
+The fresh Colibri comparison completed 30 baseline and 30 candidate requests with unchanged cases, labels and scoring. The single reviewer verified actual saved evidence and reproduced every captured response through the frozen provider.
+
+| TRAIN diagnostic | Baseline checkpoint 125 | Ordinary-SFT final 32 |
+| --- | --- | --- |
+| Exact actions | 23/30 | 24/30 |
+| Structured output | 25/30 | 27/30 |
+| Eight optimized examples | 6/8 | 8/8 |
+| Other TRAIN controls | 17/22 | 16/22 |
+| Transport failures | 0 | 0 |
+
+PARTIALLY IMPLEMENTED: the eight-row fit target passes, but other TRAIN controls decline. Two update calls omit a nested closing tag and stop after 97 tokens; these are not output-budget failures. Other errors add an unsupported parameter, invent an unpaid-only filter or use November 31. The parser correctly rejects malformed calls. No business operation executed.
+
+These results do not establish application accuracy or justify promotion. The primary best remains 122/133 (91.73%), exact arguments 102/111 (91.89%) and critical cases 20/24. Zero of six applications are fully accepted. The diagnostic's original workers are stopped, its test ports are free, and production inference remains healthy and unchanged.
+
+PLANNED ONLY: review ordinary-token weighting on the existing balanced 128-row corrective corpus, which includes explicit/omitted unpaid-filter pairs and valid month-end targets. No next numerical recipe is admitted or running. Fresh source/data review and server preflight/resource checks are required. Full primary and broader acceptance gates remain unchanged; no next-application training started.
+
+[Completed ordinary-SFT diagnostic](../training/reports/facturation-uniform-token-fit-v1-completion.json).
+
 ## Tool-call closure diagnosis and controlled SFT test - 21 October 2026
 
 IMPLEMENTED and verified: a 30-case Colibri raw-trace replay preserves the earlier final-32 actions, validity, transport outcomes, completion-token counts and finish reasons. Two French update outputs repeat parameters until their output budget; an English update adds forbidden parameters. The trace is decoded text before provider parsing, not pristine token IDs. No business operation executed.

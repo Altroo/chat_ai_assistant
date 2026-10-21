@@ -1,0 +1,299 @@
+{
+  "status": "IMPLEMENTED: ordinary-SFT TRAIN-fit diagnostic completed; model not accepted",
+  "generated_at": "2026-10-21T01:36:39.450118+00:00",
+  "model": "existing shared Qwen3.5-0.8B",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "scope": "Eight optimized TRAIN examples and 22 other TRAIN controls, with fresh baseline and final Colibri requests. Not held-out application acceptance.",
+  "training": {
+    "optimizer_updates": 32,
+    "complete_epochs": 4,
+    "optimized_examples": 8,
+    "duration_seconds": 2830.5221767276525,
+    "cpu_threads": 14,
+    "device": "cpu",
+    "learning_rate": 0.0001,
+    "semantic_loss_weight": 1.0,
+    "only_recipe_change_from_weighted_fit": "Semantic token weight 4 to 1; ordinary assistant-only SFT with equal target-token weights.",
+    "baseline_validation_loss": 0.02090526781325695,
+    "final_validation_loss": 0.10502879667434802,
+    "validation_loss_improved": false,
+    "final_adapter_sha256": "7c2ff09ebd9e95abf6955be68bf50f651e9c3adf84020ec1bf2d29b5febe775c"
+  },
+  "colibri_comparison": {
+    "fresh_requests": 60,
+    "summaries": {
+      "0": {
+        "count": 30,
+        "exact_actions": 23,
+        "structured_valid": 25,
+        "transport_errors": 0,
+        "fit": {
+          "count": 8,
+          "exact_actions": 6,
+          "structured_valid": 7,
+          "transport_errors": 0
+        },
+        "other_train_controls": {
+          "count": 22,
+          "exact_actions": 17,
+          "structured_valid": 18,
+          "transport_errors": 0
+        },
+        "by_language": {
+          "en": {
+            "count": 15,
+            "exact_actions": 12,
+            "structured_valid": 13,
+            "transport_errors": 0
+          },
+          "fr": {
+            "count": 15,
+            "exact_actions": 11,
+            "structured_valid": 12,
+            "transport_errors": 0
+          }
+        },
+        "by_family": {
+          "ambiguous_previous_result_selection": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "date_boundaries": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "logistics_entity_roles": {
+            "count": 2,
+            "exact_actions": 2,
+            "structured_valid": 2,
+            "transport_errors": 0
+          },
+          "relative_quote_month": {
+            "count": 4,
+            "exact_actions": 1,
+            "structured_valid": 3,
+            "transport_errors": 0
+          },
+          "unpaid_with_other_filters": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "unsupported_current_language": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "users_collection_versus_detail": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "verbatim_update_text": {
+            "count": 4,
+            "exact_actions": 0,
+            "structured_valid": 0,
+            "transport_errors": 0
+          }
+        }
+      },
+      "32": {
+        "count": 30,
+        "exact_actions": 24,
+        "structured_valid": 27,
+        "transport_errors": 0,
+        "fit": {
+          "count": 8,
+          "exact_actions": 8,
+          "structured_valid": 8,
+          "transport_errors": 0
+        },
+        "other_train_controls": {
+          "count": 22,
+          "exact_actions": 16,
+          "structured_valid": 19,
+          "transport_errors": 0
+        },
+        "by_language": {
+          "en": {
+            "count": 15,
+            "exact_actions": 12,
+            "structured_valid": 13,
+            "transport_errors": 0
+          },
+          "fr": {
+            "count": 15,
+            "exact_actions": 12,
+            "structured_valid": 14,
+            "transport_errors": 0
+          }
+        },
+        "by_family": {
+          "ambiguous_previous_result_selection": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "date_boundaries": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "logistics_entity_roles": {
+            "count": 2,
+            "exact_actions": 2,
+            "structured_valid": 2,
+            "transport_errors": 0
+          },
+          "relative_quote_month": {
+            "count": 4,
+            "exact_actions": 3,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "unpaid_with_other_filters": {
+            "count": 4,
+            "exact_actions": 2,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "unsupported_current_language": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "users_collection_versus_detail": {
+            "count": 4,
+            "exact_actions": 4,
+            "structured_valid": 4,
+            "transport_errors": 0
+          },
+          "verbatim_update_text": {
+            "count": 4,
+            "exact_actions": 1,
+            "structured_valid": 1,
+            "transport_errors": 0
+          }
+        }
+      }
+    },
+    "fit_target_passed": true,
+    "application_accuracy": null,
+    "generation_repeated_for_collection": false,
+    "scoring_and_labels_unchanged": true,
+    "backend_business_operations_executed": 0,
+    "decoded_trace_scope": "Decoded output after StopFilter, before provider parsing; interleaved logs, not pristine raw token IDs.",
+    "failures": [
+      {
+        "case": "contrast-53",
+        "finding": "Correct requested values with an unsupported extra parameter; rejected."
+      },
+      {
+        "case": "contrast-55",
+        "finding": "Missing nested parameter closing tag; outer tool call closes, but parser rejects. 97 output tokens, not budget exhaustion."
+      },
+      {
+        "case": "contrast-56",
+        "finding": "Missing nested parameter closing tag; outer tool call closes, but parser rejects. 97 output tokens, not budget exhaustion."
+      },
+      {
+        "case": "contrast-77",
+        "finding": "Adds an unpaid-only filter although the request does not ask for it."
+      },
+      {
+        "case": "contrast-83",
+        "finding": "Adds an unpaid-only filter although the request does not ask for it."
+      },
+      {
+        "case": "contrast-100",
+        "finding": "Uses November 31 instead of November 30."
+      }
+    ]
+  },
+  "comparison_with_previous_weighted_fit": {
+    "ordinary_weight_1": {
+      "exact_actions": 24,
+      "total": 30,
+      "fit_exact": 8,
+      "fit_total": 8,
+      "other_train_exact": 16,
+      "other_train_total": 22
+    },
+    "previous_weight_4": {
+      "exact_actions": 26,
+      "total": 30,
+      "fit_exact": 7,
+      "fit_total": 8,
+      "other_train_exact": 19,
+      "other_train_total": 22
+    },
+    "interpretation": "Equal weighting achieves the optimized eight-row fit target but is weaker on the other TRAIN probes. The tiny diagnostic cannot establish generalization or justify promotion."
+  },
+  "verification": {
+    "collected_files": 104,
+    "captured_sse_rescored": 60,
+    "decoded_worker_logs_collected": 6,
+    "original_units_completed_successfully": true,
+    "recorded_worker_processes_gone": true,
+    "test_ports_free": true,
+    "training_and_artifacts_reverified": true,
+    "read_only_collector_multiline_parse_error_corrected": true,
+    "collector_fix_local_fixtures_passed": 3,
+    "numerical_tasks_restarted": false,
+    "critical_security_and_application_acceptance_gates_run_in_this_diagnostic": false
+  },
+  "evidence_sha256": {
+    "training_collection": "990deb912f0e5312ae42f1d4924e980c15e8fefab1421cf83118c3858f974948",
+    "training_report": "264e95b38ba0a520014ed013f5be4e5d6bcb7b50b508d60d9ad969cf48dc7ee0",
+    "training_completion_review": "b1fa8790489e9d8741fe9bd1563f202b396a69047619505e045e5254c6b53998",
+    "comparison_binding": "2f62fcf7b18391cc7f5346abb325caa7a04e66034498b48a6c98b900257e4f7f",
+    "comparison_collection": "4a4e98c7793a0854ac80591a9f397113fac0755db9b9342e4abe333c63a7e99c",
+    "collector": "b2fe24ae6ccc0edeb2531699e77c8d34ca3d6dcd11eb2340a5c60871766552d2",
+    "collector_review": "b2d42da82d1b43c84d368487f4045f42a36085c73f71831f53c9dd576bebc57b",
+    "comparison_completion_review": "ffe3d1366babcc7a812b868b076d1d309debff203bf9762aca2c5aebd14c13b6"
+  },
+  "next_recipe_preparation": {
+    "status": "PLANNED ONLY; NOT ADMITTED OR STARTED",
+    "candidate": "Review ordinary-token weighting on the existing balanced 128-row corrective corpus before any numerical execution.",
+    "dataset_sha256": "dc0587953e42197d3e1b499af2913c13d94c971a9ced65ec0ab0769adf3f4bad",
+    "observed_coverage": {
+      "rows": 128,
+      "valid_target_iso_date_literals": 126,
+      "unpaid_filter_requested_examples": 12,
+      "unpaid_filter_omitted_examples": 12
+    },
+    "limitations": [
+      "Coverage and valid labels do not predict model accuracy.",
+      "Exact source/data review and fresh server preflight/resource checks remain required.",
+      "All primary and broader acceptance gates remain unchanged."
+    ]
+  },
+  "current_primary_best": {
+    "full_actions_correct": 122,
+    "total": 133,
+    "accuracy_percent": 91.72932330827068,
+    "exact_arguments_correct": 102,
+    "arguments_total": 111,
+    "critical_correct": 20,
+    "critical_total": 24
+  },
+  "fully_accepted_applications": 0,
+  "model_accepted": false,
+  "weights_may_be_promoted": false,
+  "production_activation": false,
+  "production_healthy_unchanged": true,
+  "review_status": "Single reviewer verified actual saved training/comparison evidence, all 104 raw files and 60 frozen-provider replays. Main thread performed server collection; reviewer made no independent server contact. No acceptance or activation clearance."
+}
