@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Facturation correction progress and comparison preparation - 21 October 2026, 13:10 UTC
+
+PARTIALLY IMPLEMENTED: the original server training invocation is running at 13/256 contiguous updates after completing its initial 275-row teacher-forced validation. It still uses the reviewed recipe and 14 CPU threads. The latest three updates took 85.305, 16.314 and 19.906 seconds, demonstrating that update duration varies with the example. Available host memory was 43.66 GiB; production inference remains healthy and unchanged. Initial Facturation loss is 0.023521, Management Projet 0.024735 and Design Workflow 0.014350. These are teacher-forced losses, not accuracy percentages.
+
+IMPLEMENTED and verified as source preparation: the single reviewer found no issues in the prospective Colibri coordinator, completion guard, worker controls, read-only terminal identity capture and two offline test modules. Both static dry-runs and all 15 offline tests pass. The synthetic simulations cover complete candidate ordering, rejection before unnecessary broader testing, missing final-case refusal and eligible control flow through all 275/438/48 broader cases. They do not predict model accuracy.
+
+PARTIALLY IMPLEMENTED: actual training completion, its terminal collection and independent review, numerical comparison admission and Colibri evaluation remain pending. The comparison still requires all logical candidates 0/64/128/192/256, the unchanged scoring and critical gates, and the original checkpoint-600 retention reference. Best previous primary full-action accuracy remains 123/133 (92.48%) and exact arguments 101/111 (90.99%). Zero of six applications are fully accepted. No next-application training or production activation started.
+
+[Recorded progress and source-only review](../training/reports/facturation-argument-coverage-v2-training-progress.json).
+
 ## Facturation correction training started - 21 October 2026, 12:39 UTC
 
 PARTIALLY IMPLEMENTED: the fresh 256-update server epoch is running after the corrected metadata, all 531 tokenizer/template preflight cases and both longest-row capacity updates passed review. Capacity updates took 190.09 and 182.55 seconds; peak process RSS was 5.74 GiB, with finite nonzero gradients and changed adapter weights across all 24 layers.

@@ -1,0 +1,97 @@
+{
+  "version": "facturation-argument-coverage-v2-training-progress",
+  "status": "TRAINING RUNNING AT THE RECORDED SNAPSHOT; COMPARISON SOURCE PREPARED ONLY",
+  "observed_at": "2026-10-21T13:10:19.178960+00:00",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "model_family": "Qwen3.5-0.8B",
+  "training_environment": "Server-only PyTorch/PEFT CPU",
+  "inference_runtime": "Colibri",
+  "training": {
+    "scheduled_updates": 256,
+    "updates_observed": 13,
+    "steps_contiguous": true,
+    "initial_validation_complete": true,
+    "teacher_forced_baseline_loss": {
+      "micro": 0.02173089889819163,
+      "by_application": {
+        "facturation": 0.023520789571848513,
+        "management_projet": 0.02473542514033001,
+        "design_workflow": 0.01434951598439227
+      },
+      "macro": 0.020868576898856933,
+      "unweighted": {
+        "micro": 0.02173089889819163,
+        "by_application": {
+          "facturation": 0.023520789571848513,
+          "management_projet": 0.02473542514033001,
+          "design_workflow": 0.01434951598439227
+        },
+        "macro": 0.020868576898856933
+      }
+    },
+    "baseline_loss_is_accuracy": false,
+    "threads": 14,
+    "latest_update_seconds": [
+      85.305,
+      16.314,
+      19.906
+    ],
+    "host_available_gib": 43.66291046142578,
+    "complete": false,
+    "observation_sha256": "b0f70c7f08c5ed985cb3287aeca8cc56349510cad569a2d528a1b639cad2d3af",
+    "process_cpu_seconds": {
+      "controller": 16.66,
+      "trainer": 23705.219999999998
+    }
+  },
+  "comparison_preparation": {
+    "source_review": "No issues",
+    "one_reviewer": true,
+    "sources_reviewed": 6,
+    "offline_tests_passed": 15,
+    "static_dry_runs_passed": 2,
+    "control_flow_simulation_only": true,
+    "simulation_predicts_accuracy": false,
+    "source_review_sha256": "c2ef0332e6f47bc612831d00aad270c2d7e290e49b42aed823e68d1658f74c36",
+    "candidate_steps": [
+      0,
+      64,
+      128,
+      192,
+      256
+    ],
+    "baseline_cached_cases": 133,
+    "baseline_actual_checkpoint": 32,
+    "frozen_scoring_unchanged": true,
+    "post_selection_cases": [
+      275,
+      438,
+      48
+    ],
+    "original_retention_reference_checkpoint": 600,
+    "context_tokens": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "actual_completed_training_reviewed": false,
+    "numerical_comparison_admission": false,
+    "comparison_started": false
+  },
+  "best_previous_primary": {
+    "full_actions": 123,
+    "full_actions_total": 133,
+    "exact_arguments": 101,
+    "exact_arguments_total": 111,
+    "critical": 21,
+    "critical_total": 24
+  },
+  "production_inference_healthy_unchanged": true,
+  "new_accuracy_claimed": false,
+  "fully_accepted_applications": 0,
+  "applications_total": 6,
+  "next_application_training_started": false,
+  "model_accepted": false,
+  "production_activation": false
+}
