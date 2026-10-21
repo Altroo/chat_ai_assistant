@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## 4B baseline and reproducible training inputs - 21 October 2026
+
+The new Qwen3.5-4B Colibri baseline is complete: 77/133 full actions (57.89%), 71/111 eligible exact arguments (63.96%), 114/133 correct tools (85.71%) and 125/133 valid structures (93.98%). Clarifications are 0/16 and critical actions 6/24. The untrained model fails acceptance; no application fine-tuning result is available.
+
+The reviewed facturation-qwen35-4b-v1-en-fr preparation clarifies two ambiguous customer/product requests without changing their targets and adds 16 bilingual role-order examples. All other 1,485 parent TRAIN rows and all 133 validation bytes remain unchanged. Eight preparation tests pass, including provenance mutations. Facturation's real metadata registry validates all 18 changed/added rows with database access blocked. Fresh server preflight passes all 1,503 TRAIN and 133 validation examples against the 4B tokenizer and actual Colibri template/parser, including supervised boundaries and serving output budgets.
+
+The separate facturation-qwen35-4b-pilot-v1-en-fr copies 632 TRAIN rows unchanged, preserving all 18 tools and 1,551 declared projected coverage features under a 640-row ceiling. Selection uses only TRAIN metadata, with no evaluation outcomes. It retains all 18 corrected/added role rows. Language provenance records 299 English, 301 French and 32 unresolved legacy annotations; these unknowns are not inferred from interface language. Six focused pilot checks pass. Projected coverage is not every interaction, independent scenarios or predicted accuracy.
+
+A two-update CPU capacity probe is running with BF16, 14 threads, all 32 text layers and rank-16 LoRA. Its disposable updates are not a saved fine-tuned adapter. Full fine-tuning remains pending successful capacity, pilot source review, fresh pilot preflight and numerical recipe admission. Existing training uses PyTorch/Transformers/PEFT; inference remains Colibri. No production model changed and zero of six apps are accepted.
+
+[Actual baseline and preparation evidence](../training/reports/qwen35-4b-baseline-and-preparation-v1.json).
+
 ## Approved model replacement and training status - 21 October 2026
 
 The previous Qwen3.5-0.8B correction stopped at 82/256 updates for the approved replacement. It is incomplete; its comparison controls are retired. Obsolete experimental weights were removed, while datasets, logs, results and source were preserved. KAT coding, translation, grammar correction and the live assistant were preserved.

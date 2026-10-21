@@ -1,5 +1,24 @@
 # Shared model accuracy work
 
+## Completed untrained 4B baseline - 21 October 2026
+
+| Facturation primary metric | Passed | Accuracy |
+| --- | --- | --- |
+| Full action | 77/133 | 57.89% |
+| Tool selection | 114/133 | 85.71% |
+| Eligible exact arguments | 71/111 | 63.96% |
+| Structured output | 125/133 | 93.98% |
+| Clarification action | 0/16 | 0% |
+| Critical action | 6/24 | 25% |
+
+This is Qwen3.5-4B before application fine-tuning, using the frozen Colibri/provider/scoring contract. It is below the previous fine-tuned 0.8B development result and fails acceptance. No 4B fine-tuned accuracy exists. These inspected, correlated development cases are not fresh blind certification; legacy metadata does not establish per-language percentages.
+
+Mean request latency is 38.114 seconds and observed P95 is 118.628 seconds. Completion tokens divided by request wall time average 1.947 tokens/second, including prompt processing and native tool buffering. This is not raw decoder speed. The isolated worker is stopped and protected production inference remains unchanged.
+
+All 1,636 corrected TRAIN/validation metadata cases pass server preflight. The CPU training capacity probe is running; the separately prepared 632-row coverage pilot has not trained. Coverage checks cannot predict a 95% score. Zero of six apps are fully accepted.
+
+[Measurements and limitations](../training/reports/qwen35-4b-baseline-and-preparation-v1.json).
+
 ## Replacement baseline in progress - 21 October 2026
 
 Qwen/Qwen3.5-4B is downloaded and converted for Colibri CPU. Its six-case native-tool smoke passed 4/6 full actions and structures. The other two cases were rejected as invalid model output and remain failed. A separate operator-observed diagnostic saw plain-text replies with no clarification function. The four eligible argument cases passed, but this small technical smoke does not establish application accuracy.

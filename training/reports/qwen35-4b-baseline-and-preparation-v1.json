@@ -1,0 +1,163 @@
+{
+  "version": "qwen35-4b-baseline-and-preparation-v1",
+  "observed_at": "2026-10-21T15:57:28.175901+00:00",
+  "status": "BASELINE COMPLETE; MODEL NOT ACCEPTED; CPU CAPACITY PROBE RUNNING",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime": "Colibri CPU",
+  "download_and_conversion_complete": true,
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "baseline": {
+    "scope": "Unfine-tuned replacement on frozen Facturation primary development cases; no business tools executed",
+    "cases": 133,
+    "full_actions_passed": 77,
+    "full_actions_percent": 57.89,
+    "tool_selection_passed": 114,
+    "tool_selection_percent": 85.71,
+    "structured_output_passed": 125,
+    "structured_output_percent": 93.98,
+    "exact_arguments": {
+      "passed": 71,
+      "count": 111,
+      "percent": 63.96
+    },
+    "clarification_actions": {
+      "passed": 0,
+      "count": 16
+    },
+    "critical_actions": {
+      "passed": 6,
+      "count": 24
+    },
+    "targets_passed": false,
+    "settings": {
+      "threads": 7,
+      "context_tokens": 8192,
+      "max_output_tokens": 512,
+      "thinking": false,
+      "temperature": 0
+    },
+    "dataset_sha256": "ac1b70e353fc9ec632b21afd4d69de9743db24e07e865cb9f4b804d22b32ce58",
+    "labels_parser_provider_and_scoring_unchanged": true,
+    "latency_mean_s": 38.114,
+    "latency_p95_s": 118.628,
+    "completion_tokens_per_wall_second_mean": 1.947,
+    "worker_rss_gib_one_observation": 8.643,
+    "isolated_worker_stopped": true,
+    "isolated_cgroup_empty": true,
+    "evaluation_port_free": true,
+    "model_artifacts_unchanged": true,
+    "protected_services_unchanged": true
+  },
+  "corrected_dataset": {
+    "version": "facturation-qwen35-4b-v1-en-fr",
+    "train": 1503,
+    "validation": 133,
+    "unchanged_parent_training_rows": 1485,
+    "clarified_role_requests": 2,
+    "added_role_contrasts": 16,
+    "target_labels_changed": false,
+    "validation_bytes_changed": false,
+    "native_metadata_checks_passed": 18,
+    "database_access_blocked": true,
+    "source_review": "No issues",
+    "preparation_tests_passed": 8,
+    "train_sha256": "d506c5d05ce53e77906c492ab2e5de705adabd90b385721de8d0f5a6c01da9a4",
+    "validation_sha256": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478",
+    "manifest_sha256": "1f4c8863adabacc776947c54529a0190e6b7a9a2c076355d47c79267ecb75a6b",
+    "server_metadata": {
+      "train.jsonl": {
+        "count": 1503,
+        "round_trip_passed": 1503,
+        "runtime_prefix_parity_passed": 1503,
+        "loss_boundary_passed": 1503,
+        "semantic_alignment_passed": 1503,
+        "semantic_loss_weight": 1,
+        "maximum_tokens": 7745,
+        "output_budget_contract": "conservative-target-v1",
+        "output_budget_passed": 1503,
+        "maximum_target_tokens": 129,
+        "maximum_output_tokens": 512,
+        "minimum_output_budget": 488,
+        "sha256": "d506c5d05ce53e77906c492ab2e5de705adabd90b385721de8d0f5a6c01da9a4"
+      },
+      "valid.jsonl": {
+        "count": 133,
+        "round_trip_passed": 133,
+        "runtime_prefix_parity_passed": 133,
+        "loss_boundary_passed": 133,
+        "semantic_alignment_passed": 133,
+        "semantic_loss_weight": 1,
+        "maximum_tokens": 7496,
+        "output_budget_contract": "conservative-target-v1",
+        "output_budget_passed": 133,
+        "maximum_target_tokens": 116,
+        "maximum_output_tokens": 512,
+        "minimum_output_budget": 512,
+        "sha256": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478"
+      },
+      "scope": "Tokenizer/template/parser checks only; not model accuracy or training success"
+    },
+    "server_metadata_completed": true
+  },
+  "pilot_preparation": {
+    "version": "facturation-qwen35-4b-pilot-v1-en-fr",
+    "train_rows": 632,
+    "validation_rows": 133,
+    "declared_features_available": 1551,
+    "declared_features_selected": 1551,
+    "native_tools": 18,
+    "by_request_language": {
+      "en": 299,
+      "fr": 301,
+      "unknown": 32
+    },
+    "mandatory_role_rows": 18,
+    "rows_copied_unchanged": true,
+    "budget_maximum": 640,
+    "tests_passed": 6,
+    "evaluation_outcomes_used": false,
+    "training_started": false,
+    "numerical_recipe_admitted": false,
+    "manifest_sha256": "f55a5ec599ec8330915f8f4c64461781dfefc3bf7fb43f81ac8d7643b9e99656"
+  },
+  "capacity": {
+    "observed_at": "2026-10-21T15:54:36.229489+00:00",
+    "status": "RUNNING; NO COMPLETED UPDATES OBSERVED",
+    "threads": 14,
+    "lora_layers": 32,
+    "rank": 16,
+    "alpha": 32,
+    "dtype": "bfloat16",
+    "gradient_checkpointing": true,
+    "scheduled_disposable_updates": 2,
+    "completed_updates_observed": 0,
+    "adapter_saved": false,
+    "memory_budget_bytes": 35748052992,
+    "host_available_gib_snapshot": 42.36,
+    "scope": "Two disposable longest-row updates; not full fine-tuning or accuracy measurement"
+  },
+  "source_files": {
+    "training/scripts/prepare_facturation_qwen35_4b_v1.py": "ec2dd59cecdb944ef44df7021a72356fe004250c88e5955684bcfcf7905c8f8c",
+    "training/scripts/prepare_facturation_qwen35_4b_pilot_v1.py": "b42a1484ff966a94085b2d29467273dc7a160eb1e89b8d2358af554d72d0b87b",
+    "training/tests/test_facturation_qwen35_4b_v1.py": "3e2efee077a926228503992f1d73c465f1fcff501aef88e09d896f938fe682b5",
+    "training/tests/test_facturation_qwen35_4b_pilot_v1.py": "68398c10274547f455f4d7894c6a1d106a4b2adf9e807d9ffae7bb1281e8e4c6"
+  },
+  "full_fine_tuning_started": false,
+  "model_accepted": false,
+  "apps_accepted": 0,
+  "apps_total": 6,
+  "production_activation": false,
+  "limitations": [
+    "The untrained 4B baseline is lower than the previous fine-tuned 0.8B development score; replacement quality is not established.",
+    "Frozen development cases are correlated and previously inspected, not fresh blind certification.",
+    "Legacy evaluation language metadata does not support new per-language accuracy percentages.",
+    "Projected coverage does not prove semantic correctness, independent scenarios or 95% model accuracy.",
+    "Completion tokens per request wall second include prompt processing and tool buffering; not raw decoder speed.",
+    "Capacity updates are discarded; no fine-tuned adapter or completion estimate exists yet.",
+    "KAT coding, translation, grammar correction and live assistant remain unchanged."
+  ]
+}

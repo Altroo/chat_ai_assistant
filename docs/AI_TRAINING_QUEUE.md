@@ -1,5 +1,16 @@
 # Shared model training queue
 
+## Current replacement queue - 21 October 2026
+
+1. IMPLEMENTED: download and Colibri conversion of Qwen3.5-4B; complete all 133 Facturation baseline cases. Full actions are 57.89% before fine-tuning; no acceptance.
+2. IMPLEMENTED: review the corrected synthetic 1,503-row EN/FR TRAIN corpus and run all 1,636 server tokenizer/template/schema/parser checks successfully. Original validation bytes remain unchanged.
+3. IN PROGRESS: two disposable 32-layer CPU LoRA capacity updates, using 14 threads. No adapter is saved.
+4. PARTIALLY IMPLEMENTED: prepare a bounded 632-row TRAIN coverage pilot with all 18 tools, copied source rows and unchanged validation. Source review, final numerical recipe admission and actual fine-tuning must precede Colibri comparison.
+5. PENDING: unchanged full-action, exact-argument, structured-output, clarification, critical, broader and retained-application qualification.
+6. PLANNED: Management Projet, Design Workflow, Contracts, Gestion Magasin and Reservation sequentially, using the same shared model after Facturation passes.
+
+Zero of six apps are accepted. KAT coding, translation, grammar correction and live assistant remain unchanged. Historical running observations below are superseded by this entry. [Current evidence](../training/reports/qwen35-4b-baseline-and-preparation-v1.json).
+
 ## Superseding queue - 21 October 2026
 
 The approved replacement is the official Qwen/Qwen3.5-4B model, downloaded, size-checked, locally fingerprinted and converted for Colibri CPU. The preceding 0.8B run stopped at 82/256 updates and its comparison is retired. Historical queue observations below do not authorize resuming it.

@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Replacement baseline complete and training preparation - 21 October 2026
+
+IMPLEMENTED and verified: the untrained Qwen3.5-4B Colibri baseline completed all 133 frozen Facturation primary cases. Correct full actions are 77/133 (57.89%), correct tools 114/133 (85.71%), eligible exact arguments 71/111 (63.96%) and valid structures 125/133 (93.98%). Clarification actions are 0/16 and critical actions 6/24. Every acceptance gate fails. Labels, parser, provider and scoring remain unchanged. The isolated worker stopped cleanly and its port is free.
+
+IMPLEMENTED and verified as preparation: two ambiguous TRAIN requests now explicitly distinguish customer and product; 16 bilingual product-first role examples are added. All other 1,485 source rows and all 133 validation bytes are preserved. The 18 corrected/added rows pass Facturation's actual metadata registry with database access blocked. The single reviewer cleared source/data preparation; eight tests pass, including changed dependency and exclusion-input rejection. All 1,503 TRAIN and 133 validation examples pass fresh server tokenizer/template, parser, schema, loss-boundary and output-budget checks.
+
+PARTIALLY IMPLEMENTED: the CPU capacity probe is running two disposable longest-row LoRA updates with 14 threads and all 32 text layers. It does not save an adapter or establish completed fine-tuning. A separate 632-row TRAIN-only pilot is prepared under a 640-row ceiling, preserving all 18 tools and all 1,551 declared projected features. It copies source rows unchanged, with 299 confirmed English, 301 French and 32 unresolved legacy language annotations. Six pilot checks pass. Projected coverage is not every feature interaction or predicted accuracy; numerical admission remains pending.
+
+The replacement has not been fine-tuned or accepted. Zero of six apps are accepted. Facturation remains first; other apps follow sequentially with the same shared model. KAT coding, translation, grammar correction and live assistant remain unchanged.
+
+[Baseline, preparation and resources](../training/reports/qwen35-4b-baseline-and-preparation-v1.json).
+
 ## Approved replacement model - 21 October 2026
 
 IMPLEMENTED and verified: the official post-trained Qwen/Qwen3.5-4B model is downloaded on the server at revision `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a` (Apache 2.0). All 13 source files were size-checked and their SHA256 hashes recorded; three LFS checksums were additionally verified against official metadata. Colibri conversion produced 42 artifacts across 32 text layers. KAT coding, translation, grammar correction and the live assistant remain unchanged.
