@@ -1,5 +1,25 @@
 # Chat AI Assistant progress
 
+## Balanced correction: training complete - 21 October 2026
+
+IMPLEMENTED and verified: the original server job completed all 128 scheduled optimizer updates and final validation successfully in 6,742.7 seconds (about 1 hour 52 minutes). All updates are contiguous and finite. Strict collection verifies 27 evidence files, the original successful invocation, an empty training cgroup, 206 external source pins and unchanged healthy production inference. Reported peak RSS is 6.413 GiB. The dataset was consumed once: 96 Facturation, 16 Management Projet and 16 Design Workflow examples.
+
+| Teacher-forced loss, lower is better | Baseline | Update 64 | Update 128 |
+| --- | --- | --- | --- |
+| Micro | 0.022434 | 0.022095 | 0.023120 |
+| Application macro | 0.022471 | 0.020997 | 0.021602 |
+| Facturation | 0.020905 | 0.024714 | 0.027199 |
+| Management Projet | 0.029470 | 0.024252 | 0.023834 |
+| Design Workflow | 0.017037 | 0.014024 | 0.013774 |
+
+The loss selector retains update 64. Overall macro loss falls while Facturation loss rises, and final micro loss also rises. These teacher-forced measurements do not establish functional accuracy or select the functional model. All four saved checkpoints, the final alias and the loss-selected alias are present and hash-verified.
+
+IMPLEMENTED: the single reviewer cleared the actual completed-training evidence and comparison admission. PARTIALLY IMPLEMENTED: the Colibri comparison started at 04:21 UTC; its first checkpoint export is running. All five declared Colibri candidates, 0 (actual parent 125), 32, 64, 96 and 128, remain mandatory on the unchanged 133-case primary set. Applicable broader 275/438/48, critical and retained-application gates remain unchanged.
+
+The best verified primary result remains 122/133 (91.73%), with exact arguments 102/111 (91.89%) and critical cases 20/24. Zero of six apps are fully accepted. No model was activated and no next-application optimization started. This completed 128-update correction is separate from the original completed 3,103-update refinement.
+
+[Completed training evidence](../training/reports/facturation-uniform-correction-v1-training-completion.json).
+
 ## Balanced correction: midpoint validation complete - 21 October 2026
 
 IMPLEMENTED and verified: the original job completed its scheduled 275-example validation at update 64. The raw log, validation history and saved loss selection agree under replay of the pinned selector; equal-token weighted and unweighted values match.

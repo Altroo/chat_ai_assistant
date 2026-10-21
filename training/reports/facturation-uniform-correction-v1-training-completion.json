@@ -1,0 +1,158 @@
+{
+  "status": "IMPLEMENTED: training complete; functional evaluation pending",
+  "generated_at": "2026-10-21T04:17:52.390850+00:00",
+  "model": "existing shared Qwen3.5-0.8B",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training": {
+    "scheduled_updates": 128,
+    "completed_updates": 128,
+    "complete": true,
+    "all_updates_contiguous_finite": true,
+    "duration_seconds": 6742.662755500525,
+    "peak_rss_gib": 6.412975311279297,
+    "cpu_threads": 14,
+    "semantic_loss_weight": 1.0,
+    "application_exposure": {
+      "facturation": {
+        "steps": 96,
+        "unique_examples": 96
+      },
+      "design_workflow": {
+        "steps": 16,
+        "unique_examples": 16
+      },
+      "management_projet": {
+        "steps": 16,
+        "unique_examples": 16
+      }
+    },
+    "validation_steps_completed": [
+      0,
+      64,
+      128
+    ],
+    "original_invocation_terminal_success": true,
+    "original_process_gone": true,
+    "original_cgroup_empty": true
+  },
+  "teacher_forced_validation": {
+    "examples": 275,
+    "baseline": {
+      "micro": 0.02243413329971066,
+      "by_application": {
+        "facturation": 0.02090526781325695,
+        "management_projet": 0.02946950520733702,
+        "design_workflow": 0.01703694737632766
+      },
+      "macro": 0.022470573465640544,
+      "unweighted": {
+        "micro": 0.02243413329971066,
+        "by_application": {
+          "facturation": 0.02090526781325695,
+          "management_projet": 0.02946950520733702,
+          "design_workflow": 0.01703694737632766
+        },
+        "macro": 0.022470573465640544
+      }
+    },
+    "step64": {
+      "micro": 0.022095300529020857,
+      "by_application": {
+        "facturation": 0.02471448978512409,
+        "management_projet": 0.024252163204215693,
+        "design_workflow": 0.014023621470787617
+      },
+      "macro": 0.0209967581533758,
+      "unweighted": {
+        "micro": 0.022095300529020857,
+        "by_application": {
+          "facturation": 0.02471448978512409,
+          "management_projet": 0.024252163204215693,
+          "design_workflow": 0.014023621470787617
+        },
+        "macro": 0.0209967581533758
+      }
+    },
+    "step128": {
+      "micro": 0.0231203806410473,
+      "by_application": {
+        "facturation": 0.027199478397514576,
+        "management_projet": 0.02383399436637727,
+        "design_workflow": 0.013773788888142846
+      },
+      "macro": 0.021602420550678233,
+      "unweighted": {
+        "micro": 0.0231203806410473,
+        "by_application": {
+          "facturation": 0.027199478397514576,
+          "management_projet": 0.02383399436637727,
+          "design_workflow": 0.013773788888142846
+        },
+        "macro": 0.021602420550678233
+      }
+    },
+    "raw_log_history_and_saved_selection_consistent": true,
+    "weighted_unweighted_losses_equal": true,
+    "loss_selected_step": 64,
+    "loss_selected_step_is_not_functional_model_selection": true,
+    "interpretation": "Mixed results: application-macro loss decreased while Facturation and micro losses increased at update128. No accuracy improvement is established."
+  },
+  "artifacts": {
+    "checkpoint_steps": [
+      32,
+      64,
+      96,
+      128
+    ],
+    "final_equals_checkpoint128": true,
+    "loss_selected_alias_equals_checkpoint64": true,
+    "verified_external_source_pins": 206,
+    "collected_evidence_files": 27
+  },
+  "next_evaluation": {
+    "status": "PENDING reviewed comparison admission",
+    "runtime": "Colibri CPU",
+    "required_candidates": [
+      0,
+      32,
+      64,
+      96,
+      128
+    ],
+    "logical_zero_actual_source_checkpoint": 125,
+    "primary_cases_per_candidate": 133,
+    "unchanged_applicable_broader_gates": [
+      275,
+      438,
+      48
+    ],
+    "scoring_labels_and_thresholds_unchanged": true,
+    "completed_functional_evaluation_for_this_run": false
+  },
+  "current_primary_best": {
+    "full_actions_correct": 122,
+    "total": 133,
+    "accuracy_percent": 91.72932330827066,
+    "exact_arguments_correct": 102,
+    "arguments_total": 111,
+    "critical_correct": 20,
+    "critical_total": 24
+  },
+  "fully_accepted_applications": 0,
+  "model_accepted": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "production_healthy_unchanged_at_capture": true,
+  "evidence_sha256": {
+    "collection": "c4c08200fcbcb7b133508e0e8355118d43ef69191cec80507edd722b3c0b7955",
+    "training_report": "08321929bbd57703e9d5b8e5eda24c8e926925d0b51999c29f39d3b05f7d3d7c",
+    "training_complete": "4a2a74d422625f5282f9efb13d5a3bf8dadc4e0bba35b9ce97b76d766263f49a",
+    "adapter_inventory": "94109d5473bf232c8dd29538f1a6aa8abb986a6ac0cc269d54111ce9c175dd0c",
+    "uniform_terminal_verifier": "caa220941fbd4824ec81b9ec5477c325e6ff1dc4d7b665dc25578a2a5315e5a1",
+    "actual_training_completion_review": "220bc37db40c1f05ad04042668e32379c1d1b76dbf7f5f81ce72c7415320489d"
+  },
+  "actual_completed_training_evidence_reviewed_by_one_reviewer": true
+}
