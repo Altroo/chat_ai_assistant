@@ -1,5 +1,12 @@
 # Model training and evaluation
 
+## First 4B checkpoint integrity verified - 21 October 2026
+
+IMPLEMENTED and verified: checkpoint 158 passed the original reviewed adapter verifier after optimizer update 159 confirmed its save had finished. The saved adapter contains 256 finite tensors and 20,578,304 elements, with nonzero LoRA_B weights across all 32 text layers. Rank-16/alpha-32 configuration, layer count and recorded source/data hashes match; adapter/config fingerprints remain stable through inspection. The single reviewer cleared the narrowly scoped inspector, and seven metadata-only guard tests pass.
+
+PARTIALLY IMPLEMENTED: the original server trainer is still running at 160/632 updates in the verified 21:42 UTC observation, using 14 threads. Protected services remain healthy. Inspection used one CPU thread and loaded only saved adapter tensors, with no base-model load, inference, export or activation. Nonzero coverage does not prove incremental weight updates or improved accuracy; tensor dtype was not asserted. The other checkpoints, completed training, all Colibri comparisons, accuracy and latency improvement remain pending. Zero of six applications qualify on the replacement model. [Actual checkpoint integrity and limits](../training/reports/qwen35-4b-first-checkpoint-integrity-v1.json).
+
+
 ## Checkpoint evaluation and latency profiling prepared - 21 October 2026
 
 IMPLEMENTED and independently reviewed as preparation: the Colibri evaluation runner passes 13 offline tests. Startup-timeout and process-capture failures now recover only an owned worker, with its lifetime bound to the evaluation controller. Replacement units are refused, and pinned sources, admission data and closure bytes are checked again before recording completion. The prepared export and passive-profile helpers separately pass 11 and eight checks. These are control tests, not new model responses.
