@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Facturation comparison halted; identity helper verified - 21 October 2026
+
+IMPLEMENTED and verified: checkpoint 32 completed all 133 primary cases, with equal before/after artifact and worker proofs and three workers stopped. It scores 122/133 full actions (91.73%), 100/111 exact arguments (90.09%), 100% tool selection, 100% structured output and 22/24 critical cases. It does not pass acceptance.
+
+PARTIALLY IMPLEMENTED: checkpoint 64 collected all 133 cases and three shard summaries, then the comparison halted during its post-run proof. The guard compared the complete rendered systemd unit record; historical execution-status fields inside ExecStart had cleared. The configured command and actual invocation, main PID, start/exit timestamps, successful result and resource limits remain unchanged, with no restarts. The cause of the presentation reset is not proven. The abort stopped three owned workers. Checkpoint 64 has no after-proof and is excluded pending a fresh run; no checkpoint-64 accuracy is accepted.
+
+IMPLEMENTED as a helper only: the corrected verifier enforces exact configuration plus the actual original execution, accepts only cleared or equivalent populated status presentation, and rejects contradictory identity. All 13 tests pass; the single reviewer also replayed actual captured evidence and rejected six additional mutations. Recovery integration and admission are pending.
+
+The recovery must preserve the original failed invocation and raw outputs, verify/reuse the fully attested baseline and checkpoint 32, repeat checkpoint 64 in a new namespace, then complete 96/128 and unchanged selection and applicable broader gates. The original 128-update training remains complete; it must not restart. Zero of six apps are fully accepted, production inference is unchanged and no next-application training has started.
+
+[Failure evidence and verified helper scope](../training/reports/facturation-comparison-identity-check-fix.json).
+
 ## Balanced correction: training complete - 21 October 2026
 
 IMPLEMENTED and verified: the original server job completed all 128 scheduled optimizer updates and final validation successfully in 6,742.7 seconds (about 1 hour 52 minutes). All updates are contiguous and finite. Strict collection verifies 27 evidence files, the original successful invocation, an empty training cgroup, 206 external source pins and unchanged healthy production inference. Reported peak RSS is 6.413 GiB. The dataset was consumed once: 96 Facturation, 16 Management Projet and 16 Design Workflow examples.

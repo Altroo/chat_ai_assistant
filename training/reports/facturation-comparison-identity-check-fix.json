@@ -1,0 +1,74 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: comparison halted; identity-check helper verified, recovery pending",
+  "generated_at": "2026-10-21T05:03:45.397351+00:00",
+  "original_training_complete": true,
+  "original_training_updates": 128,
+  "training_restart_required": false,
+  "comparison": {
+    "completed_and_attested_steps": [
+      32
+    ],
+    "step64_raw_cases": 133,
+    "step64_shard_summaries": 3,
+    "step64_after_proof_captured": false,
+    "step64_result_accepted": false,
+    "step64_excluded_pending_fresh_run": true,
+    "remaining_steps": [
+      96,
+      128
+    ],
+    "owned_workers_stopped_by_abort": 3,
+    "recovery_started": false
+  },
+  "root_cause": {
+    "field": "ExecStart",
+    "problem": "Whole rendered unit equality rejected cleared historical command-status presentation.",
+    "unchanged_actual_execution_fields": [
+      "invocation",
+      "controller PID",
+      "start timestamp",
+      "exit timestamp",
+      "successful exit",
+      "resource limits"
+    ],
+    "no_restarts": true,
+    "manager_reload_cause_proven": false,
+    "training_or_model_corruption_demonstrated": false
+  },
+  "prepared_fix": {
+    "helper": "training/scripts/verify_terminal_execution.py",
+    "tests": "training/tests/test_verify_terminal_execution.py",
+    "test_count": 13,
+    "independently_reviewed": true,
+    "actual_saved_evidence_replay_passed": true,
+    "configured_command_comparison": "Exact path, argv and ignore-errors flag",
+    "original_execution_comparison": "Invocation, PID, main code/status, wall timestamps, monotonic interval and no restarts",
+    "presentation_changes_allowed": "Fully cleared metadata or equivalent populated timestamps only",
+    "integration_status": "PENDING separately bound recovery controls",
+    "recovery_must_pin_all_nine_execution_fields": true
+  },
+  "checkpoint32": {
+    "full_actions_correct": 122,
+    "cases": 133,
+    "full_action_percent": 91.73,
+    "exact_arguments_correct": 100,
+    "arguments_total": 111,
+    "exact_argument_percent": 90.09,
+    "tool_percent": 100,
+    "structure_percent": 100,
+    "critical_correct": 22,
+    "critical_total": 24,
+    "accepted": false
+  },
+  "labels_scorer_and_acceptance_gates_changed": false,
+  "fully_accepted_applications": 0,
+  "production_healthy_unchanged_at_capture": true,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "model_accepted": false,
+  "evidence_sha256": {
+    "unit_presentation_change": "f72631a0ac4d8dfb98bb73588b41cdea8a589174bd63685a82f5218f25b2127a",
+    "helper": "fe081f36eb2184a8c7a247e74c5599919640bba7b9b03353953856906955ca55",
+    "helper_tests": "67b1f2a4447358268ad6a7fd2e5b07796d313a6e84fb3f09c41e2b3f42a0f6b2"
+  }
+}
