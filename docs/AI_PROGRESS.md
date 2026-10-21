@@ -1,5 +1,13 @@
 # Chat AI Assistant progress
 
+## 4B comparison controls prepared; latency investigation - 21 October 2026
+
+IMPLEMENTED and verified as preparation: the new selector requires the actual cached untrained baseline and every saved checkpoint, 158/316/474/632, on all 133 unchanged primary cases. It uses the original frozen scorer and unchanged 95% full-action/tool/argument, 99% structure and complete critical/clarification gates. Ten checks pass, including actual-baseline replay, missing candidates, changed labels, scorer mutation and module-shadow rejection. The single reviewer cleared the five source/reference files. Public references contain only synthetic scenarios, actual untrained responses and the original pre-training policy.
+
+The actual replay still fails at 77/133 full actions and 71/111 eligible arguments. Synthetic passing-candidate fixtures are control tests, not model predictions. Training, its snapshots and the live models are untouched. Numerical comparison still requires successful training completion, checked adapters/exports and separate admission.
+
+PARTIALLY IMPLEMENTED: latency is now an explicit improvement requirement. Correct baseline actions still average 35.268 seconds with about 66 output tokens. The original native phase split was not captured; no cause or improvement is established. Colibri profiling/prefix diagnostics and the local native greeting path are identified for separate measurements after training releases the CPU. [Latency findings](AI_LATENCY.md). [Prepared controls and evidence](../training/reports/qwen35-4b-comparison-preparation-v1.json).
+
 ## Replacement pilot running - 21 October 2026, 16:17 UTC
 
 PARTIALLY IMPLEMENTED: the original Qwen3.5-4B server trainer is running and in initial preparation/validation. At the verified 16:17 UTC observation, zero optimizer updates are logged; 632 are scheduled. The fresh rank-16 adapter uses all 32 text layers, 14 CPU threads, BF16, SDPA, checkpointing, uniform assistant-only loss and learning rate 0.00005. One epoch covers every selected TRAIN row once; checkpoints are 158/316/474/632. Initial and final validation use the unchanged 133 cases.

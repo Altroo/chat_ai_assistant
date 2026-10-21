@@ -1,0 +1,4422 @@
+{
+  "version": "qwen35-4b-primary-baseline-v1",
+  "model_id": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "source_result_sha256": "31640310e4ef7b61838851ec734e6db7a7fb99acf5e2d8bd3037145ea7793dd9",
+  "summary": {
+    "label": "qwen35-4b-primary-v1",
+    "dataset_sha256": "ac1b70e353fc9ec632b21afd4d69de9743db24e07e865cb9f4b804d22b32ce58",
+    "model_id": "chat-ai-qwen35-4b-facturation-baseline-v1",
+    "max_output_tokens": 512,
+    "thinking": false,
+    "mode": "native",
+    "metrics": {
+      "count": 133,
+      "counts": {
+        "tool_correct": 114,
+        "arguments_correct": 77,
+        "structured_valid": 125
+      },
+      "percent": {
+        "tool_correct": 85.71,
+        "arguments_correct": 57.89,
+        "structured_valid": 93.98
+      },
+      "exact_arguments": {
+        "passed": 71,
+        "count": 111,
+        "percent": 63.96
+      }
+    },
+    "by_language": {
+      "en_fr_unlabeled": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 114,
+          "arguments_correct": 77,
+          "structured_valid": 125
+        },
+        "percent": {
+          "tool_correct": 85.71,
+          "arguments_correct": 57.89,
+          "structured_valid": 93.98
+        },
+        "exact_arguments": {
+          "passed": 71,
+          "count": 111,
+          "percent": 63.96
+        }
+      }
+    },
+    "by_category": {
+      "facturation": {
+        "count": 133,
+        "counts": {
+          "tool_correct": 114,
+          "arguments_correct": 77,
+          "structured_valid": 125
+        },
+        "percent": {
+          "tool_correct": 85.71,
+          "arguments_correct": 57.89,
+          "structured_valid": 93.98
+        },
+        "exact_arguments": {
+          "passed": 71,
+          "count": 111,
+          "percent": 63.96
+        }
+      }
+    },
+    "latency_mean_s": 38.114,
+    "latency_p95_s": 118.628,
+    "first_visible_event_mean_s": 37.708,
+    "completion_tokens_per_wall_second_mean": 1.947,
+    "limitations": [
+      "Synthetic held-out scenarios; no business tools executed.",
+      "Knowledge query wording is scored only for nonempty schema-valid text; retrieval factuality is tested separately. Clarifications must match the expected reason and language.",
+      "Exact arguments exclude knowledge and clarification. Optional default pagination/period arguments are normalized.",
+      "Native Colibri tool buffering means first visible event and wall throughput are not raw decode TTFT/tokens per second.",
+      "No hostname, URL, key, private record or operator path is included in the report."
+    ]
+  },
+  "cases": [
+    {
+      "id": "validation-000",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Cerise",
+          "date_from": "2028-06-11",
+          "unpaid": true
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Cerise",
+          "date_from": "2028-06-11",
+          "unpaid": true,
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2832,
+        "completion_tokens": 78,
+        "total_tokens": 2910
+      },
+      "latency_s": 39.733,
+      "first_visible_event_s": 39.723,
+      "completion_tokens_per_wall_second": 1.963
+    },
+    {
+      "id": "validation-001",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Cerise",
+          "date_from": "2028-06-11",
+          "unpaid": true
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "date_from": "2028-06-11",
+          "client_name": "SYN-Cerise",
+          "unpaid": true,
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2201,
+        "completion_tokens": 78,
+        "total_tokens": 2279
+      },
+      "latency_s": 31.331,
+      "first_visible_event_s": 31.324,
+      "completion_tokens_per_wall_second": 2.49
+    },
+    {
+      "id": "validation-002",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "product_name": "SYN-BOBINE",
+          "date_to": "2028-08-19",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "product_name": "SYN-BOBINE",
+          "date_to": "2028-08-19",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2188,
+        "completion_tokens": 65,
+        "total_tokens": 2253
+      },
+      "latency_s": 30.698,
+      "first_visible_event_s": 30.691,
+      "completion_tokens_per_wall_second": 2.117
+    },
+    {
+      "id": "validation-003",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "product_name": "SYN-BOBINE",
+          "date_to": "2028-08-19",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "product_name": "SYN-BOBINE",
+          "date_to": "2028-08-19",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2194,
+        "completion_tokens": 65,
+        "total_tokens": 2259
+      },
+      "latency_s": 30.984,
+      "first_visible_event_s": 30.977,
+      "completion_tokens_per_wall_second": 2.098
+    },
+    {
+      "id": "validation-004",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Cerise",
+          "product_name": "SYN-BOBINE",
+          "date_from": "2028-10-01",
+          "date_to": "2028-10-31"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Cerise",
+          "product_name": "SYN-BOBINE",
+          "date_from": "2028-10-01",
+          "date_to": "2028-10-31",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2203,
+        "completion_tokens": 104,
+        "total_tokens": 2307
+      },
+      "latency_s": 33.398,
+      "first_visible_event_s": 33.388,
+      "completion_tokens_per_wall_second": 3.114
+    },
+    {
+      "id": "validation-005",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Cerise",
+          "product_name": "SYN-BOBINE",
+          "date_from": "2028-10-01",
+          "date_to": "2028-10-31"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Cerise",
+          "product_name": "SYN-BOBINE",
+          "date_from": "2028-10-01",
+          "date_to": "2028-10-31",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2205,
+        "completion_tokens": 104,
+        "total_tokens": 2309
+      },
+      "latency_s": 33.606,
+      "first_visible_event_s": 33.6,
+      "completion_tokens_per_wall_second": 3.095
+    },
+    {
+      "id": "validation-006",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_quotes",
+        "arguments": {
+          "client_name": "SYN-Dahlia",
+          "product_name": "SYN-JOINT",
+          "date_from": "2028-02-14"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2028-02-14",
+          "product_name": "SYN-JOINT",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2075,
+        "completion_tokens": 64,
+        "total_tokens": 2139
+      },
+      "latency_s": 28.9,
+      "first_visible_event_s": 28.895,
+      "completion_tokens_per_wall_second": 2.215
+    },
+    {
+      "id": "validation-007",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_quotes",
+        "arguments": {
+          "client_name": "SYN-Dahlia",
+          "product_name": "SYN-JOINT",
+          "date_from": "2028-02-14"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2028-02-14",
+          "product_name": "SYN-JOINT",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2058,
+        "completion_tokens": 64,
+        "total_tokens": 2122
+      },
+      "latency_s": 28.79,
+      "first_visible_event_s": 28.785,
+      "completion_tokens_per_wall_second": 2.223
+    },
+    {
+      "id": "validation-008",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2028-05-01",
+          "date_to": "2028-05-31",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2028-05-01",
+          "date_to": "2028-05-31",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2046,
+        "completion_tokens": 67,
+        "total_tokens": 2113
+      },
+      "latency_s": 28.509,
+      "first_visible_event_s": 28.503,
+      "completion_tokens_per_wall_second": 2.35
+    },
+    {
+      "id": "validation-009",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2028-05-01",
+          "date_to": "2028-05-31",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2028-05-01",
+          "date_to": "2028-05-31",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2069,
+        "completion_tokens": 67,
+        "total_tokens": 2136
+      },
+      "latency_s": 28.849,
+      "first_visible_event_s": 28.843,
+      "completion_tokens_per_wall_second": 2.322
+    },
+    {
+      "id": "validation-010",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "proforma",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "proforma",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2117,
+        "completion_tokens": 76,
+        "total_tokens": 2193
+      },
+      "latency_s": 31.214,
+      "first_visible_event_s": 31.207,
+      "completion_tokens_per_wall_second": 2.435
+    },
+    {
+      "id": "validation-011",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "proforma",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "proforma",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2118,
+        "completion_tokens": 76,
+        "total_tokens": 2194
+      },
+      "latency_s": 30.398,
+      "first_visible_event_s": 30.392,
+      "completion_tokens_per_wall_second": 2.5
+    },
+    {
+      "id": "validation-012",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "proforma",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "proforma",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2118,
+        "completion_tokens": 79,
+        "total_tokens": 2197
+      },
+      "latency_s": 30.374,
+      "first_visible_event_s": 30.368,
+      "completion_tokens_per_wall_second": 2.601
+    },
+    {
+      "id": "validation-013",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "proforma",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "proforma",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2125,
+        "completion_tokens": 79,
+        "total_tokens": 2204
+      },
+      "latency_s": 30.79,
+      "first_visible_event_s": 30.785,
+      "completion_tokens_per_wall_second": 2.566
+    },
+    {
+      "id": "validation-014",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2102,
+        "completion_tokens": 76,
+        "total_tokens": 2178
+      },
+      "latency_s": 30.22,
+      "first_visible_event_s": 30.215,
+      "completion_tokens_per_wall_second": 2.515
+    },
+    {
+      "id": "validation-015",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2119,
+        "completion_tokens": 76,
+        "total_tokens": 2195
+      },
+      "latency_s": 30.508,
+      "first_visible_event_s": 30.502,
+      "completion_tokens_per_wall_second": 2.491
+    },
+    {
+      "id": "validation-016",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2117,
+        "completion_tokens": 79,
+        "total_tokens": 2196
+      },
+      "latency_s": 30.599,
+      "first_visible_event_s": 30.594,
+      "completion_tokens_per_wall_second": 2.582
+    },
+    {
+      "id": "validation-017",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2126,
+        "completion_tokens": 79,
+        "total_tokens": 2205
+      },
+      "latency_s": 31.409,
+      "first_visible_event_s": 31.396,
+      "completion_tokens_per_wall_second": 2.515
+    },
+    {
+      "id": "validation-018",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2121,
+        "completion_tokens": 76,
+        "total_tokens": 2197
+      },
+      "latency_s": 31.3,
+      "first_visible_event_s": 31.294,
+      "completion_tokens_per_wall_second": 2.428
+    },
+    {
+      "id": "validation-019",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "client_name": "SYN-Fougere",
+          "date_from": "2028-11-06",
+          "limit": 3
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2105,
+        "completion_tokens": 76,
+        "total_tokens": 2181
+      },
+      "latency_s": 30.243,
+      "first_visible_event_s": 30.237,
+      "completion_tokens_per_wall_second": 2.513
+    },
+    {
+      "id": "validation-020",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2098,
+        "completion_tokens": 79,
+        "total_tokens": 2177
+      },
+      "latency_s": 30.683,
+      "first_visible_event_s": 30.678,
+      "completion_tokens_per_wall_second": 2.575
+    },
+    {
+      "id": "validation-021",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2106,
+        "completion_tokens": 79,
+        "total_tokens": 2185
+      },
+      "latency_s": 30.321,
+      "first_visible_event_s": 30.315,
+      "completion_tokens_per_wall_second": 2.605
+    },
+    {
+      "id": "validation-022",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_articles",
+        "arguments": {
+          "product_name": "SYN-LAQUE",
+          "archived": false,
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_articles",
+        "arguments": {
+          "query": "SYN-LAQUE",
+          "archived": false,
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1805,
+        "completion_tokens": 53,
+        "total_tokens": 1858
+      },
+      "latency_s": 24.702,
+      "first_visible_event_s": 24.697,
+      "completion_tokens_per_wall_second": 2.146
+    },
+    {
+      "id": "validation-023",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_articles",
+        "arguments": {
+          "product_name": "SYN-LAQUE",
+          "archived": false,
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_articles",
+        "arguments": {
+          "query": "SYN-LAQUE",
+          "archived": false,
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1804,
+        "completion_tokens": 53,
+        "total_tokens": 1857
+      },
+      "latency_s": 24.763,
+      "first_visible_event_s": 24.758,
+      "completion_tokens_per_wall_second": 2.14
+    },
+    {
+      "id": "validation-024",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_articles",
+        "arguments": {
+          "query": "SYN-POSE",
+          "type_article": "Service",
+          "date_to": "2028-04-22"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_articles",
+        "arguments": {
+          "product_name": "SYN-POSE",
+          "type_article": "Service",
+          "date_to": "2028-04-22"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1811,
+        "completion_tokens": 63,
+        "total_tokens": 1874
+      },
+      "latency_s": 25.478,
+      "first_visible_event_s": 25.472,
+      "completion_tokens_per_wall_second": 2.473
+    },
+    {
+      "id": "validation-025",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_articles",
+        "arguments": {
+          "query": "SYN-POSE",
+          "type_article": "Service",
+          "date_to": "2028-04-22"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_articles",
+        "arguments": {
+          "query": "SYN-POSE",
+          "product_name": "SYN-POSE",
+          "type_article": "Service",
+          "date_to": "2028-04-22"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1820,
+        "completion_tokens": 77,
+        "total_tokens": 1897
+      },
+      "latency_s": 26.44,
+      "first_visible_event_s": 26.436,
+      "completion_tokens_per_wall_second": 2.912
+    },
+    {
+      "id": "validation-026",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_payments",
+        "arguments": {
+          "client_name": "SYN-Hortensia",
+          "product_name": "SYN-MANCHON",
+          "status": "Annulé",
+          "date_from": "2028-03-07"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_payments",
+        "arguments": {
+          "client_name": "SYN-Hortensia",
+          "product_name": "SYN-MANCHON",
+          "status": "Annulé",
+          "date_from": "2028-03-07",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2833,
+        "completion_tokens": 94,
+        "total_tokens": 2927
+      },
+      "latency_s": 40.505,
+      "first_visible_event_s": 40.495,
+      "completion_tokens_per_wall_second": 2.321
+    },
+    {
+      "id": "validation-027",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_payments",
+        "arguments": {
+          "client_name": "SYN-Hortensia",
+          "product_name": "SYN-MANCHON",
+          "status": "Annulé",
+          "date_from": "2028-03-07"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_payments",
+        "arguments": {
+          "client_name": "SYN-Hortensia",
+          "product_name": "SYN-MANCHON",
+          "status": "Annulé",
+          "date_from": "2028-03-07",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2843,
+        "completion_tokens": 94,
+        "total_tokens": 2937
+      },
+      "latency_s": 40.793,
+      "first_visible_event_s": 40.784,
+      "completion_tokens_per_wall_second": 2.304
+    },
+    {
+      "id": "validation-028",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_payments",
+        "arguments": {
+          "invoice_number": "8208/28",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_payments",
+        "arguments": {
+          "invoice_number": "8208/28",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2828,
+        "completion_tokens": 44,
+        "total_tokens": 2872
+      },
+      "latency_s": 36.656,
+      "first_visible_event_s": 36.647,
+      "completion_tokens_per_wall_second": 1.2
+    },
+    {
+      "id": "validation-029",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_payments",
+        "arguments": {
+          "invoice_number": "8208/28",
+          "limit": 2
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "invoice_number": "8208/28"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2831,
+        "completion_tokens": 33,
+        "total_tokens": 2864
+      },
+      "latency_s": 35.827,
+      "first_visible_event_s": 35.818,
+      "completion_tokens_per_wall_second": 0.921
+    },
+    {
+      "id": "validation-030",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_users",
+        "arguments": {
+          "email": "syn.jaspe@example.invalid",
+          "is_active": true
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_users",
+        "arguments": {
+          "email": "syn.jaspe@example.invalid",
+          "is_active": true
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1529,
+        "completion_tokens": 41,
+        "total_tokens": 1570
+      },
+      "latency_s": 20.429,
+      "first_visible_event_s": 20.418,
+      "completion_tokens_per_wall_second": 2.007
+    },
+    {
+      "id": "validation-031",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_users",
+        "arguments": {
+          "email": "syn.jaspe@example.invalid",
+          "is_active": true
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_users",
+        "arguments": {
+          "email": "syn.jaspe@example.invalid",
+          "is_active": true
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1531,
+        "completion_tokens": 41,
+        "total_tokens": 1572
+      },
+      "latency_s": 20.421,
+      "first_visible_event_s": 20.416,
+      "completion_tokens_per_wall_second": 2.008
+    },
+    {
+      "id": "validation-032",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_users",
+        "arguments": {
+          "name": "SYN-Jaspe",
+          "date_from": "2028-01-15",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_users",
+        "arguments": {
+          "name": "SYN-Jaspe",
+          "date_from": "2028-01-15",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1634,
+        "completion_tokens": 61,
+        "total_tokens": 1695
+      },
+      "latency_s": 23.162,
+      "first_visible_event_s": 23.158,
+      "completion_tokens_per_wall_second": 2.634
+    },
+    {
+      "id": "validation-033",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_users",
+        "arguments": {
+          "name": "SYN-Jaspe",
+          "date_from": "2028-01-15",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_users",
+        "arguments": {
+          "name": "SYN-Jaspe",
+          "date_from": "2028-01-15",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1642,
+        "completion_tokens": 61,
+        "total_tokens": 1703
+      },
+      "latency_s": 23.242,
+      "first_visible_event_s": 23.237,
+      "completion_tokens_per_wall_second": 2.625
+    },
+    {
+      "id": "validation-034",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_balance",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_balance",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3195,
+        "completion_tokens": 95,
+        "total_tokens": 3290
+      },
+      "latency_s": 45.853,
+      "first_visible_event_s": 45.844,
+      "completion_tokens_per_wall_second": 2.072
+    },
+    {
+      "id": "validation-035",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_balance",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_balance",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-09-22",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3216,
+        "completion_tokens": 116,
+        "total_tokens": 3332
+      },
+      "latency_s": 46.915,
+      "first_visible_event_s": 46.906,
+      "completion_tokens_per_wall_second": 2.473
+    },
+    {
+      "id": "validation-036",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_movement",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_movement",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3195,
+        "completion_tokens": 95,
+        "total_tokens": 3290
+      },
+      "latency_s": 44.739,
+      "first_visible_event_s": 44.73,
+      "completion_tokens_per_wall_second": 2.123
+    },
+    {
+      "id": "validation-037",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_movement",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_movement",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-07-15",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3213,
+        "completion_tokens": 116,
+        "total_tokens": 3329
+      },
+      "latency_s": 46.812,
+      "first_visible_event_s": 46.802,
+      "completion_tokens_per_wall_second": 2.478
+    },
+    {
+      "id": "validation-038",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_receipt",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_receipt",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-09-22",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3209,
+        "completion_tokens": 116,
+        "total_tokens": 3325
+      },
+      "latency_s": 46.776,
+      "first_visible_event_s": 46.767,
+      "completion_tokens_per_wall_second": 2.48
+    },
+    {
+      "id": "validation-039",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_receipt",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_receipt",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-09-22",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3213,
+        "completion_tokens": 116,
+        "total_tokens": 3329
+      },
+      "latency_s": 46.416,
+      "first_visible_event_s": 46.406,
+      "completion_tokens_per_wall_second": 2.499
+    },
+    {
+      "id": "validation-040",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_inventory",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_inventory",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3209,
+        "completion_tokens": 95,
+        "total_tokens": 3304
+      },
+      "latency_s": 45.352,
+      "first_visible_event_s": 45.342,
+      "completion_tokens_per_wall_second": 2.095
+    },
+    {
+      "id": "validation-041",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_inventory",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_inventory",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3212,
+        "completion_tokens": 116,
+        "total_tokens": 3328
+      },
+      "latency_s": 46.178,
+      "first_visible_event_s": 46.169,
+      "completion_tokens_per_wall_second": 2.512
+    },
+    {
+      "id": "validation-042",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "logistics_order",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "logistics_order",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-09-23",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3978,
+        "completion_tokens": 117,
+        "total_tokens": 4095
+      },
+      "latency_s": 57.343,
+      "first_visible_event_s": 57.326,
+      "completion_tokens_per_wall_second": 2.04
+    },
+    {
+      "id": "validation-043",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "logistics_order",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "logistics_order",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-09-22",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3976,
+        "completion_tokens": 117,
+        "total_tokens": 4093
+      },
+      "latency_s": 57.644,
+      "first_visible_event_s": 57.633,
+      "completion_tokens_per_wall_second": 2.03
+    },
+    {
+      "id": "validation-044",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_clients",
+        "arguments": {
+          "query": "SYN-Muguet"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_clients",
+        "arguments": {
+          "query": "SYN-Muguet"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1512,
+        "completion_tokens": 28,
+        "total_tokens": 1540
+      },
+      "latency_s": 19.428,
+      "first_visible_event_s": 19.424,
+      "completion_tokens_per_wall_second": 1.441
+    },
+    {
+      "id": "validation-045",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_clients",
+        "arguments": {
+          "query": "SYN-Muguet"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_clients",
+        "arguments": {
+          "query": "SYN-Muguet"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1514,
+        "completion_tokens": 28,
+        "total_tokens": 1542
+      },
+      "latency_s": 19.225,
+      "first_visible_event_s": 19.221,
+      "completion_tokens_per_wall_second": 1.456
+    },
+    {
+      "id": "validation-046",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_clients",
+        "arguments": {
+          "related_invoice": true
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "get_invoice",
+        "arguments": {
+          "invoice_id": 941
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2314,
+        "completion_tokens": 28,
+        "total_tokens": 2342
+      },
+      "latency_s": 28.738,
+      "first_visible_event_s": 28.73,
+      "completion_tokens_per_wall_second": 0.974
+    },
+    {
+      "id": "validation-047",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_clients",
+        "arguments": {
+          "related_invoice": true
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_clients",
+        "arguments": {
+          "related_invoice": true
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2317,
+        "completion_tokens": 26,
+        "total_tokens": 2343
+      },
+      "latency_s": 29.092,
+      "first_visible_event_s": 29.084,
+      "completion_tokens_per_wall_second": 0.894
+    },
+    {
+      "id": "validation-048",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "invoiced_net_ttc",
+          "period": "custom",
+          "currency": "EUR",
+          "date_from": "2028-05-16",
+          "date_to": "2028-06-18"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "invoiced_net_ttc",
+          "period": "custom",
+          "currency": "EUR",
+          "date_from": "2028-05-16",
+          "date_to": "2028-06-18"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2121,
+        "completion_tokens": 97,
+        "total_tokens": 2218
+      },
+      "latency_s": 31.431,
+      "first_visible_event_s": 31.424,
+      "completion_tokens_per_wall_second": 3.086
+    },
+    {
+      "id": "validation-049",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "invoiced_net_ttc",
+          "period": "custom",
+          "currency": "EUR",
+          "date_from": "2028-05-16",
+          "date_to": "2028-06-18"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "invoiced_net_ttc",
+          "period": "custom",
+          "currency": "EUR",
+          "date_from": "2028-05-16",
+          "date_to": "2028-06-18"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2115,
+        "completion_tokens": 97,
+        "total_tokens": 2212
+      },
+      "latency_s": 31.528,
+      "first_visible_event_s": 31.522,
+      "completion_tokens_per_wall_second": 3.077
+    },
+    {
+      "id": "validation-050",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "outstanding",
+          "period": "previous_year",
+          "currency": "MAD"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "outstanding",
+          "period": "previous_year",
+          "currency": "MAD"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2196,
+        "completion_tokens": 53,
+        "total_tokens": 2249
+      },
+      "latency_s": 29.294,
+      "first_visible_event_s": 29.287,
+      "completion_tokens_per_wall_second": 1.809
+    },
+    {
+      "id": "validation-051",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "outstanding",
+          "period": "previous_year",
+          "currency": "MAD"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "outstanding",
+          "period": "previous_year",
+          "currency": "MAD"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2206,
+        "completion_tokens": 53,
+        "total_tokens": 2259
+      },
+      "latency_s": 29.373,
+      "first_visible_event_s": 29.367,
+      "completion_tokens_per_wall_second": 1.804
+    },
+    {
+      "id": "validation-052",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "list_payments",
+        "arguments": {
+          "date_to": "2028-02-09"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "list_payments",
+        "arguments": {
+          "date_from": "2028-02-01",
+          "date_to": "2028-02-09"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2019,
+        "completion_tokens": 55,
+        "total_tokens": 2074
+      },
+      "latency_s": 27.294,
+      "first_visible_event_s": 27.289,
+      "completion_tokens_per_wall_second": 2.015
+    },
+    {
+      "id": "validation-053",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "list_payments",
+        "arguments": {
+          "date_to": "2028-02-09"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "list_payments",
+        "arguments": {
+          "date_from": "2028-02-09",
+          "date_to": "2028-09-22"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2029,
+        "completion_tokens": 55,
+        "total_tokens": 2084
+      },
+      "latency_s": 27.364,
+      "first_visible_event_s": 27.358,
+      "completion_tokens_per_wall_second": 2.01
+    },
+    {
+      "id": "validation-054",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "stock_inventories"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "stock_inventories"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3190,
+        "completion_tokens": 28,
+        "total_tokens": 3218
+      },
+      "latency_s": 40.15,
+      "first_visible_event_s": 40.141,
+      "completion_tokens_per_wall_second": 0.697
+    },
+    {
+      "id": "validation-055",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "stock_inventories"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "stock_inventories",
+          "identifier": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3193,
+        "completion_tokens": 40,
+        "total_tokens": 3233
+      },
+      "latency_s": 40.899,
+      "first_visible_event_s": 40.885,
+      "completion_tokens_per_wall_second": 0.978
+    },
+    {
+      "id": "validation-056",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "users"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "users",
+          "identifier": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1543,
+        "completion_tokens": 37,
+        "total_tokens": 1580
+      },
+      "latency_s": 20.185,
+      "first_visible_event_s": 20.18,
+      "completion_tokens_per_wall_second": 1.833
+    },
+    {
+      "id": "validation-057",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "users"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "users",
+          "identifier": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1550,
+        "completion_tokens": 37,
+        "total_tokens": 1587
+      },
+      "latency_s": 20.418,
+      "first_visible_event_s": 20.414,
+      "completion_tokens_per_wall_second": 1.812
+    },
+    {
+      "id": "validation-058",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "get_invoice",
+        "arguments": {}
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "get_invoice",
+        "arguments": {
+          "invoice_id": 944
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2198,
+        "completion_tokens": 28,
+        "total_tokens": 2226
+      },
+      "latency_s": 27.506,
+      "first_visible_event_s": 27.499,
+      "completion_tokens_per_wall_second": 1.018
+    },
+    {
+      "id": "validation-059",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "get_invoice",
+        "arguments": {}
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "get_invoice",
+        "arguments": {
+          "invoice_id": 944
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2202,
+        "completion_tokens": 28,
+        "total_tokens": 2230
+      },
+      "latency_s": 27.523,
+      "first_visible_event_s": 27.517,
+      "completion_tokens_per_wall_second": 1.017
+    },
+    {
+      "id": "validation-060",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "get_record",
+        "arguments": {
+          "resource": "stock_receipt",
+          "identifier": 947
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "get_record",
+        "arguments": {
+          "resource": "stock_receipt",
+          "identifier": 947
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3437,
+        "completion_tokens": 40,
+        "total_tokens": 3477
+      },
+      "latency_s": 44.676,
+      "first_visible_event_s": 44.665,
+      "completion_tokens_per_wall_second": 0.895
+    },
+    {
+      "id": "validation-061",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "get_record",
+        "arguments": {
+          "resource": "stock_receipt",
+          "identifier": 947
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "get_record",
+        "arguments": {
+          "resource": "stock_receipt",
+          "identifier": 947
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3440,
+        "completion_tokens": 40,
+        "total_tokens": 3480
+      },
+      "latency_s": 45.029,
+      "first_visible_event_s": 45.017,
+      "completion_tokens_per_wall_second": 0.888
+    },
+    {
+      "id": "validation-062",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "open",
+          "index": 5
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "open",
+          "index": 5
+        }
+      },
+      "usage": {
+        "prompt_tokens": 7222,
+        "completion_tokens": 37,
+        "total_tokens": 7259
+      },
+      "latency_s": 118.628,
+      "first_visible_event_s": 118.6,
+      "completion_tokens_per_wall_second": 0.312
+    },
+    {
+      "id": "validation-063",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "open",
+          "index": 5
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "open",
+          "index": 5
+        }
+      },
+      "usage": {
+        "prompt_tokens": 7230,
+        "completion_tokens": 37,
+        "total_tokens": 7267
+      },
+      "latency_s": 122.161,
+      "first_visible_event_s": 122.137,
+      "completion_tokens_per_wall_second": 0.303
+    },
+    {
+      "id": "validation-064",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "show"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "show",
+          "index": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 7464,
+        "completion_tokens": 37,
+        "total_tokens": 7501
+      },
+      "latency_s": 129.032,
+      "first_visible_event_s": 129.005,
+      "completion_tokens_per_wall_second": 0.287
+    },
+    {
+      "id": "validation-065",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "show"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "show",
+          "index": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 7468,
+        "completion_tokens": 37,
+        "total_tokens": 7505
+      },
+      "latency_s": 127.198,
+      "first_visible_event_s": 127.172,
+      "completion_tokens_per_wall_second": 0.291
+    },
+    {
+      "id": "validation-066",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "proforma",
+          "identifier": 961,
+          "operation": "update",
+          "changes": {
+            "remarque": "SYN-Controle termine",
+            "date_echeance": "2028-12-08"
+          }
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "proforma",
+          "identifier": 961,
+          "operation": "update",
+          "changes": {
+            "remarque": "SYN-Controle termine",
+            "date_echeance": "2028-12-08"
+          }
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2841,
+        "completion_tokens": 94,
+        "total_tokens": 2935
+      },
+      "latency_s": 40.731,
+      "first_visible_event_s": 40.721,
+      "completion_tokens_per_wall_second": 2.308
+    },
+    {
+      "id": "validation-067",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "proforma",
+          "identifier": 961,
+          "operation": "update",
+          "changes": {
+            "remarque": "SYN-Controle termine",
+            "date_echeance": "2028-12-08"
+          }
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "proforma",
+          "identifier": 961,
+          "operation": "update",
+          "changes": {
+            "remarque": "SYN-Controle termine",
+            "date_echeance": "2028-12-08"
+          }
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2846,
+        "completion_tokens": 94,
+        "total_tokens": 2940
+      },
+      "latency_s": 40.896,
+      "first_visible_event_s": 40.886,
+      "completion_tokens_per_wall_second": 2.299
+    },
+    {
+      "id": "validation-068",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "client",
+          "identifier": 962,
+          "operation": "update",
+          "changes": {
+            "nom": "SYN-Riviere",
+            "prenom": "SYN-Lea"
+          }
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "client",
+          "identifier": 962,
+          "operation": "update",
+          "changes": {
+            "nom": "SYN-Riviere",
+            "prenom": "SYN-Lea"
+          }
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1950,
+        "completion_tokens": 82,
+        "total_tokens": 2032
+      },
+      "latency_s": 28.913,
+      "first_visible_event_s": 28.907,
+      "completion_tokens_per_wall_second": 2.836
+    },
+    {
+      "id": "validation-069",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "client",
+          "identifier": 962,
+          "operation": "update",
+          "changes": {
+            "nom": "SYN-Riviere",
+            "prenom": "SYN-Lea"
+          }
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "client",
+          "identifier": 962,
+          "operation": "update",
+          "changes": {
+            "nom": "SYN-Riviere",
+            "prenom": "SYN-Lea"
+          }
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1977,
+        "completion_tokens": 82,
+        "total_tokens": 2059
+      },
+      "latency_s": 29.145,
+      "first_visible_event_s": 29.138,
+      "completion_tokens_per_wall_second": 2.814
+    },
+    {
+      "id": "validation-070",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "client_name": "SYN-Sauge",
+          "product_name": "SYN-CHEVILLE"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "product_name": "SYN-Sauge",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2553,
+        "completion_tokens": 55,
+        "total_tokens": 2608
+      },
+      "latency_s": 34.864,
+      "first_visible_event_s": 34.852,
+      "completion_tokens_per_wall_second": 1.578
+    },
+    {
+      "id": "validation-071",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "client_name": "SYN-Sauge",
+          "product_name": "SYN-CHEVILLE"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "client_name": "SYN-Sauge",
+          "product_name": "SYN-CHEVILLE",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2561,
+        "completion_tokens": 72,
+        "total_tokens": 2633
+      },
+      "latency_s": 36.551,
+      "first_visible_event_s": 36.543,
+      "completion_tokens_per_wall_second": 1.97
+    },
+    {
+      "id": "validation-072",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "invoice_pdf",
+        "arguments": {
+          "invoice_number": "8508/28"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "invoice_pdf",
+        "arguments": {
+          "invoice_number": "8508/28"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2305,
+        "completion_tokens": 33,
+        "total_tokens": 2338
+      },
+      "latency_s": 29.252,
+      "first_visible_event_s": 29.244,
+      "completion_tokens_per_wall_second": 1.128
+    },
+    {
+      "id": "validation-073",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "invoice_pdf",
+        "arguments": {
+          "invoice_number": "8508/28"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "invoice_pdf",
+        "arguments": {
+          "invoice_number": "8508/28"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2312,
+        "completion_tokens": 33,
+        "total_tokens": 2345
+      },
+      "latency_s": 29.389,
+      "first_visible_event_s": 29.381,
+      "completion_tokens_per_wall_second": 1.123
+    },
+    {
+      "id": "validation-074",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "I do not need records; describe the documented steps to create a pro forma invoice."
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "create pro forma invoice steps"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2101,
+        "completion_tokens": 28,
+        "total_tokens": 2129
+      },
+      "latency_s": 26.383,
+      "first_visible_event_s": 26.377,
+      "completion_tokens_per_wall_second": 1.061
+    },
+    {
+      "id": "validation-075",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "Je ne veux pas de liste ; décris les étapes documentées pour créer une facture pro forma."
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "création facture pro forma étapes"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2104,
+        "completion_tokens": 29,
+        "total_tokens": 2133
+      },
+      "latency_s": 26.571,
+      "first_visible_event_s": 26.565,
+      "completion_tokens_per_wall_second": 1.091
+    },
+    {
+      "id": "validation-076",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "Could you explain how Réservé differs from Physique on the stock page?"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "stock status Réservé vs Physique"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3942,
+        "completion_tokens": 31,
+        "total_tokens": 3973
+      },
+      "latency_s": 51.141,
+      "first_visible_event_s": 51.131,
+      "completion_tokens_per_wall_second": 0.606
+    },
+    {
+      "id": "validation-077",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "Peux-tu expliquer la différence entre Réservé et Physique sur la page de stock ?"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "différence entre Réservé et Physique stock"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3960,
+        "completion_tokens": 34,
+        "total_tokens": 3994
+      },
+      "latency_s": 51.366,
+      "first_visible_event_s": 51.356,
+      "completion_tokens_per_wall_second": 0.662
+    },
+    {
+      "id": "validation-078",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "unsupported",
+          "language": "en"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": false,
+      "exact_arguments_eligible": false,
+      "error": "INVALID_MODEL_OUTPUT",
+      "latency_s": 29.947,
+      "first_visible_event_s": 25.335,
+      "completion_tokens_per_wall_second": null
+    },
+    {
+      "id": "validation-079",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "unsupported",
+          "language": "fr"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": false,
+      "exact_arguments_eligible": false,
+      "error": "INVALID_MODEL_OUTPUT",
+      "latency_s": 31.554,
+      "first_visible_event_s": 25.359,
+      "completion_tokens_per_wall_second": null
+    },
+    {
+      "id": "validation-080",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "en"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": false,
+      "exact_arguments_eligible": false,
+      "error": "INVALID_MODEL_OUTPUT",
+      "latency_s": 124.551,
+      "first_visible_event_s": 115.944,
+      "completion_tokens_per_wall_second": null
+    },
+    {
+      "id": "validation-081",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "fr"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "show",
+          "index": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 7223,
+        "completion_tokens": 37,
+        "total_tokens": 7260
+      },
+      "latency_s": 120.386,
+      "first_visible_event_s": 120.357,
+      "completion_tokens_per_wall_second": 0.307
+    },
+    {
+      "id": "validation-082",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "unsupported",
+          "language": "en"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": false,
+      "exact_arguments_eligible": false,
+      "error": "INVALID_MODEL_OUTPUT",
+      "latency_s": 30.656,
+      "first_visible_event_s": 25.593,
+      "completion_tokens_per_wall_second": null
+    },
+    {
+      "id": "validation-083",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "unsupported",
+          "language": "fr"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": false,
+      "exact_arguments_eligible": false,
+      "error": "INVALID_MODEL_OUTPUT",
+      "latency_s": 32.073,
+      "first_visible_event_s": 25.52,
+      "completion_tokens_per_wall_second": null
+    },
+    {
+      "id": "validation-084",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "en"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": false,
+      "exact_arguments_eligible": false,
+      "error": "INVALID_MODEL_OUTPUT",
+      "latency_s": 31.275,
+      "first_visible_event_s": 25.616,
+      "completion_tokens_per_wall_second": null
+    },
+    {
+      "id": "validation-085",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "fr"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": false,
+      "exact_arguments_eligible": false,
+      "error": "INVALID_MODEL_OUTPUT",
+      "latency_s": 36.109,
+      "first_visible_event_s": 25.533,
+      "completion_tokens_per_wall_second": null
+    },
+    {
+      "id": "validation-086",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Tilleul",
+          "product_name": "SYN-CABLE",
+          "unpaid": true,
+          "date_from": "2033-01-07",
+          "date_to": "2033-01-19",
+          "limit": 4
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Tilleul",
+          "product_name": "SYN-CABLE",
+          "date_from": "2033-01-07",
+          "date_to": "2033-01-19",
+          "unpaid": true,
+          "limit": 4
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2673,
+        "completion_tokens": 114,
+        "total_tokens": 2787
+      },
+      "latency_s": 39.758,
+      "first_visible_event_s": 39.75,
+      "completion_tokens_per_wall_second": 2.867
+    },
+    {
+      "id": "validation-087",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Tilleul",
+          "product_name": "SYN-CABLE",
+          "unpaid": true,
+          "date_from": "2033-01-07",
+          "date_to": "2033-01-19",
+          "limit": 4
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Tilleul",
+          "product_name": "SYN-CABLE",
+          "date_from": "2033-01-07",
+          "date_to": "2033-01-19",
+          "unpaid": true,
+          "limit": 4
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2664,
+        "completion_tokens": 114,
+        "total_tokens": 2778
+      },
+      "latency_s": 39.683,
+      "first_visible_event_s": 39.674,
+      "completion_tokens_per_wall_second": 2.873
+    },
+    {
+      "id": "validation-088",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "fr"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "search_payments",
+        "arguments": {
+          "date_from": "2031-05-01",
+          "date_to": "2031-05-31",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2041,
+        "completion_tokens": 68,
+        "total_tokens": 2109
+      },
+      "latency_s": 28.711,
+      "first_visible_event_s": 28.706,
+      "completion_tokens_per_wall_second": 2.368
+    },
+    {
+      "id": "validation-089",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "en"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "search_payments",
+        "arguments": {
+          "date_from": "2031-05-01",
+          "date_to": "2031-05-31",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2036,
+        "completion_tokens": 68,
+        "total_tokens": 2104
+      },
+      "latency_s": 28.59,
+      "first_visible_event_s": 28.585,
+      "completion_tokens_per_wall_second": 2.378
+    },
+    {
+      "id": "validation-090",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "invoice",
+          "invoice_number": "0481/33",
+          "operation": "update",
+          "changes": {
+            "date_echeance": "2033-02-14"
+          }
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "invoice",
+          "identifier": 33,
+          "invoice_number": "0481/33",
+          "operation": "update",
+          "changes": {
+            "date_echeance": "2033-02-14"
+          }
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2652,
+        "completion_tokens": 99,
+        "total_tokens": 2751
+      },
+      "latency_s": 38.806,
+      "first_visible_event_s": 38.797,
+      "completion_tokens_per_wall_second": 2.551
+    },
+    {
+      "id": "validation-091",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "invoice",
+          "invoice_number": "0481/33",
+          "operation": "update",
+          "changes": {
+            "date_echeance": "2033-02-14"
+          }
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "invoice",
+          "identifier": 33,
+          "invoice_number": "0481/33",
+          "operation": "update",
+          "changes": {
+            "date_echeance": "2033-02-14"
+          }
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2652,
+        "completion_tokens": 99,
+        "total_tokens": 2751
+      },
+      "latency_s": 38.688,
+      "first_visible_event_s": 38.679,
+      "completion_tokens_per_wall_second": 2.559
+    },
+    {
+      "id": "validation-092",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Agate",
+          "product_name": "SYN-GOUJON",
+          "unpaid": true,
+          "limit": 4
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-GOUJON",
+          "product_name": "SYN-Agate",
+          "unpaid": true,
+          "limit": 4
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2677,
+        "completion_tokens": 73,
+        "total_tokens": 2750
+      },
+      "latency_s": 37.696,
+      "first_visible_event_s": 37.687,
+      "completion_tokens_per_wall_second": 1.937
+    },
+    {
+      "id": "validation-093",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Agate",
+          "product_name": "SYN-GOUJON",
+          "unpaid": true,
+          "limit": 4
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Agate",
+          "product_name": "SYN-GOUJON",
+          "unpaid": true,
+          "limit": 4
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2674,
+        "completion_tokens": 73,
+        "total_tokens": 2747
+      },
+      "latency_s": 36.814,
+      "first_visible_event_s": 36.799,
+      "completion_tokens_per_wall_second": 1.983
+    },
+    {
+      "id": "validation-094",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_quotes",
+        "arguments": {
+          "client_name": "SYN-Mica",
+          "product_name": "SYN-CADRE",
+          "date_from": "2038-01-02",
+          "date_to": "2038-01-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2038-01-02",
+          "date_to": "2038-01-02",
+          "product_name": "SYN-CADRE",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2558,
+        "completion_tokens": 101,
+        "total_tokens": 2659
+      },
+      "latency_s": 36.653,
+      "first_visible_event_s": 36.645,
+      "completion_tokens_per_wall_second": 2.756
+    },
+    {
+      "id": "validation-095",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_quotes",
+        "arguments": {
+          "client_name": "SYN-Mica",
+          "product_name": "SYN-CADRE",
+          "date_from": "2038-01-02",
+          "date_to": "2038-01-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2038-01-02",
+          "date_to": "2038-01-02",
+          "product_name": "SYN-CADRE",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2551,
+        "completion_tokens": 85,
+        "total_tokens": 2636
+      },
+      "latency_s": 35.976,
+      "first_visible_event_s": 35.968,
+      "completion_tokens_per_wall_second": 2.363
+    },
+    {
+      "id": "validation-096",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_articles",
+        "arguments": {
+          "reference": "SYN-PLAQUE-96"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_articles",
+        "arguments": {
+          "reference": "SYN-PLAQUE-96"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1856,
+        "completion_tokens": 33,
+        "total_tokens": 1889
+      },
+      "latency_s": 23.801,
+      "first_visible_event_s": 23.796,
+      "completion_tokens_per_wall_second": 1.386
+    },
+    {
+      "id": "validation-097",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_articles",
+        "arguments": {
+          "reference": "SYN-PLAQUE-96"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_articles",
+        "arguments": {
+          "reference": "SYN-PLAQUE-96"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1842,
+        "completion_tokens": 33,
+        "total_tokens": 1875
+      },
+      "latency_s": 23.647,
+      "first_visible_event_s": 23.642,
+      "completion_tokens_per_wall_second": 1.395
+    },
+    {
+      "id": "validation-098",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "unsupported",
+          "language": "fr"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Mica",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2652,
+        "completion_tokens": 43,
+        "total_tokens": 2695
+      },
+      "latency_s": 34.862,
+      "first_visible_event_s": 34.853,
+      "completion_tokens_per_wall_second": 1.233
+    },
+    {
+      "id": "validation-099",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "unsupported",
+          "language": "en"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Mica",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2669,
+        "completion_tokens": 43,
+        "total_tokens": 2712
+      },
+      "latency_s": 35.137,
+      "first_visible_event_s": 35.128,
+      "completion_tokens_per_wall_second": 1.224
+    },
+    {
+      "id": "validation-100",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "fr"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Agate",
+          "date_from": "2038-01-31",
+          "date_to": "2038-02-28",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2669,
+        "completion_tokens": 85,
+        "total_tokens": 2754
+      },
+      "latency_s": 37.945,
+      "first_visible_event_s": 37.936,
+      "completion_tokens_per_wall_second": 2.24
+    },
+    {
+      "id": "validation-101",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "en"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Agate",
+          "date_from": "2037-12-01",
+          "date_to": "2037-12-31",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2666,
+        "completion_tokens": 85,
+        "total_tokens": 2751
+      },
+      "latency_s": 37.878,
+      "first_visible_event_s": 37.869,
+      "completion_tokens_per_wall_second": 2.244
+    },
+    {
+      "id": "validation-102",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "unpaid": true,
+          "date_from": "2038-01-03",
+          "date_to": "2038-01-03"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "date_from": "2038-01-03",
+          "date_to": "2038-01-03",
+          "unpaid": true,
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2671,
+        "completion_tokens": 82,
+        "total_tokens": 2753
+      },
+      "latency_s": 37.778,
+      "first_visible_event_s": 37.768,
+      "completion_tokens_per_wall_second": 2.171
+    },
+    {
+      "id": "validation-103",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "unpaid": true,
+          "date_from": "2038-01-03",
+          "date_to": "2038-01-03"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "date_from": "2038-01-03",
+          "date_to": "2038-01-03",
+          "unpaid": true,
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2668,
+        "completion_tokens": 82,
+        "total_tokens": 2750
+      },
+      "latency_s": 37.85,
+      "first_visible_event_s": 37.841,
+      "completion_tokens_per_wall_second": 2.166
+    },
+    {
+      "id": "validation-234",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "unsupported",
+          "language": "en"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": false,
+      "exact_arguments_eligible": false,
+      "error": "INVALID_MODEL_OUTPUT",
+      "latency_s": 31.403,
+      "first_visible_event_s": 25.789,
+      "completion_tokens_per_wall_second": null
+    },
+    {
+      "id": "validation-235",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "clarify",
+        "arguments": {
+          "reason": "missing_details",
+          "language": "fr"
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "previous_results",
+        "arguments": {
+          "operation": "open",
+          "index": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 7223,
+        "completion_tokens": 37,
+        "total_tokens": 7260
+      },
+      "latency_s": 119.638,
+      "first_visible_event_s": 119.608,
+      "completion_tokens_per_wall_second": 0.309
+    },
+    {
+      "id": "validation-236",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "invoiced_net_ttc",
+          "period": "custom",
+          "currency": "EUR",
+          "date_from": "2028-05-16",
+          "date_to": "2028-06-18"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "invoiced_net_ttc",
+          "period": "custom",
+          "currency": "EUR",
+          "date_from": "2028-05-16",
+          "date_to": "2028-06-18"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2121,
+        "completion_tokens": 97,
+        "total_tokens": 2218
+      },
+      "latency_s": 31.484,
+      "first_visible_event_s": 31.478,
+      "completion_tokens_per_wall_second": 3.081
+    },
+    {
+      "id": "validation-237",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "invoiced_net_ttc",
+          "period": "custom",
+          "currency": "EUR",
+          "date_from": "2028-05-16",
+          "date_to": "2028-06-18"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "financial_summary",
+        "arguments": {
+          "metric": "invoiced_net_ttc",
+          "period": "custom",
+          "currency": "EUR",
+          "date_from": "2028-05-16",
+          "date_to": "2028-06-18"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2115,
+        "completion_tokens": 97,
+        "total_tokens": 2212
+      },
+      "latency_s": 31.596,
+      "first_visible_event_s": 31.59,
+      "completion_tokens_per_wall_second": 3.07
+    },
+    {
+      "id": "validation-238",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "get_record",
+        "arguments": {
+          "resource": "stock_receipt",
+          "identifier": 947
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "get_record",
+        "arguments": {
+          "resource": "stock_receipt",
+          "identifier": 947
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 40,
+        "total_tokens": 3458
+      },
+      "latency_s": 44.699,
+      "first_visible_event_s": 44.688,
+      "completion_tokens_per_wall_second": 0.895
+    },
+    {
+      "id": "validation-239",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "get_record",
+        "arguments": {
+          "resource": "stock_receipt",
+          "identifier": 947
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "get_record",
+        "arguments": {
+          "resource": "stock_receipt",
+          "identifier": 947
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3445,
+        "completion_tokens": 40,
+        "total_tokens": 3485
+      },
+      "latency_s": 45.473,
+      "first_visible_event_s": 45.462,
+      "completion_tokens_per_wall_second": 0.88
+    },
+    {
+      "id": "validation-240",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "I do not need records; describe the documented steps to create a pro forma invoice."
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "create pro forma invoice steps"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2106,
+        "completion_tokens": 28,
+        "total_tokens": 2134
+      },
+      "latency_s": 26.529,
+      "first_visible_event_s": 26.523,
+      "completion_tokens_per_wall_second": 1.055
+    },
+    {
+      "id": "validation-241",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "Je ne veux pas de liste ; décris les étapes documentées pour créer une facture pro forma."
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": false,
+      "action": {
+        "tool": "knowledge",
+        "arguments": {
+          "query": "créer une facture pro forma étapes"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2109,
+        "completion_tokens": 30,
+        "total_tokens": 2139
+      },
+      "latency_s": 26.671,
+      "first_visible_event_s": 26.665,
+      "completion_tokens_per_wall_second": 1.125
+    },
+    {
+      "id": "validation-242",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "list_payments",
+        "arguments": {
+          "date_to": "2028-02-09"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "list_payments",
+        "arguments": {
+          "date_from": "2028-02-09",
+          "date_to": "2028-09-22"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2029,
+        "completion_tokens": 55,
+        "total_tokens": 2084
+      },
+      "latency_s": 27.594,
+      "first_visible_event_s": 27.588,
+      "completion_tokens_per_wall_second": 1.993
+    },
+    {
+      "id": "validation-243",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "users"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "users",
+          "identifier": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1524,
+        "completion_tokens": 37,
+        "total_tokens": 1561
+      },
+      "latency_s": 20.03,
+      "first_visible_event_s": 20.025,
+      "completion_tokens_per_wall_second": 1.847
+    },
+    {
+      "id": "validation-244",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "users"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "navigate",
+        "arguments": {
+          "resource": "users",
+          "identifier": 1
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1531,
+        "completion_tokens": 37,
+        "total_tokens": 1568
+      },
+      "latency_s": 20.202,
+      "first_visible_event_s": 20.198,
+      "completion_tokens_per_wall_second": 1.831
+    },
+    {
+      "id": "validation-245",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "proforma",
+          "identifier": 961,
+          "operation": "update",
+          "changes": {
+            "remarque": "SYN-Controle termine",
+            "date_echeance": "2028-12-08"
+          }
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "proforma",
+          "identifier": 961,
+          "operation": "update",
+          "changes": {
+            "remarque": "SYN-Controle termine",
+            "date_echeance": "2028-12-08"
+          }
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2841,
+        "completion_tokens": 94,
+        "total_tokens": 2935
+      },
+      "latency_s": 40.854,
+      "first_visible_event_s": 40.839,
+      "completion_tokens_per_wall_second": 2.301
+    },
+    {
+      "id": "validation-246",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "proforma",
+          "identifier": 961,
+          "operation": "update",
+          "changes": {
+            "remarque": "SYN-Controle termine",
+            "date_echeance": "2028-12-08"
+          }
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "prepare_change",
+        "arguments": {
+          "resource": "proforma",
+          "identifier": 961,
+          "operation": "update",
+          "changes": {
+            "remarque": "SYN-Controle termine",
+            "date_echeance": "2028-12-08"
+          }
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2851,
+        "completion_tokens": 94,
+        "total_tokens": 2945
+      },
+      "latency_s": 40.904,
+      "first_visible_event_s": 40.894,
+      "completion_tokens_per_wall_second": 2.298
+    },
+    {
+      "id": "validation-247",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_articles",
+        "arguments": {
+          "query": "SYN-POSE",
+          "type_article": "Service",
+          "date_to": "2028-04-22"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_articles",
+        "arguments": {
+          "query": "SYN-POSE",
+          "type_article": "Service",
+          "date_to": "2028-04-22",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 74,
+        "total_tokens": 1890
+      },
+      "latency_s": 26.49,
+      "first_visible_event_s": 26.485,
+      "completion_tokens_per_wall_second": 2.793
+    },
+    {
+      "id": "validation-248",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_articles",
+        "arguments": {
+          "product_name": "SYN-LAQUE",
+          "archived": false,
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_articles",
+        "arguments": {
+          "query": "SYN-LAQUE",
+          "archived": false,
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1805,
+        "completion_tokens": 53,
+        "total_tokens": 1858
+      },
+      "latency_s": 24.681,
+      "first_visible_event_s": 24.676,
+      "completion_tokens_per_wall_second": 2.147
+    },
+    {
+      "id": "validation-249",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_clients",
+        "arguments": {
+          "related_invoice": true
+        }
+      },
+      "tool_correct": false,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "get_invoice",
+        "arguments": {
+          "invoice_id": 941
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2314,
+        "completion_tokens": 28,
+        "total_tokens": 2342
+      },
+      "latency_s": 29.156,
+      "first_visible_event_s": 29.148,
+      "completion_tokens_per_wall_second": 0.96
+    },
+    {
+      "id": "validation-250",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_clients",
+        "arguments": {
+          "related_invoice": true
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_clients",
+        "arguments": {
+          "related_invoice": true
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2317,
+        "completion_tokens": 26,
+        "total_tokens": 2343
+      },
+      "latency_s": 29.345,
+      "first_visible_event_s": 29.337,
+      "completion_tokens_per_wall_second": 0.886
+    },
+    {
+      "id": "validation-251",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "client_name": "SYN-Sauge",
+          "product_name": "SYN-CHEVILLE"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "credit_note",
+          "product_name": "SYN-Sauge",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2558,
+        "completion_tokens": 55,
+        "total_tokens": 2613
+      },
+      "latency_s": 34.568,
+      "first_visible_event_s": 34.559,
+      "completion_tokens_per_wall_second": 1.591
+    },
+    {
+      "id": "validation-252",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_documents",
+        "arguments": {
+          "resource": "delivery_note",
+          "product_name": "SYN-CHARNIERE",
+          "date_to": "2028-12-02",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2120,
+        "completion_tokens": 79,
+        "total_tokens": 2199
+      },
+      "latency_s": 30.77,
+      "first_visible_event_s": 30.763,
+      "completion_tokens_per_wall_second": 2.567
+    },
+    {
+      "id": "validation-253",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "product_name": "SYN-BOBINE",
+          "date_to": "2028-08-19",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "product_name": "SYN-BOBINE",
+          "date_to": "2028-08-19",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2202,
+        "completion_tokens": 65,
+        "total_tokens": 2267
+      },
+      "latency_s": 30.947,
+      "first_visible_event_s": 30.94,
+      "completion_tokens_per_wall_second": 2.1
+    },
+    {
+      "id": "validation-254",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_invoices",
+        "arguments": {
+          "client_name": "SYN-Cerise",
+          "date_from": "2028-06-11",
+          "unpaid": true
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_invoices",
+        "arguments": {
+          "date_from": "2028-06-11",
+          "client_name": "SYN-Cerise",
+          "unpaid": true
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2206,
+        "completion_tokens": 65,
+        "total_tokens": 2271
+      },
+      "latency_s": 31.106,
+      "first_visible_event_s": 31.098,
+      "completion_tokens_per_wall_second": 2.09
+    },
+    {
+      "id": "validation-255",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "logistics_order",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "logistics_order",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-09-22",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3978,
+        "completion_tokens": 117,
+        "total_tokens": 4095
+      },
+      "latency_s": 58.576,
+      "first_visible_event_s": 58.565,
+      "completion_tokens_per_wall_second": 1.997
+    },
+    {
+      "id": "validation-256",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_movement",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_operations",
+        "arguments": {
+          "resource": "stock_movement",
+          "product_name": "SYN-PANNEAU",
+          "location_name": "SYN-Depot-B",
+          "date_from": "2028-07-13",
+          "date_to": "2028-07-13",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 3218,
+        "completion_tokens": 116,
+        "total_tokens": 3334
+      },
+      "latency_s": 47.454,
+      "first_visible_event_s": 47.445,
+      "completion_tokens_per_wall_second": 2.444
+    },
+    {
+      "id": "validation-257",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_payments",
+        "arguments": {
+          "invoice_number": "8208/28",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_payments",
+        "arguments": {
+          "invoice_number": "8208/28",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2828,
+        "completion_tokens": 44,
+        "total_tokens": 2872
+      },
+      "latency_s": 37.675,
+      "first_visible_event_s": 37.666,
+      "completion_tokens_per_wall_second": 1.168
+    },
+    {
+      "id": "validation-258",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_payments",
+        "arguments": {
+          "client_name": "SYN-Hortensia",
+          "product_name": "SYN-MANCHON",
+          "status": "Annulé",
+          "date_from": "2028-03-07"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_payments",
+        "arguments": {
+          "client_name": "SYN-Hortensia",
+          "product_name": "SYN-MANCHON",
+          "status": "Annulé",
+          "date_from": "2028-03-07",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2825,
+        "completion_tokens": 94,
+        "total_tokens": 2919
+      },
+      "latency_s": 40.79,
+      "first_visible_event_s": 40.774,
+      "completion_tokens_per_wall_second": 2.304
+    },
+    {
+      "id": "validation-259",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_quotes",
+        "arguments": {
+          "client_name": "SYN-Dahlia",
+          "product_name": "SYN-JOINT",
+          "date_from": "2028-02-14"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2028-02-14",
+          "product_name": "SYN-JOINT",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2075,
+        "completion_tokens": 64,
+        "total_tokens": 2139
+      },
+      "latency_s": 29.023,
+      "first_visible_event_s": 29.017,
+      "completion_tokens_per_wall_second": 2.205
+    },
+    {
+      "id": "validation-260",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_quotes",
+        "arguments": {
+          "client_name": "SYN-Dahlia",
+          "product_name": "SYN-JOINT",
+          "date_from": "2028-02-14"
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": false,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_quotes",
+        "arguments": {
+          "date_from": "2028-02-14",
+          "product_name": "SYN-JOINT",
+          "limit": 10
+        }
+      },
+      "usage": {
+        "prompt_tokens": 2072,
+        "completion_tokens": 81,
+        "total_tokens": 2153
+      },
+      "latency_s": 29.735,
+      "first_visible_event_s": 29.729,
+      "completion_tokens_per_wall_second": 2.724
+    },
+    {
+      "id": "validation-261",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_users",
+        "arguments": {
+          "email": "syn.jaspe@example.invalid",
+          "is_active": true
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_users",
+        "arguments": {
+          "email": "syn.jaspe@example.invalid",
+          "is_active": true
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1543,
+        "completion_tokens": 41,
+        "total_tokens": 1584
+      },
+      "latency_s": 20.766,
+      "first_visible_event_s": 20.762,
+      "completion_tokens_per_wall_second": 1.974
+    },
+    {
+      "id": "validation-262",
+      "category": "facturation",
+      "language": "en_fr_unlabeled",
+      "expected": {
+        "tool": "search_users",
+        "arguments": {
+          "name": "SYN-Jaspe",
+          "date_from": "2028-01-15",
+          "limit": 2
+        }
+      },
+      "tool_correct": true,
+      "arguments_correct": true,
+      "structured_valid": true,
+      "exact_arguments_eligible": true,
+      "action": {
+        "tool": "search_users",
+        "arguments": {
+          "name": "SYN-Jaspe",
+          "date_from": "2028-01-15",
+          "limit": 2
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1642,
+        "completion_tokens": 61,
+        "total_tokens": 1703
+      },
+      "latency_s": 23.512,
+      "first_visible_event_s": 23.508,
+      "completion_tokens_per_wall_second": 2.594
+    }
+  ],
+  "scope": "Actual untrained synthetic Colibri primary responses. No business tools executed, private connections or production records."
+}

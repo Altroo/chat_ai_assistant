@@ -1,0 +1,42 @@
+{
+  "version": "qwen35-4b-pilot-training-v1",
+  "settings": {
+    "steps": 632,
+    "threads": 14,
+    "layers": 32,
+    "rank": 16,
+    "alpha": 32,
+    "learning_rate": 5e-05,
+    "semantic_loss_weight": 1,
+    "context_tokens": 8192,
+    "checkpoint_interval": 158,
+    "validation_interval": 0,
+    "complete_epochs": 1,
+    "seed": 17
+  },
+  "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "functional_candidates": [
+    0,
+    158,
+    316,
+    474,
+    632
+  ],
+  "cached_base_result_sha256": "31640310e4ef7b61838851ec734e6db7a7fb99acf5e2d8bd3037145ea7793dd9",
+  "primary_dataset_sha256": "ac1b70e353fc9ec632b21afd4d69de9743db24e07e865cb9f4b804d22b32ce58",
+  "functional_selection": "Unchanged primary gates; highest full-action fraction, then valid-structure fraction, then lowest step. Complete all declared candidates.",
+  "validation_loss_used_for_ranking": false,
+  "production_activation": false,
+  "next_application_training": false,
+  "scope": "Fresh official base, adapter and optimizer; no continuation from disposable probe. Four saved checkpoints must be evaluated in Colibri before acceptance.",
+  "learning_rate_reason": "Bounded initial adaptation of the new base. This is an experimental rate, not a promised improvement or continuation of the prior tiny-rate 0.8B correction.",
+  "limitations": [
+    "Backward propagation through all 32 layers is CPU expensive; longest-row time is not the average step time.",
+    "Initial and final 133-row teacher-forced validations are mandatory and are not accuracy measurements.",
+    "The run does not automatically export, evaluate, activate or train the next application."
+  ],
+  "capacity_receipts_sha256": {
+    "complete.json": "ba9e7ed85afaf62c406db320d810a12d1f4b67fc12bec427d00331881a42f033",
+    "capacity-result.json": "87f76f3f6794d059939e7f4b219cc55133f4ac4f215b1bd5b38b0f5dba8678d4"
+  }
+}
