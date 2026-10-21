@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Balanced ordinary-SFT correction running - 21 October 2026
+
+IMPLEMENTED and verified: all 128 TRAIN and 275 unchanged validation examples passed server metadata checks, including the full 512-token output reserve. Both capacity-test updates passed across all 24 layers, with 5.555 GiB reported peak RSS. The first unweighted loss exactly reproduces the prior capacity reference. All 31 verifier tests and 46 stage-control cases pass. The single reviewer checked actual preflight/capacity evidence and cleared one fresh training run.
+
+PARTIALLY IMPLEMENTED: the server started the 128-update correction at 02:18 UTC. It uses the existing experimental checkpoint 125 with 96 Facturation, 16 Management Projet and 16 Design Workflow examples, each once. Equal assistant-token weighting is the only numerical change from the earlier balanced correction. Learning rate 0.00001, seed, data, schedule, LoRA and the 14 CPU threads remain unchanged. The current logistics source hashes still match the reviewed metadata.
+
+At 02:24 UTC, the original controller and worker were live, with no optimizer updates or baseline-validation result recorded yet, during initial preparation or baseline validation. This timestamped observation does not distinguish those phases or establish completion.
+
+PLANNED: after completed-training verification and review, compare all declared Colibri candidates 0 (actual 125), 32, 64, 96 and 128 on the unchanged 133-case primary set. Applicable broader 275/438/48 and critical/retention gates remain unchanged. No accuracy improvement is predicted. The primary best remains 122/133 (91.73%), exact arguments 102/111 (91.89%) and critical cases 20/24. Zero of six applications are fully accepted. Production inference has not been replaced, and no next-application training started.
+
+[Launch, prerequisites and timestamped observation](../training/reports/facturation-uniform-correction-v1-launch.json).
+
 ## Ordinary-SFT learning test completed; application targets unmet - 21 October 2026
 
 IMPLEMENTED and verified: the server completed 32 optimizer updates over four epochs of the same eight TRAIN examples in 2,830.52 seconds (about 47 minutes), using 14 CPU threads. Equal assistant-token weighting was the only recipe change from the earlier weighted fit. Validation loss worsened from 0.020905 to 0.105029.

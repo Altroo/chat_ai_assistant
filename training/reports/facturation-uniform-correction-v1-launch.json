@@ -1,0 +1,122 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: balanced ordinary-SFT training running; no new functional result",
+  "generated_at": "2026-10-21T02:25:57.722312+00:00",
+  "model": "existing shared Qwen3.5-0.8B",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training": {
+    "planned_optimizer_updates": 128,
+    "complete_epochs": 1,
+    "training_examples": 128,
+    "exposure_by_application": {
+      "facturation": 96,
+      "management_projet": 16,
+      "design_workflow": 16
+    },
+    "cpu_threads": 14,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "semantic_loss_weight": 1.0,
+    "parent": "existing experimental checkpoint 125, not production and not the tiny diagnostic adapter",
+    "only_numerical_change_from_previous_balanced_correction": "Semantic token weight 4 to 1; equal assistant-target token weights.",
+    "context_tokens": 8192,
+    "output_reserve_tokens": 512,
+    "saved_steps": [
+      32,
+      64,
+      96,
+      128
+    ],
+    "validation_steps": [
+      0,
+      64,
+      128
+    ]
+  },
+  "prerequisites": {
+    "metadata_examples": 403,
+    "training_examples_passed": 128,
+    "validation_examples_passed": 275,
+    "checks": [
+      "schema/parser round trip",
+      "runtime prefix parity",
+      "loss boundary",
+      "semantic alignment",
+      "full output reserve"
+    ],
+    "capacity_updates": 2,
+    "capacity_passed": true,
+    "layers_with_finite_gradients_and_actual_updates": 24,
+    "capacity_peak_rss_kib": 5825020,
+    "capacity_first_unweighted_loss": 0.15251237154006958,
+    "prior_unweighted_capacity_first_loss_exactly_reproduced": true,
+    "offline_verifier_tests_passed": 31,
+    "stage_guard_cases_passed": 46,
+    "policy_mismatches_rejected": 7,
+    "single_reviewer_cleared_actual_prerequisites_and_one_training_run": true,
+    "current_logistics_source_hashes_unchanged": true
+  },
+  "observation": {
+    "observed_at": "2026-10-21T02:24:37.843843+00:00",
+    "original_controller_and_worker_live": true,
+    "optimizer_updates_recorded": 0,
+    "steps_contiguous": true,
+    "baseline_validation_reported": false,
+    "phase_detail": "Initial preparation or baseline validation; observation does not distinguish them.",
+    "cgroup_memory_bytes": 2732036096,
+    "cgroup_peak_memory_bytes": 3543412736,
+    "cgroup_swap_bytes": 0,
+    "host_available_memory_bytes": 47606923264,
+    "training_complete": false
+  },
+  "next_evaluation": {
+    "status": "PENDING completed-training verification and single-reviewer clearance",
+    "runtime": "Colibri CPU",
+    "candidate_steps": [
+      0,
+      32,
+      64,
+      96,
+      128
+    ],
+    "logical_zero_actual_source_checkpoint": 125,
+    "primary_cases_per_candidate": 133,
+    "unchanged_later_gates": [
+      275,
+      438,
+      48
+    ],
+    "scoring_labels_thresholds_and_critical_cases_unchanged": true,
+    "accuracy_prediction": null,
+    "validation_loss_is_not_accuracy": true
+  },
+  "current_primary_best": {
+    "full_actions_correct": 122,
+    "total": 133,
+    "accuracy_percent": 91.72932330827068,
+    "exact_arguments_correct": 102,
+    "arguments_total": 111,
+    "critical_correct": 20,
+    "critical_total": 24
+  },
+  "fully_accepted_applications": 0,
+  "model_accepted": false,
+  "production_activation": false,
+  "other_application_optimization_started": false,
+  "production_health_verified_at_capacity_collection": true,
+  "evidence_sha256": {
+    "binding.json": "e3abc2c360e3db3cc9ec607757e5e43c35185d0172cbf47879d8fe090554a577",
+    "admission.json": "20d733800337bbea9c3b6412568394fbb4a826527fa63a1929dc99bbc7117c4c",
+    "source-review.json": "925b08403c77661af4ee606c5e5aab3a0d635628680f4e49386ef4e93f937364",
+    "preflight-collection.json": "fc5aa7f2f91c244d8eabe0e2468c6698b664b9396bc7e41b0254a5b734cbd72b",
+    "preflight-completion-review.json": "71932146c39ce1b1dfcf20ec823fa4b866d6b0a2279fccd413faf0bb4771f7e8",
+    "capacity-collection.json": "92322278413dbc7e4d8a8a9cc789e8cfb79e29923cf194c2bee9d29cab084bbc",
+    "capacity-completion-review.json": "66c5f37af98609a5b663dbef19ca5cfd11db6e70e042712587b65b8b8abcf42d",
+    "train-collection-source-review.json": "68da28ce1608494676852299f23629d09c3f458dd6b8ef481d0f97f324e3a5fd",
+    "train-dispatch-result.json": "9f78844f369eb12d6cbc4e55ab1104abe51048bbc5a97fe10735124421ba8abe",
+    "logistics-source-freshness.json": "16682cfc1e80f57c839d9f20b1ce80ddc3f0046970c565bf8caf1abb1da3c39b",
+    "training_observation": "d325505f94c1e409f168ace7bbe8f64ad50fe04b354f0966e0e7a7cc0c0e1fae"
+  }
+}
