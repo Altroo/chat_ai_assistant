@@ -1,12 +1,12 @@
 # Model training and evaluation
 
-## Prepared coverage experiment, 21 October 2026
+## Running coverage experiment, 21 October 2026
 
 PARTIALLY IMPLEMENTED: a separate 176-row TRAIN-only correction is prepared and data-reviewed, with all original 128 rows retained and 48 EN/FR coverage additions. The experimental FP32 starting point is the prior functional selection at checkpoint 32, with all 473 saved tensors reproduced exactly on the server. This parent is not production-accepted.
 
-The proposed fresh LoRA/AdamW run uses learning rate 0.000002, one complete epoch and unchanged uniform assistant-token loss. New checkpoints are 44/88/132/176, compared with logical zero representing actual preceding checkpoint 32. Primary scoring and acceptance thresholds are unchanged; 95% remains an unachieved target. Changes to starting weights, training coverage and learning rate mean this experiment cannot isolate the effect of one factor.
+The admitted fresh LoRA/AdamW run uses learning rate 0.000002, one complete epoch and unchanged uniform assistant-token loss. New checkpoints are 44/88/132/176, compared with logical zero representing actual preceding checkpoint 32. Primary scoring and acceptance thresholds are unchanged; 95% remains an unachieved target. Changes to starting weights, training coverage and learning rate mean this experiment cannot isolate the effect of one factor.
 
-IMPLEMENTED and verified: the actual server tokenizer/parser preflight passed all 176 TRAIN and 275 validation examples with unchanged 8K context and 512-token output allowance. The original successful invocation and ten collected files were independently reviewed. The two-update capacity test is running; its result/review, numerical training and Colibri functional evaluation remain pending. The reviewed terminal verifier requires 176 raw updates and ordered validation events, with nine tests passing. No training completion or accuracy is claimed for this prepared experiment. No new model download or production activation is involved.
+IMPLEMENTED and verified: the actual server tokenizer/parser preflight passed all 176 TRAIN and 275 validation examples with unchanged 8K context and 512-token output allowance. The original successful invocation and ten collected files were independently reviewed. Both actual 7,706-token capacity updates passed across all 24 adapter layers, with peak RSS 5.96 GiB; their thirteen collected files were reviewed. The single fresh 176-update run started at 07:41 UTC after fresh resource and concurrency checks. Initial observation shows the original trainer running, with zero optimizer updates logged yet. The reviewed terminal verifier requires 176 raw updates and ordered validation events, with nine tests passing. Training completion and Colibri functional evaluation remain pending; no new accuracy is claimed. No new model download or production activation is involved.
 
 ## Latest ordinary-SFT outcome - 21 October 2026
 

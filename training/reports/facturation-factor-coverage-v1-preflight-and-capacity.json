@@ -1,0 +1,93 @@
+{
+  "scope": "ACTUAL PREPARATION AND LAUNCH; NOT MODEL ACCURACY",
+  "status": "TRAINING PROCESS RUNNING; INITIAL OPTIMIZER UPDATES PENDING",
+  "version": "facturation-factor-coverage-correction-v1",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "model": "Qwen3.5-0.8B",
+  "runtime": "Colibri CPU",
+  "new_model_download": false,
+  "local_training": false,
+  "dataset": {
+    "count": 176,
+    "applications": {
+      "facturation": 144,
+      "management_projet": 16,
+      "design_workflow": 16
+    },
+    "original128_preserved_byte_for_byte": true,
+    "train_sha256": "1fc45ecdca5b89b78906a1c29fc5cf90a9e01580de6b6cb06fcfa317c969be4b",
+    "evaluation_targets_added_to_training": false,
+    "exclusion_input_rows_checked": 894
+  },
+  "preflight": {
+    "train_passed": 176,
+    "validation_passed": 275,
+    "maximum_tokens": [
+      7706,
+      7496
+    ],
+    "context_tokens": 8192,
+    "maximum_output_tokens": 512,
+    "all_template_parser_loss_and_budget_checks_passed": true,
+    "independently_reviewed_saved_files": 10,
+    "collection_sha256": "1e81fd5a15129883c3c16345513a386077841c89aa142340ed16dd6cca4c7c1a"
+  },
+  "capacity": {
+    "complete_updates": 2,
+    "sequence_tokens": 7706,
+    "all24_adapter_layers_updated": true,
+    "optimizer_state_entries": 192,
+    "peak_rss_kib": 6251960,
+    "update_seconds": [
+      183.2132527064532,
+      195.2374164275825
+    ],
+    "independently_reviewed_saved_files": 13,
+    "collection_sha256": "6c791b62a467d270e7321ebe540e2a1e906dd85ba1eea8355543aa4bd72083cf"
+  },
+  "training": {
+    "started_utc": "2026-10-21T07:41:29Z",
+    "observed_utc": "2026-10-21T07:41:51.622218Z",
+    "planned_updates": 176,
+    "optimizer_updates_observed": 0,
+    "initial_validation_logged": false,
+    "fresh_adapter_optimizer": true,
+    "already_merged_adapter_reapplied": false,
+    "learning_rate": 2e-06,
+    "assistant_token_weight": 1,
+    "threads": 14,
+    "memory_limit_gib": 40,
+    "host_memory_reserve_percent": 10,
+    "checkpoint_steps": [
+      44,
+      88,
+      132,
+      176
+    ],
+    "validation_steps": [
+      0,
+      88,
+      176
+    ],
+    "training_complete": false,
+    "actual_command_and_original_process_verified": true
+  },
+  "tests": {
+    "portable_preparation_tests_passed": 40,
+    "terminal_verifier_tests_passed": 9,
+    "offline_stage_guard_cases_passed": 54
+  },
+  "best_existing_primary_action_score": {
+    "matches": 122,
+    "total": 133,
+    "percent": 91.73
+  },
+  "new_functional_accuracy": null,
+  "fully_accepted_applications": 0,
+  "production_healthy_unchanged": true,
+  "model_accepted": false,
+  "production_activation": false
+}

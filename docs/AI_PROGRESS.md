@@ -1,16 +1,18 @@
 # Chat AI Assistant progress
 
-## Facturation coverage correction prepared, 21 October 2026
+## Facturation coverage correction running, 21 October 2026
 
-PARTIALLY IMPLEMENTED: prepared a separate 176-example EN/FR correction after the completed ordinary-SFT run failed its unchanged primary gates. It preserves all 128 prior TRAIN rows byte for byte and adds 16 quoted/unquoted complete-text examples, 12 existing navigation examples and 20 existing date-boundary examples. Application exposure is 144 Facturation, 16 Management Projet and 16 Design Workflow. No evaluation answers were added to TRAIN; 894 evaluation-input envelopes were checked for exclusions.
+PARTIALLY IMPLEMENTED: launched a separate 176-example EN/FR correction after the completed ordinary-SFT run failed its unchanged primary gates. It preserves all 128 prior TRAIN rows byte for byte and adds 16 quoted/unquoted complete-text examples, 12 existing navigation examples and 20 existing date-boundary examples. Application exposure is 144 Facturation, 16 Management Projet and 16 Design Workflow. No evaluation answers were added to TRAIN; 894 evaluation-input envelopes were checked for exclusions.
 
 The single reviewer independently reproduced the actual prepared bytes, coverage, schemas, unchanged context and validation. The server also reproduced all 473 persisted FP32 tensors exactly from the preceding merged parent plus its checkpoint-32 adapter. The reviewer checked the saved proof and transport, without independently rerunning the server calculation. The next run must create a fresh adapter and optimizer and must not apply that adapter a second time.
 
-Prepared numerical controls use one 176-update epoch, learning rate 0.000002, equal assistant-token weights, checkpoints 44/88/132/176 and teacher-forced validation at 0/88/176. Functional selection compares those four candidates with actual preceding checkpoint 32 as logical zero. Frozen scoring, the 133-case primary gates, original checkpoint-600 retention reference and applicable 275/438/48 broader gates remain unchanged.
+The admitted numerical recipe uses one 176-update epoch, learning rate 0.000002, equal assistant-token weights, checkpoints 44/88/132/176 and teacher-forced validation at 0/88/176. Functional selection compares those four candidates with actual preceding checkpoint 32 as logical zero. Frozen scoring, the 133-case primary gates, original checkpoint-600 retention reference and applicable 275/438/48 broader gates remain unchanged.
 
 IMPLEMENTED and verified: all 176 TRAIN and 275 validation examples passed the actual server tokenizer/parser preflight, including Colibri prefix parity, supervised-token boundaries and the 512-token output allowance. Maximum lengths were 7,706 and 7,496 tokens. The single reviewer checked the original successful invocation, raw transport and all ten collected files.
 
-PARTIALLY IMPLEMENTED: the one two-update CPU capacity test is running. Numerical training remains pending its actual result and review. The new terminal verifier and its nine tests have been reviewed; it binds selector code before parsing and requires raw baseline, optimizer updates and validation events in execution order. No new model accuracy or activation is established. The best verified primary full-action score remains 122/133 (91.73%); zero of six applications are fully accepted.
+IMPLEMENTED and verified: both 7,706-token capacity updates passed with finite gradients and changed weights in all 24 adapter layers. Peak RSS was 6,251,960 KiB (5.96 GiB); update times were 183.21 and 195.24 seconds. The original successful invocation and thirteen collected files were reviewed. Fresh resource and concurrency checks passed before launch.
+
+PARTIALLY IMPLEMENTED: the one fresh 176-update run started at 07:41 UTC on the server. The first verified observation at 07:41:51 UTC shows the original controller and correct trainer command running, with zero optimizer updates observed and initial validation not yet logged. The reviewed terminal verifier requires raw baseline, optimizer updates and validation events in execution order. Functional Colibri evaluation remains pending, so no new model accuracy or activation is established. The best verified primary full-action score remains 122/133 (91.73%); zero of six applications are fully accepted. [Preflight, capacity and initial launch evidence](../training/reports/facturation-factor-coverage-v1-preflight-and-capacity.json).
 
 ## Balanced correction: comparison complete, model rejected - 21 October 2026
 
