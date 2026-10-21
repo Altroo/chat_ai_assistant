@@ -1,5 +1,17 @@
 # Chat AI Assistant progress
 
+## Balanced correction: initial validation complete - 21 October 2026
+
+IMPLEMENTED and verified: the original server invocation completed its unchanged 275-example initial teacher-forced validation. Micro loss 0.022434 and macro loss 0.022471 exactly reproduce the previous balanced run's unweighted reference, including all three application values. Parent artifacts and validation bytes match. This confirms the expected starting point and does not establish model accuracy.
+
+PARTIALLY IMPLEMENTED: at 02:44 UTC the original controller and worker were live, with the first two of 128 scheduled optimizer updates complete. Both losses are finite and updates are contiguous. The recipe remains unchanged: equal assistant-token weighting, one balanced epoch and 14 CPU threads.
+
+The single reviewer cleared the prepared five-candidate Colibri comparison, which passes 26 offline control tests. A prospective read-only artifact/cleanup collector is also reviewed. Completed-training verification and actual-evidence review remain required before comparison execution. Every declared candidate and applicable primary, broader, critical and retention gate remains mandatory.
+
+The primary best is still 122/133 (91.73%), with zero of six applications fully accepted. Production inference is unchanged, and no next-application optimization has started.
+
+[Initial validation and actual update evidence](../training/reports/facturation-uniform-correction-v1-initial-validation.json).
+
 ## Balanced ordinary-SFT correction running - 21 October 2026
 
 IMPLEMENTED and verified: all 128 TRAIN and 275 unchanged validation examples passed server metadata checks, including the full 512-token output reserve. Both capacity-test updates passed across all 24 layers, with 5.555 GiB reported peak RSS. The first unweighted loss exactly reproduces the prior capacity reference. All 31 verifier tests and 46 stage-control cases pass. The single reviewer checked actual preflight/capacity evidence and cleared one fresh training run.

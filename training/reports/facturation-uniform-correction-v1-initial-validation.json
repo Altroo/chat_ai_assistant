@@ -1,0 +1,92 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: initial validation complete and optimization active",
+  "generated_at": "2026-10-21T02:45:40.182672+00:00",
+  "model": "existing shared Qwen3.5-0.8B",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "observed_at": "2026-10-21T02:44:40.224585+00:00",
+  "training": {
+    "scheduled_updates": 128,
+    "observed_updates": 2,
+    "steps_contiguous": true,
+    "original_controller_and_worker_live": true,
+    "finite_updates_verified": 2,
+    "cpu_threads": 14,
+    "semantic_loss_weight": 1.0,
+    "baseline_validation": {
+      "micro": 0.02243413329971066,
+      "by_application": {
+        "facturation": 0.02090526781325695,
+        "management_projet": 0.02946950520733702,
+        "design_workflow": 0.01703694737632766
+      },
+      "macro": 0.022470573465640544,
+      "unweighted": {
+        "micro": 0.02243413329971066,
+        "by_application": {
+          "facturation": 0.02090526781325695,
+          "management_projet": 0.02946950520733702,
+          "design_workflow": 0.01703694737632766
+        },
+        "macro": 0.022470573465640544
+      }
+    },
+    "baseline_exactly_matches_previous_unweighted_reference": true,
+    "same_experimental_parent_and_validation_bytes_verified": true,
+    "latest_steps": [
+      {
+        "step": 1,
+        "loss": 0.14988157153129578,
+        "seconds": 19.484
+      },
+      {
+        "step": 2,
+        "loss": 1.484037420595996e-05,
+        "seconds": 17.596
+      }
+    ],
+    "complete": false
+  },
+  "evaluation_preparation": {
+    "all_declared_colibri_candidates": [
+      0,
+      32,
+      64,
+      96,
+      128
+    ],
+    "offline_control_tests_passed": 26,
+    "single_reviewer_cleared_preparation": true,
+    "completed_training_review_required": true,
+    "comparison_execution_admitted": false,
+    "unchanged_primary_cases": 133,
+    "unchanged_applicable_broader_gates": [
+      275,
+      438,
+      48
+    ]
+  },
+  "current_primary_best": {
+    "full_actions_correct": 122,
+    "total": 133,
+    "accuracy_percent": 91.72932330827068,
+    "exact_arguments_correct": 102,
+    "arguments_total": 111,
+    "critical_correct": 20,
+    "critical_total": 24
+  },
+  "fully_accepted_applications": 0,
+  "model_accuracy_established_by_this_observation": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "evidence_sha256": {
+    "binding": "e3abc2c360e3db3cc9ec607757e5e43c35185d0172cbf47879d8fe090554a577",
+    "observation": "15aa5716e8e9b33e47fc32f0a6e4c41fae48bd929332ffb2b7b8ef112251cf4d",
+    "reproducibility": "8cd5e30e63da466372f69a396345ac4fa5119c9fc7ed5f98dfa349da78ff9b34",
+    "reference_training_report": "ddc5b46c3a7d5bef2be38bd641cd2dba72a80d775e494470484659d8839d4a2f",
+    "comparison_preparation_review": "52cbfa82487cabff4c54f7b229c4d1bfa5c305305236d69d4e8ecc147840dd0e",
+    "provenance_preparation_review": "1f0fc1fef410c65f733b1fd38da6c6247fe71dacac8f89410a1579c098b8fae7"
+  }
+}
