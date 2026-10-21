@@ -1,6 +1,24 @@
 # Shared model accuracy work
 
-## Latest verified comparison - 21 October 2026
+## Latest verified comparison: coverage correction - 21 October 2026
+
+The 176-update server training and all five declared Colibri primary candidates completed. Four checkpoints produced 532 fresh responses across 12 shards; logical zero reuses 133 reviewed actual checkpoint 32 responses. The original coordinator exited successfully. Fresh artifact, adapter, export, stopped-worker and free-port checks passed, and the single reviewer reproduced the completed audit and all 544 evidence hashes. Production inference remains unchanged.
+
+| Logical candidate | Correct actions / 133 | Exact arguments / 111 | Critical / 24 |
+| --- | --- | --- | --- |
+| 0, cached actual checkpoint 32 | 122 (91.73%) | 100 (90.09%) | 22 |
+| 44 | 121 (90.98%) | 99 (89.19%) | 21 |
+| 88 | 119 (89.47%) | 97 (87.39%) | 22 |
+| 132 | 123 (92.48%) | 101 (90.99%) | 21 |
+| 176 | 120 (90.23%) | 98 (88.29%) | 22 |
+
+PARTIALLY IMPLEMENTED: no candidate passes the unchanged primary gates. Diagnostic selection is checkpoint 132: 123/133 full actions (92.48%), 101/111 exact arguments (90.99%), 132/133 correct tools, 133/133 parsed structures, 16/16 clarifications and 21/24 critical cases. Relative to the cached parent, actions and arguments improve by one case but critical cases decline by one. The final checkpoint 176 scores lower at 120/133 actions. Training loss selected logical zero separately and did not rank functional candidates.
+
+The broader 275/438/48 phases were not executed after necessary primary rejection. No new Management Projet, Design Workflow, per-language or native-security acceptance score follows this run. These correlated development cases are not fresh blind certification. Zero of six applications are fully accepted; no new model activation or next-application training occurred.
+
+[Completed comparison and evidence](../training/reports/facturation-factor-coverage-v1-functional-comparison.json).
+
+## Previous verified ordinary-SFT comparison - 21 October 2026
 
 PARTIALLY IMPLEMENTED: the ordinary-SFT correction completed training and all five logical primary candidates, but no candidate passed. Four checkpoints ran 532 fresh Colibri requests; the existing parent 125 supplied 133 explicitly cached cases.
 

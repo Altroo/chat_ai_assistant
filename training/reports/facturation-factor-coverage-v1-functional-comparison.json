@@ -1,0 +1,250 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: training and primary comparison complete; model rejected",
+  "generated_at": "2026-10-21T11:22:27.863941+00:00",
+  "application_focus": "facturation",
+  "model": "existing shared Qwen3.5-0.8B",
+  "runtime": "Colibri CPU",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training": {
+    "updates_completed": 176,
+    "complete": true,
+    "restarted_during_comparison_or_collection": false,
+    "cpu_threads": 14,
+    "duration_seconds": 7534.061521500349,
+    "peak_rss_gib": 6.872246,
+    "learning_rate": 2e-06,
+    "semantic_loss_weight": 1,
+    "complete_epochs": 1
+  },
+  "comparison": {
+    "terminal_success": true,
+    "all_five_logical_candidates_completed": true,
+    "fresh_candidates": [
+      44,
+      88,
+      132,
+      176
+    ],
+    "cached_baseline_actual_checkpoint": 32,
+    "fresh_cases": 532,
+    "cached_baseline_cases": 133,
+    "raw_shards": 12,
+    "start_utc": "2026-10-21T10:03:02+00:00",
+    "finish_utc": "2026-10-21T11:11:24+00:00",
+    "elapsed_seconds_including_exports_and_checks": 4102.0,
+    "functional_selected_step": 132,
+    "loss_selected_step": 0,
+    "selected_by_validation_loss": false,
+    "eligible_primary_candidates": [],
+    "primary_gate_passed": false,
+    "labels_scorer_and_gates_changed": false,
+    "context_tokens": 8192,
+    "maximum_output_tokens": 512,
+    "thinking": false
+  },
+  "candidates": [
+    {
+      "logical_step": 0,
+      "actual_parent_checkpoint": 32,
+      "fresh_inference_cases": 0,
+      "full_actions_correct": 122,
+      "cases": 133,
+      "full_action_percent": 91.73,
+      "exact_arguments_correct": 100,
+      "arguments_total": 111,
+      "exact_argument_percent": 90.09,
+      "tools_correct": 133,
+      "structured_valid": 133,
+      "critical_correct": 22,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false
+    },
+    {
+      "logical_step": 44,
+      "actual_parent_checkpoint": null,
+      "fresh_inference_cases": 133,
+      "full_actions_correct": 121,
+      "cases": 133,
+      "full_action_percent": 90.98,
+      "exact_arguments_correct": 99,
+      "arguments_total": 111,
+      "exact_argument_percent": 89.19,
+      "tools_correct": 132,
+      "structured_valid": 133,
+      "critical_correct": 21,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false,
+      "measured_request_performance": {
+        "concurrent_workers": 3,
+        "threads_per_worker": 4,
+        "mean_latency_seconds": 19.698,
+        "p95_latency_seconds": 62.284,
+        "mean_first_visible_event_seconds": 19.687,
+        "mean_completion_tokens_per_wall_second": 3.456,
+        "interpretation": "Request wall time includes prompt processing and serving overhead; not isolated decoder speed."
+      }
+    },
+    {
+      "logical_step": 88,
+      "actual_parent_checkpoint": null,
+      "fresh_inference_cases": 133,
+      "full_actions_correct": 119,
+      "cases": 133,
+      "full_action_percent": 89.47,
+      "exact_arguments_correct": 97,
+      "arguments_total": 111,
+      "exact_argument_percent": 87.39,
+      "tools_correct": 132,
+      "structured_valid": 133,
+      "critical_correct": 22,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false,
+      "measured_request_performance": {
+        "concurrent_workers": 3,
+        "threads_per_worker": 4,
+        "mean_latency_seconds": 19.615,
+        "p95_latency_seconds": 63.442,
+        "mean_first_visible_event_seconds": 19.604,
+        "mean_completion_tokens_per_wall_second": 3.476,
+        "interpretation": "Request wall time includes prompt processing and serving overhead; not isolated decoder speed."
+      }
+    },
+    {
+      "logical_step": 132,
+      "actual_parent_checkpoint": null,
+      "fresh_inference_cases": 133,
+      "full_actions_correct": 123,
+      "cases": 133,
+      "full_action_percent": 92.48,
+      "exact_arguments_correct": 101,
+      "arguments_total": 111,
+      "exact_argument_percent": 90.99,
+      "tools_correct": 132,
+      "structured_valid": 133,
+      "critical_correct": 21,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false,
+      "measured_request_performance": {
+        "concurrent_workers": 3,
+        "threads_per_worker": 4,
+        "mean_latency_seconds": 19.577,
+        "p95_latency_seconds": 61.952,
+        "mean_first_visible_event_seconds": 19.566,
+        "mean_completion_tokens_per_wall_second": 3.491,
+        "interpretation": "Request wall time includes prompt processing and serving overhead; not isolated decoder speed."
+      }
+    },
+    {
+      "logical_step": 176,
+      "actual_parent_checkpoint": null,
+      "fresh_inference_cases": 133,
+      "full_actions_correct": 120,
+      "cases": 133,
+      "full_action_percent": 90.23,
+      "exact_arguments_correct": 98,
+      "arguments_total": 111,
+      "exact_argument_percent": 88.29,
+      "tools_correct": 132,
+      "structured_valid": 133,
+      "critical_correct": 22,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false,
+      "measured_request_performance": {
+        "concurrent_workers": 3,
+        "threads_per_worker": 4,
+        "mean_latency_seconds": 19.63,
+        "p95_latency_seconds": 58.344,
+        "mean_first_visible_event_seconds": 19.619,
+        "mean_completion_tokens_per_wall_second": 3.471,
+        "interpretation": "Request wall time includes prompt processing and serving overhead; not isolated decoder speed."
+      }
+    }
+  ],
+  "selected_vs_cached_parent": {
+    "full_action_change": 1,
+    "exact_argument_change": 1,
+    "critical_case_change": -1,
+    "interpretation": "Diagnostic action ranking improves by one case while critical performance declines; this is not acceptance."
+  },
+  "broader_tests": {
+    "executed": false,
+    "reason": "Every candidate failed necessary primary gates.",
+    "unexecuted_cases": {
+      "shared_development": 275,
+      "regression": 438,
+      "additional_controls": 48
+    },
+    "new_management_projet_or_design_workflow_accuracy_established": false,
+    "native_backend_security_verified_by_this_model_comparison": false
+  },
+  "verification": {
+    "audit_file_count": 544,
+    "raw_shards_reproduced": true,
+    "all_fresh_artifacts_and_adapters_rechecked": true,
+    "historical_before_after_worker_proofs_verified": true,
+    "temporary_workers_stopped": true,
+    "evaluation_ports_free": true,
+    "production_healthy_and_unchanged": true,
+    "actual_completed_evidence_independently_reviewed": true,
+    "first_readonly_collection_port_check_failed": true,
+    "unchanged_readonly_collector_retry_succeeded": true,
+    "transient_port_refusal_cause_proven": false,
+    "numerical_restarts": 0
+  },
+  "two_second_resource_observation": {
+    "during_candidate": 176,
+    "host_cpu_percent": 76.6,
+    "logical_cpus": 16,
+    "memory_available_gib": 40.494,
+    "is_peak_or_full_run_resource_benchmark": false
+  },
+  "contract_diagnosis": {
+    "article_search": "Three strict-target misses at selected checkpoint 132 use query instead of product_name with otherwise identical arguments. Source review finds identical article filtering; paired native fixture verification remains pending. Scores remain unchanged.",
+    "alias_equivalence_scope": "Article search only; do not generalize to payment search.",
+    "genuine_selected_failures": [
+      "One authorized payment search becomes an unsupported clarification.",
+      "Two date-bound variants use the preceding day.",
+      "Three multi-field change proposals alter or incompletely copy requested text.",
+      "One unpaid-invoice request omits the unpaid filter."
+    ],
+    "critical_navigation_note": "Selected132 fixes the two earlier user-list navigation misses. Detail and collection routes remain distinct.",
+    "training_coverage": "The small TRAIN set has two article examples, both English, with mixed query/product_name conventions. No model causation is established.",
+    "model_causation_proven": false,
+    "training_or_evaluation_labels_changed": false
+  },
+  "limitations": [
+    "These correlated development cases informed training analysis and are not fresh blind certification.",
+    "Parsed structure does not establish valid business arguments or native authorization.",
+    "No business tools execute in this model comparison; native security and integration testing remain separate.",
+    "No new broad or per-language acceptance score is established because primary gates failed.",
+    "Request throughput is measured under three concurrent workers and includes prompt processing."
+  ],
+  "fully_accepted_applications": 0,
+  "model_accepted": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "next_step": "Verify narrowly identified backend argument equivalence with controlled synthetic fixtures, then prepare and review a separately versioned TRAIN-only correction for genuine argument errors. Preserve current scores, labels and acceptance gates; require fresh server admission before training.",
+  "evidence_sha256": {
+    "completion_audit": "b568fc4db1e88711847852b2163e0a13d4c7693f92ad0976f653b985d8b35692",
+    "post_completion_provenance": "5dee5574b5cb8fc8ceb96cac069265116b3768153f20497b5a66dc19e9339834",
+    "successful_readonly_transport": "08559e06fb3294e9237d7e45e2aa0935a5b0c4157c3a5d4103d927f56d868654",
+    "terminal_observation": "ae804244eaa087ec7b02cc4c2ec4d766d70fe03d4ac6ff5a1920951d208dbf3d",
+    "reviewed_controls": "6edc55786ea782eb812d1bbbacd8df4e6760a32a3bdfe57ec32704d0f4526174",
+    "completed_evidence_review": "5045d20b3381f8937cf3ff9e9eb6c49d0320a131c7a9d9db026e0ab902d96258",
+    "training_completion_collection": "707ce2160339063d2e30fa088955ef1163613e4405c2f574aa972d198ebdca1c",
+    "two_second_resource_observation": "49c347d492fe78a4648cb1d3b61830034650ddf995ef37f3885a71c34a19ea56"
+  }
+}
