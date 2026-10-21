@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Replacement pilot running - 21 October 2026, 16:17 UTC
+
+PARTIALLY IMPLEMENTED: the original Qwen3.5-4B server trainer is running and in initial preparation/validation. At the verified 16:17 UTC observation, zero optimizer updates are logged; 632 are scheduled. The fresh rank-16 adapter uses all 32 text layers, 14 CPU threads, BF16, SDPA, checkpointing, uniform assistant-only loss and learning rate 0.00005. One epoch covers every selected TRAIN row once; checkpoints are 158/316/474/632. Initial and final validation use the unchanged 133 cases.
+
+IMPLEMENTED and verified: both longest-row capacity updates passed, taking 625.123 and 674.269 seconds with 14.824 GiB peak RSS. All 32 layers had finite gradients and changed adapter weights. The disposable probe saved no adapter. All 765 pilot metadata checks, 14 source-preparation tests and 47 launch-guard fixtures pass. The single reviewer cleared the exact numerical recipe, sources, data and actual capacity evidence. Fresh memory, idle-job, artifact and protected-service checks passed before the original trainer started.
+
+Training completion, checkpoint export and all declared Colibri comparisons remain pending. The only measured 4B primary full-action score remains its untrained baseline, 77/133 (57.89%); no fine-tuned score or 95% guarantee exists. Zero of six apps are accepted. KAT coding, translation, grammar correction and live assistant remain unchanged. Reviewed preparation commit 4446a0c is verified on all three remotes and all 15 deployed source files.
+
+[Actual capacity and launch evidence](../training/reports/qwen35-4b-pilot-launch-v1.json).
+
 ## Replacement baseline complete and training preparation - 21 October 2026
 
 IMPLEMENTED and verified: the untrained Qwen3.5-4B Colibri baseline completed all 133 frozen Facturation primary cases. Correct full actions are 77/133 (57.89%), correct tools 114/133 (85.71%), eligible exact arguments 71/111 (63.96%) and valid structures 125/133 (93.98%). Clarification actions are 0/16 and critical actions 6/24. Every acceptance gate fails. Labels, parser, provider and scoring remain unchanged. The isolated worker stopped cleanly and its port is free.

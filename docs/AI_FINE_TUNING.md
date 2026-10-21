@@ -1,5 +1,15 @@
 # Model training and evaluation
 
+## First replacement-model epoch launched - 21 October 2026
+
+PARTIALLY IMPLEMENTED: the original server trainer is running initial preparation/validation at the 16:17 UTC observation, with zero optimizer updates logged out of 632 scheduled. This is a fresh adapter and optimizer on the official Qwen3.5-4B base. The reviewed recipe uses all 32 text layers, rank 16/alpha 32, 14 threads, BF16 SDPA with checkpointing, uniform assistant-only cross entropy, learning rate 0.00005 and one complete epoch of the 632 copied TRAIN rows. Checkpoints 158/316/474/632 and the actual cached untrained baseline must all be compared through Colibri. Initial/final teacher-forced validation remains diagnostic.
+
+Both actual 7,745-token capacity updates passed with finite gradients and changed weights across all 32 layers: 625.123/674.269 seconds, 14.824 GiB peak RSS. The single reviewer verified completion evidence and cleared the launch controls after all 47 guard fixtures and 765 pilot preflight cases passed. No probe adapter was retained, and training starts from the unmodified official base.
+
+There is no completed epoch or fine-tuned accuracy yet. Longest-row timings are not an epoch estimate. Learning effectiveness remains experimental; no model activation or next-application training is part of this run.
+
+[Verified launch, recipe and limitations](../training/reports/qwen35-4b-pilot-launch-v1.json).
+
 ## 4B baseline and reproducible training inputs - 21 October 2026
 
 The new Qwen3.5-4B Colibri baseline is complete: 77/133 full actions (57.89%), 71/111 eligible exact arguments (63.96%), 114/133 correct tools (85.71%) and 125/133 valid structures (93.98%). Clarifications are 0/16 and critical actions 6/24. The untrained model fails acceptance; no application fine-tuning result is available.

@@ -1,5 +1,14 @@
 # Shared model training queue
 
+## Active replacement epoch - 21 October 2026, 16:17 UTC
+
+1. IMPLEMENTED: official 4B download/conversion, 133-case baseline, corrected-corpus and pilot server preflights, two successful CPU capacity updates and one-reviewer numerical admission.
+2. IN PROGRESS: one fresh 632-update Facturation epoch. Initial preparation/validation is running; zero optimizer updates are logged at this snapshot. Checkpoints 158/316/474/632 are scheduled.
+3. PENDING: verify completed training and all saved adapters; compare logical zero and every checkpoint through Colibri using unchanged primary, critical, clarification and applicable broader/retention gates.
+4. PLANNED: later apps sequentially after Facturation acceptance, using the same shared model.
+
+Zero of six apps are accepted. The 4B untrained primary baseline remains 57.89%; no fine-tuned score is available. KAT coding, translation, grammar correction and live assistant remain unchanged. Historical running snapshots below are superseded by this entry. [Launch evidence](../training/reports/qwen35-4b-pilot-launch-v1.json).
+
 ## Current replacement queue - 21 October 2026
 
 1. IMPLEMENTED: download and Colibri conversion of Qwen3.5-4B; complete all 133 Facturation baseline cases. Full actions are 57.89% before fine-tuning; no acceptance.

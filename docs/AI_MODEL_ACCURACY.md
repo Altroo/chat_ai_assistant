@@ -1,5 +1,13 @@
 # Shared model accuracy work
 
+## Training launched; accuracy unchanged - 21 October 2026
+
+The first Qwen3.5-4B Facturation epoch is running. At the verified 16:17 UTC snapshot it is in initial preparation/validation, with zero optimizer updates logged and 632 scheduled. Both CPU capacity updates and the reviewed launch controls passed. Losses and successful parameter updates are not functional accuracy percentages.
+
+The only completed 4B primary measurement remains the untrained baseline below: 77/133 full actions (57.89%) and 71/111 eligible exact arguments (63.96%). No fine-tuned score exists. All four saved checkpoints and logical zero require the unchanged Colibri comparison before selection. Zero of six apps are accepted; production inference remains unchanged.
+
+[Training launch and measurement boundary](../training/reports/qwen35-4b-pilot-launch-v1.json).
+
 ## Completed untrained 4B baseline - 21 October 2026
 
 | Facturation primary metric | Passed | Accuracy |

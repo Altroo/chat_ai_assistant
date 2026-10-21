@@ -1,0 +1,122 @@
+{
+  "version": "qwen35-4b-pilot-launch-v1",
+  "observed_at": "2026-10-21T16:17:21.811540+00:00",
+  "status": "TRAINER RUNNING; INITIAL PREPARATION/VALIDATION; ZERO OPTIMIZER UPDATES LOGGED",
+  "model_id": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "download_and_colibri_conversion_complete": true,
+  "inference_runtime": "Colibri CPU",
+  "capacity": {
+    "completed": true,
+    "disposable_updates": 2,
+    "layers_verified": 32,
+    "step_seconds": [
+      625.1229934468865,
+      674.2692866865546
+    ],
+    "peak_rss_gib": 14.824,
+    "finite_gradients_and_changed_weights": true,
+    "adapter_saved": false,
+    "original_terminal_reviewed": true,
+    "protected_services_unchanged": true
+  },
+  "preflight": {
+    "corrected_corpus_train": 1503,
+    "corrected_corpus_validation": 133,
+    "corrected_corpus_passed": 1636,
+    "pilot_train": 632,
+    "pilot_validation": 133,
+    "pilot_passed": 765,
+    "source_preparation_tests_passed": 14,
+    "launch_guard_fixtures_passed": 47
+  },
+  "training": {
+    "pipeline_started": true,
+    "optimizer_updates_logged": 0,
+    "scheduled_updates": 632,
+    "complete_epochs": 1,
+    "fresh_official_base": true,
+    "fresh_adapter_and_optimizer": true,
+    "layers": 32,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "learning_rate": 5e-05,
+    "threads": 14,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "gradient_checkpointing": "nonreentrant",
+    "seed": 17,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 1,
+    "loss": "Uniform assistant-only cross entropy; prompt tokens masked",
+    "thinking": false,
+    "max_context_tokens": 8192,
+    "initial_validation_cases": 133,
+    "final_validation_cases": 133,
+    "checkpoint_steps": [
+      158,
+      316,
+      474,
+      632
+    ],
+    "teacher_forced_loss_is_accuracy": false,
+    "train_sha256": "fd53da92503e76ef38c77c09c94ab835b8da14cc7f79809b0a5eb79c3ca73537",
+    "validation_sha256": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478",
+    "pilot_manifest_sha256": "f55a5ec599ec8330915f8f4c64461781dfefc3bf7fb43f81ac8d7643b9e99656",
+    "baseline_validation_completion_logged": false
+  },
+  "launch_review": {
+    "review": "No issues",
+    "one_reviewer": true,
+    "controller_sha256": "3c3b78f94202f89a10c1f2afffe615c70b2206c47fe7cbd4f2d19eb855653c70",
+    "installer_sha256": "10038184e26ba7770c4ed2280691ba9bcff1de639095fa2d67f94a92a6161838",
+    "input_pins_sha256": "ee479f0ba71c0e81efa29ff2b56b58a96d0fab6cbcdc49f7573102308fc5ebbb",
+    "policy_sha256": "5e53d0d7bc1b76120478b592b8c573e447ccf448c5ddfa86039b88114af9ebda"
+  },
+  "resource_snapshot": {
+    "trainer_rss_gib": 5.138,
+    "trainer_cpu_percent_1s": 1269.9,
+    "host_available_gib": 46.85,
+    "snapshot_is_peak_or_average": false,
+    "memory_ceiling_bytes": 35748052992,
+    "spare_memory_floor_fraction": 0.1
+  },
+  "prospective_comparison": {
+    "candidates": [
+      0,
+      158,
+      316,
+      474,
+      632
+    ],
+    "base_result": "Actual completed untrained 133-case Colibri baseline reused as logical zero",
+    "required": "All candidates, unchanged primary/critical/clarification and applicable broader/retention gates",
+    "validation_loss_used_for_ranking": false,
+    "execution_pending": true
+  },
+  "last_measured_4b_primary": {
+    "state": "BEFORE APPLICATION FINE-TUNING",
+    "full_actions_passed": 77,
+    "full_actions_count": 133,
+    "full_actions_percent": 57.89,
+    "eligible_arguments_passed": 71,
+    "eligible_arguments_count": 111,
+    "eligible_arguments_percent": 63.96
+  },
+  "protected_services_unchanged": true,
+  "new_model_fine_tuned_accuracy_available": false,
+  "model_accepted": false,
+  "apps_accepted": 0,
+  "apps_total": 6,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "limitations": [
+    "This snapshot establishes a running trainer, not completed optimizer updates or training.",
+    "Capacity updates are disposable; their losses are not accuracy percentages.",
+    "The bounded epoch and learning rate are experiments; 95% accuracy or a completion date is not guaranteed.",
+    "Longest-row capacity time is not an average-step or complete-epoch estimate.",
+    "All saved checkpoints require separate completion, export and Colibri evaluation review.",
+    "KAT coding, translation, grammar correction and live assistant remain unchanged.",
+    "No explicit validation-start event is logged; the current stage is reported conservatively as initial preparation/validation."
+  ]
+}
