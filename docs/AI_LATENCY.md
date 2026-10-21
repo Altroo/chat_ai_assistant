@@ -17,6 +17,10 @@ The inspected Facturation greeting handler resolves complete English/French gree
 
 The inspected Colibri engine supports phase profiling and prefix-reuse diagnostics. Prefix reuse is already enabled by default unless explicitly disabled. Its recurrent-state reuse is all-or-nothing; adding a generic cache flag is not an established optimization.
 
+The frozen single-slot engine starts its native generation timer after prompt prefill. Its profile interval includes generation, sampling and output handling. Subtracting that interval from request latency leaves other overhead, including possible prefill, queueing, tokenization, state handling and transport. That residual must not be reported as pure prefill time.
+
+A passive wrapper and isolated evaluation runner are reviewed and tested as preparation. They preserve original requests, output budgets, labels and quality events, then record one matching engine profile per request when available. Missing or ambiguous telemetry remains missing; it does not change accuracy results. No new numerical profiling or speed improvement has been measured. [Preparation and limits](../training/reports/qwen35-4b-evaluation-preparation-v1.json).
+
 ## Next measurements and changes
 
 After the current training job releases the CPU, profile the selected checkpoint in an isolated Colibri worker. Record native phase timings and prefix decisions, request latency, time to first visible output, output buffering, token counts, RAM and CPU. Measure cold and warm requests separately. Compare useful thread counts within the approved CPU budget.

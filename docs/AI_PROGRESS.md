@@ -1,5 +1,14 @@
 # Chat AI Assistant progress
 
+## Checkpoint evaluation and latency profiling prepared - 21 October 2026
+
+IMPLEMENTED and independently reviewed as preparation: the Colibri evaluation runner passes 13 offline tests. Startup-timeout and process-capture failures now recover only an owned worker, with its lifetime bound to the evaluation controller. Replacement units are refused, and pinned sources, admission data and closure bytes are checked again before recording completion. The prepared export and passive-profile helpers separately pass 11 and eight checks. These are control tests, not new model responses.
+
+PARTIALLY IMPLEMENTED: the original server trainer remains active at 27/632 logged optimizer updates in the 18:08 UTC observation, after initial teacher-forced validation. Protected services remain healthy. No adapter export or checkpoint evaluation has run. Actual completed-training/export review and numerical admission are still required. The only measured 4B full-action score remains the untrained 77/133 (57.89%); mean baseline request latency is 38.114 seconds. No fine-tuned accuracy, speed improvement or qualified application is claimed.
+
+The native profile interval excludes prefill and includes generation, sampling and output handling. Request time minus that interval is remaining overhead, not a pure prefill measurement. All four checkpoints and the cached baseline remain required under unchanged scoring; broader and critical gates remain mandatory. [Prepared controls and actual progress](../training/reports/qwen35-4b-evaluation-preparation-v1.json).
+
+
 
 ## Current Facturation contracts checked; training progressing - 21 October 2026
 

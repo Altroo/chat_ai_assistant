@@ -1,0 +1,97 @@
+{
+  "recorded_at": "2026-10-21T18:09:17.405615+00:00",
+  "status": "IMPLEMENTED AND VERIFIED AS PREPARATION ONLY",
+  "application": "facturation",
+  "shared_model": "Qwen3.5-4B",
+  "inference_runtime": "Colibri",
+  "evaluation_runner": {
+    "recorded_at": "2026-10-21T18:09:17.405615+00:00",
+    "status": "PREPARATION ONLY",
+    "review": "No issues",
+    "one_reviewer": true,
+    "source_sha256": "3b1916371e745d8cb2147f18dcec77cbe4940b5a344f0f697738e160332865f3",
+    "test_sha256": "c222b382150a93284547d2384ae576696a7fa895901eed0889a02084eef73ae9",
+    "local_offline_tests_passed": 13,
+    "reviewer_scope": {
+      "direct_checks": 9,
+      "startup_failure_recoveries": 2,
+      "replacement_unit_refusals": 3,
+      "source_mutation_rejections": 6,
+      "dry_run": true
+    },
+    "closed_findings": [
+      "partial startup ownership recovery and controller lifetime binding",
+      "final source and admission input seals"
+    ],
+    "actual_completed_training_reviewed": false,
+    "actual_export_reviewed": false,
+    "numerical_execution_admitted": false,
+    "new_inference": false,
+    "production_activation": false
+  },
+  "export_preparation": {
+    "review": "No issues",
+    "local_offline_tests_passed": 11,
+    "source_sha256": "ab01b71816794c4d265bcd2d77468051aaccfc572366d68e9952ebaa14f2b492",
+    "executed": false
+  },
+  "passive_profiler_preparation": {
+    "review": "No issues",
+    "local_offline_tests_passed": 8,
+    "source_sha256": "acb0ed90a9f580f9d5b8e2cc8af76d363f18d823ed2323d3a6d4bed75aa71a34",
+    "executed": false,
+    "native_interval": "post-prefill generation, sampling and output handling",
+    "native_interval_is_end_to_end": false,
+    "remaining_time_is_pure_prefill": false
+  },
+  "comparison_controls": {
+    "primary_cases_per_candidate": 133,
+    "candidate_optimizer_steps": [
+      158,
+      316,
+      474,
+      632
+    ],
+    "cached_untrained_baseline_required": true,
+    "context_tokens": 8192,
+    "maximum_output_tokens": 512,
+    "thinking": false,
+    "frozen_scoring_unchanged": true,
+    "all_candidate_results_required": true,
+    "training_loss_used_to_rank_candidates": false,
+    "business_tools_execute": false,
+    "broader_security_and_retention_gates_required": true
+  },
+  "training_snapshot": {
+    "observed_at": "2026-10-21T18:08:00.658771+00:00",
+    "status": "RUNNING",
+    "original_identity_matches": true,
+    "optimizer_updates_logged": 27,
+    "scheduled_optimizer_updates": 632,
+    "initial_teacher_forced_validation_complete": true,
+    "cpu_percent_1s": 1214.9,
+    "trainer_rss_gib": 14.963,
+    "host_available_gib": 39.34,
+    "protected_services_healthy": true
+  },
+  "measured_model_results": {
+    "fine_tuned_accuracy_available": false,
+    "latency_improvement_measured": false,
+    "untrained_full_actions": 77,
+    "untrained_primary_cases": 133,
+    "untrained_full_action_accuracy_percent": 57.89,
+    "untrained_mean_request_latency_s": 38.114,
+    "applications_qualified_on_replacement_model": 0,
+    "applications_in_scope": 6
+  },
+  "pending": [
+    "complete original training and independently review actual evidence",
+    "export and validate all four actual checkpoints",
+    "admit and execute isolated Colibri evaluations sequentially",
+    "evaluate unchanged broader and critical gates when eligible",
+    "measure paired CPU thread settings and native response paths",
+    "qualify current app before training the next one"
+  ],
+  "no_production_change": true,
+  "no_current_training_change": true
+}
