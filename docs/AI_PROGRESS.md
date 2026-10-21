@@ -1,5 +1,27 @@
 # Chat AI Assistant progress
 
+## Balanced correction: comparison complete, model rejected - 21 October 2026
+
+IMPLEMENTED and verified: the clean Colibri recovery completed all four fresh checkpoint candidates, 532 requests across 12 shards, plus the attested parent checkpoint 125 as cached logical candidate 0. The original 128-update training did not restart. The actual coordinator exited successfully. A fresh server collector rechecked every fresh model, adapter, export and before/after proof, with workers stopped, evaluation ports free and production inference unchanged. The single reviewer independently reproduced the completed audit and all 392 evidence hashes.
+
+| Logical candidate | Correct actions / 133 | Exact arguments / 111 | Critical / 24 |
+| --- | --- | --- | --- |
+| 0, actual parent 125, cached | 122 (91.73%) | 102 (91.89%) | 20 |
+| 32 | 122 (91.73%) | 100 (90.09%) | 22 |
+| 64 | 117 (87.97%) | 95 (85.59%) | 21 |
+| 96 | 118 (88.72%) | 96 (86.49%) | 21 |
+| 128 | 120 (90.23%) | 98 (88.29%) | 21 |
+
+PARTIALLY IMPLEMENTED: Facturation model quality still fails acceptance. The unchanged selector picks checkpoint 32 after the action tie because its parsed structure score is higher. It has 133/133 correct tools and parsed structures and 16/16 correct clarifications, but fails exact arguments, full actions and critical cases. Parsed structure does not establish fully executable arguments or native authorization.
+
+The 275/438/48 broader phases did not execute because every candidate failed necessary primary gates. No new Management Projet or Design Workflow accuracy, native-security clearance or model activation is established. Zero of six applications are fully accepted, and no next-application training started.
+
+Measured checkpoint-32 request latency averages 19.658 seconds, P95 61.936 seconds, under three concurrent four-thread workers. Mean completion tokens per request wall second is 3.471, including prompt processing and serving overhead; it is not isolated decoder speed. The one-second checkpoint-64 resource observation measured 75.8% host CPU with 40.324 GiB available memory; it is not a peak-resource benchmark.
+
+PLANNED: prepare a separately versioned TRAIN-only coverage correction after this failure review. The small set lacks English detail/French collection user-navigation combinations and all unquoted remark-update examples, although the approved larger TRAIN source has them. These are verified coverage gaps, not proven causes or promised accuracy gains. Require source grounding, paired factor/language checks, schema validation, one review and fresh server preflight before another training run. The eight reviewed Logistics sources and bilingual central knowledge remain unchanged.
+
+[Completed comparison and evidence hashes](../training/reports/facturation-uniform-correction-v1-functional-comparison.json).
+
 ## Clean comparison recovery started - 21 October 2026
 
 PARTIALLY IMPLEMENTED: the reviewed recovery started at 05:22 UTC. Fresh server admission passed and checkpoint 32 export started. The completed 128-update training is reused without restarting optimization. The original failed comparison and its raw outputs remain separate.

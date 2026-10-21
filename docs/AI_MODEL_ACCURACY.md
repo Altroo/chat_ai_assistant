@@ -1,5 +1,25 @@
 # Shared model accuracy work
 
+## Latest verified comparison - 21 October 2026
+
+PARTIALLY IMPLEMENTED: the ordinary-SFT correction completed training and all five logical primary candidates, but no candidate passed. Four checkpoints ran 532 fresh Colibri requests; the existing parent 125 supplied 133 explicitly cached cases.
+
+| Candidate | Full actions / 133 | Exact arguments / 111 | Critical / 24 |
+| --- | --- | --- | --- |
+| Parent 125, cached as 0 | 122 (91.73%) | 102 (91.89%) | 20 |
+| 32 | 122 (91.73%) | 100 (90.09%) | 22 |
+| 64 | 117 (87.97%) | 95 (85.59%) | 21 |
+| 96 | 118 (88.72%) | 96 (86.49%) | 21 |
+| 128 | 120 (90.23%) | 98 (88.29%) | 21 |
+
+Checkpoint 32 is the diagnostic functional selection, with 100% tool/parsed-structure accuracy and 16/16 clarifications. Full actions, exact arguments and critical cases still fail. All thresholds, inputs, labels and scoring remain unchanged. Training loss selected 64 separately; loss did not rank the functional candidates.
+
+The single reviewer reproduced raw shards, summaries, results, selection and 392 evidence hashes. Fresh server checks confirm model/adapter integrity, stopped workers, free evaluation ports and unchanged production. Broader 275/438/48 evaluations were not run after primary rejection. These correlated development cases are not fresh blind certification, and parsed structure is not native tool executability.
+
+Zero of six apps are fully accepted. No new per-language, retained-app or native-security acceptance score is claimed, and production inference remains unchanged.
+
+[Detailed measurements, latency and evidence](../training/reports/facturation-uniform-correction-v1-functional-comparison.json).
+
 ## Current result: Facturation correction rejected - 20 October 2026
 
 All 128 server training updates and every declared Colibri primary comparison completed. None reaches the required full-action, exact-argument and critical-case gates.

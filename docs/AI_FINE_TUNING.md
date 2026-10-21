@@ -1,5 +1,17 @@
 # Model training and evaluation
 
+## Latest ordinary-SFT outcome - 21 October 2026
+
+IMPLEMENTED and verified: server training completed all 128 ordinary-SFT updates, followed by a complete Colibri CPU comparison of cached parent 125 and fresh checkpoints 32/64/96/128. No optimization restarted during recovery. The shared model remains Qwen3.5-0.8B; current training and support scope is English and French.
+
+PARTIALLY IMPLEMENTED: the correction failed functional acceptance. The unchanged selector chooses 32: 122/133 full actions (91.73%), 100/111 exact arguments (90.09%) and 22/24 critical cases. Later checkpoints score 117/133, 118/133 and 120/133 actions. No candidate qualifies, so broader 275/438/48 checks were not executed. The single reviewer reproduced the completed evidence, including fresh artifacts and cleanup.
+
+The approved larger TRAIN source contains language/action navigation combinations and unquoted remark updates absent from the latest small subset. A future correction must explicitly check this coverage while preserving source grounding, schemas, permission context and evaluation boundaries. Coverage diagnosis does not prove a cause or an expected score. No further training is admitted by this report.
+
+This is distinct from the original completed 3,103-update refinement and later 500-update pilot. Zero of six applications are fully accepted; no new model was activated.
+
+[Complete measured comparison](../training/reports/facturation-uniform-correction-v1-functional-comparison.json).
+
 ## Facturation correction completed; generated accuracy regressed - 20 October 2026
 
 The server completed all 128 reviewed updates in 6,767.41 seconds, with one exposure to 96 Facturation, 16 Management Projet and 16 Design Workflow examples. Training used a fresh adapter/optimizer on the already merged experimental checkpoint 125, learning rate 0.00001, rank 16/alpha 32 across 24 layers, BF16 SDPA and nonreentrant checkpointing. No new foundation model was downloaded.

@@ -1,0 +1,233 @@
+{
+  "status": "PARTIALLY IMPLEMENTED: training and primary comparison complete; model rejected",
+  "generated_at": "2026-10-21T06:33:06.887100+00:00",
+  "application_focus": "facturation",
+  "model": "existing shared Qwen3.5-0.8B",
+  "runtime": "Colibri CPU",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training": {
+    "updates_completed": 128,
+    "complete": true,
+    "restarted_for_recovery": false,
+    "cpu_threads": 14,
+    "duration_seconds": 6742.662755500525,
+    "peak_rss_gib": 6.412975311279297
+  },
+  "comparison": {
+    "terminal_success": true,
+    "all_five_logical_candidates_completed": true,
+    "fresh_candidates": [
+      32,
+      64,
+      96,
+      128
+    ],
+    "cached_baseline_actual_checkpoint": 125,
+    "fresh_cases": 532,
+    "cached_baseline_cases": 133,
+    "raw_shards": 12,
+    "start_utc": "2026-10-21T05:22:36+00:00",
+    "finish_utc": "2026-10-21T06:29:04+00:00",
+    "elapsed_seconds_including_exports_and_checks": 3988.0,
+    "functional_selected_step": 32,
+    "loss_selected_step": 64,
+    "selected_by_validation_loss": false,
+    "eligible_primary_candidates": [],
+    "primary_gate_passed": false,
+    "labels_scorer_and_gates_changed": false
+  },
+  "candidates": [
+    {
+      "logical_step": 0,
+      "actual_parent_checkpoint": 125,
+      "fresh_inference_cases": 0,
+      "full_actions_correct": 122,
+      "cases": 133,
+      "full_action_percent": 91.73,
+      "exact_arguments_correct": 102,
+      "arguments_total": 111,
+      "exact_argument_percent": 91.89,
+      "tools_correct": 130,
+      "structured_valid": 132,
+      "critical_correct": 20,
+      "critical_total": 24,
+      "clarifications_correct": 14,
+      "clarifications_total": 16,
+      "primary_targets_passed": false
+    },
+    {
+      "logical_step": 32,
+      "actual_parent_checkpoint": null,
+      "fresh_inference_cases": 133,
+      "full_actions_correct": 122,
+      "cases": 133,
+      "full_action_percent": 91.73,
+      "exact_arguments_correct": 100,
+      "arguments_total": 111,
+      "exact_argument_percent": 90.09,
+      "tools_correct": 133,
+      "structured_valid": 133,
+      "critical_correct": 22,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false,
+      "measured_request_performance": {
+        "concurrent_workers": 3,
+        "threads_per_worker": 4,
+        "mean_latency_seconds": 19.658,
+        "p95_latency_seconds": 61.936,
+        "mean_first_visible_event_seconds": 19.647,
+        "mean_completion_tokens_per_wall_second": 3.471,
+        "interpretation": "Request wall time includes prompt processing and serving overhead; these are not isolated decoder tokens per second."
+      }
+    },
+    {
+      "logical_step": 64,
+      "actual_parent_checkpoint": null,
+      "fresh_inference_cases": 133,
+      "full_actions_correct": 117,
+      "cases": 133,
+      "full_action_percent": 87.97,
+      "exact_arguments_correct": 95,
+      "arguments_total": 111,
+      "exact_argument_percent": 85.59,
+      "tools_correct": 132,
+      "structured_valid": 133,
+      "critical_correct": 21,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false,
+      "measured_request_performance": {
+        "concurrent_workers": 3,
+        "threads_per_worker": 4,
+        "mean_latency_seconds": 19.588,
+        "p95_latency_seconds": 61.69,
+        "mean_first_visible_event_seconds": 19.577,
+        "mean_completion_tokens_per_wall_second": 3.468,
+        "interpretation": "Request wall time includes prompt processing and serving overhead; these are not isolated decoder tokens per second."
+      }
+    },
+    {
+      "logical_step": 96,
+      "actual_parent_checkpoint": null,
+      "fresh_inference_cases": 133,
+      "full_actions_correct": 118,
+      "cases": 133,
+      "full_action_percent": 88.72,
+      "exact_arguments_correct": 96,
+      "arguments_total": 111,
+      "exact_argument_percent": 86.49,
+      "tools_correct": 130,
+      "structured_valid": 133,
+      "critical_correct": 21,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false,
+      "measured_request_performance": {
+        "concurrent_workers": 3,
+        "threads_per_worker": 4,
+        "mean_latency_seconds": 19.502,
+        "p95_latency_seconds": 62.11,
+        "mean_first_visible_event_seconds": 19.491,
+        "mean_completion_tokens_per_wall_second": 3.508,
+        "interpretation": "Request wall time includes prompt processing and serving overhead; these are not isolated decoder tokens per second."
+      }
+    },
+    {
+      "logical_step": 128,
+      "actual_parent_checkpoint": null,
+      "fresh_inference_cases": 133,
+      "full_actions_correct": 120,
+      "cases": 133,
+      "full_action_percent": 90.23,
+      "exact_arguments_correct": 98,
+      "arguments_total": 111,
+      "exact_argument_percent": 88.29,
+      "tools_correct": 132,
+      "structured_valid": 133,
+      "critical_correct": 21,
+      "critical_total": 24,
+      "clarifications_correct": 16,
+      "clarifications_total": 16,
+      "primary_targets_passed": false,
+      "measured_request_performance": {
+        "concurrent_workers": 3,
+        "threads_per_worker": 4,
+        "mean_latency_seconds": 19.585,
+        "p95_latency_seconds": 60.305,
+        "mean_first_visible_event_seconds": 19.574,
+        "mean_completion_tokens_per_wall_second": 3.493,
+        "interpretation": "Request wall time includes prompt processing and serving overhead; these are not isolated decoder tokens per second."
+      }
+    }
+  ],
+  "broader_tests": {
+    "executed": false,
+    "reason": "Every candidate failed necessary primary gates.",
+    "unexecuted_cases": {
+      "shared_development": 275,
+      "regression": 438,
+      "additional_controls": 48
+    },
+    "new_management_projet_or_design_workflow_accuracy_established": false,
+    "native_backend_security_verified_by_this_model_comparison": false
+  },
+  "verification": {
+    "audit_file_count": 392,
+    "raw_shards_reproduced": true,
+    "all_fresh_artifacts_and_adapters_rechecked": true,
+    "historical_before_after_worker_proofs_verified": true,
+    "temporary_workers_stopped": true,
+    "evaluation_ports_free": true,
+    "production_healthy_and_unchanged": true,
+    "actual_completed_evidence_independently_reviewed": true
+  },
+  "one_second_resource_observation": {
+    "during_candidate": 64,
+    "host_cpu_percent": 75.8,
+    "logical_cpus": 16,
+    "memory_available_gib": 40.324,
+    "is_peak_or_full_run_resource_benchmark": false
+  },
+  "known_training_coverage_gaps": {
+    "navigation": "Current small set has English list and French detail only; approved larger TRAIN data has both actions in both languages.",
+    "remark_literals": "All 17 current remark-update examples are quoted; approved larger TRAIN data contains unquoted examples.",
+    "causation_proven": false,
+    "new_correction_training_started": false
+  },
+  "limitations": [
+    "These correlated development cases informed training analysis and are not fresh blind certification.",
+    "Parsed structured output does not prove fully executable arguments or backend authorization.",
+    "No business tools execute in this model comparison; native security and integration testing are separate.",
+    "No new broad or per-language acceptance score is established because primary gates failed.",
+    "Request throughput is measured under three concurrent workers and includes prompt processing."
+  ],
+  "fully_accepted_applications": 0,
+  "model_accepted": false,
+  "production_activation": false,
+  "next_application_training_started": false,
+  "next_step": "After completed-evidence review, prepare a versioned TRAIN-only coverage correction; validate schemas, source grounding and language/factor combinations, then run reviewed server preflight before any training.",
+  "evidence_sha256": {
+    "completion_audit": "f8a05cab9e304689a4cc22e3763ed14ab35011f9ad47b7dfbe7ac6749aaf0d7d",
+    "post_completion_provenance": "03026fdf318de67fab4fa423644a4cf30d31cd8ac03a63f8007499b9a7b8c379",
+    "terminal_observation": "0c791978d34d859a23251492a305de1197e4e832a785602b95f5d4419bb7ff74",
+    "reviewed_controls": "9b2019a783c644d96f9326b8e23c783e29b4b5ad2fb0b578f35154cbb6592f09",
+    "selection": "e9d957e8d4e3bf67fbef2d4205c1586dd71cdad1ca0740d2296e90383028c1cb",
+    "candidate_results": {
+      "32": "8ceeaa023ce255f415bea0f8e292cbdc8b3d525b44c82f216a88c4fc7d64dcaa",
+      "64": "b9539298375ac44891234651a217648f5d5ae53571b45a53cd045f82dc8966c6",
+      "96": "3b5c4e57c7e0eb630e7d216bc0a4f1b77d2765548b04ceb50400db6885aabbbb",
+      "128": "60f005cda2d4bd4a27f5ef89ab8f830930373afa6cb3023747bb1771627de153"
+    },
+    "navigation_coverage_review": "f3562bc68d193a6f2f9e1a34f2e8ed3a78eab43b37aa110334bb2f03859040c8",
+    "remark_coverage_review": "d61a1389c9f56212028d221b9fa56d13ce93085f4936d303fd1eeccb092b34f2",
+    "logistics_source_freshness": "cb5efa9574500c899baf75856dcd73e36993b7fbde25da3105d8ec00124027c5",
+    "actual_completion_review": "99297c8262898ba031a197698e2754e9a55d7d8c6ad85e5cd15ea994280948ae"
+  }
+}
