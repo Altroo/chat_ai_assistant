@@ -6,7 +6,7 @@ PARTIALLY IMPLEMENTED: a separate 176-row TRAIN-only correction is prepared and 
 
 The proposed fresh LoRA/AdamW run uses learning rate 0.000002, one complete epoch and unchanged uniform assistant-token loss. New checkpoints are 44/88/132/176, compared with logical zero representing actual preceding checkpoint 32. Primary scoring and acceptance thresholds are unchanged; 95% remains an unachieved target. Changes to starting weights, training coverage and learning rate mean this experiment cannot isolate the effect of one factor.
 
-Server tokenizer and capacity checks, their independent review, numerical training and Colibri functional evaluation remain pending. No training completion or accuracy is claimed for this prepared experiment. No new model download or production activation is involved.
+IMPLEMENTED and verified: the actual server tokenizer/parser preflight passed all 176 TRAIN and 275 validation examples with unchanged 8K context and 512-token output allowance. The original successful invocation and ten collected files were independently reviewed. The two-update capacity test is running; its result/review, numerical training and Colibri functional evaluation remain pending. The reviewed terminal verifier requires 176 raw updates and ordered validation events, with nine tests passing. No training completion or accuracy is claimed for this prepared experiment. No new model download or production activation is involved.
 
 ## Latest ordinary-SFT outcome - 21 October 2026
 

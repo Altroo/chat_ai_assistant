@@ -8,7 +8,9 @@ The single reviewer independently reproduced the actual prepared bytes, coverage
 
 Prepared numerical controls use one 176-update epoch, learning rate 0.000002, equal assistant-token weights, checkpoints 44/88/132/176 and teacher-forced validation at 0/88/176. Functional selection compares those four candidates with actual preceding checkpoint 32 as logical zero. Frozen scoring, the 133-case primary gates, original checkpoint-600 retention reference and applicable 275/438/48 broader gates remain unchanged.
 
-PLANNED: actual server tokenizer/parser preflight, two complete capacity updates, review of those results, then a single fresh training run. Prepared scripts and tests do not establish model accuracy or authorize activation. The best verified primary full-action score remains 122/133 (91.73%); zero of six applications are fully accepted.
+IMPLEMENTED and verified: all 176 TRAIN and 275 validation examples passed the actual server tokenizer/parser preflight, including Colibri prefix parity, supervised-token boundaries and the 512-token output allowance. Maximum lengths were 7,706 and 7,496 tokens. The single reviewer checked the original successful invocation, raw transport and all ten collected files.
+
+PARTIALLY IMPLEMENTED: the one two-update CPU capacity test is running. Numerical training remains pending its actual result and review. The new terminal verifier and its nine tests have been reviewed; it binds selector code before parsing and requires raw baseline, optimizer updates and validation events in execution order. No new model accuracy or activation is established. The best verified primary full-action score remains 122/133 (91.73%); zero of six applications are fully accepted.
 
 ## Balanced correction: comparison complete, model rejected - 21 October 2026
 
