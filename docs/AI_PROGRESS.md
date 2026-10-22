@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## Larger CPU prefill comparison prepared - 22 October 2026
+
+IMPLEMENTED and verified as preparation: a separate seven-thread Colibri replay requests 512-row prompt-processing chunks, compared with the frozen source default of 128. Model, all 133 ordered requests, labels, scorer, context/output limits and CPU/memory budgets stay unchanged. All 18 offline checks pass locally and on Linux. The single reviewer cleared the corrected source after an empty-environment-value guard fix. Separate admission, units and outputs prevent this replay from becoming a canonical candidate.
+
+A read-only snapshot of the first 48 checkpoint-158 requests records 32.758 seconds mean request latency, 5.322 seconds in the native post-prefill generation interval and 27.436 seconds outside that interval. This residual is not a pure prefill measurement. The same ordered baseline prefix averages 33.454 seconds. No selected-model speed gain is established. A conservative tool-shortlist trial preserves all 133 expected actions but reduces aggregate schema characters by only 3.462%; it remains an input-only deferred experiment.
+
+PARTIALLY IMPLEMENTED: at the verified 13:43 UTC snapshot, the original first checkpoint comparison has completed 65/133 cases, with 50 full actions correct. It cannot meet the 95% full-action target. Its remaining cases and the other three checkpoints still run sequentially under unchanged scoring. No larger-chunk numerical replay, model acceptance or activation occurred. Zero of six applications qualify; the other five remain queued.
+
+[Preparation controls, actual partial timing evidence and limits](../training/reports/qwen35-4b-prefill-latency-preparation-v1.json).
+
 ## 4B Facturation training and four exports completed - 22 October 2026
 
 IMPLEMENTED and verified: the original server run completed all 632 contiguous finite optimizer updates, one Facturation epoch and final validation. Runtime was 72,816.09 seconds, about 20 hours 14 minutes, using 14 CPU threads. Peak process RSS was about 18.20 GiB. Teacher-forced validation loss decreased from 0.089511 to 0.020905; this is not an accuracy percentage.

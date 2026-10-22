@@ -1,0 +1,134 @@
+{
+  "report_version": 1,
+  "status": "PREPARED AND OFFLINE TESTED; NO PREFILL COMPARISON EXECUTION",
+  "application": "facturation",
+  "model": "Qwen/Qwen3.5-4B",
+  "inference_runtime": "Colibri CPU",
+  "purpose": "Measure larger CPU prompt-processing chunks without changing model, ordered requests, labels or scoring.",
+  "canonical_evaluation": {
+    "source_sha256": "3b1916371e745d8cb2147f18dcec77cbe4940b5a344f0f697738e160332865f3",
+    "unchanged": true,
+    "cpu_threads": 7,
+    "prefill_chunk_default_rows_in_frozen_source": 128,
+    "cases": 133
+  },
+  "prepared_comparison": {
+    "requested_cpu_prefill_chunk_rows": 512,
+    "actual_per_request_chunk_sizes_verified": false,
+    "cpu_threads": 7,
+    "cpu_quota_percent": 700,
+    "memory_max_gib": 20,
+    "swap_max_bytes": 0,
+    "context_tokens": 8192,
+    "maximum_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0,
+    "cases": 133,
+    "canonical_primary_candidate": false,
+    "separate_admission_units_and_results": true,
+    "source_sha256": "8ca704e1bb43164d4afec1e4a6ed253cf905db1c232b37838c29d3a7a3812a20",
+    "tests_sha256": "27a954279e41bae6fb7c3d2cef85752d9c081fce29a6fa6a96a7be083c7a660f",
+    "derivation_sha256": "66168631e30d3b6d3d62d8f29e020b46b82b830f0a7f3c437e45dbea00319a89",
+    "exact_changes_from_canonical": 16
+  },
+  "tests": {
+    "local_offline_passed": 18,
+    "server_linux_offline_passed": 18,
+    "review": "No issues",
+    "reviewer_count": 1,
+    "reviewer_read_only_tests_rerun": 13,
+    "other_filesystem_fixtures_inspected": 5,
+    "review_finding_fixed": "Reject DUMP_LAYERS key presence, including an empty value, which otherwise disables the requested chunking in the frozen source.",
+    "no_numerical_model_execution": true
+  },
+  "recorded_partial_phase_diagnostic": {
+    "observed_utc": "2026-10-22T13:30:09.372794+00:00",
+    "status": "PARTIAL ACTIVE CHECKPOINT TIMING DIAGNOSTIC; NOT ACCEPTED",
+    "step": 158,
+    "cases_completed": 48,
+    "cases_required": 133,
+    "full_actions_correct": 34,
+    "tools_correct": 44,
+    "structured_valid": 45,
+    "request_latency": {
+      "count": 48,
+      "mean_s": 32.758396,
+      "median_s": 30.0115,
+      "p95_nearest_rank_s": 46.23
+    },
+    "same_prefix_untrained_request_latency": {
+      "count": 48,
+      "mean_s": 33.453875,
+      "median_s": 30.6905,
+      "p95_nearest_rank_s": 46.915
+    },
+    "same_prefix_untrained_actions_correct": 33,
+    "profile_records": 48,
+    "valid_matched_profiles": 48,
+    "invalid_profile_records": 0,
+    "native_post_prefill_interval": {
+      "count": 48,
+      "mean_s": 5.322099,
+      "median_s": 5.08157,
+      "p95_nearest_rank_s": 8.038747
+    },
+    "time_outside_native_interval": {
+      "count": 48,
+      "mean_s": 27.436297,
+      "median_s": 24.11943,
+      "p95_nearest_rank_s": 38.824364
+    },
+    "outside_native_fraction_of_matched_request_time": 0.837535,
+    "completion_tokens_per_native_interval_second": 12.667308,
+    "mean_profile_prompt_tokens": 2367.229,
+    "provenance": {
+      "collection_sha256": "982d88f08da5cff324243089ce8a065a0428fdae2bd26f7ff822c69183e7f8b1",
+      "events_snapshot_sha256": "1640d65f86655d47013a1a49065670a987ff296f973d17ea171dff32587071a2",
+      "profiles_snapshot_sha256": "4047e8582b092fe52050949ef15960a550b67c3551224e95601a617194c801a5",
+      "baseline_sha256": "aefc7ae52ae04243d5b4afe42ca11e78e979d7cbdba4d1dbc36edf65ea9724fd"
+    },
+    "complete_accuracy_score": false,
+    "latency_improvement_established": false,
+    "model_accepted": false,
+    "production_activation": false,
+    "new_inference": false,
+    "limits": [
+      "Partial ordered development cases are not a representative random sample or a final model result.",
+      "Paired baseline figures use only the same observed case prefix, not all133 requests.",
+      "Native interval begins after prompt prefill and includes generation, sampling and output handling.",
+      "Time outside that interval includes other overhead and is not a pure prefill measurement.",
+      "Native-interval token rate is not end-to-end response throughput or frontend timing.",
+      "The first158 checkpoint is not the selected model; three later checkpoints remain untested."
+    ]
+  },
+  "input_only_tool_shortlist_trial": {
+    "cases": 133,
+    "changed_cases": 27,
+    "aggregate_schema_character_reduction_percent": 3.462,
+    "all_expected_actions_preserved": true,
+    "new_inference": false,
+    "status": "Deferred; no numerical replay scheduled on this evidence.",
+    "production_source_changed": false
+  },
+  "execution_admission": false,
+  "prefill_comparison_inference_executed": false,
+  "latency_improvement_established": false,
+  "production_activation": false,
+  "applications_qualified": 0,
+  "applications_total": 6,
+  "remaining_requirements": [
+    "Finish all four canonical checkpoint comparisons and unchanged selector.",
+    "Review and bind the actual chosen model/export to this separate comparison.",
+    "Run without competing training, export or evaluation jobs.",
+    "Measure full unchanged quality/critical requirements alongside latency.",
+    "Measure memory and cancellation effects; larger chunks may delay cancellation checkpoints.",
+    "Complete applicable broader/security/retention gates and full application performance checks."
+  ],
+  "limits": [
+    "Preparation and offline guard tests do not establish a speed or quality gain.",
+    "Partial timing figures describe checkpoint158 and an ordered inspected development prefix, not a selected model or full frontend workflow.",
+    "Time outside the native generation interval is not a pure prefill measurement.",
+    "Larger requested chunks can change numerical outputs and resource usage; unchanged accuracy gates remain mandatory.",
+    "No application source, existing production inference, canonical prompt, schema, label or output budget was changed."
+  ]
+}

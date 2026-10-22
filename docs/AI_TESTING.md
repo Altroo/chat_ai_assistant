@@ -1,5 +1,13 @@
 # Verification and acceptance record
 
+## Larger prefill comparison guard tests - 22 October 2026
+
+All 18 offline tests pass locally and on Linux. They retain the canonical failed-baseline replay, complete labels/settings checks, exclusive worker ownership, startup-failure cleanup, input seals and competing-job rejection. Added checks cover the exact 16-change derivation, requested chunk environment, unchanged CPU/memory/context/output limits, canonical-source mutation and refusal of absent or changed engine settings. Both nonempty and empty DUMP_LAYERS values are rejected, matching the frozen C branch that disables chunking whenever the variable is present.
+
+The single reviewer independently reran 13 read-only checks and inspected five filesystem fixtures. This clears preparation only. No comparison inference, actual per-request chunk-size verification, cancellation benchmark, speed gain or model acceptance follows these tests.
+
+[Measured preparation and scope](../training/reports/qwen35-4b-prefill-latency-preparation-v1.json).
+
 ## Completed 4B training and export verification - 22 October 2026
 
 Verified the original successful completion of all 632 scheduled Facturation updates and final validation. Updates are finite and contiguous. All four checkpoint exports have 42 hash-verified Colibri files, unchanged metadata and exact training bindings. Original process cleanup and unchanged protected services were checked. The single reviewer reproduced saved completion/export evidence and cleared sequential primary evaluation; this was not an independent live server session.
