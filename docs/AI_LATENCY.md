@@ -11,6 +11,20 @@ The current Qwen3.5-4B measurement covers 133 synthetic Facturation planner requ
 
 The 77 correct requests average 65.6 generated tokens and 2,502.6 prompt tokens. Their latency remains substantial with short outputs. Usage was recorded for 125/133 cases; the eight missing records are not imputed. None of the recorded completions reaches 256 tokens. The saved baseline lacks per-request native phase profiles, so prompt processing and decoding costs have not been separately established.
 
+## Recorded baseline latency cohorts - 22 October 2026
+
+Further analysis of the same 133 saved baseline requests reproduces the existing mean, median and nearest-rank P95. These are recorded untrained-model measurements, with no additional inference. Token usage is available for 125 cases; the eight missing records remain separate.
+
+| Prompt-token band | Cases | Mean prompt tokens | Mean completion tokens | Mean request latency |
+| --- | --- | --- | --- | --- |
+| Below 2,000 | 22 | 1,690.0 | 50.6 | 23.140 s |
+| 2,000 to 2,999 | 77 | 2,350.4 | 69.1 | 32.753 s |
+| 3,000 or more | 26 | 4,333.3 | 71.0 | 65.021 s |
+
+The four cases expecting the previous_results tool average 124.255 seconds, 7,346 prompt tokens and 37 completion tokens. These cases overlap the bands above and are a small subset. Follow-up context and tool-schema size are priorities for phase profiling and controlled prompt-reduction tests after training. Changes must retain authorization, reference revalidation and the unchanged quality gates.
+
+Prompt-length associations do not establish causality or isolate prefill cost. First-visible-provider-event measurements are not native token TTFT or frontend timings. No new inference, runtime change or latency improvement is claimed. [Source, cohort definitions and recorded statistics](../training/reports/qwen35-4b-baseline-latency-triage-v1.json).
+
 ## Verified code findings
 
 The inspected Facturation greeting handler resolves complete English/French greetings before model creation, retaining backend authorization, persistence and delivery checks. This is a local code finding, not a production greeting latency measurement. Standalone thanks and other acknowledgements need separate coverage.

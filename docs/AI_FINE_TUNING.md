@@ -1,5 +1,13 @@
 # Model training and evaluation
 
+## Midpoint 4B checkpoint integrity verified - 22 October 2026
+
+IMPLEMENTED and verified: checkpoint 316 passed the same SHA-pinned, independently reviewed saved-adapter verifier at 02:25 UTC, after optimizer update 317 confirmed the save had finished. It contains 256 finite tensors and 20,578,304 elements, with nonzero LoRA_B weights across all 32 text layers. Its weights hash differs from checkpoint 158; adapter configuration and recorded provenance remain unchanged. Inspection used one CPU thread and loaded only saved adapter tensors. No base model, inference, export or activation was involved.
+
+PARTIALLY IMPLEMENTED: the original server trainer remains active at 317/632 updates in the verified 02:26 UTC snapshot, using 14 threads. Protected containers stay healthy; their identities and KAT process identities are unchanged. Different saved weights and nonzero layer coverage do not establish accuracy, per-layer incremental updates or tensor dtype. Final validation, all declared Colibri comparisons, broader/security gates and latency improvement remain pending. Zero of six applications qualify on the replacement model; the other five remain queued. [Midpoint integrity evidence and limits](../training/reports/qwen35-4b-midpoint-checkpoint-integrity-v1.json).
+
+Additional analysis of the recorded untrained baseline identifies four previous-result cases averaging 124.255 seconds with 7,346 prompt tokens and 37 completion tokens. This makes follow-up context and tool-schema size a profiling priority, without establishing the cause of latency. No new inference or speed improvement was measured. [Recorded latency cohorts](AI_LATENCY.md).
+
 ## First 4B checkpoint integrity verified - 21 October 2026
 
 IMPLEMENTED and verified: checkpoint 158 passed the original reviewed adapter verifier after optimizer update 159 confirmed its save had finished. The saved adapter contains 256 finite tensors and 20,578,304 elements, with nonzero LoRA_B weights across all 32 text layers. Rank-16/alpha-32 configuration, layer count and recorded source/data hashes match; adapter/config fingerprints remain stable through inspection. The single reviewer cleared the narrowly scoped inspector, and seven metadata-only guard tests pass.

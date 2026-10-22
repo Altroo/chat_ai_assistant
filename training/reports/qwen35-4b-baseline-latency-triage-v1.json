@@ -1,0 +1,165 @@
+{
+  "recorded_at": "2026-10-22T02:16:47.885582+00:00",
+  "status": "RECORDED UNTRAINED BASELINE ANALYSIS ONLY",
+  "baseline_source_sha256": "aefc7ae52ae04243d5b4afe42ca11e78e979d7cbdba4d1dbc36edf65ea9724fd",
+  "all_cases": {
+    "count": 133,
+    "mean_seconds": 38.114,
+    "median_seconds": 31.331,
+    "p95_nearest_rank_seconds": 118.628,
+    "usage_records": 125,
+    "mean_prompt_tokens": 2646.6,
+    "mean_completion_tokens": 66.2,
+    "first_visible_provider_event_records": 133,
+    "mean_first_visible_provider_event_seconds": 37.708
+  },
+  "correct_full_actions": {
+    "count": 77,
+    "mean_seconds": 35.268,
+    "median_seconds": 31.106,
+    "p95_nearest_rank_seconds": 51.141,
+    "usage_records": 77,
+    "mean_prompt_tokens": 2502.6,
+    "mean_completion_tokens": 65.6,
+    "first_visible_provider_event_records": 77,
+    "mean_first_visible_provider_event_seconds": 35.26
+  },
+  "incorrect_full_actions": {
+    "count": 56,
+    "mean_seconds": 42.028,
+    "median_seconds": 33.32,
+    "p95_nearest_rank_seconds": 124.551,
+    "usage_records": 48,
+    "mean_prompt_tokens": 2877.6,
+    "mean_completion_tokens": 67.2,
+    "first_visible_provider_event_records": 56,
+    "mean_first_visible_provider_event_seconds": 41.075
+  },
+  "prompt_token_groups": {
+    "missing_usage": {
+      "count": 8,
+      "mean_seconds": 43.446,
+      "median_seconds": 31.478,
+      "p95_nearest_rank_seconds": 124.551,
+      "usage_records": 0,
+      "mean_prompt_tokens": null,
+      "mean_completion_tokens": null,
+      "first_visible_provider_event_records": 8,
+      "mean_first_visible_provider_event_seconds": 36.836
+    },
+    "prompt_2000_to_2999": {
+      "count": 77,
+      "mean_seconds": 32.753,
+      "median_seconds": 31.106,
+      "p95_nearest_rank_seconds": 40.793,
+      "usage_records": 77,
+      "mean_prompt_tokens": 2350.4,
+      "mean_completion_tokens": 69.1,
+      "first_visible_provider_event_records": 77,
+      "mean_first_visible_provider_event_seconds": 32.745
+    },
+    "prompt_3000_or_more": {
+      "count": 26,
+      "mean_seconds": 65.021,
+      "median_seconds": 46.864,
+      "p95_nearest_rank_seconds": 127.198,
+      "usage_records": 26,
+      "mean_prompt_tokens": 4333.3,
+      "mean_completion_tokens": 71.0,
+      "first_visible_provider_event_records": 26,
+      "mean_first_visible_provider_event_seconds": 65.006
+    },
+    "prompt_under_2000": {
+      "count": 22,
+      "mean_seconds": 23.14,
+      "median_seconds": 23.377,
+      "p95_nearest_rank_seconds": 28.913,
+      "usage_records": 22,
+      "mean_prompt_tokens": 1690.0,
+      "mean_completion_tokens": 50.6,
+      "first_visible_provider_event_records": 22,
+      "mean_first_visible_provider_event_seconds": 23.135
+    }
+  },
+  "slowest_expected_tool_groups_with_at_least_three_cases": [
+    {
+      "expected_tool": "previous_results",
+      "count": 4,
+      "mean_seconds": 124.255,
+      "median_seconds": 124.679,
+      "p95_nearest_rank_seconds": 129.032,
+      "usage_records": 4,
+      "mean_prompt_tokens": 7346,
+      "mean_completion_tokens": 37,
+      "first_visible_provider_event_records": 4,
+      "mean_first_visible_provider_event_seconds": 124.228
+    },
+    {
+      "expected_tool": "clarify",
+      "count": 16,
+      "mean_seconds": 49.42,
+      "median_seconds": 33.468,
+      "p95_nearest_rank_seconds": 124.551,
+      "usage_records": 8,
+      "mean_prompt_tokens": 3647.4,
+      "mean_completion_tokens": 58.2,
+      "first_visible_provider_event_records": 16,
+      "mean_first_visible_provider_event_seconds": 46.108
+    },
+    {
+      "expected_tool": "search_operations",
+      "count": 12,
+      "mean_seconds": 49.172,
+      "median_seconds": 46.794,
+      "p95_nearest_rank_seconds": 58.576,
+      "usage_records": 12,
+      "mean_prompt_tokens": 3401,
+      "mean_completion_tokens": 111,
+      "first_visible_provider_event_records": 12,
+      "mean_first_visible_provider_event_seconds": 49.161
+    },
+    {
+      "expected_tool": "get_record",
+      "count": 4,
+      "mean_seconds": 44.969,
+      "median_seconds": 44.864,
+      "p95_nearest_rank_seconds": 45.473,
+      "usage_records": 4,
+      "mean_prompt_tokens": 3435,
+      "mean_completion_tokens": 40,
+      "first_visible_provider_event_records": 4,
+      "mean_first_visible_provider_event_seconds": 44.958
+    },
+    {
+      "expected_tool": "search_payments",
+      "count": 6,
+      "mean_seconds": 38.708,
+      "median_seconds": 39.09,
+      "p95_nearest_rank_seconds": 40.793,
+      "usage_records": 6,
+      "mean_prompt_tokens": 2831.3,
+      "mean_completion_tokens": 67.2,
+      "first_visible_provider_event_records": 6,
+      "mean_first_visible_provider_event_seconds": 38.697
+    }
+  ],
+  "p95_method": "nearest rank",
+  "limits": [
+    "No new inference or speed improvement was measured.",
+    "First visible provider events are not native token TTFT or a frontend measurement.",
+    "Prompt-length associations do not isolate prefill cost or establish causality.",
+    "Tool groups are small; latency subsets cannot establish the required full accuracy."
+  ],
+  "training_modified": false,
+  "production_modified": false,
+  "new_inference": false,
+  "speed_improvement_measured": false,
+  "model_accepted": false,
+  "methodology": {
+    "baseline_cases": 133,
+    "full_action_correctness": "tool_correct, arguments_correct and structured_valid must all be true",
+    "usage_bands": "Prompt usage below 2000, from 2000 through 2999, and 3000 or more; missing usage stays separate",
+    "tool_groups": "Group by the expected tool; report the five slowest groups with at least three cases",
+    "p95": "Nearest rank: sorted values at ceil(0.95*n)-1"
+  }
+}
