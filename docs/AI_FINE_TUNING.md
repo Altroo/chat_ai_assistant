@@ -1,5 +1,11 @@
 # Model training and evaluation
 
+## Third 4B checkpoint integrity verified - 22 October 2026
+
+IMPLEMENTED and verified: checkpoint 474 passed the same SHA-pinned, independently reviewed saved-adapter verifier at 07:00 UTC after optimizer update 475 confirmed its save had finished. Inspection finished after update 476. The adapter contains 256 finite tensors and 20,578,304 elements, with nonzero LoRA_B weights across all 32 text layers. Rank-16/alpha-32 configuration and recorded provenance match earlier checkpoints; its weights hash differs from checkpoints 158 and 316. Adapter/config fingerprints remain stable through inspection. One CPU thread loaded only saved adapter tensors, with no base-model load, inference, export or activation.
+
+PARTIALLY IMPLEMENTED: the original server trainer remains active at 477/632 updates in the verified 07:02 UTC snapshot, using 14 threads. Protected containers stay healthy; their identities and KAT process identities remain unchanged. Saved checkpoints 158, 316 and 474 have passed these integrity checks. Different weights hashes and nonzero layer coverage do not establish accuracy or per-layer incremental updates; tensor dtype was not asserted. Epoch completion, final validation, all four Colibri comparisons, broader/critical/native-security/retention gates and latency improvement remain pending. Zero of six applications qualify on the replacement model; the other five remain queued. [Third checkpoint evidence and limits](../training/reports/qwen35-4b-third-checkpoint-integrity-v1.json).
+
 ## Midpoint 4B checkpoint integrity verified - 22 October 2026
 
 IMPLEMENTED and verified: checkpoint 316 passed the same SHA-pinned, independently reviewed saved-adapter verifier at 02:25 UTC, after optimizer update 317 confirmed the save had finished. It contains 256 finite tensors and 20,578,304 elements, with nonzero LoRA_B weights across all 32 text layers. Its weights hash differs from checkpoint 158; adapter configuration and recorded provenance remain unchanged. Inspection used one CPU thread and loaded only saved adapter tensors. No base model, inference, export or activation was involved.
