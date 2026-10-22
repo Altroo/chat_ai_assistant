@@ -1,5 +1,13 @@
 # Verification and acceptance record
 
+## Prospective sequential-stage control tests - 22 October 2026
+
+All 15 metadata-only tests pass locally and in an isolated directory containing only 31 public source/reference/dataset inputs. The unchanged historical 275-case envelope reconstructs to its original hash. Together with the existing primary-selector and focused-report tests, all 33 checks pass.
+
+Coverage includes required candidates and suites, each regression subset, failed current-app gates, visible untrained-app failures, unchanged integer thresholds, changed labels/categories/order, mixed selected steps/exports, sealed policy coupling and immutable input evidence. The single reviewer cleared the final files. Synthetic passing actions test control logic; they do not establish real model accuracy, independent model provenance, native security, latency or admission.
+
+[Policy, source hashes and exact limitations](../training/reports/qwen35-4b-sequential-stage-preparation-v1.json).
+
 ## Larger prefill comparison guard tests - 22 October 2026
 
 All 18 offline tests pass locally and on Linux. They retain the canonical failed-baseline replay, complete labels/settings checks, exclusive worker ownership, startup-failure cleanup, input seals and competing-job rejection. Added checks cover the exact 16-change derivation, requested chunk environment, unchanged CPU/memory/context/output limits, canonical-source mutation and refusal of absent or changed engine settings. Both nonempty and empty DUMP_LAYERS values are rejected, matching the frozen C branch that disables chunking whenever the variable is present.

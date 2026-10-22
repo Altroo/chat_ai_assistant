@@ -1,5 +1,13 @@
 # Model training and evaluation
 
+## Replacement 4B sequential model gates - 22 October 2026
+
+The replacement model restarts qualification with Facturation, then Management Projet, Design Workflow, Contrat, Gestion Magasin and Reservation. A new first-stage helper preserves all primary candidates, all 275/438/48 broader cases and existing per-application/subset thresholds. It distinguishes current Facturation model gates from measurements of applications not yet trained on this lineage. The old shared model's checkpoint is not a qualified predecessor of the fresh 4B model.
+
+Before any later stage, bind the actual accepted 4B predecessor and its retention reports. The candidate must retain every previously qualified app on identical cases with all original gates and no decline in tool, action, structure or eligible-argument counts. Final qualification requires all six current app evaluations on the same shared model. Later-stage helpers and numerical admissions remain incomplete.
+
+This is a prospective broader-aggregation policy prepared after pilot training, before broader evaluation. It changes neither the running canonical comparison nor historical scores. Fifteen helper tests and 33 adjacent checks pass; this is not model accuracy. Native security, integrated behavior, latency and production approval remain separate. [Preparation evidence](../training/reports/qwen35-4b-sequential-stage-preparation-v1.json).
+
 ## Third 4B checkpoint integrity verified - 22 October 2026
 
 IMPLEMENTED and verified: checkpoint 474 passed the same SHA-pinned, independently reviewed saved-adapter verifier at 07:00 UTC after optimizer update 475 confirmed its save had finished. Inspection finished after update 476. The adapter contains 256 finite tensors and 20,578,304 elements, with nonzero LoRA_B weights across all 32 text layers. Rank-16/alpha-32 configuration and recorded provenance match earlier checkpoints; its weights hash differs from checkpoints 158 and 316. Adapter/config fingerprints remain stable through inspection. One CPU thread loaded only saved adapter tensors, with no base-model load, inference, export or activation.

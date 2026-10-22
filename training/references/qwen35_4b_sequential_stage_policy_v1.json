@@ -1,0 +1,109 @@
+{
+  "version": "qwen35-4b-sequential-stage-v1",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "stage_order": [
+    "facturation",
+    "management_projet",
+    "design_workflow",
+    "contrat",
+    "gestion_magasin",
+    "reservation"
+  ],
+  "implemented_stage": "facturation",
+  "primary_policy": {
+    "version": "qwen35-4b-pilot-primary-selection-v1",
+    "application": "facturation",
+    "rows": 133,
+    "candidate_steps": [
+      0,
+      158,
+      316,
+      474,
+      632
+    ],
+    "selection": [
+      "all primary Facturation development targets met",
+      "highest Facturation development full-action fraction",
+      "highest Facturation development valid-structure fraction",
+      "lowest checkpoint step"
+    ],
+    "primary_sha256": "ac1b70e353fc9ec632b21afd4d69de9743db24e07e865cb9f4b804d22b32ce58",
+    "cached_baseline_sha256": "aefc7ae52ae04243d5b4afe42ca11e78e979d7cbdba4d1dbc36edf65ea9724fd",
+    "source_baseline_result_sha256": "31640310e4ef7b61838851ec734e6db7a7fb99acf5e2d8bd3037145ea7793dd9",
+    "training_policy_sha256": "5e53d0d7bc1b76120478b592b8c573e447ccf448c5ddfa86039b88114af9ebda",
+    "selector_sha256": "10a49e4e2ce913b27bc7f6098f231c6fe905effcd3cde2983a70c2adad6841dd",
+    "frozen_scorer_loader_sha256": "574165322a5fc6312244ddb0b86f33621ad903587bd432084950a9494cd603b8",
+    "validation_loss_used_for_ranking": false,
+    "broader_checks_required": [
+      275,
+      438,
+      48
+    ],
+    "limitations": [
+      "Previously inspected correlated development cases, not new blind certification.",
+      "A primary pass is necessary and does not establish broader or native-security acceptance.",
+      "Actual completed-training, model/adapter/export/runtime and worker evidence is required separately.",
+      "All declared candidates must complete; invalid model outputs remain failures."
+    ]
+  },
+  "development": {
+    "sha256": "b007326c32de9ede8424218ad4196a663324b1ad516df87a69df957f1b846a8b",
+    "count": 275,
+    "by_application": {
+      "facturation": 133,
+      "management_projet": 78,
+      "design_workflow": 64
+    }
+  },
+  "regression": {
+    "manifest_sha256": "6e8df0592ddcde75fd2d4c1277aaf789545cd7f1ca9224fc756787abe22e73f3",
+    "count": 438,
+    "by_application": {
+      "facturation": 108,
+      "management_projet": 200,
+      "design_workflow": 130
+    },
+    "files": {
+      "shared-adapter-v2-en-fr--design-workflow-v1-en-fr--test.eval.jsonl": "a68b97ede98f06de515569a639cfa015b7face6e22c127da975040220d112a1f",
+      "shared-adapter-v2-en-fr--design-workflow-v2-en-fr--independent.eval.jsonl": "76a49dd3f16a3f8747d2a27e72136a8638bb7e9bfaa0464fe074d30b35474965",
+      "shared-adapter-v2-en-fr--design-workflow-v3-en-fr--independent.eval.jsonl": "03dd38836643543de70dcbd000f282bc8086fbba9ddffb532f3b5ed9d2db3523",
+      "shared-adapter-v2-en-fr--design-workflow-refinement-v1-en-fr--independent.eval.jsonl": "1e7c759c1b96fe2ef63c7923734dea1e0a36537d6c84a9a12c438678e8a57745",
+      "shared-adapter-v2-en-fr--facturation-acceptance-en-fr--test.eval.jsonl": "5032ad514fa56ec971eafa72e3589d135debc12ca1f6272342460d9230837a42",
+      "shared-adapter-v2-en-fr--facturation-refinement-v1-en-fr--independent.eval.jsonl": "51f86d89eb3d5dc325c2a785aad7bf593be38cf6440a2ba2affb0601a19c280c",
+      "shared-adapter-v2-en-fr--management-projet-v1-en-fr--test.eval.jsonl": "a59f750fffeb6d9868b11d7be6493e3985ab7ed295981139afc11cbf8cd5f6fe",
+      "shared-adapter-v2-en-fr--management-projet-v2-en-fr--independent.eval.jsonl": "cd50078a995961c76f8205f78be66a2fc3242280b554343b308a24fae183e8e8",
+      "shared-adapter-v2-en-fr--management-projet-v3-en-fr--independent.eval.jsonl": "d239c5be3d914669e65a5cc7fba3044ac73ee0fe31ae3ab6a86c2e1c673486d5",
+      "shared-adapter-v2-en-fr--management-projet-v4-en-fr--independent.eval.jsonl": "66b337ebdd4d859d3c15330f040444d1b3b2b820ea4585359f21eadf5cee1c96",
+      "shared-adapter-v2-en-fr--management-projet-refinement-v1-en-fr--independent.eval.jsonl": "e9dfb81a6ff77fa5cea25bbd94fba26b0efca77154316bf8bbca33360aeeabab",
+      "shared-adapter-v2-en-fr--management-projet-followup-v1-en-fr--independent.eval.jsonl": "f1307c78f473ea28af89d0968ab4d022ddec3334d50435cfe6260f57f2a8e145",
+      "facturation-refinement-v2-en-fr--independent.eval.jsonl": "3f8745eab65f545ab55ca31b8b3c78219bae0f988b7d0ed3d1278b1146eead0d",
+      "management-projet-refinement-v2-en-fr--independent.eval.jsonl": "6ad3954b01fb07299952c9ee566e6d56ae36b34201aff75da4ee3c1d705b0f49",
+      "design-workflow-refinement-v2-en-fr--independent.eval.jsonl": "3ec71b47bfda4ba49cb0187fcbd949e651bf883fccd4e6da579f956df08203da"
+    }
+  },
+  "additional_controls": {
+    "manifest_sha256": "3c67453ad50eff5883a8c58fb0d2c208ac813dcc700c9680401e1cabc5bd3d7a",
+    "sha256": "5ef26e7d320a9360dcb3defee37c4a60bea807c3f17fb664c2c78c381eb3bff8",
+    "count": 48,
+    "by_application": {
+      "facturation": 16,
+      "management_projet": 16,
+      "design_workflow": 16
+    }
+  },
+  "stage_rules": [
+    "Run every declared primary candidate before selection; do not change scoring or labels.",
+    "Run all 275 development, 438 regression and 48 additional controls for the selected model.",
+    "Current application must pass every own grouped suite and each own regression subset.",
+    "Report every measured untrained-application failure; it is not a previously qualified retention gate.",
+    "Stage one has no accepted predecessor in this new 4B lineage; the old model is not its predecessor.",
+    "Before each later stage, seal its datasets and actual accepted 4B predecessor model/report hashes.",
+    "Retain all previously qualified applications on the candidate: all original gates plus no decline in tool, action, structure and eligible argument counts on identical cases.",
+    "No stage skipping. Later-stage implementation/admission is separate and not supplied by this first-stage helper.",
+    "Final six-application model qualification requires all six current evaluations on the same shared model.",
+    "Native security, integrated behavior and latency remain separate requirements; model scores do not prove them.",
+    "Numerical admission and production activation are separate; this helper authorizes neither."
+  ],
+  "helper_sha256": "b170d0a76e0dd9974eb699ccf34e0bbf140a9aa5bcbc4cfaaae4db124291f601"
+}

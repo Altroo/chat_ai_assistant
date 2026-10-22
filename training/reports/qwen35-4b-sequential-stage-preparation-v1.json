@@ -1,0 +1,88 @@
+{
+  "version": "qwen35-4b-sequential-stage-preparation-v1",
+  "status": "PROSPECTIVE FACTURATION STAGE CONTROLS VERIFIED; NO MODEL ACCEPTANCE",
+  "model": "Qwen/Qwen3.5-4B",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "stage_order": [
+    "facturation",
+    "management_projet",
+    "design_workflow",
+    "contrat",
+    "gestion_magasin",
+    "reservation"
+  ],
+  "implemented_stage_helper": "facturation",
+  "source_sha256": {
+    "training/scripts/qwen35_4b_stage_policy_v1.py": "b170d0a76e0dd9974eb699ccf34e0bbf140a9aa5bcbc4cfaaae4db124291f601",
+    "training/tests/test_qwen35_4b_stage_policy_v1.py": "84b85bbac391cd4d46d43519422f68e934e6f3a37cdea333643fa6873c255394",
+    "training/references/qwen35_4b_sequential_stage_policy_v1.json": "7b57617d844406a9457839afdee937843c11f5321ae3302122addf0155a89c7f"
+  },
+  "primary_comparison_unchanged": true,
+  "all_declared_candidates_required": [
+    0,
+    158,
+    316,
+    474,
+    632
+  ],
+  "broader_case_counts_unchanged": [
+    275,
+    438,
+    48
+  ],
+  "facturation_broader_counts": {
+    "development": 133,
+    "regression": 108,
+    "regression_subsets": 3,
+    "additional_controls": 16
+  },
+  "thresholds_unchanged": {
+    "actions_percent": 95,
+    "tools_percent": 95,
+    "eligible_arguments_percent": 95,
+    "structure_percent": 99,
+    "all_critical_and_clarification_cases": true
+  },
+  "policy_scope": {
+    "new_model_lineage": true,
+    "first_stage_retained_predecessors": [],
+    "untrained_applications_measured_and_reported_separately": [
+      "management_projet",
+      "design_workflow"
+    ],
+    "later_stages_require_actual_accepted_predecessor_and_no_decline": true,
+    "same_shared_model_required_for_final_six_application_gate": true,
+    "legacy_model_or_checkpoint_not_accepted_as_replacement_predecessor": true
+  },
+  "verification": {
+    "local_current_helper_tests_passed": 15,
+    "public_inputs_only_helper_tests_passed": 15,
+    "public_inputs_files": 31,
+    "adjacent_tests_passed": 33,
+    "historical_development_reconstructed_byte_identically": true,
+    "historical_development_sha256": "b007326c32de9ede8424218ad4196a663324b1ad516df87a69df957f1b846a8b",
+    "single_reviewer": "No issues",
+    "public_input_test_log_sha256": "56c0a710922b438a636d8839ea1b2d27e7affd4f1708ee30e4a53b41ab7acafb",
+    "adjacent_test_log_sha256": "df7f3af959c46e6e6ec2b69529d8e0243917a608889a3f3a58b5018c6107742c"
+  },
+  "native_security_required_separately": true,
+  "integrated_behavior_required_separately": true,
+  "latency_required_separately": true,
+  "later_stage_helpers_implemented": false,
+  "model_provenance_independently_verified_by_this_helper": false,
+  "next_application_training_authorized": false,
+  "all_six_apps_accepted": false,
+  "production_activation": false,
+  "limitations": [
+    "Policy prepared after this pilot training and before broader results; it is not a pre-training preregistration.",
+    "Current canonical benchmark inputs, labels, provider, selection and scoring are unchanged.",
+    "Synthetic perfect-action fixtures validate controls; they are not generated model scores.",
+    "Every broad phase must bind the selected export/step, but declaration equality is not independent artifact attestation.",
+    "Previously inspected correlated development/regression cases are not new blind certification.",
+    "Only the first-stage helper is implemented. Each later stage needs its own bound datasets, actual accepted predecessor and retention results before admission.",
+    "No numerical model job, benchmark result, application source or production model changed in this preparation."
+  ]
+}

@@ -1,5 +1,13 @@
 # Chat AI Assistant progress
 
+## Prospective replacement-model stage controls - 22 October 2026
+
+IMPLEMENTED and verified as preparation: a separate first-stage helper preserves every declared primary candidate and all 275/438/48 broader cases, original scoring, thresholds, critical gates and individual regression subsets. It reports Facturation's own model gates separately from measured untrained-application diagnostics. This new 4B lineage has no accepted predecessor at stage one; later stages must bind the actual accepted 4B predecessor and retain every previously qualified application without decline.
+
+All 15 current helper tests pass locally and with only 31 public inputs available; 33 adjacent checks pass. The single reviewer closed a private-fixture dependency finding. The 275 historical development envelopes reconstruct byte for byte from committed synthetic inputs.
+
+PARTIALLY IMPLEMENTED: only the first-stage helper exists. Each later stage still needs its own sealed data, predecessor and retention evidence. This policy was prepared after pilot training and before broader evaluation; it does not change current primary scoring or grant numerical admission, application acceptance or production activation. The canonical checkpoint comparisons remain running. [Exact preparation scope](../training/reports/qwen35-4b-sequential-stage-preparation-v1.json).
+
 ## Larger CPU prefill comparison prepared - 22 October 2026
 
 IMPLEMENTED and verified as preparation: a separate seven-thread Colibri replay requests 512-row prompt-processing chunks, compared with the frozen source default of 128. Model, all 133 ordered requests, labels, scorer, context/output limits and CPU/memory budgets stay unchanged. All 18 offline checks pass locally and on Linux. The single reviewer cleared the corrected source after an empty-environment-value guard fix. Separate admission, units and outputs prevent this replay from becoming a canonical candidate.
