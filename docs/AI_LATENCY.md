@@ -58,3 +58,9 @@ The inspected frozen Colibri CPU loader supports requested four-bit packing for 
 The precision replay passed all 20 offline tests locally and on the Linux server, and the single reviewer cleared its preparation. Admission, unit names and result paths are separate from canonical candidates, with the requested profile bound to admission. No inference has run.
 
 Actual four-bit coverage remains unverified: the CPU loader can retain int8 after an allocation failure and does not expose per-matrix precision counters. These are requested-configuration tests. Quantization can reduce accuracy, and no speed or RAM improvement is claimed. Full quality/security checks and cold/warm repetitions remain required. [Source, tests and limits](../training/reports/qwen35-4b-precision-latency-preparation-v1.json).
+
+## Trained-checkpoint measurements started - 22 October 2026
+
+Facturation's 632-update training run and all four Colibri exports are complete. Checkpoint 158 has started the canonical seven-thread, 133-case replay with passive native phase profiles. No complete trained-model latency result or improvement is available yet. The other checkpoints, selected-model fourteen-thread and requested precision comparisons, cold/warm repetitions and complete application timings remain pending. The 38.114-second figure above still belongs to the untrained baseline.
+
+[Completed training and current measurement scope](../training/reports/qwen35-4b-pilot-training-completion-v1.json).

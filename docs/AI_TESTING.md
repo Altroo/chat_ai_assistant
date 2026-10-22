@@ -1,5 +1,13 @@
 # Verification and acceptance record
 
+## Completed 4B training and export verification - 22 October 2026
+
+Verified the original successful completion of all 632 scheduled Facturation updates and final validation. Updates are finite and contiguous. All four checkpoint exports have 42 hash-verified Colibri files, unchanged metadata and exact training bindings. Original process cleanup and unchanged protected services were checked. The single reviewer reproduced saved completion/export evidence and cleared sequential primary evaluation; this was not an independent live server session.
+
+Checkpoint 158 has started the unchanged 133-case canonical comparison. All four checkpoints and the cached untrained baseline remain required. Lower teacher-forced loss, finite adapters and successful exports are not generated-action accuracy, production readiness or latency improvement. Broader/critical/retention and integrated security/performance gates remain mandatory; no replacement model is accepted.
+
+[Actual completion evidence and scope](../training/reports/qwen35-4b-pilot-training-completion-v1.json).
+
 ## Current native backend security regression - 22 October 2026
 
 IMPLEMENTED and verified: all 310 tests in five existing Facturation modules passed in 43.58 seconds using isolated synthetic local PostgreSQL fixtures. The suite exercises existing permissions, company/object isolation, revocation, conversation access/delivery, planner validation, confirmation history and actor attribution, and stock/logistics read projections. Network access was restricted to local PostgreSQL; inherited coverage/cache artifacts were disabled. The disposable test database was removed and all 758 recorded Python source hashes matched before and after. The single reviewer reproduced the saved result and source hashes.

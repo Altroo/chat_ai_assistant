@@ -1,0 +1,147 @@
+{
+  "version": "qwen35-4b-pilot-training-completion-v1",
+  "status": "FACTURATION TRAINING AND FOUR EXPORTS COMPLETE; PRIMARY COMPARISON RUNNING; NOT ACCEPTED",
+  "focus_application": "facturation",
+  "model": "Qwen/Qwen3.5-4B",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "inference_runtime": "Colibri",
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training_completed_utc": "2026-10-22T12:31:02.855935+00:00",
+  "training": {
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "cpu_threads": 14,
+    "steps": 632,
+    "complete_epochs": 1,
+    "unique_facturation_train_examples": 632,
+    "validation_examples": 133,
+    "all_updates_contiguous": true,
+    "all_optimizer_losses_finite": true,
+    "lora_rank": 16,
+    "lora_alpha": 32.0,
+    "trainable_parameters": 20578304,
+    "saved_checkpoint_steps": [
+      158,
+      316,
+      474,
+      632
+    ],
+    "duration_seconds": 72816.08643834479,
+    "optimizer_work_seconds": 66925.351,
+    "peak_rss_kib": 19086436,
+    "teacher_forced_validation_loss": {
+      "baseline": 0.08951064849756413,
+      "final": 0.020905331369748523
+    }
+  },
+  "verification": {
+    "collection_sha256": "8969df7c0bfc0c7b129e3ff1f569455c779ed56fe125021468365d8bc369868c",
+    "complete_sha256": "1cd7719c5a463cad643b485ba68d568a9fc4f7c05920be202e7edb43a6fbeda0",
+    "training_report_sha256": "b4d76f6f921a8da73bf71d2af638e0b49d9bc33755081a882cbdf7717642d140",
+    "training_log_sha256": "7452cdc4383a6d5122e373d67b3c7c30c9abf208f035ed8b1712505aca755d8c",
+    "dataset_sha256": "fd53da92503e76ef38c77c09c94ab835b8da14cc7f79809b0a5eb79c3ca73537",
+    "validation_sha256": "d522c540e3281e81d2d6a2fb6f4eed5fc21175a519ed8dd5fbd8e4494f061478",
+    "original_terminal_result": "success",
+    "original_exit_status": 0,
+    "original_processes_gone": true,
+    "training_cgroup_empty_or_absent": true,
+    "protected_services_unchanged": true,
+    "final_adapter_equals_checkpoint_632": true,
+    "single_reviewer": "No issues",
+    "review_scope": "Saved completion/export evidence and input couplings; not an independent live server session."
+  },
+  "colibri_exports": {
+    "158": {
+      "files_verified": 42,
+      "receipt_sha256": "dc2aa4556d2609e795b4e1625a8b14db5d88dca2125ba8d8a84ca671045d72dc",
+      "verification_sha256": "2978bb7c8e97a8fde5a8f7e0a907cf51c850fc6d7d882a57b84822e9710b451d",
+      "successful_original_terminal_execution_verified": true,
+      "original_process_gone": true,
+      "cgroup_empty_or_absent": true,
+      "protected_services_unchanged": true
+    },
+    "316": {
+      "files_verified": 42,
+      "receipt_sha256": "05ebb348c2020d6d39d9370cadbf5dd2f6c597c0e91a15992f50b67e7a17aa5d",
+      "verification_sha256": "0861ec14da2e2b5cd8003244f85b72c8ec1334a8fb10ffe262f3a5ec05941dd4",
+      "successful_original_terminal_execution_verified": true,
+      "original_process_gone": true,
+      "cgroup_empty_or_absent": true,
+      "protected_services_unchanged": true
+    },
+    "474": {
+      "files_verified": 42,
+      "receipt_sha256": "a3bf9a7f058faac2123853590e6511a07674f79fa15c4858433df4c850ade790",
+      "verification_sha256": "8274f0097dcd1319dc78643042146027e9d5070bd9b12c429f23401e500ed371",
+      "successful_original_terminal_execution_verified": true,
+      "original_process_gone": true,
+      "cgroup_empty_or_absent": true,
+      "protected_services_unchanged": true
+    },
+    "632": {
+      "files_verified": 42,
+      "receipt_sha256": "fc0a912eaea1b149361930dfc7817a89e31dc4e1459da3573d489899739508e0",
+      "verification_sha256": "b58873bd7dbba059bcd9c7c4d12ba0c1daadc80719b668a16b11dae6e0b35402",
+      "successful_original_terminal_execution_verified": true,
+      "original_process_gone": true,
+      "cgroup_empty_or_absent": true,
+      "protected_services_unchanged": true
+    }
+  },
+  "primary_comparison": {
+    "status": "RUNNING",
+    "checkpoint_started": 158,
+    "ordered_cases_per_checkpoint": 133,
+    "required_checkpoints": [
+      158,
+      316,
+      474,
+      632
+    ],
+    "cached_untrained_baseline_required": true,
+    "canonical_cpu_threads": 7,
+    "context_tokens": 8192,
+    "max_output_tokens": 512,
+    "thinking": false,
+    "full_trained_score_available": false,
+    "labels_and_scorer_unchanged": true,
+    "passive_native_phase_profiles": true
+  },
+  "untrained_baseline": {
+    "actions_passed": 77,
+    "cases": 133,
+    "action_accuracy_percent": 57.89,
+    "mean_request_latency_seconds": 38.114,
+    "p95_request_latency_seconds": 118.628
+  },
+  "applications_qualified": 0,
+  "applications_total": 6,
+  "other_applications_queued": [
+    "management_projet",
+    "design_workflow",
+    "contrat",
+    "gestion_magasin",
+    "reservation"
+  ],
+  "production_activation": false,
+  "next_application_training": false,
+  "latency_improvement_established": false,
+  "remaining_gates": [
+    "Complete all four unchanged primary comparisons and selector.",
+    "At least 95% actions, tool selection and eligible arguments; at least 99% structured output; all critical and clarification cases.",
+    "Required broader 275/438/48 comparisons and retention gates.",
+    "Current native backend security, integrated delivery and authorization verification.",
+    "Actual selected-model latency comparisons and complete-application performance measurements."
+  ],
+  "limitations": [
+    "Teacher-forced loss is not generated-action accuracy or a speed measurement.",
+    "Primary scenarios are correlated inspected development cases, not fresh blind certification.",
+    "Training duration includes initial/final validation; optimizer work is the sum of recorded update durations.",
+    "Process peak RSS is not the systemd memory peak and does not establish production inference RAM.",
+    "Exports and finite adapter tensors establish artifact integrity, not 95% accuracy.",
+    "No new model was activated and the remaining five applications have not started replacement training."
+  ]
+}

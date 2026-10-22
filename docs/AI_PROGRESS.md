@@ -1,5 +1,15 @@
 # Chat AI Assistant progress
 
+## 4B Facturation training and four exports completed - 22 October 2026
+
+IMPLEMENTED and verified: the original server run completed all 632 contiguous finite optimizer updates, one Facturation epoch and final validation. Runtime was 72,816.09 seconds, about 20 hours 14 minutes, using 14 CPU threads. Peak process RSS was about 18.20 GiB. Teacher-forced validation loss decreased from 0.089511 to 0.020905; this is not an accuracy percentage.
+
+All four saved checkpoints, 158/316/474/632, exported to Colibri. Each 42-file output passed recomputed hashes, metadata and training-input couplings. Original successful terminal executions, gone process identities, empty or absent cgroups and unchanged protected services were checked. The single reviewer cleared saved completion/export evidence and sequential primary evaluation. The final adapter equals checkpoint 632.
+
+PARTIALLY IMPLEMENTED: checkpoint 158 has started the unchanged 133-case canonical Colibri comparison with passive timing profiles. The other three comparisons, selector, broader 275/438/48 acceptance, retention, integrated delivery and actual latency improvement remain pending. The only complete 4B action score is still the untrained 77/133 (57.89%), with 38.114 seconds mean request latency. No trained score, speedup or production activation is claimed. Zero of six applications qualify on the replacement; the other five remain queued.
+
+[Completed training, verified exports and remaining gates](../training/reports/qwen35-4b-pilot-training-completion-v1.json).
+
 ## Current native security regression refreshed - 22 October 2026
 
 IMPLEMENTED and verified: 310 tests passed across five existing Facturation backend modules in 43.58 seconds. Synthetic local PostgreSQL fixtures cover current role permissions, company/object isolation, source and permission revocation, conversation ownership, strict planner validation, confirmed-action attribution and stock/logistics projections. The test database was removed. All 758 recorded Python source hashes remain unchanged. The single reviewer cleared the runner after its inherited coverage output was disabled, then independently reproduced the saved result and source hashes. No model inference, server training change or production-data access occurred.
