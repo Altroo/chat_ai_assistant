@@ -50,3 +50,11 @@ Measure native greetings, acknowledgements, shortcut help, model-planned searche
 A separate fourteen-thread Colibri replay is prepared from the unchanged seven-thread evaluation runner. It preserves the same 133 ordered cases, model export, context/output budgets, labels and scorer. Its admission, worker units and results are separate; it cannot become a canonical primary candidate. All 18 offline tests passed locally and on the Linux training server. The single reviewer cleared the source after a queued-controller concurrency guard fix.
 
 This is preparation only. Training completion, actual export review and a separate execution admission are required before inference. No faster response time has been demonstrated. Controlled cold/warm repetitions and full application timings remain pending. [Source bindings, tests and execution limits](../training/reports/qwen35-4b-thread-latency-preparation-v1.json).
+
+## Prepared CPU precision comparison - 22 October 2026
+
+The inspected frozen Colibri CPU loader supports requested four-bit packing for eligible tagged matrices. One prepared profile targets the output head and dense MLP; another requests all supported dense components. They reuse the same model export and seven-thread resource budget. The canonical seven-thread checkpoint comparison and separate fourteen-thread replay remain unchanged.
+
+The precision replay passed all 20 offline tests locally and on the Linux server, and the single reviewer cleared its preparation. Admission, unit names and result paths are separate from canonical candidates, with the requested profile bound to admission. No inference has run.
+
+Actual four-bit coverage remains unverified: the CPU loader can retain int8 after an allocation failure and does not expose per-matrix precision counters. These are requested-configuration tests. Quantization can reduce accuracy, and no speed or RAM improvement is claimed. Full quality/security checks and cold/warm repetitions remain required. [Source, tests and limits](../training/reports/qwen35-4b-precision-latency-preparation-v1.json).

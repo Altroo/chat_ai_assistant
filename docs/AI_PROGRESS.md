@@ -1,5 +1,11 @@
 # Chat AI Assistant progress
 
+## CPU precision latency comparison prepared - 22 October 2026
+
+IMPLEMENTED and verified as preparation: a separate seven-thread Colibri replay supports two requested four-bit precision profiles for the existing model. All 20 offline tests passed locally and on Linux; the single reviewer cleared the source. Canonical checkpoint comparisons, labels, scorer and output budgets remain unchanged. Actual per-matrix four-bit coverage is unverified; no numerical inference, speedup, RAM saving or quality improvement is claimed. [Preparation and limits](../training/reports/qwen35-4b-precision-latency-preparation-v1.json).
+
+PARTIALLY IMPLEMENTED: the original Facturation trainer remains active at 526/632 updates in the verified 08:23 UTC snapshot. Recorded updates are contiguous and losses finite. Protected containers remain healthy and unchanged; KAT process identities are unchanged. Epoch completion, final validation, all checkpoint comparisons, broad/critical/native-security/retention acceptance and latency improvement remain pending. Zero of six applications qualify on the replacement model; the other five remain queued.
+
 ## Third 4B checkpoint integrity verified - 22 October 2026
 
 IMPLEMENTED and verified: checkpoint 474 passed the same SHA-pinned, independently reviewed saved-adapter verifier at 07:00 UTC after optimizer update 475 confirmed its save had finished. Inspection finished after update 476. The adapter contains 256 finite tensors and 20,578,304 elements, with nonzero LoRA_B weights across all 32 text layers. Rank-16/alpha-32 configuration and recorded provenance match earlier checkpoints; its weights hash differs from checkpoints 158 and 316. Adapter/config fingerprints remain stable through inspection. One CPU thread loaded only saved adapter tensors, with no base-model load, inference, export or activation.

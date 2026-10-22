@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "prepared_at": "2026-10-22T08:25:10.543513+00:00",
+  "status": "PREPARED, REVIEWED AND OFFLINE TESTED; NO NUMERICAL EXECUTION",
+  "application": "facturation",
+  "model": "Qwen/Qwen3.5-4B",
+  "purpose": "Compare requested CPU dense precision profiles using the same exported checkpoint and unchanged quality scoring.",
+  "frozen_runtime": {
+    "engine_source_sha256": "b9e01e98966f048de17b91461870af36615530a5a18c393d78d7bfe3dbd05ba1",
+    "existing_cpu_support": true,
+    "source_default_dense_bits": 8,
+    "four_bit_input_width_multiple": 64,
+    "packing": "Grouped planar int4, one scale per 64 input values",
+    "applies_to_dense_model_mlp": true,
+    "inference_measured": false
+  },
+  "profiles": {
+    "mlp_head": {
+      "requested_bits": 4,
+      "components": [
+        "lmhead",
+        "shexp"
+      ],
+      "note": "The shexp tag selects the MLP even when there are no routed experts; other eligible projections retain the default precision."
+    },
+    "all": {
+      "requested_bits": 4,
+      "components": [
+        "lmhead",
+        "dnproj",
+        "dnout",
+        "attn",
+        "shexp",
+        "router"
+      ],
+      "note": "Requests four-bit packing only for eligible tagged matrices, not every model tensor."
+    }
+  },
+  "comparison_controls": {
+    "threads": 7,
+    "cpu_quota_percent": 700,
+    "cases": 133,
+    "context_tokens": 8192,
+    "maximum_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0,
+    "canonical_seven_and_fourteen_thread_sources_unchanged": true,
+    "source_sha256": "8904e8c47810be1a031ee0358542f29f87dd5c2878330beb88f07ee71020c44b",
+    "tests_sha256": "b71ad719c620ba9e935ff51657551b6a9e46b26fa010f0ee813b7d6cdc9b00e2",
+    "derivation_sha256": "2d20c1e413d62e832f2c72ac8c412c6cb6657c2b533570e9368a00456c4e05dd",
+    "profile_bound_to_execution_admission": true,
+    "separate_admission_units_and_results": true,
+    "canonical_primary_candidate": false,
+    "labels_requests_and_scoring_unchanged": true
+  },
+  "tests": {
+    "local_offline_passed": 20,
+    "server_linux_offline_passed": 20,
+    "review": "No issues",
+    "reviewer_count": 1,
+    "model_frameworks_imported": false,
+    "inference_executed": false
+  },
+  "training_snapshot": {
+    "observed_at": "2026-10-22T08:23:06.036257+00:00",
+    "updates": 526,
+    "scheduled_updates": 632,
+    "original_identity_matches": true,
+    "recorded_update_numbers_contiguous": true,
+    "all_recorded_losses_finite": true,
+    "protected_containers_healthy": true,
+    "protected_container_and_kat_process_identities_unchanged": true,
+    "complete": false
+  },
+  "execution_requirements": [
+    "Complete the original training and full output/provenance audit.",
+    "Review actual exports and grant separate exact-source, exact-profile execution admission.",
+    "Use the same checkpoint and unchanged primary questions, labels, scorer and budgets.",
+    "Keep one experimental worker and no concurrent training/export, with existing ownership, limits and cleanup.",
+    "Require unchanged quality/security/retention acceptance before any production configuration change."
+  ],
+  "limitations": [
+    "The CPU loader can retain int8 if four-bit allocation fails; the frozen CPU engine does not expose per-matrix precision counters.",
+    "Actual four-bit matrix coverage is unverified. Results identify requested profiles, not proven universal four-bit storage.",
+    "Quantization changes arithmetic and can reduce accuracy; no quality result is available.",
+    "Neither latency nor RAM improvement has been measured.",
+    "Cold/warm repeatability, full application timings and broad acceptance remain pending."
+  ],
+  "execution_admission": false,
+  "inference_executed": false,
+  "training_modified": false,
+  "production_activation": false,
+  "applications_qualified": 0,
+  "applications_total": 6
+}
