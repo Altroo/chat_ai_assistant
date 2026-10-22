@@ -1,0 +1,66 @@
+{
+  "recorded_at": "2026-10-22T10:31:13.971757+00:00",
+  "status": "IMPLEMENTED AND VERIFIED: FIVE CURRENT NATIVE BACKEND REGRESSION MODULES",
+  "application": "facturation",
+  "execution": {
+    "observed_at": "2026-10-22T10:19:56.531463+00:00",
+    "passed": 310,
+    "failed": 0,
+    "pytest_seconds": 43.58,
+    "runner_wall_seconds": 46.99,
+    "exit_code": 0,
+    "test_modules": [
+      "chat_ai/tests.py",
+      "chat_ai/test_operations.py",
+      "chat_ai/test_review_regressions.py",
+      "chat_ai/test_confirmation_history.py",
+      "chat_ai/test_document_actions.py"
+    ],
+    "fixtures": "synthetic isolated local PostgreSQL",
+    "local_test_database_removed": true,
+    "network_guard": "only local PostgreSQL connections permitted",
+    "coverage_and_cache_artifacts_disabled": true,
+    "python_files_hashed_before_and_after": 758,
+    "python_source_hashes_unchanged": true,
+    "source_inventory_sha256": "a165867af673953d8392e9968f35c1d94ffab7908e7e163c361b796a41ec73d5",
+    "log_sha256": "82911e05a068ea56a9ce647a7902bc325ad9e625b23daf4503a97eb3f3b1d689",
+    "runner_sha256": "dd084e93126189bee6d2cdebc7c1dc9ff59599c274740e2be67ff01f3d4b598a",
+    "result_sha256": "400472c36e31cc00bcaa4769a99b4839192639e94b8ce0c2b4b16b2d5cea7565",
+    "review": "No issues after coverage-output isolation fix; saved result and source hashes independently reproduced",
+    "review_database_cleanup_scope": "main thread queried the local database catalog; reviewer checked the saved receipt",
+    "model_loaded": false,
+    "model_inference": false,
+    "server_training_changed": false,
+    "production_data_access": false
+  },
+  "covered_boundaries": [
+    "authentication and existing role permissions",
+    "company and object isolation",
+    "current permission and knowledge-source revocation",
+    "conversation ownership and safe delivery",
+    "strict tool arguments and planner-output rejection",
+    "requester-bound confirmations and actor audit history",
+    "stock and logistics read projections"
+  ],
+  "training_snapshot": {
+    "observed_at": "2026-10-22T10:29:18.148841+00:00",
+    "status": "RUNNING",
+    "optimizer_updates_logged": 591,
+    "scheduled_optimizer_updates": 632,
+    "original_identity_matches": true,
+    "optimizer_steps_contiguous": true,
+    "optimizer_losses_finite": true
+  },
+  "limits": [
+    "This checks five existing native backend regression modules, not every backend test.",
+    "Synthetic parser and permission tests are not generated-model accuracy.",
+    "This is not production security certification or integrated acceptance of a trained replacement.",
+    "The trained model has not completed its accuracy, broader, critical, retention or latency evaluations.",
+    "No other application training or acceptance follows from this result."
+  ],
+  "fine_tuned_accuracy_available": false,
+  "latency_improvement_measured": false,
+  "applications_qualified_on_replacement_model": 0,
+  "applications_in_scope": 6,
+  "production_activation": false
+}

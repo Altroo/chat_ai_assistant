@@ -1,5 +1,11 @@
 # Chat AI Assistant progress
 
+## Current native security regression refreshed - 22 October 2026
+
+IMPLEMENTED and verified: 310 tests passed across five existing Facturation backend modules in 43.58 seconds. Synthetic local PostgreSQL fixtures cover current role permissions, company/object isolation, source and permission revocation, conversation ownership, strict planner validation, confirmed-action attribution and stock/logistics projections. The test database was removed. All 758 recorded Python source hashes remain unchanged. The single reviewer cleared the runner after its inherited coverage output was disabled, then independently reproduced the saved result and source hashes. No model inference, server training change or production-data access occurred.
+
+PARTIALLY IMPLEMENTED: this is a scoped native backend regression, not every backend test or integrated replacement-model acceptance. The original Facturation trainer remains live at 591/632 updates in the verified 10:29 UTC snapshot. Final validation, checkpoint export/comparisons, broader/critical/retention acceptance and actual latency improvement remain pending. Zero of six applications qualify on the replacement model; the other five remain queued. [Measured tests and scope](../training/reports/qwen35-4b-current-native-regression-v1.json).
+
 ## CPU precision latency comparison prepared - 22 October 2026
 
 IMPLEMENTED and verified as preparation: a separate seven-thread Colibri replay supports two requested four-bit precision profiles for the existing model. All 20 offline tests passed locally and on Linux; the single reviewer cleared the source. Canonical checkpoint comparisons, labels, scorer and output budgets remain unchanged. Actual per-matrix four-bit coverage is unverified; no numerical inference, speedup, RAM saving or quality improvement is claimed. [Preparation and limits](../training/reports/qwen35-4b-precision-latency-preparation-v1.json).

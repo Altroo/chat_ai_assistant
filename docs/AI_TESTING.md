@@ -1,5 +1,11 @@
 # Verification and acceptance record
 
+## Current native backend security regression - 22 October 2026
+
+IMPLEMENTED and verified: all 310 tests in five existing Facturation modules passed in 43.58 seconds using isolated synthetic local PostgreSQL fixtures. The suite exercises existing permissions, company/object isolation, revocation, conversation access/delivery, planner validation, confirmation history and actor attribution, and stock/logistics read projections. Network access was restricted to local PostgreSQL; inherited coverage/cache artifacts were disabled. The disposable test database was removed and all 758 recorded Python source hashes matched before and after. The single reviewer reproduced the saved result and source hashes.
+
+PARTIALLY IMPLEMENTED: only these five modules were rerun. No real model response, production business flow or replacement-model acceptance was evaluated. Model training, unchanged functional/critical/retention gates and latency qualification remain separate. [Exact modules, evidence hashes and limits](../training/reports/qwen35-4b-current-native-regression-v1.json).
+
 ## Completed semantic comparison and TRAIN diagnostic - 20 October 2026
 
 IMPLEMENTED: the successful 500-update completion and all five primary candidates are verified. Independent review reproduces the 229 bound files, 12 ordered raw shards, all 532 new and 133 cached cases, exact native parsing, frozen scoring and selection. All 12 evaluation workers stopped; 24 original processes are gone, evaluation ports are free and production remains healthy without restart. Review checks saved evidence, not an independent server session.
