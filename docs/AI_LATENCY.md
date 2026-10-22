@@ -44,3 +44,9 @@ Evaluate static-prefix reuse and reduced prompt/schema overhead only with exact 
 Measure native greetings, acknowledgements, shortcut help, model-planned searches and complete application responses as separate paths. Keep their test counts and limitations explicit. No latency improvement or production change is claimed by this preparation.
 
 [Actual baseline analysis and evaluation controls](../training/reports/qwen35-4b-comparison-preparation-v1.json).
+
+## Prepared fourteen-thread comparison - 22 October 2026
+
+A separate fourteen-thread Colibri replay is prepared from the unchanged seven-thread evaluation runner. It preserves the same 133 ordered cases, model export, context/output budgets, labels and scorer. Its admission, worker units and results are separate; it cannot become a canonical primary candidate. All 18 offline tests passed locally and on the Linux training server. The single reviewer cleared the source after a queued-controller concurrency guard fix.
+
+This is preparation only. Training completion, actual export review and a separate execution admission are required before inference. No faster response time has been demonstrated. Controlled cold/warm repetitions and full application timings remain pending. [Source bindings, tests and execution limits](../training/reports/qwen35-4b-thread-latency-preparation-v1.json).

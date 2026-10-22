@@ -1,0 +1,56 @@
+{
+  "report_version": 1,
+  "status": "PREPARED AND OFFLINE TESTED; NO NUMERICAL EXECUTION",
+  "application": "facturation",
+  "model": "Qwen/Qwen3.5-4B",
+  "purpose": "Measure whether fourteen CPU threads improve latency over the frozen seven-thread evaluation without changing quality scoring.",
+  "canonical_evaluation": {
+    "threads": 7,
+    "cases": 133,
+    "source_sha256": "3b1916371e745d8cb2147f18dcec77cbe4940b5a344f0f697738e160332865f3",
+    "unchanged": true
+  },
+  "latency_comparison": {
+    "threads": 14,
+    "cpu_quota_percent": 1400,
+    "cases": 133,
+    "context_tokens": 8192,
+    "maximum_output_tokens": 512,
+    "thinking": false,
+    "temperature": 0,
+    "runtime": "Colibri CPU",
+    "source_sha256": "7446c707b7220432370bb8df279bd12b4b3750562b50ff2b1c17f628cb821a77",
+    "tests_sha256": "e80ee584c65cf46a5b751974c3ea281869b8ec924c69ef38dc6cd4a9d52809e7",
+    "derivation_sha256": "b5f74b32961f54ae761e80b7ee5330c35fb1e7ea294cec7d6c37799186cf8110",
+    "canonical_primary_candidate": false,
+    "separate_admission_and_output_paths": true,
+    "labels_requests_scoring_and_authorization_gates_unchanged": true
+  },
+  "tests": {
+    "local_offline_passed": 18,
+    "server_linux_offline_passed": 18,
+    "model_frameworks_imported": false,
+    "review": "No issues",
+    "reviewer_count": 1,
+    "fixed_review_finding": "An activating latency controller without a process is rejected as a competing experiment by both runners."
+  },
+  "execution_requirements": [
+    "Actual original training completion and full output audit.",
+    "Reviewed training/export receipts and separate exact-source execution admission.",
+    "No concurrent training, exports or experimental workers.",
+    "The same exported model and unchanged 133-case dataset/scorer.",
+    "Owned-worker identity, resource limits and cleanup, with protected services unchanged."
+  ],
+  "limits": [
+    "Offline tests do not measure model quality or latency.",
+    "No new inference or speed improvement has been measured.",
+    "Fourteen threads may be slower; measured results determine the choice.",
+    "Cold and warm isolation, repeatability and current application end-to-end measurements remain pending.",
+    "A latency replay cannot replace the canonical all-checkpoint accuracy comparison or broader security/retention gates."
+  ],
+  "execution_admission": false,
+  "inference_executed": false,
+  "production_activation": false,
+  "applications_qualified": 0,
+  "applications_total": 6
+}
